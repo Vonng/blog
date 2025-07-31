@@ -1,0 +1,30 @@
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "Vonng's Blog"
+
+[params]
+displayName = "English"
+isoCode = "en"
+rtl = false
+dateFormat = "2006-01-02"
+logo = "img/logo.png"
+description = "Vonng's Blog Site, about PostgreSQL, Database, and Cloud Exit"
+copyright = "© 2025 Ruohang Feng"
+
+[params.author]
+name = "Ruohang Feng"
+email = "rh@vonng.com"
+image = "img/vonng.jpg"
+imageQuality = 96
+headline = "Pigsty Founder, @Vonng"
+bio = "Pigsty Founder, @Vonng"
+links = [
+  { email = "mailto:rh@vonng.com" },
+  { link = "https://vonng.com/" },
+  { github = "https://github.com/Vonng" },
+  { linkedin = "https://www.linkedin.com/in/vonng/" },
+  { medium = "https://medium.com/@fengruohang/"  },
+  { discord = "https://discord.gg/j5pG8qfKxU" },
+  { telegram = "https://t.me/joinchat/gV9zfZraNPM3YjFh" }
+]

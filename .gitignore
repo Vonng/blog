@@ -1,0 +1,13 @@
+.code/
+.claude/
+.idea/
+
+.hugo_build.lock
+.DS_Store
+public/
+tmp/
+
+node_modules/
+themes/blowfish/
+CLAUDE.md
+resources/
