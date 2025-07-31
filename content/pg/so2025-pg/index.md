@@ -19,13 +19,17 @@ tags: [PostgreSQL,PG生态]
 
 一项技术使用者占总体的比例，就是**流行度**。它的含义是：过去一年有多少比例的用户使用了这项技术。流行度代表过去一年的积累使用，是存量指标，也是最核心的事实指标。
 
+![sf-used.png](sf-used.png)
+
 在使用率上，**PostgreSQL 加速上升**：在 2024 年已有 48.7% 的开发者使用 PostgreSQL，2025 年这一比例飙升至 55.6%。一年增幅接近 7 个百分点，扩张幅度为历年之最。这使得PostgreSQL与第二名 MySQL 拉开了15个百分点的差距，确立了明显的领先地位。
 
 如果我们考虑更能体现 “企业场景” 的“专业开发者使用率”，那么这个数值则进一步达到 58.2% ，拉开第二名 MYSQL 18.6 个百分点，从去年的 12.5 个百分点的优势，提高了将近 50%！
 
+![sf-used-prof.png](sf-used-prof.png)
+
 如果我们综合过去九年的问卷数据调查结果，将流行度画在一张散点图上，不难看出 PostgreSQL 几乎一直保持着高速线性增长。凭借遥遥领先的使用率，成为数据库之王。
 
-[![trend-used-prof.png](https://pigsty.cc/blog/pg/pg-is-no1-again/trend-used-prof.png)](https://demo.pigsty.cc/d/sf-survey/stackoverflow-survey?orgId=1&viewPanel=45)
+>
 
 此外，值得一提的是 Supabase 与 DuckDB 成为这一榜单上的 “黑马”， Supabase 在2023 年调查中首次以 2.6% 的开发者使用率初次上榜，在 2024 年提高至 3.8%，并在今年取得了 6% 的使用率，以几乎是指数增长的态势，成为 AI 时代仅次于 PostgreSQL 的数据库大赢家 —— 毕竟 Supabase 本质上就是套了壳的 Postgres。
 
@@ -44,6 +48,8 @@ tags: [PostgreSQL,PG生态]
 ## 喜爱度
 
 另外两项重要的数据是数据库的喜爱度（红色）与需求度（蓝色）：[全体开发者在过去一年最喜爱与最想要使用的数据库](https://survey.stackoverflow.co/2025/technology#2-databases)，按需求度排序。
+
+![sf-want-love.png](sf-want-love.png)
 
 所谓“**口碑**”（红点），喜爱度（Loved）或欣赏度（Admired），指的是有多少比例的用户愿意继续使用此项技术，这是一个年度的“留存率”指标，可以反映用户对一项技术的看法与评价，代表了未来的增长空间。
 
@@ -71,6 +77,7 @@ tags: [PostgreSQL,PG生态]
 
 在 2025 年的调研中，最滑稽的莫过于这个数据库迁移图 —— 用一句概括的话就是所有数据库都在往 PostgreSQL 跑 —— 不同于其他领域的技术有来有往（比如语言，工具），数据库世界的生态出现了明显的大一统的趋势。
 
+![sf-flow.jpg](sf-flow.jpg)
 
 所有数据库用户都在向 PostgreSQL 集中靠拢，不论是专业开发者，还是初学者，还是 AI 用户。每个群体都体现出高度鲜明的收敛趋势。
 
