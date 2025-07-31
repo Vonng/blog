@@ -1,7 +1,6 @@
 ---
 title: "PostgreSQL 逻辑复制详解"
 date: 2021-03-03
-weight: 5
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
 summary: >
