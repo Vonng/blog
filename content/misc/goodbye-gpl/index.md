@@ -5,10 +5,7 @@ hero: /hero/goodbye-gpl.jpg
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
 summary: >
-  本文提出，在2020年，计算自由的敌人是**云软件**，并倡导 **本地优先软件** 的概念。 
-menu:
-  sidebar:
-    parent: misc
+  本文提出，在2020年，计算自由的敌人是**云软件**，并倡导 **本地优先软件** 的概念。
 ---
 
 > [微信公众号原文](https://mp.weixin.qq.com/s/DJsDRO18saZaxe3oyzzYrA) | [Martin Kleppmann 原文](https://martin.kleppmann.com/2021/04/14/goodbye-gpl.html)

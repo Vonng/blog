@@ -4,7 +4,7 @@ linkTitle: "PG in Docker: Good or Bad?"
 date: 2019-01-13
 author: |
   [Ruohang Feng](https://vonng.com/en/) ([@Vonng](https://vonng.com/en/))
-description: Thou shalt not run a prod database inside a container
+summary: Thou shalt not run a prod database inside a container
 tags: [Database,Docker]
 ---
 

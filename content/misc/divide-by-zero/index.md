@@ -3,9 +3,7 @@ title: "从/0开始：理解错误与异常"
 date: 2016-11-09
 hero: /hero/divide-by-zero.jpg
 summary: 在计算机中除以0会发生什么？答案并不是固定的，在不同的操作系统，不同的编程语言，甚至不同的编译器下，答案都可能是不同的。
-menu:
-  sidebar:
-    parent: note
+math: true
 ---
 
 > 在计算机中除以0会发生什么？错误是错误，异常是异常。这里面但区别还是很微妙的。
@@ -39,7 +37,7 @@ C++在两种环境中与C表现是一致的。至于Windows，手头没有Window
 
 相比之下Python与Java在不同的系统中表现是一致的：
 
-```python
+```bash
 $ python -c 'print(1/0)'
 Traceback (most recent call last):
   File "<string>", line 1, in <module>

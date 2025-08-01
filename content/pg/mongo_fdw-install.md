@@ -5,7 +5,7 @@ date: 2016-05-28
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
 summary: >
-  最近有业务要求通过PostgreSQL FDW去访问MongoDB。开始我觉得这是个很轻松的任务。但接下来的事真是让人恶心的吐了。MongoDB FDW编译起来真是要人命：混乱的依赖，临时下载和Hotpatch，错误的编译参数，以及最过分的是错误的文档。总算，我在生产环境(Linux RHEL7u2)和开发环境(Mac OS X 10.11.5)都编译成功了。赶紧记录下来，省的下次蛋疼。
+  最近有业务要求通过PostgreSQL FDW去访问MongoDB，但是，MongoDB FDW 编译起来真是要人命啊。
 tags: [PostgreSQL,PG管理,扩展]
 ---
 

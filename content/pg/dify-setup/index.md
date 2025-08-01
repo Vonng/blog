@@ -5,7 +5,7 @@ date: 2024-06-22
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com)
 summary: >
-  Dify
+  Dify 是一个生成式 AI 应用创新引擎，开源的 LLM 应用开发平台，本文介绍了如何使用 Pigsty 自建 Dify。
 tags: [PostgreSQL,Docker,PigstyApp]
 ---
 

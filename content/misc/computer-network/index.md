@@ -4,9 +4,7 @@ date: 2013-09-14
 hero: /hero/network.jpg
 summary: |
   计算机网络像一个物流系统，区别仅仅在于物流系统传递的是邮件包裹这类物质实体，而计算机网络传递的是信息这种无形的东西。
-menu:
-  sidebar:
-    parent: note
+math: true
 ---
 
 

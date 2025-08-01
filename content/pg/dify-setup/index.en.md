@@ -4,7 +4,7 @@ date: 2024-06-22
 author: |
   [Ruohang Feng](https://vonng.com/en/) ([@Vonng](https://vonng.com/en/)) | [Wechat Column](https://mp.weixin.qq.com)
 summary: >
-  Dify
+  Dify is an open-source LLM app development platform. This article explains how to self-host Dify using Pigsty.
 tags: [PostgreSQL,Docker,PigstyApp]
 ---
 

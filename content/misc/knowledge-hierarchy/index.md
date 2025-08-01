@@ -4,9 +4,6 @@ date: 2013-05-23
 hero: /hero/ascension.png
 summary: |
   通过观察思辨，我们把脑内认识深化过程从接受知识开始到最高的“悟性”层次可以分成四个阶段：知识，理解，意识，悟性。
-menu:
-  sidebar:
-    parent: misc
 ---
 
 
