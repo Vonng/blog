@@ -7,13 +7,17 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read      # 允许读取源码
-  pages: write        # 允许写 Pages
+  contents: read
+  pages: write
   id-token: write
 
 concurrency:
   group: "pages"
   cancel-in-progress: false
+
+env:                      # ① 固定 Hugo 版本 & cache 目录
+  HUGO_VERSION: 0.148.2
+  HUGO_CACHEDIR: ~/.cache/hugo_cache
 
 defaults:
   run:
@@ -24,55 +28,67 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. 拉取代码 & 子模块
-      - name: Checkout
-        uses: actions/checkout@v4
+      # 1. 代码 + 子模块
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           submodules: recursive
 
-      # 2. 缓存 Hugo Modules & resources/ 目录
-      - name: Cache Hugo resources
-        uses: actions/cache@v4
+      # 2. 恢复 resources/ + Hugo 模块缓存
+      - name: Restore Hugo cache
+        id: hugo-cache
+        uses: actions/cache/restore@v4
         with:
           path: |
-            ~/.cache/hugo          # 模块缓存
-            resources              # 图片等中间结果
-          key: hugo-${{ runner.os }}-${{ github.ref }}-${{ github.sha }}
+            resources
+            ${{ env.HUGO_CACHEDIR }}
+          # key 用内容散列，避免每次 commit 都失效
+          key: hugo-${{ runner.os }}-${{ hashFiles('content/**/*', 'static/**/*.{png,jpg,jpeg,webp,gif}', 'config/**/*.toml') }}-v1
           restore-keys: |
-            hugo-${{ runner.os }}-${{ github.ref }}
-            hugo-${{ runner.os }}
+            hugo-${{ runner.os }}-
 
-      # 3. 安装 Go（Blowfish 某些短码需用到）
+      # 3. 首次构建若没有缓存 → 临时关闭图片优化
+      - name: Disable image optimisation (first run only)
+        if: steps.hugo-cache.outputs.cache-hit != 'true'
+        run: |
+          printf "[params]\ndisableImageOptimization = true\ndisableImageOptimizationMD = true\n" > no-img.toml
+          echo "HUGO_EXTRA=--config no-img.toml" >> "$GITHUB_ENV"
+
+      # 4. 安装 Go（Blowfish 某些短码依赖）
       - uses: actions/setup-go@v5
         with:
           go-version: "1.24"
 
-      # 4. 安装 Hugo extended 0.148.2
+      # 5. 安装 Hugo extended
       - uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: "0.148.2"
+          hugo-version: ${{ env.HUGO_VERSION }}
           extended: true
 
-      # 5. 配置 Pages 变量（用于 baseURL）
+      # 6. Pages 环境变量（baseURL）
       - id: pages
         uses: actions/configure-pages@v4
 
-      # 6. 构建
+      # 7. 构建（带或不带 no-img.toml）
       - name: Build with Hugo
-        env:
-          HUGO_ENVIRONMENT: production
-          HUGO_ENV: production
         run: |
-          hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+          hugo --gc --minify --cacheDir "$HUGO_CACHEDIR" ${HUGO_EXTRA} --baseURL "${{ steps.pages.outputs.base_url }}/"
 
-      # 7. 上传构建产物
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      # 8. 首次构建后把 resources/ 写回缓存
+      - name: Save Hugo cache
+        if: steps.hugo-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            resources
+            ${{ env.HUGO_CACHEDIR }}
+          key: ${{ steps.hugo-cache.outputs.cache-primary-key }}
+
+      # 9. 上传产物
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
 
-  # 将上一步产物发布到 GitHub Pages
   deploy:
     needs: build
     runs-on: ubuntu-latest

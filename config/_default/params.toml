@@ -14,11 +14,11 @@ enableCodeCopy = true
 
 replyByEmail = false
 
-mainSections = ["db", "cloud"]
+mainSections = ["pg","db", "cloud"]
 # robots = ""
 
 disableImageOptimization = false
-disableImageOptimizationMD = false
+disableImageOptimizationMD = true
 disableTextInHeader = false
 # backgroundImageWidth = 1200
 
