@@ -16,12 +16,74 @@
     data-reactions-enabled="1"
     data-emit-metadata="0"
     data-input-position="bottom"
-    data-theme="preferred_color_scheme"
+    data-theme="light"
     data-lang="en"
     crossorigin="anonymous"
     async>
   </script>
 </div>
+
+<script>
+  // 动态设置 Giscus 主题以匹配 Blowfish 主题
+  function setGiscusTheme() {
+    function getBlowfishTheme() {
+      return document.documentElement.classList.contains("dark") ? "transparent_dark" : "light";
+    }
+    
+    function updateGiscusTheme(theme) {
+      const giscusFrame = document.querySelector('iframe[src*="giscus"]');
+      if (giscusFrame) {
+        giscusFrame.contentWindow.postMessage({
+          giscus: {
+            setConfig: {
+              theme: theme
+            }
+          }
+        }, 'https://giscus.app');
+      }
+    }
+    
+    // 设置初始主题
+    const initialTheme = getBlowfishTheme();
+    const giscusScript = document.querySelector('script[src*="giscus"]');
+    if (giscusScript) {
+      giscusScript.setAttribute('data-theme', initialTheme);
+    }
+    
+    // 监听 DOM 变化以检测主题切换
+    const observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+          const currentTheme = getBlowfishTheme();
+          updateGiscusTheme(currentTheme);
+        }
+      });
+    });
+    
+    // 开始观察 html 元素的 class 变化
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+    
+    // 等待 Giscus 加载完成后设置正确的主题
+    setTimeout(() => {
+      updateGiscusTheme(initialTheme);
+    }, 500);
+    
+    // 再次检查，确保主题正确设置
+    setTimeout(() => {
+      updateGiscusTheme(getBlowfishTheme());
+    }, 1000);
+  }
+  
+  // 页面加载完成后执行
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setGiscusTheme);
+  } else {
+    setGiscusTheme();
+  }
+</script>
 
 <noscript>
   <div class="mt-8 p-4 bg-neutral-100 dark:bg-neutral-800 rounded-lg">
