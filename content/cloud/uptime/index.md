@@ -5,7 +5,7 @@ date: 2024-01-10
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）｜ [微信公众号](https://mp.weixin.qq.com/s/yIVal-9U6_TXX-dZpVtjBg)
 summary: |
-  程序员极易被复杂度所吸引，就像飞蛾扑火一样。系统架构图越复杂，智力自慰的快感就越大。坚决抵制这种行为，是我们在云下可用性上成功的重要原因。
+  程序员极易被复杂度所吸引，就像飞蛾扑火一样。系统架构图越复杂，智力自慰的快感就越大。坚决抵制这种行为，是DHH在云下可用性上成功的重要原因。
 tags: [下云]
 ---
 
@@ -14,7 +14,7 @@ tags: [下云]
 
 > 作者：**David Heinemeier Hansson**，网名DHH，37 Signal 联创与CTO，Ruby on Rails 作者，下云倡导者、实践者、领跑者。反击科技巨头垄断的先锋。[Hey博客](https://world.hey.com/dhh)
 >
-> 译者：**冯若航**，网名 Vonng 。磐吉云数创始人与CEO。[Pigsty](https://mp.weixin.qq.com/s/-E_-HZ7LvOze5lmzy3QbQA) 作者，PostgreSQL 专家/布道师。公众号《[非法加冯](https://mp.weixin.qq.com/s/p4Ys10ZdEDAuqNAiRmcnIQ)》主理人，云计算泥石流，数据库老司机。
+> 译者：**冯若航**，网名 Vonng 。PIGSTY 创始人与CEO。[Pigsty](https://mp.weixin.qq.com/s/-E_-HZ7LvOze5lmzy3QbQA) 作者，PostgreSQL 专家/布道师。公众号《[非法加冯](https://mp.weixin.qq.com/s/p4Ys10ZdEDAuqNAiRmcnIQ)》主理人，云计算泥石流，数据库老司机。
 >
 > 本文翻译自 DHH [博客](https://world.hey.com/dhh/keeping-the-lights-on-while-leaving-the-cloud-be7c2d67)，
 

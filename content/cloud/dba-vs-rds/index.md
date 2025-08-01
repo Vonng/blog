@@ -1,6 +1,6 @@
 ---
 title: DBA会被云淘汰吗？
-date: 2022-02-02
+date: 2024-02-02
 hero: /hero/dba-vs-rds.jpg
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/W1hwbl3qmjC4Dcmadc8uSg)

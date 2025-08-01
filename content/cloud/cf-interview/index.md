@@ -2,7 +2,7 @@
 title: Cloudflare圆桌访谈与问答录
 date: 2024-04-23
 summary: |
-  作为圆桌嘉宾受邀参加了 Cloudflare 在深圳举办的 Immerse 大会，在鸡尾酒会和晚宴上，我与 Cloudflare 亚太区CMO，大中华区技术总监，以及一线工程师深入交流探讨了许多网友关心的问题
+  作为圆桌嘉宾受邀参加了 Cloudflare 在深圳举办的 Immerse 大会，在晚宴上，我与 Cloudflare 亚太区CMO，大中华区技术总监，以及一线工程师深入交流探讨了许多网友关心的问题
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信公众号](https://mp.weixin.qq.com/s/jU418HAlObe1nWgzEsLrJQ)
 tags: [下云,Cloudflare]

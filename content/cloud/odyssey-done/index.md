@@ -5,7 +5,7 @@ hero: /hero/odyssey.jpg
 author: |
   [DHH](https://world.hey.com/dhh) | 译：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/mknFXO5DSfxw7st8hhxjBQ)
 summary: >
-  现有
+  DHH 将他们的七个云上应用从 AWS 迁移到自己的硬件上，2024年是第一个完全实现节省的年份。他们欣喜地发现，节省的费用比最初估计的还要多。
 tags: [下云,DHH]
 ---
 
