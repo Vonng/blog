@@ -2,15 +2,14 @@
 title: "Database in K8S: Pros & Cons"
 date: 2023-12-06
 hero: /hero/db-in-k8s.jpg
-author: |
-  [Ruohang Feng](https://vonng.com/en/) ([@Vonng](https://vonng.com/en/)) | [Medium](https://medium.com/@fengruohang/database-in-kubernetes-is-that-a-good-idea-daf5775b5c1f) ｜[Wechat](https://mp.weixin.qq.com/s/4a8Qy4O80xqsnytC4l9lRg)
+author: vonng
+  [Ruohang Feng](https://vonng.com/en/) ([@Vonng](https://vonng.com/en/)) | 
 summary: >
-  Whether databases should be housed in Kubernetes/Docker remains highly controversial. While Kubernetes (k8s) excels in managing stateless applications, it has fundamental drawbacks with stateful services, especially databases like PostgreSQL and MySQL.
-resources:
-  - { src: "12-factor.png", params: {byline: "*source*: https://user-images.githubusercontent.com/5445356/47986421-a8f62080-e117-11e8-9a39-3fdc6030c324.png"} }
-  - { src: "cncf-landscape.png", params: {byline: "*source*: [CNCF Landscape](https://landscape.cncf.io/)"} }
+  Whether databases should be housed in Kubernetes/Docker remains highly controversial. It has fundamental drawbacks with stateful services.
 tags: [Database,Kubernetes]
 ---
+
+> [Medium](https://medium.com/@fengruohang/database-in-kubernetes-is-that-a-good-idea-daf5775b5c1f) ｜[Wechat](https://mp.weixin.qq.com/s/4a8Qy4O80xqsnytC4l9lRg)
 
 Whether databases should be housed in Kubernetes/Docker remains highly controversial. While Kubernetes (k8s) excels in managing stateless applications, it has fundamental drawbacks with stateful services, especially databases like PostgreSQL and MySQL.
 

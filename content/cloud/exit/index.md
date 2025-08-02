@@ -1,12 +1,11 @@
 ---
 title: 云计算泥石流：文章导航
-date: 2025-01-13
-summary: |
-  曾几何时，“上云“近乎成为技术圈的政治正确，整整一代应用开发者的视野被云遮蔽。就让我们用实打实的数据分析与亲身经历，讲清楚公有云租赁模式的价值与陷阱 —— 在这个降本增效的时代中，供您借鉴与参考。
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+weight: 2
+summary: "曾几何时，“上云“近乎成为技术圈的政治正确，整整一代应用开发者的视野被云遮蔽。就让我们用实打实的数据分析与亲身经历，讲清楚公有云租赁模式的价值与陷阱"
+showAuthor: true
 tags: [下云]
 ---
+
 
 <div style="text-align: center;"><p>
 世人常道云上好，托管服务烦恼少。我言云乃杀猪盘，溢价百倍实厚颜。
@@ -21,8 +20,7 @@ tags: [下云]
 
 曾几何时，“**上云**“近乎成为技术圈的政治正确，整整一代应用开发者的视野被云遮蔽。就让我们用实打实的数据分析与亲身经历，讲清楚公有云租赁模式的价值与陷阱 —— 在这个降本增效的时代中，供您借鉴与参考。
 
-
--------------
+------
 
 ## **下云案例篇**
 
@@ -40,8 +38,7 @@ tags: [下云]
 
 [花钱买罪受的大冤种：逃离云计算妙瓦底](https://mp.weixin.qq.com/s/zwJ2T2Vh_R7xD8IKPso31Q)
 
-
--------------
+------
 
 ## **人仰马翻篇**
 
@@ -54,7 +51,6 @@ tags: [下云]
 [无双删库：Google云爆破了大基金的整个云账户](https://mp.weixin.qq.com/s/eH5HBbL7cQhjQY8rm1gFLQ)
 
 [全球Windows蓝屏：甲乙双方都是草台班子](https://mp.weixin.qq.com/s/s7i7bSYzNY8mrcpfkHPjOg)
-
 
 ------
 
@@ -72,8 +68,7 @@ tags: [下云]
 
 [记一次阿里云 DCDN 加速仅 32 秒就欠了 1600 的问题处理（扯皮）](https://mp.weixin.qq.com/s/0Wnv1B80Tk4J03X3uAm4Ww)
 
-
--------------
+------
 
 ## **商业模式篇**
 
@@ -87,9 +82,7 @@ tags: [下云]
 
 [范式转移：从云到本地优先](https://mp.weixin.qq.com/s/Yp6L0hh4b4HuJQRPD3aJYw)
 
-
-
--------------
+------
 
 ## **RDS批判篇**
 
@@ -103,10 +96,7 @@ tags: [下云]
 
 [驳《再论为什么你不应该招DBA》](https://mp.weixin.qq.com/s/CMRrqI2yBWlNbACHpNgL1g)
 
-
-
-
--------------
+------
 
 ## **滑稽肖像篇**
 
@@ -120,8 +110,7 @@ tags: [下云]
 
 [云厂商眼中的客户：又穷又闲又缺爱](https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ)【转载】
 
-
--------------
+------
 
 ## **商业评论篇**
 
@@ -135,9 +124,7 @@ tags: [下云]
 
 [腾讯云阿里云做的真的是云计算吗?](https://mp.weixin.qq.com/s/mMvDiTiMOt6eiTTYbHvbbQ)【转载】
 
-
-
---------
+------
 
 ## 主题分类
 
@@ -155,6 +142,11 @@ tags: [下云]
 
 **阿里云**
 
+- 2025-07-03 [草台互殴，赔三千万？阿里大战小旺神](https://mp.weixin.qq.com/s/O4LvUspOgrVBWHzmBvfmUA)
+- 2025-06-26 [阿里云故障，CDN挂了，记得申请SLA赔付](https://mp.weixin.qq.com/s/Y2PZiH63EAXRKP8gele8NQ)
+- 2025-06-06 [大故障：阿里云核心域名被拖走了](https://mp.weixin.qq.com/s/l1b-eq06NyuN61cqZoYJjA)
+- 2025-05-30 [阿里云：从上到下烂到根了(去除原文版)](https://mp.weixin.qq.com/s/0pT7wb0Y6ohgvEltED93hA
+- 2025-05-30 [硬编码密码泄漏，阿里云的软件工程也太差了](https://mp.weixin.qq.com/s/43pIBxYvsszeBZGk7LU7_w) 马工
 - 2024-11-11 [支付宝崩了？双十一整活王又来了](https://mp.weixin.qq.com/s/D2XmL2YYN2kqHtwFN4FVGQ)
 - 2024-10-07 [记一次阿里云 DCDN 加速仅 32 秒就欠了 1600 的问题处理（扯皮）](https://mp.weixin.qq.com/s/0Wnv1B80Tk4J03X3uAm4Ww) 转
 - 2024-09-17 [阿里云：高可用容灾神话的破灭](https://mp.weixin.qq.com/s/rXwEayprvDKCgba4m-naoQ)
@@ -197,8 +189,13 @@ tags: [下云]
 
 - 2024-07-23 [全球Windows蓝屏：甲乙双方都是草台班子](https://mp.weixin.qq.com/s/s7i7bSYzNY8mrcpfkHPjOg)
 
+**Oracle OCI**
+
+- 2025-03-29 [Oracle云大翻车：6百万用户认证数据泄漏](https://mp.weixin.qq.com/s/5z3jUV8CrKPinUYzOnlC6g)
+
 **其他**
 
+- 2025-03-24 [今日大瓜：赛博佛祖与赛博菩萨大打出手](https://mp.weixin.qq.com/s/1jjBMe525CtDaq1XrDztHQ)
 - 2024-12-14 [OpenAI全球宕机复盘：K8S循环依赖](https://mp.weixin.qq.com/s/ze4y9x7VpPmibitH7tAGMQ)
 - 2024-11-10 [草台回旋镖：Apple Music证书过期服务中断](https://mp.weixin.qq.com/s/eawgZ3hE63b3fRfrJ1sqfw)
 - 2024-10-04 [沸沸扬扬！！！某国内互联网公司，信息泄露导致国外用卡被盗刷。。。](https://mp.weixin.qq.com/s/dQrlBnlQO1mcZkg1wQESiA)
@@ -210,6 +207,7 @@ tags: [下云]
 
 **DHH**
 
+- 2025-03-30 [DHH下云：S3晚搬一天，就多花四万](https://mp.weixin.qq.com/s/yQbtyDv1mc-r_bn9RNCSRA)
 - 2024-10-19 [DHH：下云超预期，能省一个亿](https://mp.weixin.qq.com/s/mknFXO5DSfxw7st8hhxjBQ)
 - 2024-09-07 [先优化碳基BIO核，再优化硅基CPU核](https://mp.weixin.qq.com/s/Yxyir8kjRDUZwkkE_dscZQ)
 - 2024-01-16 [单租户时代：SaaS范式转移](https://mp.weixin.qq.com/s/jKv9l_ro6rWei4QnXck-zw)
@@ -236,13 +234,27 @@ tags: [下云]
 - 2024-03-26 [Redis不开源是“开源”之耻，更是公有云之耻](https://mp.weixin.qq.com/s/W5kOLxeJCIHjnWbIHc1Pzw)
 - 2023-02-03 [范式转移：从云到本地优先](https://mp.weixin.qq.com/s/Yp6L0hh4b4HuJQRPD3aJYw)
 
-
-
-
---------
+------
 
 ## 云计算泥石流专栏原文
 
+- 2025-07-08 [盘古之殇后续：讨王某檄文](https://mp.weixin.qq.com/s/mEtV1Uc2i9kzkw7s9MKO0g)
+- 2025-07-03 [草台互殴，赔三千万？阿里大战小旺神](https://mp.weixin.qq.com/s/O4LvUspOgrVBWHzmBvfmUA)
+- 2025-06-26 [阿里云故障，CDN挂了，记得申请SLA赔付](https://mp.weixin.qq.com/s/Y2PZiH63EAXRKP8gele8NQ)
+- 2025-06-20 [Apple,Google,FB,TG 160亿登录信息泄露](https://mp.weixin.qq.com/s/TiY1pDQQhxY-z_RoDTAoyw)
+- 2025-06-13 [带瘫全球互联网，Google云/Cloudflare全球故障](https://mp.weixin.qq.com/s/yZOUzoEHQdBuNFrSIXVB9w)
+- 2025-06-06 [大故障：阿里云核心域名被拖走了](https://mp.weixin.qq.com/s/l1b-eq06NyuN61cqZoYJjA)
+- 2025-05-30 [阿里云：从上到下烂到根了去除原文版](https://mp.weixin.qq.com/s/0pT7wb0Y6ohgvEltED93hA)
+- 2025-05-30 [硬编码密码泄漏，阿里云的软件工程也太差了](https://mp.weixin.qq.com/s/43pIBxYvsszeBZGk7LU7_w) 马工
+- 2025-05-13 [深度分析：迪奥数据泄露事件，云配置失当的锅？](https://mp.weixin.qq.com/s/TBdgm8pnZPCyysAKW7SsEw)
+- 2025-04-29 [10万用户的软件，因腾讯云欠费2元灰飞烟灭？](https://mp.weixin.qq.com/s/Gz_Y2qyByg1y17eWILJsLw)
+- 2025-04-15 [AWS 东京可用区故障：影响13项服务](https://mp.weixin.qq.com/s/4no4Raj26u6GbUiHECBAjA)
+- 2025-04-16 [云计算不能做成云算计之一：云行贿必须清理](https://mp.weixin.qq.com/s/GetqBeJqO3mHWmyItej9Cw) 马工
+- 2025-04-16 [CVE惨遭断奶，美帝自毁安全长城](https://mp.weixin.qq.com/s/FgAtUpcpdw19VMI_uYUV4A)
+- 2025-04-02 [Shopify：愚人节真的翻车了](https://mp.weixin.qq.com/s/9352Km9U-mnv8dmsHhSdMg)
+- 2025-03-30 [DHH下云：S3晚搬一天，就多花四万](https://mp.weixin.qq.com/s/yQbtyDv1mc-r_bn9RNCSRA)
+- 2025-03-29 [Oracle云大翻车：6百万用户认证数据泄漏](https://mp.weixin.qq.com/s/5z3jUV8CrKPinUYzOnlC6g)
+- 2025-03-24 [今日大瓜：赛博佛祖与赛博菩萨大打出手](https://mp.weixin.qq.com/s/1jjBMe525CtDaq1XrDztHQ)
 - 2024-01-13 [花钱买罪受的大冤种：逃离云计算妙瓦底](https://mp.weixin.qq.com/s/zwJ2T2Vh_R7xD8IKPso31Q)
 - 2024-12-14 [OpenAI全球宕机复盘：K8S循环依赖](https://mp.weixin.qq.com/s/ze4y9x7VpPmibitH7tAGMQ)
 - 2024-11-11 [支付宝崩了？双十一整活王又来了](https://mp.weixin.qq.com/s/D2XmL2YYN2kqHtwFN4FVGQ)
@@ -314,8 +326,7 @@ tags: [下云]
 - 2023-01-30 [云数据库是不是智商税](https://mp.weixin.qq.com/s/c8bpK4o3H7-EyRqVdNDndQ)
 - 2022-05-16 [云RDS：从删库到跑路](https://mp.weixin.qq.com/s/AGEW1iHQkQy4NQyYC2GonQ)
 
-
---------
+------
 
 ## 下云之歌
 
@@ -326,5 +337,3 @@ tags: [下云]
 新纪元：https://app.suno.ai/song/81e1b275-4652-4442-aa47-3127171d874d
 
 死亡摇滚：https://app.suno.ai/song/6c203c72-0ce7-4b63-a447-a63b31080776
-
-

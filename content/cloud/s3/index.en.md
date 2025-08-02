@@ -1,13 +1,13 @@
 ---
 title: "S3: Elite to Mediocre"
 date: 2023-12-26
-hero: /hero/s3.jpg
-author: |
-  [Ruohang Feng](https://vonng.com/en/) ([@Vonng](https://vonng.com/en/)) | [WeChat](https://mp.weixin.qq.com/s/HathxpQ_KUuqxyrtyCDzWw)
-summary: >
-  S3 is longer "cheap" with the evolution of hardware, and other challengers such as cloudflare R2.
+author: vonng 
+summary: |
+  S3 is no longer "cheap" with the evolution of hardware, and other challengers such as cloudflare R2.
 tags: [Cloud,CloudExit,S3,MinIO]
 ---
+
+> [WeChat](https://mp.weixin.qq.com/s/HathxpQ_KUuqxyrtyCDzWw)
 
 Object storage (S3) has been a defining service of cloud computing, once hailed as a paragon of cost reduction in the cloud era. Unfortunately, with the evolution of hardware and the emergence of resources cloud (Cloudflare R2) and open-source alternatives (MinIO), the once "cost-effective" object storage services have lost their value for money, becoming as much a "cash cow" as EBS. In our "Mudslide of Cloud Computing" series, we've already delved into the cost structure of cloud-based EC2 compute power, EBS disks, and RDS databases. Today, let's examine the anchor of cloud services—object storage.
 

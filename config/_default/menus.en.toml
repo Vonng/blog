@@ -11,7 +11,7 @@
 # ordered by weight from lowest to highest.
 
 [[main]]
-name = "PGSQL"
+name = "PostgreSQL"
 pageRef = "pg"
 weight = 1
 
@@ -50,13 +50,13 @@ weight = 10
 
 [[main]]
   parent = "Column"
-  name = "Trip"
+  name = "Travel Notes"
   pageRef = "trip"
   weight = 14
 
 [[main]]
   parent = "Column"
-  name = "Misc"
+  name = "Miscellaneous"
   pageRef = "misc"
   weight = 15
 
@@ -65,7 +65,7 @@ name = "Link"
 weight = 50
 
 [[main]]
-name = "Pigsty, FOSS PG RDS"
+name = "Pigsty, the FOSS PG RDS"
 parent = "Link"
 url = "https://pgsty.com/"
 weight = 51
@@ -104,11 +104,6 @@ weight = 54
   pre = "github"
   url = "https://github.com/Vonng"
   weight = 400
-
-
-# -- Footer Menu --
-# The footer menu is displayed at the bottom of the page, just before
-# the copyright notice. Configure as per the main menu above.
 
  [[footer]]
    name = "Tags"

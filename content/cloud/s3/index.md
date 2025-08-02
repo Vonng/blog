@@ -1,13 +1,12 @@
 ---
 title: 扒皮云对象存储：从降本到杀猪
 date: 2023-12-26
-hero: /hero/s3.jpg
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/HathxpQ_KUuqxyrtyCDzWw)
-summary: >
-  对象存储是云计算的定义性服务，曾被视为云上降本的典范。不幸的是随着硬件的发展，资源云与开源平替的出现，曾经“物美价廉”的对象存储服务失去了性价比，和EBS一样成为了杀猪盘。
+author: vonng
+summary: 对象存储是云计算的定义性服务，曾被视为云上降本的典范。不幸的是随着硬件的发展，资源云与开源平替的出现，曾经“物美价廉”的对象存储服务失去了性价比，和EBS一样成为了杀猪盘。
 tags: [下云,S3,AWS,阿里云]
 ---
+
+> [微信公众号](https://mp.weixin.qq.com/s/HathxpQ_KUuqxyrtyCDzWw)
 
 对象存储是云计算的定义性服务，曾被视为云上降本的典范。不幸的是随着硬件的发展，资源云（Cloudflare R2）与开源平替（MinIO）的出现，曾经“物美价廉”的对象存储服务失去了性价比，和EBS一样成为了杀猪盘。我们在《云计算泥石流》系列中已经深入剖析过云上 EC2 算力，EBS 磁盘，RDS 数据库的成本构成，今天我们就来审视一下云服务之锚 —— 对象存储。
 

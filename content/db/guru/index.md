@@ -1,16 +1,16 @@
 ---
 title: 数据库老司机：文章导航
-date: 2025-01-13
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/Q0OtrpEhF24XN7gwMjbSRA)
-summary: >
-  数据库领域充满着太多胡言乱语与不实营销，数据库老司机带您拨云见日，穿透迷糊，直击行业核心与本质。
+weight: 1
+author: vonng
+summary: 数据库领域充满着太多胡言乱语与不实营销，数据库老司机带您拨云见日，穿透迷糊，直击行业核心与本质。
 tags: [数据库]
 ---
 
+> [微信公众号](https://mp.weixin.qq.com/s/Q0OtrpEhF24XN7gwMjbSRA)
 
 ### 国产信创篇
 
+- 2025-02-28 [国产数据库里有能打的吗？](https://mp.weixin.qq.com/s/iVgV_sT5V6AE1v4thJD8ow)
 - 2024-11-18 [这么吹国产数据库，听的尴尬癌都要犯了](https://mp.weixin.qq.com/s/MrRsK5lqZsCZwCUnnO1VMQ)
 - 2024-10-25 [开源皇帝Linus清洗整风](https://mp.weixin.qq.com/s/IcmXCMyflqGlAPA8vFzyyA)
 - 2024-10-01 [第二批数据库国测名单：国产化来了怎么办？](https://mp.weixin.qq.com/s/IeYwrKHfgxLkZBBPS3Ai8A)
@@ -24,6 +24,13 @@ tags: [数据库]
 
 ### 行业洞察篇
 
+- 2025-05-27 [开放数据标准：Postgres，OTel，与Iceberg](https://mp.weixin.qq.com/s/L7rWXFo8UYJLzqXeLoAanw) Paul
+- 2025-05-23 [小数据的失落十年：分布式分析的错付](https://mp.weixin.qq.com/s/rfv_oSRD4LS-W9xFd_WB9g)
+- 2025-04-27 [SaaS已死？AI时代，软件从数据库开始](https://mp.weixin.qq.com/s/LykR-ewCx9aO9e09T45taw)
+- 2025-04-28 [分布式数据库是伪需求](https://mp.weixin.qq.com/s/FNhTCZk-SBVQkYhQ3zi_-g)
+- 2025-04-14 [Claude Code泄密：MCP 爆火的隐藏真相](https://mp.weixin.qq.com/s/xaeVafPxUfAgQSzl-n3w2w)
+- 2025-03-13 [数据库火星撞地球：当PG爱上DuckDB](https://mp.weixin.qq.com/s/zoxaJBgNLreWc-TkqOJ8BQ)
+- 2025-03-10 [HTAP数据库，一场无人鼓掌的演出](https://mp.weixin.qq.com/s/wxOSAjObi0oiiRPRahWjJQ)
 - 2024-12-03 [七周七数据库 @ 2025](https://mp.weixin.qq.com/s/d8pEo6aOoEJVbrElXc0TCQ)
 - 2024-11-21 [面向未来数据库的现代硬件](https://mp.weixin.qq.com/s/0Y17J-opjq1fceRi8777Xg)
 - 2024-11-17 [20刀好兄弟PolarDB：论数据库该卖什么价？](https://mp.weixin.qq.com/s/E0MtNxPVMQ4PAkIFmispTw)
@@ -35,6 +42,9 @@ tags: [数据库]
 
 ### DBA/RDS篇
 
+- 2025-05-18 [不缺好数据库内核，缺能用好数据库的DBA](https://mp.weixin.qq.com/s/lqYYHA45hdqh4sPQWv5t8A)
+- 2025-05-09 [这次数据库真爆炸了，但摇人也没用了](https://mp.weixin.qq.com/s/2wkE-Jumnlu83eK-VSNoMA)
+- 2025-04-28 [数据库爆炸了怎么摇人？](https://mp.weixin.qq.com/s/Hs-lus_rf9Lhcqw1Az1LUQ)
 - 2024-09-07 [先优化碳基BIO核，再优化硅基CPU核](https://mp.weixin.qq.com/s/Yxyir8kjRDUZwkkE_dscZQ)
 - 2023-12-05 [数据库应该放入K8S里吗？](https://mp.weixin.qq.com/s/4a8Qy4O80xqsnytC4l9lRg)
 - 2023-12-04 [把数据库放入Docker是一个好主意吗？](https://mp.weixin.qq.com/s/kFftay1IokBDqyMuArqOpg)
@@ -47,9 +57,13 @@ tags: [数据库]
 
 ### PG生态篇
 
+- 2025-05-16 [PGCon.dev闪电演讲，硬控PG大佬5分钟](https://mp.weixin.qq.com/s/rZ4lcsdld1_Fxck77KRIvw)
+- 2025-04-09 [PG扩展峰会日程出炉，蒙特利尔见](https://mp.weixin.qq.com/s/IMB3_-_-clTGGz79Zn3jUw)
+- 2025-04-06 [OrioleDB 奥利奥数据库来了！](https://mp.weixin.qq.com/s/QG7_UyT08fNFiBj6qujSEA)
+- 2025-04-03 [带有MySQL兼容的PG内核现已加入Pigsty](https://mp.weixin.qq.com/s/fdc-RK8tut4hqZR_MuT61A)
+- 2025-03-01 [PostgreSQL取得对MySQL的压倒性优势](https://mp.weixin.qq.com/s/tuzmmkEIOsuq2-8rMbmVLw)
 - 2025-01-01 [Andy Pavlo: 2024年度数据库回顾](https://mp.weixin.qq.com/s/jgYDHdCqWDRDfoFkfs7W8Q)
 - 2024-12-18 [PostgreSQL 2024 社区现状调查报告](https://mp.weixin.qq.com/s/K7tVsOUCq32kHgogR4kBrA)
-- 2024-11-30 [你为什么不用连接池？](https://mp.weixin.qq.com/s/3uD9sxCg-lI1MlOg3NacvQ)
 - 2024-07-25 [StackOverflow 2024调研：PostgreSQL已经超神了](https://mp.weixin.qq.com/s/VD_o1HIUVQHmHGcAS4UNwA)
 - 2024-03-24 [PostgreSQL会修改开源许可证吗？](https://mp.weixin.qq.com/s/qNcqGHL-wVTSB7Kxko2eNw)
 - 2024-05-16 [为什么PostgreSQL是未来数据的基石？](https://mp.weixin.qq.com/s/olTWUG0p0DqJYHVOqn_wcQ)
@@ -61,6 +75,14 @@ tags: [数据库]
 - 2022-07-12 [为什么PostgreSQL是最成功的数据库？](https://mp.weixin.qq.com/s/UeNibtbN8JlA1QIlio1mkw)
 - 2022-06-24 [StackOverflow 2022数据库年度调查](https://mp.weixin.qq.com/s/xcORYy2suzOw50SOaOCodw)
 - 2021-05-08 [为什么说PostgreSQL前途无量？](https://mp.weixin.qq.com/s/KBypNeeM4puvzGiKFJ1FmQ)
+
+### 最佳实践篇
+
+- 2025-05-19 [OpenAI：将PostgreSQL伸缩至新阶段](https://mp.weixin.qq.com/s/ykrasJ2UeKZAMtHCmtG93Q)
+- 2025-05-03 [影视飓风达芬奇千万级数据库演化及实践](https://mp.weixin.qq.com/s/7zJe6_HJU7Q2_Uf9-lS2vQ)
+- 2025-03-21 [PGFS：将数据库作为文件系统](https://mp.weixin.qq.com/s/Oa3VRbcac8WSSc7YY3hVvA)
+- 2024-11-30 [你为什么不用连接池？](https://mp.weixin.qq.com/s/3uD9sxCg-lI1MlOg3NacvQ)
+- 2024-01-13 [令人惊叹的PostgreSQL可伸缩性](https://mp.weixin.qq.com/s/iH34payWSE_GROsq-9MN8g)
 
 ### PG发布篇
 
@@ -76,6 +98,8 @@ tags: [数据库]
 
 ### 创业融资篇
 
+- 2025-05-12 [数据库茶水间：OpenAI拟收购Supabase ？](https://mp.weixin.qq.com/s/RmU7RXl9ewwnpabjI4lw4Q)
+- 2025-05-06 [PG生态赢得资本市场青睐：Databricks收购Neon，Supabase融资两亿美元，微软财报点名PG](https://mp.weixin.qq.com/s/skxFplC0ow0Hh9gqs_N4hQ)
 - 2024-09-26 [PG系创业公司Supabase：$80M C轮融资](https://mp.weixin.qq.com/s/fi_p3tTZTnwP5XDJrkVbQw)
 - 2024-07-31 [ClickHouse收购PeerDB：这浓眉大眼的也要来搞 PG 了？](https://mp.weixin.qq.com/s/3RuZ7ite_exxh2XOPB3HCA)
 - 2024-02-18 [PG生态新玩家ParadeDB](https://mp.weixin.qq.com/s/bx2dRxlrtLcM6AD2qsplQQ)
@@ -109,12 +133,57 @@ tags: [数据库]
 - 2023-09-08 [冯若航：不想当段子手的技术狂，不是一位好的开源创始人](https://mp.weixin.qq.com/s/93QZBS694UQJRTLwHnStPQ)
 - 2022-07-07 [90后，辞职创业，说要卷死云数据库](https://mp.weixin.qq.com/s/I7OA0thv9Dwvj4zoxIOhJQ)
 
-
-
---------
+------
 
 ## 数据库老司机专栏
 
+- 2025-08-01 [PostgreSQL已主宰数据库世界](https://mp.weixin.qq.com/s/BzLUhc1XeEtMbZGv9xq46g)
+- 2025-07-26 [懂车帝暴打智驾，懂云帝在哪里](https://mp.weixin.qq.com/s/qUL75eq9ciZqE_WJ1UofYg)
+- 2025-07-25 [Pigsty v3.6：全能PG发行版的关键一步](https://mp.weixin.qq.com/s/TdJ5lOWxU_CzxsgjslPxwg)
+- 2025-07-21 [AMD YES? 老冯的数码退烧记](https://mp.weixin.qq.com/s/f0oNJQhX6D6iFwjlS6PRUg)
+- 2025-07-09 [Google AI工具箱：生产级数据库MCP来了？](https://mp.weixin.qq.com/s/3abWePcplQcaGrECGBsV7A)
+- 2025-07-07 [卡脖子：PostgreSQL切断镜像站同步通道](https://mp.weixin.qq.com/s/yOIXbXXNH7okk_OjRW91EQ)
+- 2025-07-04 [分道扬镳：bcachefs作者对Linus口吐芬芳](https://mp.weixin.qq.com/s/O94LXhqzi8m9o3ijVOTSsg)
+- 2025-07-01 [Pigsty：喜提上海开源创新菁英奖](https://mp.weixin.qq.com/s/9kpLDrF-bGskmmUMucfWoA)
+- 2025-06-30 [AI时代的数据库与DBA将何去何从](https://mp.weixin.qq.com/s/hXcbO5DVK3y84AgADQoUMQ)
+- 2025-06-29 [PostgreSQL高峰论坛：参会小记](https://mp.weixin.qq.com/s/uoZ1-RqCJd8vPGtUFaLauA)
+- 2025-06-22 [Pigsty v3.5 发布，4K Star，Supabase自建优化，PG18支持，421 PG扩展，全新网站](https://mp.weixin.qq.com/s/ErUAs8BFQ6Twk8wRNVDrHg)
+- 2025-06-19 [软件3.0时代，AI带来的范式转移](https://mp.weixin.qq.com/s/chFNT2OTa6eIjEaDWAMP8A)
+- 2025-06-18 [数据库老司机勇闯现代前端大观园](https://mp.weixin.qq.com/s/51dKs7wR6WCNiNWX5j_gWg)
+- 2025-06-03 [别争了，AI时代数据库已经尘埃落定](https://mp.weixin.qq.com/s/bChEvpXgXKi5njr6Kj5YGg)
+- 2025-05-31 [笔记本进酱油，脑子瓦特了](https://mp.weixin.qq.com/s/7epKw8KSZ0KsrXPFh8V8zQ)
+
+- 2025-05-27 [开放数据标准：Postgres，OTel，与Iceberg](https://mp.weixin.qq.com/s/L7rWXFo8UYJLzqXeLoAanw)
+- 2025-05-23 [小数据的失落十年：分布式分析的错付](https://mp.weixin.qq.com/s/rfv_oSRD4LS-W9xFd_WB9g)
+- 2025-05-19 [OpenAI：将PostgreSQL伸缩至新阶段](https://mp.weixin.qq.com/s/ykrasJ2UeKZAMtHCmtG93Q)
+- 2025-05-18 [不缺好数据库内核，缺能用好数据库的DBA](https://mp.weixin.qq.com/s/lqYYHA45hdqh4sPQWv5t8A)
+- 2025-05-16 [PGCon.dev闪电演讲，硬控PG大佬5分钟](https://mp.weixin.qq.com/s/rZ4lcsdld1_Fxck77KRIvw)
+- 2025-05-12 [数据库茶水间：OpenAI拟收购Supabase ？](https://mp.weixin.qq.com/s/RmU7RXl9ewwnpabjI4lw4Q)
+- 2025-05-09 [这次数据库真爆炸了，但摇人也没用了](https://mp.weixin.qq.com/s/2wkE-Jumnlu83eK-VSNoMA)
+- 2025-04-28 [数据库爆炸了怎么摇人？](https://mp.weixin.qq.com/s/Hs-lus_rf9Lhcqw1Az1LUQ)
+- 2025-05-06 [PG生态赢得资本市场青睐：Databricks收购Neon，Supabase融资两亿美元，微软财报点名PG](https://mp.weixin.qq.com/s/skxFplC0ow0Hh9gqs_N4hQ)
+- 2025-05-03 [影视飓风达芬奇千万级数据库演化及实践](https://mp.weixin.qq.com/s/7zJe6_HJU7Q2_Uf9-lS2vQ)
+- 2025-04-27 [SaaS已死？AI时代，软件从数据库开始](https://mp.weixin.qq.com/s/LykR-ewCx9aO9e09T45taw)
+- 2025-04-28 [分布式数据库是伪需求](https://mp.weixin.qq.com/s/FNhTCZk-SBVQkYhQ3zi_-g)
+- 2025-04-19 [兼容Oracle的开源 PostgreSQL？](https://mp.weixin.qq.com/s/5sE4pAJYZaHh3Hl0jrsHdw)
+- 2025-04-17 [2025年：MySQL vs PostgreSQL](https://mp.weixin.qq.com/s/NTd9_QRJRIu_XLbZ1zv7KA)
+- 2025-04-16 [PG被黑慢MySQL 360倍，这次我真忍不了](https://mp.weixin.qq.com/s/igxxBxP9mRCwfZvyjwgPRA)
+- 2025-04-14 [Claude Code泄密：MCP 爆火的隐藏真相](https://mp.weixin.qq.com/s/xaeVafPxUfAgQSzl-n3w2w)
+- 2025-04-09 [PG扩展峰会日程出炉，蒙特利尔见](https://mp.weixin.qq.com/s/IMB3_-_-clTGGz79Zn3jUw)
+- 2025-04-06 [OrioleDB 奥利奥数据库来了！](https://mp.weixin.qq.com/s/QG7_UyT08fNFiBj6qujSEA)
+- 2025-04-03 [带有MySQL兼容的PG内核现已加入Pigsty](https://mp.weixin.qq.com/s/fdc-RK8tut4hqZR_MuT61A)
+- 2025-03-21 [PGFS：将数据库作为文件系统](https://mp.weixin.qq.com/s/Oa3VRbcac8WSSc7YY3hVvA)
+- 2025-03-13 [数据库火星撞地球：当PG爱上DuckDB](https://mp.weixin.qq.com/s/zoxaJBgNLreWc-TkqOJ8BQ)
+- 2025-03-10 [HTAP数据库，一场无人鼓掌的演出](https://mp.weixin.qq.com/s/wxOSAjObi0oiiRPRahWjJQ)
+- 2025-03-06 [阿里云rds_duckdb：致敬还是抄袭？](https://mp.weixin.qq.com/s/3M6qQCsNUETEWcMwI3eFIQ)
+- 2025-03-01 [PostgreSQL取得对MySQL的压倒性优势](https://mp.weixin.qq.com/s/tuzmmkEIOsuq2-8rMbmVLw)
+- 2025-02-28 [国产数据库里有能打的吗？](https://mp.weixin.qq.com/s/iVgV_sT5V6AE1v4thJD8ow)
+- 2025-02-27 [对比Oracle与PostgreSQL事务系统](https://mp.weixin.qq.com/s/0KFRiO-Az7ha91_jv_HKXQ)
+- 2025-02-11 [如何在数据库中直接检索PDF](https://mp.weixin.qq.com/s/ELgsSi29ZyzPtXgdrwt42A)
+- 2025-03-12 [Wiz: DeepSeek数据库暴露](https://mp.weixin.qq.com/s/zODEfRQrMreFeEGjWXhK4g)
+- 2025-01-24 [PostgreSQL 生态前沿进展](https://mp.weixin.qq.com/s/coSNDTVoQHujeW7LRgd9JQ)
+- 2025-01-22 [数据库即架构](https://mp.weixin.qq.com/s/8NS15_fkuR_gSLG50MNtMQ)
+- 2025-01-16 [网传江西教育厅高考查分网站删库跑路](https://mp.weixin.qq.com/s/b1b2mLIxnDImvM7Whlyuew)
 - 2025-01-14 [PostgreSQL荣获2024年度数据库（5冠王）](https://mp.weixin.qq.com/s/nm7wQ8U13YqO7SP2tI9PHw)
 - 2025-01-11 [PII数据安全合规与PG Anonymizer最佳实践](https://mp.weixin.qq.com/s/U3go6FneJhp2IPZ6wtiWAA)
 - 2025-01-07 [第七届PG生态大会：一些感想](https://mp.weixin.qq.com/s/Hybx7nIPAGfuyul-wDHU-A)
@@ -163,7 +232,7 @@ tags: [数据库]
 - 2024-05-16 [为什么PostgreSQL是未来数据的基石？](https://mp.weixin.qq.com/s/olTWUG0p0DqJYHVOqn_wcQ)
 - 2024-04-25 [国产数据库到底能不能打？](https://mp.weixin.qq.com/s/AqcYpOgVj91JnkB1B3s4sA)
 - 2024-03-28 [PostgreSQL 主要贡献者 Simon Riggs 因坠机去世](https://mp.weixin.qq.com/s/DizvD5EYT3atP3I2CdobFw)
-- 2024-03-26 [Redis不开源是“开源”之耻，更是公有云之耻](https://mp.weixin.qq.com/s/W5kOLxeJCIHjnWbIHc1Pzw) 
+- 2024-03-26 [Redis不开源是“开源”之耻，更是公有云之耻](https://mp.weixin.qq.com/s/W5kOLxeJCIHjnWbIHc1Pzw)
 - 2024-03-24 [PostgreSQL会修改开源许可证吗？](https://mp.weixin.qq.com/s/qNcqGHL-wVTSB7Kxko2eNw)
 - 2024-03-16 [PostgreSQL is eating the database world](https://mp.weixin.qq.com/s/AMQ8eMR8ivpbhAelaJgXEQ)
 - 2024-03-14 [RDS阉掉了PostgreSQL的灵魂](https://mp.weixin.qq.com/s/EH7RPB6ImfMHXhOMU7P5Qg)
@@ -178,7 +247,7 @@ tags: [数据库]
 - 2024-01-05 [展望PostgreSQL的2024 (Jonathan Katz)](https://mp.weixin.qq.com/s/OM8xhIFB3m95T1GCAQm1Ow)
 - 2024-01-03 [2023年度数据库：PostgreSQL (DB-Engine)](https://mp.weixin.qq.com/s/8FJfdxiqiWBOgpjCbk6i6A)
 - 2023-12-31 [2023总结：三十而立](https://mp.weixin.qq.com/s/B35KlM6zeI-m9epfKD8VDQ)
-- 2023-12-30 [MySQL的正确性为何如此拉垮？](https://mp.weixin.qq.com/s/gQZ3Q5JKV8gaBNhc1puPcA) 
+- 2023-12-30 [MySQL的正确性为何如此拉垮？](https://mp.weixin.qq.com/s/gQZ3Q5JKV8gaBNhc1puPcA)
 - 2023-12-05 [数据库应该放入K8S里吗？](https://mp.weixin.qq.com/s/4a8Qy4O80xqsnytC4l9lRg)
 - 2023-12-04 [把数据库放入Docker是一个好主意吗？](https://mp.weixin.qq.com/s/kFftay1IokBDqyMuArqOpg)
 - 2023-11-22 [向量数据库凉了吗？](https://mp.weixin.qq.com/s/0eBZ4zyX6XjBQO0GqlANnw)
@@ -207,9 +276,10 @@ tags: [数据库]
 - 2023-01-31 [你怎么还在招聘DBA?](https://mp.weixin.qq.com/s/PqCD80H927s0yJrBr4QQqw) 马工
 - 2023-01-30 [云数据库是不是智商税](https://mp.weixin.qq.com/s/c8bpK4o3H7-EyRqVdNDndQ)
 - 2022-08-22 [PostgreSQL 到底有多强？](https://mp.weixin.qq.com/s/651zXDKGwFy8i0Owrmm-Xg)
-- 2022-07-12 [为什么PostgreSQL是最成功的数据库？](https://mp.weixin.qq.com/s/UeNibtbN8JlA1QIlio1mkw) 
+- 2022-07-12 [为什么PostgreSQL是最成功的数据库？](https://mp.weixin.qq.com/s/UeNibtbN8JlA1QIlio1mkw)
 - 2022-07-07 [90后，辞职创业，说要卷死云数据库](https://mp.weixin.qq.com/s/I7OA0thv9Dwvj4zoxIOhJQ)
 - 2022-06-24 [StackOverflow 2022数据库年度调查](https://mp.weixin.qq.com/s/xcORYy2suzOw50SOaOCodw)
 - 2022-05-16 [云RDS：从删库到跑路](https://mp.weixin.qq.com/s/AGEW1iHQkQy4NQyYC2GonQ)
 - 2022-05-10 [DBA还是一份好工作吗？](https://mp.weixin.qq.com/s/Py3o31w3db5E9FsviAZeCA)
 - 2021-05-08 [为什么说PostgreSQL前途无量？](https://mp.weixin.qq.com/s/KBypNeeM4puvzGiKFJ1FmQ)
+
