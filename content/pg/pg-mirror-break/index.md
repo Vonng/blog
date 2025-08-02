@@ -1,5 +1,5 @@
 ---
-title: "卡博子：PostgreSQL 切断镜像站同步通道"
+title: "卡脖子：PG切断镜像站同步通道"
 date: 2025-07-07
 author: vonng
 summary: >
