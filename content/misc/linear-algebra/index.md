@@ -5,10 +5,9 @@ hero: /hero/statistic.jpg
 math: true
 summary: |
   用一条主线将线性代数中的所有概念串联起来
-menu:
-  sidebar:
-    parent: note
 ---
+
+{{< katex >}}
 
 > 用一条主线将线性代数中的所有概念串联起来
 

@@ -5,10 +5,9 @@ hero: /hero/nn-basic.png
 math: true
 summary: |
   神经网络从大脑的工作原理得到启发，可用于解决通用的学习问题。本文介绍神经网络的基本原理与实践
-menu:
-  sidebar:
-    parent: note
 ---
+
+{{< katex >}}
 
 > 神经网络从大脑的工作原理得到启发，可用于解决通用的学习问题。本文介绍神经网络的基本原理与实践
 

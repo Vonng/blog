@@ -1,16 +1,12 @@
 ---
 title: "概率论基本概念"
 date: 2017-03-27
-hero: /hero/probability.png
 math: true
 summary: |
   概率论基础知识笔记，公理化基础，概率演算，计数，条件概率，随机变量与分布函数
-menu:
-  sidebar:
-    parent: note
 ---
 
-
+{{< katex >}}
 
 ## 1. 集合论
 

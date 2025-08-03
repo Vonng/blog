@@ -6,10 +6,9 @@ math: true
 summary: |
   统计分析分为描述统计与推断统计两个领域，
   描述统计（Descriptive Statistics）是关于对已有数据进行描述或表征的技术，也是统计学中最基础的部分。
-menu:
-  sidebar:
-    parent: note
 ---
+
+{{< katex >}}
 
 > 统计分析分为描述统计与推断统计两个领域，描述统计（Descriptive Statistics）是关于对已有数据进行描述或表征的技术，也是统计学中最基础的部分。
 
