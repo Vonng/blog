@@ -1,14 +1,15 @@
 ---
 title: 国产数据库到底能不能打？
 date: 2024-04-25
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信公众号](https://mp.weixin.qq.com/s/AqcYpOgVj91JnkB1B3s4sA)
+author: vonng
 summary: >
   总有朋友问我，**国产数据库到底能不能打？**说实话，**是个得罪人的问题**。所以我们不妨试试用数据说话 —— 希望本文提供的图表，能够帮助读者了解数据库生态格局，并建立更为准确的比例感认知。
-module: []
+series: ["信创国产化"]
+series_order: 4
 tags: [数据库,国产数据库]
 ---
 
+> [微信公众号](https://mp.weixin.qq.com/s/AqcYpOgVj91JnkB1B3s4sA)
 
 总有朋友问我，国产数据库到底能不能打？说实话，**是个得罪人的问题**。所以我们不妨试试用数据说话 —— 希望本文提供的图表，能够帮助读者了解数据库生态格局，并建立更为准确的比例感认知。
 

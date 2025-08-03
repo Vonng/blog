@@ -1,13 +1,16 @@
 ---
 title: "Oracle最终还是杀死了MySQL"
 date: 2024-06-20
-author: |
-  [Peter Zaitsev](https://www.percona.com/blog/author/pz/) | 译：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信原文](https://mp.weixin.qq.com/s/1zlDPie_bVvP7eO6_uTkSw) | [Percona's Blog](https://www.percona.com/blog/is-oracle-finally-killing-mysql/)
+author: vonng
+showAuthor: false
 summary: >
   Peter Zaitsev是MySQL生态重要公司Percona的创始人，他撰文痛批 Oracle 的作为/与不作为杀死了 MySQL。
+series: ["MySQL走好"]
+series_order: 3
 tags: [数据库,MySQL]
 ---
 
+> [Peter Zaitsev](https://www.percona.com/blog/author/pz/) | 译：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信原文](https://mp.weixin.qq.com/s/1zlDPie_bVvP7eO6_uTkSw) | [Percona's Blog](https://www.percona.com/blog/is-oracle-finally-killing-mysql/)
 
 大约15年前，[Oracle收购了Sun公司](https://www.oracle.com/corporate/pressrelease/oracle-buys-sun-042009.html)，从而也拥有了MySQL，互联网上关于Oracle何时会“扼杀MySQL”的[讨论](https://www.quora.com/Did-Oracle-buy-MySQL-in-order-to-kill-it)此起彼伏。当时流传有各种理论：从彻底扼杀 MySQL 以减少对 Oracle 专有数据库的竞争，到干掉 MySQL 开源项目，只留下 “MySQL企业版” 作为唯一选择。这些谣言的传播对 MariaDB，PostgreSQL 以及其他小众竞争者来说都是好生意，因此在当时传播得非常广泛。
 

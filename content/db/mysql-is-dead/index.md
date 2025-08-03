@@ -1,13 +1,15 @@
 ---
-title: MySQL 已死，PostgreSQL 当立
+title: MySQL安魂九霄，PostgreSQL驶向云外
 date: 2024-07-08
-hero: /hero/bad-mysql.jpg
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/JgGCn9o2-DNPNqazPZXTtA)
+author: vonng
 summary: | 
   MySQL 9 新发布，这个所谓“创新版”成为一个酸楚的笑话 —— 曾经“最流行”的数据库 MySQL 正在死去。MySQL is dead，Long live PostgreSQL！
+series: ["MySQL走好"]
+series_order: 1
 tags: [数据库,MySQL,PostgreSQL]
 ---
+
+> [微信公众号](https://mp.weixin.qq.com/s/JgGCn9o2-DNPNqazPZXTtA)
 
 本月，MySQL 9.0 终于发布了（@2024-07），距离上一次大版本更新 8.0 ([@2016-09](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-0.html)) 已经过去八年了。然而这个空洞无物的所谓“创新版本”却犹如一个恶劣的玩笑，宣告着 MySQL **正在死去**。
 

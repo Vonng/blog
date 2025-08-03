@@ -1,15 +1,15 @@
 ---
 title: 20刀好兄弟PolarDB：论数据库该卖什么价？
 date: 2024-04-25
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信公众号](https://mp.weixin.qq.com/s/AqcYpOgVj91JnkB1B3s4sA)
+author: vonng
 summary: >
   今天来聊聊，商业数据库，开源数据库，云数据库，国产数据库的公允价格是多少。
-module: []
+series: ["信创国产化"]
+series_order: 5
 tags: [数据库,国产数据库]
 ---
 
-
+> [微信公众号](https://mp.weixin.qq.com/s/AqcYpOgVj91JnkB1B3s4sA)
 
 昨天一篇中标新闻引起关注与热议：《[IT 行业烂了。。。1610 万大单。。。290 万（中）。。。维保 0.01 元。。。PolarDB 单价 130 元](https://mp.weixin.qq.com/s/hw2pVyf-Y6VX6ZA_mbFylQ)》。刚看到这个标题时，我也没特别惊讶，因为云上 PolarDB 数据库的单价我是非常清楚的，每vCPU·每月的价格在 ¥250 - ¥400，考虑到大客可以干到两三折的折扣也就是 50 ～ 120 块钱，“单价” 130 ¥ 并不算是什么离谱的报价数字。
 

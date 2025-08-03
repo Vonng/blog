@@ -2,12 +2,15 @@
 title: "MySQL性能越来越差，Sakila将何去何从？"
 linkTitle: "MySQL 到底将何去何从？"
 date: 2024-06-19
-author: |
-  [Marco Tusa](https://www.percona.com/blog/author/tusa) | 译：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信原文](https://mp.weixin.qq.com/s/nKD00j84R-EcOU1VPL1ibA) | [Percona's Blog](https://www.percona.com/blog/sakila-where-are-you-going/)
+showAuthor: false
 summary: >
   MySQL版本越高性能反而越差？在PostgreSQL高歌猛进，吞噬数据库世界的同时，MySQL的性能和功能被甩开的越来越远。为啥MySQL在Oracle手中止步不前？我看主要还是云厂商白嫖的锅，PG应当引以为戒。
+series: ["MySQL走好"]
+series_order: 2
 tags: [数据库,MySQL]
 ---
+
+> 作者： [Marco Tusa](https://www.percona.com/blog/author/tusa) | 译：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信原文](https://mp.weixin.qq.com/s/nKD00j84R-EcOU1VPL1ibA) | [Percona's Blog](https://www.percona.com/blog/sakila-where-are-you-going/)
 
 在 Percona，我们时刻关注用户的需求，并尽力满足他们。我们特别监控了 MySQL 版本的分布和使用情况，发现了一个引人注目的趋势：从版本 5.7 迁移到 8.x 的步伐明显缓慢。更准确地说，许多用户仍需坚持使用 5.7 版本。
 

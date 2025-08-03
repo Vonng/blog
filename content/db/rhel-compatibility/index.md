@@ -5,6 +5,8 @@ author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/xHG8OURTYlmnQTorFkzioA) | [知乎](https://zhuanlan.zhihu.com/p/660166371)
 summary: >
   RHEL系列操作系统发行版兼容水平：RHEL = Rocky ≈ Anolis > Alma > Oracle >> Euler ，推荐使用 RockyLinux 8.8，有国产化要求可以使用 Anolis 8.8 
+series: ["信创国产化"]
+series_order: 2
 tags: [数据库,操作系统]
 ---
 

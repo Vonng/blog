@@ -19,7 +19,7 @@ tags: [MCP,Database,PostgreSQL]
 
 不同于以前那种直接把整个数据库对 Agent 开放的粗暴做法，这个工具箱通过封装参数模板 SQL 的方式，显著提高了数据库 MCP 的实用性与安全性，可以考虑搞起生产试点了 —— 老冯也打好了 RPM/DEB 包供大家尝鲜。
 
-[![github.webp](github.webp)](https://googleapis.github.io/genai-toolbox/getting-started/introduction/)
+> https://googleapis.github.io/genai-toolbox/getting-started/introduction/
 
 
 ------

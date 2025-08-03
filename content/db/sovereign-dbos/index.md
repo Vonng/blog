@@ -2,12 +2,15 @@
 title: "基础软件需要什么样的自主可控？"
 date: 2023-08-31
 hero: /hero/sovereign-dbos.jpg
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/hWbcc9cMM9qTjPJ0m6G0Kg) | [知乎原文](https://zhuanlan.zhihu.com/p/653583260)
+author: vonng
 summary: >
   当我们说自主可控时，到底在说什么？运维自主可控 与 研发自主可控 ，国家/用户真正需要的自主可控是前者，而不是华而不实的“自研”。 
+series: ["信创国产化"]
+series_order: 1
 tags: [数据库,国产数据库]
 ---
+
+> [微信公众号](https://mp.weixin.qq.com/s/hWbcc9cMM9qTjPJ0m6G0Kg) | [知乎原文](https://zhuanlan.zhihu.com/p/653583260)
 
 **当我们说自主可控时，到底在说什么？**
 

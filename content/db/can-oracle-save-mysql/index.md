@@ -1,12 +1,15 @@
 ---
 title: "Oracle 还能挽救 MySQL 吗？"
-date: 2024-06-21
-author: |
-  [Peter Zaitsev](https://www.percona.com/blog/author/pz/) | 译：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信原文](https://mp.weixin.qq.com/s/0OgcduKvmprBcECgtn73Cg) | [Percona's Blog](https://www.percona.com/blog/can-oracle-save-mysql/)
+date: 2024-06-21  
 summary: >
   Percona 创始人 Peter Zaitsev 在官方博客上公开表达了对 MySQL，及其知识产权属主 Oracle 的失望，以及对版本越高性能越差的不满，这确实是一个值得关注的信号。
+showAuthor: false
+series: ["MySQL走好"]
+series_order: 4
 tags: [数据库,MySQL]
 ---
+
+> 作者：[Peter Zaitsev](https://www.percona.com/blog/author/pz/) | 译：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信原文](https://mp.weixin.qq.com/s/0OgcduKvmprBcECgtn73Cg) | [Percona's Blog](https://www.percona.com/blog/can-oracle-save-mysql/)
 
 Percona 作为 MySQL 生态的主要扛旗者，开发了一系列用户耳熟能详的工具：PMM 监控，XtraBackup 备份，PT 系列工具，以及 MySQL 发行版。
 然而近日，Percona 创始人 Peter Zaitsev 在官方博客上公开表达了对 MySQL，及其知识产权属主 Oracle 的失望，以及对版本越高性能越差的不满，这确实是一个值得关注的信号。

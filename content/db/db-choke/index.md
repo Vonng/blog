@@ -1,13 +1,15 @@
 ---
 title: 数据库真被卡脖子了吗？
 date: 2023-11-02
-hero: /hero/db-choke.webp
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信公众号](https://mp.weixin.qq.com/s/vh1JE_BdaLetWtt5vvPDDw) | [知乎](https://zhuanlan.zhihu.com/p/664816961)
+author: vonng
 summary: >
   很多“国产数据库”就是烂泥扶不上墙的残次品，信创操作系统数据库约等于 **IT 预制菜进校园**。用户捏着鼻子迁移，开发者假装在卖力，陪着不懂也不在乎技术的领导演戏。基础软件行业其实没人卡脖子，真卡脖子的都是所谓“自己人”。
+series: ["信创国产化"]
+series_order: 3
 tags: [数据库,国产数据库]
 ---
+
+> [微信公众号](https://mp.weixin.qq.com/s/vh1JE_BdaLetWtt5vvPDDw) | [知乎](https://zhuanlan.zhihu.com/p/664816961)
 
 如果说“[云数据库](/zh/blog//cloud/rds/)”算是成本ROI略欠体面的合格品，那么很多“国产数据库”就是烂泥扶不上墙的残次品。信创操作系统数据库约等于 **IT 预制菜进校园**。用户捏着鼻子迁移，开发者假装在卖力，陪着不懂也不在乎技术的领导演戏。大量人力财力被挥霍到没有价值的地方去，反而了浪费掉了真正的机会。[基础软件](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486061&idx=1&sn=a1452dfa864f702d40bf612839a4e9e4&chksm=fe4b3fb6c93cb6a0aa5aef59d4381c49354ee0f741dd7e92c91549864ac58597f93a6ab886ed&scene=21#wechat_redirect)行业其实没人卡脖子，真正卡脖子的都是所谓“自己人”。
 
