@@ -1,5 +1,5 @@
 ---
-title: Postgres大法师：文章导航
+title: 专栏：Postgres大法师
 weight: 3
 date: 2025-08-02
 summary: 关于 PostgreSQL 的开发，管理，原理，生态，工具，架构设计，性能优化，故障排查等方面的文章导航。

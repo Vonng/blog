@@ -1,5 +1,5 @@
 ---
-title: 数据库老司机：文章导航
+title: 专栏：数据库老司机
 weight: 1
 date: 2025-08-02
 author: vonng
@@ -153,7 +153,6 @@ tags: [数据库]
 - 2025-06-18 [数据库老司机勇闯现代前端大观园](https://mp.weixin.qq.com/s/51dKs7wR6WCNiNWX5j_gWg)
 - 2025-06-03 [别争了，AI时代数据库已经尘埃落定](https://mp.weixin.qq.com/s/bChEvpXgXKi5njr6Kj5YGg)
 - 2025-05-31 [笔记本进酱油，脑子瓦特了](https://mp.weixin.qq.com/s/7epKw8KSZ0KsrXPFh8V8zQ)
-
 - 2025-05-27 [开放数据标准：Postgres，OTel，与Iceberg](https://mp.weixin.qq.com/s/L7rWXFo8UYJLzqXeLoAanw)
 - 2025-05-23 [小数据的失落十年：分布式分析的错付](https://mp.weixin.qq.com/s/rfv_oSRD4LS-W9xFd_WB9g)
 - 2025-05-19 [OpenAI：将PostgreSQL伸缩至新阶段](https://mp.weixin.qq.com/s/ykrasJ2UeKZAMtHCmtG93Q)
