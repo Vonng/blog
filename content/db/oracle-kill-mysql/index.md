@@ -56,9 +56,9 @@ MySQL Heatwave 引入了许多 MySQL 社区版或企业版中没有的功能，�
 
 ## 参考阅读
 
-[MySQL性能越来越差，Sakila将何去何从？](https://pigsty.cc/zh/blog/db/sakila-where-are-you-going/)
+[MySQL性能越来越差，Sakila将何去何从？](/db/sakila-where-are-you-going/)
 
-[MySQL 的正确性为何如此垃圾？](https://pigsty.cc/zh/blog/db/bad-mysql/)
+[MySQL 的正确性为何如此垃圾？](/db/bad-mysql/)
 
 [Is Oracle Finally Killing MySQL?](https://www.percona.com/blog/is-oracle-finally-killing-mysql/)
 

@@ -275,7 +275,7 @@ In summary, official PG RPMs might not yet support LoongArch, but APT has a chan
 
 ### Issue: Server-side Chinese Character Encoding
 
-At the recent conference, Jeremy Schneider presented an insightful talk on collation rules that resonated with me. He highlighted the pitfalls of not using C.UTF8 for collation, a practice I've advocated for based on my own [research](https://pigsty.cc/zh/blog/admin/collate/), and which is detailed in his presentation here. 
+At the recent conference, Jeremy Schneider presented an insightful talk on collation rules that resonated with me. He highlighted the pitfalls of not using C.UTF8 for collation, a practice I've advocated for based on my own [research](/pg/collate/), and which is detailed in his presentation here. 
 
 Post-talk, I discussed further with Jeremy and Peter Eisentraut the nuances of character sets in China, especially the challenges posed by the mandatory **GB18030** standard, which PostgreSQL can handle on the client side but not the server side. Also, there are some issues about 20 Chinese characters not working on the `convert_to` + `gb18030` encoding mapping.
 
