@@ -11,19 +11,24 @@
 # ordered by weight from lowest to highest.
 
 [[main]]
+name = "About"
+pageRef = "about"
+weight = 3
+
+[[main]]
 name = "PostgreSQL"
 pageRef = "pg"
-weight = 1
+weight = 4
 
 [[main]]
 name = "CloudExit"
 pageRef = "cloud"
-weight = 3
+weight = 4
 
 [[main]]
 name = "Database"
 pageRef = "db"
-weight = 4
+weight = 6
 
 
 [[main]]
@@ -51,13 +56,13 @@ weight = 10
 [[main]]
   parent = "Column"
   name = "Travel Notes"
-  pageRef = "trip"
+  url = "/trip"
   weight = 14
 
 [[main]]
   parent = "Column"
   name = "Miscellaneous"
-  pageRef = "misc"
+  url = "/misc"
   weight = 15
 
 [[main]]

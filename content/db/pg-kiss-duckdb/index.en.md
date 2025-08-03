@@ -2,7 +2,7 @@
 title: "Database Planet Collision: When PG Falls for DuckDB"
 date: 2025-03-12
 summary: |
-   The PG community’s now in an all-out frenzy to stitch DuckDB into the Postgres bloodstream — big enough for Andy Pavlo to give it prime-time coverage in his 2024 database retrospective. If you ask me, we’re on the brink of a cosmic collision in database-land, and Postgres + DuckDB is the meteor we should all be watching.
+   If you ask me, we’re on the brink of a cosmic collision in database-land, and Postgres + DuckDB is the meteor we should all be watching.
 author: vonng
 tags: [PostgreSQL,DuckDB,Database]
 ---

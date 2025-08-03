@@ -1,6 +1,5 @@
 ---
-title: The idea way to install PostgreSQL Extensions
-linkTitle: "The idea way to install PG Extension"
+title: The ideal way to deliver PostgreSQL Extensions
 date: 2024-11-02
 author: |
   [Vonng](https://vonng.com)([@Vonng](https://vonng.com/en/))
