@@ -68,36 +68,44 @@ weight = 10
 
 [[main]]
   name = "作品"
-  weight = 50
+  weight = 40
 
 [[main]]
   name = "Pigsty, 开源 PG RDS"
   parent = "作品"
   url = "https://pgsty.com/zh/"
-  weight = 51
+  weight = 50
+
+[[main]]
+  name = "PIG, PG 扩展包管理器"
+  parent = "作品"
+  url = "https://pig.pgsty.com/zh/"
+  weight = 60
+
+[[main]]
+name = "PostgreSQL 扩展目录"
+parent = "作品"
+url = "https://ext.pgsty.com/zh/"
+weight = 70
 
 [[main]]
   name = "Capslock 修饰键改造"
   parent = "作品"
 url = "https://capslock.vonng.com/zh"
-  weight = 52
+  weight = 80
 
 [[main]]
   name = "设计数据密集型应用"
   parent = "作品"
   url = "https://ddia.vonng.com"
-  weight = 53
+  weight = 90
 
 [[main]]
   name = "PostgreSQL 内幕探索"
   parent = "作品"
   url = "https://pgint.vonng.com"
-  weight = 54
+  weight = 100
 
-#[[main]]
-#  name = "Test"
-#  pageRef = "pagTest"
-#  weight = 1000
 
 [[main]]
   identifier = "twitter"
