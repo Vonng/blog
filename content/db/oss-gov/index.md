@@ -50,19 +50,19 @@ EMBAG 的实施预计将成为其他国家考虑类似措施的典范。它旨�
 
 ## 参考阅读
 
-[国产数据库到底能不能打？](/zh/blog/db/db-china)
+[国产数据库到底能不能打？](/db/db-china)
 
-[数据库真被卡脖子了吗？](/zh/blog/db/db-choke)
+[数据库真被卡脖子了吗？](/db/db-choke)
 
 [国产数据库是大炼钢铁吗？](https://mp.weixin.qq.com/s/aLXC7f2iYUfATNWsnyotkA)
 
-[基础软件到底需要什么样的自主可控？](/zh/blog/db/sovereign-dbos/)
+[基础软件到底需要什么样的自主可控？](/db/sovereign-dbos/)
 
 [中国对PostgreSQL的贡献约等于零吗？](https://mp.weixin.qq.com/s/79_PnX-a5iSfDMgz_VUx5A)
 
-[分布式数据库是伪需求吗？](/zh/blog/db/distributive-bullshit)
+[分布式数据库是伪需求吗？](/db/distributive-bullshit)
 
-[EL 兼容发行版哪家强？](/zh/blog/db/rhel-compatibility)
+[EL 兼容发行版哪家强？](/db/rhel-compatibility)
 
 [机场出租车恶性循环与国产数据库怪圈](https://mp.weixin.qq.com/s/uccjOkAR1zgur6tftHkzMg)
 

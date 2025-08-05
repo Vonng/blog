@@ -10,7 +10,7 @@ tags: [下云,Cloudflare]
 
 上周我作为圆桌嘉宾受邀参加了 Cloudflare 在深圳举办的 Immerse 大会，在 Cloudflare Immerse 鸡尾酒会和晚宴上，我与 Cloudflare 亚太区CMO，大中华区技术总监，以及一线工程师深入交流探讨了许多关于 Cloudflare 的问题。
 
-本文是圆桌会谈纪要与问答采访的摘录，从用户视角点评 Cloudflare 请参考本号前一篇文章：《[**吊打公有云的赛博佛祖 Cloudflare**](/zh/blog/cloud/cloudflare)》
+本文是圆桌会谈纪要与问答采访的摘录，从用户视角点评 Cloudflare 请参考本号前一篇文章：《[**吊打公有云的赛博佛祖 Cloudflare**](/cloud/cloudflare)》
 
 [![](featured.webp)](https://mp.weixin.qq.com/s/jU418HAlObe1nWgzEsLrJQ)
 
@@ -46,13 +46,13 @@ tags: [下云,Cloudflare]
 
 再来聊一聊**成本**吧。在独立开发者，个人站长这个圈子里，我们给 Cloudflare 起了一个外号 —— “**赛博佛祖**”。这主要是因为 Cloudflare 提供了非常慷慨的免费计划。Cloudflare 有着相当独特的商业模式 —— **免流量费，靠安全赚钱**。
 
-比如说 R2，我认为这就是专门针对 AWS S3 进行啪啪打脸的。我曾经作为大甲方对各种云服务与自建的成本进行过精算 —— 得出会让普通用户感到震惊的结论。云上的[**对象存储**](/zh/blog/cloud/s3) / [**块存储**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485745&idx=4&sn=93746ecea381afd8e2f9820447b09ec7&chksm=fe4b3ceac93cb5fc44f33ffff226747bc317854acbb3882aeb0d9a7e196eeb5df002d0e77275&scene=21#wechat_redirect) 比本地自建贵了两个数量级，堪称史诗级杀猪盘。AWS S3 标准档价格 0.023 $/GB·月，而 Cloudflare R2 价格 0.015 $/GB·月，看上去只是便宜了 1/3 。但重要的是**流量费全免**！这就带来质变了！
+比如说 R2，我认为这就是专门针对 AWS S3 进行啪啪打脸的。我曾经作为大甲方对各种云服务与自建的成本进行过精算 —— 得出会让普通用户感到震惊的结论。云上的[**对象存储**](/cloud/s3) / [**块存储**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485745&idx=4&sn=93746ecea381afd8e2f9820447b09ec7&chksm=fe4b3ceac93cb5fc44f33ffff226747bc317854acbb3882aeb0d9a7e196eeb5df002d0e77275&scene=21#wechat_redirect) 比本地自建贵了两个数量级，堪称史诗级杀猪盘。AWS S3 标准档价格 0.023 $/GB·月，而 Cloudflare R2 价格 0.015 $/GB·月，看上去只是便宜了 1/3 。但重要的是**流量费全免**！这就带来质变了！
 
 比如，我自己那个网站也还算有点流量，最近一个月跑了 300GB ，没收钱，我有一个朋友每月跑掉 3TB 流量，没收钱；然后我在推特上看到有个朋友 Free Plan 跑黄网图床，每月 1PB 流量，这确实挺过分了，于是 CF 联系了他 —— 建议购买企业版，也仅仅是 “建议”。
 
 ------
 
-接下来我们来聊一聊**质量**。我讲下云的一个前提是：各家公有云厂商卖的是没有不可替代性的大路货标准品。比如那种在[**老罗直播间**](/zh/blog/cloud/luo-live)中，夹在吸尘器与牙膏中间卖的云服务器。但是 Cloudflare 确实带来了一些不一样的东西。
+接下来我们来聊一聊**质量**。我讲下云的一个前提是：各家公有云厂商卖的是没有不可替代性的大路货标准品。比如那种在[**老罗直播间**](/cloud/luo-live)中，夹在吸尘器与牙膏中间卖的云服务器。但是 Cloudflare 确实带来了一些不一样的东西。
 
 举个例子，Cloudflare Worker 确实很有意思，比起传统云上笨拙的开发部署体验来说，CF worker 真正做到了让开发者爽翻天的 Serverless 效果。开发者不需要操心什么数据库连接串，AccessPoint，AK/SK密钥管理，用什么数据库驱动，怎么管理本地日志，怎么搭建 CI/CD 流程这些繁琐问题，最多在环境变量里面指定一下存储桶名称这类简单信息就够了。写好 Worker 胶水代码实现业务逻辑，命令行一把梭就可以完成全球部署上线。
 
@@ -68,7 +68,7 @@ tags: [下云,Cloudflare]
 
 **专业的服务态度指的是？**
 
-本土云厂商在面对大故障时，体现出相当业余的专业素养与服务态度，这一点我专门写了好几篇文章进行批判。说起来特别赶巧，去年双十一，阿里云出了一个史诗级[**全球大故障**](/zh/blog/cloud/aliyun)。Cloudflare 也出了个机房断电故障。一周前 4.8 号，腾讯云也出了个翻版[**全球故障**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487267&idx=1&sn=7d31d44e89560356b5c5a2e7a40bb1e1&chksm=fe4b3af8c93cb3ee9b8000cd90a12a798395f67205d4ba5b0c77b8c5b6ce9ea448d9fc014921&scene=21#wechat_redirect)，Cloudflare 也恰好在同一天又出了 Code Orange 机房断电故障。作为一个工程师，我理解故障是难以避免的 —— **但出现故障后，体现出来的专业素养和服务态度是天差地别的**。
+本土云厂商在面对大故障时，体现出相当业余的专业素养与服务态度，这一点我专门写了好几篇文章进行批判。说起来特别赶巧，去年双十一，阿里云出了一个史诗级[**全球大故障**](/cloud/aliyun)。Cloudflare 也出了个机房断电故障。一周前 4.8 号，腾讯云也出了个翻版[**全球故障**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487267&idx=1&sn=7d31d44e89560356b5c5a2e7a40bb1e1&chksm=fe4b3af8c93cb3ee9b8000cd90a12a798395f67205d4ba5b0c77b8c5b6ce9ea448d9fc014921&scene=21#wechat_redirect)，Cloudflare 也恰好在同一天又出了 Code Orange 机房断电故障。作为一个工程师，我理解故障是难以避免的 —— **但出现故障后，体现出来的专业素养和服务态度是天差地别的**。
 
 首先，阿里云和腾讯云的故障都是人为操作失误/糟糕的软件工程/架构设计导致的，而 Cloudflare 的问题是机房断电，某种程度上算不可抗力的天灾。其次，在处理态度上，阿里云到现在都没发布一个像样的故障复盘，我替它做了一个[**非官方故障复盘**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486468&idx=1&sn=7fead2b49f12bc2a2a94aae942403c22&chksm=fe4b39dfc93cb0c92e5d4c67241de0519ae6a23ce6f07fe5411b95041accb69e5efb86a38150&scene=21#wechat_redirect)；至于腾讯云，我干脆连故障通告都替他们发了 —— 比官网还快10分钟。腾讯云倒是在前天发布了一个[**故障复盘**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487348&idx=1&sn=412cf2afcd93c3f0a83d65219c4a28e8&chksm=fe4b3aafc93cb3b900cef33bd0510c7c86367d71877b0ee65d4847da0ae1298e2b1fd88d0b3f&scene=21#wechat_redirect)，但是也比较敷衍，专业素养不足，这种复盘报告拿到 Apple 和 Google 都属于不合格的 Post-Mortem ……
 

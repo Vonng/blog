@@ -10,7 +10,7 @@ tags: [PostgreSQL,PG生态,MSSQL]
 ---
 
 
-许多人对于 PostgreSQL 生态已经发展到什么阶段并没有一个直观的印象 —— 除了 [吞噬数据库世界](/zh/blog/pg/pg-eat-db-world)，囊括万物的扩展生态之外，PostgreSQL 还可以直接从内核层面，替换掉 Oracle，SQL Server 与 MongoDB，当然 MySQL 就更不在话下了。
+许多人对于 PostgreSQL 生态已经发展到什么阶段并没有一个直观的印象 —— 除了 [吞噬数据库世界](/pg/pg-eat-db-world)，囊括万物的扩展生态之外，PostgreSQL 还可以直接从内核层面，替换掉 Oracle，SQL Server 与 MongoDB，当然 MySQL 就更不在话下了。
 
 当然要说主流数据库中，暴露风险最高的是谁，那毫无疑问是**微软的 SQL Server 了**。MSSQL 被替代的是最彻底的 —— 直接在 WireProtocol 层面被替代了。而主导这件事的是 AWS，亚马逊云服务。
 
@@ -20,7 +20,7 @@ tags: [PostgreSQL,PG生态,MSSQL]
 
 ## Babelfish
 
-虽然我一直吐槽云厂商[**白嫖开源**](/zh/blog/cloud/redis-oss)，但我承认这种策略是极为有效的 ——
+虽然我一直吐槽云厂商[**白嫖开源**](/cloud/redis-oss)，但我承认这种策略是极为有效的 ——
 AWS 拿着开源的 PostgreSQL 和 MySQL 内核，一路杀穿数据库市场，拳打 Oracle ，脚踢微软，成为数据库市场份额毫无争议的一哥。
 而这两年 AWS 更是玩了一招釜底抽薪，开发整合了一个 BabelfishPG 的扩展插件，提供“**线缆协议**”级别的兼容性。
 

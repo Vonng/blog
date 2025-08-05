@@ -15,11 +15,11 @@ tags: [PostgreSQL]
 
 [![news.webp](news.webp)](https://www.postgresql.org/about/news/postgresql-17-released-2936/)
 
-在年初发表的 《[PostgreSQL 正在吞噬数据库世界](/zh/blog/pg/pg-eat-db-world)》中，我提出 **可扩展性** 是 PostgreSQL 独一无二的核心优势。
-很高兴地看到这一点在短短半年中，就成为了 PostgreSQL 社区的关注焦点与共识，并在 [PGCon.Dev 2024](/zh/blog/pg/pgcondev-2024/) 与本次 PostgreSQL 17 发布中得到充分的体现。
+在年初发表的 《[PostgreSQL 正在吞噬数据库世界](/pg/pg-eat-db-world)》中，我提出 **可扩展性** 是 PostgreSQL 独一无二的核心优势。
+很高兴地看到这一点在短短半年中，就成为了 PostgreSQL 社区的关注焦点与共识，并在 [PGCon.Dev 2024](/pg/pgcondev-2024/) 与本次 PostgreSQL 17 发布中得到充分的体现。
 
-关于新特性，我先前在 《[PostgreSQL 17 Beta1 发布！牙膏管挤爆了！](/zh/blog/pg/pg-17-beta1)》中已经有过介绍，在此就不再赘述了。
-这个大版本有很多新特性，当然要说最让我印象深刻的是， PG竟然能在[原本就已经非常强悍的性能](/zh/blog/pg/pg-performence) 基础上让写入吞吐再次翻倍 —— **朴实无华的强悍**。
+关于新特性，我先前在 《[PostgreSQL 17 Beta1 发布！牙膏管挤爆了！](/pg/pg-17-beta1)》中已经有过介绍，在此就不再赘述了。
+这个大版本有很多新特性，当然要说最让我印象深刻的是， PG竟然能在[原本就已经非常强悍的性能](/pg/pg-performence) 基础上让写入吞吐再次翻倍 —— **朴实无华的强悍**。
 
 但比起具体的功能特性，我认为 PG 社区最大的转变发生在**心态与精神**上 —— 在这次发布通告中，PostgreSQL 去掉了原本 Slogan “世界上最先进的开源关系型数据库” 中的 “关系型” 三个字定语，直接变成了 “世界上最先进的开源数据库”。
 并且在最后 “关于PostgreSQL” 的部分说到：“PG 的功能集，高级特性，可扩展性，安全性，稳定性已经比肩甚至超越了顶级商业数据库”。所以我想 “开源” 这个定语用不了多久也许就可以一同去掉，变成 “**世界上最先进的数据库**” 了。

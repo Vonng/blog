@@ -20,7 +20,7 @@ PostgreSQL的功能非常强大，但是要把PostgreSQL用好，需要后端、
 
 本文针对PostgreSQL数据库原理与特性，整理了一份开发/运维规约，希望可以减少大家在使用PostgreSQL数据库过程中遇到的困惑：你好我也好，大家都好。
 
-本文[第一版](/zh/blog/dev/pg-convention)主要针对 PostgreSQL 9.4 - PostgreSQL 10 版本 ，当前最新版本针对 PostgreSQL 15/16/17 进行更新与调整。
+本文[第一版](/dev/pg-convention)主要针对 PostgreSQL 9.4 - PostgreSQL 10 版本 ，当前最新版本针对 PostgreSQL 15/16/17 进行更新与调整。
 
 
 ---------

@@ -73,7 +73,7 @@ Santa ME! - 易圣诞老人,小精灵快乐的脸效果！
 SELECT * FROM app WHERE name LIKE '%支付宝%';
 ```
 
-前后模糊的查询可以通过常规的Btree索引进行加速，注意在PostgreSQL中使用 `LIKE`查询时不要掉到LC_COLLATE的坑里去了，详情参考这篇文章：[**PG中的本地化排序规则**](/zh/blog/admin/collate/)。
+前后模糊的查询可以通过常规的Btree索引进行加速，注意在PostgreSQL中使用 `LIKE`查询时不要掉到LC_COLLATE的坑里去了，详情参考这篇文章：[**PG中的本地化排序规则**](/admin/collate/)。
 
 ```sql
 CREATE INDEX ON app(name COLLATE "C");          -- 后模糊

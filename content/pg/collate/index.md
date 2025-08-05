@@ -14,7 +14,7 @@ tags: [PostgreSQL,PG管理]
 
 答案其实很简单，**除非真的明确知道自己会用到LOCALE相关功能，否则就根本不应该配置`C.UTF8`之外的任何字符编码与本地化排序规则选项**。特别是`
 
-关于[**字符编码**](/zh/blog/db/character-encoding/)的部分，之前写过一篇文章专门介绍，这里表过不提。今天专门说一下**LOCALE**（本地化）的配置问题。
+关于[**字符编码**](/db/character-encoding/)的部分，之前写过一篇文章专门介绍，这里表过不提。今天专门说一下**LOCALE**（本地化）的配置问题。
 
 如果说服务端字符编码配置因为某些原因配置为`UTF8`之外的值也许还情有可原，那么`LOCALE`配置为`C`之外的任何选就是**无可救药**了。因为对于PostgreSQL来说，LOCALE不仅仅是控制日期和钱怎么显示这一类无伤大雅的东西，而是会影响到某些关键功能的使用。
 
@@ -164,7 +164,7 @@ INSERT INTO some_chinese VALUES
 SELECT * FROM some_chinese ORDER BY name;
 ```
 
-执行以下SQL，按照默认的`C`排序规则对表中的记录排序。可以看到，这里实际上是按照字符的`ascii|unicode` [**码位**](/zh/blog/db/character-encoding#编码字符集-ccs) 进行排序的。
+执行以下SQL，按照默认的`C`排序规则对表中的记录排序。可以看到，这里实际上是按照字符的`ascii|unicode` [**码位**](/db/character-encoding#编码字符集-ccs) 进行排序的。
 
 ```bash
 vonng=# SELECT name, ascii(name) FROM some_chinese ORDER BY name COLLATE "C";

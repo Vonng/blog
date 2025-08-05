@@ -68,7 +68,7 @@ PostgreSQL 在功能上是 MongoDB 的上位替代，所以可以对 MongoDB 的
 （另一被原位兼容的是 [SQL Server](https://mp.weixin.qq.com/s/c2TmMo0DflkSUli1BsLthQ) ）； PongoDB 则是直接在 NodeJS 客户端驱动侧将 PG 仿真成一个 MongoDB。
 此外还有 `mongo_fdw`，可以让 PG 从 MongoDB 中用 SQL 读取数据，`wal2mongo` 将 PG 变更抽取为 BSON。
 
-例如 [**FerretDB**](/zh/blog/pg/ferretdb) 项目通过中间件的方式在 PostgreSQL 集群上实现了 MongoDB 线缆协议兼容性 —— MongoDB 应用甚至都不需要更换客户端驱动，修改业务代码就能迁移到 PostgreSQL 上。（另一被原位线缆兼容的是 [**SQL Server** ](/zh/blog/pg/pg-replace-mssql)）；**PongoDB** 则是直接在 NodeJS 客户端驱动侧将 PG 仿真成一个 MongoDB。此外还有 `mongo_fdw`，可以让 PG 从 MongoDB 中用 SQL 读取数据，`wal2mongo` 将 PG 变更抽取为 BSON。
+例如 [**FerretDB**](/pg/ferretdb) 项目通过中间件的方式在 PostgreSQL 集群上实现了 MongoDB 线缆协议兼容性 —— MongoDB 应用甚至都不需要更换客户端驱动，修改业务代码就能迁移到 PostgreSQL 上。（另一被原位线缆兼容的是 [**SQL Server** ](/pg/pg-replace-mssql)）；**PongoDB** 则是直接在 NodeJS 客户端驱动侧将 PG 仿真成一个 MongoDB。此外还有 `mongo_fdw`，可以让 PG 从 MongoDB 中用 SQL 读取数据，`wal2mongo` 将 PG 变更抽取为 BSON。
 
 ![ferret.webp](ferret.webp)
 
@@ -82,7 +82,7 @@ PostgreSQL 在功能上是 MongoDB 的上位替代，所以可以对 MongoDB 的
 
 ## 正确性与性能被吊打
 
-对于数据库来说，**正确性至关重要** —— 中立的分布式事务测试框架 JEPSEN 对 MongoDB 的正确性做过评测：结果可以用 “**一塌糊涂**”形容（BTW：另一个难兄难弟是 [**MySQL**](/zh/blog/db/bad-mysql)）。
+对于数据库来说，**正确性至关重要** —— 中立的分布式事务测试框架 JEPSEN 对 MongoDB 的正确性做过评测：结果可以用 “**一塌糊涂**”形容（BTW：另一个难兄难弟是 [**MySQL**](/db/bad-mysql)）。
 
 当然，MongoDB 的强项就是面不改色心不跳的 “忽悠“，尽管 JEPSEN 提了这么多的问题，在 MongoDB 官网上，关于 Jespen 的评测是这么介绍的：”*到目前为止，因果一致性通常仅限于研究项目......MongoDB 是我们所知的第一个提供实现的商业数据库之一*“
 
@@ -107,9 +107,9 @@ PostgreSQL 在功能上是 MongoDB 的上位替代，所以可以对 MongoDB 的
 
 另一份更近一点的[性能对比](https://medium.com/@yurexus/can-postgresql-with-its-jsonb-column-type-replace-mongodb-30dc7feffaf3) 着重测试了 JSONB / GIN 索引下的表现对比，得出的结论也是：PostgreSQL JSONB 列是 MongoDB 的替代。
 
-在当下，[**单机 PostgreSQL 性能**](/zh/blog/pg/pg-performence) 可以轻松 Scale 到几十TB ～ 几百TB数量级，支撑几十万的点写入 QPS 与几百万的点查询 QPS。只用 PostgreSQL 支撑业务到百万日活 / 百万美元营收甚至直接 IPO 都毫无问题。
+在当下，[**单机 PostgreSQL 性能**](/pg/pg-performence) 可以轻松 Scale 到几十TB ～ 几百TB数量级，支撑几十万的点写入 QPS 与几百万的点查询 QPS。只用 PostgreSQL 支撑业务到百万日活 / 百万美元营收甚至直接 IPO 都毫无问题。
 
-老实说，MongoDB 的性能已经完全跟不上时代了，而它引以为傲的“内置分片”可伸缩性，[**在软件架构与性能突飞猛进**](/zh/blog/pg/pg-scalability)，[**硬件遵循摩尔定律指数发展**](/zh/blog/cloud/bonus) 的当下显得毫无意义。
+老实说，MongoDB 的性能已经完全跟不上时代了，而它引以为傲的“内置分片”可伸缩性，[**在软件架构与性能突飞猛进**](/pg/pg-scalability)，[**硬件遵循摩尔定律指数发展**](/cloud/bonus) 的当下显得毫无意义。
 
 
 
@@ -121,7 +121,7 @@ PostgreSQL 在功能上是 MongoDB 的上位替代，所以可以对 MongoDB 的
 
 ![db-engine.png](db-engine.png)
 
-但它们的区别在于，PostgreSQL 仍然在继续增长，甚至已经在 StackOverflow 全球开发者调研中，连续三年成为 [**最流行的数据库**](/zh/blog/pg/pg-in-2024) 并势头不减赢麻了。而 MongoDB 在 2021 年开始就掉头向下开始过气。使用率，口碑，需求度都出现了停滞或扭头向下的发展趋势：
+但它们的区别在于，PostgreSQL 仍然在继续增长，甚至已经在 StackOverflow 全球开发者调研中，连续三年成为 [**最流行的数据库**](/pg/pg-in-2024) 并势头不减赢麻了。而 MongoDB 在 2021 年开始就掉头向下开始过气。使用率，口碑，需求度都出现了停滞或扭头向下的发展趋势：
 
 ![sf-metric.png](sf-metric.png)
 
@@ -197,7 +197,7 @@ Stonebraker 表示过，带有可扩展类型的关系模型早已覆盖了数�
 
 但是问题就来了，如果这些文档数据库最终还是要变成关系数据库，那么为什么不直接用 PostgreSQL 关系数据库呢？难道用户可以指望 MongoDB 这孤家寡人的一家商业数据库公司，能够在这个赛道赶上整个 PostgreSQL 开源生态？—— 这个生态可是包含了几乎所有软件/云/科技巨头在内 —— **能战胜一个生态的，只有另一个生态**。
 
-在 MongoDB 不断重新发明 RDBMS 世界的各种轮子，拙劣地跟在 PG 后面亦步亦趋补课，又同时把 PG 描述为 “复杂且容易出错旧的单片关系数据库” 时。PostgreSQL 已经成长为一个超出 MongoDB 想象的多模态超融合数据库，它已经通过几百个扩展插件成为[**数据库领域的全能王霸主**](/zh/blog/pg/pg-eat-db-world)。JSON 仅仅是其武库中的冰山一角，还有 XML，全文检索，向量嵌入，AIML，地理信息，时序数据，分布式，消息队列，FDW，以及二十多种存储过程语言支持。
+在 MongoDB 不断重新发明 RDBMS 世界的各种轮子，拙劣地跟在 PG 后面亦步亦趋补课，又同时把 PG 描述为 “复杂且容易出错旧的单片关系数据库” 时。PostgreSQL 已经成长为一个超出 MongoDB 想象的多模态超融合数据库，它已经通过几百个扩展插件成为[**数据库领域的全能王霸主**](/pg/pg-eat-db-world)。JSON 仅仅是其武库中的冰山一角，还有 XML，全文检索，向量嵌入，AIML，地理信息，时序数据，分布式，消息队列，FDW，以及二十多种存储过程语言支持。
 
 ![ecosystem.jpg](ecosystem.jpg)
 

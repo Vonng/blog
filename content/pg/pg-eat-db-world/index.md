@@ -32,7 +32,7 @@ PostgreSQL 并不是一个简单的关系型数据库，而是一个数据管理
 
 这样的分析性能表现不能说烂，因为比起 MySQL，MariaDB 这样的纯 OLTP 数据库的辣眼表现（**x3065,x19700**）确实好很多；但第三梯队的性能表现也绝对说不上足够好，与专注于 OLAP 的第一梯队组件：Umbra，ClickHouse，Databend，SelectDB（**x3~x4**）相比，在分析性能上仍然有十几倍的性能差距。食之无味，弃之可惜。
 
-**然而，** [**ParadeDB**](/zh/blog/pg/paradedb/) **和** [**DuckDB**](https://duckdb.org/) **的出现改变了这一点！**
+**然而，** [**ParadeDB**](/pg/paradedb/) **和** [**DuckDB**](https://duckdb.org/) **的出现改变了这一点！**
 
 **ParadeDB** 提供的 PG 原生扩展 **pg_analytics** 实现了第二梯队（**x10**）的性能水准，与第一梯队只有 3～4 倍的性能差距。相对于其他功能上的收益，这种程度的性能差距通常是可以接受的 —— ACID，新鲜性与实时性，无需 ETL、额外学习成本、维护独立的新服务，更别提它还提供了 ElasticSearch 质量的全文检索能力。
 
@@ -56,7 +56,7 @@ ParadeDB 与 DuckDB 的出现让 PostgreSQL 的分析性能来到了 OLAP 的第
 
 与许多 “专用数据库” 一样，专业的 OLAP 组件的优势往往在于**性能** —— 相比原生 PG 、MySQL 上有 1～3 个数量级的提升；而代价则是数据冗余、 大量不必要的数据搬运工作、分布式组件之间缺乏一致性、额外的专业技能带来的复杂度成本、学习成本、以及人力成本、 额外的软件许可费用、极其有限的查询语言能力、可编程性、可扩展性、有限的工具链、以及与OLTP 数据库相比更差的数据完整性和可用性 —— **但这是一个合理的利弊权衡**。
 
-然而天下大势，**分久必合，合久必分**。[硬件遵循摩尔定律又发展了三十年](/zh/blog/cloud/bonus)，性能翻了几个数量级，成本下降了几个数量级。在 2024 年的当下，x86 单机可以达到几百核 (512 vCPU [EPYC 9754](https://www.amd.com/zh-hans/products/cpu/amd-epyc-9754)x2)，几个TB的内存，单卡 NVMe SSD 可达 64TB，全闪单机柜 2PB ；S3 这样对象存储更是能实现几乎没有上限的存储。
+然而天下大势，**分久必合，合久必分**。[硬件遵循摩尔定律又发展了三十年](/cloud/bonus)，性能翻了几个数量级，成本下降了几个数量级。在 2024 年的当下，x86 单机可以达到几百核 (512 vCPU [EPYC 9754](https://www.amd.com/zh-hans/products/cpu/amd-epyc-9754)x2)，几个TB的内存，单卡 NVMe SSD 可达 64TB，全闪单机柜 2PB ；S3 这样对象存储更是能实现几乎没有上限的存储。
 
 ![io-bandwidth.png](io-bandwidth.png)
 
@@ -77,7 +77,7 @@ ParadeDB 与 DuckDB 的出现让 PostgreSQL 的分析性能来到了 OLAP 的第
 
 数据库领域有许多“细分领域”：时序数据库，地理空间数据库，文档数据库，搜索数据库，图数据库，向量数据库，消息队列，对象数据库。而 PostgreSQL 在任何一个领域都不会缺席。
 
-一个 PostGIS 插件，成为了地理空间事实标准；一个 TimescaleDB 扩展，让一堆“通用”时序数据库尴尬的说不出话来；一个向量扩展 [**PGVector**](/zh/blog/dev/llm-and-pgvector) 插件，更是让整个 [**专用向量数据库细分领域**](/zh/blog/db/svdb-is-dead) 变成笑话。
+一个 PostGIS 插件，成为了地理空间事实标准；一个 TimescaleDB 扩展，让一堆“通用”时序数据库尴尬的说不出话来；一个向量扩展 [**PGVector**](/dev/llm-and-pgvector) 插件，更是让整个 [**专用向量数据库细分领域**](/db/svdb-is-dead) 变成笑话。
 
 同样的事情已经发生过很多次，而现在，我们将在拆分最早，地盘最大的一个子领域 OLAP 分析中再次见证这一点。但 PostgreSQL 要替代的可不仅仅是 OLAP 数仓，它的野望是整个数据库世界！
 
@@ -87,7 +87,7 @@ ParadeDB 与 DuckDB 的出现让 PostgreSQL 的分析性能来到了 OLAP 的第
 
 [![survey.png](survey.png)](https://www.timescale.com/state-of-postgres/2022/)
 
-> TimescaleDB 2022 社区调研：用户[选择 PostgreSQL 的原因](/zh/blog/pg/pg-is-best/)：开源，先进，**扩展**。
+> TimescaleDB 2022 社区调研：用户[选择 PostgreSQL 的原因](/pg/pg-is-best/)：开源，先进，**扩展**。
 
 PostgreSQL 并不是一个简单的关系型数据库，而是一个数据管理的抽象框架，**具有囊括一切，吞噬整个数据库世界的力量**。而它的核心竞争力（除了开源与先进）来自**可扩展性**，即基础设施的**可复用性**与扩展插件的**可组合性**。
 
@@ -101,7 +101,7 @@ PostgreSQL 允许用户开发功能模块，复用数据库公共基础设施，
 
 为什么？因为 PGVECTOR 作者不需要操心数据库的通用额外复杂度：事务 ACID，故障恢复，备份PITR，高可用，访问控制，监控，部署，三方生态工具，客户端驱动这些需要成百上千万行代码才能解决好的问题，只需要关注自己所需问题的本质复杂度即可。
 
-[![](vectordbs.jpg)](/zh/blog/db/svdb-is-dead)
+[![](vectordbs.jpg)](/db/svdb-is-dead)
 
 > 向量数据库哪家强？
 
@@ -150,7 +150,7 @@ PostgreSQL 允许用户开发功能模块，复用数据库公共基础设施，
 
 在引领潮流的 HackerNews StackOverflow 上，PostgreSQL 早已成为了最受欢迎的数据库。许多新的开源项目都默认使用 PostgreSQL 作为首要，甚至唯一的数据库 —— 例如，给各种数据库做模式管理的 Bytebase。《[云时代数据库DevOps：硅谷调研](https://mp.weixin.qq.com/s/HeIGQC6JsE9ZXqJtFjiczA)》也提出，许多新一代互联网公司都开始积极拥抱并 All in PostgreSQL。
 
-正如《[**技术极简主义：一切皆用 Postgres**](/zh/blog/pg/just-use-pg/) 》所言：简化技术栈、减少组件、加快开发速度、降低风险并提供更多功能特性的方法之一就是 **“一切皆用 Postgres”**。Postgres 能够取代许多后端技术，包括 MySQL，Kafka、RabbitMQ、ElasticSearch，Mongo和 Redis，至少到数百万用户时都毫无问题。**一切皆用 Postgres** ，已经不再是少数精英团队的前沿探索，而是成为了一种进入主流视野的最佳实践。
+正如《[**技术极简主义：一切皆用 Postgres**](/pg/just-use-pg/) 》所言：简化技术栈、减少组件、加快开发速度、降低风险并提供更多功能特性的方法之一就是 **“一切皆用 Postgres”**。Postgres 能够取代许多后端技术，包括 MySQL，Kafka、RabbitMQ、ElasticSearch，Mongo和 Redis，至少到数百万用户时都毫无问题。**一切皆用 Postgres** ，已经不再是少数精英团队的前沿探索，而是成为了一种进入主流视野的最佳实践。
 
 
 
@@ -161,7 +161,7 @@ PostgreSQL 允许用户开发功能模块，复用数据库公共基础设施，
 
 我们已经不难预见到数据库领域的终局。但我们又能做什么，又应该做什么呢？
 
-PostgreSQL 对于绝大多数场景都已经是一个足够完美的数据库内核了，在这个前提下，数据库内核[卡脖子纯属无稽之谈](/zh/blog/db/db-choke/)。这些Fork PostgreSQL 和 MySQL 并以内核魔改作为卖点的所谓“[数据库](/zh/blog/db/db-choke/)”基本没啥出息。
+PostgreSQL 对于绝大多数场景都已经是一个足够完美的数据库内核了，在这个前提下，数据库内核[卡脖子纯属无稽之谈](/db/db-choke/)。这些Fork PostgreSQL 和 MySQL 并以内核魔改作为卖点的所谓“[数据库](/db/db-choke/)”基本没啥出息。
 
 这好比今天我们看 Linux 操作系统内核一样，尽管市面上有这么多的 Linux 操作系统发行版，但大家都选择使用同样的 Linux 内核，吃饱了撑着魔改内核属于没有困难创造困难也要上，会被业界当成山炮看待。
 

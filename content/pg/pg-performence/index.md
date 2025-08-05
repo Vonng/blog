@@ -11,7 +11,7 @@ tags: [PostgreSQL,PG生态,性能]
 ---
 
 
-上回，我们通过分析 StackOverflow 的用户调研数据，说明了《[为什么PostgreSQL是最成功的数据库](/zh/blog//db/pg-is-no1/)》。
+上回，我们通过分析 StackOverflow 的用户调研数据，说明了《[为什么PostgreSQL是最成功的数据库](/db/pg-is-no1/)》。
 
 而这一次我们将用性能数据来说话，聊聊最成功的 PostgreSQL 到底有多强，帮助大家做到“**心中有数**”。
 
@@ -130,7 +130,7 @@ MySQL 并没有提供一个官方的 sysbench 测试结果，只是在官网上�
 
 这是相当**不讲武德**的行为。因为如果阅览了连接的评测文章就会发现：这是把所有 MySQL 安全特性关闭得到的结果：关闭Binlog，提交刷盘，FSYNC，性能监控，DoubleWrite，校验和，强制使用 LATIN-1 字符集，这样的数据库根本没法用于生产环境，只是为了刷分而刷分。
 
-但反过来说，我们也可以使用这些 Dirty Hack，把对应的 PostgreSQL 安全特性也关闭，也看看 PostgreSQL 的最终极限在哪里？结果相当震撼，PGSQL点查QPS干到了 [233万每秒](/zh/blog//db/pg-performence/)，峰值远远甩开 MySQL 一倍还多。
+但反过来说，我们也可以使用这些 Dirty Hack，把对应的 PostgreSQL 安全特性也关闭，也看看 PostgreSQL 的最终极限在哪里？结果相当震撼，PGSQL点查QPS干到了 [233万每秒](/db/pg-performence/)，峰值远远甩开 MySQL 一倍还多。
 
 ![pg-performence-6.png](pg-performence-7.png)
 
@@ -254,7 +254,7 @@ TPC-H 是一个模拟数仓，包含8张数据表，与22条复杂分析类SQL�
 
 至少在百GB级的表上，PostgreSQL足以称得上是一款表现优秀的分析数据库。如果单表超过几TB量级，也可以平滑升级至 Greenplum / MatrixDB / DeepGreen 等 PostgreSQL 兼容MPP数仓。。采用主从复制的 PostgreSQL 可以通过级联从库的方式近乎无限地 Scale 读负载，采用逻辑复制的 PostgreSQL 可以内置/同步地完成AP模式ETL，可谓是真正的 HTAP 数据库。
 
-综上所述，**PostgreSQL 在 TP 领域表现极其亮眼，在 AP 领域表现可圈可点**。这也难怪在最近几年的 StackOverflow 开发者年度调研中， PostgreSQL 成为了 专业开发者最常用，最受喜爱，最想要的[三冠王数据库](/zh/blog//db/pg-is-no1/)。
+综上所述，**PostgreSQL 在 TP 领域表现极其亮眼，在 AP 领域表现可圈可点**。这也难怪在最近几年的 StackOverflow 开发者年度调研中， PostgreSQL 成为了 专业开发者最常用，最受喜爱，最想要的[三冠王数据库](/db/pg-is-no1/)。
 
 
 

@@ -13,7 +13,7 @@ tags: [下云,阿里云,云故障]
 
 ![smile.png](featured.png)
 
-双十一刚过，阿里云就出了打破行业纪录的 [**全球史诗级大翻车**](/zh/blog/cloud/aliyun)，然后开始了11月连环炸模式，在几次小故障后，又来了一场[**云数据库管控面**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486512&idx=1&sn=43d6340fce93bfbf5439cc2cd8e3b8dd&chksm=fe4b39ebc93cb0fd192c69d9f589ccd36f1c1eb5d34fffc357cf0b8177c746c4b3445ea5f63a&scene=21#wechat_redirect)跨国俩小时大故障—— 从月爆到周爆再到日爆。
+双十一刚过，阿里云就出了打破行业纪录的 [**全球史诗级大翻车**](/cloud/aliyun)，然后开始了11月连环炸模式，在几次小故障后，又来了一场[**云数据库管控面**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486512&idx=1&sn=43d6340fce93bfbf5439cc2cd8e3b8dd&chksm=fe4b39ebc93cb0fd192c69d9f589ccd36f1c1eb5d34fffc357cf0b8177c746c4b3445ea5f63a&scene=21#wechat_redirect)跨国俩小时大故障—— 从月爆到周爆再到日爆。
 
 但话音未落，**滴滴**又出现了一场超过12小时的大失效，资损**几个亿** —— 替代品阿里旗下的高德打车直接爆单赚翻，堪称失之桑榆，收之东隅。
 

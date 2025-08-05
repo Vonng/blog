@@ -14,8 +14,8 @@ tags: [PostgreSQL,PG生态,扩展]
 
 最近没怎么更新，因为在憋大招。最近功成出关，遂发此文为贺 —— 我做了一个收录PG生态所有能打的390个扩展的[仓库](https://ext.pigsty.io)，让 PostgreSQL 在成为数据库全能王的道路上又往前迈出了坚实的一步！
 
-自从我在 《[**PostgreSQL正在吞噬数据库世界**](/zh/blog/pg/pg-eat-db-world)》 一文中指出 **可扩展性** 对于 PostgreSQL 的重要性以来，PG 社区对此进行了[**热烈的讨论**](/zh/blog/pg/pgcondev-2024)，并且达成了共识。
-最终体现在《[**PostgreSQL 17 发布注记！**](/zh/blog/pg/pg-17)》中。
+自从我在 《[**PostgreSQL正在吞噬数据库世界**](/pg/pg-eat-db-world)》 一文中指出 **可扩展性** 对于 PostgreSQL 的重要性以来，PG 社区对此进行了[**热烈的讨论**](/pg/pgcondev-2024)，并且达成了共识。
+最终体现在《[**PostgreSQL 17 发布注记！**](/pg/pg-17)》中。
 
 
 <a href="/zh/blog/pg/pg-eat-deb-world"><img src="/img/pigsty/ecosystem.jpg" style="max-width: 1000px; max-height: 1000px; width: 100%; height: auto;"></a>
@@ -56,12 +56,12 @@ PostgreSQL 的 PGDG 官方仓库中，提供了大约 **100** 个左右的扩展
 每当我看见 PGDG 仓库有出现错漏缺失，我都会第一时间反馈给仓库维护者 Devrim 和 Cris 。
 
 有的时候这种模式挺管用，比如去年当我发现 pgvector 这个强力向量数据库扩展还没有二进制软件包制成品时，我第一时间[提给 Devrim](https://github.com/pgvector/pgvector/issues/76) ，
-[将其放入 PGDG 仓库](/zh/blog/pg/vector-json-pg/#译者评论)，然后 pgvector 遂成为 PG 生态中的向量数据库事实标准，进入到各家云厂商 RDS 中。
+[将其放入 PGDG 仓库](/pg/vector-json-pg/#译者评论)，然后 pgvector 遂成为 PG 生态中的向量数据库事实标准，进入到各家云厂商 RDS 中。
 
 但有的时候，事情并不能总能如意。例如，**Devrim** 表示，他绝对不会接受任何 Rust 扩展插件进入 PGDG YUM 仓库。
 但我确实有二十多个用 Rust 编写的 PostgreSQL 扩展需要分发（例如自建 Supabase 就需要 pg_graphql, pg_jsonschema, wrappers 三个 Rust 扩展），怎么办呢？
 
-再比如说，最近 PG 生态非常火热的 [DuckDB 缝合大赛](/zh/blog/pg/pg-duckdb)，大家都在密集地更新跟进 DuckDB 系扩展 ，这些扩展插件我第一时间 [打好了 RPM/DEB 包](https://ext.pigsty.io/#/olap)，但是如何分发呢？
+再比如说，最近 PG 生态非常火热的 [DuckDB 缝合大赛](/pg/pg-duckdb)，大家都在密集地更新跟进 DuckDB 系扩展 ，这些扩展插件我第一时间 [打好了 RPM/DEB 包](https://ext.pigsty.io/#/olap)，但是如何分发呢？
 
 思来想去，我决定还是我行我上，自己维护一个 PostgreSQL 扩展插件的 APT / YUM 仓库，分发 PG 扩展。
 

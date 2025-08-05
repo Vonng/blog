@@ -71,7 +71,7 @@ PostgreSQL 12 是五年前发布的版本，我认为是继 PG 10 之后的一�
 > https://smalldatum.blogspot.com/2024/09/postgres-17rc1-vs-sysbench-on-small.html
 
 
-之前我对 PostgreSQL 14 进行过一次全方位的 [**性能评测**](/zh/blog/pg/pg-performence)，但那已经是三年前了，所以我准备针对最新的 PostgreSQL 17.1 重新进行一次评测。
+之前我对 PostgreSQL 14 进行过一次全方位的 [**性能评测**](/pg/pg-performence)，但那已经是三年前了，所以我准备针对最新的 PostgreSQL 17.1 重新进行一次评测。
 
 最近我整了台非常牛逼的物理机，128C 256G，配四块 3.2 T Gen4 NVMe SSD 加一块硬件 NVMe RAID 加速卡，准备看看 PostgreSQL，pgvector，以及一系列 OLAP 扩展插件能在这台性能怪兽上表现出什么样的性能，结果敬请期待。
 

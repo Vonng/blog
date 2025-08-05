@@ -47,8 +47,8 @@ Supabase 旨在为开发者提供一站式的后端解决方案，减少开发�
 
 小微规模（4c8g）内的 Supabase 云服务[极富性价比](https://supabase.com/pricing)，人称赛博菩萨。那么 Supabase 云服务这么香，为什么要自建呢？
 
-最直观的原因是是我们在《[云数据库是智商税吗？](/zh/blog/cloud/rds)》中提到过的：当你的规模超出云计算适用光谱，成本很容易出现爆炸式增长。
-而且在当下，足够可靠的[本地企业级 NVMe SSD](/zh/blog/cloud/hardware-bonus)在性价比上与云端存储有着三到四个数量级的优势，而自建能更好地利用这一点。
+最直观的原因是是我们在《[云数据库是智商税吗？](/cloud/rds)》中提到过的：当你的规模超出云计算适用光谱，成本很容易出现爆炸式增长。
+而且在当下，足够可靠的[本地企业级 NVMe SSD](/cloud/hardware-bonus)在性价比上与云端存储有着三到四个数量级的优势，而自建能更好地利用这一点。
 
 另一个重要的原因是功能， Supabase 云服务的功能受限 —— [出于与RDS相同的逻辑](https://mp.weixin.qq.com/s/EH7RPB6ImfMHXhOMU7P5Qg)，
 很多 [**强力PG扩展**](https://ext.pigsty.io/#/list) 因为多租户安全挑战与许可证的原因无法作为云服务提供。

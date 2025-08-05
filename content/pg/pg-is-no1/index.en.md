@@ -231,7 +231,7 @@ The PostgreSQL database kernel's role in the database ecosystem mirrors the Linu
 
 However, users need more than an engine; they need the complete car, driving capabilities, and traffic services. The database competition has shifted from software to **Software enabled Service—complete database distributions and services**. The race for PostgreSQL-based distributions is just beginning. Who will be the PostgreSQL equivalent of Debian, RedHat, or Ubuntu?
 
-This is why we created **[Pigsty](https://pigsty.io/)** — to develop an battery-included, open-source, local-first PostgreSQL distribution, making it easy for everyone to access and utilize a **quality database service**. Due to space limits, the detailed story is for [another time](/zh/blog//db/pgsql-x-pigsty/).
+This is why we created **[Pigsty](https://pigsty.io/)** — to develop an battery-included, open-source, local-first PostgreSQL distribution, making it easy for everyone to access and utilize a **quality database service**. Due to space limits, the detailed story is for [another time](/db/pgsql-x-pigsty/).
 
 ![](/img/blog/db/pg-is-no1-18.png)
 

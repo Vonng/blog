@@ -237,38 +237,38 @@ MySQL had its days of glory and was once a benchmark of "open-source software," 
 
 ## Reference
 
-[Oracle还能拯救MySQL吗？](/zh/blog/db/can-oracle-save-mysql)
+[Oracle还能拯救MySQL吗？](/db/can-oracle-save-mysql)
 
-[Oracle最终还是杀死了MySQL！](/zh/blog/db/oracle-killed-mysql)
+[Oracle最终还是杀死了MySQL！](/db/oracle-killed-mysql)
 
-[MySQL性能越来越差，Sakila将何去何从？](/zh/blog/db/sakila-where-are-you-going)
+[MySQL性能越来越差，Sakila将何去何从？](/db/sakila-where-are-you-going)
 
-[MySQL的正确性为何如此拉垮？](/zh/blog/db/bad-mysql)
+[MySQL的正确性为何如此拉垮？](/db/bad-mysql)
 
-[PostgreSQL正在吞噬数据库世界](/zh/blog/pg/pg-eat-db-world)
+[PostgreSQL正在吞噬数据库世界](/pg/pg-eat-db-world)
 
-[PostgreSQL 17 Beta1 发布！牙膏管挤爆了！](/zh/blog/pg/pg-17-beta1)
+[PostgreSQL 17 Beta1 发布！牙膏管挤爆了！](/pg/pg-17-beta1)
 
-[为什么PostgreSQL是未来数据的基石？](/zh/blog/pg/pg-for-everything)
+[为什么PostgreSQL是未来数据的基石？](/pg/pg-for-everything)
 
 [PostgreSQL is eating the database world](/blog/pg/pg-eat-db-world)
 
-[技术极简主义：一切皆用Postgres](/zh/blog/pg/just-use-pg)
+[技术极简主义：一切皆用Postgres](/pg/just-use-pg)
 
-[PostgreSQL：世界上最成功的数据库](/zh/blog/pg/pg-is-no1)
+[PostgreSQL：世界上最成功的数据库](/pg/pg-is-no1)
 
-[PostgreSQL 到底有多强？](/zh/blog/pg/pg-performance)
+[PostgreSQL 到底有多强？](/pg/pg-performance)
 
-[专用向量数据库凉了吗？](/zh/blog/db/svdb-is-dead)
+[专用向量数据库凉了吗？](/db/svdb-is-dead)
 
-[向量是新的JSON](/zh/blog/pg/vector-json-pg)
+[向量是新的JSON](/pg/vector-json-pg)
 
-[AI大模型与PGVECTOR](/zh/blog/dev/llm-and-pgvector/)
+[AI大模型与PGVECTOR](/dev/llm-and-pgvector/)
 
-[云数据库的模式与新挑战](/zh/blog/cloud/dba-vs-rds)
+[云数据库的模式与新挑战](/cloud/dba-vs-rds)
 
-[云计算泥石流](/zh/blog/cloud)
+[云计算泥石流](/cloud)
 
-[Redis不开源是“开源”之耻，更是公有云之耻](/zh/blog/db/redis-oss/)
+[Redis不开源是“开源”之耻，更是公有云之耻](/db/redis-oss/)
 
-[PostgreSQL会修改开源许可证吗？](/zh/blog/pg/pg-license/)
+[PostgreSQL会修改开源许可证吗？](/pg/pg-license/)

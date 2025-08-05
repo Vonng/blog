@@ -17,7 +17,7 @@ PostgreSQL实际上只有两种事务隔离等级：**读已提交（Read Commit
 
 SQL标准定义了四种隔离级别，但PostgreSQL实际上只有两种事务隔离等级：**读已提交（Read Commited）**与**可序列化（Serializable）**
 
-SQL标准定义了四种隔离级别，但实际上这也是很粗鄙的一种划分。详情请参考[并发异常那些事](/zh/blog/db/concurrent-control/)。
+SQL标准定义了四种隔离级别，但实际上这也是很粗鄙的一种划分。详情请参考[并发异常那些事](/db/concurrent-control/)。
 
 
 

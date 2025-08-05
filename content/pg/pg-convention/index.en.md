@@ -17,7 +17,7 @@ tags: [PostgreSQL,Develop]
 - [0x01 Query Convention](#0x03-query-convention)
 - [0x01 Admin Convention](#0x04-administration-convention)
 
-> Roughly translated from [PostgreSQL Convention 2024](/zh/blog/pg/pg-convention/) with Google.
+> Roughly translated from [PostgreSQL Convention 2024](/pg/pg-convention/) with Google.
 
 ---------
 

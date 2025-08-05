@@ -197,7 +197,7 @@ Stateless apps on K8S or offline big data platforms pose little fatal risk when 
 
 Most IT system architectures are centered around the database, making it the key risk point in cloud migration, particularly with OLTP databases/RDS. Many users hesitate to move off the cloud and self-host due to the lack of reliable database services — traditional Kubernetes Operators don’t fully replicate the cloud database experience: hosting OLTP databases on K8S/containers with EBS is not yet a mature practice.
 
-**There's a growing demand for a viable open-source alternative to RDS**, and that's precisely what we aim to address: enabling users to establish a local RDS service in any environment that matches or exceeds cloud databases — **Pigsty**, a free open-source alternative to RDS PG. It empowers users to effectively utilize [PostgreSQL, the world’s most advanced and successful database](/zh/blog//db/pg-is-best/).
+**There's a growing demand for a viable open-source alternative to RDS**, and that's precisely what we aim to address: enabling users to establish a local RDS service in any environment that matches or exceeds cloud databases — **Pigsty**, a free open-source alternative to RDS PG. It empowers users to effectively utilize [PostgreSQL, the world’s most advanced and successful database](/db/pg-is-best/).
 
 Pigsty is a non-profit, open-source software powered by community love. It offers a ready-to-use, feature-rich PostgreSQL distribution with automatic high availability, PITR, top-tier monitoring systems, Infrastructure as Code, cloud-based Terraform templates, local Vagrant sandbox for one-click installation, and SOP manuals for various operations, enabling quick RDS self-setup without needing a professional DBA.
 

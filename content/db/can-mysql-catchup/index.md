@@ -44,7 +44,8 @@ MySQL 从未像 PostgreSQL 那样是“社区驱动”的。然而，当 MySQL �
 
 这意味着大公司更愿意贡献并推荐 PostgreSQL 作为首选，因为这不会为他们的竞争对手创造价值，而且他们对PostgreSQL 项目的方向有更大的影响力。数百家小公司通过本地“草根”社区的开发和营销努力，使 PostgreSQL 在全球无处不在。
 
-**MySQL社区能做些什么来解决这个问题？** **MySQL 社区能做的很少**——这完全掌握在 Oracle 手中。正如我在[《Oracle能拯救MySQL吗？》](https://mp.weixin.qq.com/s/1zlDPie_bVvP7eO6_uTkSw)中所写，将 MySQL 移交给一个中立的基金会（如 Linux 或 Kubernetes 项目）将提供与 PostgreSQL 竞争的机会。不过，我并不抱太大希望，因为我认为Oracle此刻更感兴趣的是“硬性”变现，而不是扩大采用率。
+**MySQL社区能做些什么来解决这个问题？** **MySQL 社区能做的很少**——这完全掌握在 Oracle 手中。正如我在[《Oracle能拯救MySQL吗？》](/db/can-oracle-save-mysql/)中所写，
+将 MySQL 移交给一个中立的基金会（如 Linux 或 Kubernetes 项目）将提供与 PostgreSQL 竞争的机会。不过，我并不抱太大希望，因为我认为Oracle此刻更感兴趣的是“硬性”变现，而不是扩大采用率。
 
 ## 许可证
 

@@ -11,7 +11,7 @@ tags: [数据库,国产数据库]
 
 > [微信公众号](https://mp.weixin.qq.com/s/vh1JE_BdaLetWtt5vvPDDw) | [知乎](https://zhuanlan.zhihu.com/p/664816961)
 
-如果说“[云数据库](/zh/blog//cloud/rds/)”算是成本ROI略欠体面的合格品，那么很多“国产数据库”就是烂泥扶不上墙的残次品。信创操作系统数据库约等于 **IT 预制菜进校园**。用户捏着鼻子迁移，开发者假装在卖力，陪着不懂也不在乎技术的领导演戏。大量人力财力被挥霍到没有价值的地方去，反而了浪费掉了真正的机会。[基础软件](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486061&idx=1&sn=a1452dfa864f702d40bf612839a4e9e4&chksm=fe4b3fb6c93cb6a0aa5aef59d4381c49354ee0f741dd7e92c91549864ac58597f93a6ab886ed&scene=21#wechat_redirect)行业其实没人卡脖子，真正卡脖子的都是所谓“自己人”。
+如果说“[云数据库](/cloud/rds/)”算是成本ROI略欠体面的合格品，那么很多“国产数据库”就是烂泥扶不上墙的残次品。信创操作系统数据库约等于 **IT 预制菜进校园**。用户捏着鼻子迁移，开发者假装在卖力，陪着不懂也不在乎技术的领导演戏。大量人力财力被挥霍到没有价值的地方去，反而了浪费掉了真正的机会。[基础软件](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486061&idx=1&sn=a1452dfa864f702d40bf612839a4e9e4&chksm=fe4b3fb6c93cb6a0aa5aef59d4381c49354ee0f741dd7e92c91549864ac58597f93a6ab886ed&scene=21#wechat_redirect)行业其实没人卡脖子，真正卡脖子的都是所谓“自己人”。
 
 [![featured.jpg](featured.jpg)](https://mp.weixin.qq.com/s/vh1JE_BdaLetWtt5vvPDDw)
 
@@ -49,9 +49,9 @@ tags: [数据库,国产数据库]
 
 且不说和开源比，就连 Oracle 好歹还是个 Paper License，也有很多三方服务供应商；而有的国产数据库没 License 就立即死给你看，原厂一完蛋，连带着业务系统跟着遭殃。从被国外领先数据库“卡脖子” 换为国内土鳖供应商卡脖子，并不会提高自主可控能力，还额外损失了功能活性
 
-[![db-choke-2.png](db-choke-2.png)](/zh/blog/db/sovereign-dbos)
+[![db-choke-2.png](db-choke-2.png)](/db/sovereign-dbos)
 
-> 《[基础软件需要什么样的自主可控？](/zh/blog/db/sovereign-dbos)》
+> 《[基础软件需要什么样的自主可控？](/db/sovereign-dbos)》
 
 
 
@@ -94,44 +94,44 @@ tags: [数据库,国产数据库]
 ## 老冯评论
 
 IT 后发国家如何保证软件系统的自主可控？[瑞士政府通过开源立法](https://mp.weixin.qq.com/s/2fwQi0pf34sCnUzix2_ouw)走在时代前沿，给其他国家打了个样。中说老美政府对开源接受度（相对欧洲）不高是因为美国国内有着无数商业软件、云计算服务公司，是 IT 世界的霸主、创新源泉与先发者。
-而后发者如果想要颠覆这种国际秩序，挑战这种软件霸权，真正的王道就是彻底拥抱开源 —— [**软件共产主义**](/zh/blog/cloud/paradigm)。这也是 **人类命运共同体理念** 在软件世界的真正实践，也是一条切实可行，蓬勃发展的康庄大道。
+而后发者如果想要颠覆这种国际秩序，挑战这种软件霸权，真正的王道就是彻底拥抱开源 —— [**软件共产主义**](/cloud/paradigm)。这也是 **人类命运共同体理念** 在软件世界的真正实践，也是一条切实可行，蓬勃发展的康庄大道。
 
 欧洲国家在这件事上一直走在前沿，即使是半欧半亚的俄罗斯，在真正遭受到制裁之后，也是通过开源来满足 IT 软件需求的 —— Postgres Pro 成为了俄罗斯数据库世界的扛把子，迅速填补支撑起了 Oracle / MySQL 离去后的空白 —— 完全没有什么“卡脖子” 问题，也没有什么奇奇怪怪的 “俄罗斯国产数据库/国产操作系统” 行业。
 
 而 “[**民族主义国产软件**](https://mp.weixin.qq.com/s/aLXC7f2iYUfATNWsnyotkA)” 则是一条会把整个行业带入万劫不复无底深渊的彻底的死路。
-有些人精心编制了一个弥天大谎 —— “[**卡脖子**](/zh/blog/db/db-choke/)” 来欺骗祖国，将国家对软件 “[自主可控](/zh/blog/db/sovereign-dbos/)” 的真需求歪曲成 “国产化” 的伪需求而谋取私利。
+有些人精心编制了一个弥天大谎 —— “[**卡脖子**](/db/db-choke/)” 来欺骗祖国，将国家对软件 “[自主可控](/db/sovereign-dbos/)” 的真需求歪曲成 “国产化” 的伪需求而谋取私利。
 更是有通过无下限的民族主义营销谋取不正当竞争优势，通过低水平重复性建设、恶性硬分叉社区等行为污染开源软件生态，通过制造割裂与脱钩，让软件行业自绝于世界从而垄断技术话语权，这口毒奶将不知道贻害多少年。
 
 ------
 
-总书记在第二十届中央政治局第十一次集体学习会议指出：“**发展新质生产力是推动高质量发展的内在要求和重要着力点**”。那么什么是新质生产力？在基础软件领域，开源就是新质生产力，而套壳换皮魔改开源的 “国产化软件”，[走这条路是走不到世界前列的](/zh/blog/db/db-china/)。
+总书记在第二十届中央政治局第十一次集体学习会议指出：“**发展新质生产力是推动高质量发展的内在要求和重要着力点**”。那么什么是新质生产力？在基础软件领域，开源就是新质生产力，而套壳换皮魔改开源的 “国产化软件”，[走这条路是走不到世界前列的](/db/db-china/)。
 
-抛开应用 “一行代码不改” 的妄念需求，像 PostgreSQL 这样的开源数据库内核早就可以替代 Oracle 了。许多国产数据库套着PG的皮，打着解决 “Oracle” 卡脖子的幌子，一股脑地去做所谓 “Oracle兼容性” ，[却根本看不到数据库领域的前沿发展方向](https://mp.weixin.qq.com/s/79_PnX-a5iSfDMgz_VUx5A) —— AWS 这样的云厂商拿着开源的 PostgreSQL / MySQL 内核与自己的 [RDS 管控](/zh/blog/cloud/dba-vs-rds) 大杀四方，拳打 Oracle，脚踢 SQL Server，已经是数据库市场大哥大了。
+抛开应用 “一行代码不改” 的妄念需求，像 PostgreSQL 这样的开源数据库内核早就可以替代 Oracle 了。许多国产数据库套着PG的皮，打着解决 “Oracle” 卡脖子的幌子，一股脑地去做所谓 “Oracle兼容性” ，[却根本看不到数据库领域的前沿发展方向](https://mp.weixin.qq.com/s/79_PnX-a5iSfDMgz_VUx5A) —— AWS 这样的云厂商拿着开源的 PostgreSQL / MySQL 内核与自己的 [RDS 管控](/cloud/dba-vs-rds) 大杀四方，拳打 Oracle，脚踢 SQL Server，已经是数据库市场大哥大了。
 
 ------
 
 高科技行业就是要依靠技术创新驱动。如果你能用开源的PG替代Oracle，那别人也能 —— 最好的结果无非就是甲骨文放弃传统数据库转型做云服务，传统数据库成为低利润的制造业。正如二十年的 PC 行业一样。二十年前 IBM 戴尔惠普都是国际玩家，中国联想说要做到世界一流。今天看联想确实做到了，但是 PC 行业早就不是高科技行业了，只是一个最无聊普通的制造业。
 
-即使是 OB 与 Ti 这样看似最能打的[真自研国产分布式数据库](/zh/blog/db/distributive-bullshit)，所能期待的最好结局也不过是成为数据库行业的长虹，赚五个点的利润。然后被拿着开源 PostgreSQL 内核提供服务的 云厂商 RDS 和本地优先 RDS 骑脸输出按在地上摩擦，和他们心心念念替代的 Oracle 一起 —— 就像二十年前的 IBM IMS 一样，被冲进历史的马桶中。
+即使是 OB 与 Ti 这样看似最能打的[真自研国产分布式数据库](/db/distributive-bullshit)，所能期待的最好结局也不过是成为数据库行业的长虹，赚五个点的利润。然后被拿着开源 PostgreSQL 内核提供服务的 云厂商 RDS 和本地优先 RDS 骑脸输出按在地上摩擦，和他们心心念念替代的 Oracle 一起 —— 就像二十年前的 IBM IMS 一样，被冲进历史的马桶中。
 
 
 --------
 
 ## 参考阅读
 
-[国产数据库到底能不能打？](/zh/blog/db/db-china)
+[国产数据库到底能不能打？](/db/db-china)
 
-[数据库真被卡脖子了吗？](/zh/blog/db/db-choke)
+[数据库真被卡脖子了吗？](/db/db-choke)
 
 [国产数据库是大炼钢铁吗？](https://mp.weixin.qq.com/s/aLXC7f2iYUfATNWsnyotkA)
 
-[基础软件到底需要什么样的自主可控？](/zh/blog/db/sovereign-dbos/)
+[基础软件到底需要什么样的自主可控？](/db/sovereign-dbos/)
 
 [中国对PostgreSQL的贡献约等于零吗？](https://mp.weixin.qq.com/s/79_PnX-a5iSfDMgz_VUx5A)
 
-[分布式数据库是伪需求吗？](/zh/blog/db/distributive-bullshit)
+[分布式数据库是伪需求吗？](/db/distributive-bullshit)
 
-[EL 兼容发行版哪家强？](/zh/blog/db/rhel-compatibility)
+[EL 兼容发行版哪家强？](/db/rhel-compatibility)
 
 [机场出租车恶性循环与国产数据库怪圈](https://mp.weixin.qq.com/s/uccjOkAR1zgur6tftHkzMg)
 

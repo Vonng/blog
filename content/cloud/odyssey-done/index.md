@@ -94,7 +94,7 @@ tags: [下云,DHH]
 
 ![hetzner.png](hetzner.png)
 
-之前阻止用户这样做的主要阻碍是数据库，k8s这样的[**PaaS自建太难**](/zh/blog/cloud/finops)，但现在已经有无数的 PaaS 专门店供应商能比云厂商提供更好的解决方案了。（比如MinIO之于S3，[**Pigsty**](https://pigsty.io) 之于 RDS， SealOS 之于 K8S，AutoMQ 之于 Kafka，…… ）
+之前阻止用户这样做的主要阻碍是数据库，k8s这样的[**PaaS自建太难**](/cloud/finops)，但现在已经有无数的 PaaS 专门店供应商能比云厂商提供更好的解决方案了。（比如MinIO之于S3，[**Pigsty**](https://pigsty.io) 之于 RDS， SealOS 之于 K8S，AutoMQ 之于 Kafka，…… ）
 
 实际上，越来越多的云厂商也开始意识到这一点，例如 DigitalOcean，Hentzer，Linode，Cloudflare 都开始推出 “诚实定价” ，物美价廉的云服务产品。
 用户可以在享受到云上各种便利的前提下，使用几十分之一的成本直接从这些 “平价云” 购买相应的资源。
