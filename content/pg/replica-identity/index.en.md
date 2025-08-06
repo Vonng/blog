@@ -13,7 +13,7 @@ summary: >
 
 ## Introduction: DIY Logical Replication
 
-The concept of replica identity serves [**logical replication**](/admin/logical-replication/).
+The concept of replica identity serves [**logical replication**](/pg/logical-replication/).
 
 The basic working principle of logical replication is to decode **row-level INSERT/UPDATE/DELETE** events from logical publication-related tables and replicate them for execution on logical subscribers.
 

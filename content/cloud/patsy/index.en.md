@@ -144,7 +144,7 @@ fully utilizing new hardware's high performance and low costs. Solving the key c
 
 ![](https://pigsty.io/img/ecosystem.png)
 
-Pigsty contains PostgreSQL ecosystem's unique [351 extension plugins](https://ext.pigsty.io), [far superior to cloud's pitiful dozens of castrated plugins](https://mp.weixin.qq.com/s/EH7RPB6ImfMHXhOMU7P5Qg), plus provides zero-configuration out-of-box [high availability architecture](/zh/docs/concept/ha) and industry-leading monitoring systems.
+Pigsty contains PostgreSQL ecosystem's unique [351 extension plugins](https://ext.pigsty.io), [far superior to cloud's pitiful dozens of castrated plugins](https://mp.weixin.qq.com/s/EH7RPB6ImfMHXhOMU7P5Qg), plus provides zero-configuration out-of-box [high availability architecture](https://ext.pgsty.com/zh/pgsql/arch) and industry-leading monitoring systems.
 
 It's widely used in internet, finance, new energy, military, manufacturing industries, currently ranking 22nd on [OSSRANK](https://ossrank.com/cat/368-postgresql-extension-ecosystem?page=2) global PostgreSQL ecosystem open source rankings.
 

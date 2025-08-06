@@ -3,6 +3,7 @@
 import os
 import re
 import sys
+import argparse
 from pathlib import Path
 from urllib.parse import urlparse, urljoin
 from typing import Dict, List, Set, Tuple
@@ -32,11 +33,12 @@ class BrokenLink:
 class HugoLinkChecker:
     """Check relative links in Hugo content following Hugo URL rules."""
     
-    def __init__(self, content_dir: str = "content"):
+    def __init__(self, content_dir: str = "content", check_language_consistency: bool = False):
         self.content_dir = Path(content_dir)
         self.content_map: Dict[str, Path] = {}  # Hugo URL -> file path
         self.all_links: List[LinkInfo] = []
         self.broken_links: List[BrokenLink] = []
+        self.check_language_consistency = check_language_consistency
         
         # Regex patterns for extracting links
         # Matches both regular links [text](url) and image links ![alt](url)
@@ -52,18 +54,28 @@ class HugoLinkChecker:
         rel_path = file_path.relative_to(self.content_dir)
         parts = list(rel_path.parts)
         
+        # Store language info if present
+        lang_suffix = None
+        
         # Remove .md extension and handle index files
         if parts[-1].endswith('.md'):
-            parts[-1] = parts[-1][:-3]
+            filename = parts[-1][:-3]
+            
+            # Check for language suffix (e.g., index.en, index.zh)
+            if '.' in filename:
+                base, suffix = filename.rsplit('.', 1)
+                if suffix in ['en', 'zh']:
+                    lang_suffix = suffix
+                    filename = base
+            
+            parts[-1] = filename
             
         # Handle index files
-        if parts[-1] == 'index' or parts[-1].startswith('index.'):
+        if parts[-1] == 'index':
             parts = parts[:-1]
-        elif parts[-1] == '_index' or parts[-1].startswith('_index.'):
+        elif parts[-1] == '_index':
             # Section pages
-            parts[-1] = parts[-1].replace('_index', '')
-            if parts[-1] == '' or parts[-1] == '.en' or parts[-1] == '.zh':
-                parts = parts[:-1]
+            parts = parts[:-1]
         
         # Build URL
         url = '/' + '/'.join(parts) + '/'
@@ -87,7 +99,32 @@ class HugoLinkChecker:
             if hugo_url.endswith('/') and hugo_url != '/':
                 self.content_map[hugo_url[:-1]] = md_file
             
-            # For multilingual sites, also map language-specific URLs
+            # For language-specific files, create additional mappings
+            filename = md_file.name
+            if filename.endswith('.en.md'):
+                # English version - map with /en/ prefix for Hugo multilingual sites
+                # Extract the path parts
+                parts = list(md_file.relative_to(self.content_dir).parts)
+                # Create English URL with /en/ prefix
+                en_url = '/en/' + '/'.join(parts[:-1]) + '/'
+                en_url = en_url.replace('//', '/').rstrip('/') or '/'
+                if en_url != '/':
+                    en_url = en_url + '/'
+                self.content_map[en_url] = md_file
+                self.content_map[en_url.rstrip('/')] = md_file
+                
+            elif filename == 'index.md' or filename == '_index.md':
+                # Chinese default file - this is the primary content
+                # Also map with /zh/ prefix if needed
+                parts = list(md_file.relative_to(self.content_dir).parts)
+                zh_url = '/zh/' + '/'.join(parts[:-1]) + '/'
+                zh_url = zh_url.replace('//', '/').rstrip('/') or '/'
+                if zh_url != '/':
+                    zh_url = zh_url + '/'
+                self.content_map[zh_url] = md_file
+                self.content_map[zh_url.rstrip('/')] = md_file
+            
+            # For multilingual sites with language folders
             parts = list(md_file.relative_to(self.content_dir).parts)
             if len(parts) > 0 and parts[0] in ['en', 'zh']:
                 # Also create mapping without language prefix for internal references
@@ -177,6 +214,10 @@ class HugoLinkChecker:
     def check_link(self, link: LinkInfo) -> BrokenLink:
         """Check if a relative link is valid."""
         source_path = Path(link.source_file)
+        source_filename = source_path.name
+        
+        # Determine if source is English or Chinese
+        is_source_english = source_filename.endswith('.en.md')
         
         # Handle anchor-only links (always valid for now)
         if link.is_anchor_only:
@@ -191,22 +232,79 @@ class HugoLinkChecker:
         
         # Check if the target exists in our content map
         if target_url_no_anchor in self.content_map:
+            target_file = self.content_map[target_url_no_anchor]
+            
+            # If source is English and language consistency check is enabled
+            if is_source_english and self.check_language_consistency:
+                target_filename = target_file.name
+                # If target is Chinese (index.md), check if English version exists
+                if target_filename == 'index.md' or target_filename == '_index.md':
+                    en_target = target_file.parent / target_filename.replace('.md', '.en.md')
+                    if en_target.exists():
+                        # English version exists, warn about language inconsistency
+                        return BrokenLink(
+                            link=link,
+                            reason="Language inconsistency: English page linking to Chinese version (English version available)",
+                            expected_path=str(en_target)
+                        )
             return None  # Link is valid
         
         # Try with trailing slash
         if not target_url_no_anchor.endswith('/'):
             if target_url_no_anchor + '/' in self.content_map:
+                target_file = self.content_map[target_url_no_anchor + '/']
+                
+                # Check language consistency if enabled
+                if is_source_english and self.check_language_consistency:
+                    target_filename = target_file.name
+                    if target_filename == 'index.md' or target_filename == '_index.md':
+                        en_target = target_file.parent / target_filename.replace('.md', '.en.md')
+                        if en_target.exists():
+                            return BrokenLink(
+                                link=link,
+                                reason="Language inconsistency: English page linking to Chinese version (English version available)",
+                                expected_path=str(en_target)
+                            )
                 return None  # Link is valid
         
         # Try without trailing slash
         if target_url_no_anchor.endswith('/'):
             if target_url_no_anchor[:-1] in self.content_map:
+                target_file = self.content_map[target_url_no_anchor[:-1]]
+                
+                # Check language consistency if enabled
+                if is_source_english and self.check_language_consistency:
+                    target_filename = target_file.name
+                    if target_filename == 'index.md' or target_filename == '_index.md':
+                        en_target = target_file.parent / target_filename.replace('.md', '.en.md')
+                        if en_target.exists():
+                            return BrokenLink(
+                                link=link,
+                                reason="Language inconsistency: English page linking to Chinese version (English version available)",
+                                expected_path=str(en_target)
+                            )
                 return None  # Link is valid
         
         # Check if it might be a static file or asset
         if any(target_url_no_anchor.endswith(ext) for ext in ['.jpg', '.png', '.gif', '.pdf', '.webp', '.jpeg', '.svg']):
             # Could be an asset file - skip for now
             return None
+        
+        # For English source files, check if the target exists but only in Chinese
+        if is_source_english:
+            # Try to find the Chinese version
+            for url_variant in [target_url_no_anchor, target_url_no_anchor + '/', target_url_no_anchor.rstrip('/')]:
+                if url_variant in self.content_map:
+                    target_file = self.content_map[url_variant]
+                    if target_file.name in ['index.md', '_index.md']:
+                        # Found Chinese version, but no English version
+                        en_target = target_file.parent / target_file.name.replace('.md', '.en.md')
+                        if not en_target.exists():
+                            return BrokenLink(
+                                link=link,
+                                reason="English version not found (linking from English page to Chinese-only content)",
+                                expected_path=str(en_target)
+                            )
         
         # Link is broken
         return BrokenLink(
@@ -295,14 +393,21 @@ class HugoLinkChecker:
             for pattern, count in sorted(patterns.items(), key=lambda x: x[1], reverse=True):
                 print(f"  • {pattern}: {count}")
     
-    def run(self):
+    def run(self, debug=False):
         """Run the complete link checking process."""
         print(f"Hugo Relative Link Checker")
         print(f"Content directory: {self.content_dir.absolute()}")
+        if self.check_language_consistency:
+            print("Language consistency checking: ENABLED")
         print("=" * 60)
         
         # Build content map
         self.build_content_map()
+        
+        if debug:
+            print("\nSample URL mappings:")
+            for url in sorted(self.content_map.keys())[:20]:
+                print(f"  {url} -> {self.content_map[url].name}")
         
         # Scan all content
         self.scan_all_content()
@@ -319,15 +424,23 @@ class HugoLinkChecker:
 
 def main():
     """Main entry point."""
+    # Parse command line arguments
+    parser = argparse.ArgumentParser(description='Check relative links in Hugo content')
+    parser.add_argument('--check-language', '-l', action='store_true',
+                        help='Enable language consistency checking (warn when English pages link to Chinese versions)')
+    parser.add_argument('--content-dir', '-d', default='content',
+                        help='Path to content directory (default: content)')
+    args = parser.parse_args()
+    
     # Check if content directory exists
-    content_dir = Path("content")
+    content_dir = Path(args.content_dir)
     if not content_dir.exists():
         print(f"Error: Content directory '{content_dir}' not found!")
         print("Please run this script from the Hugo project root.")
         sys.exit(1)
     
     # Create and run checker
-    checker = HugoLinkChecker(str(content_dir))
+    checker = HugoLinkChecker(str(content_dir), check_language_consistency=args.check_language)
     exit_code = checker.run()
     
     sys.exit(exit_code)

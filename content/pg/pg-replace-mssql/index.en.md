@@ -17,7 +17,7 @@ Of course, when talking about which mainstream database faces the highest risk, 
 
 ## Babelfish
 
-While I've always criticized cloud providers for [**freeloading on open source**](/cloud/redis-oss), I acknowledge this strategy is extremely effective. AWS took open-source PostgreSQL and MySQL kernels, swept through the database market, punching Oracle and kicking Microsoft, becoming the undisputed leader in database market share.
+While I've always criticized cloud providers for [**freeloading on open source**](/db/redis-oss/), I acknowledge this strategy is extremely effective. AWS took open-source PostgreSQL and MySQL kernels, swept through the database market, punching Oracle and kicking Microsoft, becoming the undisputed leader in database market share.
 
 In recent years, AWS has played an even more devastating move - developing and integrating a BabelfishPG extension plugin that provides "**wire protocol**" level compatibility.
 
@@ -77,7 +77,7 @@ Besides MSSQL, PostgreSQL's ecosystem also has Oracle replacements: PolarDB O an
 
 Our recently released open-source RDS PostgreSQL solution - Pigsty - recently supports these PG replacement kernels, allowing users to provide MSSQL, Oracle, MongoDB, Firebase compatibility replacement capabilities in one PostgreSQL deployment.
 
-Besides MSSQL, PostgreSQL's ecosystem also has Oracle replacements: PolarDB O and IvorySQL; MongoDB replacements: FerretDB and PongoDB; [plus over 300 extension plugins providing various functionalities](/zh/docs/pgext/list).
+Besides MSSQL, PostgreSQL's ecosystem also has Oracle replacements: PolarDB O and IvorySQL; MongoDB replacements: FerretDB and PongoDB; [plus over 300 extension plugins providing various functionalities](https://ext.pgsty.com/zh/list).
 
 ![](https://pigsty.io/img/ecosystemjpg)
 

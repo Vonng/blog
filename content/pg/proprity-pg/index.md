@@ -54,7 +54,7 @@ MongoDB 转向更严格的许可证模式及厂商主导的云平台之路，与
 
 ![mongo-trend.jpg](mongo-trend.jpg)
 
-> 老冯按：[《StackOverflow 2025 调研》中，MongoDB 成为年度最大输家]([so2025-pg](/pg/so2025-pg))
+> 老冯按：[《StackOverflow 2025 调研》中，MongoDB 成为年度最大输家](/pg/so2025-pg)
 
 时至今日，有关 MongoDB 的讨论大多集中在如何迁移离开这个企业平台，而非继续采用它。
 最能体现这一趋势的例子之一，是 Infisical 于 2024 年 12 月发布的一篇博文（Infisical 是一个“一站式平台，用于安全地管理应用程序密钥、证书、SSH 密钥和配置”），

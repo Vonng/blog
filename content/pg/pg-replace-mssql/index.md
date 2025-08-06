@@ -20,7 +20,7 @@ tags: [PostgreSQL,PG生态,MSSQL]
 
 ## Babelfish
 
-虽然我一直吐槽云厂商[**白嫖开源**](/cloud/redis-oss)，但我承认这种策略是极为有效的 ——
+虽然我一直吐槽云厂商[**白嫖开源**](/db/redis-oss/)，但我承认这种策略是极为有效的 ——
 AWS 拿着开源的 PostgreSQL 和 MySQL 内核，一路杀穿数据库市场，拳打 Oracle ，脚踢微软，成为数据库市场份额毫无争议的一哥。
 而这两年 AWS 更是玩了一招釜底抽薪，开发整合了一个 BabelfishPG 的扩展插件，提供“**线缆协议**”级别的兼容性。
 
@@ -93,7 +93,7 @@ pgloader mssql://user@mshost/dbname pgsql://pguser@pghost/dbname
 我们最近发布的开源 RDS PostgreSQL 方案 —— Pigsty 最近就支持了这些 PG 替换内核，允许用户在一套 PostgreSQL 部署中提供 MSSQL，Oracle，MongoDB，Firebase，MongoDB 的兼容性替代能力。不过限于篇幅，那就是后面几篇要介绍的内容了。
 
 
-除了 MSSQL，PostgreSQL 生态还有旨在替代 Oracle替代：PolarDB O 与 IvorySQL，旨在替代 MongoDB 的 FerretDB 与 PongoDB。[以及三百多个提供各式各样功能的扩展插件。](/zh/docs/pgext/list)
+除了 MSSQL，PostgreSQL 生态还有旨在替代 Oracle替代：PolarDB O 与 IvorySQL，旨在替代 MongoDB 的 FerretDB 与 PongoDB。[以及三百多个提供各式各样功能的扩展插件。](https://ext.pgsty.com/zh/list)
 
 ![](https://pigsty.io/img/ecosystemjpg)
 

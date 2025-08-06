@@ -20,7 +20,7 @@ Extensions are useless if most users can’t easily install and enable them. But
 Even the largest cloud postgres vendors are struggling with this.
 They have some inherent limitations (multi-tenancy, security, licensing) that make it hard for them to fully address this issue.
 
-So here's my plan, I've created a [**repository**](https://ext.pgsty.com/) that hosts [**390**](https://ext.pgsty.com/e/list) of the most capable extensions in the PostgreSQL ecosystem,
+So here's my plan, I've created a [**repository**](https://ext.pgsty.com/) that hosts [**390**](https://ext.pgsty.com/zh/e/list) of the most capable extensions in the PostgreSQL ecosystem,
 available as RPM / DEB packages on mainstream Linux OS distros.  And the goal is to take PostgreSQL one solid step closer to becoming the all-powerful database and achieve **the great alignment** between the Debian and EL OS ecosystems.
 
 > [**TL;DR: Take me to the HOW-TO part!**](#apt-repo)

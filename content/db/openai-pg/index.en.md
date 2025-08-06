@@ -192,9 +192,9 @@ UPDATE pg_index SET indisvalid = false WHERE indexrelid = 'pgbench_accounts_pkey
 
 Actually, [**`pg_stat_statements`**](https://pigsty.io/ext/stat/pg_stat_statements/) provides the `mean` and `stddev` metrics, which you can use with properties of the normal distribution to estimate percentile metrics. But this is only a rough estimate, and you need to reset the counters periodically, otherwise the effectiveness of the full historical statistics will degrade over time.
 
-[![pgss.jpg](pgss.jpg)](https://pigsty.io/blog/admin/pgss/)
+[![pgss.jpg](pgss.jpg)](/pg/pgss/)
 
-> RT Distribution with [PGSQL QUERY](https://demo.pigsty.io/d/pgsql-query) Dashboard from [PGSS](https://pigsty.io/blog/admin/pgss/)
+> RT Distribution with [PGSQL QUERY](https://demo.pigsty.io/d/pgsql-query) Dashboard from [PGSS](/pg/pgss/)
 
 PGSS is unlikely to provide P95, P99 RT percentile metrics anytime soon, because it would increase the extension’s memory footprint by several dozen times. While that’s not a big deal for modern servers, it could be an issue in extremely conservative environments. I asked the maintainer of PGSS about this at the [Unconference](https://wiki.postgresql.org/wiki/PGConf.dev_2025_Developer_Unconference#The_Future_of_pg_stat_statements), and it’s unlikely to happen in the short term. I also asked Jelte, the maintainer of Pgbouncer, if this could be solved at the connection pool level, and a feature like that is not coming soon either.
 

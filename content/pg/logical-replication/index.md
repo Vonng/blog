@@ -13,7 +13,7 @@ tags: [PostgreSQL,PG管理]
 
 ## 逻辑复制
 
-**逻辑复制（Logical Replication）**，是一种根据数据对象的 [**复制标识**](/admin/replica-identity/)（Replica Identity）（通常是主键）复制数据对象及其变化的方法。
+**逻辑复制（Logical Replication）**，是一种根据数据对象的 [**复制标识**](/pg/replica-identity/)（Replica Identity）（通常是主键）复制数据对象及其变化的方法。
 
 **逻辑复制** 这个术语与 **物理复制**相对应，物理复制使用精确的块地址与逐字节复制，而逻辑复制则允许对复制过程进行精细的控制。
 
@@ -54,7 +54,7 @@ tags: [PostgreSQL,PG管理]
 
 ### 复制标识
 
-> [复制标识](/admin/replica-identity)
+> [复制标识](/pg/replica-identity)
 
 一个被纳入发布中的表，必须带有 **复制标识（Replica Identity）**，只有这样才可以在订阅者一侧定位到需要更新的行，完成`UPDATE`与`DELETE`操作的复制。
 

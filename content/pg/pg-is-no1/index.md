@@ -30,7 +30,7 @@ tags: [PostgreSQL,PG生态]
 流行度代表过去，喜爱度代表现在，需求度代表将来，这三个指标很好地反映了一项技术的生命力。存量与增量，时与势都站在 PostgreSQL 一侧，恐怕在几年内恐怕都不会有任何能挑战 PostgreSQL 地位的竞争对手。
 作为 PostgreSQL 忠实的用户，社区成员，专家，布道师与贡献者，从拥抱 PostgreSQL的那一刻起，我就相信会有这一天，然而亲自见证这一刻，仍然让我感慨良多。遂撰此文，聊一聊这件事背后的 **Why** 与 **What**。
 
-推荐阅读：StackOverflow 2022 往期调研结果回顾：《[为什么PostgreSQL将成为最成功的数据库？](/db/pg-is-no1/)》
+推荐阅读：StackOverflow 2022 往期调研结果回顾：《[为什么PostgreSQL将成为最成功的数据库？](/pg/pg-is-no1/)》
 
 
 ------

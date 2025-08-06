@@ -90,7 +90,7 @@ PostgreSQL在一个很可观的规模内都可以独立扮演多面手的角色�
 
 ![](pg-is-great-4.png)
 
-> 参考阅读：[**PG好处都有啥**](/db/pg-is-good/)
+> 参考阅读：[**PG好处都有啥**](/pg/pg-is-good/)
 
 
 

@@ -39,7 +39,7 @@ Dify “支持” 了一堆花里胡哨的向量数据库，但你既然已经�
 
 ## Pigsty的准备工作
 
-我们用 [单机安装](/zh/docs/concept/arch/#单机安装) 的 Pigsty 为例，假设你有一台 IP 地址为 `10.10.10.10` 的机器，已经 [安装好了单机 Pigsty](/zhhttps://pigsty.io/docs/setup/install)。
+我们用 [单机安装](/zh/docs/concept/arch/#单机安装) 的 Pigsty 为例，假设你有一台 IP 地址为 `10.10.10.10` 的机器，已经 [安装好了单机 Pigsty](https://doc.pgsty.com/install/start)。
 
 当然，我们需要在 Pigsty 配置文件 `pigsty.yml` 中定义一下我们所需的数据库集群。
 这里定义了一个名为 `pg-meta` 的集群，其中有一个名为 `dbuser_dify` 的超级业务用户（它这个实现的有点挫，在 Migration 脚本里面执行了 `CREATE EXTENSION` ），一个安装了 `pgvector` 扩展插件的数据库 `dify`，以及一条特定的防火墙规则，允许用户通过密码从任何地方访问数据库（你也可以将其限制为docker的网段 `172.0.0.0/8` 之类更精确的范围）。
@@ -60,7 +60,7 @@ redis-dify:
   vars: { redis_cluster: redis-dify ,redis_password: 'redis.dify' ,redis_max_memory: 64MB }
 ```
 
-这里出于演示目的，我们全部使用单实例配置，你可以参考 Pigsty 文档部署 [高可用](/zh/docs/concept/ha) 的 PG 集群与 Redis 集群。总之，在定义完成后，使用以下命令创建 PG 和 Redis 。
+这里出于演示目的，我们全部使用单实例配置，你可以参考 Pigsty 文档部署 [高可用](https://ext.pgsty.com/zh/pgsql/arch) 的 PG 集群与 Redis 集群。总之，在定义完成后，使用以下命令创建 PG 和 Redis 。
 
 ```bash
 bin/pgsql-add  pg-meta                # create the dify database cluster
@@ -95,7 +95,7 @@ redis-cli -u redis://redis.dify@10.10.10.10:6379/0 ping
 
 如果您已经了解如何配置使用 Pigsty，可以略过本节。
 
-[从零安装](/zhhttps://pigsty.io/docs/setup/install) Pigsty 需要 [准备](/zhhttps://pigsty.io/docs/setup/prepare/) 一台符合要求的机器节点： Linux / x86_64，静态 IP，使用带有免密 `sudo` 权限的用户，执行以下命令：
+[从零安装](https://doc.pgsty.com/zh/install/start) Pigsty 需要 [准备](https://doc.pgsty.com/zh/prepare) 一台符合要求的机器节点： Linux / x86_64，静态 IP，使用带有免密 `sudo` 权限的用户，执行以下命令：
 
 ```bash
 curl -fsSL https://repo.pigsty.cc/get | bash
@@ -113,11 +113,11 @@ cd ~/pigsty      # 下载源码包解压后进入 Pigsty 源码目录，完成�
 ./install.yml    # 根据生成的配置文件开始在当前节点上执行安装，使用离线安装包大概需要10分钟完成
 ```
 
-您应当将上面的 PostgreSQL 集群与 Redis 集群定义填入 `pigsty.yml` 文件中，然后执行 [`install.yml`](/zhhttps://pigsty.io/docs/infra#infrayml) 完成安装。
+您应当将上面的 PostgreSQL 集群与 Redis 集群定义填入 `pigsty.yml` 文件中，然后执行 [`install.yml`](https://doc.pgsty.com/zh/infra/playbook) 完成安装。
 
 **Redis安装问题**
 
-Pigsty 默认不会安装 Redis，所以您需要使用 [`redis.yml`](/zh/docs/redis#redisyml) 剧本显式完成 Redis 安装：
+Pigsty 默认不会安装 Redis，所以您需要使用 [`redis.yml`](https://doc.pgsty.com/zh/redis/playbook#redisyml) 剧本显式完成 Redis 安装：
 
 ```bash
 ./redis.yml
@@ -126,7 +126,7 @@ Pigsty 默认不会安装 Redis，所以您需要使用 [`redis.yml`](/zh/docs/r
 
 **Docker安装问题**
 
-Pigsty 默认不会在当前节点安装 Docker，所以您需要使用 [`docker.yml`](/zh/docs/docker#dockeryml) 剧本安装 Docker。
+Pigsty 默认不会在当前节点安装 Docker，所以您需要使用 [`docker.yml`](https://doc.pgsty.com/zh/docker/playbook#redisyml) 剧本安装 Docker。
 
 ```bash
 ./docker.yml
@@ -137,7 +137,7 @@ Pigsty 默认不会在当前节点安装 Docker，所以您需要使用 [`docker
 
 请注意，对于中国大陆用户来说，Docker Hub 与各镜像站点目前出于封锁状态，需要 “科学上网” 才能拉取 Dify 所需的镜像，您可以考虑 `docker save|load`，或者为 Docker Daemon 配置代理。
 
-要为 Docker Daemon 配置代理，您需要在 [`proxy_env`](/zh/docs/reference/param#proxy_env) 中指定 `http_proxy` 与 `https_proxy` 环境变量，该参数会在 `docker_config` 任务中被写入 `/etc/docker/daemon.json` 中：
+要为 Docker Daemon 配置代理，您需要在 [`proxy_env`](https://doc.pgsty.com/zh/infra/playbook#proxy_env) 中指定 `http_proxy` 与 `https_proxy` 环境变量，该参数会在 `docker_config` 任务中被写入 `/etc/docker/daemon.json` 中：
 
 ```json
 {
@@ -170,7 +170,7 @@ $ docker compose pull
 
 Dify 的配置参数一如往常地放在 [`.env`](https://github.com/Vonng/pigsty/blob/master/app/dify/.env) 文件中，内容如下所示：
 
-所有参数都顾名思义，已经填入了在 [Pigsty默认沙箱环境](/zhhttps://pigsty.io/docs/setup/provision/) 中可以直接工作的默认值，数据库连接信息请根据您的真实配置，与上面 PG / Redis 集群配置保持一致即可。
+所有参数都顾名思义，已经填入了在 [Pigsty默认沙箱环境](https://doc.pgsty.com/zh/prepare/sandbox/) 中可以直接工作的默认值，数据库连接信息请根据您的真实配置，与上面 PG / Redis 集群配置保持一致即可。
 我们建议你随便改一下这个 `SECRET_KEY` 字段，可以使用 `openssl rand -base64 42` 生成一个强密钥。
 
 ```bash

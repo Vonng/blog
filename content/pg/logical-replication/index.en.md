@@ -12,7 +12,7 @@ tags: [PostgreSQL,PG Administration]
 
 ## Logical Replication
 
-**Logical Replication** is a method of replicating data objects and their changes based on their [**replica identity**](/admin/replica-identity/) (usually the primary key).
+**Logical Replication** is a method of replicating data objects and their changes based on their [**replica identity**](/pg/replica-identity/) (usually the primary key).
 
 The term **logical replication** contrasts with **physical replication**. Physical replication uses exact block addresses and byte-for-byte copying, while logical replication allows fine-grained control over the replication process.
 
@@ -51,7 +51,7 @@ Publications can filter the types of changes needed: any combination of `INSERT`
 
 ### Replica Identity
 
-> [Replica Identity](/admin/replica-identity)
+> [Replica Identity](/pg/replica-identity)
 
 A table included in a publication must have a **replica identity** so that rows needing updates can be located on the subscriber side to complete `UPDATE` and `DELETE` operation replication.
 

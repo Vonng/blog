@@ -10,7 +10,7 @@ summary: |
 tags: [PostgreSQL,PG Ecosystem,Performance]
 ---
 
-Previously, we analyzed StackOverflow survey data to explain "[Why PostgreSQL is the Most Successful Database](/db/pg-is-no1/)".
+Previously, we analyzed StackOverflow survey data to explain "[Why PostgreSQL is the Most Successful Database](/pg/pg-is-no1/)".
 
 This time we'll let performance data speak for itself, discussing just how powerful the most successful PostgreSQL really is, helping you "**know the numbers**".
 
@@ -117,7 +117,7 @@ MySQL doesn't provide official sysbench test results, only posting third-party e
 
 This is quite **unsportsmanlike** behavior. Reading the linked evaluation article reveals these results were achieved by disabling all MySQL security features: disabling Binlog, commit flushing, FSYNC, performance monitoring, DoubleWrite, checksums, forcing LATIN-1 charset - such a database simply cannot be used in production environments; it's purely benchmark gaming.
 
-However, we can also use these Dirty Hacks, disabling corresponding PostgreSQL security features to see PostgreSQL's ultimate limits. The results are stunning - PostgreSQL point query QPS reached [2.33 million per second](/db/pg-performence/), peak performance far exceeding MySQL by more than double.
+However, we can also use these Dirty Hacks, disabling corresponding PostgreSQL security features to see PostgreSQL's ultimate limits. The results are stunning - PostgreSQL point query QPS reached [2.33 million per second](/pg/pg-performence/), peak performance far exceeding MySQL by more than double.
 
 ![pg-performence-6.png](pg-performence-7.png)
 
@@ -232,7 +232,7 @@ Overall, even a 10-core laptop running PostgreSQL can achieve quite impressive a
 
 At least on hundred-GB scale tables, PostgreSQL can definitely be called an excellent analytical database. If single tables exceed multi-TB scale, you can smoothly upgrade to PostgreSQL-compatible MPP data warehouses like Greenplum/MatrixDB/DeepGreen. PostgreSQL using master-slave replication can scale read loads nearly infinitely through cascading replicas; PostgreSQL using logical replication can perform built-in/synchronous AP-mode ETL, truly earning the HTAP database title.
 
-In conclusion, **PostgreSQL performs brilliantly in the TP domain and respectably in the AP domain**. No wonder in recent years' StackOverflow annual developer surveys, PostgreSQL became the [triple-crown database](/db/pg-is-no1/) - most used, most loved, and most wanted by professional developers.
+In conclusion, **PostgreSQL performs brilliantly in the TP domain and respectably in the AP domain**. No wonder in recent years' StackOverflow annual developer surveys, PostgreSQL became the [triple-crown database](/pg/pg-is-no1/) - most used, most loved, and most wanted by professional developers.
 
 ![pg-performence-14.png](pg-performence-14.png)
 

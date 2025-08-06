@@ -73,7 +73,7 @@ This is an old topic with no technical sophistication. Add percent signs before 
 SELECT * FROM app WHERE name LIKE '%支付宝%';
 ```
 
-Prefix and suffix fuzzy queries can be accelerated through regular Btree indexes. Note that when using `LIKE` queries in PostgreSQL, don't fall into the LC_COLLATE trap. For details, refer to this article: [**Localization and Collation Rules in PostgreSQL**](/admin/collate/).
+Prefix and suffix fuzzy queries can be accelerated through regular Btree indexes. Note that when using `LIKE` queries in PostgreSQL, don't fall into the LC_COLLATE trap. For details, refer to this article: [**Localization and Collation Rules in PostgreSQL**](/pg/collate/).
 
 ```sql
 CREATE INDEX ON app(name COLLATE "C");          -- suffix fuzzy
