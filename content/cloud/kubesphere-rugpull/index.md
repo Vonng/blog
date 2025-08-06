@@ -139,7 +139,7 @@ PostgreSQL 内核开发者社区也找到我，希望我帮助测试 PG 多线�
 一些 PostgreSQL 供应商（Omnigres，AutoBase）也成为了 Pigsty 的供应链下游，许多 ISV 也使用 Pigsty 去做交付。
 甚至 Oracle 云的 SA，也使用 Pigsty 在 OCI 上向他们的客户交付 PostgreSQL 服务。
 
-> 啊是的，虽然老冯一直都在[对云开火](/cloud)，但他们这样并不违反 AGPLv3 许可
+> 啊是的，虽然老冯一直都在对云开火，但他们这样并不违反 AGPLv3 许可
 
 这种深度参与全球软件供应链的关系网络，才是参与开源的最大意义 —— 凝聚合力与共识，产生更大的价值。
 也许有一天，Pigsty 就会自然成为 PostgreSQL 世界里的 Debian 或者 Ubuntu，或者某种标准。

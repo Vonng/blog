@@ -219,7 +219,7 @@ LIMIT 10;
 
 让我们先考察其执行计划：
 
-![](/img/blog/pg/knn-explain-l1.png)
+![](knn-explain-l1.png)
 
 > ### 题外话：SQL内联
 >
@@ -331,7 +331,7 @@ ORDER BY 3 LIMIT 10;
 
 预热后，实际执行平均耗时35毫秒，相比暴力扫表有了近千倍的性能提高，一个巨大的进步。
 
-![](/img/blog/pg/knn-explain-l2.png)
+![](knn-explain-l2.png)
 
 对于比较简单粗糙的产品，这种方法已经达到了‘可用’的级别。但这一方法仍然存在许多问题。
 
@@ -393,7 +393,7 @@ ORDER BY 3 LIMIT 10;
 
 |           半径大了性能差           |                    半径小了圈不着                    |
 | :--------------------------------: | :--------------------------------------------------: |
-| ![](/img/blog/pg/knn-badcase-1.png)  | ![mage-20180321221805](/img/blog/pg/knn-badcase-2.png) |
+| ![](knn-badcase-1.png)  | ![mage-20180321221805](knn-badcase-2.png) |
 | 繁荣的五道口，一公里圈10家小意思。 |        300公里外才有一家，新疆人民哭晕在厕所         |
 
 
@@ -419,7 +419,7 @@ ORDER BY 3 LIMIT 10;
 
 有没有优雅、正确、快速的解决方案呢？
 
-![mage-20180321221928](/img/blog/pg/knn-cluster.png)
+![mage-20180321221928](knn-cluster.png)
 
 ```sql
 CREATE INDEX ON pois4 USING btree(longitude, latitude, category);
@@ -441,7 +441,7 @@ LIMIT 10;
 
 联合索引查询的执行计划，实际执行时间可以压缩至7毫秒。
 
-![mage-20180321221945](/img/blog/pg/knn-l3.png)
+![mage-20180321221945](knn-l3.png)
 
 这差不多就是传统关系数据模型的极限了，对于大部分业务，这都是一个可以接受水平了。
 
@@ -494,7 +494,7 @@ ORDER BY position <-> ST_GeogFromText('SRID=4326;POINT(116.365798 39.961576)') L
 
 R树的核心思想是，聚合**距离相近**的节点，并在树结构的上一层，将其表示为这些节点的**最小外接矩形**，这个最小外接矩形就成为上一层的一个节点。因为所有节点都在它们的最小外接矩形中，所以跟某个矩形不相交的查询就一定跟这个矩形中的所有节点都不相交。
 
-![mage-20180321220143](/img/blog/pg/knn-r-tree.png)
+![mage-20180321220143](knn-r-tree.png)
 
 
 
@@ -521,7 +521,7 @@ LIMIT 10;
 
 |            Geometry: 1.6 ms            |                 Geography: 3.4 ms                 |
 |:--------------------------------------:|:-------------------------------------------------:|
-| ![](/img/blog/pg/knn-explain-l4-geom.png) | ![mage-20180321222024](/img/blog/pg/knn-l4-geog.png) |
+| ![](knn-explain-l4-geom.png) | ![mage-20180321222024](knn-l4-geog.png) |
 
 现在，我们来看看PostGIS交出的答卷。
 
@@ -607,7 +607,7 @@ FROM pois6 WHERE category = 60000 ORDER BY 3 LIMIT 10;
 
 | Geometry: 0.85ms / Geography: 1.2ms |
 |:-----------------------------------:|
-|  ![](/img/blog/pg/knn-explain-l5.png)  |
+|  ![](knn-explain-l5.png)  |
 
 ```plsql
 CREATE OR REPLACE FUNCTION get_random_nearby_store() RETURNS TEXT

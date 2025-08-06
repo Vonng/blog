@@ -54,7 +54,7 @@ DB与Role级别的配置存储在系统目录`pg_db_role_setting`中，这个表
 vi ${PGDATA}/global/2964
 ```
 
-![](/img/blog/pg/pit-extension.png)
+![](pit-extension.png)
 
 这里，将所有的`pg_hint_plan`字符串都替换成等长的`^@`二进制零字符即可。当然如果不在乎原来的配置，更省事的做法是直接把这个文件截断成零长文件。
 

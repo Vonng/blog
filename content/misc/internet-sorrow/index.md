@@ -11,7 +11,7 @@ menu:
 
 
 
-[《理解互联网》](/cn/blog/misc/理解互联网/) 中聊了对互联网的认识，今天聊一聊刻意省略的部分：互联网将面临的挫折。
+[《理解互联网》](https://vonng.com/cn/blog/misc/understand-internet/) 中聊了对互联网的认识，今天聊一聊刻意省略的部分：互联网将面临的挫折。
 
 <!--more-->
 

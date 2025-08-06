@@ -117,7 +117,7 @@ UPTIME INSTITUTE 发布的年度数据中心故障分析报告表明，很多云
 
 【4】[AWS EC2 SLA 样例](https://d1.awsstatic.com/legal/AmazonComputeServiceLevelAgreement/Amazon_Compute_Service_Level_Agreement_Chinese_Simplfied_(CN)2022-05-25.pdf)
 
-【5】[云SLA更像是惩罚用户而不是补偿用户](https://journal.uptimeinstitute.com/cloud-slas-punish-not-compensate/) 
+【5】[云SLA更像是惩罚用户而不是补偿用户](https://journal.uptimeinstitute.com/cloud/-slas-punish-not-compensate/) 
 
 【6】[NVMe SSD失效率统计](https://www.usenix.org/system/files/atc22-lu.pdf) 
 

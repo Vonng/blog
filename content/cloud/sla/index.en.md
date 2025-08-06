@@ -11,7 +11,7 @@ tags: [Cloud,CloudExit,SLA]
 
 In the world of cloud computing, Service Level Agreements (SLAs) are seen as a cloud provider's commitment to the quality of its services. However, a closer examination of these SLAs reveals that they might not offer the safety net one might expect: you might think you've insured your database for peace of mind, but in reality, you've bought a placebo that provides emotional comfort rather than actual coverage.
 
-[![](/img/blog/hero/sla.jpg)](https://mp.weixin.qq.com/s/LC5jAhuVObRcrTLxI1FUQA)
+[![](sla.jpg)](https://mp.weixin.qq.com/s/LC5jAhuVObRcrTLxI1FUQA)
 
 
 
@@ -138,7 +138,7 @@ Thus, SLAs are not an insurance policy against losses for users. In the worst-ca
 
 【4】[AWS EC2 SLA 样例](https://d1.awsstatic.com/legal/AmazonComputeServiceLevelAgreement/Amazon_Compute_Service_Level_Agreement_Chinese_Simplfied_(CN)2022-05-25.pdf)
 
-【5】[云SLA更像是惩罚用户而不是补偿用户](https://journal.uptimeinstitute.com/cloud-slas-punish-not-compensate/) 
+【5】[云SLA更像是惩罚用户而不是补偿用户](https://journal.uptimeinstitute.com/cloud/-slas-punish-not-compensate/) 
 
 【6】[NVMe SSD失效率统计](https://www.usenix.org/system/files/atc22-lu.pdf) 
 

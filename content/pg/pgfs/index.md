@@ -30,8 +30,8 @@ tags: [PostgreSQL,JuiceFS]
 比如以下命令，就能把SQLite 作为JuiceFS的元数据存储，并把本地路径当作对象存储来测试：
 
 ```bash
-juicefs format sqlite3:///tmp/jfs.db myjfs     # 使用SQLite3存储元数据，本地FS存储数据
-juicefs mount sqlite3:///tmp/jfs.db ~/jfs -d   # 将这个文件系统挂载到 ~/jfs 
+juicefs format sqlite3:/tmp/jfs.db myjfs     # 使用SQLite3存储元数据，本地FS存储数据
+juicefs mount sqlite3:/tmp/jfs.db ~/jfs -d   # 将这个文件系统挂载到 ~/jfs 
 ```
 
 **妙就妙在**：JuiceFS 还支持使用PostgreSQL 作为**元数据**和**对象数据**的存储后端！ 也就是说，你只需要把JuiceFS的后端改成一个已经安装好的PostgreSQL实例，就能得到一个基于数据库的“文件系统”。

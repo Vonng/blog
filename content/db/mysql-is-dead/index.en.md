@@ -16,7 +16,7 @@ Peter Zaitsev, CEO of Percona, remarked:
 
 > **Who needs MySQL when there's PostgreSQL?** But if MySQL dies, PostgreSQL might just monopolize the database world, so at least MySQL can serve as a whetstone for PostgreSQL to reach its zenith.
 
-Some databases are [eating the DBMS world](/blog/pg/pg-eat-db-world), while others are [fading into obscurity]().
+Some databases are [eating the DBMS world](/pg/pg-eat-db-world), while others are [fading into obscurity]().
 
 **MySQL is dead, Long live PostgreSQL!**
 
@@ -211,7 +211,7 @@ After all, many national databases are built on PostgreSQL—if you’re in the 
 
 ## Who Really Killed MySQL?
 
-Who killed MySQL, was it PostgreSQL? Peter Zaitsev argues in "[Did Oracle Ultimately Kill MySQL?]()" that **Oracle’s inaction and misguided directives ultimately doomed MySQL**. He further explains the real root cause in "[Can Oracle Save MySQL?](https://pigsty.io/zh/blog/db/can-oracle-save-mysql)":
+Who killed MySQL, was it PostgreSQL? Peter Zaitsev argues in "[Did Oracle Ultimately Kill MySQL?]()" that **Oracle’s inaction and misguided directives ultimately doomed MySQL**. He further explains the real root cause in "[Can Oracle Save MySQL?](https://pigsty.io/zh/db/can-oracle-save-mysql)":
 
 MySQL's intellectual property is owned by Oracle, and unlike PostgreSQL, which is "owned and managed by the community," it lacks the broad base of independent company contributors that PostgreSQL enjoys. Neither MySQL nor its fork, MariaDB, are truly community-driven pure open-source projects like Linux, PostgreSQL, or Kubernetes, but are dominated by a single commercial entity.
 
@@ -239,7 +239,7 @@ MySQL had its days of glory and was once a benchmark of "open-source software," 
 
 [Oracle还能拯救MySQL吗？](/db/can-oracle-save-mysql)
 
-[Oracle最终还是杀死了MySQL！](/db/oracle-killed-mysql)
+[Oracle最终还是杀死了MySQL！](/db/mysql-is-dead/)
 
 [MySQL性能越来越差，Sakila将何去何从？](/db/sakila-where-are-you-going)
 
@@ -251,23 +251,23 @@ MySQL had its days of glory and was once a benchmark of "open-source software," 
 
 [为什么PostgreSQL是未来数据的基石？](/pg/pg-for-everything)
 
-[PostgreSQL is eating the database world](/blog/pg/pg-eat-db-world)
+[PostgreSQL is eating the database world](/pg/pg-eat-db-world)
 
 [技术极简主义：一切皆用Postgres](/pg/just-use-pg)
 
 [PostgreSQL：世界上最成功的数据库](/pg/pg-is-no1)
 
-[PostgreSQL 到底有多强？](/pg/pg-performance)
+[PostgreSQL 到底有多强？](/pg/pg-performence/)
 
 [专用向量数据库凉了吗？](/db/svdb-is-dead)
 
 [向量是新的JSON](/pg/vector-json-pg)
 
-[AI大模型与PGVECTOR](/dev/llm-and-pgvector/)
+[AI大模型与PGVECTOR](/pg/llm-and-pgvector/)
 
 [云数据库的模式与新挑战](/cloud/dba-vs-rds)
 
-[云计算泥石流](/cloud)
+云计算泥石流
 
 [Redis不开源是“开源”之耻，更是公有云之耻](/db/redis-oss/)
 

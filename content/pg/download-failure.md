@@ -34,23 +34,23 @@ tags: [PostgreSQL,PG管理,故障档案]
 
 CPU使用率的正常水位在25%，警戒水位在45%，极限水位在80%。故障期间所有从库飙升至极限水位。
 
-![](/img/blog/pg/download-failure-cpu.jpg)
+![](download-failure-cpu.jpg)
 
 PostgreSQL连接数发生暴涨，通常5~10个左右的数据库连接就足够撑起所有流量，连接池的最大连接数为100。
 
-![pg-conn](/img/blog/pg/download-failure-pg-conn.png)
+![pg-conn](download-failure-pg-conn.png)
 
 pgbouncer连接池平均响应时间平时在500μs左右，故障期间飙升至百毫秒级别。
 
-![pgb-time](/img/blog/pg/download-failure-pgb-time.png)
+![pgb-time](download-failure-pgb-time.png)
 
 故障期间，数据库TPS发生显著下滑。进行杀查询抢救后恢复，但处于剧烈抖动状态。
 
-![](/img/blog/pg/download-failure-tps.png)
+![](download-failure-tps.png)
 
 故障期间，两个函数的执行时间发生显著恶化，从几百微秒劣化至几十毫秒。
 
-![](/img/blog/pg/download-failure-functime.png)
+![](download-failure-functime.png)
 
 故障期间，复制延迟显著上升，开始出现GB级别的复制延迟，业务指标出现显著下滑。
 
@@ -86,15 +86,15 @@ pgbouncer连接池平均响应时间平时在500μs左右，故障期间飙升�
 
 ##### 连接池活跃连接数
 
-![pgb-active-conn-5888653](/img/blog/pg/download-failure-pgb-active-conn.png)
+![pgb-active-conn-5888653](download-failure-pgb-active-conn.png)
 
 ##### **连接池排队连接数**
 
-![pgb-wait-conn](/img/blog/pg/download-failure-pgb-wait-conn.png)
+![pgb-wait-conn](download-failure-pgb-wait-conn.png)
 
 **数据库后端连接数**
 
-![pg-conn](/img/blog/pg/download-failure-pg-conn.png)
+![pg-conn](download-failure-pg-conn.png)
 
 
 
@@ -128,11 +128,11 @@ SELECT pg_cancel_backend(pid) FROM pg_stat_activity WHERE application_name != 'p
 
 **图：故障期间函数平均执行时间出现明显飙升**
 
-![](/img/blog/pg/download-failure-functime.png)
+![](download-failure-functime.png)
 
 **图：在不同并行数下压测该函数能达到的最大QPS**
 
-![degenerate-5889931](/img/blog/pg/download-failure-degenerate.png)
+![degenerate-5889931](download-failure-degenerate.png)
 
 #### 修复
 

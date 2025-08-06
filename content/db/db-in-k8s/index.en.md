@@ -13,7 +13,7 @@ tags: [Database,Kubernetes]
 
 Whether databases should be housed in Kubernetes/Docker remains highly controversial. While Kubernetes (k8s) excels in managing stateless applications, it has fundamental drawbacks with stateful services, especially databases like PostgreSQL and MySQL.
 
-In the previous article, "[Databases in Docker: Good or Bad](/blog/db/pg-in-docker)," we discussed the pros and cons of containerizing databases. Today, let's delve into the trade-offs in orchestrating databases in K8S and explore why it's not a wise decision.
+In the previous article, "Databases in Docker: Good or Bad," we discussed the pros and cons of containerizing databases. Today, let's delve into the trade-offs in orchestrating databases in K8S and explore why it's not a wise decision.
 
 
 -----------
@@ -57,7 +57,7 @@ In the cloud-native realm, the analogy of "pets" versus "cattle" is often used f
 
 > Cloud Native Applications 12 Factors: **Disposability**
 
-One of the leading architectural goals of K8S is to **treat what can be treated as cattle as cattle**. The attempt to "separate storage from computation" in databases follows this strategy: splitting stateful database services into state storage outside K8S and pure computation inside K8S. The state is stored on the EBS/cloud disk/distributed storage service, allowing the "stateless" database part to be freely created, destroyed, and scheduled in K8S.
+One of the leading architectural goals of K8S is to **treat what can be treated as cattle as cattle**. The attempt to "separate storage from computation" in databases follows this strategy: splitting stateful database services into state storage outside K8S and pure computation inside K8S. The state is stored on the EBS/cloud/ disk/distributed storage service, allowing the "stateless" database part to be freely created, destroyed, and scheduled in K8S.
 
 Unfortunately, databases, especially OLTP databases, heavily depend on disk hardware, and network storage's reliability and performance still lag behind local disks by [orders of magnitude](https://mp.weixin.qq.com/s/UxjiUBTpb1pRUfGtR9V3ag). Thus, K8S offers the LocalhostPV option, allowing containers to use data volumes directly lies on the host operating system, utilizing high-performance/high-reliability local NVMe disk storage.
 
@@ -134,9 +134,9 @@ The cloud-native movement's philosophy is compelling - democratizing the elastic
 
 Years ago, when I first encountered K8S, I too was fervent —— It was at TanTan. We had over twenty thousand cores and hundreds of database clusters, and I was eager to try putting databases in Kubernetes and testing all the available Operators. However, after two to three years of extensive research and architectural design, I calmed down and abandoned this madness. Instead, I architected our database service based on bare metal/operating systems. For us, the benefits K8S brought to databases were negligible compared to the problems and hassles it introduced.
 
-Should databases be put into K8S? It depends: for public cloud vendors who thrive on overselling resources, elasticity and utilization are crucial, which are directly linked to revenue and profit, While reliability and performance take a back seat - after all, an availability below three nines means [compensating 25% monthly credit](https://vonng.com/cn/blog/cloud/sla/). But for most user, including ourselves, these trade-offs hold different: One-time Day1 Setup, elasticity, and resource utilization aren't their primary concerns; reliability, performance, Day2 Operation costs, these core database attributes are what matter most.
+Should databases be put into K8S? It depends: for public cloud vendors who thrive on overselling resources, elasticity and utilization are crucial, which are directly linked to revenue and profit, While reliability and performance take a back seat - after all, an availability below three nines means [compensating 25% monthly credit](https://vonng.com/cn/cloud//sla/). But for most user, including ourselves, these trade-offs hold different: One-time Day1 Setup, elasticity, and resource utilization aren't their primary concerns; reliability, performance, Day2 Operation costs, these core database attributes are what matter most.
 
-We open-sourced our database service architecture — an out-of-the-box PostgreSQL distribution and a local-first RDS alternative: [Pigsty](https://vonng.com/cn/blog/db/pigsty-intro/). We didn't choose the so-called "build once, run anywhere" approach of K8S and Docker. Instead, we adapted to different [OS distros](https://mp.weixin.qq.com/s/xHG8OURTYlmnQTorFkzioA) & major versions, and used Ansible to achieve a K8S CRD IaC-like API to seal management complexity. This was arduous, but it was the right thing to do - the world does not need another clumsy attempt at putting PostgreSQL into K8S. Still, it does need a production database service architecture that maximizes hardware performance and reliability.
+We open-sourced our database service architecture — an out-of-the-box PostgreSQL distribution and a local-first RDS alternative: [Pigsty](https://vonng.com/cn/db/pigsty-intro/). We didn't choose the so-called "build once, run anywhere" approach of K8S and Docker. Instead, we adapted to different [OS distros](https://mp.weixin.qq.com/s/xHG8OURTYlmnQTorFkzioA) & major versions, and used Ansible to achieve a K8S CRD IaC-like API to seal management complexity. This was arduous, but it was the right thing to do - the world does not need another clumsy attempt at putting PostgreSQL into K8S. Still, it does need a production database service architecture that maximizes hardware performance and reliability.
 
 ![stackgres-pigsty.png](pigsty-stackgres.png)
 

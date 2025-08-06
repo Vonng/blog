@@ -1,7 +1,7 @@
 ---
 title: 半年下云省千万，DHH下云FAQ
 date: 2023-12-21
-hero: /hero/cloud-exit.jpg
+hero: /hero/cloud/-exit.jpg
 summary: |
   DHH 的下云旅程到了新的阶段，下云已经省下了近百万美元，且在未来的五年内还可以省下近一千万美元的高昂云开销。我们跟进了它们下云的最新进展，对于准备上云，云上的企业都非常有借鉴与参考价值。
 author: |

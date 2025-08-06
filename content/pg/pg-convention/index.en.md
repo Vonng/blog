@@ -9,7 +9,7 @@ summary: >
 tags: [PostgreSQL,Develop]
 ---
 
-![](/img/blog/hero/pg-convention.jpg)
+![](pg-convention.jpg)
 
 - [Background](#background)
 - [0x01 Naming Convention](#0x01-naming-convention)

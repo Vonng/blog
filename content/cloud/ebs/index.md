@@ -106,7 +106,7 @@ Aliyun ESSD PL3 和我们 IDC 自建采购 PCI-E NVMe SSD 【1】是同一家供
 
 [![](ebs-7.png)]()
 
-这四条总结的很到位，但公有云绝对不会告诉你“最佳实践”的代价是什么。用白话解释一下[这四条](https://github.com/lipingtababa/cloud-native-best-practices/blob/main/%E4%BA%91%E5%8E%9F%E7%94%9F%E7%8E%8B%E5%9B%9B%E6%9D%A1.md)的意思，这是一个为客户**精心设计的连环杀猪套**：
+这四条总结的很到位，但公有云绝对不会告诉你“最佳实践”的代价是什么。用白话解释一下[这四条](https://github.com/lipingtababa/cloud/-native-best-practices/blob/main/%E4%BA%91%E5%8E%9F%E7%94%9F%E7%8E%8B%E5%9B%9B%E6%9D%A1.md)的意思，这是一个为客户**精心设计的连环杀猪套**：
 
 **普通文件丢S3**！（这么物美价廉的S3，还要啥 EBS？）
 

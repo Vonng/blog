@@ -4,12 +4,12 @@ linkTitle: "Self-Hosting Supabase"
 date: 2024-11-25
 author: |
   [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
-summary: Supabase is great, own your own Supabase is even better. A tutorial for self-hosting production-grade supabase on local/cloud VM/BMs.
+summary: Supabase is great, own your own Supabase is even better. A tutorial for self-hosting production-grade supabase on local/cloud/ VM/BMs.
 tags: [Database,Supabase]
 ---
 
 Supabase is great, own your own Supabase is even better. 
-Here's a comprehensive tutorial for self-hosting production-grade supabase on local/cloud VM/BMs.
+Here's a comprehensive tutorial for self-hosting production-grade supabase on local/cloud/ VM/BMs.
 
 
 ## What is Supabase?
@@ -35,7 +35,7 @@ That's where Pigsty comes in. Pigsty provides a complete one-click self-hosting 
 Self-hosted Supabase can enjoy full PostgreSQL monitoring, IaC, PITR, and high availability capability.
 
 You can run the latest PostgreSQL 17(,16,15,14) kernels, (supabase is using the 15 currently), alone with [390](https://ext.pigsty.io/#/list) PostgreSQL extensions out-of-the-box.
-Run on [mainstream](/docs/reference/compatibility) Linus OS distros with production grade [HA](/docs/concept/ha) [PostgreSQL](/docs/pgsql), [MinIO](/docs/minio), Prometheus & Grafana Stack for observability, and Nginx for reverse proxy.
+Run on [mainstream](https://pigsty.io/docs/reference/compatibility) Linus OS distros with production grade [HA](/docs/concept/ha) [PostgreSQL](/docs/pgsql), [MinIO](/docs/minio), Prometheus & Grafana Stack for observability, and Nginx for reverse proxy.
 
 [**TIME**](https://ext.pigsty.io/#/time): [`timescaledb`](https://ext.pigsty.io/#/timescaledb) [`timescaledb_toolkit`](https://ext.pigsty.io/#/timescaledb_toolkit) [`timeseries`](https://ext.pigsty.io/#/timeseries) [`periods`](https://ext.pigsty.io/#/periods) [`temporal_tables`](https://ext.pigsty.io/#/temporal_tables) [`emaj`](https://ext.pigsty.io/#/emaj) [`table_version`](https://ext.pigsty.io/#/table_version) [`pg_cron`](https://ext.pigsty.io/#/pg_cron) [`pg_later`](https://ext.pigsty.io/#/pg_later) [`pg_background`](https://ext.pigsty.io/#/pg_background)
 [**GIS**](https://ext.pigsty.io/#/gis): [`postgis`](https://ext.pigsty.io/#/postgis) [`postgis_topology`](https://ext.pigsty.io/#/postgis_topology) [`postgis_raster`](https://ext.pigsty.io/#/postgis_raster) [`postgis_sfcgal`](https://ext.pigsty.io/#/postgis_sfcgal) [`postgis_tiger_geocoder`](https://ext.pigsty.io/#/postgis_tiger_geocoder) [`address_standardizer`](https://ext.pigsty.io/#/address_standardizer) [`address_standardizer_data_us`](https://ext.pigsty.io/#/address_standardizer_data_us) [`pgrouting`](https://ext.pigsty.io/#/pgrouting) [`pointcloud`](https://ext.pigsty.io/#/pointcloud) [`pointcloud_postgis`](https://ext.pigsty.io/#/pointcloud_postgis) [`h3`](https://ext.pigsty.io/#/h3) [`h3_postgis`](https://ext.pigsty.io/#/h3_postgis) [`q3c`](https://ext.pigsty.io/#/q3c) [`ogr_fdw`](https://ext.pigsty.io/#/ogr_fdw) [`geoip`](https://ext.pigsty.io/#/geoip) [`pg_polyline`](https://ext.pigsty.io/#/pg_polyline) [`pg_geohash`](https://ext.pigsty.io/#/pg_geohash) [`mobilitydb`](https://ext.pigsty.io/#/mobilitydb) [`earthdistance`](https://ext.pigsty.io/#/earthdistance)
@@ -67,7 +67,7 @@ All you need is prepare a VM with several commands and wait for 10 minutes....
 
 ## Get Started
 
-First, download & [install](/docs/setup/install) pigsty as usual, with the `supa` config template:
+First, download & [install](https://pigsty.io/docs/setup/install) pigsty as usual, with the `supa` config template:
 
 ```bash
  curl -fsSL https://repo.pigsty.io/get | bash
@@ -105,7 +105,7 @@ with some slight modifications to fit-in Pigsty's default [ACL](/docs/pgsql/acl)
 The stateful part of this template is replaced by Pigsty's managed PostgreSQL cluster and MinIO cluster.
 The container part are stateless, so you can launch / destroy / run multiple supabase containers on the same stateful PGSQL / MINIO cluster simultaneously to scale out.
 
-![](/img/pigsty/supa-arch.svg)
+![](https://pigsty.io/img/supa-arch.svg)
 
 The built-in [`supa.yml`](https://github.com/Vonng/pigsty/blob/main/conf/supa.yml) [config](/docs/config/supa) template will create a single-node supabase, with a [singleton PostgreSQL](/docs/pgsql) and SNSD [MinIO](/docs/minio) server.
 You can use [Multinode PostgreSQL Clusters](/docs/pgsql/config#replica) and [MNMD MinIO Clusters](/docs/minio/config#multi-node-multi-drive) / external S3 service instead in production, we will cover that later.
@@ -119,7 +119,7 @@ You can use [Multinode PostgreSQL Clusters](/docs/pgsql/config#replica) and [MNM
 Here are checklists for self-hosting
 
 - [x] [**Hardware**](/docs/setup/prepare#node): necessary VM/BM resources, one node at least, 3-4 are recommended for HA.
-- [x] [**Linux OS**](/docs/setup/prepare#operating-system): Linux x86_64 server with fresh installed Linux, [check compatible distro](/docs/reference/compatibility)
+- [x] [**Linux OS**](/docs/setup/prepare#operating-system): Linux x86_64 server with fresh installed Linux, [check compatible distro](https://pigsty.io/docs/reference/compatibility)
 - [x] [**Network**](/docs/setup/prepare#network): Static IPv4 address which can be used as node identity
 - [x] [**Admin User**](/docs/setup/prepare#admin-user): nopass ssh & sudo are recommended for admin user
 - [x] [**Conf Template**](/docs/setup/config): Use the [`supa`](/docs/conf/supa) config template, if you don't know how to manually configure pigsty

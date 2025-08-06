@@ -36,7 +36,7 @@ PGCon.Dev 2024 已经于5月31日晚正式结束，理论上本文章本应在�
 大会的第零天是领导层会议，我注册了下午的 Extension Ecosystem Summit 扩展生态峰会。
 
 说起来，这个扩展生态峰会也许跟我还有点关系。两个月前我写了一篇文章《[PostgreSQL正在吞噬数据库世界](/pg/pg-eat-db-world)》，主题是 PostgreSQL 的繁荣扩展生态是其独一无二的特点与成功的关键要素。
-写完后将其翻译成了英文《[Postgres is eating the database world](/blog/pg/pg-eat-db-world)》发到了 [Medium](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4) 与 [HackNews](https://news.ycombinator.com/item?id=39759539) 上，总共有几十万的阅览量，基本应该覆盖了整个 PG 社区。
+写完后将其翻译成了英文《[Postgres is eating the database world](/pg/pg-eat-db-world)》发到了 [Medium](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4) 与 [HackNews](https://news.ycombinator.com/item?id=39759539) 上，总共有几十万的阅览量，基本应该覆盖了整个 PG 社区。
 
 [![ecosystem.jpg](ecosystem.jpg)](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4)
 

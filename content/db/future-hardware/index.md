@@ -47,7 +47,7 @@ tags: [数据库]
 
 > **注释**：为什么将丢包检测和流量控制下放到硬件对于 RDMA 是可接受的，但 Linux 维护者一直拒绝对 TCP 这样做？因为这是一个不同且受限得多的 API，减少了网卡与主机之间的复杂性。[《TCP 卸载是一个愚蠢但已经到来的想法》](https://scholar.google.com/scholar?cluster=4106138525527042387) 是在这个领域一篇有趣的阅读材料。（来自 2003 年！）
 
-将 RDMA 作为低延迟和高吞吐量的网络原语，改变了人们设计数据库的方式。[《神话的终结：分布式事务可以扩展》](https://www.vldb.org/pvldb/vol10/p685-zamanian.pdf/) 显示了 RDMA 的低延迟使经典的 2PL+2PC 能够扩展到大型集群。[《云中可扩展的 OLTP 是一个已解决的问题吗？》](https://www.cidrdb.org/cidr2023/papers/p50-ziegler.pdf) 提出了在节点之间共享可写页面缓存的想法，因为低延迟使组件的更紧密耦合变得可行。RDMA 不仅适用于 OLTP 数据库；BigQuery 使用了基于 [RDMA Shuffle 的连接](https://cloud.google.com/blog/products/bigquery/in-memory-query-execution-in-google-bigquery)，因为其高吞吐量。改变给定吞吐量下的延迟和 CPU 利用率，改变了最佳设计的选择，或者解锁了以前被认为不可行的新设计[^3]。
+将 RDMA 作为低延迟和高吞吐量的网络原语，改变了人们设计数据库的方式。[《神话的终结：分布式事务可以扩展》](https://www.vldb.org/pvldb/vol10/p685-zamanian.pdf/) 显示了 RDMA 的低延迟使经典的 2PL+2PC 能够扩展到大型集群。[《云中可扩展的 OLTP 是一个已解决的问题吗？》](https://www.cidrdb.org/cidr2023/papers/p50-ziegler.pdf) 提出了在节点之间共享可写页面缓存的想法，因为低延迟使组件的更紧密耦合变得可行。RDMA 不仅适用于 OLTP 数据库；BigQuery 使用了基于 [RDMA Shuffle 的连接](https://cloud/.google.com/blog/products/bigquery/in-memory-query-execution-in-google-bigquery)，因为其高吞吐量。改变给定吞吐量下的延迟和 CPU 利用率，改变了最佳设计的选择，或者解锁了以前被认为不可行的新设计[^3]。
 
 > **注释**：要使用 RDMA，我强烈建议使用 [libfabric](https://ofiwg.github.io/libfabric/)，因为它对所有不同的 RDMA 供应商和库进行了抽象。[RDMAmojo 博客](https://rdmamojo.com/) 有多年关于 RDMA 的专业内容，是学习 RDMA 各个方面的最佳资源之一。
 

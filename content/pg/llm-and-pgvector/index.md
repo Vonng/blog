@@ -116,7 +116,7 @@ model = SentenceModel('shibing624/text2vec-base-chinese')
 def query(question, limit=64):
     vec = model.encode(question)  # 生成一个一次性的编码向量，默认查找最接近的64条记录
     item = 'ARRAY[' + ','.join([str(f) for f in vec.tolist()]) + ']::VECTOR(768)'
-    cursor = connect('postgres:///').cursor()
+    cursor = connect('postgres:/').cursor()
     cursor.execute("""SELECT id, txt, vec <-> %s AS d FROM sentences ORDER BY 3 LIMIT %s;""" % (item, limit))
     for id, txt, distance in cursor.fetchall():
         print("%-6d [%.3f]\t%s" % (id, distance, txt))

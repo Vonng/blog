@@ -166,7 +166,7 @@ If you're only using one or two cores of RDS, then it might not be worth the has
 
 > Make no mistake, RDS are just mediocre solutions.
 
-When it comes to the cost of cloud databases/cloud servers, if you manage to bring this up with a sales representative, their pitch usually shifts to: Yes, we are expensive, but we are good!
+When it comes to the cost of cloud databases/cloud/ servers, if you manage to bring this up with a sales representative, their pitch usually shifts to: Yes, we are expensive, but we are good!
 
 **But, is RDS really that good?**
 
@@ -193,7 +193,7 @@ Indeed, sometimes cloud providers do offer sufficiently good local NVMe SSDs, bu
 
 ![](rds-6.png)
 
-![](/img/pigsty/dashboard.jpg)
+![](https://pigsty.io/img/dashboard.jpg)
 
 > Public [Demo](https://demo.pigsty.cc): https://demo.pigsty.cc
 

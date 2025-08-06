@@ -48,7 +48,7 @@ Supabase 旨在为开发者提供一站式的后端解决方案，减少开发�
 小微规模（4c8g）内的 Supabase 云服务[极富性价比](https://supabase.com/pricing)，人称赛博菩萨。那么 Supabase 云服务这么香，为什么要自建呢？
 
 最直观的原因是是我们在《[云数据库是智商税吗？](/cloud/rds)》中提到过的：当你的规模超出云计算适用光谱，成本很容易出现爆炸式增长。
-而且在当下，足够可靠的[本地企业级 NVMe SSD](/cloud/hardware-bonus)在性价比上与云端存储有着三到四个数量级的优势，而自建能更好地利用这一点。
+而且在当下，足够可靠的[本地企业级 NVMe SSD](/cloud/bonus/)在性价比上与云端存储有着三到四个数量级的优势，而自建能更好地利用这一点。
 
 另一个重要的原因是功能， Supabase 云服务的功能受限 —— [出于与RDS相同的逻辑](https://mp.weixin.qq.com/s/EH7RPB6ImfMHXhOMU7P5Qg)，
 很多 [**强力PG扩展**](https://ext.pigsty.io/#/list) 因为多租户安全挑战与许可证的原因无法作为云服务提供。
@@ -58,7 +58,7 @@ Supabase 旨在为开发者提供一站式的后端解决方案，减少开发�
 Supabase 内置了一系列由他们自己开发维护的 PG 扩展插件，而这些扩展在 PGDG 官方仓库中并没有提供。
 这实际上是某种隐性的供应商锁定，阻止了用户使用除了 supabase/postgres Docker 镜像之外的方式自建。
 
-Pigsty 解决了这些问题，我们将所有 Supabase 自研与用到的 10 个缺失的扩展打成开箱即用的 RPM/DEB 包，确保它们在所有[主流Linux操作系统发行版](/zh/docs/reference/compatibility)上都可用：
+Pigsty 解决了这些问题，我们将所有 Supabase 自研与用到的 10 个缺失的扩展打成开箱即用的 RPM/DEB 包，确保它们在所有[主流Linux操作系统发行版](/zhhttps://pigsty.io/docs/reference/compatibility)上都可用：
 
 - [pg_graphql](https://ext.pigsty.io/#/pg_graphql)：提供PG内的GraphQL支持 (RUST)，Rust扩展，由PIGSTY提供
 - [pg_jsonschema](https://ext.pigsty.io/#/pg_jsonschema)：提供JSON Schema校验能力，Rust扩展，由PIGSTY提供
@@ -93,7 +93,7 @@ Pigsty 解决了这些问题，我们将所有 Supabase 自研与用到的 10 �
 
 让我们先从单节点 Supabase 部署开始，我们会在后面进一步介绍多节点高可用部署的方法。
 
-首先，使用 Pigsty [标准安装流程](/zh/docs/setup/install) 安装 Supabase 所需的 MinIO 与 PostgreSQL 实例；
+首先，使用 Pigsty [标准安装流程](/zhhttps://pigsty.io/docs/setup/install) 安装 Supabase 所需的 MinIO 与 PostgreSQL 实例；
 然后额外运行 [`supabase.yml`](https://github.com/Vonng/pigsty/blob/main/supabase.yml) 完成剩余的工作，
 拉起无状态部分的 Supabase 容器，Supabase 就可以使用了（默认端口 `8000`/`8433`）。
 
@@ -117,8 +117,8 @@ Pigsty 解决了这些问题，我们将所有 Supabase 自研与用到的 10 �
 
 ## 检查清单
 
-- [x] 硬件/软件：[准备所需的机器资源](/zh/docs/setup/prepare/)：Linux x86_64 服务器一台，全新安装[主流 Linux 操作系统](/zh/docs/reference/compatibility)
-- [x] 网络/权限：有 [ssh](/zh/docs/setup/prepar/#管理用户准备) 免密登陆权限，所用用户有[免密 sudo 权限](/zh/docs/setup/prepare/#管理用户准备)
+- [x] 硬件/软件：[准备所需的机器资源](/zhhttps://pigsty.io/docs/setup/prepare/)：Linux x86_64 服务器一台，全新安装[主流 Linux 操作系统](/zhhttps://pigsty.io/docs/reference/compatibility)
+- [x] 网络/权限：有 [ssh](/zh/docs/setup/prepar/#管理用户准备) 免密登陆权限，所用用户有[免密 sudo 权限](/zhhttps://pigsty.io/docs/setup/prepare/#管理用户准备)
 - [x] 确保机器有内网静态IPv4网络地址，并可以访问互联网。中国地区 DockerHub 需要翻墙，需要有可用的代理或镜像站点
   - [x] 在 `configure` 过程中，请输入节点的内网首要 IP 地址，或直接通过 `-i <primary_ip>` 命令行参数指定
   - [x] 如果您的网络环境无法访问 DockerHub，请指定 [`docker_registry_mirrors`](/zh/docs/docker/param#docker_registry_mirrors) 使用镜像站 或 [`proxy_env`](/zh/docs/reference/param#proxy_env) 参数翻墙。 

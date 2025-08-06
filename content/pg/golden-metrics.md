@@ -17,7 +17,7 @@ tags: [PostgreSQL,PG管理,监控,指标]
 
 盯着仪表盘干什么，看指标。为什么看指标，掌握当前运行状态才能有效施加控制。
 
-![](/img/blog/golden-metrics-car.jpeg)
+![](img/blog/golden-metrics-car.jpeg)
 
 车有很多指标：车速，胎压，扭矩，刹车片磨损，各种温度，等等等等，各式各样。
 

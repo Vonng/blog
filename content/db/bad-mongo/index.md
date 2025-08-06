@@ -109,7 +109,7 @@ PostgreSQL 在功能上是 MongoDB 的上位替代，所以可以对 MongoDB 的
 
 在当下，[**单机 PostgreSQL 性能**](/pg/pg-performence) 可以轻松 Scale 到几十TB ～ 几百TB数量级，支撑几十万的点写入 QPS 与几百万的点查询 QPS。只用 PostgreSQL 支撑业务到百万日活 / 百万美元营收甚至直接 IPO 都毫无问题。
 
-老实说，MongoDB 的性能已经完全跟不上时代了，而它引以为傲的“内置分片”可伸缩性，[**在软件架构与性能突飞猛进**](/pg/pg-scalability)，[**硬件遵循摩尔定律指数发展**](/cloud/bonus) 的当下显得毫无意义。
+老实说，MongoDB 的性能已经完全跟不上时代了，而它引以为傲的“内置分片”可伸缩性，[**在软件架构与性能突飞猛进**](/pg/pg-scalability)，[**硬件遵循摩尔定律指数发展**](/cloud/bonus/) 的当下显得毫无意义。
 
 
 

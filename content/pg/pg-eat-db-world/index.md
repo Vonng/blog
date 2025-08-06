@@ -56,7 +56,7 @@ ParadeDB 与 DuckDB 的出现让 PostgreSQL 的分析性能来到了 OLAP 的第
 
 与许多 “专用数据库” 一样，专业的 OLAP 组件的优势往往在于**性能** —— 相比原生 PG 、MySQL 上有 1～3 个数量级的提升；而代价则是数据冗余、 大量不必要的数据搬运工作、分布式组件之间缺乏一致性、额外的专业技能带来的复杂度成本、学习成本、以及人力成本、 额外的软件许可费用、极其有限的查询语言能力、可编程性、可扩展性、有限的工具链、以及与OLTP 数据库相比更差的数据完整性和可用性 —— **但这是一个合理的利弊权衡**。
 
-然而天下大势，**分久必合，合久必分**。[硬件遵循摩尔定律又发展了三十年](/cloud/bonus)，性能翻了几个数量级，成本下降了几个数量级。在 2024 年的当下，x86 单机可以达到几百核 (512 vCPU [EPYC 9754](https://www.amd.com/zh-hans/products/cpu/amd-epyc-9754)x2)，几个TB的内存，单卡 NVMe SSD 可达 64TB，全闪单机柜 2PB ；S3 这样对象存储更是能实现几乎没有上限的存储。
+然而天下大势，**分久必合，合久必分**。[硬件遵循摩尔定律又发展了三十年](/cloud/bonus/)，性能翻了几个数量级，成本下降了几个数量级。在 2024 年的当下，x86 单机可以达到几百核 (512 vCPU [EPYC 9754](https://www.amd.com/zh-hans/products/cpu/amd-epyc-9754)x2)，几个TB的内存，单卡 NVMe SSD 可达 64TB，全闪单机柜 2PB ；S3 这样对象存储更是能实现几乎没有上限的存储。
 
 ![io-bandwidth.png](io-bandwidth.png)
 
@@ -77,7 +77,7 @@ ParadeDB 与 DuckDB 的出现让 PostgreSQL 的分析性能来到了 OLAP 的第
 
 数据库领域有许多“细分领域”：时序数据库，地理空间数据库，文档数据库，搜索数据库，图数据库，向量数据库，消息队列，对象数据库。而 PostgreSQL 在任何一个领域都不会缺席。
 
-一个 PostGIS 插件，成为了地理空间事实标准；一个 TimescaleDB 扩展，让一堆“通用”时序数据库尴尬的说不出话来；一个向量扩展 [**PGVector**](/dev/llm-and-pgvector) 插件，更是让整个 [**专用向量数据库细分领域**](/db/svdb-is-dead) 变成笑话。
+一个 PostGIS 插件，成为了地理空间事实标准；一个 TimescaleDB 扩展，让一堆“通用”时序数据库尴尬的说不出话来；一个向量扩展 [**PGVector**](/pg/llm-and-pgvector/) 插件，更是让整个 [**专用向量数据库细分领域**](/db/svdb-is-dead) 变成笑话。
 
 同样的事情已经发生过很多次，而现在，我们将在拆分最早，地盘最大的一个子领域 OLAP 分析中再次见证这一点。但 PostgreSQL 要替代的可不仅仅是 OLAP 数仓，它的野望是整个数据库世界！
 
@@ -107,7 +107,7 @@ PostgreSQL 允许用户开发功能模块，复用数据库公共基础设施，
 
 再比如，ElasticSearch 基于 Lucene 搜索库开发，而 Rust 生态有一个改进版的下一代 Tantivy 全文搜索库作为 Lucene 的替代；而 ParadeDB 只需要将其封装对接到 PostgreSQL 的接口上，即可提供比肩 ElasticSearch 的搜索服务。更重要的是，它可以站在 PostgreSQL 巨人的肩膀上，借用 PG 生态的全部合力（例如，与 PG Vector 做混合检索），不讲武德地用数据库全能王的力量，去与一个专用数据库单品来对比。
 
-[![img](/img/pigsty/extension.png)](/docs/reference/extension/)
+[![img](https://pigsty.io/img/extension.png)](/docs/reference/extension/)
 
 > Pigsty 中提供了 [**255**](/zh/docs/reference/extension/) 个可用扩展插件，在生态中还有 1000+ 扩展
 
@@ -169,7 +169,7 @@ PostgreSQL 对于绝大多数场景都已经是一个足够完美的数据库内
 
 做内核的厂商不温不火，MariaDB 作为 MySQL 的亲爹 Fork 甚至都已经濒临退市，而白嫖内核自己做服务与扩展卖 RDS 的 AWS 可以赚的钵满盆翻。投资机构已经出手了许多 PG 生态的扩展插件与服务发行版：Citus，TimescaleDB，Hydra，PostgresML，ParadeDB，FerretDB，StackGres，Aiven，Neon，Supabase，Tembo，PostgresAI，以及我们正在做的 Pigsty 。
 
-![](/img/pigsty/players.png)
+![](https://pigsty.io/img/players.png)
 
 
 
@@ -223,7 +223,7 @@ PostgreSQL 生态中的一个困境就是，许多扩展插件，生态工具都
 
 所以我打造了 **[Pigsty](https://pigsty.io)** —— 一个开箱即用的开源 PostgreSQL 数据库发行版，旨在凝聚 PostgreSQL 生态扩展的合力，并把提供优质数据库服务的能力普及到每个用户手中。
 
-![](/img/pigsty/banner.en.jpg)
+![](https://pigsty.io/img/banner.en.jpg)
 
 > Pigsty 是 **P**ostgreSQL **i**n **G**reat **STY**le 的缩写，意为 **PostgreSQL 的全盛状态**。
 
@@ -235,7 +235,7 @@ Pigsty 六点价值主张的首字母合起来，则为 Pigsty 提供了另外�
 >
 > 属于你的图形化 Postgres 基础设施服务工具箱。
 
-![](/img/pigsty/homepage.zh.png)
+![](https://pigsty.io/img/homepage.zh.png)
 
 **可扩展的 PostgreSQL** 是这个发行版中最重要的价值主张。在刚刚发布的 [**Pigsty v2.6**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487025&idx=1&sn=c32f102718e3e9cf55cdefa7133f259f&chksm=fe4b3beac93cb2fc25c2c2c4f9ea74d4353e565ef90c5e2bbaf5881a3a031cbdff706971af9a&scene=21#wechat_redirect) 中，我们整合了上面提到的 DuckdbFDW 与 ParadeDB 扩展，这两个插件让 PostgreSQL 的分析能力得到史诗级增强，而我们确保每个用户都能轻松用得上这样的能力。
 
@@ -260,7 +260,7 @@ Pigsty 六点价值主张的首字母合起来，则为 Pigsty 提供了另外�
 
 > Pigsty 支持的 180+ [**扩展列表**](/zh/docs/reference/extension/)
 
-![](/img/pigsty/desc.png)
+![](https://pigsty.io/img/desc.png)
 
 开发者朋友们，你们的选择会塑造数据库世界的未来。希望我的这些工作，可以帮助你们更好的用好这世界上最先进的开源数据库内核 —— PostgreSQL。
 

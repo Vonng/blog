@@ -25,7 +25,7 @@ tags: [PostgreSQL,PG管理,架构]
 
 依照R和O的挂载目标不同，复制拓扑关系有以下几种选择：
 
-![](/img/blog/pg/replication-topo.png)
+![](replication-topo.png)
 
 
 
@@ -37,11 +37,11 @@ tags: [PostgreSQL,PG管理,架构]
 
 
 
-![](/img/blog/pg/replication-topo-good.png)
+![](replication-topo-good.png)
 
 
 
-![](/img/blog/pg/backup-types.png)
+![](backup-types.png)
 
 
 

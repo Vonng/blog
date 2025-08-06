@@ -88,7 +88,7 @@ DHH一直以来都是下云先锋，本文摘取了DHH博客关于下云相关�
 
 CFO 和投资人无法忽视这一现象：如果像X这样的公司能够以四分之一的员工运营，并且从下云过程中大大获利，那么在许多情况下，大多数大公司从云端退出都有巨大的省钱潜力。
 
-[#CloudExit](https://basecamp.com/cloud-exit)或许即将成为主流，你算过你的云账单吗？
+[#CloudExit](https://basecamp.com/cloud/-exit)或许即将成为主流，你算过你的云账单吗？
 
 
 -------------
@@ -472,7 +472,7 @@ Datadog 是一个性能监控工具，倒不是因为我们不喜欢这项服务
 
 [5] [Sovereign clouds](https://world.hey.com/dhh/sovereign-clouds-661eb5e4)
 
-[6] [Cloud exit pays off in performance too](https://world.hey.com/dhh/cloud-exit-pays-off-in-performance-too-4c53b697)
+[6] [Cloud exit pays off in performance too](https://world.hey.com/dhh/cloud/-exit-pays-off-in-performance-too-4c53b697)
 
 [7] [The hardware we need for our cloud exit has arrived](https://world.hey.com/dhh/the-hardware-we-need-for-our-cloud-exit-has-arrived-99d66966)
 

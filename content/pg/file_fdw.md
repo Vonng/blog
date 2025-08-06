@@ -89,7 +89,7 @@ FORMAT 'csv', DELIMITER E'\037', HEADER 'TRUE');
 
 那么结果如何呢？
 
-![](/img/blog/pg/file_fdw.png)
+![](file_fdw.png)
 
 
 

@@ -40,7 +40,7 @@ Percona 是 MySQL 生态的扛旗者与主要三方厂商，最近几年也在�
 然而，IT 主管们不应只顾眼前的便利，还要考虑这一趋势未来的发展方向。越来越多以开源起家的公司正在寻求转向闭源模式，以进一步实现商业变现。
 比如，Redis 最近将其许可协议变更为 Redis Source Available License（RSALv2）和 Server Side Public License（SSPLv1），限制了代码的使用方式。2023 年，HashiCorp 也采取了类似做法，将其大部分项目从 Mozilla 公共许可证 2.0 改为限制更严格的商业源许可证（BSL）。
 
-> 老冯注：还有刚刚新鲜出炉的《[KubeSphere 断供跑路](/cloud/kubesphere-rugpull)》
+> 老冯注：还有刚刚新鲜出炉的《[KubeSphere 断供跑路](/cloud/kubesphere-rugpull/)》
 
 
 ## MongoDB 能告诉我们 PostgreSQL 将走向何方吗？
@@ -131,7 +131,7 @@ Percona 提供的是一个完全开源、具备企业级水准的 PostgreSQL 解
 ## 老冯评论
 
 Percona 抛出了一个非常重要的问题。PostgreSQL 日益主宰数据库世界，这个已经基本成为业界共识。但什么样的 PostgreSQL 会成为未来，仍然是一个高度争议性的问题。
-对于这个问题，老冯在《[云计算泥石流](/cloud/)》专栏里曾多次抨击过云厂商提供的 RDS / 云数据库服务 —— 《[云数据库是不是智商税](/cloud/rds)》 / 《[公有云是不是杀猪盘](/cloud/ebs)》。
+对于这个问题，老冯在《云计算泥石流》专栏里曾多次抨击过云厂商提供的 RDS / 云数据库服务 —— 《[云数据库是不是智商税](/cloud/rds)》 / 《[公有云是不是杀猪盘](/cloud/ebs)》。
 
 ### Percona 发行版
 

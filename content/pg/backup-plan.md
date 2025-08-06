@@ -15,11 +15,11 @@ tags: [PostgreSQL,PG管理,备份]
 * 冷备（Code Backup）：冷备数据库以数据目录静态文件的形式存在，是数据库目录的二进制备份。便于制作，管理简单，便于放到其他AZ实现容灾。是数据库的最终保险。
 * 异地副本（Remote Standby）：所谓X地X中心，通常指的就是放在其他AZ的热备实例。
 
-![](/img/blog/pg/backup-types.png)
+![](backup-types.png)
 
 通常我们所说的备份，指的是冷备和温备。它们与热备的重要区别是：它们通常不是最新的。当服务线上查询时，这种滞后是一个缺陷，但对于故障恢复而言，这是一个非常重要的特性。同步的备库是不足以应对所有的问题。设想这样一种情况：一些人为故障或者软件错误把整个数据表甚至整个数据库删除了，这样的变更会立刻应用到同步从库上。这种情况只能通过从延迟温备中查询，或者从冷备重放日志来恢复。因此无论有没有从库，冷/温备都是必须的。
 
-参考：[PostgreSQL复制方案](/admin/replication-plan/)
+参考：[PostgreSQL复制方案](https://pigsty.io/docs/administration/backup/)
 
 
 
@@ -35,7 +35,7 @@ tags: [PostgreSQL,PG管理,备份]
 
 ### 步骤概览
 
-![](/img/blog/pg/backu-setup.png)
+![](backu-setup.png)
 
 ### 日志归档
 

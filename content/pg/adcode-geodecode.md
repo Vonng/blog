@@ -33,11 +33,11 @@ tags: [PostgreSQL,PG开发,GIS]
 
 **最近邻搜索—Vornoi方法**
 
-![vornoi](/img/blog/pg/adcode-vornoi.png)
+![vornoi](adcode-vornoi.png)
 
 现实总是与理想情况相距甚远。也许对于国内而言，这种错误影响也许并不大。但涉及到国际主权边界时，这种粗糙的实现很可能会给自己带来不必要的麻烦：
 
-![](/img/blog/pg/adcode-south-china-seas.png)
+![](adcode-south-china-seas.png)
 
 
 
@@ -45,7 +45,7 @@ tags: [PostgreSQL,PG开发,GIS]
 
 GeoHash就是这样一种方案：它将经度与维度交叉编码为单一字符串，字符串越长精度越高，每一个字符串都对应一个经纬度围成的“矩形”，只要精度足够，理论上是可以这么做的。当然，这种方案难以做到真正意义上的正确，存储开销也极为浪费。好处是实现很简单。只要有数据，一个KV服务就可以轻松搞定。
 
-![geohash](/img/blog/pg/adcode-geohash.png)
+![geohash](adcode-geohash.png)
 
 相比之下，基于地理边界多边形的解决方案在保证绝对正确的前提下，能在一毫秒内完成这种地理编码功能，而且可能只需要几兆的空间。唯一的难点可能在于如何获取数据上。
 
@@ -64,13 +64,13 @@ GeoHash就是这样一种方案：它将经度与维度交叉编码为单一字�
 
   高德的数据更新更及时，形式简单，边界精度较高（点数多），但不够权威，有不少**错漏之处**。
 
-  ![geohash](/img/blog/pg/adcode-gaode-q.png)
+  ![geohash](adcode-gaode-q.png)
 
 * [民政部全国行政区划信息查询平台](http://xzqh.mca.gov.cn/map)
 
   民政部平台数据相对更加权威，而且采用的是拓扑编码，严格避免了边界重叠的问题，使用无偏的WGS84坐标，但边界精度较低（点数目较少）。
 
-![geohash](/img/blog/pg/adcode-mca-q.png)
+![geohash](adcode-mca-q.png)
 
 除了地理围栏数据之外，另一份重要的数据是行政区划代码数据。国家统计局使用的12位城乡统计用行政区划代码编制还是很科学的，具有层次包含关系，尤其适合作为行政区划的唯一标示。但问题是稍显过时，最新的版本是2016年8月发布的，2018年7月后可能会发布一份更新的数据。
 
@@ -197,7 +197,7 @@ R树索引的原理，能为我们带来优化的启发。R树是基于**AABB（
 
 |                     高德                     |                   民政部                    |
 |:------------------------------------------:|:----------------------------------------:|
-| ![geohash](/img/blog/pg//adcode-gaode-hk.png) | ![geohash](/img/blog/pg//adcode-mca-hk.png) |
+| ![geohash](adcode-gaode-hk.png) | ![geohash](adcode-mca-hk.png) |
 
 高德的全国行政区划数据约100M左右，而民政部的数据约为10M（以原始拓扑数据表示则为4M）。但实际使用中效果差别不大，因此推荐使用民政部的数据。
 

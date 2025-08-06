@@ -17,7 +17,7 @@ At [**PGConf.Dev 2025**](https://2025.pgconf.dev/schedule.html), [Bohan Zhang](h
 
 Bohan Zhang is a member of the OpenAI Infra team, student of [Andy Pavlo](https://www.cs.cmu.edu/~pavlo/), and co-found [OtterTune](https://github.com/OuterTune/OuterTune) with him.
 
-> This article is based on Bohan’s presentation at the conference. with chinese translation/commentary by **Ruohang Feng** ([Vonng](https://github.com/Vonng/)): Author of [Pigsty](https://pigsty.io/). The original chinese version is available on [WeChat Column](https://mp.weixin.qq.com/s/ykrasJ2UeKZAMtHCmtG93Q) and [Pigsty CN Blog](https://pigsty.cc/blog/db/openai-pg/).
+> This article is based on Bohan’s presentation at the conference. with chinese translation/commentary by **Ruohang Feng** ([Vonng](https://github.com/Vonng/)): Author of [Pigsty](https://pigsty.io/). The original chinese version is available on [WeChat Column](https://mp.weixin.qq.com/s/ykrasJ2UeKZAMtHCmtG93Q) and [Pigsty CN Blog](https://pigsty.cc/db/openai-pg/).
 
 > Hacker News Discussion: [OpenAI: Scaling Postgres to the Next Level](https://news.ycombinator.com/item?id=44071418#44072781)
 
@@ -146,7 +146,7 @@ Although PGConf.Dev 2025 is primarily focused on development, you often see use 
 
 Since late 2017, I managed dozens of PostgreSQL clusters at [Tantan](https://tantanapp.com/en), which was one of the largest and most complex PG deployments in the Chinese internet scene: dozens of PG clusters with around 2.5 million QPS. Back then, our largest core primary had a 1-primary-33-replica setup, with a single cluster handling around 400K QPS. The bottleneck was also on single-database writes, which we eventually solved with application-side sharding, similar to [Instagram’s approach](https://instagram-engineering.com/sharding-ids-at-instagram-1cf5a71e5a5c).
 
-You could say I’ve encountered all the problems and used all the solutions OpenAI mentioned in their talk. Of course, the difference is that today’s [top-tier hardware](https://pigsty.io/blog/cloud/bonus/) is orders of magnitude better than it was eight years ago. This allows a startup like OpenAI to serve its entire business with a single PostgreSQL cluster without sharding. This is undoubtedly another powerful piece of evidence for the argument that “[Distributed Databases Are a False Need](https://pigsty.io/blog/db/distributive-bullshit/)”.
+You could say I’ve encountered all the problems and used all the solutions OpenAI mentioned in their talk. Of course, the difference is that today’s [top-tier hardware](https://pigsty.io/cloud//bonus/) is orders of magnitude better than it was eight years ago. This allows a startup like OpenAI to serve its entire business with a single PostgreSQL cluster without sharding. This is undoubtedly another powerful piece of evidence for the argument that “[Distributed Databases Are a False Need](https://pigsty.io/db/distributive-bullshit/)”.
 
 During the Q&A, I learned that OpenAI uses managed PostgreSQL on Azure with the highest available server hardware specs. They have dozens of replicas, including some in different geographical regions, and this behemoth cluster handles a total of about millions QPS. They use Datadog for monitoring, and the services access the RDS cluster from Kubernetes through a business-side PgBouncer connection pool.
 
@@ -248,9 +248,9 @@ If OpenAI is interested, I’d certainly be happy to provide some help. But I th
 
 [1] HackerNews OpenAI: Scaling Postgres to the Next Level: https://news.ycombinator.com/item?id=44071418#44072781
 
-[2] PostgreSQL is eating the database world: https://pigsty.io/blog/pg/pg-eat-db-world
+[2] PostgreSQL is eating the database world: https://pigsty.io/pg/pg-eat-db-world
 
-[3] Chinese: Scaling Postgres to the Next Level at OpenAI https://pigsty.cc/blog/db/openai-pg/
+[3] Chinese: Scaling Postgres to the Next Level at OpenAI https://pigsty.cc/db/openai-pg/
 
 [4] The part of PostgreSQL we hate the most: https://www.cs.cmu.edu/~pavlo/blog/2023/04/the-part-of-postgresql-we-hate-the-most.html
 
@@ -266,9 +266,9 @@ If OpenAI is interested, I’d certainly be happy to provide some help. But I th
 
 [10] Instagram’s Sharding IDs: https://instagram-engineering.com/sharding-ids-at-instagram-1cf5a71e5a5c
 
-[11] Reclaim hardware bouns: https://pigsty.io/blog/cloud/bonus/
+[11] Reclaim hardware bouns: https://pigsty.io/cloud//bonus/
 
-[12] Distributed Databases Are a False Need: https://pigsty.io/blog/db/distributive-bullshit/
+[12] Distributed Databases Are a False Need: https://pigsty.io/db/distributive-bullshit/
 
 -
 - 

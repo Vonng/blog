@@ -231,7 +231,7 @@ summary: |
 
 ## 4. 集中趋势和差异测量
 
-![](/img/math/simple-statistics.jpeg)
+![](img/math/simple-statistics.jpeg)
 
 ### 集中趋势的测量
 

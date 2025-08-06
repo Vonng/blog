@@ -50,7 +50,7 @@ vonng=# select 'pg_database'::RegClass::OID;
 
 这张系统视图里有不少字段，但我们主要关心的是前两个： `oid` 和 `datname` ，`datname` 是数据库的名称，`oid` 则可以用于定位数据库目录位置。以用 `pg_filedump` 把这张表解出来看一看， `-D` 参数可以告诉 `pg_filedump` 如何解释这张表里每一行的二进制数据。你可以指定每个字段的类型，用逗号分隔，`~` 表示后面的部分都忽略不要。
 
-![pg-filedump-1.png](/img/blog/pg/pg-filedump-1.png)
+![pg-filedump-1.png](pg-filedump-1.png)
 
 可以看到，每一行数据都以 `COPY` 开始，这里我们发现了目标数据库 `gitlabhq_production`，其 OID 为 **16386** 。所以这个数据库内的所有文件都应当位于 `base/16386` 子目录中。
 
@@ -68,7 +68,7 @@ vonng=# select 'pg_database'::RegClass::OID;
 
 `pg_class` 是数据库级别的系统视图，默认有着 OID = `1259` ，所以 `pg_class` 对应的文件应当是： `base/16386/1259`，在 `gitlabhq_production` 对应数据库目录下。
 
-![pg-filedump-2.png](/img/blog/pg/pg-filedump-2.png)
+![pg-filedump-2.png](pg-filedump-2.png)
 
 这里说句题外话：熟悉 PostgreSQL 原理的朋友知道：实际底层存储数据的文件名（RelFileNode）虽然默认与表的 OID 保持一致，但是一些操作可能会改变这一点，在这种情况下，你可以用 `pg_filedump -m pg_filenode.map` 解析数据库目录下的映射文件，找到 OID 1259 对应的 Filenode。当然这里两者是一致的，就表过不提了。
 
@@ -78,18 +78,18 @@ vonng=# select 'pg_database'::RegClass::OID;
 
 然后就可以看到解析出来的数据了。这里的数据是 `\t` 分隔的单行记录，与 PostgreSQL COPY 命令默认使用的格式相同。所以你可以用脚本 `grep` 收集过滤，掐掉每行开头的 `COPY` ，并重新灌入一张真正的数据库表来细看。
 
-![pg-filedump-3.png](/img/blog/pg/pg-filedump-3.png)
+![pg-filedump-3.png](pg-filedump-3.png)
 
 
 在数据恢复时需要注意许多细节，其中第一条就是：你需要处理**被删除**的行。怎么识别呢？使用 `-i` 参数打印每一行的元数据，元数据里有一个 `XMAX` 字段。如果某一行元组被某个事务删除了，那么这条记录的 `XMAX` 就会被设置为该事务的 XID 事务号。所以如果某一行的 `XMAX` 不是零，就意味着这是一条被删除的记录，不应当输出到最终的结果中。
 
-![pg-filedump-4.png](/img/blog/pg/pg-filedump-4.png)
+![pg-filedump-4.png](pg-filedump-4.png)
 
 **这里的 XMAX 代表这是条被删除的记录**
 
 有了 `pg_class` 数据字典之后，你就可以清楚地找到其他表，包括系统视图的 OID 对应关系了。用同样的办法可以恢复 `pg_namespace` ，`pg_attribute` ，`pg_type` 这三张表。有了这四张表就可以干什么呢？
 
-![pg-filedump-5.png](/img/blog/pg/pg-filedump-5.png)
+![pg-filedump-5.png](pg-filedump-5.png)
 
 你可以用 SQL 生成每张表的输入路径，自动拼出每一列的类型作为 `-D` 参数，生成临时结果表的 Schema。总而言之，可以用编程自动化的方式，自动生成所有需要完成的任务。
 
@@ -164,7 +164,7 @@ bigint,timestamptz,timestamptz,int,smallint,varchar,smallint,text,smallint,text,
 pg_filedump -i -f -D 'bigint,...,bigint' 38304
 ```
 
-![pg-filedump-6.png](/img/blog/pg/pg-filedump-6.png)
+![pg-filedump-6.png](pg-filedump-6.png)
 
 输出时结果建议添加 `-i` 与 `-f` 选项，前者会打印每一行的**元数据**（需要根据 XMAX 判断这一行有没有被删除）；后者会打印原始二进制数据上下文（这一点对于处理 pg_filedump 解决不了的复杂数据是必要的）。
 
@@ -183,7 +183,7 @@ pg_filedump -i -f -D 'bigint,...,bigint' 38304
 
 如果某张表里有可能 TOAST 的字段，它就会有一张对应的 TOAST 表，在 `pg_class` 中用 `reltoastrelid` 标识其 OID。TOAST 其实也可以看做一张普通的表来处理，所以你可以用一样的方法把 TOAST 数据解析出来，拼接回去，再填入到原表中，这里就不展开了。
 
-![pg-filedump-7.png](/img/blog/pg/pg-filedump-7.png)
+![pg-filedump-7.png](pg-filedump-7.png)
 
 第二个问题**是复杂类型**，正如上一节所说， `pg_filedump` README里列出了支持的类型，但类似数组这样的类型就需要进行额外的二进制解析处理了。
 
@@ -191,7 +191,7 @@ pg_filedump -i -f -D 'bigint,...,bigint' 38304
 
 这里我们来看个具体的例子：还是以上面 `public.approval_merge_request_rules` 表为例。我们可以从吐出来的数据，二进制视图，以及 ASCII 视图里面看到一些零星的字符串：`critical`，`unknown` 之类的东西，掺杂在一串 `\0` 与二进制控制字符中。没错，这就是一个字符串数组的二进制表示。PostgreSQL 中的数组允许任意类型任意深度的嵌套，所以这里的数据结构会有一点点复杂。
 
-![pg-filedump-8.png](/img/blog/pg/pg-filedump-8.png)
+![pg-filedump-8.png](pg-filedump-8.png)
 
 
 例如，图片中标色的地方对应的数据是一个包含三个字符串的数组：`{unknown,high,critical}::TEXT[]` 。01 代表这是一个一位数组，紧跟着空值位图，以及代表数组元素的类型OID 的 0x00000019 ，`0x19` 十进制值为 25 对应 `pg_type` 中的 `text`类型，说明这里是一个字符串数组（如果是 `0x17` 则说明是整型数组）。紧接着是这个数组第一维的维度 0x03，因为这个数组只有一维，三个元素；接下来的 1 告诉我们数组第一维度的起始偏移量在哪儿。再后面才是挨着的三个字符串结构了：由4字节的长度打头（要右移两位处理标记未），接着才是字符串内容，还要考虑布局对齐与填充的问题。
@@ -202,7 +202,7 @@ pg_filedump -i -f -D 'bigint,...,bigint' 38304
 
 好在 PostgreSQL 本身已经提供了一些C语言的辅助函数 & 宏可以帮助你完成大部分工作，而且幸运的是 Gitlab 中的数组都是一维数组，类型也仅限于整型数组与字符串数组，其他带复杂类型的数据页也可以从其他表中重建，所以总体工作量还是可以接受的 。
 
-![pg-filedump-9.png](/img/blog/pg/pg-filedump-9.png)
+![pg-filedump-9.png](pg-filedump-9.png)
 
 
 
@@ -218,6 +218,6 @@ pg_filedump -i -f -D 'bigint,...,bigint' 38304
 
 最后我还是想说一句，许多软件都需要数据库，但数据库的安装部署维护是一件很有门槛的活儿。Gitlab 拉起的 PostgreSQL 质量已经算是相当不错的了，但面对这种情况依然束手无策，更不用提那些土法手造 docker 镜像的简陋单机实例了。一场大故障，就能让一个企业积累的代码数据、CI/CD流程、Issue/PR/MR 记录灰飞烟灭。我真的建议您好好检视一下自己的数据库系统，至少请定期做个备份吧！
 
-![pg-filedump-10.png](/img/blog/pg/pg-filedump-10.png)
+![pg-filedump-10.png](pg-filedump-10.png)
 
 Gitlab 的企业版和社区版的核心区别就在于它底下的 PG 有没有高可用和监控。而[**开箱即用的 PostgreSQL 发行版 —— Pigsty**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486135&idx=1&sn=7d9c4920e94efba5d0e0b6af467f596c&chksm=fe4b3f6cc93cb67ac570d5280b37328aed392598b13df88545ff0a06f99630801fc999db8de5&scene=21#wechat_redirect) 也可以为您更好地解决这些问题，却完全开源免费，分文不取：无论是高可用，PITR，还是监控系统一应俱全：下次再遇到这种问题时，就可以自动切换/一键回滚，游刃有余得多。之前我们自己的 Gitlab, Jira, Confluence 等软件都跑在上面，如果您有类似需求，倒是不妨试一下哦。

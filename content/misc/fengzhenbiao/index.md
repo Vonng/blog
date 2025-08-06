@@ -42,7 +42,7 @@ menu:
 
 归档在互联网的某个旮旯，聊以告慰，作为留念。
 
-下载地址： [https://vonng.com/fzb](/fzb)
+下载地址： [https://vonng.comhttps://vonng.com/fzb](https://vonng.com/fzb)
 
 
 

@@ -6,15 +6,10 @@ dev:
 
 b:build
 build:
-	hugo build
+	hugo build --minify
 
-.PHONY: default d dev b build
+s: sync
+sync:
+	rsync -avz public/ jp:/www/vonng.com/
 
-# generate zh-tw version
-translate:
-	bin/zh-tw.py
-
-epub:
-	bin/epub
-
-.PHONY: default doc translate
+.PHONY: default d dev b build s sync

@@ -52,9 +52,9 @@ For a long time, best practice in data processing involved using MySQL/PostgreSQ
 
 Like many "specialized databases," the strength of dedicated OLAP systems often lies in **performance** — achieving 1-3 orders of magnitude improvement over native PG or MySQL. The **cost**, however, is redundant data, excessive data movement, lack of agreement on data values among distributed components, extra labor expense for specialized skills, extra licensing costs, limited query language power, programmability and extensibility, limited tool integration, poor data integrity and availability compared with a complete DMBS.
 
-However, as the saying goes, "What goes around comes around". With [hardware improving over thirty years following Moore's Law](/blog/cloud/bonus), performance has increased exponentially while costs have plummeted. In 2024, a single x86 machine can have hundreds of cores (512 vCPU [EPYC 9754](https://www.amd.com/zh-hans/products/cpu/amd-epyc-9754)x2), several TBs of RAM, a single NVMe SSD can hold up to 64TB, and a single all-flash rack can reach 2PB; object storage like S3 offers virtually unlimited storage.
+However, as the saying goes, "What goes around comes around". With [hardware improving over thirty years following Moore's Law](/cloud/bonus/), performance has increased exponentially while costs have plummeted. In 2024, a single x86 machine can have hundreds of cores (512 vCPU [EPYC 9754](https://www.amd.com/zh-hans/products/cpu/amd-epyc-9754)x2), several TBs of RAM, a single NVMe SSD can hold up to 64TB, and a single all-flash rack can reach 2PB; object storage like S3 offers virtually unlimited storage.
 
-[![io-bandwidth.png](io-bandwidth.png)](/blog/cloud/bonus)
+[![io-bandwidth.png](io-bandwidth.png)](/cloud//bonus)
 
 Hardware advancements have solved the data volume and performance issue, while database software developments (PostgreSQL, ParadeDB, DuckDB) have addressed access method challenges. This puts the fundamental assumptions of the analytics sector — the so-called “big data” industry — under scrutiny.
 
@@ -96,7 +96,7 @@ Why? Because pgvector's creators didn't need to worry about the database's gener
 
 For example, ElasticSearch was developed on the Lucene search library, while the Rust ecosystem has an improved next-gen full-text search library, [Tantivy](https://github.com/quickwit-oss/tantivy), as a Lucene alternative. ParadeDB only needs to wrap and connect it to PostgreSQL's interface to offer search services comparable to ElasticSearch. More importantly, it can stand on the shoulders of PostgreSQL, leveraging the entire PG ecosystem's united strength (e.g., mixed searches with PG Vector) to "unfairly" compete with another dedicated database.
 
-[![img](/img/pigsty/extension.png)](/docs/reference/extension/)
+[![img](https://pigsty.io/img/extension.png)](/docs/reference/extension/)
 
 > Pigsty has 255 [**extensions**](/docs/reference/extension/) available. And there are [**1000+**](https://gist.github.com/joelonsql/e5aa27f8cc9bd22b8999b7de8aee9d47) more in the ecosystem
 
@@ -155,7 +155,7 @@ Accordingly, the main conflict is no longer the database kernel itself but two d
 
 Kernel remains lukewarm, with MariaDB, the fork of MySQL’s parent, nearing delisting, while AWS, profiting from offering services and extensions on top of the free kernel, thrives. Investment has flowed into numerous PG ecosystem extensions and service distributions: Citus, TimescaleDB, Hydra, PostgresML, ParadeDB, FerretDB, StackGres, Aiven, Neon, Supabase, Tembo, PostgresAI, and our own PG distro — — [Pigsty](https://pigsty.io/).
 
-![](/img/pigsty/players.png)
+![](https://pigsty.io/img/players.png)
 
 
 ------
@@ -203,9 +203,9 @@ Interactions with diverse users revealed that the database field's shortcoming i
 
 However, I believe this capability should be as accessible as free software, like the PostgreSQL kernel itself — available to every user, not just renting from cyber feudal lords.
 
-Thus, I created [**Pigsty**](https://pigsty.io/), a battery-included, local-first PostgreSQL distribution as an open-source [RDS](/blog/cloud/rds) Alternative, which aims to harness the collective power of PostgreSQL ecosystem extensions and democratize access to production-grade database services.
+Thus, I created [**Pigsty**](https://pigsty.io/), a battery-included, local-first PostgreSQL distribution as an open-source [RDS](/cloud/rds) Alternative, which aims to harness the collective power of PostgreSQL ecosystem extensions and democratize access to production-grade database services.
 
-[![img](/img/pigsty/homepage.en.png)](https://pigsty.io)
+[![img](https://pigsty.io/img/homepage.en.png)](https://pigsty.io)
 
 > Pigsty stands for **P**ostgreSQL **i**n **G**reat **STY**le, representing the zenith of PostgreSQL.
 
@@ -236,8 +236,8 @@ Our aim is to integrate the strengths within the PostgreSQL ecosystem, creating 
 - [**FerretDB**](https://github.com/Vonng/pigsty/tree/master/app/ferretdb): An open-source MongoDB alternative based on PostgreSQL, compatible with MongoDB APIs/drivers.
 - [**PostgresML**](https://github.com/Vonng/pigsty/tree/master/app/pgml): Facilitates classic machine learning algorithms, calling, deploying, and training AI models with SQL.
 
-[![img](/img/pigsty/desc.png)](https://pigsty.io)
+[![img](https://pigsty.io/img/desc.png)](https://pigsty.io)
 
 Developers, your choices will shape the future of the database world. I hope my work helps you better utilize the world’s most advanced open-source database kernel: **PostgreSQL**.
 
-> [Read in Pigsty’s Blog](https://pigsty.io/blog/pg/pg-eat-db-world/) *|* [GitHub Repo: Pigsty](https://github.com/Vonng/pigsty) *|* [Official Website](https://pigsty.io/)
+> [Read in Pigsty’s Blog](https://pigsty.io/pg/pg-eat-db-world/) *|* [GitHub Repo: Pigsty](https://github.com/Vonng/pigsty) *|* [Official Website](https://pigsty.io/)

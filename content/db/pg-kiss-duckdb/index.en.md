@@ -8,7 +8,7 @@ tags: [PostgreSQL,DuckDB,Database]
 ---
 
 
-When I published “[*PostgreSQL Is Eating the Database World*](https://pigsty.io/blog/pg/pg-eat-db-world/)” last year, I tossed out this wild idea: *Could Postgres really unify OLTP and OLAP?* I had no clue we’d see fireworks so quickly.
+When I published “[*PostgreSQL Is Eating the Database World*](https://pigsty.io/pg/pg-eat-db-world/)” last year, I tossed out this wild idea: *Could Postgres really unify OLTP and OLAP?* I had no clue we’d see fireworks so quickly.
 
 The PG community’s now in an all-out frenzy to stitch DuckDB into the Postgres bloodstream — big enough for Andy Pavlo to give it [prime-time coverage in his 2024 database retrospective](https://www.cs.cmu.edu/~pavlo/blog/2025/01/2024-databases-retrospective.html). If you ask me, we’re on the brink of a cosmic collision in database-land, and Postgres + DuckDB is the meteor we should all be watching.
 
@@ -36,7 +36,7 @@ For all its top-notch OLAP chops, DuckDB’s Achilles’ heel is data management
 
 Hence, DuckDB feels more like an “OLAP operator” or a storage engine, akin to RocksDB, and less like a fully operational “big data platform.”
 
-Meanwhile, **PostgreSQL** has spent decades polishing data management—rock-solid transactions, access control, backups, HA, a healthy extension ecosystem, and so on. As an OLTP juggernaut, [Postgres is a performence beast](https://pigsty.io/blog/pg/pg-performence/).. The only lingering complaint is that while Postgres handles standard analytics adequately, it still lags behind specialized OLAP systems when data volumes balloon.
+Meanwhile, **PostgreSQL** has spent decades polishing data management—rock-solid transactions, access control, backups, HA, a healthy extension ecosystem, and so on. As an OLTP juggernaut, [Postgres is a performence beast](https://pigsty.io/pg/pg-performence/).. The only lingering complaint is that while Postgres handles standard analytics adequately, it still lags behind specialized OLAP systems when data volumes balloon.
 
 ![clickbench.png](clickbench.png)
 
@@ -50,7 +50,7 @@ And guess what—[it’s already happening](https://www.cs.cmu.edu/~pavlo/blog/2
 
 ## The Race to Stitch Them Together
 
-Take a quick peek and you’ll see [competition is fierce](https://pigsty.io/blog/pg/pg-duckdb/)
+Take a quick peek and you’ll see [competition is fierce](https://pigsty.io/pg/pg-duckdb/)
 
 - A lone-wolf developer in China, [Steven Lee](https://x.com/AliTrack), kicked things off with [`duckdb_fdw`](https://github.com/duckdb/duckdb_fdw). It flew under the radar for a while, but definitely laid groundwork.
 - After the post [“PostgreSQL Is Eating the Database World”](https://mp.weixin.qq.com/s/8_uhRH93oAoHZqoC90DA6g) used vector databases as a hint toward future OLAP, the PG crowd got charged up about grafting DuckDB onto Postgres.
@@ -80,7 +80,7 @@ But Postgres and DuckDB fit like a glove. The synergy boils down to three points
 
    > [Survey and Evaluation of Database Management System Extensibility](https://abigalekim.github.io/assets/pdf/Anarchy_in_the_Database_PGConfDev2024.pdf)
 
-3. **Massive Market**. Postgres is already [the world’s most popular database](https://pigsty.io/blog/pg/pg-is-no1-again/) and the only major RDBMS still growing fast. Integrating with PG brings way more mileage than targeting smaller players.
+3. **Massive Market**. Postgres is already [the world’s most popular database](https://pigsty.io/pg/pg-is-no1-again/) and the only major RDBMS still growing fast. Integrating with PG brings way more mileage than targeting smaller players.
 
 Hence, hooking **Postgres + DuckDB** is like a “path of least resistance for maximum impact.” Nature abhors a vacuum, so everyone’s rushing in.
 
@@ -92,9 +92,9 @@ OLTP vs. OLAP has historically been a massive fault line in databases. We’ve s
 
 That scenario suggests huge **cost savings** and simpler engineering. No more data migration migraines or maintaining two different data stacks. Anyone who nails that seamless integration might detonate a deep-sea bomb in the big-data market.
 
-![img](https://pigsty.io/img/pigsty/ecosystem.jpg)
+![img](https://pigsty.iohttps://pigsty.io/img/ecosystem.jpg)
 
-People call Postgres the “Linux kernel of databases” — open source, infinitely extensible, morphable into anything: even mimic [MySQL](https://pigsty.io/docs/kernel/openhalo/), [Oracle](https://pigsty.io/docs/kernel/ivorysql/), [MsSQL](https://pigsty.io/docs/kernel/babelfish/) and [Mongo](https://pigsty.io/blog/pg/ferretdb/). We’ve already watched PG conquer geospatial, time series, NoSQL, and vector search through its extension hooks. **OLAP** might just be its biggest conquest yet.
+People call Postgres the “Linux kernel of databases” — open source, infinitely extensible, morphable into anything: even mimic [MySQL](https://pigsty.io/docs/kernel/openhalo/), [Oracle](https://pigsty.io/docs/kernel/ivorysql/), [MsSQL](https://pigsty.io/docs/kernel/babelfish/) and [Mongo](https://pigsty.io/pg/ferretdb/). We’ve already watched PG conquer geospatial, time series, NoSQL, and vector search through its extension hooks. **OLAP** might just be its biggest conquest yet.
 
 A polished “plug-and-play” DuckDB integration could flip big data analytics on its head. Will specialized OLAP services withstand a nuclear-level blow? Could they end up like “specialized vector DBs” overshadowed by `pgvector`? We don’t know, but we’ll definitely have opinions once the dust settles.
 
@@ -142,8 +142,8 @@ For database vendors, this is an epic collision; for businesses, it’s a chance
 
 ## **Further Reading**
 
-- [PostgreSQL Is Eating the Database World](https://pigsty.io/blog/pg/pg-eat-db-world/)
-- [Whoever Masters DuckDB Integration Wins the OLAP Database World](https://pigsty.io/blog/pg/pg-duckdb/)
+- [PostgreSQL Is Eating the Database World](https://pigsty.io/pg/pg-eat-db-world/)
+- [Whoever Masters DuckDB Integration Wins the OLAP Database World](https://pigsty.io/pg/pg-duckdb/)
 - [Alibaba Cloud rds_duckdb: Homage or Ripoff?](https://mp.weixin.qq.com/s/3M6qQCsNUETEWcMwI3eFIQ)
 - [Is Distributed Databases a Mythical Need?](https://mp.weixin.qq.com/s/-eaCoZR9Z5srQ-1YZm1QJA)
 - [Andy Pavlo’s 2024 Database Recap](https://mp.weixin.qq.com/s/jgYDHdCqWDRDfoFkfs7W8Q)

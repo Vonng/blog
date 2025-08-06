@@ -82,7 +82,7 @@ MySQL 9.0 的向量数据类型只是 `BLOB` 类型换皮 —— 只加了个数
 当然，也不排除 Oracle 在自己的 MySQL Heatwave 上有一个不糊弄的版本。可在 MySQL 上，最后实际交付的东西，就是一个十分钟就能写完的玩意糊弄了事。  
 
 不糊弄的例子可以参考 MySQL 的老对手 PostgreSQL。在过去一年中，PG 生态里就涌现出了至少六款向量数据库扩展（ `pgvector`，`pgvector.rs`，`pg_embedding`，`latern`，`pase`，`pgvectorscale`），并在你追我赶的赛马中卷出了新高度。
-最后的胜出者是 2021 年就出来的 [`pgvector`](/dev/llm-and-pgvector) ，它在无数开发者、厂商、用户的共同努力下，站在 PostgreSQL 的肩膀上，很快便达到了许多专业向量数据库都无法企及的高度，甚至可以说凭借一己之力，干死了这个数据库细分领域 —— 《[专用向量数据库凉了吗？](/db/svdb-is-dead)》。
+最后的胜出者是 2021 年就出来的 [`pgvector`](/pg/llm-and-pgvector/) ，它在无数开发者、厂商、用户的共同努力下，站在 PostgreSQL 的肩膀上，很快便达到了许多专业向量数据库都无法企及的高度，甚至可以说凭借一己之力，干死了这个数据库细分领域 —— 《[专用向量数据库凉了吗？](/db/svdb-is-dead)》。
 
 在这一年内，`pgvector` [性能翻了 150 倍](https://jkatz05.com/post/postgres/pgvector-performance-150x-speedup/)，功能上更是有了翻天覆地的变化 —— `pgvector` 提供了 float向量，半精度向量，bit向量，稀疏向量几种数据类型；提供了L1距离，L2距离，内积距离，汉明距离，Jaccard距离度量函数；提供了各种向量、标量计算函数与运算符；支持 IVFFLAT，HNSW 两种专用向量索引算法（扩展的扩展 pgvectorscale 还提供了 DiskANN 索引）；支持了并行索引构建，向量量化处理，稀疏向量处理，子向量索引，混合检索，可以使用 SIMD 指令加速。这些丰富的功能，加上开源免费的协议，以及整个 PG 生态的合力与协同效应 —— 让 `pgvector` 大获成功，并与 PostgreSQL 一起，成为无数 AI 项目使用的默认（向量）数据库。
 
@@ -246,7 +246,7 @@ MySQL 曾经搭乘互联网东风扶摇而起，攒下了丰厚的家底，它�
 
 ## 究竟是谁杀死了MySQL？
 
-究竟是谁杀死了 MySQL，难道是 PostgreSQL 吗？Peter Zaitsev 在《[Oracle最终还是杀死了MySQL](/db/sakila-where-are-you-going)》一文中控诉 —— **Oracle 的不作为与瞎指挥最终害死了 MySQL**；并在后续《[Oracle还能挽救MySQL吗](https://pigsty.io/zh/blog/db/can-oracle-save-mysql)》一文中指出了真正的根因：
+究竟是谁杀死了 MySQL，难道是 PostgreSQL 吗？Peter Zaitsev 在《[Oracle最终还是杀死了MySQL](/db/sakila-where-are-you-going)》一文中控诉 —— **Oracle 的不作为与瞎指挥最终害死了 MySQL**；并在后续《[Oracle还能挽救MySQL吗](https://pigsty.io/zh/db/can-oracle-save-mysql)》一文中指出了真正的根因：
 
 MySQL 的知识产权被 Oracle 所拥有，它不是像 PostgreSQL 那种 “由社区拥有和管理” 的数据库，也没有 PostgreSQL 那样广泛的独立公司贡献者。不论是 MySQL 还是其分叉 MariaDB，它们都不是真正意义上像 Linux，PostgreSQL，Kubernetes 这样由社区驱动的的原教旨纯血开源项目，而是由单一商业公司主导。
 
@@ -254,9 +254,9 @@ MySQL 的知识产权被 Oracle 所拥有，它不是像 PostgreSQL 那种 “�
 
 ![dbms-market.png](dbms-market.png)
 
-逝者不可追，来者犹可待。PostgreSQL 应该从 MySQL 的衰亡中吸取教训 —— 尽管 PostgreSQL 社区非常小心地避免出现一家独大的情况出现，但生态确实在朝着一家/几家巨头云厂商独大的不利方向在发展。[**云正在吞噬开源**](/cloud/paradigm) —— 云厂商编写了开源软件的管控软件，组建了专家池，通过提供维护攫取了软件生命周期中的绝大部分价值，但却通过搭便车的行为将最大的成本 —— **产研**交由整个开源社区承担。而 [**真正有价值的管控/监控代码却从来不回馈开源社区**](/cloud/dba-vs-rds#云数据库的模式与新挑战) —— 在数据库领域，我们已经在 MongoDB，ElasticSearch，Redis，以及 MySQL 上看到了这一现象，而 PostgreSQL 社区确实应当引以为鉴。
+逝者不可追，来者犹可待。PostgreSQL 应该从 MySQL 的衰亡中吸取教训 —— 尽管 PostgreSQL 社区非常小心地避免出现一家独大的情况出现，但生态确实在朝着一家/几家巨头云厂商独大的不利方向在发展。[**云正在吞噬开源**](/cloud/paradigm/) —— 云厂商编写了开源软件的管控软件，组建了专家池，通过提供维护攫取了软件生命周期中的绝大部分价值，但却通过搭便车的行为将最大的成本 —— **产研**交由整个开源社区承担。而 [**真正有价值的管控/监控代码却从来不回馈开源社区**](/cloud/rds/#云数据库的模式与新挑战) —— 在数据库领域，我们已经在 MongoDB，ElasticSearch，Redis，以及 MySQL 上看到了这一现象，而 PostgreSQL 社区确实应当引以为鉴。
 
-好在 PG 生态总是不缺足够头铁的人和公司，愿意站出来维护生态的平衡，反抗公有云厂商的霸权。例如，我自己开发的 PostgreSQL 发行版 [Pigsty](https://pigsty.io)，旨在提供一个开箱即用、本地优先的开源云数据库 RDS 替代，将社区自建 PostgreSQL 数据库服务的底线，拔高到云厂商 RDS PG 的水平线。而我的《[云计算泥石流](/cloud)》系列专栏则旨在扒开云服务背后的信息不对称，从而帮助公有云厂商更加体面，亦称得上是成效斐然。
+好在 PG 生态总是不缺足够头铁的人和公司，愿意站出来维护生态的平衡，反抗公有云厂商的霸权。例如，我自己开发的 PostgreSQL 发行版 [Pigsty](https://pigsty.io)，旨在提供一个开箱即用、本地优先的开源云数据库 RDS 替代，将社区自建 PostgreSQL 数据库服务的底线，拔高到云厂商 RDS PG 的水平线。而我的《云计算泥石流》系列专栏则旨在扒开云服务背后的信息不对称，从而帮助公有云厂商更加体面，亦称得上是成效斐然。
 
 尽管我是 PostgreSQL 的坚定支持者，但我也赞同 Peter Zaitsev 的观点：*“如果 MySQL 彻底死掉了，开源关系型数据库实际上就被 PostgreSQL 一家垄断了，而垄断并不是一件好事，因为它会导致发展停滞与创新减缓。PostgreSQL 要想进入全盛状态，有一个 MySQL 作为竞争对手并不是坏事”*
 
@@ -313,7 +313,7 @@ MySQL 曾经也辉煌过，也曾经是“开源软件”的一杆标杆，但�
 
 [Oracle还能拯救MySQL吗？](/db/can-oracle-save-mysql)
 
-[Oracle最终还是杀死了MySQL！](/db/oracle-killed-mysql)
+[Oracle最终还是杀死了MySQL！](/db/mysql-is-dead/)
 
 [MySQL性能越来越差，Sakila将何去何从？](/db/sakila-where-are-you-going)
 
@@ -325,23 +325,23 @@ MySQL 曾经也辉煌过，也曾经是“开源软件”的一杆标杆，但�
 
 [为什么PostgreSQL是未来数据的基石？](/pg/pg-for-everything)
 
-[PostgreSQL is eating the database world](/blog/pg/pg-eat-db-world)
+[PostgreSQL is eating the database world](/pg/pg-eat-db-world)
 
 [技术极简主义：一切皆用Postgres](/pg/just-use-pg)
 
 [PostgreSQL：世界上最成功的数据库](/pg/pg-is-no1)
 
-[PostgreSQL 到底有多强？](/pg/pg-performance)
+[PostgreSQL 到底有多强？](/pg/pg-performence/)
 
 [专用向量数据库凉了吗？](/db/svdb-is-dead)
 
 [向量是新的JSON](/pg/vector-json-pg)
 
-[AI大模型与PGVECTOR](/dev/llm-and-pgvector/)
+[AI大模型与PGVECTOR](/pg/llm-and-pgvector/)
 
 [云数据库的模式与新挑战](/cloud/dba-vs-rds)
 
-[云计算泥石流](/cloud)
+云计算泥石流
 
 [Redis不开源是“开源”之耻，更是公有云之耻](/db/redis-oss/)
 

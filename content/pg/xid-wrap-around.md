@@ -59,7 +59,7 @@ TransactionIdPrecedes(TransactionId id1, TransactionId id2)
 }
 ```
 
-![xid-wrap-around](/img/blog/pg/xid-wrap-around.png)
+![xid-wrap-around](xid-wrap-around.png)
 
 
 

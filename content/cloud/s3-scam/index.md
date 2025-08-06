@@ -27,7 +27,7 @@ tags: [下云,AWS,S3]
 
 ## 这些请求从哪儿来？
 
-默认情况下，AWS 并不会记录对你的 S3 存储桶的请求操作。但你可以通过 [**AWS CloudTrail**](https://docs.aws.amazon.com/AmazonS3/latest/userguide/cloudtrail-logging.html) 或 [**S3 服务器访问日志**](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerLogs.html) 启用此类日志记录。开启 CloudTrail 日志后，我立刻发现了成千上万的来自不同账户的写请求。
+默认情况下，AWS 并不会记录对你的 S3 存储桶的请求操作。但你可以通过 [**AWS CloudTrail**](https://docs.aws.amazon.com/AmazonS3/latest/userguide/cloud/trail-logging.html) 或 [**S3 服务器访问日志**](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerLogs.html) 启用此类日志记录。开启 CloudTrail 日志后，我立刻发现了成千上万的来自不同账户的写请求。
 
 **为何会有第三方账户对我的 S3 存储桶发起未授权请求？**
 

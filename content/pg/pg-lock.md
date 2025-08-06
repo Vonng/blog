@@ -25,13 +25,13 @@ PostgreSQL有好几类锁，其中最主要的是 **表级锁** 与 **行级锁*
 
 ### 表级锁的模式
 
-![](/img/blog/pg/pg-lock-table-lock)
+![](pg-lock-table-lock)
 
 如何记忆这么多类型的锁呢？让我们从演化的视角来看这些锁。
 
 ### 表级锁的演化
 
-![](/img/blog/pg/pg-lock-envolve.png)
+![](pg-lock-envolve.png)
 
 最开始只有两种锁：`Share`与`Exclusive`，共享锁与排它锁，即所谓**读锁**与**写锁**。读锁的目的是阻止表数据的变更，而写锁的目的是阻止一切并发访问。这很好理解。
 
@@ -170,7 +170,7 @@ CREATE TABLE pg_locks
 
 #### 样例数据
 
-![](/img/blog/pg/pg-lock-sample.png)
+![](pg-lock-sample.png)
 
 这个视图需要一些额外的知识才能解读。
 

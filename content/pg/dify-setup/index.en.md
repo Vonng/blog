@@ -45,7 +45,7 @@ Reference:
 
 ## Pigsty Preparation
 
-Let's take the [single-node installation](/docs/concept/arch/#singleton-meta) of Pigsty as an example. Suppose you have a machine with the IP address `10.10.10.10` and already pigsty [installed](/docs/setup/install).
+Let's take the [single-node installation](https://pigsty.io/docs/concept/arch/#singleton-meta) of Pigsty as an example. Suppose you have a machine with the IP address `10.10.10.10` and already pigsty [installed](https://pigsty.io/docs/setup/install).
 
 We need to define the database clusters required in the Pigsty configuration file `pigsty.yml`.
 
@@ -106,7 +106,7 @@ The above assumes you are already a Pigsty user familiar with deploying PostgreS
 
 If you're already familiar with setting up Pigsty, feel free to skip this section.
 
-[Prepare](/docs/setup/prepare/) a fresh Linux x86_64 node that runs [compatible](/docs/reference/compatibility) OS, then run as a **sudo-able** user:
+[Prepare](https://pigsty.io/docs/setup/prepare/) a fresh Linux x86_64 node that runs [compatible](https://pigsty.io/docs/reference/compatibility) OS, then run as a **sudo-able** user:
 
 ```bash
 curl -fsSL https://repo.pigsty.io/get | bash
@@ -124,7 +124,7 @@ cd ~/pigsty   # get pigsty source and entering dir
 ./install.yml # install pigsty according to pigsty.yml
 ```
 
-You should insert the above PostgreSQL cluster and Redis cluster definitions into the `pigsty.yml` file, then run [`install.yml`](/docs/infra#infrayml) to complete the installation.
+You should insert the above PostgreSQL cluster and Redis cluster definitions into the `pigsty.yml` file, then run [`install.yml`](https://pigsty.io/docs/infra#infrayml) to complete the installation.
 
 **Redis Deploy**
 
@@ -150,7 +150,7 @@ Pigsty will not deploy Docker by default, so you need to install Docker with the
 
 You can configure dify in the [`.env`](https://github.com/Vonng/pigsty/blob/main/app/dify/.env) file:
 
-All parameters are self-explanatory and filled in with default values that work directly in the [Pigsty sandbox env](/docs/setup/provision/).
+All parameters are self-explanatory and filled in with default values that work directly in the [Pigsty sandbox env](https://pigsty.io/docs/setup/provision/).
 Fill in the database connection information according to your actual conf, consistent with the PG/Redis cluster configuration above.
 
 Changing the `SECRET_KEY` field is recommended. You can generate a strong key with `openssl rand -base64 42`:

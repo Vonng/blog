@@ -10,7 +10,7 @@ categories: [Cloud]
 tags: [Cloud,CloudExit,EBS]
 ---
 
-We already answer the question: [Is RDS an Idiot Tax?](/blog/cloud/rds/).
+We already answer the question: [Is RDS an Idiot Tax?](/cloud/rds/).
 But when compared to the **hundredfold markup of public cloud block storage**, cloud databases seem almost reasonable. This article uses real data to reveal the true business model of public cloud: **"Cheap" EC2/S3 to attract customers, and fleece with "Expensive" EBS/RDS**. Such practices have led public clouds to diverge from their original mission and vision.
 
 - [TLDR](#tl-dr)
@@ -33,7 +33,7 @@ EC2/S3/EBS pricing serves as the anchor for all cloud services pricing. While th
 
 Why is there such a staggering markup for plug-and-play disk hardware? Cloud providers fail to justify the exorbitant prices. When considering the design and pricing models of other cloud storage services, there's only one plausible explanation: **The high markup on EBS is a deliberately set barrier, intended to fleece cloud database customers**.
 
-With EC2 and EBS serving as the pricing anchors for cloud databases, their markups are several and several dozen times higher, respectively, thus supporting the exorbitant profit margins of cloud databases. However, such monopolistic profits are unsustainable: the impact of IDC 2.0/telecom/national cloud on IaaS; private cloud/cloud-native/open source as alternatives to PaaS; and the tech industry's massive layoffs, AI disruption, and the impact of China's low labor costs on cloud services (through IT outsourcing/shared expertise). **If public clouds continue to adhere to their current fleecing model, diverging from their original mission of providing fundamental compute and storage infrastructure, they will inevitably face increasingly severe competition and challenges from the aforementioned forces.**
+With EC2 and EBS serving as the pricing anchors for cloud databases, their markups are several and several dozen times higher, respectively, thus supporting the exorbitant profit margins of cloud databases. However, such monopolistic profits are unsustainable: the impact of IDC 2.0/telecom/national cloud on IaaS; private cloud/cloud/-native/open source as alternatives to PaaS; and the tech industry's massive layoffs, AI disruption, and the impact of China's low labor costs on cloud services (through IT outsourcing/shared expertise). **If public clouds continue to adhere to their current fleecing model, diverging from their original mission of providing fundamental compute and storage infrastructure, they will inevitably face increasingly severe competition and challenges from the aforementioned forces.**
 
 
 -------------
@@ -67,7 +67,7 @@ Some "experts" claim that cloud block storage is stable and reliable, offering m
 
 ![](ebs-4.png)
 
-> 《[Is the Cloud SLA Just a Placebo?](/blog/cloud/sla/)》
+> 《[Is the Cloud SLA Just a Placebo?](/cloud/sla/)》
 
 
 
@@ -106,7 +106,7 @@ Of course, to make customers bite, some cloud computing KOLs promote the accompa
 
 ![](ebs-7.png)
 
-These four points are well summarized, but what public clouds will not disclose is the cost of these "best practices." To put [these four points](https://github.com/lipingtababa/cloud-native-best-practices/blob/main/云原生王四条.md) in layman's terms, they form a carefully designed trap for customers:
+These four points are well summarized, but what public clouds will not disclose is the cost of these "best practices." To put [these four points](https://github.com/lipingtababa/cloud/-native-best-practices/blob/main/云原生王四条.md) in layman's terms, they form a carefully designed trap for customers:
 
 **Dump ordinary files in S3!** (With such cost-effective S3, who needs EBS?)
 
@@ -156,7 +156,7 @@ Comparing the costs of self-hosting versus using a cloud database:
 | Alibaba Cloud RDS PG High-Availability pg.x4m.8xlarge.2c, 64C / 256GB / 3.2TB ESSD PL3 | 25 ~ 50              |
 | AWS RDS PG High-Availability db.m5.16xlarge, 64C / 256GB / 3.2TB io1 x 80k IOPS        | 160 ~ 217            |
 
-> **RDS** pricing compared to self-hosting, see "[Is Cloud Database an idiot Tax?](/blog/cloud/rds/)"
+> **RDS** pricing compared to self-hosting, see "[Is Cloud Database an idiot Tax?](/cloud/rds/)"
 
 Any rational business user can see the logic here: **If the purchase of such a service is not for short-term, temporary needs, then it is definitely considered a **major financial misstep**.
 
@@ -224,9 +224,9 @@ Staying true to the original mission is essential. Public clouds do an admirable
 
 【1】[撤离 AWS：3年省下27.5亿元](https://mp.weixin.qq.com/s/w5XKsXf_NLWnKB6G-sbZaw)
 
-【2】[云数据库是不是智商税](/blog/cloud/rds/)
+【2】[云数据库是不是智商税](/cloud/rds/)
 
-【3】[范式转移：从云到本地优先](/blog/cloud/paradigm/)
+【3】[范式转移：从云到本地优先](/cloud/paradigm/)
 
 【4】[腾讯云CDN：从入门到放弃](https://mp.weixin.qq.com/s/ANFnbDXwuhKI99fgYRZ9ug)
 

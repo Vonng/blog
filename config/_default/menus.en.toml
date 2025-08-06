@@ -16,20 +16,19 @@ pageRef = "about"
 weight = 3
 
 [[main]]
-name = "PostgreSQL"
+name = "PG Mage"
 pageRef = "pg"
 weight = 4
 
 [[main]]
-name = "CloudExit"
-pageRef = "cloud"
-weight = 4
+name = "DB Guru"
+pageRef = "db"
+weight = 5
 
 [[main]]
-name = "Database"
-pageRef = "db"
+name = "Cloud-Exit"
+pageRef = "cloud"
 weight = 6
-
 
 [[main]]
 name = "Column"
@@ -39,19 +38,19 @@ weight = 10
   parent = "Column"
   name = "Database Guru"
   pageRef = "db"
-  weight = 11
-
-[[main]]
-  parent = "Column"
-  name = "Cloud-Exit"
-  pageRef = "cloud"
   weight = 12
 
 [[main]]
   parent = "Column"
-  name = "PostgreSQL Notes"
-  pageRef = "pg"
+  name = "Cloud-Exit Mudslide"
+  pageRef = "cloud"
   weight = 13
+
+[[main]]
+  parent = "Column"
+  name = "PostgreSQL Mage"
+  pageRef = "pg"
+  weight = 11
 
 [[main]]
   parent = "Column"

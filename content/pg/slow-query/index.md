@@ -71,9 +71,9 @@ tags: [PostgreSQL,PG管理,性能]
 
 监控系统就可以更全面地回答关于慢查询的问题。监控系统中的数据是由无数**历史快照**组成的（如5秒一次快照采样）。因此用户可以回溯至任意时间点，考察不同时间段内查询平均响应时间的变化。
 
-![](/img/concept/slow-query.jpg)
+![](img/concept/slow-query.jpg)
 
-> 上图是Pigsty中 [PG Query Detail](/zh/docs/pgsql/dasdhboard/)提供的界面，这里展现出了单个查询的详细信息。
+> 上图是Pigsty中 [PG Query Detail](https://pigsty.iohttps://pigsty.iohttps://doc.pgsty.com/pgsql/dashboard/)提供的界面，这里展现出了单个查询的详细信息。
 >
 > 这是一个典型的慢查询，平均响应时间几秒钟。为它添加了一个索引后。从右中Query RT仪表盘的上可以看到，查询的平均响应世界从几秒降到了几毫秒。
 
@@ -91,7 +91,7 @@ tags: [PostgreSQL,PG管理,性能]
 
 > Talk is cheap, show me the code
 
-假设用户已经拥有一个 [Pigsty沙箱演示环境](/zh/docs/setup/provision/)，下面将使用Pigsty沙箱，演示模拟的慢查询定位与处理流程。
+假设用户已经拥有一个 [Pigsty沙箱演示环境](/zhhttps://pigsty.io/docs/setup/provision/)，下面将使用Pigsty沙箱，演示模拟的慢查询定位与处理流程。
 
 
 
@@ -117,13 +117,13 @@ while true; do pgbench -nv -P1 -c40 --select-only --rate=1000 -T10 postgres://te
 ALTER TABLE pgbench_accounts DROP CONSTRAINT pgbench_accounts_pkey ;
 ```
 
-该命令会移除 `pgbench_accounts` 表上的主键，导致**相关查询**从索引扫描变为顺序全表扫描，全部变为慢查询，访问[PG Instance](/zh/zh/docs/pgsql/dasdhboard) ➡️ Query ➡️ QPS，结果如下图所示：
+该命令会移除 `pgbench_accounts` 表上的主键，导致**相关查询**从索引扫描变为顺序全表扫描，全部变为慢查询，访问 [PG Instance](https://doc.pgsty.com/pgsql/dashboard) ➡️ Query ➡️ QPS，结果如下图所示：
 
 ![](slow-query-1.jpg)
 
 > 图1：平均查询响应时间从1ms飙升为300ms，单个从库实例的QPS从500下降至7。
 
-与此同时，实例因为慢查询堆积，系统会在瞬间**雪崩过载**，访问[PG Cluster](/zh/zh/docs/pgsql/dasdhboard)首页，可以看到集群负载出现飙升。
+与此同时，实例因为慢查询堆积，系统会在瞬间**雪崩过载**，访问[PG Cluster](https://doc.pgsty.com/pgsql/dashboard)首页，可以看到集群负载出现飙升。
 
 
 ![](slow-query-2.png)
@@ -137,9 +137,9 @@ ALTER TABLE pgbench_accounts DROP CONSTRAINT pgbench_accounts_pkey ;
 
 ### 慢查询：定位
 
-首先，使用[PG Cluster](/zh/zh/docs/pgsql/dasdhboard)面板定位慢查询所在的具体实例，这里以 `pg-test-2` 为例。
+首先，使用[PG Cluster](https://doc.pgsty.com/pgsql/dashboard)面板定位慢查询所在的具体实例，这里以 `pg-test-2` 为例。
 
-然后，使用[PG Query](/zh/zh/docs/pgsql/dasdhboard)面板定位具体的慢查询：编号为 **-6041100154778468427**
+然后，使用[PG Query](https://doc.pgsty.com/pgsql/dashboard)面板定位具体的慢查询：编号为 **-6041100154778468427**
 
 ![](slow-query-3.jpg)
 
@@ -153,7 +153,7 @@ ALTER TABLE pgbench_accounts DROP CONSTRAINT pgbench_accounts_pkey ;
 
 可以确定，就是这个查询变慢了！
 
-接下来，利用[PG Stat Statements](/zh/zh/docs/pgsql/dasdhboard/)面板或[PG Query Detail](/zh/zh/docs/pgsql/dasdhboard)，根据查询ID定位慢查询的**具体语句**。
+接下来，利用[PG Stat Statements](https://doc.pgsty.com/pgsql/dashboard/)面板或[PG Query Detail](https://doc.pgsty.com/pgsql/dashboard)，根据查询ID定位慢查询的**具体语句**。
 
 ![](slow-query-4.png)
 
@@ -177,9 +177,9 @@ SELECT abalance FROM pgbench_accounts WHERE aid = $1
 
 下一步，我们就要**验证猜想**。
 
-第一步，使用[PG Table Catalog](/zh/zh/docs/pgsql/dasdhboard)，我们可以检视表的详情，例如表上建立的索引。
+第一步，使用[PG Table Catalog](https://doc.pgsty.com/pgsql/dashboard)，我们可以检视表的详情，例如表上建立的索引。
 
-第二步，查阅 [PG Table Detail](/zh/zh/docs/pgsql/dasdhboard) 面板，检查 `pgbench_accounts` 表上的访问，来验证我们的猜想
+第二步，查阅 [PG Table Detail](https://doc.pgsty.com/pgsql/dashboard) 面板，检查 `pgbench_accounts` 表上的访问，来验证我们的猜想
 
 
 ![](slow-query-5.png)

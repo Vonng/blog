@@ -56,7 +56,7 @@ Oracle 和 MySQL 今年的使用率还有 0.1% ~ 0.2% 的增长，不过在数�
 ![sf-used-delta-table.png](sf-used-delta-table.png)
 
 很遗憾的是，曾经最具代表性的国产数据库头部玩家 TiDB 在这一次跌出了三个榜单。TiDB 以及 Oceanbase 选择了分布式 + MYSQL 兼容的路线（双重押错宝）（参见：[分布式数据库是伪需求吗？](/db/distributive-bullshit)）。
-在当下 [硬件发展](/cloud/bonus) 与 PG生态繁荣的大背景下相当不合时宜。同样押宝分布式路线，但选择兼容 PostgreSQL 生态的 CockroachDB 就在今年取得了10%相对增长，成功留在了榜单里。
+在当下 [硬件发展](/cloud/bonus/) 与 PG生态繁荣的大背景下相当不合时宜。同样押宝分布式路线，但选择兼容 PostgreSQL 生态的 CockroachDB 就在今年取得了10%相对增长，成功留在了榜单里。
 
 
 

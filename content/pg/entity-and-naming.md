@@ -18,7 +18,7 @@ tags: [PostgreSQL,PG管理,架构]
 
 ## TL;DR
 
-![entity-naming.png](/img/blog/pg/entity-naming.png)
+![entity-naming.png](entity-naming.png)
 
 * **集群（Cluster）**是基本自治单元，由用户指定唯一标识，表达业务含义，作为顶层命名空间。
 * 集群在硬件层面上包含一系列的**节点（Node）**，即物理机，虚机（或Pod），可以通过IP唯一标识。
@@ -99,7 +99,7 @@ tags: [PostgreSQL,PG管理,架构]
 
 ## 命名规则
 
-![entity-naming.png](/img/blog/pg/entity-naming.png)
+![entity-naming.png](entity-naming.png)
 
 一个对象可以有很多组 **标签（Tag）** 与 **元数据（Metadata/Annotation）** ，但通常只能有一个名字。
 

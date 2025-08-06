@@ -32,7 +32,7 @@ DB-Engine 数据库热度榜上，有五个数据库遥遥领先，热度远远�
 
 目前，Pigsty 在 EL 系统上提供了对 [OpenHalo](https://doc.pgsty.com/zh/pgsql/kernel/openhalo/) 的支持，您可以通过以下命令来安装：
 
-使用 Pigsty [**标准安装流程**](https://pigsty.cc/docs/setup/install/)，并使用 [`mysql`](https://pigsty.cc/docs/conf/mysql/) 配置模板即可。
+使用 Pigsty [**标准安装流程**](https://pigsty.cchttps://pigsty.io/docs/setup/install/)，并使用 [`mysql`](https://pigsty.cc/docs/conf/mysql/) 配置模板即可。
 
 ```bash
 curl -fsSL https://repo.pigsty.cc/get | bash; cd ~/pigsty

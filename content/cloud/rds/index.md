@@ -3,7 +3,7 @@ title: 云数据库是不是智商税
 date: 2023-01-30
 hero: /hero/rds.jpg
 author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信原文](https://mp.weixin.qq.com/s/LefEAXTcBH-KBJNhXNoc7A) | [Vonng博客](https://vonng.com/cn/blog/cloud/rds/)
+  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信原文](https://mp.weixin.qq.com/s/LefEAXTcBH-KBJNhXNoc7A) | [Vonng博客](https://vonng.com/cn/cloud//rds/)
 summary: >
   寒冬来袭，大厂纷纷开始裁员进入降本增效模式，作为公有云杀猪刀一哥的云数据库，故事还能再讲下去吗？你用云数据库一年的钱，就够买几台甚至十几台性能更好的服务器，**用云数据库到底是不是在交智商税？**
 tags: [下云,RDS,AWS,阿里云]
@@ -200,7 +200,7 @@ tags: [下云,RDS,AWS,阿里云]
 
 ![](rds-6.png)
 
-![](/img/pigsty/dashboard.jpg)
+![](https://pigsty.io/img/dashboard.jpg)
 
 > 公开 [Demo](https://demo.pigsty.cc)：https://demo.pigsty.cc
 

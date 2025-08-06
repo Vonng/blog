@@ -31,7 +31,7 @@ ETL大家都耳熟能详，每天批量跑ETL任务，从生产OLTP数据库 **�
 
 例如用户可以捕获数据库中的变更，并不断将相同的变更应用至**搜索索引**（e.g elasticsearch）。如果变更日志以相同的顺序应用，则可以预期的是，搜索索引中的数据与数据库中的数据是匹配的。同理，这些变更也可以应用于后台刷新**缓存**（redis），送往**消息队列（Kafka）**，导入**数据仓库**（EventSourcing，存储不可变的事实事件记录而不是每天取快照），**收集统计数据与监控（Prometheus）**，等等等等。在这种意义下，外部索引，缓存，数仓都成为了**PostgreSQL在逻辑上的从库**，这些衍生数据系统都成为了变更流的消费者，而PostgreSQL成为了整个**数据系统**的主库。在这种架构下，应用只需要操心怎样把数据写入数据库，剩下的事情交给CDC即可。系统设计可以得到极大地简化：所有的数据组件都能够自动与主库在逻辑上保证（最终）一致。用户不用再为如何保证多个异构数据系统之间数据同步而焦头烂额了。
 
-![](/img/blog/pg/cdc-system.png)
+![](cdc-system.png)
 
 实际上PostgreSQL自10.0版本以来提供的**逻辑复制（logical replication）**功能，实质上就是一个**CDC应用**：从主库上提取变更事件流：`INSERT, UPDATE, DELETE, TRUNCATE`，并在另一个PostgreSQL**主库**实例上重放。如果这些增删改事件能够被解析出来，它们就可以用于任何感兴趣的消费者，而不仅仅局限于另一个PostgreSQL实例。
 
@@ -376,7 +376,7 @@ slot := "test_slot"
 ```
 
 ```
-go run main.go postgres:///postgres?application_name=cdc test_decoding test_slot
+go run main.go postgres:/postgres?application_name=cdc test_decoding test_slot
 ```
 
 代码如下所示：

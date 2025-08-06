@@ -24,7 +24,7 @@ Wireshark是一个很有用的工具，特别适合用来分析网络协议。
 5. 添加显示过滤器`pgsql`，这样就可以滤除无关的TCP协议报文。
 6. 然后就可以执行一些操作，观察并分析协议了
 
-![](/img/blog/pg/wireshark-capture.png)
+![](wireshark-capture.png)
 
 
 -----------------
@@ -45,7 +45,7 @@ psql postgres://localhost:5432/postgres?sslmode=disable -c 'SELECT 1 AS a, 2 AS 
 * 简单查询协议：客户端发送查询命令，服务器回送查询结果。
 * 终止：客户端中断连接。
 
-![](/img/blog/pg/wireshark-capture-sample.png)
+![](wireshark-capture-sample.png)
 
 Wireshark内建了对PGSQL的解码，允许我们方便地查看PostgreSQL协议报文的内容。
 

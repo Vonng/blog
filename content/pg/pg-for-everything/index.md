@@ -30,11 +30,11 @@ tags: [PostgreSQL,PG生态]
 
 > PostgreSQL 并不是一个简单的关系型数据库，而是一个数据管理的抽象框架，具有吞噬整个数据库世界的力量。而这也是正在发生的事情 —— “一切皆用 Postgres” 已经不再是少数精英团队的前沿探索，而是成为了一种进入主流视野的最佳实践。
 >
-> —— 《[PostgreSQL正在吞噬数据库世界](https://pigsty.io/zh/blog/pg/pg-eat-db-world/)》，冯若航（me！）
+> —— 《[PostgreSQL正在吞噬数据库世界](https://pigsty.io/zh/pg/pg-eat-db-world/)》，冯若航（me！）
 
 > 在初创公司中简化技术栈、减少组件、加快开发速度、降低风险并提供更多功能特性的方法之一就是**“一切皆用 Postgres”**。Postgres 能够取代许多后端技术，包括 Kafka、RabbitMQ、ElasticSearch，Mongo和 Redis ，至少到数百万用户时都毫无问题。
 >
-> ——《[技术极简主义：一切皆用Postgres](https://pigsty.io/zh/blog/pg/just-use-pg/)》， Stephan Schmidt
+> ——《[技术极简主义：一切皆用Postgres](https://pigsty.io/zh/pg/just-use-pg/)》， Stephan Schmidt
 
 > 听说 Postgres 被称为“数据库届的瑞士军刀”，嗯…… 是的，听起来很准确！ 不确定是谁第一个提出来的，但这是一个非常恰当的观察！ —— [Gergely Orosz](https://twitter.com/GergelyOrosz/status/1780210365369885009) 。
 
@@ -225,9 +225,9 @@ PostgreSQL 是答案。PostgreSQL 是我们解放自我，并构建未来的方�
 
 而且 PostgreSQL 还在不断进步中。PostgreSQL 社区在不断改进内核。而现在有更多的公司参与到 PostgreSQL 的开发中，包括那些巨无霸供应商。
 
-![pigsty-ecosystem.png](/img/pigsty/ecosystem.jpg)
+![pigsty-ecosystem.png](https://pigsty.io/img/ecosystem.jpg)
 
-> 今天的 PostgreSQL 生态 —— 《[PostgreSQL正在吞噬数据库世界](https://pigsty.io/zh/blog/pg/pg-eat-db-world/)》
+> 今天的 PostgreSQL 生态 —— 《[PostgreSQL正在吞噬数据库世界](https://pigsty.io/zh/pg/pg-eat-db-world/)》
 
 同样，也有更多创新的独立公司围绕着 PostgreSQL 内核开发，以改善其使用体验：[Supabase](https://supabase.com/)（2020年）正在将 PostgreSQL 打造成一个适用于网页和移动开发者的 Firebase 替代品；[Neon](https://neon.tech/)（2021年）和 [Xata](https://xata.io/)（2022年）都在实现将 PostgreSQL “伸缩至零”， 以适应间歇性 Serverless 工作负载；[Tembo](https://tembo.io/)（2022年）为各种用例提供开箱即用的技术栈；[Nile](https://www.thenile.dev/)（2023年）正在使 PostgreSQL 更易于用于 SaaS 应用；还有许多其他公司。当然，还有我们，[**Timescale**](https://www.timescale.com/)（2017年）。
 

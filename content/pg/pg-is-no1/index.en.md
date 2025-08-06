@@ -11,7 +11,7 @@ tags: [PostgreSQL,Ecosystem]
 
 The [StackOverflow 2023 Survey](https://survey.stackoverflow.co/2023), featuring feedback from 90K developers across 185 countries, is out. PostgreSQL topped all three survey categories (used, loved, and wanted), earning its title as the undisputed "Decathlete Database" – it's hailed as the **"Linux of Database"**!
 
-![](/img/blog/db/pg-is-no1-1.png)
+![](pg-is-no1-1.png)
 
 > https://demo.pigsty.cc/d/sf-survey
 
@@ -39,7 +39,7 @@ Developers define the success of databases, and StackOverflow's survey, with pop
 
 Each database in the survey had two checkboxes: one for current use, marking the user as "Used," and one for future interest, marking them as "Wanted." Those who checked both were labeled as "Loved/Admired."
 
-![](/img/blog/db/pg-is-no1-2.png)
+![](pg-is-no1-2.png)
 
 > https://survey.stackoverflow.co/2023
 
@@ -47,7 +47,7 @@ The percentage of "Used" respondents represents **popularity** or usage rate, sh
 
 Reviewing seven years of data and plotting the top 10 databases on a scatter chart of popularity vs. net love percentage (2*love% - 100), we gain insights into the database field's evolution and sense of scale.
 
-![](/img/blog/db/pg-is-no1-3.gif)
+![](pg-is-no1-3.gif)
 
 > X: Popularity, Y: Net Love Index (2 * loved - 100)
 
@@ -89,11 +89,11 @@ Love or admiration is a measure of the percentage of users who are willing to co
 
 In 2023, PostgreSQL retained its title as the most loved database by developers. While Redis had been the favorite in previous years, PostgreSQL overtook Redis in 2022, becoming the top choice. PostgreSQL and Redis have maintained close reputation scores (around 70%), significantly outpacing other contenders.
 
-![](/img/blog/db/pg-is-no1-6.png)
+![](pg-is-no1-6.png)
 
 In the 2022 PostgreSQL community survey, the majority of existing PostgreSQL users reported increased usage and deeper engagement, highlighting the stability of its core user base.
 
-![](/img/blog/db/pg-is-no1-7.png)
+![](pg-is-no1-7.png)
 
 Redis, known for its simplicity and ease of use as a data structure cache server, is often paired with the relational database PostgreSQL, enjoying considerable popularity (20%, ranking sixth) among developers. Cross-analysis shows a strong connection between the two: 86% of Redis users are interested in using PostgreSQL, and 30% of PostgreSQL users want to use Redis. Other databases with positive reviews include SQLite, MongoDB, and SQL Server. MySQL and ElasticSearch receive mixed feedback, hovering around the 50% mark. The least favored databases include Access, IBM DB2, CouchDB, Couchbase, and Oracle.
 
@@ -109,7 +109,7 @@ Not all **potential** can be converted into kinetic energy. While user affection
 
 The demand rate, or the level of desire, represents the percentage of users who will actually opt for a technology in the coming year. PostgreSQL stands out in demand/desire, significantly outpacing other databases with a 42.3% rate for the second consecutive year, showing relentless growth and widening the gap with its competitors.
 
-![](/img/blog/db/pg-is-no1-8.png)
+![](pg-is-no1-8.png)
 
 In 2023, some databases saw notable demand increases, likely driven by the surge in large language model AI, spearheaded by OpenAI's ChatGPT. This demand for intelligence has, in turn, fueled the need for robust data infrastructure. A decade ago, support for NoSQL features like JSONB/GIN laid the groundwork for PostgreSQL's explosive growth during the internet boom. Today, the introduction of pgvector, the first vector extension built on a mature database, grants PostgreSQL a ticket into the AI era, setting the stage for growth in the next decade.
 
@@ -122,7 +122,7 @@ PostgreSQL leads in demand, usage, and popularity, with the right mix of timing,
 
 Relational databases are so prevalent and crucial that they might dwarf the combined significance of other types like key-value, document, search engine, time-series, graph, and vector databases. Typically, "database" implicitly refers to "relational database," where no other category dares claim mainstream status. Last year's "Why PostgreSQL Will Be the Most Successful Database?" delves into the competitive landscape of relational databases—a tripartite dominance. Excluding Microsoft’s relatively isolated SQL Server, the database scene, currently in a phase of consolidation, has three key players rooted in WireProtocol: Oracle, MySQL, and PostgreSQL, mirroring a **"Three Kingdoms"** saga in the relational database realm.
 
-![](/img/blog/db/pg-is-no1-9.png)
+![](pg-is-no1-9.png)
 
 Oracle/MySQL are waning, while PostgreSQL is thriving. Oracle is an established commercial DB with deep tech history, rich features, and strong support, favored by well-funded, risk-averse enterprises, especially in finance. Yet, it's pricey and infamous for litigious practices. MS SQL Server shares similar traits with Oracle. Commercial databases are facing a slow decline due to the open-source wave.
 
@@ -139,7 +139,7 @@ The primary reasons for choosing PostgreSQL, as reflected in the TimescaleDB com
 
 Broadly, aspects like extensibility, ecosystem, community, and protocols fall under "open-source." Stability, ACID compliance, SQL support, scalability, and availability define "advanced." These resonate with PostgreSQL's slogan: "The world's most advanced open source relational database."
 
-![](/img/blog/db/pg-is-no1-10.png)
+![](pg-is-no1-10.png)
 
 > https://www.timescale.com/state-of-postgres/2022
 
@@ -158,7 +158,7 @@ Back in the day, developing software/information services required exorbitantly 
 
 Open-source databases, free of charge, spurred an industry revolution: from tens of thousands per core per month for commercial licenses to a mere 20 bucks per core per month for hardware. Databases became accessible to regular businesses, enabling the provision of free information services.
 
-![](/img/blog/db/pg-is-no1-11.png)
+![](pg-is-no1-11.png)
 
 Open source has been monumental: the history of the internet is a history of open-source software. The prosperity of the IT industry and the plethora of free information services owe much to open-source initiatives. **Open source represents a form of successful Communism** in software, with the industry's core means of production becoming communal property, available to developers worldwide as needed. Developers contribute according to their abilities, embracing the ethos of mutual benefit.
 
@@ -166,7 +166,7 @@ An open-source programmer's work encapsulates the intellect of countless top-tie
 
 **Open source synergizes community efforts, drastically reducing redundancy and propelling technical advancements at an astonishing pace. Its momentum, now unstoppable, continues to grow like a snowball.** Open source dominates foundational software, and the industry now views insular development or so-called "self-reliance" in software, especially in foundational aspects, as a colossal joke.
 
-![](/img/blog/db/pg-is-no1-12.png)
+![](pg-is-no1-12.png)
 
 **For PostgreSQL, open source is its strongest asset against Oracle.**
 
@@ -183,7 +183,7 @@ PostgreSQL is like an open-source "Oracle," the only real threat to Oracle's dom
 
 PostgreSQL is not just a traditional OLTP "relational database" but a multi-modal database. For SMEs, a single PostgreSQL component can cover the vast majority of their data needs: OLTP, OLAP, time-series, GIS, tokenization and full-text search, JSON/XML documents, NoSQL features, graphs, vectors, and more.
 
-![](/img/blog/db/pg-is-no1-13.png)
+![](pg-is-no1-13.png)
 
 > Emperor of Databases — Self-managed, autonomous driving temporal-geospatial AI vector distributed document graph with full-text search, programmable hyper-converged, federated stream-batch processing in a single HTAP Serverless full-stack platform database.
 
@@ -192,17 +192,17 @@ The superiority of PostgreSQL is not only in its acclaimed **kernel stability** 
 For instance, PostGIS for geospatial databases, TimescaleDB for time-series, Citus for distributed/columnar/HTAP databases, PGVector for AI vector databases, AGE for graph databases, PipelineDB for stream processing, and the ultimate trick — using Foreign Data Wrappers (FDW) for unified SQL access to all heterogeneous external databases. Thus, PG is a true full-stack database platform, far more advanced than a simple OLTP system like MySQL.
 
 
-![](/img/blog/db/pg-is-no1-14.png)
+![](pg-is-no1-14.png)
 
 Within a significant scale, PostgreSQL can play multiple roles with a single component, greatly reducing project complexity and cost. Remember, designing for unneeded scale is futile and an example of **premature optimization**. If one technology can meet all needs, it's the best choice rather than reimplementing it with multiple components.
 
 Taking Tantan as an example, with **250 million TPS** and **200 TB** of unique TP data, **a single PostgreSQL selection** remains stable and reliable, covering a wide range of functions beyond its primary OLTP role, including caching, OLAP, batch processing, and even message queuing. However, as the user base approaches **tens of millions daily active users**, these additional functions will eventually need to be handled by dedicated components.
 
-![](/img/blog/db/pg-is-no1-15.png)
+![](pg-is-no1-15.png)
 
-PostgreSQL's advancement is also evident in its thriving ecosystem. Centered around the database kernel, there are specialized variants and "higher-level databases" built on it, like Greenplum, Supabase (an open-source alternative to Firebase), and the specialized graph database edgedb, among others. There are various open-source/commercial/cloud distributions integrating tools, like different RDS versions and the plug-and-play Pigsty; horizontally, there are even powerful mimetic components/versions emulating other databases without changing client drivers, like babelfish for SQL Server, FerretDB for MongoDB, and EnterpriseDB/IvorySQL for Oracle compatibility.
+PostgreSQL's advancement is also evident in its thriving ecosystem. Centered around the database kernel, there are specialized variants and "higher-level databases" built on it, like Greenplum, Supabase (an open-source alternative to Firebase), and the specialized graph database edgedb, among others. There are various open-source/commercial/cloud/ distributions integrating tools, like different RDS versions and the plug-and-play Pigsty; horizontally, there are even powerful mimetic components/versions emulating other databases without changing client drivers, like babelfish for SQL Server, FerretDB for MongoDB, and EnterpriseDB/IvorySQL for Oracle compatibility.
 
-![](/img/blog/db/pg-is-no1-16.png)
+![](pg-is-no1-16.png)
 
 PostgreSQL's advanced features are its core competitive strength against MySQL, another open-source relational database.
 
@@ -212,7 +212,7 @@ MySQL's slogan is "the world's most popular open-source relational database," ch
 
 However, times change, and PostgreSQL has rapidly advanced, surpassing MySQL in speed and robustness, leaving only "roughness" as MySQL's remaining trait.
 
-![](/img/blog/db/pg-is-no1-17.png)
+![](pg-is-no1-17.png)
 
 > MySQL allows partial transaction commits by default, shocked
 
@@ -233,7 +233,7 @@ However, users need more than an engine; they need the complete car, driving cap
 
 This is why we created **[Pigsty](https://pigsty.io/)** — to develop an battery-included, open-source, local-first PostgreSQL distribution, making it easy for everyone to access and utilize a **quality database service**. Due to space limits, the detailed story is for [another time](/db/pgsql-x-pigsty/).
 
-![](/img/blog/db/pg-is-no1-18.png)
+![](pg-is-no1-18.png)
 
 
 
