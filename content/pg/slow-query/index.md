@@ -73,7 +73,7 @@ tags: [PostgreSQL,PG管理,性能]
 
 ![](img/concept/slow-query.jpg)
 
-> 上图是Pigsty中 [PG Query Detail](https://pigsty.iohttps://pigsty.iohttps://doc.pgsty.com/pgsql/dashboard/)提供的界面，这里展现出了单个查询的详细信息。
+> 上图是Pigsty中 [PG Query Detail](https://doc.pgsty.com/pgsql/dashboard/)提供的界面，这里展现出了单个查询的详细信息。
 >
 > 这是一个典型的慢查询，平均响应时间几秒钟。为它添加了一个索引后。从右中Query RT仪表盘的上可以看到，查询的平均响应世界从几秒降到了几毫秒。
 
@@ -91,7 +91,7 @@ tags: [PostgreSQL,PG管理,性能]
 
 > Talk is cheap, show me the code
 
-假设用户已经拥有一个 [Pigsty沙箱演示环境](/zhhttps://pigsty.io/docs/setup/provision/)，下面将使用Pigsty沙箱，演示模拟的慢查询定位与处理流程。
+假设用户已经拥有一个 [Pigsty沙箱演示环境](https://doc.pgsty.com/zh/prepare/sandbox/)，下面将使用Pigsty沙箱，演示模拟的慢查询定位与处理流程。
 
 
 
@@ -241,7 +241,6 @@ CREATE UNIQUE INDEX ON pgbench_accounts (aid);
 通过这篇教程，您已经掌握了慢查询优化的一般方法论。即：
 
 * 定位问题
-
 * 提出猜想
 * 验证假设
 * 制定方案
