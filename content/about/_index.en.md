@@ -10,5 +10,9 @@ Ruohang Feng，[@Vonng](https://github.com/Vonng)：[Pigsty](https://pgsty.com) 
 
 Architect, DBA, Full-Stack Expert @ Alibaba, TanTan, Apple.
 
-Database KOL, Tech Influencer, Cloud(-Exit) Evangelist
+Database KOL, Tech Influencer, Cloud(-Exit) Evangelist.
 
+![](img/vonng.jpg)
+
+
+--------

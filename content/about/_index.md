@@ -12,4 +12,6 @@ showAuthor: true
 
 数据库 KOL，下云布道师，资深驴友，骨灰级玩家。
 
+![](img/vonng.jpg)
+
 --------
