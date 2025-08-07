@@ -55,13 +55,13 @@ weight = 10
 [[main]]
   parent = "Column"
   name = "Travel Notes"
-  url = "/trip"
+  pageRef = "trip"
   weight = 14
 
 [[main]]
   parent = "Column"
   name = "Miscellaneous"
-  url = "/misc"
+  pageRef = "misc"
   weight = 15
 
 [[main]]
