@@ -11,3 +11,4 @@ node_modules/
 themes/blowfish/
 CLAUDE.md
 resources/
+bin/prompt.md

@@ -89,6 +89,12 @@ url = "https://ext.pgsty.com/zh/"
 weight = 70
 
 [[main]]
+name = "PG Exporter 监控组件"
+parent = "作品"
+url = "https://exp.pgsty.com"
+weight = 70
+
+[[main]]
   name = "Capslock 修饰键改造"
   parent = "作品"
 url = "https://capslock.vonng.com/zh"
@@ -105,7 +111,6 @@ url = "https://capslock.vonng.com/zh"
   parent = "作品"
   url = "https://pgint.vonng.com"
   weight = 100
-
 
 [[main]]
   identifier = "twitter"

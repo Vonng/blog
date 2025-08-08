@@ -1,7 +1,7 @@
 ---
 title: "Column: Cloud-Exit" 
-weight: 2
-date: 2025-08-05
+weight: 3
+date: 2025-08-08
 summary: An entire generation of application developers has had their vision obscured by the cloud. Let us use hard data analysis and experience to clarify the value and traps of the public cloud rental model.
 showAuthor: true
 tags: [cloud-exit]

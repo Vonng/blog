@@ -1,7 +1,7 @@
 ---
-title: "Column: Database Veteran"
-weight: 1
-date: 2025-08-02
+title: "Column: Database Guru"
+weight: 2
+date: 2025-08-08
 author: vonng
 summary: The database field is filled with too much nonsense and false marketing. Database Veteran helps you see through the fog, penetrate the confusion, and strike at the core and essence of the industry.
 tags: [database]

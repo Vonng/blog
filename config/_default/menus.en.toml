@@ -81,6 +81,12 @@ url = "https://ext.pgsty.com/"
 weight = 70
 
 [[main]]
+name = "PG Exporter Agent"
+parent = "Portfolio"
+url = "https://exp.pgsty.com"
+weight = 70
+
+[[main]]
 name = "Capslock Enhancement"
 parent = "Portfolio"
 url = "https://capslock.vonng.com"
