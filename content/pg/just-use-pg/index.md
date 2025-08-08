@@ -1,7 +1,7 @@
 ---
 title: 技术极简主义：一切皆用Postgres
 date: 2024-02-19
-hero: /hero/just-use-pg.jpg
+showAuthor: false
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/bx2dRxlrtLcM6AD2qsplQQ)
 summary: >

@@ -2,6 +2,7 @@
 title: Why PostgreSQL is the Bedrock for the Future of Data
 linkTitle: Why PG is the Bedrock for Future Data?
 date: 2024-05-16
+showAuthor: false
 author: |
   [Ajay Kulkarni](https://www.timescale.com/blog/author/ajay/) | Translator: [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: >

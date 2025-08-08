@@ -1,7 +1,7 @@
 ---
 title: "Technical Minimalism: Just Use PostgreSQL for Everything"
 date: 2024-02-19
-hero: /hero/just-use-pg.jpg
+showAuthor: false
 author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat Official Account](https://mp.weixin.qq.com/s/bx2dRxlrtLcM6AD2qsplQQ)
 summary: >

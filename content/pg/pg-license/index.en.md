@@ -1,11 +1,9 @@
 ---
 title: "Will PostgreSQL Change Its Open Source License?"
 date: 2024-03-20
-hero: /hero/vector-json-pg.jpg
-author: |
-  [Jonathan Katz](https://jkatz05.com/post/postgres/) | Translated by: [Feng Ruohang (Vonng)](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [Original English Article](https://jkatz05.com/post/postgres/postgres-license-2024/) | [Original Chinese WeChat Article]()
+showAuthor: false
 summary: |
-  PostgreSQL will not change its license
+  PostgreSQL will not change its license, Since the license is literally named after the project, and the project has a long-standing commitment to open source community collaboration.
 tags: [PostgreSQL, PG Ecosystem, Open Source]
 ---
 

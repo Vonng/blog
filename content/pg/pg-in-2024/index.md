@@ -2,6 +2,7 @@
 title: 展望 PostgreSQL 的2024
 date: 2024-01-05
 hero: /hero/pg-in-2024.jpg
+showAuthor: false
 author: |
   [JONATHAN KATZ](https://jkatz05.com/) | 译：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/OM8xhIFB3m95T1GCAQm1Ow)
 summary: >

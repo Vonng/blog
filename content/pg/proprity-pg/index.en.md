@@ -2,6 +2,7 @@
 title: "PostgreSQL Dominates Database World, but Who Will Devour PG?"
 date: 2025-08-05
 author: vonng
+showAuthor: false
 summary: |
   The same forces that once led MongoDB and MySQL toward closure are now at work in the PostgreSQL ecosystem. The PG world needs a distribution that represents "software freedom" values.
 tags: [PostgreSQL,PG Ecosystem]

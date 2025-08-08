@@ -1,7 +1,7 @@
 ---
 title: PostgreSQL's Impressive Scalability
 date: 2024-01-13
-hero: /hero/pg-scalability.jpg
+showAuthor: false
 author: |
   [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: >
@@ -9,7 +9,7 @@ summary: >
 tags: [PostgreSQL,Performance]
 ---
 
-> This article outlines how Cloudflare scaled to support 55 million requests per second using 15 PostgreSQL clusters.
+> Source: [How Cloudflare Supports 55M QPS with 15 PostgreSQL Clusters](https://newsletter.systemdesign.one/p/postgresql-scalability) 
 
 In July 2009, in California, USA, a startup team created a Content Delivery Network (CDN) called Cloudflare to accelerate internet requests, making network access more stable and faster. They faced various challenges during their early development, yet their growth rate was remarkably impressive.
 
@@ -165,4 +165,3 @@ Of course, for non-internet scenario applications, PgBouncer isn't essential. An
 
 Overall, PgBouncer is indeed a very practical PostgreSQL ecosystem tool. If your system has high requirements for PostgreSQL client concurrent connections, be sure to try this middleware when testing performance.
 
-> Original: [How Cloudflare Supports 55M QPS with 15 PostgreSQL Clusters](https://newsletter.systemdesign.one/p/postgresql-scalability)

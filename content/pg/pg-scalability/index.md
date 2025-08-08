@@ -1,7 +1,7 @@
 ---
 title: 令人惊叹的PostgreSQL可伸缩性
 date: 2024-01-13
-hero: /hero/pg-scalability.jpg
+showAuthor: false
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/iH34payWSE_GROsq-9MN8g)
 summary: >

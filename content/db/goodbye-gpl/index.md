@@ -1,16 +1,14 @@
 ---
 title: "是时候和GPL说再见了"
 date: 2021-09-16
-hero: /hero/goodbye-gpl.jpg
-author: |
-  [Martin Kleppmann 原文](https://martin.kleppmann.com/2021/04/14/goodbye-gpl.html) | 译者：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信公众号](https://mp.weixin.qq.com/s/DJsDRO18saZaxe3oyzzYrA)
+showAuthor: false
 summary: >
   本文提出，在2020年，计算自由的敌人是**云软件**，并倡导 **本地优先软件** 的概念。 
 tags: [数据库,开源]
 ---
 
 
-原文由 Martin Kleppmann 于2021年4月14日发表，译者：冯若航。
+原文由 Martin Kleppmann 于2021年4月14日发表，译者：冯若航。[原文地址](https://martin.kleppmann.com/2021/04/14/goodbye-gpl.html)
 
 > Martin Kleppmann是《设计数据密集型应用》（a.k.a DDIA）的作者，译者冯若航为该书中文译者。
 

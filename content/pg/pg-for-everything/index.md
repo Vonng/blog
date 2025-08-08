@@ -2,6 +2,7 @@
 title: 为什么PostgreSQL是未来数据库的事实标准？
 linkTitle: 为什么PG是未来数据的基石？
 date: 2024-05-16
+showAuthor: false
 author: |
   [Ajay Kulkarni](https://www.timescale.com/blog/author/ajay/) | 译者：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
 summary: >
