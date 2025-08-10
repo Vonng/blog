@@ -138,12 +138,12 @@ Percona is among the early vendors to explicitly propose the ["PostgreSQL distri
 Percona also has a PMM monitoring tool, an excellent monitoring platform built for the MySQL ecosystem that recently added some PostgreSQL support.
 Of course, because the patches required by pg_tde haven't been merged into the PG mainline, Percona had to create their own patched PostgreSQL kernel packages to work with their pg_tde transparent encryption extension.
 
-However, as a peer, I feel that if you just package patched kernels and the software needed to run high-availability/PITR PG and put them in Percona's software repository, this distribution's value proposition is indeed somewhat thin and cannot support the "fight back against proprietary solutions" mission and banner mentioned above.
+However, as a peer, I feel that if you just package patched kernels and the software needed to run high-availability/PITR PG and put them in Percona's software repository, this distribution's value proposition is somewhat thin to support the "fight back against proprietary solutions" mission and banner mentioned above.
 After all, the PostgreSQL Global Development Group (PGDG) has already done this and done it quite well — at least you need to handle deployment and delivery of entire services. Throwing some RPM/DEB packages at customers is clearly insufficient for competing with RDS.
 
 [![percona.jpg](percona.jpg)](https://docs.percona.com/percona-for-postgresql/)
 
-Of course, I've communicated with Percona founder Peter Zaitsev, and we're kindred spirits, definitely fellow travelers. So the parts he hasn't done, I can help Percona complete.
+So the parts he hasn't done, I can help Percona complete.
 This is why in Pigsty 3.6, we provided [support for Percona PostgreSQL distribution](https://doc.pgsty.com/zh/pgsql/kernel/percona/) — you can now use foolproof one-line commands to enable Percona's TDE-encrypted kernel.
 And fully integrate etcd / haproxy / patroni high availability, pgbackrest / minio backup recovery, grafana / prometheus monitoring, and ansible IAC.
 Of course, if you use native PG kernels, there are 423 extension plugins available for choice. I'll consider building these extension packages for PG kernel branches like Percona's in the future.
@@ -175,18 +175,18 @@ With Percona's TDE kernel, we currently support several flavors of PG kernels. I
 
 [![kernels.jpg](kernels.jpg)](https://doc.pgsty.com/zh/pgsql/kernel/)
 
-|                             Kernel                             |    Key Features     | Description                                       |
-|:--------------------------------------------------------------:|:-------------------:|---------------------------------------------------|
-|  [PostgreSQL](https://doc.pgsty.com/zh/pgsql/kernel/postgres)  |  **Original**       | Original PostgreSQL with 420+ extensions         |
-|      [Citus](https://doc.pgsty.com/zh/pgsql/kernel/citus)      |  **Horizontal Scale** | Distributed PostgreSQL via native extension      |
-|  [WiltonDB](https://doc.pgsty.com/zh/pgsql/kernel/babelfish)   | **SQL Server Migration** | SQL Server wire protocol compatibility       |
-|   [IvorySQL](https://doc.pgsty.com/zh/pgsql/kernel/ivorysql)   |  **Oracle Migration**   | Oracle syntax and PL/SQL compatibility        |
-|   [OpenHalo](https://doc.pgsty.com/zh/pgsql/kernel/openhalo)   |  **MySQL Migration**    | MySQL wire protocol compatibility             |
-|    [Percona](https://doc.pgsty.com/zh/pgsql/kernel/percona)    | **Transparent Data Encryption** | Percona distribution with pg_tde       |
-|   [FerretDB](https://doc.pgsty.com/zh/pgsql/kernel/ferretdb)   | **MongoDB Migration**   | MongoDB wire protocol compatibility           |
-|   [OrioleDB](https://doc.pgsty.com/zh/pgsql/kernel/orioledb)   |   **OLTP Optimized**    | Zheap, no bloat, S3 storage                  |
-|    [PolarDB](https://doc.pgsty.com/zh/pgsql/kernel/polardb)    | **Aurora-style RAC** | RAC, Chinese domestic compliance                |
-|   [Supabase](https://doc.pgsty.com/zh/pgsql/kernel/supabase)   | **Backend as a Service** | PostgreSQL-based BaaS, Firebase alternative   |
+|                             Kernel                             |            Key Features            | Description                                                    |
+|:--------------------------------------------------------------:|:----------------------------------:|----------------------------------------------------------------|
+|  [PostgreSQL](https://doc.pgsty.com/zh/pgsql/kernel/postgres)  |            **Original**            | Vanilla PostgreSQL with 420+ extensions                        |
+|      [Citus](https://doc.pgsty.com/zh/pgsql/kernel/citus)      |        **Horizontal Scale**        | Distributed Postgres via native extension                      |
+|  [WiltonDB](https://doc.pgsty.com/zh/pgsql/kernel/babelfish)   |      **SQL Server Migration**      | SQL Server wire protocol compatibility                         |
+|   [IvorySQL](https://doc.pgsty.com/zh/pgsql/kernel/ivorysql)   |        **Oracle Migration**        | Oracle syntax and PL/SQL compatibility                         |
+|   [OpenHalo](https://doc.pgsty.com/zh/pgsql/kernel/openhalo)   |        **MySQL Migration**         | MySQL wire protocol compatibility                              |
+|    [Percona](https://doc.pgsty.com/zh/pgsql/kernel/percona)    |  **Transparent Data Encryption**   | Percona distribution with pg_tde                               |
+|   [FerretDB](https://doc.pgsty.com/zh/pgsql/kernel/ferretdb)   |       **MongoDB Migration**        | MongoDB wire protocol compatibility                            |
+|   [OrioleDB](https://doc.pgsty.com/zh/pgsql/kernel/orioledb)   |         **OLTP Optimized**         | Zheap, no bloat, S3 storage                                    |
+|    [PolarDB](https://doc.pgsty.com/zh/pgsql/kernel/polardb)    |        **Aurora-style RAC**        | RAC, Chinese domestic compliance                               |
+|   [Supabase](https://doc.pgsty.com/zh/pgsql/kernel/supabase)   |      **Backend as a Service**      | PostgreSQL-based BaaS, Firebase alternative                    |
 | [Cloudberry](https://doc.pgsty.com/zh/pgsql/kernel#cloudberry) | **MPP Data Warehouse & Analytics** | Massively parallel processing data warehouse (awaiting 2.0 GA) |
 
 
