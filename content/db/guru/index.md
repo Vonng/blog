@@ -138,6 +138,12 @@ tags: [数据库]
 
 ## 数据库老司机专栏
 
+- 2025-10-10 [尝鲜须谨慎：PG新存储引擎故障案例](https://mp.weixin.qq.com/s/LdZVVyOj4BA9C892I25lQw)
+- 2025-10-03 [月饼好吃：又一家PG扩展公司被Databricks收购](https://mp.weixin.qq.com/s/fTygs1w9zrbQkvjsxjGOcg)
+- 2025-09-11 [WinStudio，一万块在本地跑200B大模型？](https://mp.weixin.qq.com/s/HLBKhT50M13PNcnC3GsbkA)
+- 2025-08-18 [冷门但稀缺的技能：打包构建](https://mp.weixin.qq.com/s/LaDBTaBKI1ZLdgfFdlWgyA)
+- 2025-08-15 [从PG“断供”看软件供应链中的信任问题](https://mp.weixin.qq.com/s/SBVcO8fi5mK1Qnb3AWbqxQ)
+- 2025-08-05 [Postgres主宰数据库世界，而谁来吞噬PG？](https://mp.weixin.qq.com/s/Bvr4uN9XAyZ2c3b_JGVCqA)
 - 2025-08-01 [PostgreSQL已主宰数据库世界](https://mp.weixin.qq.com/s/BzLUhc1XeEtMbZGv9xq46g)
 - 2025-07-26 [懂车帝暴打智驾，懂云帝在哪里](https://mp.weixin.qq.com/s/qUL75eq9ciZqE_WJ1UofYg)
 - 2025-07-25 [Pigsty v3.6：全能PG发行版的关键一步](https://mp.weixin.qq.com/s/TdJ5lOWxU_CzxsgjslPxwg)
