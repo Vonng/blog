@@ -244,6 +244,7 @@ tags: [下云]
 
 ## 云计算泥石流专栏原文
 
+- 2025-10-24 [AWS 故障官方复盘报告](https://mp.weixin.qq.com/s/csopt3H5ZSh60vvcO-28hQ)
 - 2025-10-21 [一次AWS DNS故障如何级联瘫痪半个互联网](https://mp.weixin.qq.com/s/sCAOwNva__0L_iMP1QHngQ)
 - 2025-10-20 [AWS最大区域故障，带崩多项服务](https://mp.weixin.qq.com/s/hBMaPrqoMHQOf56G5fV-ag)
 - 2025-10-17 [知乎挂了：证书问题还是CDN翻车？](https://mp.weixin.qq.com/s/-nRq0HM56Uxn1Yc9RSdUbg)
