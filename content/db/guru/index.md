@@ -138,6 +138,7 @@ tags: [数据库]
 
 ## 数据库老司机专栏
 
+- 2025-11-13 [PG扩展云，免翻免费解锁PG完全体](https://mp.weixin.qq.com/s/oHHzhbbt5suSxnJhyxTwQQ)
 - 2025-10-10 [尝鲜须谨慎：PG新存储引擎故障案例](https://mp.weixin.qq.com/s/LdZVVyOj4BA9C892I25lQw)
 - 2025-10-03 [月饼好吃：又一家PG扩展公司被Databricks收购](https://mp.weixin.qq.com/s/fTygs1w9zrbQkvjsxjGOcg)
 - 2025-09-11 [WinStudio，一万块在本地跑200B大模型？](https://mp.weixin.qq.com/s/HLBKhT50M13PNcnC3GsbkA)

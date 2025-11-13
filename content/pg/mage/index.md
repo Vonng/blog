@@ -10,6 +10,10 @@ tags: [PostgreSQL]
 
 ## 生态
 
+- [从PG“断供”看软件供应链中的信任问题](/pg/pg-mirror-pigsty)
+- [PostgreSQL主宰数据库世界，而谁来吞噬PG？](/pg/proprity-pg/)
+- [PostgreSQL 已主宰数据库世界](/pg/so2025-pg/)
+- [卡脖子：PGDG切断镜像站同步通道](/pg/pg-mirror-break)
 - [PGEXT.DAY 2025，不见不散](/pg/pgext-day/)
 - [OrioleDB 奥利奥数据库来了！](/pg/orioledb-is-coming/)
 - [OpenHalo：MySQL兼容的PG](/pg/openhalo-mysql/)
