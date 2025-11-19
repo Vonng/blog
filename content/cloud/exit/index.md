@@ -181,6 +181,7 @@ tags: [下云]
 
 **Cloudflare**
 
+- 2025-11-19 [Cloudflare 11-18 故障复盘报告](https://mp.weixin.qq.com/s/mss2hRqAxCF7N3kPLQ8_7g)
 - 2024-04-23 [赛博菩萨Cloudflare圆桌访谈与问答录](https://mp.weixin.qq.com/s/jU418HAlObe1nWgzEsLrJQ)
 - 2024-04-03 [吊打公有云的赛博佛祖 Cloudflare](https://mp.weixin.qq.com/s/i4wk9ebyUK7irNSwuT3NWQ)
 
@@ -244,6 +245,7 @@ tags: [下云]
 
 ## 云计算泥石流专栏原文
 
+- 2025-11-19 [Cloudflare 11-18 故障复盘报告](https://mp.weixin.qq.com/s/mss2hRqAxCF7N3kPLQ8_7g)
 - 2025-10-24 [AWS 故障官方复盘报告](https://mp.weixin.qq.com/s/csopt3H5ZSh60vvcO-28hQ)
 - 2025-10-21 [一次AWS DNS故障如何级联瘫痪半个互联网](https://mp.weixin.qq.com/s/sCAOwNva__0L_iMP1QHngQ)
 - 2025-10-20 [AWS最大区域故障，带崩多项服务](https://mp.weixin.qq.com/s/hBMaPrqoMHQOf56G5fV-ag)
