@@ -10,7 +10,7 @@ tags: [PostgreSQL,Docker]
 ---
 
 
-早在 2019 年，老冯就在《[把数据库放入 Docker 中是一个好主意吗？](https://mp.weixin.qq.com/s/kFftay1IokBDqyMuArqOpg)》提到过 —— 
+早在 2019 年，老冯就在《[把数据库放入 Docker 中是一个好主意吗？](/db/pg-in-docker)》提到过 —— 
 **不要在生产环境用容器运行 PostgreSQL 数据库**，因为你有极大概率会遇上一堆在物理机/虚拟机上根本不存在的麻烦与问题。
 这不，最近用 Docker “官方” 的 Postgres 镜像的用户在升级的时候就踩雷了。
 昨天 PostgreSQL 社区的老法师 Gwen Shapira 在 X 发了个帖子吐槽了这个事。
@@ -44,15 +44,12 @@ tags: [PostgreSQL,Docker]
 > 结果是：Docker 官方镜像强行把这东西甩到用户脸上：**小版本升级也可能触发 glibc/locale 变化。**
 > 小心！官方镜像并不意味着 “负责任的生产环境表现”
 
-
-
-![twitter.jpg](twitter.jpg)
-
-
+[![twitter.jpg](twitter.jpg)](https://x.com/gwenshap/status/1990942970682749183)
 
 想象一下，你用着 Docker 提供的 “官方” postgres 镜像，然后赶上这周的 PostgreSQL 最新小版本发布 —— 于是准备升级一个小版本。
-PG 小版本升级难道不是很安全，很简单的吗？只要重新 pull 一下 latest 镜像（我猜相当一部分人是这么干的），
-另外一部分稍微讲究一点的用户大概会使用 （17.6 -> 17.7）这样的方式来拉取最新镜像。如果是这样，那就完犊子了！
+PG 小版本升级难道不是很安全，很简单的吗？只要重新 pull 一下 latest 镜像（相当一部分人真是这么干的），
+稍微讲究一点的用户大概会使用 （17.6 -> 17.7）这样的方式来拉取最新镜像，感觉自己写死小版本，没问题了吧？。
+如果是这样，那就完犊子了！
 
 除非你使用的镜像 Tag ，严格包含了 Debian 版本号，也就是 17.6-bookworm 这样的版本号，否则在最近的小版本更新中实际 **隐含着一次 Linux 操作系统大版本升级**。
 你以为自己是从 17.6 升级到 17.7 ，但实际上还一起把底下的操作系统从 Debian 12 升级到了 13！而这种计划外的原地升级会导致你的数据库索引原地报废！（或者更多！）
@@ -60,10 +57,10 @@ PG 小版本升级难道不是很安全，很简单的吗？只要重新 pull �
 
 ## 到底是怎么回事
 
-Docker 官方提供的 PostgreSQL 镜像主要基于 Debian 系统镜像（也提供 Alpine 版本，只不过基本都用 debian 的）。
+Docker 官方提供的 PostgreSQL 镜像基于 Debian 系统镜像（也有 Alpine 版本，只不过阉割版，基本都用 debian）。
 维护者指出这些镜像 **同时只支持两个 Debian 发行版**，当新的 Debian 稳定版发布时，就会**升级基础镜像到新版本并停止对最旧版本的支持**。
 
-最近不是 Debian 13 trixie 刚发布了嘛，于是 Docker 官方把 `postgres` 这个镜像升级了一下，底层的 debian 系统镜像从 12 bookworm 升级到了 13 trixie。
+最近不是 Debian 13 trixie 刚刚发布了嘛，于是 Docker 官方把 `postgres` 这个镜像升级了一下，底层的 debian 系统镜像从 12 bookworm 升级到了 13 trixie。
 结果底层 C 函数库 (glibc) 版本的出现跃迁 —— Debian 13的 glibc 版本从 12 的 2.36 升级到了 2.41，而在这两个 glibc 版本中，排序规则发生了变化，这就坏事了。
 
 ![dockerfile.jpg](dockerfile.jpg)
@@ -79,30 +76,34 @@ Docker 官方提供的 PostgreSQL 镜像主要基于 Debian 系统镜像（也�
 
 ## 紧急应对措施
 
-对于在生产环境中使用所谓 Docker 官方 "postgres" 容器的朋友，老冯的建议是，尽早把你的容器版本切换为锁定 PG + Debian 版本号的镜像（比如 17.6-bookworm）
-，这件事至少要在下次小版本升级 / 或者是重新 Pull 之前完成。在进行升级的时候，也务必使用诸如 17.7-bookworm 这样的版本号。
+对于在生产环境中使用所谓 Docker 官方 "postgres" 容器的朋友，老冯的建议是，尽早把你的容器版本切换为锁定 PG + Debian 版本号的镜像（比如 17.6-bookworm）。
+这件事至少要在下次小版本升级 / 或者是重新 Pull 之前完成。在进行升级的时候，也务必使用诸如 `17.7-bookworm` 这样的版本号。
 
-另外，也不要妄想原地从 17.7-bookworm 直接飞升到 17.7-trixie。
-任何涉及到 Glibc (Linux 发行版大版本) 的变动，标准 SOP 都是要逻辑迁移的 —— 要么通过逻辑复制蓝绿部署在线迁移，要么 pg_dump 逻辑转储。
-除非你已经是聪明的 PG 老司机 —— 在初始化集群的时候就聪明的显式指定并选择了 [PG built-in locale provider with C/C-UTF8](https://www.postgresql.org/docs/current/app-initdb.html#APP-INITDB-OPTION-LOCALE-PROVIDER)。
+另外，也不要想原地从 `17.7-bookworm` 直接飞升到 `17.7-trixie` 这种美事。
+任何涉及到 glibc 版本的变动 (通常是 Linux 发行版大版本升级) ，标准 SOP 都是要逻辑迁移的 —— 
+要么通过逻辑复制蓝绿部署在线迁移，要么 pg_dump 逻辑转储。
+除非你已经是聪明的 PG 老司机 —— 在初始化集群的时候就聪明的显式指定并选择了 
+[PG built-in locale provider with C/C-UTF8](https://www.postgresql.org/docs/current/app-initdb.html#APP-INITDB-OPTION-LOCALE-PROVIDER)。
 
 当然从长期来看，最好还是迁移到物理机/虚拟机上的数据库部署方案更稳妥。
-这一点老冯在《[数据库应该放入K8S里吗？](https://mp.weixin.qq.com/s/4a8Qy4O80xqsnytC4l9lRg)》以及
-《[把数据库放入Docker是一个好主意吗？](https://mp.weixin.qq.com/s/kFftay1IokBDqyMuArqOpg)》 就已经展开过了 —— **越复杂的架构杂耍，翻车的时候摔的就越痛！**
+这一点老冯在《[数据库应该放入K8S里吗？](/db/db-in-k8s)》以及
+《[把数据库放入Docker是一个好主意吗？](/db/pg-in-docker)》 就已经展开过了 
+—— **越复杂的架构杂耍，翻车的时候摔的就越痛！**
 
-如果你非要用容器不可的话，老冯的建议也是，找一个好点儿的三方 Docker Postgres 镜像，也比 “官方” 的这个土鳖镜像要好得多。
+如果你非要用容器不可的话，老冯的建议也是找一个好点儿的三方 Docker Postgres 镜像，起码比 “官方” 的这个土法镜像要好得多。
 
 
 
 ## 为什么排序规则很重要
 
-那么，为什么会出现这个问题呢？老冯在《[PG中的本地化排序规则](https://vonng.com/pg/collate/)》就深入聊过这个问题。
-简单的结论就是你应该始终使用 `C.UTF-8` 作为全局排序规则，同时在 PostgreSQL 17 之后的版本则应该强制使用 PG 内置的 locale provider，而不是使用操作系统 glibc 的排序规则。
-真的要用到特定 Locale 规则的时候（什么汉语拼音排序之类的），直接在 DDL /  SQL 里面显式声明就可以，不影响使用的 —— 用 ICU 排序规则，不要使用操作系统的！
+那么，为什么会出现这个问题呢？老冯在《[PG中的本地化排序规则](/pg/collate/)》就深入聊过这个问题。
+简单的结论就是你应该始终使用 `C.UTF-8` 作为全局排序规则，同时在 PostgreSQL 17 之后的版本，
+则应该强制使用 PG 内置的 locale provider，而不是使用操作系统 glibc 的排序规则。
+真的要用到特定 Locale 规则的时候（什么汉语拼音排序之类的），直接在 DDL /  SQL 里面显式声明就可以，不影响使用的
+—— 而且尽量用 ICU 排序规则，不要使用操作系统的！
 
 这里的原因是，（至少在 PG 17 之前）PostgreSQL **强依赖操作系统的本地化库** 来执行字符串比较排序，
-这是 glibc 提供的一个核心功能，而 glibc 中排序规则是会变化的！
-而 glibc 的版本都会在每次 Linux 发行版大版本升级的时候更新。
+这是 glibc 提供的一个核心功能，而 glibc 中排序规则是会变化的！而 glibc 的版本都会在每次 Linux 发行版大版本升级的时候更新。
 这就意味着对于生产环境来说，你通常不能把 A 系统上的 PG 物理文件直接拷贝到 B 系统上去运行
 —— 除非你使用了 PG17 后的内置排序规则，而这并非默认设置。
 
@@ -152,32 +153,35 @@ PostgreSQL 开发组也意识到这确实是一个问题，所以在去年 PG 17
 
 ## 官方不等于“靠谱”
 
-不过显然对于 PostgreSQL 专家属于 “常识性质的最佳实践”，并不是那么普及。
-至少在 Docker 的 “官方 postgres 镜像” 上，就很缺少这些已知的 “最佳实践”。正如 Gwen 所说：有个 “官方” 俩字，并不代表 “**负责任的生产表现”**。
+虽然这个特性很好，不过显然对于 PostgreSQL 专家属于 “常识” 的最佳实践知识并没有普及到 Docker “官方”。
+至少在 Docker 的官方 postgres 镜像上，这个重要配置就缺位了，本来可以绕过这个问题的，还是踩雷翻车了。
+正如 Gwen 所说：有个 “官方” 俩字，并不代表 “**负责任的生产表现”**。
 
 DockerHub 上的 postgres 镜像被广泛使用（据说是下载量最多的镜像），然而它的质量在 PostgreSQL 专家看来确实是相当令人堪忧的。
 这个 “官方” 指的是 Docker 的 “官方”，而不是 PostgreSQL 社区。所以里面充斥的大量的反模式，使用起来非常难受。
 
 ![dockerhub.jpg](dockerhub.jpg)
 
-说到底这个所谓官方镜像就是一个极其简陋的封装：用 apt 给你从 PGDG APT 仓库里安装一下，然后跑一个土法 init 脚本。
+说到底这个所谓官方镜像就是一个极其简单的封装：用 apt 给你从 PGDG APT 仓库里安装一下，然后跑一个 init 脚本。
 这个镜像，对于 POC，开发，测试，学习来说是基本够用了，但离生产环境的距离，可谓差着十万八千里。
 
 
 ## 生产数据库不宜使用容器
 
-如果你用的是 Docker Postgres 容器，即使没有在这次的小版本升级上翻车，也有很大概率会在其他问题上翻车。
-比如默认的 64 MB Shmem 共享内存段；直接写 Overlay FS；安装的扩展在从节点上消失；在一个卷上跑两个PG实例把数据烤糊；奇葩的从库搭建流程；
+但老冯要说的是，这不仅仅是 Docker 官方 PostgreSQL 镜像的问题，而是容器本身就不适合运行生产数据库。
+说到底，Docker 和 K8S 从骨子里就不是为有状态服务而设计的，硬凑上去很难有好结果。
 
-诸如此类在物理机/虚拟机上根本不存在的容器特有问题，老冯在《[把数据库放入Docker是一个好主意吗？](https://mp.weixin.qq.com/s/kFftay1IokBDqyMuArqOpg)》讨论过很多，
+如果你用的是 Docker Postgres 容器，即使没有在这次的小版本升级上翻车，也很有可能会在其他问题上翻车。
+比如默认的 64 MB Shmem 共享内存段；直接写 Overlay FS；安装的扩展在从节点上消失；在一个卷上跑两个PG实例把数据烤糊；奇葩的从库搭建流程。
+诸如此类在物理机/虚拟机上根本不存在的容器特有问题，老冯在《[把数据库放入Docker是一个好主意吗？](/db/pg-in-docker)》讨论过很多，
 但显然社区还会不断出现新惊喜（吓），容器上运行数据库的状态，仍然没有达到裸 Linux 上运行的长期博弈均衡态。
 
 像 Locale 配置这样的工程细节有许许多多，绝对不是 docker pull 一个所谓 “官方镜像” 能解决的。
-老冯的 Pigsty 为了解决用好 PostgreSQL 的问题，光本身的纯代码就有近十万行，
-这也显然不是 “官方镜像” 一个几百行 Shell/Dockerfile 脚本能 Cover 的问题。
+例如 [Pigsty](https://pgsty.com) 为了解决用好 PostgreSQL 的问题，光本身的纯代码就有近十万行，
+这也显然不是 “官方镜像” 一个几百行 Shell/Dockerfile 脚本能覆盖的了的。
 
 实际上有一些第三方的 PostgreSQL over Kubernetes 供应商，他们提供的 PG 容器会比这个 “官方版” 要好得多。
-但老实说，也依然会受到容器本身的掣肘 —— 一堆 K8S / Docker 大师吭哧吭哧优化半天，也很难赶上直接在 Linux 上裸奔的 PG。
+但老实说，他们也依然会受到容器本身的掣肘 —— 一堆 K8S / Docker 大师吭哧吭哧优化半天，也很难赶上直接在 Linux 上裸奔的 PG。
 对数据库老司机来说，确实有一种隔靴搔痒的感觉。
 
 Docker 确实很方便，老冯也拿他跑无状态的服务，批量运行编译任务，有时候当廉价虚拟机测试，或者是简单测试一下数据库功能。
@@ -193,13 +197,13 @@ PostgreSQL 这样的数据库是与操作系统紧密联系的特殊软件。
 最好的状态，**就是直接不带套运行在裸 Linux 上，简单，直接，稳定，可靠，没有额外的性能折损与管理负担**。
 
 有很多人觉得这是一件很复杂的事情，好像又要折腾什么 YUM/APT 仓库，官方镜像太慢又要翻墙；
-国内镜像站也全面断更《[从PG“断供”看软件供应链中的信任问题](https://mp.weixin.qq.com/s/SBVcO8fi5mK1Qnb3AWbqxQ)》，然后安装好了之后怎么配置调参优化也一筹莫展。
+国内镜像站也全面断更《[从PG“断供”看软件供应链中的信任问题](/pg/pg-mirror-pigsty)》，然后安装好了之后怎么配置调参优化也一筹莫展。
 实际上这都已经是老黄历了。老冯的 [开源 PG 发行版 Pigsty](https://doc.pgsty.com/zh) 就是为了直接在 Linux 上运行企业级 PostgreSQL 服务而设计的。
 
 [![pigsty-install.png](pigsty-install.png)](https://doc.pgsty.com/zh/install)
 
 目前，我在 Debian 12/13，Ubuntu 22/24，EL 8/9/10 ，ARM / x86 也就是 14 个主流 Linux 发行版上提供了原生的 PostgreSQL 内核（PG 13-18 六个大版本），8 款不同风味的 PG 内核分支，近百个生态工具与 430 个生态扩展。
-并将其打造成一键部署安装拉起，自带监控高可用，PITR 的生产级方案。还提供了 PGDG 官方仓库的中国镜像，应该是目前国内唯一没有和 PGDG 断更的 PG 镜像站 ——  《[PG扩展云，免翻免费解锁PG完全体](https://mp.weixin.qq.com/s/oHHzhbbt5suSxnJhyxTwQQ)》
+并将其打造成一键部署安装拉起，自带监控高可用，PITR 的生产级方案。还提供了 PGDG 官方仓库的中国镜像，应该是目前 [国内唯一和 PGDG 保持同步的镜像站](/pg/pgext-cloud)。
 
 [![platform.jpg](platform.jpg)](https://pgext.cloud/os)
 
@@ -219,13 +223,62 @@ PostgreSQL 这样的数据库是与操作系统紧密联系的特殊软件。
 ![featured.jpg](featured.jpg)
 
 
+
+------
+
+## FAQ
+
+有不少读者提出了一些问题与质疑，老冯在这里统一回复一下：
+
+> 问：**我用xx容器镜像已经运行了 xx 年，什么问题都没有呀？**
+
+*意外 —— 它是有趣的东西，在你遇到它们之前，你永远不会遇到它们。*
+可靠性看的是 RTO/RPO 指标，而不是几个九的可用性时间。
+因为用户可以单纯凭运气几年不出问题，这种例子非常多。
+而真正重要的始终是出问题后的处理能力，因此，只有反例有参考意义。 
+
+> 问：**难道不是因为用户太菜了用 latest 镜像吗？这跟 Docker 有什么关系？**
+
+世界是个巨大的草台班子，docker pull postgres，或者以为 postgres:17.6 就定死了 PG 版本号的的人
+会远比想象中要多得多 —— 考虑到他们已经干出用容器跑生产数据库的事了。
+
+> 问：**所谓“物理机/虚拟机上不会有”这个问题，是因为你的操作系统不升级**
+
+用物理机/虚拟机部署不代表不升级 OS，而是不会以为 docker pull 一下就 “升级” 了。
+正常升级操作系统显式进行的计划迁移，本例是在升级一个PG小版本镜像时导致了意外升级。
+
+> 问：**既然 PG 17 已经引入了内置排序规则，为什么17以上的镜像小版本还会有这个问题？**
+
+很显然 Docker “官方” 并不知道这些最佳实践知识，依然使用了系统默认的 locale provider。
+
+> 问：**生产环境就应该锁死在固定版本，永远不升级。**
+
+对菜鸟来说这种苟且策略有一定的合理性。
+但对严肃生产数据库而言，及时升级小版本是基本的安全素养。
+每年零停机逻辑复制蓝绿部署迁移至新的系统/PG是卓越团队的标配。
+
+> 问：**原帖说的是不要用 Docker 官方镜像，不是说在生产环境不要用容器跑数据库**
+
+老冯有自己的观点，不是原帖的翻译机。我的观点就是严肃生产数据库不要用容器跑。
+Docker 官方 PG 镜像拉垮是一个原因，但还有更多原因。细节请看[参考阅读文章](https://mp.weixin.qq.com/s/kFftay1IokBDqyMuArqOpg)。
+
+> 问：**什么时候用容器跑数据库是有意义的？**
+
+在以下几种情况中，老冯认为使用容器跑生产数据库勉强是合理的 —— 
+云厂商偷工减料批量超卖；跑在人嫌狗厌的信创魔改国产操作系统上；
+或者是公司给的待遇只值得你糊弄一下。
+
+
+
+
+
 ------
 
 ## 参考阅读
 
 **[把数据库放入 Kubernetes 是一个好主意吗？](https://mp.weixin.qq.com/s/4a8Qy4O80xqsnytC4l9lRg)**
 
-**[把数据库放入Docker是一个好主意吗？](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486572&idx=1&sn=274a51976bf8ae5974beb1d3173380c1&chksm=fe4b39b7c93cb0a14c4d99f8ffd1e00c36b972a8058fd99e9d06e6035c4f378b6d327892260b&scene=21#wechat_redirect)**
+**[把数据库放入Docker是一个好主意吗？](https://mp.weixin.qq.com/s/kFftay1IokBDqyMuArqOpg)**
 
 **[《Kubernetes创始人发声！K8s在被反噬！》](https://mp.weixin.qq.com/s/9Q9kze9D2LT0-G2lXSvADg)**
 
