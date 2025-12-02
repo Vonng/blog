@@ -1,8 +1,8 @@
 ---
-title: "pig: pg package manager"
+title: "PG Extension Cloud"
 weight: 4
-externalUrl: "https://pig.pgsty.com"
-summary: "Install 420+ PG Extension on Linux"
+externalUrl: "https://pgext.cloud"
+summary: "Install 430+ PG Extension on Linux"
 showDate: false
 showReadingTime: false
 showWordCount: false

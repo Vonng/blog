@@ -77,16 +77,10 @@ weight = 10
   weight = 50
 
 [[main]]
-  name = "PIG, PG 扩展包管理器"
+  name = "PostgreSQL 扩展云"
   parent = "作品"
-  url = "https://pig.pgsty.com/zh/"
+  url = "https://pgext.cloud/zh/"
   weight = 60
-
-[[main]]
-name = "PostgreSQL 扩展目录"
-parent = "作品"
-url = "https://ext.pgsty.com/zh/"
-weight = 70
 
 [[main]]
 name = "PG Exporter 监控组件"

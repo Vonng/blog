@@ -69,16 +69,16 @@ name = "Portfolio"
 weight = 50
 
 [[main]]
-  name = "PIG, Package Manager"
-  parent = "Portfolio"
-  url = "https://pig.pgsty.com"
-  weight = 60
+name = "Pigsty, FOSS PG RDS"
+parent = "Portfolio"
+url = "https://pgsty.com"
+weight = 51
 
 [[main]]
-name = "PG Extension Catalog"
+name = "PGEXT CLOUD"
 parent = "Portfolio"
-url = "https://ext.pgsty.com/"
-weight = 70
+url = "https://pgext.cloud"
+weight = 60
 
 [[main]]
 name = "PG Exporter Agent"
