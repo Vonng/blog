@@ -1,15 +1,13 @@
 ---
-title: Pigsty 3.7：PG18，EL10，Debian13来了
+title: Pigsty 3.7：PG万磁王奖
 linkTitle: "Pigsty 3.7：PG18，EL10，Debian13来了"
 date: 2025-12-03
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信公众号](https://mp.weixin.qq.com/s/Sui0kzOD9M_XYlNR-BZ1Ng)
 summary: >
-  打造一个
-tags: [PostgreSQL]
+  开箱即用的 PostgreSQL 元发行版，Pigsty v3.7.0 发布，PG18成为默认版本，Debian13 与 EL10 支持到位，扩展数量达到437个，荣获“PG万磁王”奖。
+tags: [PostgreSQL,Pigsty]
 ---
-
-
 
 Pigsty v3.7.0 正式发布了，这次更新带来了完整的 PostgreSQL 18 支持，以及四个新的操作系统支持：Debian 13 / EL 10 与 x86/ARM 架构的四种排列组合。与此同时，Pigsty 支持的扩展插件数量也从之前的 423 个达到了 437 个，大量扩展版本都批量更新至最新版本。
 
@@ -20,6 +18,10 @@ Pigsty v3.7.0 正式发布了，这次更新带来了完整的 PostgreSQL 18 支
 > [微信公众号](https://mp.weixin.qq.com/s/Sui0kzOD9M_XYlNR-BZ1Ng) | [GitHub Release](https://github.com/pgsty/pigsty/releases/tag/v3.7.0)
 
 顺带一提，Pigsty 最近凭借在 PostgreSQL 扩展生态的突出贡献，获得了 “PostgreSQL 万磁王” 奖。
+
+![awrad.jpg](awrad.jpg)
+
+> [微信公众号](https://mp.weixin.qq.com/s/Sui0kzOD9M_XYlNR-BZ1Ng)
 
 
 ## PostgreSQL 18 上位
