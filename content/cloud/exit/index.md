@@ -147,7 +147,7 @@ tags: [下云]
 - 2025-07-03 [草台互殴，赔三千万？阿里大战小旺神](https://mp.weixin.qq.com/s/O4LvUspOgrVBWHzmBvfmUA)
 - 2025-06-26 [阿里云故障，CDN挂了，记得申请SLA赔付](https://mp.weixin.qq.com/s/Y2PZiH63EAXRKP8gele8NQ)
 - 2025-06-06 [大故障：阿里云核心域名被拖走了](https://mp.weixin.qq.com/s/l1b-eq06NyuN61cqZoYJjA)
-- 2025-05-30 [阿里云：从上到下烂到根了(去除原文版)](https://mp.weixin.qq.com/s/0pT7wb0Y6ohgvEltED93hA
+- 2025-05-30 [阿里云：从上到下烂到根了(去除原文版)](https://mp.weixin.qq.com/s/0pT7wb0Y6ohgvEltED93hA)
 - 2025-05-30 [硬编码密码泄漏，阿里云的软件工程也太差了](https://mp.weixin.qq.com/s/43pIBxYvsszeBZGk7LU7_w) 马工
 - 2025-01-13 [花钱买罪受的大冤种：逃离云计算妙瓦底](https://mp.weixin.qq.com/s/zwJ2T2Vh_R7xD8IKPso31Q)
 - 2024-11-11 [支付宝崩了？双十一整活王又来了](https://mp.weixin.qq.com/s/D2XmL2YYN2kqHtwFN4FVGQ)
