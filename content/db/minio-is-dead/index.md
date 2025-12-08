@@ -5,7 +5,7 @@ author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信公众号](https://mp.weixin.qq.com/s/aBUwEMxZ_xKmHisaaT4uWw)
 summary: >
   MinIO 宣告进入维护模式，屠龙勇者成为新的恶龙 —— MinIO是如何从S3开源替代变成一家普通的商业软件公司的。
-tags: [数据库,PostgreSQL]
+tags: [数据库,MinIO,开源]
 ---
 
 2025年12月3日，是个值得在开源软件历史上记一笔的日子。

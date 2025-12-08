@@ -1,5 +1,5 @@
 ---
-title: 支付宝淘宝闲鱼全崩了？又是消息队列的锅？
+title: 支付宝淘宝闲鱼崩了？又是消息队列的锅？
 date: 2025-12-05
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
