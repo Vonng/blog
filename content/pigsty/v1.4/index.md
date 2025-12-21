@@ -10,6 +10,9 @@ series: [Pigsty]
 tags: [Pigsty]
 ---
 
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v1.4.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v140) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484935&idx=1&sn=b904584f2df752e1cb603486f96d173f&chksm=fe4b33dcc93cbacabc130669ae52edf547e0cdf684bdd9910267f6be541fe54488ce90853b83&scene=21#wechat_redirect)
+
+[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v1.4.0)
 
 Pigsty v1.4 正式发布！全新的模块化架构：四大内置模块 **INFRA**、**NODES**、**PGSQL**、**REDIS** 可以独立使用并自由组合；新增时序数据仓库 MatrixDB 部署与监控支持；新建设了全球 CDN 加速下载。
 

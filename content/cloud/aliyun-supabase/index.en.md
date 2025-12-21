@@ -4,7 +4,7 @@ date: 2025-11-06
 author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: "Founders here get asked the same question over and over: what if Alibaba builds the same thing? Alicloud RDS just launched Supabase as a managed service. Exhibit A."
-tags: [阿里云,开源,Supabase]
+tags: [Alibaba Cloud, Open Source, Supabase]
 ---
 
 Chinese founders hear the nightmare scenario constantly: “What happens when Alibaba shows up?” Well, Alicloud RDS just shipped Supabase as a first-party feature. This is what it looks like when a hyperscaler parachutes into your niche.

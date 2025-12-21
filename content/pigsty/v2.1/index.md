@@ -10,7 +10,9 @@ series: [Pigsty]
 tags: [Pigsty]
 ---
 
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.1.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v210) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485612&idx=1&sn=ce76d9439ed4f2ed10ee28c7aceb19cd&chksm=fe4b3d77c93cb46196eb97f7e04cbab1b2f2dee51324050ffc17583c22415f41a3656834fdcb&scene=21#wechat_redirect)
 
+[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v2.1.0)
 
 随着 PostgreSQL 夏季小版本例行更新，与 16 Beta 的发布，Pigsty 也紧随PG社区发布了 **v2.1** 版本，这次更新支持了 16 Beta1 的高可用与新监控指标，也提供了 PG 12 - 15 版本的支持。同时，AI 向量扩展插件 PGVector 也于 2.0.2 正式进入 Pigsty 中并默认启用。
 

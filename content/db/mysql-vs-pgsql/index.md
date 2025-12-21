@@ -1,9 +1,11 @@
 ---
 title: "MySQL vs PostgreSQL @ 2025"
-summary: "在 2025 年重新审视 PostgreSQL 与 MySQL 的相对位置。"
 date: 2025-04-17
-tags: ["数据库", "MySQL", "PostgreSQL"]
-series: [MySQL走好]
+author: 冯若航
+summary: >
+  在2025年的当下，MySQL无论是在功能特性集、质量正确性、性能表现还是生态与社区上都被PostgreSQL拉开了差距，而且这个差距还在进一步扩大中。本文从功能、性能、质量、生态来全方位对比两者。
+series: ["MySQL走好"]
+tags: [数据库, MySQL, PostgreSQL, 技术对比]
 ---
 
 

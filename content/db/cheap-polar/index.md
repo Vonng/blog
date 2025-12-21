@@ -1,12 +1,11 @@
 ---
-title: 20刀好兄弟PolarDB：论数据库该卖什么价？
+title: "20刀好兄弟PolarDB：论数据库该卖什么价？"
 date: 2024-04-25
-author: vonng
+author: 冯若航
 summary: >
-  今天来聊聊，商业数据库，开源数据库，云数据库，国产数据库的公允价格是多少。
+  PolarDB数据库每节点许可证只卖130块？国内IT已经卷到这个阶段了吗？今天来聊聊商业数据库、开源数据库、云数据库、国产数据库的公允价格到底是多少。
 series: ["信创国产化"]
-series_order: 5
-tags: [数据库,国产数据库]
+tags: [数据库, 国产数据库, 云计算, PolarDB]
 ---
 
 > [微信公众号](https://mp.weixin.qq.com/s/AqcYpOgVj91JnkB1B3s4sA)

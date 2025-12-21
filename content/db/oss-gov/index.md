@@ -1,12 +1,11 @@
 ---
-title: 瑞士强制政府软件开源
-linkTitle: 瑞士强制政府软件开源
+title: "瑞士强制政府软件开源"
 date: 2024-07-24
-summary: |
-  瑞士政府通过开源立法走在时代前沿，给 IT 后发国家如何保证软件自主可控打了个样：真正的自主可控根源在于“开源社区”，而不是某些民族主义式的国产软件。
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
-tags: [开源]
+author: Steven Vaughan-Nichols
+origin: "https://www.zdnet.com/article/switzerland-now-requires-all-government-software-to-be-open-source/"
+summary: >
+  瑞士政府通过开源立法走在时代前沿，强制要求公共部门使用开源软件。真正的自主可控根源在于"开源社区"，而不是某些民族主义式的国产软件。公共资金，公共代码。
+tags: [开源, 政府采购, 信创, 自主可控]
 ---
 
 > 瑞士政府通过开源立法走在时代前沿，给 IT 后发国家如何保证软件自主可控打了个样。真正的自主可控根源在于“开源社区”，而不是某些“民族主义”式的“国产软件”。 [老冯评论](#老冯评论)

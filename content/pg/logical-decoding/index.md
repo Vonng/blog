@@ -1,11 +1,10 @@
 ---
 title: "CDC 变更数据捕获机理"
 date: 2019-06-12
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
-  数据变更捕获是一种很有趣的ETL替代方案。
-tags: [PostgreSQL,PG开发,CDC]
+  数据变更捕获是一种很有趣的ETL替代方案，以流式的方式持续收集状态变化事件。
+tags: [PostgreSQL, PG开发, CDC]
 ---
 
 在实际生产中，我们经常需要把数据库的状态同步到其他地方去，例如同步到数据仓库进行分析，同步到消息队列供下游消费，同步到缓存以加速查询。总的来说，搬运状态有两大类方法：ETL与CDC。

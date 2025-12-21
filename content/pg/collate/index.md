@@ -1,11 +1,10 @@
 ---
 title: "PG中的本地化排序规则"
 date: 2021-03-05
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
   什么？不知道COLLATTION是什么，那记住一件事，用C COLLATE准没错！
-tags: [PostgreSQL,PG管理]
+tags: [PostgreSQL, PG管理]
 ---
 
 

@@ -1,0 +1,9 @@
+{
+  "name": "Neo Kim",
+  "bio": "I Teach You System Design, 0.5M+ Audience",
+  "image": "img/neo-kim.jpg",
+  "social": [
+    { "link": "https://newsletter.systemdesign.one/" },
+    { "twitter": "https://twitter.com/systemikimu" }
+  ]
+}

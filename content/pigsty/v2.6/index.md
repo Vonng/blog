@@ -10,7 +10,9 @@ series: [Pigsty]
 tags: [Pigsty]
 ---
 
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.6.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v260) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487025&idx=1&sn=c32f102718e3e9cf55cdefa7133f259f&chksm=fe4b3beac93cb2fc25c2c2c4f9ea74d4353e565ef90c5e2bbaf5881a3a031cbdff706971af9a&scene=21#wechat_redirect)
 
+[![](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v2.6.0)
 
 二月的最后一天里，Pigsty v2.6 正式发布了 🎉。这个版本正式使用 PostgreSQL 16  作为默认的大版本，并引入了一系列全新的扩展，包括 [**ParadeDB**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486913&idx=1&sn=3b7d8cf3f0e323932aba52c897f3c7a4&chksm=fe4b381ac93cb10cc6175c4c7978b5903946d369fe0084fbae5edf76ab08d84134260f28dffc&scene=21#wechat_redirect) 与 DuckDB ，让 PostgreSQL 的 OLAP 分析能力提高到一个全新的水准，喊一声 HTAP 标杆，数据库全能王当之无愧。
 

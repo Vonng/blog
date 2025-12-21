@@ -1,14 +1,13 @@
 ---
-title: PZ：MySQL还有机会赶上PostgreSQL吗？
+title: "MySQL还有机会赶上PostgreSQL吗？"
 linkTitle: "MySQL还能赶上PG吗？"
 date: 2024-11-05
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信公众号](https://mp.weixin.qq.com/s/xveP91NMYF4NFlIX_JcpYA)
+authors: [peter-zaitsev]
+origin: "https://www.percona.com/blog/can-mysql-catch-up-with-postgresql/"
 summary: >
-  Percona 的老板 Peter Zaitsev最近发表一篇博客，讨论了MySQL是否还能跟上PostgreSQL的脚步。
+  Percona创始人Peter Zaitsev讨论MySQL是否还能跟上PostgreSQL的脚步。作为MySQL生态的主要扛旗者，Percona的看法在相当程度上代表了MySQL社区的想法，这篇文章值得每个关注数据库发展的人阅读。
 series: ["MySQL走好"]
-series_order: 5
-tags: [数据库,MySQL]
+tags: [数据库, MySQL, PostgreSQL, 技术评论, 翻译]
 ---
 
 > 作者：[Peter Zaitsev](https://www.percona.com/blog/author/pz/) | 译：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信公众号](https://mp.weixin.qq.com/s/xveP91NMYF4NFlIX_JcpYA)
@@ -20,7 +19,7 @@ Percona 作为MySQL 生态扛旗者，Percona 开发了知名的PT系列工具�
 
 > 作者：[Peter Zaitsev](https://www.percona.com/blog/author/pz)，Percona 老板，原文：[How Can MySQL Catch Up with PostgreSQL’s Momentum?](https://www.percona.com/blog/how-can-mysql-catch-up-with-postgresqls-momentum/)
 >
-> 译者：[冯若航](https://vonng.com/en)，Vonng，[Pigsty](https://pigsty.io) 作者，PostgreSQL 大法师，数据库老司机，云计算泥石流。
+> 译者：[Vonng](https://vonng.com/en)，[Pigsty](https://pigsty.io) 作者，PostgreSQL 大法师，数据库老司机，云计算泥石流。
 
 
 

@@ -1,0 +1,9 @@
+{
+  "name": "Alex Miller",
+  "bio": "Database Engineer @ Snowflake, transactional.blog",
+  "social": [
+    { "link": "https://transactional.blog/" },
+    { "twitter": "https://twitter.com/AlexMillerDB" },
+    { "linkedin": "https://www.linkedin.com/in/alexmillerdb/" }
+  ]
+}

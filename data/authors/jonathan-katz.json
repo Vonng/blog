@@ -1,0 +1,11 @@
+{
+  "name": "Jonathan Katz",
+  "bio": "PostgreSQL Core Team Member",
+  "image": "img/jonathan-katz.png",
+  "social": [
+    { "link": "https://jkatz05.com/" },
+    { "github": "https://github.com/jkatz" },
+    { "linkedin": "https://www.linkedin.com/in/jkatz05/" },
+    { "twitter": "https://twitter.com/jkatz05" }
+  ]
+}

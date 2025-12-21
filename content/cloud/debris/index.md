@@ -1,11 +1,9 @@
 ---
-title: 云计算泥石流：用数据解构公有云
-hero: /hero/debris.jpg
+title: "云计算泥石流：用数据解构公有云"
 date: 2023-07-08
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/eag0CqfUTeNPbIB6TZqFVg) 
-summary: |
-  曾几何时，“上云“近乎成为技术圈的政治正确，但很少有人会用实打实的数据来分析这里面的利弊权衡。我愿意成为这个质疑者：让我用实打实的 数据 与亲身经历的故事，讲清楚公有云租赁模式的陷阱与价值。
+author: 冯若航
+summary: >
+  曾几何时，"上云"近乎成为技术圈的政治正确，但很少有人用实打实的数据来分析利弊权衡。让我用数据与亲身经历，讲清楚公有云租赁模式的陷阱与价值。
 tags: [下云]
 ---
 
@@ -60,7 +58,7 @@ tags: [下云]
 
 作者：**David Heinemeier Hansson**，网名DHH，37 Signal 联创与CTO，Ruby on Rails 作者，下云倡导者、实践者、领跑者。反击科技巨头垄断的先锋。博客：https://world.hey.com/dhh
 
-译者：**冯若航**，网名 Vonng。磐吉云数 创始人与CEO。Pigsty 作者，PostgreSQL 专家与布道师。云计算泥石流，数据库老司机，下云倡导者与实践者。
+译者：**Vonng**，磐吉云数 创始人与CEO。Pigsty 作者，PostgreSQL 专家与布道师。云计算泥石流，数据库老司机，下云倡导者与实践者。
 
 
 

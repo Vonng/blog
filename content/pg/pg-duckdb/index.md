@@ -1,12 +1,11 @@
 ---
-title: 谁整合好DuckDB，谁赢得OLAP世界
-linkTitke: "得DuckDB者得OLAP天下"
+title: "谁整合好DuckDB，谁赢得OLAP世界"
+linkTitle: "得DuckDB者得OLAP天下"
 date: 2024-08-13
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/TJk9TUW7xsEglhEK_qYi-w)
+author: 冯若航
 summary: >
-  正如两年前开展的向量数据库扩展插件赛马一样，当下 PG 生态进行的扩展竞赛已经开始围绕 DuckDB 进行，而MotherDuck官方亲自下场做PG扩展，毫无疑问标志着竞争进入白热化
-tags: [PostgreSQL,PG生态]
+  正如两年前开展的向量数据库扩展插件赛马一样，当下PG生态进行的扩展竞赛已经开始围绕DuckDB进行，MotherDuck官方亲自下场标志着竞争进入白热化。
+tags: [PostgreSQL, PG生态]
 ---
 
 

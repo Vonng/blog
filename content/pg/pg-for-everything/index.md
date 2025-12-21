@@ -1,20 +1,19 @@
 ---
-title: 为什么PostgreSQL是未来数据库的事实标准？
-linkTitle: 为什么PG是未来数据的基石？
+title: "为什么PostgreSQL是未来数据库的事实标准？"
+linkTitle: "为什么PG是未来数据的基石？"
 date: 2024-05-16
-showAuthor: false
-author: |
-  [Ajay Kulkarni](https://www.timescale.com/blog/author/ajay/) | 译者：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+authors: [ajay-kulkarni]
+origin: "https://www.timescale.com/blog/postgres-for-everything/"
 summary: >
-  如今，软件开发中最大的趋势之一，是 PostgreSQL 正在成为事实上的数据库标准。已经有一些博客阐述了如何在所有的场景下都是用 PostgreSQL，但直到现在，还没有多少文章能解释这一现象背后的原因。（更重要的是，为什么这件事很重要）。
-tags: [PostgreSQL,PG生态]
+  如今软件开发中最大的趋势之一，是PostgreSQL正在成为事实上的数据库标准。直到现在还没有多少文章能解释这一现象背后的原因。
+tags: [PostgreSQL, PG生态, 翻译]
 ---
 
 如今，软件开发中最大的趋势之一，是 PostgreSQL 正在成为事实上的数据库标准。已经有一些博客阐述了如何做到 万物皆用 PostgreSQL，但还没有多少文章能解释这一现象背后的原因。（更重要的是，为什么这件事很重要） —— 所以我写下了这篇文章。
 
 > 本文作者为 Ajay Kulkarni，TimescaleDB CEO ，原文发表于 TimescaleDB 博客：《[Why PostgreSQL Is the Bedrock for the Future of Data](https://www.timescale.com/blog/postgres-for-everything/)》。
 >
-> 译者冯若航，PostgreSQL 专家，开源 RDS PG —— Pigsty 作者。
+> 译者 Vonng，PostgreSQL 专家，开源 RDS PG —— Pigsty 作者。
 
 ## 目录
 

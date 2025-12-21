@@ -1,17 +1,16 @@
 ---
-title: PostgreSQL会修改开源许可证吗？
+title: "PostgreSQL会修改开源许可证吗？"
 date: 2024-03-20
-showAuthor: false
-author: |
-  [JONATHAN KATZ](https://jkatz05.com/post/postgres/) | 译：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [英文原文](https://jkatz05.com/post/postgres/postgres-license-2024/) | [微信公众号原文]()
-summary: |
-  PostgreSQL 不会改变其许可证 
-tags: [PostgreSQL,PG生态,开源]
+authors: [jonathan-katz]
+origin: "https://jkatz05.com/post/postgres/postgres-license-2024/"
+summary: >
+  PostgreSQL 不会改变其许可证。本文是 PostgreSQL 核心组成员对此问题的回答。
+tags: [PostgreSQL, PG生态, 开源, 翻译]
 ---
 
 > 作者：[Jonathan Katz](https://jkatz05.com/post/postgres/)，PostgreSQL 核心组成员（1 of 7），AWS RDS 首席产品经理
 >
-> 译者：[冯若航](https://vonng.com)，PostgreSQL 专家，Free RDS PG Alternative —— Pigsty 作者
+> 译者：[Vonng](https://vonng.com)，PostgreSQL 专家，Free RDS PG Alternative —— Pigsty 作者
 
 
 

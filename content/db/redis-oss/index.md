@@ -1,12 +1,11 @@
 ---
-title: Redis不开源是“开源”之耻，更是公有云之耻
-linkTitle: Redis不开源是“开源”之耻
+title: "Redis不开源是“开源”之耻，更是公有云之耻"
+linkTitle: "Redis不开源是开源之耻"
 date: 2024-03-25
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信公众号](https://mp.weixin.qq.com/s/W5kOLxeJCIHjnWbIHc1Pzw)
+author: 冯若航
 summary: >
-  Redis “不开源” 不是 Redis 的耻辱，而是“开源/OSI”的耻辱，更是公有云的耻辱。真正重要的事一直都是软件自由，而开源只是实现软件自由的一种手段。
-tags: [数据库,开源,Redis]
+  Redis从7.4起使用RSALv2与SSPLv1，不再满足OSI关于开源软件的定义。这不是Redis的耻辱，而是开源/OSI的耻辱，更是公有云厂商白嫖社区成果的耻辱。当下软件自由的头号敌人是公有云服务。
+tags: [开源, Redis, 云计算, 许可证]
 ---
 
 最近 Redis 修改其协议引发了争议：它从 7.4 起使用 RSALv2 与 SSPLv1，不再满足 OSI 关于 “开源软件” 的定义。但不要搞错：**Redis “不开源” 不是 Redis 的耻辱，而是“开源/OSI”的耻辱** —— 它反映出开源[**组织**](https://opensource.org/)/理念的过气。

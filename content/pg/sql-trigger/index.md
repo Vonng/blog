@@ -2,11 +2,10 @@
 title: "PostgreSQL的触发器使用注意事项"
 linkTitle: "触发器使用注意事项"
 date: 2018-07-07
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
-  详细了解PostgreSQL中触发器的管理与使用
-tags: [PostgreSQL,PG开发,触发器]
+  详细了解PostgreSQL中触发器的管理与使用。
+tags: [PostgreSQL, PG开发, 触发器]
 ---
 
 

@@ -1,12 +1,10 @@
 ---
-title: 一次AWS DNS故障如何级联瘫痪半个互联网
-linkTitle: 一次AWS DNS故障如何级联瘫痪半个互联网
+title: "一次AWS DNS故障如何级联瘫痪半个互联网"
 date: 2025-10-21
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/sCAOwNva__0L_iMP1QHngQ)
+author: 冯若航
 summary: >
   AWS US-EAST-1 区域DNS解析故障带崩半个互联网，老冯带您复盘 AWS 史诗故障。
-tags: [下云,AWS]
+tags: [下云, AWS, 云故障]
 ---
 
 

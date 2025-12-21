@@ -1,10 +1,10 @@
 ---
 title: "PostgreSQL主宰数据库世界，而谁来吞噬PG？"
 date: 2025-08-05
-author: vonng
-summary: |
-  那些曾经让 MongoDB，MySQL 走向封闭的力量，如今也同样在 PostgreSQL 的生态中发挥作用，PG世界需要一个代表“软件自由”价值观的发行版。
-tags: [PostgreSQL,PG生态]
+author: 冯若航
+summary: >
+  那些曾经让 MongoDB，MySQL 走向封闭的力量，如今也同样在 PostgreSQL 的生态中发挥作用，PG世界需要一个代表"软件自由"价值观的发行版。
+tags: [PostgreSQL, PG生态]
 ---
 
 Percona 是 MySQL 生态的扛旗者与主要三方厂商，最近几年也在进军 PostgreSQL 赛道。本文英文原文今天早上发布在 Percona 博客上。

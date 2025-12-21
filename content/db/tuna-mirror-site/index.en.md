@@ -5,7 +5,7 @@ author: |
   Feng Ruohang
 summary: >
   In serious production you can’t rely on an upstream that explicitly says “no guarantees.” When someone says “don’t count on me,” the right answer is “then I’ll run it myself.”
-tags: [开源,供应链]
+tags: [Open Source, Supply Chain]
 ---
 
 Yesterday’s post “[PG ‘Export Controls’ and Supply-Chain Trust](/en/pg/pg-mirror-pigsty/)” drew a comment from someone claiming to be an admin at a university mirror site (Tsinghua TUNA):

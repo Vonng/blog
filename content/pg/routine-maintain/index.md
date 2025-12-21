@@ -2,11 +2,10 @@
 title: "PostgreSQL例行维护"
 linkTitle: "PgSQL例行维护任务"
 date: 2018-02-10
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
-  汽车需要上油，数据库也需要维护保养。对Pg而言，有三项比较重要的维护工作：备份、重整、清理
-tags: [PostgreSQL,PG管理]
+  汽车需要上油，数据库也需要维护保养。对Pg而言，有三项比较重要的维护工作：备份、重整、清理。
+tags: [PostgreSQL, PG管理]
 ---
 
 

@@ -1,10 +1,11 @@
 ---
-title: "OpenHalo：MySQL 线缆兼容的 PostgreSQL 来了！"
-linkTitle: "OpenHalo: MySQL兼容的PG内核"
+title: "OpenHalo：MySQL线缆兼容的PostgreSQL来了！"
+linkTitle: "OpenHalo：MySQL兼容的PG内核"
 date: 2025-04-03
-summary: 什么？PostgreSQL 现在可以使用 MYSQL 客户端访问了？没有错，愚人节刚开源的 openHalo 就提供了这样的能力，现已加入 Pigsty 内核全家桶。
-showAuthor: true
-tags: [PostgreSQL,MySQL]
+author: 冯若航
+summary: >
+  PostgreSQL现在可以使用MySQL客户端访问了！愚人节刚开源的openHalo提供了这样的能力，现已加入Pigsty内核全家桶。
+tags: [PostgreSQL, MySQL]
 ---
 
 什么？PostgreSQL 现在可以使用 MYSQL 客户端访问了？没有错，愚人节刚开源的 openHalo 就提供了这样的能力 —— 让用户可以同时用 MySQL 和 PGSQL 的客户端读写访问管理同一个数据库，基于 PG 14.10 提供了 MySQL 5.7 的兼容能力。

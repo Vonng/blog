@@ -1,12 +1,14 @@
 ---
 title: "开放数据标准：Postgres，OTel，与Iceberg"
-summary: "数据世界正在浮出水面的三大新标准：Postgres、Open Telemetry，以及 Iceberg。"
 date: 2025-05-27
-tags: ["数据库"]
-categories: ["Blog"]
+author: Paul Copplestone
+origin: "https://supabase.com/blog/open-data-standards-postgres-otel-iceberg"
+summary: >
+  数据世界正在浮出水面的三大新标准：Postgres、Open Telemetry，以及Iceberg。Postgres已是事实标准，OTel和Iceberg尚在成长，但它们具备当年让Postgres走红的同样配方——关键在于开源的姿势本身。
+tags: [数据库, PostgreSQL, OpenTelemetry, Iceberg, 数据标准]
 ---
 
-> 作者：Paul Copplestone，Supabase CEO 译者：冯若航，Pigsty Founder，数据库老司机
+> 作者：Paul Copplestone，Supabase CEO 译者：Vonng，Pigsty Founder，数据库老司机
 > 原文地址: https://supabase.com/blog/open-data-standards-postgres-otel-iceberg
 
 ![featured.png](featured.png)

@@ -1,16 +1,16 @@
 ---
-title: 七周七数据库（2025年）
+title: "七周七数据库（2025年）"
 date: 2024-12-03
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信公众号](https://mp.weixin.qq.com/s/gQZ3Q5JKV8gaBNhc1puPcA) | [英文原文](https://matt.blwt.io/post/7-databases-in-7-weeks-for-2025/)
+authors: [matt-blewitt]
+origin: "https://matt.blwt.io/post/7-databases-in-7-weeks-for-2025/"
 summary: >
-  PostgreSQL是无聊数据库之王？2025年哪些是有前途能打的数据库？
-tags: [数据库,PostgreSQL]
+  PostgreSQL是无聊数据库之王？2025年值得深入学习的七个数据库：PostgreSQL、SQLite、DuckDB、ClickHouse、FoundationDB、TigerBeetle、CockroachDB，每个都值得花一周时间研究。
+tags: [数据库, PostgreSQL, SQLite, DuckDB, ClickHouse, 翻译]
 ---
 
 > 作者：Matt Blewitt，原文：七周七数据库（2025年）
 >
-> 译者：冯若航，数据库老司机，云计算泥石流
+> 译者：Vonng，数据库老司机，云计算泥石流
 
 https://matt.blwt.io/post/7-databases-in-7-weeks-for-2025/
 

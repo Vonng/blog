@@ -1,11 +1,11 @@
 ---
-title: 7 Databases in 7 Weeks (2025)
+title: "7 Databases in 7 Weeks (2025)"
 date: 2024-12-03
-author: |
-  [Matt Blewitt](https://matt.blwt.io/post/7-databases-in-7-weeks-for-2025/) | Translated by [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [Chinese Version](https://mp.weixin.qq.com/s/gQZ3Q5JKV8gaBNhc1puPcA) | [Original English Article](https://matt.blwt.io/post/7-databases-in-7-weeks-for-2025/)
+author: Matt Blewitt
+origin: "https://matt.blwt.io/post/7-databases-in-7-weeks-for-2025/"
 summary: >
-  Is PostgreSQL the king of boring databases? Which databases show promise and punch in 2025?
-tags: [Database,PostgreSQL]
+  Is PostgreSQL the king of boring databases? Here are seven databases worth studying in 2025: PostgreSQL, SQLite, DuckDB, ClickHouse, FoundationDB, TigerBeetle, and CockroachDB—each deserving a week of deep exploration.
+tags: [Database, PostgreSQL, SQLite, DuckDB, ClickHouse]
 ---
 
 > Author: Matt Blewitt, Original: 7 Databases in 7 Weeks (2025)

@@ -1,10 +1,10 @@
 ---
 title: "卡脖子：PGDG切断镜像站同步通道"
 date: 2025-07-07
-author: vonng
+author: 冯若航
 summary: >
   PGDG 切断 FTP rsync 同步通道，全球镜像站普遍断连，这次还真是卡了一把全球用户的脖子。
-tags: [PostgreSQL,PG管理]
+tags: [PostgreSQL, PG管理]
 ---
 
 

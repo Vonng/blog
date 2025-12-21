@@ -1,11 +1,11 @@
 ---
-title: 自建Supabase：创业出海的首选数据库
+title: "自建Supabase：创业出海的首选数据库"
 linkTitle: "自建Supabase其实很容易"
 date: 2024-11-25
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
-summary: Supabase 非常棒，拥有你自己的 Supabase 那就是棒上加棒！本文介绍了如何在本地/云端物理机/裸金属/虚拟机上自建企业级 Supabase。
-tags: [数据库,Supabase]
+author: 冯若航
+summary: >
+  Supabase 非常棒，拥有你自己的 Supabase 那就是棒上加棒！本文介绍了如何在本地/云端物理机/裸金属/虚拟机上自建企业级 Supabase。
+tags: [数据库, Supabase]
 ---
 
 

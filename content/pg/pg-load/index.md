@@ -1,12 +1,10 @@
 ---
 title: "PostgreSQL的KPI"
-linkTitle: "PostgreSQL的KPI"
 date: 2020-05-29
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/bG6KG7mmu4K7JMYMI34zCQ)
+author: 冯若航
 summary: >
-  管数据库和管人差不多，都需要定KPI（关键性能指标）。那么数据库的KPI是什么？本文介绍了一种衡量PostgreSQL负载的方式：使用一种单一横向可比，与负载类型和机器类型基本无关的指标，名曰**PG Load（PG负载）**。
-tags: [PostgreSQL,PG管理,监控,指标]
+  管数据库和管人差不多，都需要定KPI。本文介绍了一种衡量PostgreSQL负载的方式：使用一种单一横向可比的指标，名曰PG Load（PG负载）。
+tags: [PostgreSQL, PG管理, 监控, 指标]
 ---
 
 

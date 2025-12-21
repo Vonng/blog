@@ -1,11 +1,10 @@
 ---
 title: "PgBackRest2中文文档"
 date: 2018-02-07
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
-  PgBackRest是用perl写的一组PostgreSQL备份工具
-tags: [PostgreSQL,PG管理,备份]
+  PgBackRest是用perl写的一组PostgreSQL备份工具。
+tags: [PostgreSQL, PG管理, 备份]
 ---
 
 

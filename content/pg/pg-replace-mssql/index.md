@@ -1,12 +1,11 @@
 ---
-title: PostgreSQL可以替代微软SQL Server吗？
-linkTitle: PG可以替代MSSQL吗？
+title: "PostgreSQL可以替代微软SQL Server吗？"
+linkTitle: "PG可以替代MSSQL吗？"
 date: 2024-09-02
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信原文](https://mp.weixin.qq.com/s/c2TmMo0DflkSUli1BsLthQ)
+author: 冯若航
 summary: >
-  PostgreSQL 可以直接从内核层面替换掉 Oracle，SQL Server 与 MongoDB，当然，最彻底的还是 SQL Server，AWS 出品的 Babelfishpg 直接做到了线缆协议级兼容。
-tags: [PostgreSQL,PG生态,MSSQL]
+  PostgreSQL可以直接从内核层面替换掉Oracle、SQL Server与MongoDB，最彻底的是SQL Server，AWS出品的Babelfish直接做到了线缆协议级兼容。
+tags: [PostgreSQL, PG生态, MSSQL]
 ---
 
 

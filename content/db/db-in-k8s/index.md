@@ -1,14 +1,11 @@
 ---
-title: 数据库应该放入K8S里吗？
+title: "数据库应该放入K8S里吗？"
 date: 2023-12-05
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信公众号](https://mp.weixin.qq.com/s/4a8Qy4O80xqsnytC4l9lRg) | [Medium](https://medium.com/@fengruohang/database-in-kubernetes-is-that-a-good-idea-daf5775b5c1f)
+author: 冯若航
 summary: >
-  数据库是否应该放入 Kubernetes / Docker 里，到今天仍然是一个充满争议的话题。今天我们来讨论这里的利弊权衡，并深入探讨为什么将数据库放入 K8S 中不是一个明智的选择。  
-resources:
-  - { src: "12-factor.png", params: {byline: "*source*: https://user-images.githubusercontent.com/5445356/47986421-a8f62080-e117-11e8-9a39-3fdc6030c324.png"} }
-  - { src: "cncf-landscape.png", params: {byline: "*source*: [CNCF Landscape](https://landscape.cncf.io/)"} }
-tags: [数据库,Kubernetes]
+  数据库是否应该放入Kubernetes里，到今天仍然是一个充满争议的话题。K8S在无状态应用管理上非常趁手，但处理有状态服务特别是数据库时有本质局限性。本文深入探讨为什么将数据库放入K8S不是明智选择。
+series: ["正本清源"]
+tags: [数据库, Kubernetes, 容器化, 架构设计]
 ---
 
 数据库是否应该放入 Kubernetes / Docker 里，到今天仍然是一个充满争议的话题。k8s 作为一个先进的容器编排工具，在无状态应用管理上非常趁手；但其在处理有状态服务 —— 特别是PostgreSQL和MySQL这样的数据库时，有着本质上的局限性。

@@ -10,7 +10,9 @@ series: [Pigsty]
 tags: [Pigsty]
 ---
 
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.0.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v300) | [微信公众号](https://mp.weixin.qq.com/s/sxcPSFyPrFH4BDkg2bMB3Q)
 
+[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.0.0)
 
 --------
 

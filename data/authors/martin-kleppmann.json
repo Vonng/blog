@@ -1,0 +1,10 @@
+{
+  "name": "Martin Kleppmann",
+  "bio": "DDIA Author, Cambridge Professor",
+  "image": "img/martin-kleppmann.jpg",
+  "social": [
+    { "link": "https://martin.kleppmann.com/" },
+    { "github": "https://github.com/ept" },
+    { "twitter": "https://twitter.com/martinkl" }
+  ]
+}

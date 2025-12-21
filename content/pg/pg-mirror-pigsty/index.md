@@ -1,10 +1,10 @@
 ---
 title: "从PG“断供”看软件供应链中的信任问题"
 date: 2025-08-15
-author: vonng
+author: 冯若航
 summary: >
   PostgreSQL官方仓库切断全球镜像站同步通道，开源制成品断供，很好的试出了各家数据库厂商和云厂商的成色。
-tags: [PostgreSQL,PG管理]
+tags: [PostgreSQL, PG管理]
 ---
 
 这个月发生了一起沸沸扬扬的 “开源断供”事件—— [KubeSphere 删除镜像跑路](/cloud/kubesphere-rugpull)，

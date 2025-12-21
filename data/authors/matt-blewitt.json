@@ -1,0 +1,9 @@
+{
+  "name": "Matt Blewitt",
+  "bio": "Senior Engineering Manager @ Heroku, Database Infrastructure",
+  "image": "img/matt-blewitt.jpg",
+  "social": [
+    { "link": "https://matt.blwt.io/" },
+    { "github": "https://github.com/mble" }
+  ]
+}

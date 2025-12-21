@@ -1,12 +1,10 @@
 ---
-title: DBA还是一份好工作吗？
+title: "DBA还是一份好工作吗？"
 date: 2022-05-10
-hero: /hero/is-dba-good-job.jpg
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/Py3o31w3db5E9FsviAZeCA) | [知乎](https://zhuanlan.zhihu.com/p/519075926)
+author: 冯若航
 summary: >
-  蚂蚁金服有过一个自嘲的段子：能干翻支付宝的，除了监管就是DBA了。尽管DBA听上去是一个有着光辉历史与暗淡前景的行当，但天知道在几次恐怖的重大云数据库事故后，会不会重新成为潮流呢？
-tags: [下云,RDS,DBA]
+  蚂蚁金服有过一个自嘲的段子：能干翻支付宝的，除了监管就是DBA了。尽管DBA听上去是一个有着光辉历史与暗淡前景的行当，但天知道会不会重新成为潮流呢？
+tags: [下云, RDS, DBA]
 ---
 
 蚂蚁金服有过一个自嘲的段子：能干翻支付宝的，除了监管就是**DBA**了。

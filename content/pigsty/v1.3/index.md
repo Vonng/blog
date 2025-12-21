@@ -10,6 +10,10 @@ series: [Pigsty]
 tags: [Pigsty]
 ---
 
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v1.3.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v130) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484821&idx=1&sn=56e34b33f37b2555336591ad532ac7e7&chksm=fe4b304ec93cb9589c2bca821e5aaa1034c7dd5b9c580dec4b09ebe3b1ed20bb48df9dfd29ce&scene=21#wechat_redirect)
+
+[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v1.3.0)
+
 Pigsty v1.3 正式发布，新增 Redis 支持、PGCAT 应用重构、PGSQL 监控增强。
 
 ![featured](featured.jpg)

@@ -1,10 +1,10 @@
 ---
-title: Go数据库教程：database/sql
+title: "Go数据库教程：database/sql"
 date: 2017-08-24
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)
-summary: 同JDBC类似，Go也有标准的数据库访问接口。本文详细介绍了Go 语言中 database/sql的使用方法和注意事项。
-tags: [PostgreSQL,Go]
+author: 冯若航
+summary: >
+  同JDBC类似，Go也有标准的数据库访问接口。本文详细介绍了Go语言中database/sql的使用方法和注意事项。
+tags: [PostgreSQL, Go]
 ---
 
 Go使用SQL与类SQL数据库的惯例是通过标准库[database/sql](http://golang.org/pkg/database/sql/)。这是一个对关系型数据库的通用抽象，它提供了标准的、轻量的、面向行的接口。不过`database/sql`的包文档只讲它做了什么，却对如何使用只字未提。快速指南远比堆砌事实有用，本文讲述了`database/sql`的使用方法及其注意事项。

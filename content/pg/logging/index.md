@@ -1,11 +1,10 @@
 ---
 title: "PG服务器日志常规配置"
 date: 2018-02-06
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
   建议配置PostgreSQL的日志格式为CSV，方便分析，而且可以直接导入PostgreSQL数据表中。
-tags: [PostgreSQL,PG管理,日志]
+tags: [PostgreSQL, PG管理, 日志]
 ---
 
 

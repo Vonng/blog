@@ -1,11 +1,10 @@
 ---
 title: "源码编译安装 PostGIS"
 date: 2017-09-07
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
   PostGIS是PG的杀手锏插件，但编译安装可不容易。
-tags: [PostgreSQL,PG管理,扩展]
+tags: [PostgreSQL, PG管理, 扩展]
 ---
 
 

@@ -1,8 +1,7 @@
 ---
-title: PostgreSQL 17 beta1 发布！
+title: "PostgreSQL 17 beta1 发布！"
 date: 2024-05-24
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信](https://mp.weixin.qq.com/s/3EBoAHWEI6zZ-T0nNQsk4Q)
+author: 冯若航
 summary: >
   PostgreSQL 全球开发组宣布，PostgreSQL 17 的首个 Beta 版本现已开放，这次 PG 真的是把牙膏管给挤爆啦！
 tags: [PostgreSQL]

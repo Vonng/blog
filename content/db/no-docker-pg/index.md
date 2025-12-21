@@ -1,12 +1,11 @@
 ---
-title: "原地报废：不要在生产环境用 Docker 跑PostgreSQL！"
+title: "原地报废：不要在生产环境用Docker跑PostgreSQL！"
 linkTitle: "不要在生产环境用Docker跑PG"
 date: 2025-11-20
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)
+author: 冯若航
 summary: >
-  大量用官方 docker postgres 镜像的用户在最近小版本升级中翻车踩雷。老冯再次提醒，谨慎在容器中跑生产数据库。  
-tags: [PostgreSQL,Docker]
+  大量用官方Docker Postgres镜像的用户在最近小版本升级中翻车踩雷。早在2019年老冯就警告过不要在生产环境用容器运行PostgreSQL，因为你极大概率会遇上一堆物理机/虚拟机上根本不存在的麻烦。
+tags: [PostgreSQL, Docker, 运维踩坑]
 ---
 
 

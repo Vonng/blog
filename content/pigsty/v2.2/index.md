@@ -10,7 +10,9 @@ series: [Pigsty]
 tags: [Pigsty]
 ---
 
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.2.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v220) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485827&idx=1&sn=9b13273b559fa63e96d4ac77268bd00a&chksm=fe4b3c58c93cb54e87b062c6db4b3a712037e25dbfbe69aa50ad9b79abf2c97967b625fe1a7f&scene=21#wechat_redirect)
 
+[![](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v2.2.0)
 
 Pigsty v2.2 发布了 🎉，欢迎大家尝鲜！ 地表最强 PostgreSQL 监控系统迎来史诗级重大升级，基于 Grafana v10 彻底重制，将 PG 可观测性拔高到一个全新阶段，带来了全新的用户体验。**Demo**: **http://demo.pigsty.cc** 。
 

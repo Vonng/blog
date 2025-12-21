@@ -1,11 +1,10 @@
 ---
 title: "TimescaleDB 快速上手"
 date: 2018-09-07
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
   TimescaleDB是PostgreSQL的一个扩展插件，提供时序数据库的一些功能。
-tags: [PostgreSQL,PG管理,扩展]
+tags: [PostgreSQL, PG管理, 扩展]
 ---
 
 * 官方网站：https://www.timescale.com

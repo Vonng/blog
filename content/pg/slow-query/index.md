@@ -1,11 +1,10 @@
 ---
 title: "PG慢查询诊断方法论"
 date: 2021-02-23
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
   慢查询是在线业务数据库的大敌，本文介绍了使用监控系统定位诊断慢查询的一般方法论。
-tags: [PostgreSQL,PG管理,性能]
+tags: [PostgreSQL, PG管理, 性能]
 ---
 
 

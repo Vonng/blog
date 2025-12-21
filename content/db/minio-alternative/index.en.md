@@ -5,7 +5,7 @@ author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat](https://mp.weixin.qq.com/s/A7bAFSAk3dte7QfXu5qHQw)
 summary: >
   MinIO just entered maintenance mode. What replaces it? Can RustFS step in? I tested the contenders so you don’t have to.
-tags: [数据库,MinIO]
+tags: [Database, MinIO]
 ---
 
 MinIO announced maintenance mode two days ago. I ranted in “[MinIO Is Dead](/en/db/minio-is-dead)” and immediately got flooded with “so what now?”

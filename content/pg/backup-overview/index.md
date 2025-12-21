@@ -1,11 +1,10 @@
 ---
 title: "备份恢复手段概览"
 date: 2018-02-09
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
   备份是DBA的安身立命之本，有备份，就不用慌。
-tags: [PostgreSQL,PG管理,备份]
+tags: [PostgreSQL, PG管理, 备份]
 ---
 
 

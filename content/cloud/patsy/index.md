@@ -1,8 +1,7 @@
 ---
-title: 花钱买罪受的大冤种：逃离云计算妙瓦底
+title: "花钱买罪受的大冤种：逃离云计算妙瓦底"
 date: 2025-01-13
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/zwJ2T2Vh_R7xD8IKPso31Q)
+author: 冯若航
 summary: >
   一位用户咨询分布式数据库，但他并不是因为数据大到要冲破服务器柜门，而是又栽在了云计算妙瓦底的杀猪盘套路中。
 tags: [下云]

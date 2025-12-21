@@ -10,6 +10,10 @@ series: [Pigsty]
 tags: [Pigsty]
 ---
 
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.0.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v200) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485327&idx=1&sn=0d02f5e504266e5dd436c64d23844735&chksm=fe4b3254c93cbb427598322952d654c3383bfe8858ec7ffaee2b9ca0c84bebe6f763748a356f&scene=21#wechat_redirect)
+
+[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v2.0.0)
+
 **2023/02/28**，**Pigsty  v2.0.0 正式发布**，带来了一系列重大的功能更新。
 
 现在 **PIGSTY** 是 "**P**ostgreSQL **I**n **G**reat **STY**le"的首字母缩写，即"**全盛状态的 PostgreSQL**"。而 Pigsty 的定位也不再是 “**开箱即用的PostgreSQL数据库发行版**”，变成了 “**Me Better** **开源 RDS PG 替代**”。

@@ -10,6 +10,9 @@ series: [Pigsty]
 tags: [Pigsty]
 ---
 
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.7.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v370) | [微信公众号](https://mp.weixin.qq.com/s/Sui0kzOD9M_XYlNR-BZ1Ng)
+
+[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.7.0)
 
 Pigsty v3.7.0 正式发布，带来完整的 PostgreSQL 18 生产级支持，以及四个新操作系统的支持：Debian 13 与 EL 10 在 x86_64/ARM64 架构上的全部组合。扩展插件数量从 423 个增至 437 个，大量扩展同步更新至最新版本。
 

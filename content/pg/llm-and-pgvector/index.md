@@ -2,12 +2,10 @@
 title: "AI大模型与向量库 PGVector"
 linkTitle: "AI大模型与PGVector"
 date: 2023-05-10
-hero: /hero/llm-pgvector.jpg
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/R4jp1uTCiLOLGsiADZ9jxQ)
+author: 冯若航
 summary: >
-  本文聚焦被 AI 炒火了的**向量数据库**，介绍了AI嵌入与向量存储检索的基本原理，并用一个具体的知识库检索案例来串联介绍向量数据库插件 **PGVECTOR** 的功能、性能、获取与应用。
-tags: [PostgreSQL,PG开发,扩展,向量]
+  本文聚焦被 AI 炒火了的向量数据库，介绍了AI嵌入与向量存储检索的基本原理，并用一个具体的知识库检索案例来介绍向量数据库插件 PGVECTOR 的功能与应用。
+tags: [PostgreSQL, PG开发, 扩展, 向量]
 ---
 
 新 AI 应用在过去一年中出现了指数爆炸的增长态势，而这些应用面临的一个共同挑战是如何大规模地**存储**与**查询**以向量表示的 AI Embedding。本文聚焦被 AI 炒火了的**向量数据库**，介绍了AI嵌入与向量存储检索的基本原理，并用一个具体的知识库检索案例来串联介绍向量数据库插件 **PGVECTOR** 的功能、性能、获取与应用。

@@ -1,11 +1,10 @@
 ---
 title: "Bash与psql小技巧"
 date: 2018-04-07
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
   一些PostgreSQL与Bash交互的技巧。
-tags: [PostgreSQL,PG管理,工具]
+tags: [PostgreSQL, PG管理, 工具]
 ---
 
 

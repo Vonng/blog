@@ -1,12 +1,10 @@
 ---
 title: "GO与PG实现缓存同步"
-linkTitle: "GO与PG实现缓存同步"
 date: 2017-08-03
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
   巧妙运用Pg的Notify功能，可以方便地通知应用元数据变更，实现基于触发器的逻辑复制。
-tags: [PostgreSQL,PG开发,触发器]
+tags: [PostgreSQL, PG开发, 触发器]
 ---
 
 Parallel与Hierarchy是架构设计的两大法宝，**缓存**是Hierarchy在IO领域的体现。单线程场景下缓存机制的实现可以简单到不可思议，但很难想象成熟的应用会只有一个实例。在使用缓存的同时引入并发，就不得不考虑一个问题：如何保证每个实例的缓存与底层数据副本的数据一致性（和实时性）。

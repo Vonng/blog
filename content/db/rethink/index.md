@@ -1,12 +1,12 @@
 ---
-title: 正本清源：技术反思录
+title: "正本清源：技术反思录"
 date: 2023-05-29
-hero: /hero/rethink.jpg
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/Q0OtrpEhF24XN7gwMjbSRA)
+author: 冯若航
 summary: >
-  降本增效的主旋律触发了所有技术的价值重估，当然也包括 —— 数据库。本系列将评述 DB领域 热点技术，并对其在当下的利弊权衡发出灵魂拷问。 
-tags: [数据库]
+  降本增效的主旋律触发了所有技术的价值重估，当然也包括数据库。本系列将评述数据库领域热点技术，并对其在当下的利弊权衡发出灵魂拷问：云数据库、分布式数据库、微服务、K8S容器化等技术，究竟是真需求还是伪需求？
+series: ["正本清源"]
+tags: [数据库, 云计算, 架构设计, 技术评论]
+featured: true
 ---
 
 最近在技术圈有一些热议的话题，[云数据库是不是智商税？](/cloud/rds/)？[公有云是不是杀猪盘](/cloud/ebs/)？[分布式数据库是不是伪需求](/db/distributive-bullshit/)？[微服务是不是蠢主意](/db/microservice-bad-idea/)？[你还需要运维和DBA吗](https://mp.weixin.qq.com/s/Gk9bG_EOIv0IAkim41XRHg)？[中台是不是一场彻头彻尾的自欺欺人](https://mp.weixin.qq.com/s/VgTU7NcOwmrX-nbrBBeH_w)？在Twitter与HackerNews上也有大量关于这类话题的讨论与争辩。

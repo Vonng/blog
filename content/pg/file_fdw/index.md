@@ -2,11 +2,10 @@
 title: "file_fdw妙用无穷——从数据库读取系统信息"
 linkTitle: "FileFDW用例：读取OS信息"
 date: 2017-12-01
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
-  通过`file_fdw`，轻松查看操作系统信息，拉取网络数据，把各种各样的数据源轻松喂进数据库里统一查看管理。
-tags: [PostgreSQL,PG管理,扩展]
+  通过file_fdw，轻松查看操作系统信息，拉取网络数据，把各种各样的数据源轻松喂进数据库里统一查看管理。
+tags: [PostgreSQL, PG管理, 扩展]
 ---
 
 

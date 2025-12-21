@@ -10,6 +10,10 @@ series: [Pigsty]
 tags: [Pigsty]
 ---
 
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v1.0.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v100) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484729&idx=1&sn=179c470fe4a80b22a8c2e96a3e191e6e&chksm=fe4b30e2c93cb9f4db6bb5e379b6fd5a489539e8e5db1e0080a1e7946d6f4eb83ad7647ce11d&scene=21#wechat_redirect)
+
+[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v1.0.0)
+
 经过一年多的迭代与打磨，Pigsty 正式发布 **v1.0.0 GA** 版本。
 
 **Pigsty** (/ˈpɪɡˌstaɪ/) 是 **P**ostgre**S**QL **I**n **G**raphic **STY**le 的缩写，即"图形化 Postgres"。

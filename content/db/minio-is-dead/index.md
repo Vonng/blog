@@ -1,11 +1,10 @@
 ---
-title: MinIO 已死
+title: "MinIO已死"
 date: 2025-12-04
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信公众号](https://mp.weixin.qq.com/s/aBUwEMxZ_xKmHisaaT4uWw)
+author: 冯若航
 summary: >
-  MinIO 宣告进入维护模式，屠龙勇者成为新的恶龙 —— MinIO是如何从S3开源替代变成一家普通的商业软件公司的。
-tags: [数据库,MinIO,开源]
+  MinIO官方宣布开源项目进入"维护模式"，基本上宣告了MinIO作为一个开源项目的死亡。屠龙勇者成为新的恶龙——MinIO是如何从S3开源替代变成一家普通的商业软件公司的。
+tags: [对象存储, MinIO, S3, 开源]
 ---
 
 2025年12月3日，是个值得在开源软件历史上记一笔的日子。

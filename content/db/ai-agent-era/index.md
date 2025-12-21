@@ -1,8 +1,10 @@
 ---
 title: "AI时代，软件从数据库开始"
-summary: "未来的软件形态是 Agent + 数据库。没有前后端中间商，Agent直接CRUD。数据库技能相当保值，而 PostgreSQL 会成为 Agent 时代的数据库。"
 date: 2025-04-27
-tags: ["数据库", "PostgreSQL", "AI"]
+author: 冯若航
+summary: >
+  未来的软件形态是 Agent + 数据库，没有前后端中间商，Agent直接CRUD。微软CEO纳德拉预言SaaS已死，软件从数据库开始。数据库技能相当保值，PostgreSQL将成为AI Agent时代的核心数据库。
+tags: [数据库, PostgreSQL, AI, Agent, 软件架构]
 ---
 
 > [微信公众号](https://mp.weixin.qq.com/s/LykR-ewCx9aO9e09T45taw)

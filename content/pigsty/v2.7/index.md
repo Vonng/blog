@@ -5,10 +5,14 @@ date: 2024-05-21
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v2.7.0)）
 summary: >
-  收录255个PG扩展插件，PG扩展尽入吾彀中矣！提供Odoo, PolarDB, Supabase支持，专业版，以及“国产化支持”。
+  收录255个PG扩展插件，PG扩展尽入吾彀中矣！提供Odoo, PolarDB, Supabase支持，专业版，以及"国产化支持"。
 series: [Pigsty]
 tags: [Pigsty]
 ---
+
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.7.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v270) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487601&idx=1&sn=50a000140e8070a7f8c9171c0cf15acb&chksm=fe4b25aac93cacbc43f83bbde04a8f77bea86379acce81bd52b29b903e055d55d5f5c751ae22&scene=21#wechat_redirect)
+
+[![](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v2.7.0)
 
 2024-05-20，Pigsty v2.7 发布了。在这个版本中收录的可用扩展插件数量，达到了惊人的 **255** 个，成功让 PostgreSQL 的**全能性**又达到了一个全新高度！
 

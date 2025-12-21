@@ -1,13 +1,13 @@
 ---
 title: "MySQL性能越来越差，Sakila将何去何从？"
-linkTitle: "MySQL 到底将何去何从？"
+linkTitle: "MySQL到底将何去何从？"
 date: 2024-06-19
-showAuthor: false
+authors: [marco-tusa]
+origin: "https://www.percona.com/blog/sakila-where-are-you-going/"
 summary: >
-  MySQL版本越高性能反而越差？在PostgreSQL高歌猛进，吞噬数据库世界的同时，MySQL的性能和功能被甩开的越来越远。为啥MySQL在Oracle手中止步不前？我看主要还是云厂商白嫖的锅，PG应当引以为戒。
-series: [MySQL走好]
-series_order: 2
-tags: [数据库,MySQL]
+  MySQL版本越高性能反而越差？Percona监控发现从5.7迁移到8.x的步伐明显缓慢。在PostgreSQL高歌猛进吞噬数据库世界的同时，MySQL的性能和功能被甩开越来越远。云厂商白嫖是主要原因之一。
+series: ["MySQL走好"]
+tags: [数据库, MySQL, 性能, 技术评论, 翻译]
 ---
 
 > 作者： [Marco Tusa](https://www.percona.com/blog/author/tusa) | 译：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信原文](https://mp.weixin.qq.com/s/nKD00j84R-EcOU1VPL1ibA) | [Percona's Blog](https://www.percona.com/blog/sakila-where-are-you-going/)
@@ -27,7 +27,7 @@ tags: [数据库,MySQL]
 
 > 作者：Percona Blog，Marco Tusa，MySQL 生态的重要贡献者，开发了知名的PT系列工具，MySQL备份工具，监控工具与发行版。
 >
-> 译者：冯若航，网名 Vonng，Pigsty 作者，PostgreSQL 专家与布道师。下云倡导者，数据库下云实践者。
+> 译者：Vonng，Pigsty 作者，PostgreSQL 专家与布道师。下云倡导者，数据库下云实践者。
 
 
 

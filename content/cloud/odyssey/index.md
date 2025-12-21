@@ -1,12 +1,11 @@
 ---
-title: 下云奥德赛：该放弃云计算了吗？
+title: "下云奥德赛：该放弃云计算了吗？"
 date: 2023-07-07
-hero: /hero/odyssey.jpg
-author: |
-  [DHH](https://world.hey.com/dhh) | 译：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/CicctyvV1xk5B-AsKfzPjw) | [知乎](https://zhuanlan.zhihu.com/p/664817848)
+authors: [dhh]
+origin: "https://world.hey.com/dhh"
 summary: >
-  本文翻译了下云先锋 DHH 主导 37Signal 从云上搬下来的完整旅程，并按照时间倒序排列组织并译为中文。无论是对于准备上云，还是已经在云上的企业，都非常有借鉴与参考价值。
-tags: [下云,DHH]
+  本文翻译了下云先锋DHH主导37Signal从云上搬下来的完整旅程，无论是对于准备上云，还是已经在云上的企业，都非常有借鉴与参考价值。
+tags: [下云, DHH, 翻译]
 ---
 
 DHH一直以来都是下云先锋，本文摘取了DHH博客关于下云相关的十篇文章，记录了 37Signal 从云上搬下来的完整旅程，按照时间倒序排列组织，译为中文，以飨读者。本文翻译了DHH从云上下来的完整旅程，对于准备上云，云上的企业都非常有借鉴与参考价值。
@@ -29,7 +28,7 @@ DHH一直以来都是下云先锋，本文摘取了DHH博客关于下云相关�
 
 作者：**David Heinemeier Hansson**，网名DHH。 37 Signal 联创与CTO，Ruby on Rails 作者，下云倡导者、实践者、领跑者。反击科技巨头垄断的先锋。[Hey博客](https://world.hey.com/dhh)
 
-译者：**冯若航**，网名 Vonng.磐吉云数创始人与CEO。Pigsty 作者，PostgreSQL 专家与布道师。云计算泥石流，数据库老司机，下云倡导者，数据库下云实践者。[Vonng博客](https://vonng.com/cn/)
+译者：**Vonng**，磐吉云数创始人与CEO。Pigsty 作者，PostgreSQL 专家与布道师。云计算泥石流，数据库老司机，下云倡导者，数据库下云实践者。[Vonng博客](https://vonng.com/cn/)
 
 [![](featured.png)](https://mp.weixin.qq.com/s/H2S3TV-AsqS43A5Hh-XMhQ)
 

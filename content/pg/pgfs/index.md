@@ -1,10 +1,10 @@
 ---
-title: PGFS：将数据库作为文件系统
-linkTitle: "PGFS：将数据库作为文件系统"
+title: "PGFS：将数据库作为文件系统"
 date: 2025-03-21
-author: vonng 
-summary: 利用 JuiceFS，将 PostgreSQL 变为一个带 PITR 的文件系统！
-tags: [PostgreSQL,JuiceFS]
+author: 冯若航
+summary: >
+  利用 JuiceFS，将 PostgreSQL 变为一个带 PITR 的文件系统！
+tags: [PostgreSQL, JuiceFS]
 ---
 
 前几天，我收到了一条来自 Odoo 社区的需求， 对方苦恼于：“数据库能做PITR（Point-in-Time Recovery），那文件系统有没有办法一起回滚呢？”

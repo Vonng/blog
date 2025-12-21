@@ -1,13 +1,11 @@
 ---
-title: PostgreSQL神功大成！最全扩展仓库来了！
+title: "PostgreSQL神功大成！最全扩展仓库来了！"
 linkTitle: "PostgreSQL神功大成！"
 date: 2024-11-02
-hero: /hero/pg-eat-db-world.jpg
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信原文](https://mp.weixin.qq.com/s/Dv3--O0K70Fevz39r3T4Ag)
+author: 冯若航
 summary: >
-  PG扩展很多很强大，但如何安装并使用起来，一直都是社区的难题。现在有了Pigsty扩展仓库，390个强力插件开箱即用，有了这些扩展的加持，PG不能说在数据库里天下无敌，但也非常接近了。
-tags: [PostgreSQL,PG生态,扩展]
+  PG扩展很多很强大，但如何安装并使用起来一直都是社区的难题。现在有了Pigsty扩展仓库，390个强力插件开箱即用。
+tags: [PostgreSQL, PG生态, 扩展]
 ---
 
 

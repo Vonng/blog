@@ -1,12 +1,11 @@
 ---
-title: 技术极简主义：一切皆用Postgres
+title: "技术极简主义：一切皆用Postgres"
 date: 2024-02-19
-showAuthor: false
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/bx2dRxlrtLcM6AD2qsplQQ)
+authors: [stephan-schmidt]
+origin: "https://www.amazingcto.com/postgres-for-everything/"
 summary: >
-  **生产环境的数据库**是否应当放入容器中，仍然是一个充满争议的问题。站在DBA的立场上，我认为就**目前而言**，将生产环境数据库放入Docker中仍然是一个馊主意。
-tags: [PostgreSQL,PG生态]
+  使用 Postgres 替代 Kafka、RabbitMQ、ElasticSearch、Mongo 和 Redis 是切实可行的方式，可以极大降低系统复杂度。
+tags: [PostgreSQL, PG生态, 翻译]
 ---
 
 本文由 Stephan Schmidt @ KingOfCoders **发表于 Hacker News 并引发热议**[1]：使用 Postgres 替代 Kafka、RabbitMQ、ElasticSearch、Mongo 和 Redis 是一种切实可行的方式，这样做可以极大降低系统复杂度，并将敏捷性发挥到极致。
@@ -73,7 +72,7 @@ tags: [PostgreSQL,PG生态]
 
 ### 译者评论
 
-译者：**冯若航**，创业者与 PostgreSQL 专家，下云倡导者，开源 PG RDS 替代，开箱即用的 PostgreSQL 发行版 —— [Pigsty](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485518&idx=1&sn=3d5f3c753facc829b2300a15df50d237&chksm=fe4b3d95c93cb4833b8e80433cff46a893f939154be60a2a24ee96598f96b32271301abfda1f&scene=21#wechat_redirect) 作者。
+译者：**Vonng**，创业者与 PostgreSQL 专家，下云倡导者，开源 PG RDS 替代，开箱即用的 PostgreSQL 发行版 —— [Pigsty](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485518&idx=1&sn=3d5f3c753facc829b2300a15df50d237&chksm=fe4b3d95c93cb4833b8e80433cff46a893f939154be60a2a24ee96598f96b32271301abfda1f&scene=21#wechat_redirect) 作者。
 
 使用 Postgres 完成一切工作并不是一种空想，而是一种正在流行起来的最佳实践。对此我感到非常欣慰：早在 2016 年时我便看到了这里的潜力[12]并选择躬身入局，而事情的发展正如所愿。
 

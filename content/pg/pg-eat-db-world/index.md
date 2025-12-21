@@ -1,15 +1,10 @@
 ---
-title: PostgreSQL 正在吞噬数据库世界
+title: "PostgreSQL 正在吞噬数据库世界"
 date: 2024-03-04
-hero: /hero/pg-eat-db-world.jpg
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信原文](https://mp.weixin.qq.com/s/8_uhRH93oAoHZqoC90DA6g) | [Medium](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4)
+author: 冯若航
 summary: >
-  PostgreSQL 并不是一个简单的关系型数据库，而是一个数据管理的抽象框架，具有吞噬整个数据库世界的力量。而这也是正在发生的事情 —— “一切皆用 Postgres” 已经不再是少数精英团队的前沿探索，而是成为了一种进入主流视野的最佳实践。
-resources:
-  - { src: "ddia.png", params: {byline: "*source*: http://ddia.vonng.com/#/ch3"} }
-  - { src: "pg-survey.png", params: {byline: "*source*: https://www.timescale.com/state-of-postgres/2022/"} }
-tags: [PostgreSQL,PG生态,扩展]
+  PostgreSQL并不是一个简单的关系型数据库，而是一个数据管理的抽象框架，具有吞噬整个数据库世界的力量。"一切皆用Postgres"已经成为主流视野的最佳实践。
+tags: [PostgreSQL, PG生态, 扩展]
 ---
 
 

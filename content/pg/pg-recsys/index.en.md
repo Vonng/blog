@@ -5,7 +5,7 @@ author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: >
   Five minutes, PostgreSQL, and the MovieLens dataset—that’s all you need to implement a classic item-based collaborative filtering recommender.
-tags: [PostgreSQL,PG开发,推荐系统]
+tags: [PostgreSQL, Development, Recommendation System]
 ---
 
 Everyone knows “item-based collaborative filtering” (ItemCF): Amazon recommendations, YouTube watch-next, etc. Here’s how to implement it in PostgreSQL using the [MovieLens](https://grouplens.org/datasets/movielens/) dataset. No Python, just SQL.

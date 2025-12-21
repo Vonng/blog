@@ -1,9 +1,10 @@
 ---
-title: "Etcd 坑了多少公司？"
-summary: "因为 Etcd 而翻车的公司并非少数，如果你在自己折腾 Kubernetes，那么大概会在这上面翻次车。"
+title: "Etcd坑了多少公司？"
 date: 2025-05-07
-tags: ["数据库", "etcd"]
-categories: ["Blog"]
+author: 冯若航
+summary: >
+  因为Etcd而翻车的公司并非少数。Etcd有一个坑爹的默认设计：写满2GB数据就挂了。如果你在自己折腾Kubernetes或使用Patroni做PostgreSQL高可用，大概率会在这上面翻车。
+tags: [数据库, etcd, Kubernetes, 运维踩坑]
 ---
 
 

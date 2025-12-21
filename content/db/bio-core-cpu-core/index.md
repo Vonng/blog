@@ -1,13 +1,12 @@
 ---
-title: 先优化碳基BIO核，再优化硅基CPU核
-linkTitle: 先优化BIO核，再优化CPU核
+title: "先优化碳基BIO核，再优化硅基CPU核"
+linkTitle: "先优化BIO核，再优化CPU核"
 date: 2024-09-07
-author: |
-  [DHH](https://world.hey.com/dhh/optimize-for-bio-cores-first-silicon-cores-second-112a6c3f) | [译者：冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信公众号]()
+authors: [dhh]
+origin: "https://world.hey.com/dhh/optimize-for-bio-cores-first-silicon-cores-second-112a6c3f"
 summary: >
-  程序员是昂贵稀缺的生物计算核心，软件成本的锚钉 —— 优化CPU核前请优先考虑优化生物核。
-module: []
-tags: [数据库]
+  程序员是昂贵稀缺的生物计算核心，是软件成本的锚钉。硅制计算内核丰富而成本不断下降，而生物核却日益稀缺昂贵。因此优化CPU核之前，请优先考虑优化生物核——这正是Ruby on Rails的设计哲学。
+tags: [软件工程, 研发效能, Ruby, 翻译]
 ---
 
 
@@ -36,7 +35,7 @@ tags: [数据库]
 
 > 作者：David Heinemeier Hansson，DHH，37 Signal CTO，Ruby on Rails 作者
 >
-> 译者：冯若航，PostgreSQL Hacker，开源 RDS PG —— Pigsty 作者，数据库老司机，云计算泥石流。
+> 译者：Vonng，PostgreSQL Hacker，开源 RDS PG —— Pigsty 作者，数据库老司机，云计算泥石流。
 >
 > [优先优化生物内核，其次是硅内核](https://world.hey.com/dhh/optimize-for-bio-cores-first-silicon-cores-second-112a6c3f) @ 2024-09-06
 

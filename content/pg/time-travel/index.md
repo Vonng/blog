@@ -1,12 +1,11 @@
 ---
-title: "故障档案:时间回溯导致的Patroni故障"
+title: "故障档案：时间回溯导致的Patroni故障"
 linkTitle: "故障档案：NTP/Patroni"
 date: 2021-02-22
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
   机器因为故障重启，NTP服务在PG启动后修复了PG的时间，导致Patroni无法启动。
-tags: [PostgreSQL,PG管理,故障档案]
+tags: [PostgreSQL, PG管理, 故障档案]
 ---
 
 

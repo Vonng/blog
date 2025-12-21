@@ -1,11 +1,10 @@
 ---
 title: "用 Exclude 实现互斥约束"
 date: 2018-04-06
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
   Exclude约束是一个PostgreSQL扩展，它可以实现一些更高级，更巧妙的的数据库约束。
-tags: [PostgreSQL,PG开发,SQL]
+tags: [PostgreSQL, PG开发, SQL]
 ---
 
 Exclude约束是一个PostgreSQL扩展，它可以实现一些更高级，更巧妙的的数据库约束。

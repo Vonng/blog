@@ -1,12 +1,10 @@
 ---
 title: "UUID性质原理与应用"
-linkTitle: "UUID性质原理与应用"
 date: 2016-11-06
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
   UUID性质原理与应用，以及如何利用PostgreSQL的存储过程操作UUID。
-tags: [PostgreSQL,PG开发,架构]
+tags: [PostgreSQL, PG开发, 架构]
 ---
 
 

@@ -1,12 +1,11 @@
 ---
-title: MySQL安魂九霄，PostgreSQL驶向云外
+title: "MySQL安魂九霄，PostgreSQL驶向云外"
 date: 2024-07-08
-author: vonng
-summary: | 
-  MySQL 9 新发布，这个所谓“创新版”成为一个酸楚的笑话 —— 曾经“最流行”的数据库 MySQL 正在死去。MySQL is dead，Long live PostgreSQL！
-series: [MySQL走好]
-series_order: 1
-tags: [数据库,MySQL,PostgreSQL]
+author: 冯若航
+summary: >
+  MySQL 9.0终于发布，距离上一次大版本更新已经过去八年。然而这个空洞无物的所谓"创新版本"犹如一个恶劣的玩笑，宣告着MySQL正在死去。Percona CEO也表示：有了PostgreSQL，谁还需要MySQL呢？
+series: ["MySQL走好"]
+tags: [数据库, MySQL, PostgreSQL, 技术评论]
 ---
 
 > [微信公众号](https://mp.weixin.qq.com/s/JgGCn9o2-DNPNqazPZXTtA)

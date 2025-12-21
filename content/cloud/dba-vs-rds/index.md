@@ -1,12 +1,10 @@
 ---
-title: DBA会被云淘汰吗？
+title: "DBA会被云淘汰吗？"
 date: 2024-02-02
-hero: /hero/dba-vs-rds.jpg
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/W1hwbl3qmjC4Dcmadc8uSg)
+author: 冯若航
 summary: >
-  前天开源漫谈第九期主题《[DBA会被云淘汰吗？](https://mp.weixin.qq.com/s/T4waTPvcSRdCv8pCl4MdOw)》，我作为主持人全程克制着自己亲自下场的冲动，因此特此写了这篇文章来聊聊这个问题 ： DBA 会被云淘汰吗？  
-tags: [下云,DBA,RDS]
+  开源漫谈第九期主题《DBA会被云淘汰吗？》，我作为主持人全程克制着自己亲自下场的冲动，因此特此写了这篇文章来聊聊这个问题。
+tags: [下云, DBA, RDS]
 ---
 
 前天开源漫谈第九期主题《[DBA会被云淘汰吗？](https://mp.weixin.qq.com/s/T4waTPvcSRdCv8pCl4MdOw)》，我作为主持人全程克制着自己亲自下场的冲动，因此特此写了这篇文章来聊聊这个问题 ： DBA 会被云淘汰吗？

@@ -1,16 +1,17 @@
 ---
 title: "是时候和GPL说再见了"
 date: 2021-09-16
-showAuthor: false
+authors: [martin-kleppmann]
+origin: "https://martin.kleppmann.com/2021/04/14/goodbye-gpl.html"
 summary: >
-  本文提出，在2020年，计算自由的敌人是**云软件**，并倡导 **本地优先软件** 的概念。 
-tags: [数据库,开源]
+  DDIA作者Martin Kleppmann认为应远离GPL及相关许可证，因为它们未能实现其目的，造成的麻烦比产生的价值更大。在2020年代，计算自由的敌人是云软件，本文倡导本地优先软件的概念。
+tags: [开源, 许可证, GPL, 本地优先, 翻译]
 ---
 
 
-原文由 Martin Kleppmann 于2021年4月14日发表，译者：冯若航。[原文地址](https://martin.kleppmann.com/2021/04/14/goodbye-gpl.html)
+原文由 Martin Kleppmann 于2021年4月14日发表，译者：Vonng。[原文地址](https://martin.kleppmann.com/2021/04/14/goodbye-gpl.html)
 
-> Martin Kleppmann是《设计数据密集型应用》（a.k.a DDIA）的作者，译者冯若航为该书中文译者。
+> Martin Kleppmann是《设计数据密集型应用》（a.k.a DDIA）的作者，译者 Vonng 为该书中文译者。
 
 本文的导火索是Richard Stallman[恢复原职](https://www.fsf.org/news/statement-of-fsf-board-on-election-of-richard-stallman)，对于[自由软件基金会](https://www.fsf.org/)（FSF）的董事会而言，这是一位[充满争议的人物](https://rms-open-letter.github.io/)。我对此感到震惊，并与其他人一起呼吁将他撤职。这次事件让我重新评估了自由软件基金会在计算机领域的地位 —— 它是GNU项目（[宽泛地说](https://www.gnu.org/gnu/incorrect-quotation.en.html)它属于Linux发行版的一部分）和以[GNU通用公共许可证](https://en.wikipedia.org/wiki/GNU_General_Public_License)（GPL）为中心的软件许可证系列的管理者。这些努力不幸被Stallman的行为所玷污。**然而这并不是我今天真正想谈的内容**。
 

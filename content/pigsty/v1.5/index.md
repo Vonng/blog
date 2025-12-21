@@ -10,6 +10,9 @@ series: [Pigsty]
 tags: [Pigsty]
 ---
 
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v1.5.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v150) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485125&idx=1&sn=d06a14013aa02ecd1da307b4b3038054&chksm=fe4b331ec93cba08624adb70e626e4b45ede9ea5d8ae01fad779e82687ff0064c56bf9b42187&scene=21#wechat_redirect)
+
+[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v1.5.0)
 
 Pigsty v1.5 正式发布！完整的 Docker 支持带来了丰富的应用生态，无数使用数据库的软件均可**开箱即用**！
 

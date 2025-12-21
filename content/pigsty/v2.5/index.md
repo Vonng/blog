@@ -10,6 +10,9 @@ series: [Pigsty]
 tags: [Pigsty]
 ---
 
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.5.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v250) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486283&idx=1&sn=4b63f438df33291a3deb1052bea31347&chksm=fe4b3e90c93cb786a54407a4f7e552b2c8b28478b28df852e41f5d9e2c991761dddbc9a5a813&scene=21#wechat_redirect)
+
+[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v2.5.0)
 
 时值 1024 程序员节，Pigsty v2.5.0 发布了 🎉，这个版本添加了对 **Ubuntu** 与 **Debian** 系操作系统的支持，加上原有的 **EL7/8/9** 支持，可谓实现了主流 Linux 操作系统大满贯。
 

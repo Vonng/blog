@@ -1,12 +1,10 @@
 ---
-title: PG生态新玩家：ParadeDB
+title: "PG生态新玩家：ParadeDB"
 date: 2024-02-18
-hero: /hero/paradedb.jpg
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
-  ParadeDB 旨在成为 Elasticsearch 的替代：Modern Elasticsearch Alternative built on Postgres —— 就是用于搜索和分析的 PostgreSQL。
-tags: [PostgreSQL,PG生态,扩展]
+  ParadeDB 旨在成为 Elasticsearch 的替代：用于搜索和分析的 PostgreSQL。
+tags: [PostgreSQL, PG生态, 扩展]
 ---
 
 > [微信公众号原文链接](https://mp.weixin.qq.com/s/bx2dRxlrtLcM6AD2qsplQQ)

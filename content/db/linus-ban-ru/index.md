@@ -1,12 +1,11 @@
 ---
-title: 开源“暴君”Linus清洗整风
+title: "开源“暴君”Linus清洗整风"
 linkTitle: "开源暴君Linus清君侧"
 date: 2024-10-25
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信原文](https://mp.weixin.qq.com/s/IcmXCMyflqGlAPA8vFzyyA)
+author: 冯若航
 summary: >
-  Linux 社区本质是帝制的 —— 而 Linus 本人就是最早且最成功的技术独裁者，大家习惯于 Linus 的慷慨，却忘记了这一点。
-tags: [Linux,开源]
+  Linus踢出了几位俄罗斯籍开发者，引发开源世界一片哀嚎。但Linux是Linus的个人项目，三十年前是，现在也依然是。Linux社区本质是帝制的，而Linus本人就是最早且最成功的技术独裁者。
+tags: [Linux, 开源, 技术评论]
 ---
 
 最近Linus在项目中[**踢出了几位俄罗斯籍开发者**](https://lore.kernel.org/all/CAHk-=whNGNVnYHHSXUAsWds_MoZ-iEgRMQMxZZ0z-jY4uHT+Gg@mail.gmail.com/)，引发开源世界中的一片哀嚎声。但其实很多人都忘记了，Linux 是 Linus 的个人项目，三十年前是，现在也依然是。Linus 本人始终亲自掌握着开源项目的最高权力 —— Linux 的发布权。Linux 社区本质是帝制的 —— 而 Linus 本人就是最早且最成功的技术独裁者。

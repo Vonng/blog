@@ -1,9 +1,8 @@
 ---
-title: 不要更新！发布当日叫停：PG也躲不过大翻车
+title: "不要更新！发布当日叫停：PG也躲不过大翻车"
 linkTitle: "发布当日叫停：PG也躲不过大翻车"
 date: 2024-11-16
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/l1BgfLaRKNNEqHyfx33E6A)
+author: 冯若航
 summary: >
   不要在星期五发布代码，否则你会多忙一整周！PG小版本发布当天，紧急回滚新发布的小版本。
 tags: [PostgreSQL]

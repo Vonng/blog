@@ -1,11 +1,10 @@
 ---
-title: 剖析阿里云服务器算力成本
+title: "剖析阿里云服务器算力成本"
 date: 2024-03-10
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/rp8Dtvyo9cItBJSsvfrKjw)
+author: 冯若航
 summary: >
-  阿里云号称大降价，但如果实际剖析一下云服务器的成本，还是不难看出云上的算力与存储依然贵的离谱。 
-tags: [下云,ECS]
+  阿里云号称大降价，但如果实际剖析一下云服务器的成本，还是不难看出云上的算力与存储依然贵的离谱。
+tags: [下云, ECS, 阿里云]
 ---
 
 2024年2月29号疯狂星期四，阿里云搞了个[**大降价**](https://mp.weixin.qq.com/s/xO48vyZKwxLOZdQa5AD_gw)，[**软文**](https://mp.weixin.qq.com/s/CXkqD_d-pIpTl9sM_3iHoA)漫天飞舞，作为**云计算泥石流**，不少朋友在后台留言让我点评一下。满屏的 20%，50% off 看上去好像降的很壮观，但外行看热闹，内行看门道：[**云服务的成本大头在于存储**](/cloud/ebs)。

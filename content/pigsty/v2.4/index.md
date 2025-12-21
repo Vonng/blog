@@ -10,7 +10,9 @@ series: [Pigsty]
 tags: [Pigsty]
 ---
 
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.4.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v240) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486118&idx=1&sn=5b67544e104fc4fbda1a18198252377b&chksm=fe4b3f7dc93cb66b1e075585e0c40da03813222f24c6877bedde334647aabdbe28918014360f&scene=21#wechat_redirect)
 
+[![](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v2.4.0)
 
 PostgreSQL 今天发布了新的大版本 16，带来了一系列改进。Pigsty在发布后的1小时内便立即跟进了全新版本 Pigsty v2.4 ，提供了对 PostgreSQL 16 正式版的完整支持。此外在 v2.4 中，还对监控已有PG实例，特别是 RDS for PostgreSQL 与 PolarDB 提供了额外的支持。Redis 监控基于 7.x 进行了改进，提供了自动化的基于 Sentinel 的高可用配置。
 

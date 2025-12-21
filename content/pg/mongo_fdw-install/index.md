@@ -2,11 +2,10 @@
 title: "PostgreSQL MongoFDW安装部署"
 linkTitle: "MongoFDW安装部署"
 date: 2016-05-28
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
-  最近有业务要求通过PostgreSQL FDW去访问MongoDB，但是，MongoDB FDW 编译起来真是要人命啊。
-tags: [PostgreSQL,PG管理,扩展]
+  最近有业务要求通过PostgreSQL FDW去访问MongoDB，但是MongoDB FDW编译起来真是要人命啊。
+tags: [PostgreSQL, PG管理, 扩展]
 ---
 
 > 更新：最近MongoFDW已经由Cybertech接手维护，也许没有这么不堪了。

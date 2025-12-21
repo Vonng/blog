@@ -10,6 +10,9 @@ series: [Pigsty]
 tags: [Pigsty]
 ---
 
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.4.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v340) | [微信公众号](https://mp.weixin.qq.com/s/nhvw2BmpTufMeEyyTb9fbw)
+
+[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.4.0)
 
 经过一个月的密集开发，Pigsty v3.4 正式发布。本版本进行了显著的架构优化，解决了用户和客户高度关注的几个核心问题：
 

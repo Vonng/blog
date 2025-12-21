@@ -1,12 +1,11 @@
 ---
-title: 删库：Google云爆破了大基金的整个云账户
-linkTitle: Google云删库：UniSuper
+title: "删库：Google云爆破了大基金的整个云账户"
+linkTitle: "Google云删库：UniSuper"
 date: 2024-05-11
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信公众号](https://mp.weixin.qq.com/s/eH5HBbL7cQhjQY8rm1gFLQ)
+author: 冯若航
 summary: >
-  由于“前所未有的配置错误”，Google 云误删了万亿人民币基金大户 **UniSuper** 的整个云账户，云环境和所有异地备份，创下了云计算历史上的全新记录！
-tags: [下云,云故障]
+  由于"前所未有的配置错误"，Google云误删了万亿人民币基金大户UniSuper的整个云账户、云环境和所有异地备份，创下云计算历史上的全新记录！
+tags: [下云, 云故障, GCP]
 ---
 
 

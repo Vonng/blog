@@ -1,8 +1,7 @@
 ---
-title: WordPress社区内战：论共同体划界问题
+title: "WordPress社区内战：论共同体划界问题"
 date: 2024-10-17
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/https://mp.weixin.qq.com/s/tNeqnBUjWhk8Vu_tIABMjg)
+author: 冯若航
 summary: >
   当开源理想遇上商业冲突，这对开源软件社区与云厂商之间的冲突又能带来什么启示？论社区边界划定的重要性。
 tags: [开源]

@@ -1,0 +1,10 @@
+{
+  "name": "Bohan Zhang",
+  "bio": "Engineer @ OpenAI Infra, OtterTune Co-founder",
+  "image": "img/bohan-zhang.jpg",
+  "social": [
+    { "link": "https://bohanzhang.me/" },
+    { "twitter": "https://twitter.com/BohanZhangOT" },
+    { "linkedin": "https://www.linkedin.com/in/bohan-zhang-52b17714b/" }
+  ]
+}

@@ -1,11 +1,10 @@
 ---
-title: 数据库即业务架构
+title: "数据库即业务架构"
 date: 2025-01-22
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)
+author: 冯若航
 summary: >
-  数据库是业务架构的核心，但如果更进一步，让数据库成为业务架构本身，那么会发生什么？
-tags: [PostgreSQL]
+  数据库是业务架构的核心，这是不言自明的共识。但如果更进一步，将数据库作为业务架构本身，将业务逻辑、Web Server甚至整个前后端都放入数据库中，又会擦出怎样的火花？
+tags: [数据库, PostgreSQL, 架构设计, Omnigres]
 ---
 
 

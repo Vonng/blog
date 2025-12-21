@@ -2,11 +2,10 @@
 title: "使用sysbench测试PostgreSQL性能"
 linkTitle: "使用sysbench测试性能"
 date: 2018-02-06
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
   尽管PostgreSQL提供了pgbench，但有时候为了吊打一下MySQL，还是需要用到sysbench的。
-tags: [PostgreSQL,PG管理,性能]
+tags: [PostgreSQL, PG管理, 性能]
 ---
 
 

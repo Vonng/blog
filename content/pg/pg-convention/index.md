@@ -1,12 +1,10 @@
 ---
-title: PostgreSQL 规约（2024版）
+title: "PostgreSQL 规约（2024版）"
 date: 2024-10-09
-hero: /hero/pg-convention.jpg
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)
+author: 冯若航
 summary: >
-  没有规矩，不成方圆。本文是 22-24 年针对 PostgreSQL 15-17 大版本的更新，希望可以减少大家在使用与管理 PostgreSQL 数据库过程中遇到的困惑。
-tags: [PostgreSQL,PG开发]
+  没有规矩，不成方圆。本文是22-24年针对PostgreSQL 15-17大版本的更新，希望可以减少大家在使用与管理PostgreSQL数据库过程中遇到的困惑。
+tags: [PostgreSQL, PG开发]
 ---
 
 

@@ -2,11 +2,10 @@
 title: "故障档案：序列号消耗过快导致整型溢出"
 linkTitle: "故障档案：序列号溢出"
 date: 2018-07-20
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
   如果您在表上用了Interger的序列号，最好还是考虑一下可能溢出的情况。
-tags: [PostgreSQL,PG管理,故障档案]
+tags: [PostgreSQL, PG管理, 故障档案]
 ---
 
 

@@ -1,12 +1,11 @@
 ---
-title: Victoria：吊打业界的可观测性全家桶来了
-linkTitle: "Victoria 可观测性全家桶来了"
+title: "Victoria：吊打业界的可观测性全家桶来了"
+linkTitle: "Victoria可观测性全家桶来了"
 date: 2025-12-17
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信原文](https://mp.weixin.qq.com/s/RLN0DMzfvSibkGgq2VRcoQ)
+author: 冯若航
 summary: >
-  Victoria 是朴实无华的强悍 —— 用几分之一的资源，实现 Prometheus + Loki 几倍的效果，效果非常炸裂。
-tags: [Victoria,可观测性]
+  Victoria是朴实无华的强悍——用几分之一的资源，实现Prometheus + Loki几倍的效果。内存/磁盘使用量是Prometheus的1/4，查询性能则是4倍左右。Pigsty v4.0将全面采用Victoria全家桶。
+tags: [可观测性, VictoriaMetrics, Prometheus, 监控]
 ---
 
 

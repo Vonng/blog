@@ -1,10 +1,11 @@
 ---
 title: "小数据的失落十年：分布式分析的错付"
-summary: "如果 2012 年 DuckDB 问世，也许那场数据分析向分布式架构的大迁移根本就不会发生。通过在2012年的Macbook笔记本上运行 TPC-H 评测，我们发现确实在分布式分析上走了十年弯路。"
 date: 2025-05-23
-tags: ["DuckDB", "OLAP"]
-categories: ["Blog"]
-
+author: Hannes Mühleisen
+origin: "https://duckdb.org/2025/05/19/the-lost-decade-of-small-data.html"
+summary: >
+  如果2012年DuckDB问世，也许那场数据分析向分布式架构的大迁移根本就不会发生。在2012年的MacBook上运行TPC-H评测显示，数据分析确实在分布式架构上走了十年弯路。数据其实没那么大。
+tags: [数据库, DuckDB, OLAP, 分布式系统]
 ---
 
 > [英文原文](https://duckdb.org/2025/05/19/the-lost-decade-of-small-data.html) | [微信原文](https://mp.weixin.qq.com/s/rfv_oSRD4LS-W9xFd_WB9g)** | 2025年05月23日

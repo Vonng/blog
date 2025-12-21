@@ -1,13 +1,11 @@
 ---
-title: MySQL 与白酒：互联网行业的服从测试
-linkTitle: "MySQL 与白酒：互联网行业的服从测试"
+title: "MySQL与白酒：互联网行业的服从测试"
 date: 2025-12-20
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信原文]https://mp.weixin.qq.com/s/SBZRQCCZ7PmsbDSgcRaqBQ)
+author: 冯若航
 summary: >
-  互联网的 MySQL 就像中国的白酒：明明很难喝，却在文化规训下成了琼浆玉液。本质都是一种服从测试。
-series: [MySQL走好]
-tags: [MySQL,数据库]
+  互联网的MySQL就像中国的白酒：明明很难喝，却在文化规训下成了琼浆玉液。你的身体在用最原始的方式告诉你这不是食物，但旁边的领导前辈笑眯眯地看着你说：习惯就好了。本质都是一种服从测试。
+series: ["MySQL走好"]
+tags: [数据库, MySQL, 技术评论, 职场文化]
 ---
 
 

@@ -1,12 +1,10 @@
 ---
-title: AWS 故障官方复盘报告
-linkTitle: AWS 故障官方复盘报告
+title: "AWS 故障官方复盘报告"
 date: 2025-10-24
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/csopt3H5ZSh60vvcO-28hQ)
+author: 冯若航
 summary: >
   AWS DynamoDB 故障的官方复盘来了，老冯带您一起看看，到底是什么故障带崩了半个互联网。
-tags: [下云,AWS]
+tags: [下云, AWS, 云故障]
 ---
 
 

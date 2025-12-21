@@ -1,0 +1,10 @@
+{
+  "name": "Ajay Kulkarni",
+  "bio": "Timescale CEO & Co-founder",
+  "image": "img/ajay-kulkarni.jpg",
+  "social": [
+    { "link": "https://www.timescale.com/" },
+    { "linkedin": "https://www.linkedin.com/in/ajaykulkarni/" },
+    { "twitter": "https://twitter.com/akulkarni" }
+  ]
+}

@@ -1,13 +1,10 @@
 ---
-title: 开箱即用的PG发行版：Pigsty
-linkTitle: 开箱即用的PG发行版：Pigsty
+title: "开箱即用的PG发行版：Pigsty"
 date: 2021-05-24
-hero: /hero/pigsty-intro.jpg
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/yumrKS4bjwU-zeMTwJThxw)。
+author: 冯若航
 summary: >
-  昨天在PostgreSQL中文社区做了一个直播分享，介绍了开源的PostgreSQL全家桶解决方案 —— Pigsty 
-tags: [PostgreSQL,Pigsty,RDS]
+  昨天在PostgreSQL中文社区做了一个直播分享，介绍了开源的PostgreSQL全家桶解决方案 —— Pigsty。
+tags: [PostgreSQL, Pigsty, RDS]
 ---
 
 

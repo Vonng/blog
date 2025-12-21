@@ -2,11 +2,10 @@
 title: "故障档案：pg_dump导致的连接池污染"
 linkTitle: "故障档案：连接池污染"
 date: 2018-12-11
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
   有时候，组件之间的相互作用会以微妙的形式表现出来。例如使用pg_dump从连接池中导出数据，就可能产生连接池污染的问题。
-tags: [PostgreSQL,PG管理,故障档案]
+tags: [PostgreSQL, PG管理, 故障档案]
 ---
 
 

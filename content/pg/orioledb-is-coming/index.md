@@ -1,9 +1,10 @@
 ---
-title: "OrioleDB 来了！4x性能，消除顽疾，存算分离"
-linkTitle: "OrioleDB: 云原生无膨胀版PG"
+title: "OrioleDB来了！4x性能，消除顽疾，存算分离"
+linkTitle: "OrioleDB：云原生无膨胀版PG"
 date: 2025-04-06
-summary: Supabase 收购的一个 PG 内核分支，号称解决了 PG XID 回卷的问题，没有表膨胀问题，性能提升4倍，还支持云原生存储，现已加入 Pigsty 全家桶。
-showAuthor: true
+author: 冯若航
+summary: >
+  Supabase收购的一个PG内核分支，号称解决了PG XID回卷的问题，没有表膨胀问题，性能提升4倍，还支持云原生存储。
 tags: [PostgreSQL]
 ---
 

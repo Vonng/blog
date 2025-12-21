@@ -1,0 +1,9 @@
+{
+  "name": "Marco Tusa",
+  "bio": "Percona HA Practice Manager",
+  "image": "img/marco-tusa.jpg",
+  "social": [
+    { "link": "https://www.percona.com/blog/author/tusa/" },
+    { "linkedin": "https://www.linkedin.com/in/marcotusa/" }
+  ]
+}

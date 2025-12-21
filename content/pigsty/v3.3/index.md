@@ -10,6 +10,9 @@ series: [Pigsty]
 tags: [Pigsty]
 ---
 
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.3.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v330) | [微信公众号](https://mp.weixin.qq.com/s/02YmN-_YfOzQs3ofGqljAQ)
+
+[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.3.0)
 
 经过两个月的精心打磨，Pigsty v3.3 正式发布。作为开源的"开箱即用" PostgreSQL 发行版，Pigsty 旨在凝聚 PG 生态的合力，为本地自建提供与云上 RDS 媲美的免运维便捷体验。
 

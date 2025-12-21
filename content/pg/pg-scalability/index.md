@@ -1,12 +1,11 @@
 ---
-title: 令人惊叹的PostgreSQL可伸缩性
+title: "令人惊叹的PostgreSQL可伸缩性"
 date: 2024-01-13
-showAuthor: false
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/iH34payWSE_GROsq-9MN8g)
+authors: [neo-kim]
+origin: "https://newsletter.systemdesign.one/p/postgresql-scalability"
 summary: >
-  本文讲述了 Cloudflare 是如何利用 15 个 PostgreSQL 集群，伸缩到支持每秒 5500 万个请求。以及 PostgreSQL 的可伸缩性表现。
-tags: [PostgreSQL,性能]
+  本文讲述了Cloudflare是如何利用15个PostgreSQL集群，伸缩到支持每秒5500万个请求，以及PostgreSQL的可伸缩性表现。
+tags: [PostgreSQL, 性能, 翻译]
 ---
 
 > 本文概述了 Cloudflare 是如何利用 15 个 PostgreSQL 集群，伸缩到支持每秒 5500 万个请求。

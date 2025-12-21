@@ -1,11 +1,10 @@
 ---
-title: 云数据库：用米其林的价格，吃预制菜大锅饭
+title: "云数据库：用米其林的价格，吃预制菜大锅饭"
 date: 2024-10-06
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
   RDS带来的数据库范式转变，云数据库是不是天价大锅饭。质量安全效率成本剖析核算，下云数据库自建，如何实战！
-tags: [下云,RDS]
+tags: [下云, RDS]
 ---
 
 云数据库是不是天价大锅饭

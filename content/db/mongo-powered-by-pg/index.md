@@ -1,13 +1,12 @@
-
 ---
-title: "MongoDB: 现在由PostgreSQL强力驱动？"
-linkTitle: "MongoDB：现由PGSQL驱动"
+title: "MongoDB：现在由PostgreSQL强力驱动？"
+linkTitle: "MongoDB现由PGSQL驱动"
 date: 2024-09-03
-author: |
-  [John De Goes](https://www.linkedin.com/in/jdegoes) [原文地址](https://www.linkedin.com/pulse/mongodb-32-now-powered-postgresql-john-de-goes)
+author: John De Goes
+origin: "https://www.linkedin.com/pulse/mongodb-32-now-powered-postgresql-john-de-goes"
 summary: >
-  MongoDB 3.2 的分析子系统竟然是一个嵌入式的 PostgreSQL 数据库？由 MongoDB 的合作伙伴发出的血泪控诉与吹哨故事。
-tags: [数据库]
+  MongoDB 3.2的分析子系统竟然是一个嵌入式的PostgreSQL数据库？由MongoDB的合作伙伴发出的血泪控诉与吹哨故事，揭露了MongoDB对待生态伙伴的态度和一些黑历史。
+tags: [数据库, MongoDB, PostgreSQL, 技术评论]
 ---
 
 -------------

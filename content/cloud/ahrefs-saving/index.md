@@ -1,12 +1,11 @@
 ---
-title: Ahrefs不上云，省下四亿美元
-linkTitle: Ahrefs不上云，省下四亿美元
+title: "Ahrefs不上云，省下四亿美元"
 date: 2024-05-22
-author: |
-  [Efim Mirochnik](https://medium.com/@mirochnik) 译者：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/csQmMrSGg5ukDgS06h8xXw)
+authors: [efim-mirochnik]
+origin: "https://tech.ahrefs.com/how-ahrefs-saved-us-400m-in-3-years-by-not-going-to-the-cloud-8939dd930af8"
 summary: >
-  阿里云双十一后的史诗级全球故障创下行业记录，我们该如何评价看待这场故障，又可以从中学到什么经验与教训呢？
-tags: [下云,AWS,EBS]
+  云计算成本有时高到离谱。Ahrefs通过自建数据中心，三年省下4亿美元。基于真实成本对比AWS，揭示云服务的成本陷阱与自建的优势。
+tags: [下云, AWS, 成本分析, 翻译]
 ---
 
 > 原文：[How Ahrefs Saved US$400M in 3 Years by NOT Going to the Cloud](https://tech.ahrefs.com/how-ahrefs-saved-us-400m-in-3-years-by-not-going-to-the-cloud-8939dd930af8)

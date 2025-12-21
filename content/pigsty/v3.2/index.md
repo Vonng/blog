@@ -10,6 +10,9 @@ series: [Pigsty]
 tags: [Pigsty]
 ---
 
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.2.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v320) | [微信公众号](https://mp.weixin.qq.com/s/FBAfu9mkL2GedZRgPq8h_w)
+
+[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.2.0)
 
 Pigsty 迎来了 2024 年的最后一次发布 v3.2。本次发布带来了命令行工具 `pig`，以及完善的 ARM 扩展支持，两者合体，为用户带来 10 大主流 Linux 系统上丝滑的 PostgreSQL 交付能力。
 

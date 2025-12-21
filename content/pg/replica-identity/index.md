@@ -2,10 +2,10 @@
 title: "PG复制标识详解（Replica Identity）"
 linkTitle: "PG复制标识详解"
 date: 2021-03-03
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
-  复制标识很重要，它关系到逻辑复制的成败
+  复制标识很重要，它关系到逻辑复制的成败。
+tags: [PostgreSQL, PG管理, 逻辑复制]
 ---
 
 

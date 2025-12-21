@@ -2,7 +2,7 @@
 title: How Many Shops Has etcd Torched?
 summary: "Plenty. If you’re rolling your own Kubernetes, odds are you’ll crash because etcd ships with a 2 GB time bomb."
 date: 2025-05-07
-tags: [数据库,etcd]
+tags: [Database, etcd]
 categories: [Blog]
 ---
 

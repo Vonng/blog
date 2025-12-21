@@ -1,0 +1,11 @@
+{
+  "name": "Stephan Schmidt",
+  "bio": "Amazing CTO, Tech Blogger",
+  "image": "img/stephan-schmidt.jpg",
+  "social": [
+    { "link": "https://www.amazingcto.com/" },
+    { "github": "https://github.com/StephanSchmidt" },
+    { "twitter": "https://twitter.com/KingOfCoders" },
+    { "linkedin": "https://www.linkedin.com/in/stephanjschmidt/" }
+  ]
+}

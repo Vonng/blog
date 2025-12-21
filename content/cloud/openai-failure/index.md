@@ -1,11 +1,11 @@
 ---
-title: OpenAI全球宕机复盘：K8S循环依赖
+title: "OpenAI全球宕机复盘：K8S循环依赖"
 date: 2024-12-14
-author: |
-  [原文](https://status.openai.com/incidents/ctrsv3lwd797) 译者：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/ze4y9x7VpPmibitH7tAGMQ)
+author: 冯若航
+origin: "https://status.openai.com/incidents/ctrsv3lwd797"
 summary: >
   即使是万亿级独角兽，在非专业领域上，也照样是个草台班子。
-tags: [Failure]
+tags: [云故障, OpenAI]
 ---
 
 

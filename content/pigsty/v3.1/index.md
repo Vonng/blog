@@ -10,6 +10,9 @@ series: [Pigsty]
 tags: [Pigsty]
 ---
 
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.1.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v310) | [微信公众号](https://mp.weixin.qq.com/s/MNM5wlnIqa3QUAcvYGHKqg)
+
+[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.1.0)
 
 随着前天 PostgreSQL 17.2 的发布，Pigsty 也立即跟进了 v3.1 版本。
 在这个版本中，PostgreSQL 17 被提升成为默认使用的大版本，近 340 个 PG 扩展插件开箱即用。

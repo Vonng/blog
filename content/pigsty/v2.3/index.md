@@ -10,7 +10,9 @@ series: [Pigsty]
 tags: [Pigsty]
 ---
 
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.3.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v230) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486053&idx=1&sn=854966c3c4e2c96298173baaa2915535&chksm=fe4b3fbec93cb6a88669c698f7299bd4d38e9a691122831e72b9204fd35f94f4d0ac304812a6&scene=21#wechat_redirect)
 
+[![](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v2.3.0)
 
 Pigsty v2.3 发布了 🎉，在这个版本中进一步完善了监控系统、应用生态、并跟进 PostgreSQL 例行的小版本更新（CVE修复）。
 

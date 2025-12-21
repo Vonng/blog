@@ -1,13 +1,12 @@
 ---
 title: "Oracle最终还是杀死了MySQL"
 date: 2024-06-20
-author: vonng
-showAuthor: false
+authors: [peter-zaitsev]
+origin: "https://www.percona.com/blog/is-oracle-finally-killing-mysql/"
 summary: >
-  Peter Zaitsev是MySQL生态重要公司Percona的创始人，他撰文痛批 Oracle 的作为/与不作为杀死了 MySQL。
-series: [MySQL走好]
-series_order: 3
-tags: [数据库,MySQL]
+  Peter Zaitsev是MySQL生态重要公司Percona的创始人，他撰文痛批Oracle的作为与不作为杀死了MySQL。约15年前Oracle收购了Sun从而拥有了MySQL，当时关于Oracle何时会"扼杀MySQL"的讨论此起彼伏，如今一语成谶。
+series: ["MySQL走好"]
+tags: [数据库, MySQL, Oracle, 技术评论, 翻译]
 ---
 
 > [Peter Zaitsev](https://www.percona.com/blog/author/pz/) | 译：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信原文](https://mp.weixin.qq.com/s/1zlDPie_bVvP7eO6_uTkSw) | [Percona's Blog](https://www.percona.com/blog/is-oracle-finally-killing-mysql/)
@@ -16,7 +15,7 @@ tags: [数据库,MySQL]
 
 > 作者：Percona Blog，Marco Tusa，MySQL 生态的重要贡献者，开发了知名的PT系列工具，MySQL备份工具，监控工具与发行版。
 >
-> 译者：冯若航，网名 Vonng，Pigsty 作者，PostgreSQL 专家与布道师。下云倡导者，数据库下云实践者。
+> 译者：Vonng，Pigsty 作者，PostgreSQL 专家与布道师。下云倡导者，数据库下云实践者。
 
 
 然而实际上，Oracle 最终把 MySQL 管理得还不错。MySQL 团队基本都保留下来了，由 MySQL 老司机 Tomas Ulin 掌舵。MySQL 也变得更稳定、更安全。许多技术债务也解决了，许多现代开发者想要的功能也有了，例如 JSON支持和高级 SQL 标准功能的支持。

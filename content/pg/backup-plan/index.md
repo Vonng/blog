@@ -1,11 +1,10 @@
 ---
 title: "温备：使用pg_receivewal"
 date: 2019-03-02
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
   备份有各种各样的策略，物理备份通常可以分为四种。
-tags: [PostgreSQL,PG管理,备份]
+tags: [PostgreSQL, PG管理, 备份]
 ---
 
 备份是DBA的安身立命之本，也是数据库管理中最为关键的工作之一。有各种各样的备份，但今天这里讨论的备份都是物理备份。物理备份通常可以分为以下四种：

@@ -1,0 +1,10 @@
+{
+  "name": "Peter Zaitsev",
+  "bio": "Percona Founder & CTO",
+  "image": "img/peter-zaitsev.jpg",
+  "social": [
+    { "link": "https://www.percona.com/blog/author/pz/" },
+    { "twitter": "https://twitter.com/PeterZaitsev" },
+    { "linkedin": "https://www.linkedin.com/in/peterzaitsev/" }
+  ]
+}

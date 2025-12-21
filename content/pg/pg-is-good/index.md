@@ -1,12 +1,10 @@
 ---
-title: PostgreSQL好处都有啥
+title: "PostgreSQL好处都有啥"
 date: 2018-06-10
-hero: /hero/pg-is-good.jpg
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/W_FbtZXqaa-rlZyDc4xB-A)
+author: 冯若航
 summary: >
-  PostgreSQL的Slogan是“**世界上最先进的开源关系型数据库**”，要我说，最能生动体现PG特色的口号应该是：**一专多长的全栈数据库**，一招鲜吃遍天。
-tags: [PostgreSQL,PG生态]
+  PostgreSQL的Slogan是"世界上最先进的开源关系型数据库"，要我说最能生动体现PG特色的口号应该是：一专多长的全栈数据库，一招鲜吃遍天。
+tags: [PostgreSQL, PG生态]
 ---
 
 

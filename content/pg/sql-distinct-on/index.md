@@ -1,11 +1,10 @@
 ---
 title: "Distinct On 去除重复数据"
 date: 2018-04-06
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
-  使用Distinct On扩展字句快速找出分组内具有最大最小值的记录
-tags: [PostgreSQL,PG开发,SQL]
+  使用Distinct On扩展字句快速找出分组内具有最大最小值的记录。
+tags: [PostgreSQL, PG开发, SQL]
 ---
 
 

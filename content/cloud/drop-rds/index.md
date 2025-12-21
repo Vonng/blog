@@ -1,12 +1,10 @@
 ---
-title: 云RDS：从删库到跑路
+title: "云RDS：从删库到跑路"
 date: 2022-05-10
-hero: /hero/drop-rds.jpg
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/AGEW1iHQkQy4NQyYC2GonQ)
+author: 冯若航
 summary: >
   最近就目睹了一场云数据库删库跑路现场情景剧。本文就来聊一聊在生产环境使用PostgreSQL，如何应对误删数据的问题。
-tags: [下云,DBA,RDS]
+tags: [下云, DBA, RDS]
 ---
 
 上一篇文章《[DBA还是份好工作吗](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485064&idx=1&sn=6225a044d8f145cdb07a21a1e0c54ad8&chksm=fe4b3353c93cba4582576b4de151ac48247052a1494adcc820dc64a32dafb0b99e33085c7bbb&scene=21#wechat_redirect)》中提到：尽管DBA作为一份职业在没落，但谁也保不准DBA会不会在几次恐怖的大规模云数据库故障后，重新成为潮流。

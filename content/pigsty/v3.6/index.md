@@ -10,10 +10,11 @@ series: [Pigsty]
 tags: [Pigsty]
 ---
 
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.6.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v360) | [微信公众号](https://mp.weixin.qq.com/s/TdJ5lOWxU_CzxsgjslPxwg)
+
+[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.6.0)
 
 Pigsty v3.6 正式发布。历经两个月的精心打磨，这将是 v4.0 之前的最后一个主要版本，进行了大量重构与改进，为打造终极全能 PostgreSQL 发行版奠定了坚实基础。
-
-![](featured.jpg)
 
 本版本对 PostgreSQL、MinIO、Etcd 的部署任务进行了深度优化与重构，新增了 **Percona PG TDE** 内核支持，提供开箱即用的透明加密功能。此外，Supabase 自建体验得到全面优化，彻底移除了幂等剧本中的"删库"功能，并新增全自动 `pgsql-pitr` 剧本用于一键时间点恢复。
 

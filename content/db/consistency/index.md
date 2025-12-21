@@ -1,12 +1,10 @@
 ---
-title: 一致性：过载的术语
+title: "一致性：过载的术语"
 date: 2018-05-08
-hero: /hero/consistency.jpg
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [知乎原文](https://www.zhihu.com/question/275845393/answer/386816571)
+author: 冯若航
 summary: >
-  一致性这个词重载的很厉害，在不同的语境和上下文中，它其实代表着不同的东西。比如 ACID 里的 C 和 CAP 里的 C，实际指的是不同的概念。
-tags: [数据库]
+  一致性这个词重载得很厉害，在不同语境中代表着不同的东西。ACID里的C指事务一致性，CAP里的C指线性一致性，此外还有"一致性哈希"、"最终一致性"等不同涵义。本文梳理这些概念的区别。
+tags: [数据库, 分布式系统, ACID, CAP]
 ---
 
 **一致性**这个词重载的很厉害，在不同的语境和上下文中，它其实代表着不同的东西：

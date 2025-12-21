@@ -1,12 +1,11 @@
 ---
-title: DHH：下云省下千万美元，比预想的还要多！
+title: "DHH：下云省下千万美元，比预想的还要多！"
 date: 2023-07-07
-hero: /hero/odyssey.jpg
-author: |
-  [DHH](https://world.hey.com/dhh) | 译：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/mknFXO5DSfxw7st8hhxjBQ)
+authors: [dhh]
+origin: "https://world.hey.com/dhh/our-cloud-exit-savings-will-now-top-ten-million-over-five-years-c7d9b5bd"
 summary: >
-  DHH 将他们的七个云上应用从 AWS 迁移到自己的硬件上，2024年是第一个完全实现节省的年份。他们欣喜地发现，节省的费用比最初估计的还要多。
-tags: [下云,DHH]
+  DHH将他们的七个云上应用从AWS迁移到自己的硬件上，2024年是第一个完全实现节省的年份。他们欣喜地发现，节省的费用比最初估计的还要多。
+tags: [下云, DHH, 翻译]
 ---
 
 

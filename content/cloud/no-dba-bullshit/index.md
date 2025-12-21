@@ -1,12 +1,10 @@
 ---
-title: 驳《再论为什么你不应该招DBA》
+title: "驳《再论为什么你不应该招DBA》"
 date: 2023-03-01
-hero: /hero/no-dba-bullshit.jpg
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/CMRrqI2yBWlNbACHpNgL1g)
+author: 冯若航
 summary: >
-  郭德纲有一段相声：比如我和火箭专家说，你那火箭不行，燃料不好，我认为得烧柴，最好是烧煤，煤还得精选煤，水洗煤不行。如果那科学家拿正眼看我一眼，那他就输了。
-tags: [下云,RDS,DBA]
+  郭德纲有一段相声：比如我和火箭专家说，你那火箭不行，燃料不好，我认为得烧柴。如果那科学家拿正眼看我一眼，那他就输了。
+tags: [下云, RDS, DBA]
 ---
 
 > *郭德纲有一段相声：比如我和火箭专家说，你那火箭不行，燃料不好，我认为得烧柴，最好是烧煤，煤还得精选煤，水洗煤不行。如果那科学家拿正眼看我一眼，那他就输了。*

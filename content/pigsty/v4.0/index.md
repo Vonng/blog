@@ -10,6 +10,9 @@ series: [Pigsty]
 tags: [Pigsty]
 ---
 
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v4.0.0-b1) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v400)
+
+[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v4.0.0)
 
 --------
 

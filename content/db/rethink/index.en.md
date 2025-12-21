@@ -1,12 +1,12 @@
 ---
 title: "Back to Basics: Tech Reflection Chronicles"
 date: 2023-05-29
-hero: /hero/rethink.jpg
-author: |
-  [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat](https://mp.weixin.qq.com/s/Q0OtrpEhF24XN7gwMjbSRA)
+author: Vonng
 summary: >
-  The cost-cutting and efficiency imperative has triggered a reevaluation of all technologies, including databases. This series will critique hot technologies in the DB field and pose fundamental questions about their trade-offs in today's context.
-tags: [database]
+  The cost-cutting imperative has triggered a reevaluation of all technologies, including databases. This series critiques hot DB technologies and poses fundamental questions about their trade-offs: Are cloud databases, distributed databases, microservices, and containerization real needs or false hype?
+series: ["Back to Basics"]
+tags: [Database, Cloud, Architecture, Tech Commentary]
+featured: true
 ---
 
 Recently, there have been some hotly debated topics in the tech community: [Are cloud databases an IQ tax?](/cloud/rds/) [Is public cloud a pig-killing scam](/cloud/ebs/)? [Are distributed databases a false need](/db/distributive-bullshit/)? [Are microservices a stupid idea](/db/microservice-bad-idea/)? [Do you still need ops and DBAs](https://mp.weixin.qq.com/s/Gk9bG_EOIv0IAkim41XRHg)? [Is the middle platform just self-deception](https://mp.weixin.qq.com/s/VgTU7NcOwmrX-nbrBBeH_w)? There are also extensive discussions and debates about these topics on Twitter and HackerNews.

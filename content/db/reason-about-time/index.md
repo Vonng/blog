@@ -1,12 +1,10 @@
 ---
-title: 理解时间：闰年闰秒，时间与时区
+title: "理解时间：闰年闰秒，时间与时区"
 date: 2018-12-11
-hero: /hero/reason-about-time.jpg
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/JNLMAzpLnk6y9lCSpClPlQ)
+author: 冯若航
 summary: >
-  对时间的正确理解，对正确处理工作生活中的时间问题很有帮助。例如，计算机中的时间表示与时间处理，以及数据库与编程语言对于时间的处理。
-tags: [数据库]
+  四年一遇的闰年2月29日，总有土鳖软件出现大翻车。对时间的正确理解，对正确处理工作生活中的时间问题很有帮助。本文聊一聊闰年、闰秒、时间与时区的原理，以及在数据库与编程语言中的注意事项。
+tags: [编程基础, 时间处理, 数据库]
 ---
 
 

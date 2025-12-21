@@ -1,11 +1,10 @@
 ---
 title: "监控PG中的表大小"
 date: 2018-05-14
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
-  PostgreSQL中的表对应着许多物理文件，本文介绍如何统计一张表在PostgreSQL的实际大小
-tags: [PostgreSQL,PG管理,监控]
+  PostgreSQL中的表对应着许多物理文件，本文介绍如何统计一张表在PostgreSQL的实际大小。
+tags: [PostgreSQL, PG管理, 监控]
 ---
 
 

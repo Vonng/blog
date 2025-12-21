@@ -1,12 +1,11 @@
 ---
-title: 为什么PostgreSQL是最成功的数据库？
-linkTitle: 为什么PG是最成功的数据库？
+title: "为什么PostgreSQL是最成功的数据库？"
+linkTitle: "为什么PG是最成功的数据库？"
 date: 2022-07-12
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/UeNibtbN8JlA1QIlio1mkw)
-summary: |
-  数据库的用户是开发者，而开发者的意愿、喜好、选择又如何？总览 StackOverflow 过去六年的调研结果，不难看出在2022年，PostgreSQL 已经同时在这三项上登顶夺冠，成了字面意义上 “最成功的数据库”：
-tags: [PostgreSQL,PG生态]
+author: 冯若航
+summary: >
+  总览StackOverflow过去六年的调研结果，在2022年PostgreSQL已经同时在流行度、喜爱度、需求度三项上登顶夺冠，成了字面意义上最成功的数据库。
+tags: [PostgreSQL, PG生态]
 ---
 
 

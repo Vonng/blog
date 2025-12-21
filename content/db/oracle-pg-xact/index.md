@@ -1,8 +1,11 @@
 ---
 title: "对比Oracle与PostgreSQL事务系统"
-summary: "PG社区确实出息了，开始骑在Oracle头上输出了 —— Cybertec专家点评PG与Oracle的事务系统。"
 date: 2025-02-27
-tags: [数据库,PostgreSQL,Oracle]
+author: Laurenz Albe
+origin: "https://www.cybertec-postgresql.com/en/comparison-of-the-transaction-systems-of-oracle-and-postgresql/"
+summary: >
+  PG社区开始骑在Oracle头上输出了。Cybertec专家对比Oracle和PostgreSQL事务系统的特性，帮助用户理解两者差异，为从Oracle迁移到PostgreSQL提供关键参考，避免性能和数据完整性问题。
+tags: [数据库, PostgreSQL, Oracle, 事务系统, 迁移]
 ---
 
 > 原文：**[Laurenz Albe](https://www.cybertec-postgresql.com/en/comparison-of-the-transaction-systems-of-oracle-and-postgresql/)

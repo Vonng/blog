@@ -1,12 +1,11 @@
 ---
 title: "故障档案：PG安装Extension导致无法连接"
-linkTitle: "故障:扩展导致拒绝连接"
+linkTitle: "故障：扩展导致拒绝连接"
 date: 2019-06-13
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
   今天遇到一个比较有趣的Case，客户报告说数据库连不上了，发现是扩展导致的。
-tags: [PostgreSQL,PG管理,扩展,故障档案]
+tags: [PostgreSQL, PG管理, 扩展, 故障档案]
 ---
 
 

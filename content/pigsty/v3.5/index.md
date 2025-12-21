@@ -10,6 +10,9 @@ series: [Pigsty]
 tags: [Pigsty]
 ---
 
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.5.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v350) | [微信公众号](https://mp.weixin.qq.com/s/ErUAs8BFQ6Twk8wRNVDrHg)
+
+[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.5.0)
 
 Pigsty v3.5 正式发布。项目在 GitHub 上达成 **4000+ Star** 里程碑，对于一个数据库基础设施项目而言，这是一个难得的成就。
 

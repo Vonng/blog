@@ -7,7 +7,7 @@ author: |
 summary: >
   MySQL is to the internet what baijiu is to China: harsh, hard to swallow, yet worshipped because culture demands obedience. Both are loyalty tests—will you endure discomfort to fit in?
 series: [MySQL走好]
-tags: [MySQL,数据库]
+tags: [MySQL, Database]
 ---
 
 ## 1. Two Painful Shots

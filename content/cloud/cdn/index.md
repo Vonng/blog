@@ -1,12 +1,10 @@
 ---
-title: 垃圾腾讯云CDN：从入门到放弃？
+title: "垃圾腾讯云CDN：从入门到放弃？"
 date: 2023-03-08
-hero: /hero/cdn.jpg
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/ANFnbDXwuhKI99fgYRZ9ug)
+author: 冯若航
 summary: >
-  本来我相信至少在  IaaS 的存储，计算，网络三大件上，公有云厂商还是可以有很大作为的。只不过在腾讯云 CDN 上的亲身体验让我的想法动摇了：本土云厂商的产品与服务真是不忍直视。
-tags: [云计算,腾讯云,CDN]
+  本来我相信至少在IaaS的存储、计算、网络三大件上，公有云厂商还是可以有很大作为的。只不过在腾讯云CDN上的亲身体验让我的想法动摇了。
+tags: [云计算, 腾讯云, CDN]
 ---
 
 我和 瑞典马工虽然在 [云数据库](/cloud/rds) VS [**DBA**](https://mp.weixin.qq.com/s/Gk9bG_EOIv0IAkim41XRHg

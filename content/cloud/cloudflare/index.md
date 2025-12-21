@@ -1,11 +1,10 @@
 ---
-title: 吊打公有云的赛博佛祖 Cloudflare
+title: "吊打公有云的赛博佛祖 Cloudflare"
 date: 2024-04-03
-summary: |
-  虽然我一直在倡导下云理念，但如果是上 Cloudflare 这样的赛博菩萨云，我举双手赞成。
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信公众号](https://mp.weixin.qq.com/s/i4wk9ebyUK7irNSwuT3NWQ)
-tags: [下云,Cloudflare]
+author: 冯若航
+summary: >
+  虽然我一直在倡导下云理念，但如果是上Cloudflare这样的赛博菩萨云，我举双手赞成。
+tags: [下云, Cloudflare]
 ---
 
 是在今天的 2024 开发者周上，Cloudflare 发布了一系列令人激动的新特性，例如 Python Worker 以及 Workers AI，把应用开发与交付的便利性拔高到了一个全新的程度。与 Cloudflare 的 Serverless 开发体验相比，传统云厂商号称 Serverless 的各种产品都显得滑稽可笑。

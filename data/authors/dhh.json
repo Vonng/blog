@@ -1,0 +1,10 @@
+{
+  "name": "David Heinemeier Hansson (DHH)",
+  "bio": "37signals CTO, Ruby on Rails Creator",
+  "image": "img/dhh.jpg",
+  "social": [
+    { "link": "https://world.hey.com/dhh" },
+    { "twitter": "https://twitter.com/dhh" },
+    { "linkedin": "https://www.linkedin.com/in/david-heinemeier-hansson-374b18221/" }
+  ]
+}

@@ -1,13 +1,10 @@
 ---
 title: "PostgreSQL开发规约（2018版）"
-linkTitle: "PostgreSQL开发规约2018版"
 date: 2018-06-20
-hero: /hero/pg-convention.jpg
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
-  没有规矩，不成方圆。本文针对PostgreSQL数据库原理与特性，整理了一份开发规范，可以减少大家在使用PostgreSQL数据库过程中遇到的困惑。  
-tags: [PostgreSQL,PG开发,规约]
+  没有规矩，不成方圆。本文针对PostgreSQL数据库原理与特性，整理了一份开发规范，可以减少大家在使用PostgreSQL数据库过程中遇到的困惑。
+tags: [PostgreSQL, PG开发, 规约]
 ---
 
 > [微信公众号原文](https://mp.weixin.qq.com/s/W1hwbl3qmjC4Dcmadc8uSg)

@@ -5,7 +5,7 @@ author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: |
     Dec 4, 2025, Taobao, Alipay, and Xianyu all cratered. Users got charged while orders still showed “unpaid,” a carbon copy of the 2024 Double-11 fiasco.
-tags: [下云,阿里云,云故障]
+tags: [Cloud Exit, Alibaba Cloud, Cloud Incident]
 ---
 
 Taobao, Alipay, and Xianyu simultaneously faceplanted on Dec 4. Cards were debited, yet orders sat frozen at “pending.” The story rhymes perfectly with the 2024 Double-11 outage, so the leading suspect is once again the message queue or whatever coordinates distributed transactions.

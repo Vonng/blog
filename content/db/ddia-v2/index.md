@@ -1,10 +1,10 @@
 ---
-title: DDIA 第二版中文翻译
+title: "DDIA第二版中文翻译"
 date: 2025-08-10
-author: vonng
-summary:
-  曾经的互联网名著 DDIA —— 设计数据密集型应用第二版已经发布到第十章了，老冯将其翻译为中文，并用 Hugo/Hextra 重构成易读的网页版，供大家交流学习之用。
-tags: [DDIA]
+author: 冯若航
+summary: >
+  曾经的互联网名著DDIA——设计数据密集型应用第二版已经发布到第十章了。老冯用Claude Code翻译成中文，并用Hugo/Hextra重构成易读的网页版。第二版新增了向量数据库HNSW索引等内容，温故知新。
+tags: [DDIA, 分布式系统, 数据库, 翻译]
 ---
 
 曾经的互联网名著 DDIA —— 设计数据密集型应用第二版已经发布到第十章了。

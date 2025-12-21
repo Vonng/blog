@@ -1,12 +1,12 @@
 ---
-title: 云上黑暗森林：打爆云账单，只需要S3桶名
-linkTitle: 打爆云账单，只需要S3桶名
+title: "云上黑暗森林：打爆云账单，只需要S3桶名"
+linkTitle: "打爆云账单，只需要S3桶名"
 date: 2024-04-30
-author: |
-  [Maciej Pocwierz](https://medium.com/@maciej.pocwierz) | 译：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信原文](https://mp.weixin.qq.com/s/35ScjtPjC1GNGKaSArJhcA) | [英文原文](https://medium.com/@maciej.pocwierz/how-an-empty-s3-bucket-can-make-your-aws-bill-explode-934a383cb8b1)
+author: Maciej Pocwierz
+origin: "https://medium.com/@maciej.pocwierz/how-an-empty-s3-bucket-can-make-your-aws-bill-explode-934a383cb8b1"
 summary: >
-  公有云上的黑暗森林法则出现了：**只要你的 S3 对象存储桶名暴露，任何人都有能力刷爆你的云账单。** 
-tags: [下云,AWS,S3]
+  公有云上的黑暗森林法则出现了：只要你的S3对象存储桶名暴露，任何人都有能力刷爆你的云账单。
+tags: [下云, AWS, S3]
 ---
 
 公有云上的黑暗森林法则出现了：**只要你的 S3 对象存储桶名暴露，任何人都有能力刷爆你的云账单。**

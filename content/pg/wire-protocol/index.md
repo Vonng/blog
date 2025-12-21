@@ -1,11 +1,10 @@
 ---
 title: "前后端通信线缆协议"
 date: 2019-11-12
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+author: 冯若航
 summary: >
-  了解PostgreSQL服务器与客户端通信使用的TCP协议，并使用Go语言打印消息
-tags: [PostgreSQL,PG开发,PG内核]
+  了解PostgreSQL服务器与客户端通信使用的TCP协议，并使用Go语言打印消息。
+tags: [PostgreSQL, PG开发, PG内核]
 ---
 
 

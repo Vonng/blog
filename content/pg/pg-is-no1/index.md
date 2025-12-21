@@ -1,13 +1,10 @@
 ---
-title: PostgreSQL：最成功的数据库
-linkTitle: PostgreSQL：最成功的数据库
+title: "PostgreSQL：最成功的数据库"
 date: 2023-06-28
-hero: /hero/pg-is-no1.jpg
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/xewE87WEaZHp-K5hjuk65A) | [知乎](https://zhuanlan.zhihu.com/p/542019272)
-summary: |
-  数据库终局已现，PostgreSQL 称王。PG在SF2023开发者调研中拿下大满贯，占住了 Linux 之于服务器操作系统的生态位。本文便来说一说，为什么 PostgreSQL 是最成功的数据库。
-tags: [PostgreSQL,PG生态]
+author: 冯若航
+summary: >
+  数据库终局已现，PostgreSQL称王。PG在SF2023开发者调研中拿下大满贯，占住了Linux之于服务器操作系统的生态位。
+tags: [PostgreSQL, PG生态]
 ---
 
 2023 年 StackOverflow 调研结果已经新鲜出炉，来自185个国家与地区的9万名开发者给出了高质量的反馈。

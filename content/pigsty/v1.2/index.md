@@ -10,6 +10,10 @@ series: [Pigsty]
 tags: [Pigsty]
 ---
 
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v1.2.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v120) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484799&idx=1&sn=bb4a87eba481c6851582899ae9955f10&chksm=fe4b30a4c93cb9b2ad9d68d837763bb1dd547c81d6ec04684ef98072ead8271695b9abba78d1&scene=21#wechat_redirect)
+
+[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v1.2.0)
+
 Pigsty v1.2 正式发布，将 PostgreSQL 14 作为默认版本，并支持独立监控现有数据库实例。
 
 ![featured](featured.jpg)

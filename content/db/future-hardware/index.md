@@ -1,18 +1,17 @@
 ---
-title: 面向未来数据库的现代硬件
-linkTitle: "面向未来数据库的现代硬件"
+title: "面向未来数据库的现代硬件"
 date: 2024-11-20
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信原文](https://mp.weixin.qq.com/s/0Y17J-opjq1fceRi8777Xg) | [英文原文](https://transactional.blog/blog/2024-modern-database-hardware)
+authors: [alex-miller]
+origin: "https://transactional.blog/blog/2024-modern-database-hardware"
 summary: >
-  本文是一篇关于硬件发展如何影响数据库设计的综述，分别介绍了在网络，存储，计算三个领域的关键硬件进展
-tags: [数据库]
+  本文是一篇关于硬件发展如何影响数据库设计的综述，介绍了网络、存储、计算三个领域的关键硬件进展。充分利用好新硬件而非折腾分布式，才是数据库内核发展的正路。
+tags: [数据库, 硬件, 性能优化, 翻译]
 ---
 
 
 > 作者：Alex Miller 2024-11-19 @ Snowflake, Apple, Google
 >
-> 译者：冯若航 & GPT o1，PG 大法师，数据库老司机，云计算泥石流
+> 译者：Vonng & GPT o1，PG 大法师，数据库老司机，云计算泥石流
 
 译者推荐：本文是一篇关于硬件发展如何影响数据库设计的综述，分别介绍了在网络，存储，计算三个领域的关键硬件进展。我一直都认为，充分利用好新硬件（而非折腾所谓分布式）才是数据库内核发展的正路。
 请看《[重新拿回计算机硬件的红利](https://mp.weixin.qq.com/s/1OSRcBfd58s0tgZTUZHB9g)》与《[分布式数据库是伪需求吗](https://mp.weixin.qq.com/s/-eaCoZR9Z5srQ-1YZm1QJA)》。

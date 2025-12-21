@@ -10,6 +10,10 @@ series: [Pigsty]
 tags: [Pigsty]
 ---
 
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v1.1.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v110) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484774&idx=1&sn=8b9e8f5bec8fb8492ebce3ebc6b60d88&chksm=fe4b30bdc93cb9ab1dfcaed066a1a90919027f6c72d63003b3b839eb9ba2871ec663db7469f1&scene=21#wechat_redirect)
+
+[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v1.1.0)
+
 Pigsty v1.1 正式发布，新增全新首页设计、Jupyter Lab、PGWeb、PEV2、PgBadger 等实用工具支持。
 
 ![featured](featured.jpg)

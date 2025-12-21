@@ -1,9 +1,8 @@
 ---
-title: PostgreSQL 17 发布：摊牌了，我不装了！
+title: "PostgreSQL 17 发布：摊牌了，我不装了！"
 linkTitle: "PG17发布：摊牌了，我不装了！"
 date: 2024-09-26
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/oOZIP1CYj4a319YvoT7Y1w) | [英文原文](https://www.postgresql.org/about/news/postgresql-17-released-2936/)
+author: 冯若航
 summary: >
   现在PG是世界上最先进的开源数据库，已经是各种规模组织的首选开源数据库，与顶尖商业数据库旗鼓相当，甚至更胜一筹。
 tags: [PostgreSQL]

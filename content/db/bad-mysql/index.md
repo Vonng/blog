@@ -1,16 +1,11 @@
 ---
-title: MySQL正确性竟如此垃圾？
+title: "MySQL正确性竟如此垃圾？"
 date: 2023-12-28
-hero: /hero/bad-mysql.jpg
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信公众号](https://mp.weixin.qq.com/s/gQZ3Q5JKV8gaBNhc1puPcA)
+author: 冯若航
 summary: >
-  MySQL的事务ACID存在缺陷，且与文档承诺不符。这可能会导致严重的正确性问题，使用时请保持谨慎。
-series: [MySQL走好]
-menu:
-  sidebar:
-    parent: db
-tags: [数据库,MySQL]
+  MySQL的事务ACID存在缺陷，且与文档承诺不符。JEPSEN测试揭示MySQL的可重复读隔离级别既不原子也不单调，连基本的单调原子视图都不满足。这可能导致严重的正确性问题，使用时请务必谨慎。
+series: ["MySQL走好"]
+tags: [数据库, MySQL, ACID, 事务隔离]
 ---
 
 MySQL **曾经**是世界上最流行的开源关系型数据库，然而流行并不意味着先进，流行的东西也会出大问题。[JEPSEN](https://jepsen.io/analyses/mysql-8.0.34) 对 MySQL 的隔离等级评测捅穿了这层窗户纸 —— 在**正确性**这个体面数据库产品必须的基本属性上，MySQL 的表现一塌糊涂。
