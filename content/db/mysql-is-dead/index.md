@@ -4,7 +4,7 @@ date: 2024-07-08
 author: vonng
 summary: | 
   MySQL 9 新发布，这个所谓“创新版”成为一个酸楚的笑话 —— 曾经“最流行”的数据库 MySQL 正在死去。MySQL is dead，Long live PostgreSQL！
-series: ["MySQL走好"]
+series: [MySQL走好]
 series_order: 1
 tags: [数据库,MySQL,PostgreSQL]
 ---

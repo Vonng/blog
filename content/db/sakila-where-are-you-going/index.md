@@ -5,7 +5,7 @@ date: 2024-06-19
 showAuthor: false
 summary: >
   MySQL版本越高性能反而越差？在PostgreSQL高歌猛进，吞噬数据库世界的同时，MySQL的性能和功能被甩开的越来越远。为啥MySQL在Oracle手中止步不前？我看主要还是云厂商白嫖的锅，PG应当引以为戒。
-series: ["MySQL走好"]
+series: [MySQL走好]
 series_order: 2
 tags: [数据库,MySQL]
 ---

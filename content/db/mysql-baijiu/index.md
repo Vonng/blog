@@ -6,6 +6,7 @@ author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信原文]https://mp.weixin.qq.com/s/SBZRQCCZ7PmsbDSgcRaqBQ)
 summary: >
   互联网的 MySQL 就像中国的白酒：明明很难喝，却在文化规训下成了琼浆玉液。本质都是服从测试——你愿意为了合群而接受不适吗？
+series: [MySQL走好]
 tags: [MySQL,数据库]
 ---
 
@@ -37,6 +38,7 @@ MySQL也是如此。当你第一次认真审视它，会发现这东西充满了
 这和白酒的逻辑一模一样。“习惯就好”这四个字，是所有规训的起点。
 
 
+
 --------
 
 ## 二、规训的形成
@@ -47,7 +49,7 @@ MySQL也是如此。当你第一次认真审视它，会发现这东西充满了
 
 这是一种**自上而下的制度性传播**。当一个强势的组织体系把某种行为定义为“规矩”，这个规矩就会随着人员流动和利益关系，渗透到社会的每一个角落。不是因为白酒好喝，而是因为“上面的人都这么喝”。模仿权威、服从规则，是人类的本能。
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/Wkpr3rA9wF23YIO0ksS6Giaw9HicRmiaic7ExibssJqqaZbxc7kibIdknGROV5DUMFPCH0iakXRcIQYlxrcyxdtgTb8AQ/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1#imgIndex=0)
+![featured.jpg](featured.jpg)
 
 MySQL的流行走的是同一条路。
 

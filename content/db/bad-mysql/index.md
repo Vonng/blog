@@ -6,6 +6,7 @@ author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信公众号](https://mp.weixin.qq.com/s/gQZ3Q5JKV8gaBNhc1puPcA)
 summary: >
   MySQL的事务ACID存在缺陷，且与文档承诺不符。这可能会导致严重的正确性问题，使用时请保持谨慎。
+series: [MySQL走好]
 menu:
   sidebar:
     parent: db

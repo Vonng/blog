@@ -5,7 +5,7 @@ author: vonng
 showAuthor: false
 summary: >
   Peter Zaitsev是MySQL生态重要公司Percona的创始人，他撰文痛批 Oracle 的作为/与不作为杀死了 MySQL。
-series: ["MySQL走好"]
+series: [MySQL走好]
 series_order: 3
 tags: [数据库,MySQL]
 ---
