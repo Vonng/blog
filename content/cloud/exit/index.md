@@ -144,6 +144,7 @@ tags: [下云]
 
 **阿里云**
 
+- 2025-12-05 [支付宝淘宝闲鱼崩了？又是消息队列的锅？](https://mp.weixin.qq.com/s/6xMuQCshXtt-Uu20GLWZ-g)
 - 2025-07-03 [草台互殴，赔三千万？阿里大战小旺神](https://mp.weixin.qq.com/s/O4LvUspOgrVBWHzmBvfmUA)
 - 2025-06-26 [阿里云故障，CDN挂了，记得申请SLA赔付](https://mp.weixin.qq.com/s/Y2PZiH63EAXRKP8gele8NQ)
 - 2025-06-06 [大故障：阿里云核心域名被拖走了](https://mp.weixin.qq.com/s/l1b-eq06NyuN61cqZoYJjA)
@@ -245,6 +246,7 @@ tags: [下云]
 
 ## 云计算泥石流专栏原文
 
+- 2025-12-05 [支付宝淘宝闲鱼崩了？又是消息队列的锅？](https://mp.weixin.qq.com/s/6xMuQCshXtt-Uu20GLWZ-g)
 - 2025-11-19 [Cloudflare 11-18 故障复盘报告](https://mp.weixin.qq.com/s/mss2hRqAxCF7N3kPLQ8_7g)
 - 2025-10-24 [AWS 故障官方复盘报告](https://mp.weixin.qq.com/s/csopt3H5ZSh60vvcO-28hQ)
 - 2025-10-21 [一次AWS DNS故障如何级联瘫痪半个互联网](https://mp.weixin.qq.com/s/sCAOwNva__0L_iMP1QHngQ)

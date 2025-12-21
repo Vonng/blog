@@ -2,7 +2,7 @@
 title: MinIO 已死，谁能接盘？
 date: 2025-12-08
 author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信公众号](https://mp.weixin.qq.com/)
+  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信公众号](https://mp.weixin.qq.com/s/A7bAFSAk3dte7QfXu5qHQw)
 summary: >
   MinIO 进入维护模式，有什么替代品？RustFS 是否可以替代 MinIO？老冯替你测一把。
 tags: [数据库,MinIO]
@@ -15,8 +15,6 @@ tags: [数据库,MinIO]
 老冯把这些方案都打好了 Linux 上的 RPM/DEB 包，挨个试了一遍。
 
 总结一句话：**没有完美替代**。
-
-老冯给这些方案都打好了 Linux 上的 RPM/DEB 包，都试验了一把。总体的结论是，没有一个能完美替代 MinIO 的方案。 
 
 各有各的问题 —— Ceph 功能全但太复杂；SeaweedFS 针对小文件优化但需要独立元数据库；Garage 小巧玲珑但功能简陋；RustFS 兼容 MinIO 但竟然还是 Alpha。
 
@@ -70,6 +68,7 @@ RustFS 这些风险信号与当年的 MinIO 几乎一模一样：Apache 2.0 + �
 考虑到这些因素，老冯对 RustFS 的评级从 “乐观期待”，下调为 “谨慎观望”。
 
 
+--------
 
 ## 所以，应该怎么做？ 
 
@@ -85,6 +84,8 @@ RustFS 这些风险信号与当年的 MinIO 几乎一模一样：Apache 2.0 + �
 机会不等人，老冯觉得这个窗口也就几个月时间，错过了就是错过了。
 
 
+--------
+
 ## 继续使用 MinIO 的注意事项
 
 如果要继续使用 MinIO，有这么几个注意事项。第一是应该用什么版本。
@@ -99,9 +100,13 @@ CVE-2025-62506: Privilege escalation via session policy bypass (HIGH)
 
 
 不过老冯觉得还好，因为 MinIO 是一个 Go 语言项目，编译就一条命令，跨平台编译 goreleaser 一把梭也很简单。 
-流程我已经跑通了，其实很简单，这个事老冯可以整，等测一阵没问题了就发到 Pigsty 仓库里去，把 MinIO 重新从一个 “源码发行版” 恢复成一个二进制发行版。
+流程我已经跑通了，其实很简单，老冯就直接 Fork 了 MinIO ：然后用 MinIO 自己的打包器做了 2025-12-03 的 RPM/DEB 包，起码不会带病上岗。 
+把 MinIO 重新从一个 “源码发行版” 恢复成一个二进制发行版。https://github.com/pgsty/minio
 
-但安全漏洞和BUG还是得有人来修的。老冯觉得，社区里如果有人愿意接手 MinIO 的话，现在还真是一个非常好的机会。 
+![minio.png](minio.png)
+
+不过，安全漏洞和BUG还是得有人来修的，MinIO 自己说还是会看情况修安全漏洞。
+老冯觉得，社区里如果有人愿意接手 MinIO 的话，现在还真是一个非常好的机会。 
 从 20250422 版本作为基础，CherryPick 重要的 Bug 和安全修复的话，然后开始维护一个 MinIO 社区版本。
 
 说到底，MinIO 经过这么长时间的社区打磨，已经是一个相当成熟稳定的对象存储系统了 —— 基本上算是一个 “已完成的软件”。

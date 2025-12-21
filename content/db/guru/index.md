@@ -108,6 +108,7 @@ tags: [数据库]
 
 ### MySQL杀手篇
 
+- 2025-12-21 [MySQL：互联网行业的服从测试](https://mp.weixin.qq.com/s/SBZRQCCZ7PmsbDSgcRaqBQ?scene=1)
 - 2024-11-05 [PZ：MySQL还有机会赶上PostgreSQL的势头吗？](https://mp.weixin.qq.com/s/xveP91NMYF4NFlIX_JcpYA)
 - 2024-07-12 [MySQL新版恶性Bug，表太多就崩给你看！](https://mp.weixin.qq.com/s/LTlR65SY7ZOpPFGH0kUsVg)
 - 2024-07-09 [MySQL安魂九霄，PostgreSQL驶向云外](https://mp.weixin.qq.com/s/JgGCn9o2-DNPNqazPZXTtA)
@@ -138,6 +139,16 @@ tags: [数据库]
 
 ## 数据库老司机专栏
 
+- 2025-12-21 [MySQL：互联网行业的服从测试](https://mp.weixin.qq.com/s/SBZRQCCZ7PmsbDSgcRaqBQ?scene=1)
+- 2025-12-17 [Victoria：吊打业界的可观测性全家桶来了](https://mp.weixin.qq.com/s/RLN0DMzfvSibkGgq2VRcoQ)
+- 2025-12-08 [MinIO 已死，谁能接盘？](https://mp.weixin.qq.com/s/A7bAFSAk3dte7QfXu5qHQw)
+- 2025-12-21 [MinIO 已死](https://mp.weixin.qq.com/s/aBUwEMxZ_xKmHisaaT4uWw)
+- 2025-12-02 [当答案唾手可及，问题就成了新货币](https://mp.weixin.qq.com/s/A0VovhOt8LVztMBP78ssxw)
+- 2025-12-01 [为什么PG将主宰AI时代的数据库](https://mp.weixin.qq.com/s/dkQaj4xt11uHrwGK6Dm4QA)
+- 2025-11-29 [打造一个立足中国，面向世界的PG数据库发行版](https://mp.weixin.qq.com/s/kYl31hRXDvE65i_eewJ68A)
+- 2025-11-25 [PostgreSQL 18 可以上生产用了吗？](https://mp.weixin.qq.com/s/immOsWr2lkqWADx_6yOGCQ)
+- 2025-11-22 [开源供应链信任：我不愿寄希望于维护者缺席的项目上](https://mp.weixin.qq.com/s/ka7Akl6BeG_holMwEsdC9w)
+- 2025-11-21 [原地报废：不要在生产环境用Docker跑PostgreSQL！](https://mp.weixin.qq.com/s/9q68rfefIVdU9cjwDfUxGg)
 - 2025-11-13 [PG扩展云，免翻免费解锁PG完全体](https://mp.weixin.qq.com/s/oHHzhbbt5suSxnJhyxTwQQ)
 - 2025-10-10 [尝鲜须谨慎：PG新存储引擎故障案例](https://mp.weixin.qq.com/s/LdZVVyOj4BA9C892I25lQw)
 - 2025-10-03 [月饼好吃：又一家PG扩展公司被Databricks收购](https://mp.weixin.qq.com/s/fTygs1w9zrbQkvjsxjGOcg)
