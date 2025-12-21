@@ -1,12 +1,12 @@
 ---
-title: Switzerland Mandates Open Source for Government Software
-linkTitle: Switzerland Mandates Government Open Source
+title: Switzerland Mandates Open-Source for Government Software
+linkTitle: Switzerland Mandates Government Open-Source
 date: 2024-07-24
 summary: |
   Switzerland's government leads the way with open source legislation, showing IT developing countries how to ensure software sovereignty and control. True autonomy and control stem from "open source communities," not some "nationalist" style "domestic software."
 author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/))
-tags: [open source]
+tags: [Open-Source]
 ---
 
 > Switzerland's government leads the way with open source legislation, showing IT developing countries how to ensure software sovereignty and control. True autonomy and control stem from "open source communities," not some "nationalist" style "domestic software." [Vonng's Commentary](#vonng-commentary)
@@ -35,7 +35,7 @@ EMBAG's implementation is expected to become a model for other countries conside
 
 ------
 
-Other European countries have also long supported open source software. For example, in 2023, [French President Macron stated "we love open source"](https://eucloudedgeiot.eu/summary-of-the-open-source-key-areas-for-digital-autonomy-workshop/). The French National Gendarmerie (similar to the US FBI) [uses Linux on their PCs](https://www.zdnet.com/article/french-police-move-from-windows-to-ubuntu-linux/). The European Union (EU) has long been committed to ensuring open source software security through its [Free and Open Source Software Auditing (FOSSA)](https://commission.europa.eu/about-european-commission/departments-and-executive-agencies/digital-services/eu-fossa-2-free-and-open-source-software-auditing_en) project.
+Other European countries have also long supported open source software. For example, in 2023, [French President Macron stated "we love open source"](https://eucloudedgeiot.eu/summary-of-the-open-source-key-areas-for-digital-autonomy-workshop/). The French National Gendarmerie (similar to the US FBI) [uses Linux on their PCs](https://www.zdnet.com/article/french-police-move-from-windows-to-ubuntu-linux/). The European Union (EU) has long been committed to ensuring open source software security through its [Free and Open-Source Software Auditing (FOSSA)](https://commission.europa.eu/about-european-commission/departments-and-executive-agencies/digital-services/eu-fossa-2-free-and-open-source-software-auditing_en) project.
 
 However, things within the EU aren't entirely smooth. Some worry that the European Commission will [cut funding for the NGI Zero Commons Fund](https://fossforce.com/2024/07/is-the-european-commission-dropping-support-for-important-open-source-funding/), an important source of funding for OSS projects.
 

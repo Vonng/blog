@@ -3,7 +3,7 @@ title: "Online PostgreSQL Column Type Migration"
 date: 2020-01-30
 author: "vonng"
 summary: "How to modify PostgreSQL column types online? A general approach"
-tags: ["PostgreSQL","PG Management","Migration"]
+tags: ["PostgreSQL","PG-Admin","Migration"]
 ---
 
 ## Scenario

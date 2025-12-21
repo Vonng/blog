@@ -23,8 +23,6 @@ tags: [Pigsty]
 - Oracle 兼容的 IvorySQL 现已全平台可用
 - 图数据库扩展 Apache AGE 现已全平台可用
 
-![](featured.jpg)
-
 此外，基于 Cursor Vibe Coding 打造了全新的价值主张/特性介绍页面：https://pigsty.cc/about/values/
 
 ![](values.jpg)

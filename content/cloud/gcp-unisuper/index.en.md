@@ -6,7 +6,7 @@ author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat Official Account](https://mp.weixin.qq.com/s/eH5HBbL7cQhjQY8rm1gFLQ)
 summary: >
   Due to an "unprecedented configuration error," Google Cloud mistakenly deleted trillion-RMB fund giant **UniSuper**'s entire cloud account, cloud environment and all off-site backups, setting a new record in cloud computing history!
-tags: [cloud-exit, cloud-outage]
+tags: [Cloud-Exit, Cloud-Outage]
 ---
 
 Due to an "***unprecedented configuration error***", Google Cloud mistakenly deleted **UniSuper**'s cloud account.
@@ -43,9 +43,9 @@ UniSuper currently manages approximately **$125 billion** in funds.
 
 ------
 
-### Cloud Exit Feng's Commentary
+### Cloud-Exit Feng's Commentary
 
-If [**Alibaba Cloud's global service unavailability**](/cloud/aliyun/) major outage could be called "**epic**," then this Google Cloud outage deserves to be called "**peerless**." The former mainly involved service **availability**, while this outage struck at the core of many enterprises - **data integrity**.
+If [**Alibaba-Cloud's global service unavailability**](/cloud/aliyun/) major outage could be called "**epic**," then this Google Cloud outage deserves to be called "**peerless**." The former mainly involved service **availability**, while this outage struck at the core of many enterprises - **data integrity**.
 
 To my knowledge, this should be a new record in cloud computing history - the first such large-scale database deletion. The last similar data integrity incident was [**Tencent Cloud and the "Qianyan CNC" case**](/cloud/sla/#消失的可靠性).
 

@@ -5,7 +5,7 @@ author: |
   [Feng Ruohang](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
 summary: >
   NetEase Cloud Music experienced a two-and-a-half-hour outage this afternoon. Based on circulating online clues, we can deduce that the real cause behind this incident was...
-tags: [outage]
+tags: [Cloud-Outage]
 ---
 
 
@@ -82,7 +82,7 @@ The third lesson: **Beware of big company open source**. As an underlying storag
 
 [GitHub Global Outage, Another Database Rollover?](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488151&idx=1&sn=556731d65228f07f443cfb27b5e7bd8b&chksm=fe4b274cc93cae5ae1a32d423f2f7285eff3e184903d62182ad5f17c4772b4baf38b6a9c89c8&scene=21#wechat_redirect)
 
-[Alibaba Cloud Down Again, This Time Cable Cut?](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487926&idx=1&sn=2edbd59c845944dc9ba38021f42d1d63&chksm=fe4b246dc93cad7b35b7517b489371eaa08244ec561359e0a610bc9f6f2aa11cf1e3c2b34fb3&scene=21#wechat_redirect)
+[Alibaba-Cloud Down Again, This Time Cable Cut?](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487926&idx=1&sn=2edbd59c845944dc9ba38021f42d1d63&chksm=fe4b246dc93cad7b35b7517b489371eaa08244ec561359e0a610bc9f6f2aa11cf1e3c2b34fb3&scene=21#wechat_redirect)
 
 [Global Windows Blue Screen: Both Parties Are Amateur Hour](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488036&idx=1&sn=7bbcc3e8979a5f97a519a7a1684caa06&chksm=fe4b27ffc93caee9701d4a94830417e281c5c08e345d12b007ebaca84dc79c3224b880d75f4c&scene=21#wechat_redirect)
 
@@ -94,7 +94,7 @@ The third lesson: **Beware of big company open source**. As an underlying storag
 
 [How State Enterprises Inside View Cloud Vendors Outside](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486747&idx=1&sn=29cce4b791b274c966e05d2ce81ae09d&chksm=fe4b38c0c93cb1d6aa83c776f206791e79f172105c3f942a9a2e28da70889929ef3cb0c77839&scene=21#wechat_redirect)
 
-[Alibaba Cloud Stuck at Government Enterprise Customer Gates](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486691&idx=1&sn=6858441ede03a6e700155390cf0086f4&chksm=fe4b3938c93cb02eb36992769204ec829f4a9fe55c37329546a1db6039301ddf47094dddf7e1&scene=21#wechat_redirect)
+[Alibaba-Cloud Stuck at Government Enterprise Customer Gates](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486691&idx=1&sn=6858441ede03a6e700155390cf0086f4&chksm=fe4b3938c93cb02eb36992769204ec829f4a9fe55c37329546a1db6039301ddf47094dddf7e1&scene=21#wechat_redirect)
 
 [Amateur Hour Behind Internet Outages](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486590&idx=1&sn=d4d85de483fafb867487f024631a3e6c&scene=21#wechat_redirect)
 
@@ -110,9 +110,9 @@ The third lesson: **Beware of big company open source**. As an underlying storag
 
 [Tencent Cloud Computing Epic Second Rollover](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487267&idx=1&sn=7d31d44e89560356b5c5a2e7a40bb1e1&chksm=fe4b3af8c93cb3ee9b8000cd90a12a798395f67205d4ba5b0c77b8c5b6ce9ea448d9fc014921&scene=21#wechat_redirect)
 
-[Redis Going Closed Source Is a Disgrace to "Open Source" and Public Cloud](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487184&idx=1&sn=afa93b16ae95dba95d99a87ef6ff7605&chksm=fe4b3b0bc93cb21d07adb10713c1061a53b6438a5db0bd93a2e7a0f11ea365ba3d24ae02d13d&scene=21#wechat_redirect)
+[Redis Going Closed Source Is a Disgrace to "Open-Source" and Public Cloud](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487184&idx=1&sn=afa93b16ae95dba95d99a87ef6ff7605&chksm=fe4b3b0bc93cb21d07adb10713c1061a53b6438a5db0bd93a2e7a0f11ea365ba3d24ae02d13d&scene=21#wechat_redirect)
 
-[Analyzing Cloud Computing Costs: Did Alibaba Cloud Really Lower Prices?](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487089&idx=1&sn=ca16c2e7e534380eadcb3a3870d8e3b4&chksm=fe4b3baac93cb2bc8c4b68c468acf3e8ac5ee124080a3e738262fe99dd1765c3adf9c56ea650&scene=21#wechat_redirect)
+[Analyzing Cloud Computing Costs: Did Alibaba-Cloud Really Lower Prices?](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487089&idx=1&sn=ca16c2e7e534380eadcb3a3870d8e3b4&chksm=fe4b3baac93cb2bc8c4b68c468acf3e8ac5ee124080a3e738262fe99dd1765c3adf9c56ea650&scene=21#wechat_redirect)
 
 [What Can We Learn from Tencent Cloud's Post-Mortem?](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487348&idx=1&sn=412cf2afcd93c3f0a83d65219c4a28e8&chksm=fe4b3aafc93cb3b900cef33bd0510c7c86367d71877b0ee65d4847da0ae1298e2b1fd88d0b3f&scene=21#wechat_redirect)
 
@@ -120,8 +120,8 @@ The third lesson: **Beware of big company open source**. As an underlying storag
 
 [From "Cost Reduction LOL" to Real Cost Reduction and Efficiency](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486527&idx=1&sn=8e26f644f2b908fd21c83b81d329155d&chksm=fe4b39e4c93cb0f22271127a154a6ac5c45947b2051b06b7667ee5c203d136b5d2e8f6577b10&scene=21#wechat_redirect)
 
-[Alibaba Cloud Weekly Explosion: Cloud Database Management Down Again](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486512&idx=1&sn=43d6340fce93bfbf5439cc2cd8e3b8dd&chksm=fe4b39ebc93cb0fd192c69d9f589ccd36f1c1eb5d34fffc357cf0b8177c746c4b3445ea5f63a&scene=21#wechat_redirect)
+[Alibaba-Cloud Weekly Explosion: Cloud Database Management Down Again](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486512&idx=1&sn=43d6340fce93bfbf5439cc2cd8e3b8dd&chksm=fe4b39ebc93cb0fd192c69d9f589ccd36f1c1eb5d34fffc357cf0b8177c746c4b3445ea5f63a&scene=21#wechat_redirect)
 
-[What We Can Learn from Alibaba Cloud's Epic Outage](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486468&idx=1&sn=7fead2b49f12bc2a2a94aae942403c22&chksm=fe4b39dfc93cb0c92e5d4c67241de0519ae6a23ce6f07fe5411b95041accb69e5efb86a38150&scene=21#wechat_redirect)
+[What We Can Learn from Alibaba-Cloud's Epic Outage](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486468&idx=1&sn=7fead2b49f12bc2a2a94aae942403c22&chksm=fe4b39dfc93cb0c92e5d4c67241de0519ae6a23ce6f07fe5411b95041accb69e5efb86a38150&scene=21#wechat_redirect)
 
-[Alibaba Cloud Computing Epic Rollover](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486452&idx=1&sn=29cff4ee30b90483bd0a4f0963876f28&chksm=fe4b3e2fc93cb739af6ce49cffa4fa3d010781190d99d3052b4dbfa87d28c0386f44667e4908&scene=21#wechat_redirect)
+[Alibaba-Cloud Computing Epic Rollover](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486452&idx=1&sn=29cff4ee30b90483bd0a4f0963876f28&chksm=fe4b3e2fc93cb739af6ce49cffa4fa3d010781190d99d3052b4dbfa87d28c0386f44667e4908&scene=21#wechat_redirect)

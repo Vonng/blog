@@ -5,7 +5,7 @@ summary: |
   While I've always advocated for cloud exit, if it's about adopting a cyber bodhisattva cloud like Cloudflare, I'm all in with both hands raised.
 author: |
   [Feng Ruohang](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [WeChat](https://mp.weixin.qq.com/s/i4wk9ebyUK7irNSwuT3NWQ)
-tags: [cloud-exit,Cloudflare]
+tags: [Cloud-Exit,Cloudflare]
 ---
 
 At today's 2024 Developer Week, Cloudflare released a series of exciting new features, such as Python Workers and Workers AI, elevating the convenience of application development and delivery to an entirely new level. Compared to Cloudflare's Serverless development experience, traditional cloud providers' so-called Serverless products look ridiculous.

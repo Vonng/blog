@@ -6,7 +6,7 @@ author: |
   [Maciej Pocwierz](https://medium.com/@maciej.pocwierz) | Translated by: [Feng Ruohang](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [WeChat Original](https://mp.weixin.qq.com/s/35ScjtPjC1GNGKaSArJhcA) | [English Original](https://medium.com/@maciej.pocwierz/how-an-empty-s3-bucket-can-make-your-aws-bill-explode-934a383cb8b1)
 summary: >
   The dark forest law has emerged on public cloud: **Anyone who knows your S3 object storage bucket name can explode your cloud bill.** 
-tags: [cloud-exit,AWS,S3]
+tags: [Cloud-Exit,AWS,S3]
 ---
 
 The dark forest law has emerged on public cloud: **Anyone who knows your S3 object storage bucket name can explode your cloud bill.**
@@ -91,7 +91,7 @@ Thanks for taking time to read my article. Hope it helps you avoid unexpected AW
 
 ------
 
-## Cloud Exit Lao Feng's Commentary
+## Cloud-Exit Lao Feng's Commentary
 
 The dark forest law has emerged on public cloud: **Anyone who knows your S3 object storage bucket name can explode your AWS bill**. Just by knowing your bucket name, others don't need to know your ID or pass authentication — they can directly force PUT/GET your bucket, and regardless of success or failure, you'll be charged.
 

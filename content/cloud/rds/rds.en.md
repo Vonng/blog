@@ -7,7 +7,7 @@ author: |
 summary: >
   RDS pricing is absurd and insulting for large scale database & storage,
   when the open source alternatives arise, it will turn RDS into the idiot tax.
-tags: [Cloud,CloudExit,RDS,DBA]
+tags: [Cloud, Cloud-Exit, RDS, DBA]
 ---
 
 As the season of layoffs hits big tech companies, cost-cutting and efficiency are top of mind. Public cloud databases, often referred to as the "slaughterhouse knives" of the cloud, are under increasing scrutiny. The question now is: *Can their dominance continue?*
@@ -36,7 +36,7 @@ Taking the physical server model we heavily use as an example: Dell R730, 64 cor
 
 This calculation does not include the cost of DBA (Database Administrator) salaries: managing tens of thousands of cores with just two or three people is not that expensive.
 
-If you directly purchase a cloud database of this specification, what would the cost be? Let's look at the pricing from Alibaba Cloud in China. Since the basic version is practically unusable for production (for reference, see: "Cloud Database: From Deletion to Desertion"), we'll choose the high-availability version, which usually involves two to three instances. Opting for a yearly or monthly subscription, for an exclusive use of a 64-core, 256GB instance with PostgreSQL 15 on x86 in East China 1 availability zone, and adding a 3.2TB ESSD PL3 cloud disk, the annual cost ranges from 250,000 (for a 3-year contract) to 750,000 (on-demand), with storage costs accounting for about a third.
+If you directly purchase a cloud database of this specification, what would the cost be? Let's look at the pricing from Alibaba-Cloud in China. Since the basic version is practically unusable for production (for reference, see: "Cloud Database: From Deletion to Desertion"), we'll choose the high-availability version, which usually involves two to three instances. Opting for a yearly or monthly subscription, for an exclusive use of a 64-core, 256GB instance with PostgreSQL 15 on x86 in East China 1 availability zone, and adding a 3.2TB ESSD PL3 cloud disk, the annual cost ranges from 250,000 (for a 3-year contract) to 750,000 (on-demand), with storage costs accounting for about a third.
 
 ![](rds-1.png)
 
@@ -59,7 +59,7 @@ Comparing the costs of self-hosting versus using a cloud database:
 | Method                                                                                 | Cost Per Year (¥10k) |
 |----------------------------------------------------------------------------------------|----------------------|
 | Self-hosted Servers 64C / 384G / 3.2TB NVME SSD 660K IOPS (2-3 servers)                | 3.0 ~ 4.5            |
-| Alibaba Cloud RDS PG High-Availability pg.x4m.8xlarge.2c, 64C / 256GB / 3.2TB ESSD PL3 | 25 ~ 50              |
+| Alibaba-Cloud RDS PG High-Availability pg.x4m.8xlarge.2c, 64C / 256GB / 3.2TB ESSD PL3 | 25 ~ 50              |
 | AWS RDS PG High-Availability db.m5.16xlarge, 64C / 256GB / 3.2TB io1 x 80k IOPS        | 160 ~ 217            |
 
 So, the question arises, **if the cost of using a cloud database for one year is enough to buy several or even more than a dozen better-performing servers, what then is the real benefit of using a cloud database?** Of course, large public cloud customers can usually receive business discounts, but even with discounts, the magnitude of the cost difference is hard to ignore.
@@ -154,7 +154,7 @@ Although nearly half of the revenue of domestic public cloud IaaS (storage, comp
 
 Normally, if you're not using public cloud as just an IDC 2.0 or CDN provider, the most expensive service would be the database. Are the storage, computing, and networking resources on the public cloud expensive? Strictly speaking, not outrageously so. The cost of hosting and maintaining a physical machine in an IDC is about twenty to thirty units per core·month, while the price of using one CPU core for a month on the public cloud ranges from seventy to two hundred units, considering various discounts and activities, as well as the premium for elasticity, it's barely within an acceptable range.
 
-However, cloud databases are outrageously expensive, with the price for the same computing power per month being several times to over ten times higher than the corresponding hardware. For the cheaper Alibaba Cloud, the price per core·month ranges from two hundred to four hundred units, and for the more expensive AWS, it can reach seven to eight hundred or even more than a thousand.
+However, cloud databases are outrageously expensive, with the price for the same computing power per month being several times to over ten times higher than the corresponding hardware. For the cheaper Alibaba-Cloud, the price per core·month ranges from two hundred to four hundred units, and for the more expensive AWS, it can reach seven to eight hundred or even more than a thousand.
 
 If you're only using one or two cores of RDS, then it might not be worth the hassle to switch, just consider it a tax. But if your business scales up and you're still not moving away from the cloud, then you're really paying a tax on intelligence.
 
@@ -186,9 +186,9 @@ AWS's EBS service, when tested with fio, shows disastrously poor performance【6
 
 ![](rds-5.png)
 
-Indeed, sometimes cloud providers do offer sufficiently good local NVMe SSDs, but they cunningly impose various restrictions to prevent users from using EC2 to build their own databases. AWS restricts this by offering NVMe SSD Ephemeral Storage, which is wiped clean upon EC2 restart, rendering it unusable. Alibaba Cloud, on the other hand, sells at exorbitant prices, with **Alibaba Cloud's ESSD PL3 being 200 times more expensive** compared to direct hardware purchases. For a reference, a 3.2TB enterprise-grade PCI-E SSD card, AWS’s rental ratio is one month, while Alibaba Cloud’s is nine days, meaning the cost of renting for this period is equivalent to purchasing the entire disk. If purchasing on Alibaba Cloud with a three-year maximum discount at 50% off, the cost of three years of rent could buy 123 of the same disks, nearly 400TB in total ownership.
+Indeed, sometimes cloud providers do offer sufficiently good local NVMe SSDs, but they cunningly impose various restrictions to prevent users from using EC2 to build their own databases. AWS restricts this by offering NVMe SSD Ephemeral Storage, which is wiped clean upon EC2 restart, rendering it unusable. Alibaba-Cloud, on the other hand, sells at exorbitant prices, with **Alibaba-Cloud's ESSD PL3 being 200 times more expensive** compared to direct hardware purchases. For a reference, a 3.2TB enterprise-grade PCI-E SSD card, AWS’s rental ratio is one month, while Alibaba-Cloud’s is nine days, meaning the cost of renting for this period is equivalent to purchasing the entire disk. If purchasing on Alibaba-Cloud with a three-year maximum discount at 50% off, the cost of three years of rent could buy 123 of the same disks, nearly 400TB in total ownership.
 
-**Observability is another example where no RDS monitoring can be considered "good"**. Just looking at the number of monitoring metrics, while knowing whether a service is dead or alive may require only a few metrics, fault root cause analysis benefits from as many monitoring metrics as possible to build a good context. Most RDS services only provide basic monitoring metrics and rudimentary dashboards. For example, Alibaba Cloud RDS PG【7】's so-called "enhanced monitoring" includes only a few pitiful metrics. AWS and PG database-related metrics are also less than 100, while our own monitoring system includes over 800 types of host metrics, 610 types for PGSQL database, 257 types for REDIS, totaling around three thousand metrics, dwarfing those of RDS.
+**Observability is another example where no RDS monitoring can be considered "good"**. Just looking at the number of monitoring metrics, while knowing whether a service is dead or alive may require only a few metrics, fault root cause analysis benefits from as many monitoring metrics as possible to build a good context. Most RDS services only provide basic monitoring metrics and rudimentary dashboards. For example, Alibaba-Cloud RDS PG【7】's so-called "enhanced monitoring" includes only a few pitiful metrics. AWS and PG database-related metrics are also less than 100, while our own monitoring system includes over 800 types of host metrics, 610 types for PGSQL database, 257 types for REDIS, totaling around three thousand metrics, dwarfing those of RDS.
 
 
 ![](rds-6.png)

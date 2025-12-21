@@ -4,7 +4,7 @@ linkTitle: "PostgreSQL Ecosystem Frontier Developments"
 date: 2025-01-24
 author: vonng 
 summary: Sharing some interesting recent developments in the PG ecosystem.
-tags: [PostgreSQL,Ecosystem]
+tags: [PostgreSQL,PG-Ecosystem]
 ---
 
 Dear readers, I'm starting my vacation today. I might stop posting for two weeks, so Happy New Year in advance.
@@ -80,7 +80,7 @@ Before `v0.14.0`, `pg_search` didn't use Postgres's block storage and buffer cac
 
 pg_search's latest version has been included in Pigsty. Of course, we also provide other extensions offering similar full-text search/tokenization capabilities, such as pgroonga, pg_bestmatch, hunspell, and Chinese tokenization zhparser, for users to choose as needed.
 
-> Blog: Full-text Search Using Postgres Block Storage Layout https://www.paradedb.com/blog/block_storage_part_one
+> Blog: Full-Text-Search Using Postgres Block Storage Layout https://www.paradedb.com/blog/block_storage_part_one
 
 ------
 

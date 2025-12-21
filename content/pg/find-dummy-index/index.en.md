@@ -4,7 +4,7 @@ date: 2018-02-04
 author: vonng
 summary: >
   Indexes are useful, but they're not free. Unused indexes are a waste. Use these methods to identify unused indexes.
-tags: [PostgreSQL, PG Admin]
+tags: [PostgreSQL, PG-Admin]
 ---
 
 > Author: [Vonng](https://vonng.com/en/)

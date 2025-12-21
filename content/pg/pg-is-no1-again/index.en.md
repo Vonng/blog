@@ -7,7 +7,7 @@ author: |
   [Feng Ruohang (Vonng)](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [Original Chinese Post](https://mp.weixin.qq.com/s/VD_o1HIUVQHmHGcAS4UNwA)
 summary: |
   The 2024 StackOverflow Global Developer Survey results are fresh out, and PostgreSQL has become the most popular, most loved, and most wanted database globally for the second consecutive year. Nothing can stop PostgreSQL from devouring the entire database world anymore!
-tags: [PostgreSQL, PG Ecosystem]
+tags: [PostgreSQL, PG-Ecosystem]
 ---
 
 The [2024 StackOverflow Global Developer Survey results](https://survey.stackoverflow.co/2024/) are fresh out, with high-quality questionnaire feedback from 60,000 developers across 185 countries and regions. Of course, as a database veteran, I'm most interested in the "Database" section of the survey results:

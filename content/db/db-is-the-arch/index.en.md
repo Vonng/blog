@@ -17,7 +17,7 @@ Databases are the core of business architecture - this is self-evident consensus
 
 ## Database Drives the Future
 
-Not long ago, Yurii, founder of Omnigres, gave a presentation titled "[Database Drives the Future](https://gamma.app/docs/The-Database-Drives-the-Future-41vma58e3502p70?mode=doc)" at the [7th PG Ecosystem Conference](https://mp.weixin.qq.com/s/Hybx7nIPAGfuyul-wDHU-A), proposing an interesting viewpoint - **databases are business architecture**.
+Not long ago, Yurii, founder of Omnigres, gave a presentation titled "[Database Drives the Future](https://gamma.app/docs/The-Database-Drives-the-Future-41vma58e3502p70?mode=doc)" at the [7th PG-Ecosystem Conference](https://mp.weixin.qq.com/s/Hybx7nIPAGfuyul-wDHU-A), proposing an interesting viewpoint - **databases are business architecture**.
 
 His open-source project [Omnigres](https://omnigres.com/) does something "crazy": **stuffing all application logic, even web servers, into PostgreSQL databases**. Not just wrapping backends with REST interfaces, but cramming entire front and back ends into PG! How did he do it? Omnigres provides a suite of extension packages, including 33 PG "standard library" extension modules like `httpd`, `vfs`, `os`, `python`. After installation, a single SQL statement can turn PostgreSQL into an 'Nginx' running on port 8080:
 
@@ -74,7 +74,7 @@ But what if we go further and **treat databases as business architecture itself*
 
 ## What, You Can Play Like This?
 
-At the PG Ecosystem Conference, Yuri demonstrated an idea: **stuffing all business logic, even web servers and entire backends into PostgreSQL databases**.
+At the PG-Ecosystem Conference, Yuri demonstrated an idea: **stuffing all business logic, even web servers and entire backends into PostgreSQL databases**.
 For example, by writing stored procedures, you can put original backend functionality directly into databases to run. For this, he also implemented many "standard libraries" as PG extensions, from http, vfs, os to python modules.
 
 Let's look at an interesting example. Executing the following SQL in PostgreSQL will start a web server, serving `/www` as the root directory of a web server.

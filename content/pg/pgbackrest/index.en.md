@@ -3,7 +3,7 @@ title: "PgBackRest2 Documentation"
 date: 2018-02-07
 author: "vonng"
 summary: "PgBackRest is a set of PostgreSQL backup tools written in Perl"
-tags: [PostgreSQL, "PG Administration", Backup]
+tags: [PostgreSQL, "PG-Admin", Backup]
 ---
 
 pgBackRest homepage: http://pgbackrest.org

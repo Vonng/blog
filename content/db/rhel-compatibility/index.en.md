@@ -7,7 +7,7 @@ summary: >
   RHEL-series OS distribution compatibility level: RHEL = Rocky ≈ Anolis > Alma > Oracle >> Euler. Recommend using RockyLinux 8.8, or Anolis 8.8 for domestic requirements.
 series: ["信创国产化"]
 series_order: 2
-tags: [database,operating-system]
+tags: [Database,Operating-System]
 ---
 
 Many users have asked me what operating system is best for running databases. Especially considering that CentOS 7.9 will reach EOL next year, many users should need to upgrade their OS, so today I'm sharing some experience.
@@ -81,7 +81,7 @@ Most importantly, besides RHEL, RockyLinux is the EL-series OS that PostgreSQL o
 
 > RockyLinux: 100% Bug-Level Compatibility
 
-Anolis/OpenAnolis is Alibaba Cloud's domestic OS, claiming 100% EL compatibility. I didn't have high expectations initially - I just supported it because users wanted it, but the actual results exceeded expectations: all EL8 RPM packages passed on the first try. Adaptation required no additional work besides handling /etc/os-release. Adapting one Anolis equals adapting over ten "domestic OS" distributions: Alibaba Cloud, Tongxin Software, China Mobile, Kylin Software, CS2C, Linx Software, Inspur, NFSC, Xinyidian, Softpower, Boyant Technology. Very cost-effective.
+Anolis/OpenAnolis is Alibaba-Cloud's domestic OS, claiming 100% EL compatibility. I didn't have high expectations initially - I just supported it because users wanted it, but the actual results exceeded expectations: all EL8 RPM packages passed on the first try. Adaptation required no additional work besides handling /etc/os-release. Adapting one Anolis equals adapting over ten "domestic OS" distributions: Alibaba-Cloud, Tongxin Software, China Mobile, Kylin Software, CS2C, Linx Software, Inspur, NFSC, Xinyidian, Softpower, Boyant Technology. Very cost-effective.
 
 ![openAnolis.png](rhel-openAnolis.png)
 
@@ -114,7 +114,7 @@ Looking at another OS distro, it chose wholesale modifications, doing some usele
 
 OpenEuler and OpenGauss are similar: you ask if they work? They're not unusable — they just feel like eating shit. But the problem is there's already self-reliant and free food available, so why eat shit? If leadership insists on force-feeding shit, or the money is just too good, there's no choice. But if you eat shit and taste meat flavor while feeling world-leading, that's somewhat ridiculous.
 
-I've mocked Alibaba Cloud's services before (especially EBS and RDS), but in open source OS and DB, it's clear who's doing real work versus who's bullshitting. At least I think OpenAnolis and PolarDB have some substance, more deserving of "giving the world another choice" compared to Euler and Gauss - these useless modified forks. High-quality, maintained, service-providing open source main branch reskinned distributions are far better than brain-dead modified forks.
+I've mocked Alibaba-Cloud's services before (especially EBS and RDS), but in open source OS and DB, it's clear who's doing real work versus who's bullshitting. At least I think OpenAnolis and PolarDB have some substance, more deserving of "giving the world another choice" compared to Euler and Gauss - these useless modified forks. High-quality, maintained, service-providing open source main branch reskinned distributions are far better than brain-dead modified forks.
 
 Both being "self-reliant" EL-series domestic OS, Pigsty provides support for both OpenAnolis and OpenEuler. The former's support is open source and free because there's no adaptation cost. For the latter, we provide support for clients who need it based on customer-first principles: although we've completed adaptation, we'll never open source it for free - we must charge high customization service fees as compensation for mental distress. Similarly, we open sourced [PolarDB monitoring](https://mp.weixin.qq.com/s/DExvaEk2Yoq37W8V6wvaKg) support, but OpenGauss - sorry, go play by yourself.
 

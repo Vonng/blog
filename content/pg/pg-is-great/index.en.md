@@ -6,7 +6,7 @@ author: |
   [Feng Ruohang (Vonng)](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [Original Chinese Post](https://mp.weixin.qq.com/s/KBypNeeM4puvzGiKFJ1FmQ)
 summary: >
   Databases are the core component of information systems, relational databases are the absolute backbone of databases, and PostgreSQL is the world's most advanced open source relational database. With such favorable timing and positioning, how can it not achieve great success?
-tags: [PostgreSQL, PG Ecosystem]
+tags: [PostgreSQL, PG-Ecosystem]
 ---
 
 Recently, everything I've been working on revolves around the PostgreSQL ecosystem, because I've always felt this is a direction with unlimited potential.
@@ -85,7 +85,7 @@ PostgreSQL can independently play the role of a multi-talented player within a c
 
 -------------
 
-## The Virtue of Open Source
+## The Virtue of Open-Source
 
 Open source has great **virtue**. The history of the Internet is the history of open source software. The reason the IT industry has today's prosperity, and people can enjoy so many free information services, one core reason is open source software. Open source is a truly successful form of communism (translated as **communitarianism** would be more appropriate) composed of developers: software, the core means of production in the IT industry, becomes commonly owned by developers worldwide - everyone for me, me for everyone.
 
@@ -111,7 +111,7 @@ The prosperity of open source ecosystems depends on this closed loop, and the sc
 
 ## Popular vs Advanced
 
-MySQL's slogan is "**The World's Most Popular Open Source Relational Database**," while PostgreSQL's slogan is "**The World's Most Advanced Open Source Relational Database**" - at first glance, these are clearly old rivals. These two slogans well reflect the characteristics of both products: PostgreSQL is feature-rich, consistency-first, high-end rigorous academic-style database; MySQL is feature-crude, availability-first, rough-and-ready "engineering-style" database.
+MySQL's slogan is "**The World's Most Popular Open-Source Relational Database**," while PostgreSQL's slogan is "**The World's Most Advanced Open-Source Relational Database**" - at first glance, these are clearly old rivals. These two slogans well reflect the characteristics of both products: PostgreSQL is feature-rich, consistency-first, high-end rigorous academic-style database; MySQL is feature-crude, availability-first, rough-and-ready "engineering-style" database.
 
 MySQL's main user base is concentrated in Internet companies. What are the typical characteristics of Internet companies? Pursuing trendy **rough-and-ready** approaches. **Rough** means Internet company business scenarios are simple (mostly CRUD); data importance is not high, unlike traditional industries (like banks) that care about data consistency (correctness); availability priority (more tolerant of data loss/corruption than service outages, while some traditional industries would rather stop service than have account errors). **Ready** means the Internet industry has large data volumes - they need cement truck mixers, not high-speed trains and manned spacecraft. **Fast** means the Internet industry has rapidly changing requirements, short delivery cycles, requiring fast response times, with massive demand for out-of-the-box software packages (like LAMP) and CRUD developers who can work after simple training. Thus, rough-and-ready Internet companies and rough-and-ready MySQL hit it off.
 
@@ -212,7 +212,7 @@ Cloud databases' main advantage is still **management and control** - simply put
 
 > If you want an **open source** PostgreSQL monitoring and management one-stop solution, try Pigsty.
 
-The latter type of cloud database, represented by AWS Aurora, also includes similar products like Alibaba Cloud PolarDB and Tencent Cloud CynosDB. They basically use PostgreSQL and MySQL as base and protocol layers, customized based on cloud infrastructure (shared storage, S3, RDMA), optimizing **scaling speed** and **performance**. These products definitely have novelty and creativity technically. But the soul question is, what are the benefits of such products compared to directly using native PostgreSQL? The immediately visible benefit is cluster scaling will be much faster (from hours to 5 minutes), but compared to high costs and vendor lock-in problems, it really doesn't hit pain points or itch spots.
+The latter type of cloud database, represented by AWS Aurora, also includes similar products like Alibaba-Cloud PolarDB and Tencent Cloud CynosDB. They basically use PostgreSQL and MySQL as base and protocol layers, customized based on cloud infrastructure (shared storage, S3, RDMA), optimizing **scaling speed** and **performance**. These products definitely have novelty and creativity technically. But the soul question is, what are the benefits of such products compared to directly using native PostgreSQL? The immediately visible benefit is cluster scaling will be much faster (from hours to 5 minutes), but compared to high costs and vendor lock-in problems, it really doesn't hit pain points or itch spots.
 
 Overall, cloud databases pose limited threats to native PostgreSQL. Don't worry too much about cloud vendor problems - cloud vendors are generally part of the open source software ecosystem and contribute to communities and ecosystems. Making money isn't shameful - only when everyone makes money is there energy left for charity, right?
 

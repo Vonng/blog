@@ -7,7 +7,7 @@ summary: >
   When we talk about self-reliance and control, what are we really talking about? Operational self-reliance vs. R&D self-reliance - what nations/users truly need is the former, not flashy "self-research".
 series: ["信创国产化"]
 series_order: 1
-tags: [database,domestic-database]
+tags: [Database, Domestic-Database]
 ---
 
 > [WeChat](https://mp.weixin.qq.com/s/hWbcc9cMM9qTjPJ0m6G0Kg) | [Zhihu Original](https://zhuanlan.zhihu.com/p/653583260)

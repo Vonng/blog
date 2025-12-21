@@ -298,7 +298,6 @@ PostgreSQL 数据库内核在数据库领域的生态位，类似于 Linux 操�
 然而，用户最终需要的不单单是一台发动机，而是整车、驾驶能力与交通服务。数据库领域竞争的焦点，已经从 Software 本身，转移到了 **Software enabled Service —— 完整的数据库发行版与数据库服务**。
 对于基于 PostgreSQL 内核的数据库发行版而言，竞争才刚刚开始。谁会成为PG的Debian，RedHat 与 Ubuntu ？
 这便是我们做 **[Pigsty](https://pigsty.cc)** 的初衷 —— 制作一个开箱即用的、开源免费、本地优先的 PostgreSQL 数据库发行版，让所有人都能用**好数据库**， **用好**数据库。
-当然，限于篇幅，那就是[另一篇](/db/pgsql-x-pigsty/)要介绍的故事了。
 
 ![](pg-is-no1-18.png)
 

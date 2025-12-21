@@ -1,10 +1,10 @@
 ---
-title: Alicloud “Borrowed” Supabase. This Is What Happens When Giants Strip-Mine Open Source.
+title: Alicloud “Borrowed” Supabase. This Is What Happens When Giants Strip-Mine Open-Source.
 date: 2025-11-06
 author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: "Founders here get asked the same question over and over: what if Alibaba builds the same thing? Alicloud RDS just launched Supabase as a managed service. Exhibit A."
-tags: [Alibaba Cloud, Open Source, Supabase]
+tags: [Alibaba-Cloud, Open-Source, Supabase]
 ---
 
 Chinese founders hear the nightmare scenario constantly: “What happens when Alibaba shows up?” Well, Alicloud RDS just shipped Supabase as a first-party feature. This is what it looks like when a hyperscaler parachutes into your niche.
@@ -79,7 +79,7 @@ To be fair, Alicloud used to have a decent reputation in open source. Qwen model
 
 [Database Watercooler: OpenAI Wants to Acquire Supabase?](https://mp.weixin.qq.com/s/RmU7RXl9ewwnpabjI4lw4Q)
 
-[PG Ecosystem Wins Wall Street: Databricks Buys Neon, Supabase Raises $200M, Microsoft Earnings Name-Drop PG](https://mp.weixin.qq.com/s/skxFplC0ow0Hh9gqs_N4hQ)
+[PG-Ecosystem Wins Wall Street: Databricks Buys Neon, Supabase Raises $200M, Microsoft Earnings Name-Drop PG](https://mp.weixin.qq.com/s/skxFplC0ow0Hh9gqs_N4hQ)
 
 [Supabase’s $80M Series C](https://mp.weixin.qq.com/s/fi_p3tTZTnwP5XDJrkVbQw)
 
@@ -95,7 +95,7 @@ To be fair, Alicloud used to have a decent reputation in open source. Qwen model
 
 [Alicloud CDN Down—Remember to Claim SLA Credits](https://mp.weixin.qq.com/s/Y2PZiH63EAXRKP8gele8NQ)
 
-[Catastrophe: Alibaba Cloud Lost Its Core Domains](https://mp.weixin.qq.com/s/l1b-eq06NyuN61cqZoYJjA)
+[Catastrophe: Alibaba-Cloud Lost Its Core Domains](https://mp.weixin.qq.com/s/l1b-eq06NyuN61cqZoYJjA)
 
 [Alicloud Rotting From Top to Bottom](https://mp.weixin.qq.com/s/0pT7wb0Y6ohgvEltED93hA)
 

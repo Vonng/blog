@@ -4,7 +4,7 @@ date: 2018-07-07
 author: "vonng"
 summary: >
   A common requirement in application development is GeoIP conversion - converting source IP addresses to geographic coordinates or administrative divisions (country-state-city-county-town-village)
-tags: [PostgreSQL, PG Development, Extensions, GIS]
+tags: [PostgreSQL, PG-Development, Extension, GIS]
 ---
 
 

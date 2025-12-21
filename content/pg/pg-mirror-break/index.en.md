@@ -4,7 +4,7 @@ date: 2025-07-07
 author: vonng
 summary: >
   PGDG cuts off FTP rsync sync channels, global mirror sites universally disconnected - this time they really strangled global users' supply chain.
-tags: [PostgreSQL, PG Administration]
+tags: [PostgreSQL, PG-Admin]
 ---
 
 Recently, while building Pigsty offline packages, I discovered that the PostgreSQL version installed during local testing wasn't quite right - 17.4 was behind the latest 17.5 by one minor version. Also, when testing on EL10, 
@@ -12,8 +12,8 @@ I found several repositories were throwing errors. Strangely, using the global d
 
 ![tsinghua.webp](tsinghua.webp)
 
-Upon closer inspection, I found that domestic mirror sites had all lost synchronization with the PostgreSQL upstream repository: Tsinghua University Open Source Software Mirror Site (TUNA) last successful sync was May 16th, 
-while Alibaba Cloud Mirror Site's last sync timestamp was March 31, 2025. Foreign mirror sites like mirrors.xtom.de also had this problem, with last sync on June 20th, though you could clearly see signs of manual updates and disconnection from sync.
+Upon closer inspection, I found that domestic mirror sites had all lost synchronization with the PostgreSQL upstream repository: Tsinghua University Open-Source Software Mirror Site (TUNA) last successful sync was May 16th, 
+while Alibaba-Cloud Mirror Site's last sync timestamp was March 31, 2025. Foreign mirror sites like mirrors.xtom.de also had this problem, with last sync on June 20th, though you could clearly see signs of manual updates and disconnection from sync.
 
 ![aliyun.webp](aliyun.webp)
 
@@ -41,7 +41,7 @@ Honestly, I think this is quite ridiculous - if you block all these mirror sites
 But honestly, you can't really blame them for anything, because this is just open source STYLE - no warranty - after all, they're not charging money, developers have no obligation to keep doing charity.
 But from another perspective, **this really strangled global users' supply chain**: for example, if users using mirror sites can't timely update to 17.5 which fixes CVE vulnerabilities.
 
-I've already reported this issue to Alibaba Cloud Mirror and Tsinghua TUNA Mirror maintainers to see if it can be fixed recently. For example, using HTTP to pull updates. 
+I've already reported this issue to Alibaba-Cloud Mirror and Tsinghua TUNA Mirror maintainers to see if it can be fixed recently. For example, using HTTP to pull updates. 
 If it can't be resolved in the short term, I'm prepared to pull down part of the PGDG repository myself and put it on Cloudflare to make a mirror site first.
 
 ![tsinghua-maillist.webp](tsinghua-maillist.webp)
@@ -52,7 +52,7 @@ But maintaining a self-controlled software binary product repository has critica
 ![prymaid.webp](prymaid.webp)
 
 I've also been thinking about setting up a mirror site domestically myself, since I've already set up a Pigsty APT/YUM repository, adding PG wouldn't be a big deal. 
-But actually Alibaba Cloud and TUNA have been doing quite well before, so I've always used these two as default configurations for domestic users.
+But actually Alibaba-Cloud and TUNA have been doing quite well before, so I've always used these two as default configurations for domestic users.
 
 As for the long term, actually I could recompile and package a dedicated PostgreSQL repository, especially since I've recently packaged several PG branch kernels, plus over 250 extensions in the PG ecosystem not included by PGDG. 
 I'm already a veteran packager when it comes to building APT/YUM repositories. However, the main issue is maintenance takes too much time, and domestic traffic costs are also too expensive. 

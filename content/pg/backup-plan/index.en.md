@@ -4,7 +4,7 @@ date: 2019-03-02
 author: vonng
 summary: >
   There are various backup strategies. Physical backups can usually be divided into four types.
-tags: [PostgreSQL,PG Administration,Backup]
+tags: [PostgreSQL,PG-Admin,Backup]
 ---
 
 > Author: [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))

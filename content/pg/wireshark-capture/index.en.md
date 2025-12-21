@@ -4,7 +4,7 @@ date: 2018-01-05
 author: "vonng"
 summary: >
   Wireshark is a very useful tool, especially suitable for analyzing network protocols. Here's a simple introduction to using Wireshark for packet capture and PostgreSQL protocol analysis.
-tags: [PostgreSQL, PG Management, Tools]
+tags: [PostgreSQL, PG-Admin, Tools]
 ---
 
 Wireshark is a very useful tool, especially suitable for analyzing network protocols.

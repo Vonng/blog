@@ -5,7 +5,7 @@ author: vonng
 showAuthor: false
 summary: |
   The same forces that once led MongoDB and MySQL toward closure are now at work in the PostgreSQL ecosystem. The PG world needs a distribution that represents "software freedom" values.
-tags: [PostgreSQL,PG Ecosystem]
+tags: [PostgreSQL,PG-Ecosystem]
 ---
 
 Percona is a banner-bearer and major third-party vendor in the MySQL ecosystem, and has been advancing into the PostgreSQL space in recent years. The English original of this article was published on the Percona blog this morning.
@@ -54,7 +54,7 @@ MongoDB, once an open-source champion, now resembles Oracle more than open sourc
 
 ![mongo-trend.jpg](mongo-trend.jpg)
 
-> Author's note: [In the StackOverflow 2025 Survey, MongoDB became the year's biggest loser]([so2025-pg](/pg/so2025-pg))
+> Author's note: [In the StackOverflow 2025 Survey, MongoDB became the year's biggest loser](/pg/so2025-pg/)
 
 Today, discussions about MongoDB mostly focus on how to migrate away from this enterprise platform rather than continuing to adopt it.
 One of the most telling examples is a blog post published by Infisical in December 2024 (Infisical is a "one-stop platform for securely managing application secrets, certificates, SSH keys, and configurations") titled "[The Great Migration from MongoDB to PostgreSQL](https://infisical.com/blog/postgresql-migration-technical)."
@@ -134,7 +134,7 @@ Regarding this issue, I've repeatedly criticized cloud vendors' RDS / cloud data
 ### Percona Distribution
 
 Percona is among the early vendors to explicitly propose the ["PostgreSQL distribution"](https://docs.percona.com/postgresql/17/third-party.html) concept. They have two very good extensions — 
-[`pg_stat_monitor`](https://ext.pgsty.com/e/pg_stat_monitor) and [`pg_tde`](https://ext.pgsty.com/e/pg_tde), the former providing advanced observability metrics in PostgreSQL, the latter providing transparent encryption functionality.
+[`pg_stat_monitor`](https://pgext.cloud/e/pg_stat_monitor) and [`pg_tde`](https://pgext.cloud/e/pg_tde), the former providing advanced observability metrics in PostgreSQL, the latter providing transparent encryption functionality.
 Percona also has a PMM monitoring tool, an excellent monitoring platform built for the MySQL ecosystem that recently added some PostgreSQL support.
 Of course, because the patches required by pg_tde haven't been merged into the PG mainline, Percona had to create their own patched PostgreSQL kernel packages to work with their pg_tde transparent encryption extension.
 
@@ -205,10 +205,10 @@ This is what Pigsty does — a truly open-source PostgreSQL distribution represe
 - [Oracle Finally Killed MySQL](/db/oracle-kill-mysql/)
 - [Can Oracle Still Save MySQL?](/db/can-oracle-save-mysql/)
 - [MySQL Performance Getting Worse, Where Is Sakila Going?](/db/sakila-where-are-you-going/)
-- [Will PostgreSQL Change Its Open Source License?](/pg/pg-license/)
-- [Amateur Hour Opera: Alibaba Cloud PostgreSQL Disaster Chronicle](/cloud/rds-failure/)
-- [KubeSphere: Trust Crisis Behind Open Source Supply Cut](/cloud/kubesphere-rugpull/)
+- [Will PostgreSQL Change Its Open-Source License?](/pg/pg-license/)
+- [Amateur Hour Opera: Alibaba-Cloud PostgreSQL Disaster Chronicle](/cloud/rds-failure/)
+- [KubeSphere: Trust Crisis Behind Open-Source Supply Cut](/cloud/kubesphere-rugpull/)
 - [WordPress Community Civil War: On Community Boundary Demarcation](/cloud/wordpress-drama/)
 - [MongoDB Has No Future: Good Marketing Can't Save a Rotten Mango](/db/bad-mongo/)
-- [Redis Going Non-Open Source is a Disgrace to 'Open Source' and Public Cloud](/db/redis-oss/)
+- [Redis Going Non-Open-Source is a Disgrace to 'Open-Source' and Public Cloud](/db/redis-oss/)
 - [Paradigm Shift: From Cloud to Local-First](/cloud/paradigm/)

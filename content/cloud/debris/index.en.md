@@ -6,14 +6,14 @@ author: |
   [Feng Ruohang](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [WeChat](https://mp.weixin.qq.com/s/eag0CqfUTeNPbIB6TZqFVg) 
 summary: |
   Once upon a time, "going to cloud" was almost politically correct in tech circles, but few people use hard data to analyze the trade-offs involved. I'm willing to be this skeptic: let me use hard data and personal stories to explain the traps and value of public cloud rental models.
-tags: [cloud-exit]
+tags: [Cloud-Exit]
 ---
 
 Once upon a time, "going to cloud" was almost politically correct in tech circles, but few people use hard data to analyze the trade-offs involved. I'm willing to be this skeptic: let me use hard data and personal stories to explain the traps and value of public cloud rental models - for your reference in this era of cost reduction and efficiency improvement.
 
-[Cloud Exit Odyssey](/cloud/odyssey/)
+[Cloud-Exit Odyssey](/cloud/odyssey/)
 
-[The End of FinOps is Cloud Exit](/cloud/finops/)
+[The End of FinOps is Cloud-Exit](/cloud/finops/)
 
 [Why Isn't Cloud Computing More Profitable Than Mining Sand?](/cloud/profit/)
 
@@ -49,7 +49,7 @@ For no other reason than hoping all users can own their digital homes, rather th
 
 --------------
 
-## [Cloud Exit Odyssey](/cloud/odyssey/)
+## [Cloud-Exit Odyssey](/cloud/odyssey/)
 
 The contemporary cloud exit epic, cloud repatriation odyssey. The legendary cloud exit story from 37 Signal: how to exit cloud and save 50 million yuan in 6 months. I selected 10 articles from @dhh's blog, presenting this magnificent journey in reverse chronological timeline, translated into Chinese for your reference.
 
@@ -59,7 +59,7 @@ Translator: **Feng Ruohang**, aka Vonng. Founder & CEO of PieCloudDB. Pigsty aut
 
 --------------
 
-## [The End of FinOps is Cloud Exit](/cloud/finops/)
+## [The End of FinOps is Cloud-Exit](/cloud/finops/)
 
 At the SACC 2023 FinOps session, I heavily criticized cloud providers. This is the written transcript of my live speech, introducing the concept and practical path of ultimate FinOps - **cloud exit**.
 
@@ -67,7 +67,7 @@ At the SACC 2023 FinOps session, I heavily criticized cloud providers. This is t
 
 **Public Cloud is a Pig-Killing Scam**: Cheap EC2/S3 for customer acquisition, EBS/RDS for pig-killing. Cloud computing costs 5x self-building, while block storage costs can reach 100x+, the ultimate cost assassin.
 
-**FinOps End Point is Cloud Exit**: For enterprises with certain scale, IDC self-building total costs are around 10% of cloud service list prices. Cloud exit is the end point of orthodox FinOps and the true starting point of real FinOps.
+**FinOps End Point is Cloud-Exit**: For enterprises with certain scale, IDC self-building total costs are around 10% of cloud service list prices. Cloud exit is the end point of orthodox FinOps and the true starting point of real FinOps.
 
 **Self-Building Capability Determines Negotiating Power**: Users with self-building capability can negotiate extremely low discounts even without leaving cloud, while companies without self-building capability can only pay high "no-expert tax" to public cloud providers.
 
@@ -85,9 +85,9 @@ Service competitiveness gradually gets leveled, where is cloud computing heading
 
 In "[Are Cloud Disks Pig-Killing Scams](/cloud/ebs/)", "[Are Cloud Databases Intelligence Tax](/cloud/rds/)" and "[Are Cloud SLAs Just Placebos](/cloud/sla/)", we've studied true costs of key cloud services. Cloud server costs calculated per core·month at scale are 5-10x self-building, cloud databases can reach 10+ times, cloud disks can reach 100+ times. With this pricing model, cloud gross margins of 80-90% wouldn't be surprising.
 
-Industry benchmarks AWS and Azure can easily reach 60% and 70% gross margins. Looking at domestic cloud computing, gross margins generally hover around single digits to **15%**, with top dog Alibaba Cloud at most giving a "estimated long-term overall gross margin 40%". Cloud providers like Kingsoft Cloud have gross margins directly driven to **2.1%**, lower than manual sand mining.
+Industry benchmarks AWS and Azure can easily reach 60% and 70% gross margins. Looking at domestic cloud computing, gross margins generally hover around single digits to **15%**, with top dog Alibaba-Cloud at most giving a "estimated long-term overall gross margin 40%". Cloud providers like Kingsoft Cloud have gross margins directly driven to **2.1%**, lower than manual sand mining.
 
-Speaking of net profits, domestic public cloud providers are even more miserable. AWS/Azure net profit margins can reach 30%-40%. Benchmark Alibaba Cloud barely struggles around the break-even line. This makes one curious: **how did these domestic cloud providers manage to turn a 30-40% pure profit business into this state?**
+Speaking of net profits, domestic public cloud providers are even more miserable. AWS/Azure net profit margins can reach 30%-40%. Benchmark Alibaba-Cloud barely struggles around the break-even line. This makes one curious: **how did these domestic cloud providers manage to turn a 30-40% pure profit business into this state?**
 
 --------------
 
@@ -105,7 +105,7 @@ For cloud providers, **SLA isn't a real reliability commitment or historical tra
 
 We've already answered "[Are Cloud Databases Intelligence Tax](/cloud/rds/)" with data, but facing **public cloud** **block storage's** **hundred-fold premium pig-killing ratio**, cloud databases pale in comparison. This article uses actual data to reveal public cloud's real business model - cheap EC2/S3 for customer acquisition, EBS/RDS for pig-killing. This practice also makes public cloud drift further from its original vision.
 
-EC2/S3/EBS are the pricing anchors for all cloud services. If EC2/S3 pricing can barely be called reasonable, then EBS pricing is deliberate pig-killing. Public cloud providers' best block storage services have basically the same performance specs as self-building available PCI-E NVMe SSDs. However, compared to direct hardware procurement, **AWS EBS costs 120x more, while Alibaba Cloud's ESSD can reach 200x**.
+EC2/S3/EBS are the pricing anchors for all cloud services. If EC2/S3 pricing can barely be called reasonable, then EBS pricing is deliberate pig-killing. Public cloud providers' best block storage services have basically the same performance specs as self-building available PCI-E NVMe SSDs. However, compared to direct hardware procurement, **AWS EBS costs 120x more, while Alibaba-Cloud's ESSD can reach 200x**.
 
 Plug-and-play disk hardware with hundred-fold premiums - why? Cloud providers can't explain where such sky-high prices come from. Combined with other cloud storage services' design philosophy and pricing models, there's only one reasonable explanation: **EBS's high premium ratio is deliberately set as a threshold to facilitate cloud database pig-killing**.
 
@@ -119,7 +119,7 @@ Recently, Basecamp & HEY co-founder DHH's article [1,2] caused heated discussion
 
 So, how many awesome servers can $500K buy?
 
-A 64C 384G + 3.2TB NVMe SSD high-spec database server, our local self-building, 5-year amortization, costs 15K yuan annually. Self-building two for HA costs 50K annually, same spec on Alibaba Cloud costs 250-500K (3-year 50% discount); AWS is even more outrageous: 1.6-2.17 million yuan.
+A 64C 384G + 3.2TB NVMe SSD high-spec database server, our local self-building, 5-year amortization, costs 15K yuan annually. Self-building two for HA costs 50K annually, same spec on Alibaba-Cloud costs 250-500K (3-year 50% discount); AWS is even more outrageous: 1.6-2.17 million yuan.
 
 So the question is: if using cloud database for 1 year costs enough to buy several or even dozens of better-performing servers, what's the point of using cloud databases? If you feel you lack self-building capability - we provide a ready-to-use, free RDS management alternative to solve this problem! - Pigsty!
 

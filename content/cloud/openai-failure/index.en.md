@@ -5,14 +5,14 @@ author: |
   [Original](https://status.openai.com/incidents/ctrsv3lwd797) Translated by: [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: >
   Even trillion-dollar unicorns can be a house of cards when operating outside their core expertise.
-tags: [Failure]
+tags: [Cloud-Outage]
 ---
 
 On December 11th, OpenAI experienced a global service outage affecting ChatGPT, API, Sora, Playground, and Labs. The outage lasted from 3:16 PM to 7:38 PM PT, spanning over four hours with significant impact.
 
 According to OpenAI's [incident report](https://status.openai.com/incidents/ctrsv3lwd797) published afterward, the root cause was a newly deployed monitoring service that overwhelmed the Kubernetes control plane. The control plane failure then prevented direct rollback, amplifying the impact and causing extended unavailability.
 
-This incident bears striking similarity to last year's [Alibaba Cloud epic global outage](https://mp.weixin.qq.com/s/OIlR0rolEQff9YfCpj3wIQ). Both involved global control plane failures caused by circular dependencies (plus insufficient testing/deployment gradual rollout). The difference: Alibaba's was between OSS and IAM, OpenAI's was between DNS and K8S.
+This incident bears striking similarity to last year's [Alibaba-Cloud epic global outage](https://mp.weixin.qq.com/s/OIlR0rolEQff9YfCpj3wIQ). Both involved global control plane failures caused by circular dependencies (plus insufficient testing/deployment gradual rollout). The difference: Alibaba's was between OSS and IAM, OpenAI's was between DNS and K8S.
 
 --------
 
@@ -30,7 +30,7 @@ OpenAI also had a major outage last year with [PostgreSQL database and pgBouncer
 
 #### **Further Reading**
 
-[What We Can Learn from Alibaba Cloud's Epic Failure](https://mp.weixin.qq.com/s/OIlR0rolEQff9YfCpj3wIQ)
+[What We Can Learn from Alibaba-Cloud's Epic Failure](https://mp.weixin.qq.com/s/OIlR0rolEQff9YfCpj3wIQ)
 
 [Tencent Cloud: Face-losing Amateur Hour](https://mp.weixin.qq.com/s/PgduTGIvWSUgHZhVfnb7Bg)
 
@@ -40,9 +40,9 @@ OpenAI also had a major outage last year with [PostgreSQL database and pgBouncer
 
 [Global Windows Blue Screen: Both Sides Are Amateur Operations](https://mp.weixin.qq.com/s/s7i7bSYzNY8mrcpfkHPjOg)
 
-[Alibaba Cloud: Death of High Availability Disaster Recovery Myth](https://mp.weixin.qq.com/s/rXwEayprvDKCgba4m-naoQ)
+[Alibaba-Cloud: Death of High Availability Disaster Recovery Myth](https://mp.weixin.qq.com/s/rXwEayprvDKCgba4m-naoQ)
 
-[Amateur Hour Show: Alibaba Cloud RDS Failure Chronicle](https://mp.weixin.qq.com/s/kOIw8uPjZUZ0-QisC1TBOA)
+[Amateur Hour Show: Alibaba-Cloud RDS Failure Chronicle](https://mp.weixin.qq.com/s/kOIw8uPjZUZ0-QisC1TBOA)
 
 [The Amateur Operations Behind Internet Outages](https://mp.weixin.qq.com/s/OxhhJ4U80xqsnytC4l9lRg)
 
@@ -50,13 +50,13 @@ OpenAI also had a major outage last year with [PostgreSQL database and pgBouncer
 
 --------
 
-## Original Incident Report
+## Original Incident-Report
 
 ### Issues with API, ChatGPT, and Sora
 
 https://status.openai.com/incidents/ctrsv3lwd797
 
-#### OpenAI Incident Report
+#### OpenAI Incident-Report
 
 This document provides a detailed account of an incident that occurred on December 11, 2024, during which all OpenAI services experienced significant outages. The root cause was the deployment of a new telemetry service that unexpectedly overwhelmed the Kubernetes control plane, triggering cascading failures across critical systems. We'll dive into the fundamental causes, outline our response steps, and share the improvements we're implementing to prevent similar incidents.
 

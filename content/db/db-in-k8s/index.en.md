@@ -79,17 +79,17 @@ For serious technology decisions, the most crucial aspect is weighing the pros a
 
  K8S, compared to physical deployments, introduces additional failure points and architectural complexity, increasing the blast radius and significantly prolonging the average recovery time of failures. In ["Is it a Good Idea to Put Databases into Docker?"](https://mp.weixin.qq.com/s/kFftay1IokBDqyMuArqOpg), we provided an argument about reliability, which can also apply to Kubernetes — K8S and Docker introduce additional and unnecessary dependencies and failure points to databases, lacking community failure knowledge accumulation and reliability track record (MTTR/MTBF).
 
-In the cloud vendor classification system, K8S belongs to PaaS, while RDS belongs to a more fundamental layer, IaaS. **Database services have higher reliability requirements than K8S**; for instance, many companies' cloud management platforms rely on an additional CMDB database. Where should this database be placed? You shouldn't let K8S manage things it depends on, nor should you add unnecessary extra dependencies. The [Alibaba Cloud global epic failure](https://mp.weixin.qq.com/s/OIlR0rolEQff9YfCpj3wIQ) and [Didi's K8S architecture juggling disaster](https://mp.weixin.qq.com/s/FIOB_Oqefx1oez1iu7AGGg) have taught us this lesson. Moreover, maintaining a separate database system inside K8S when there's already one outside is even more unjustifiable.
+In the cloud vendor classification system, K8S belongs to PaaS, while RDS belongs to a more fundamental layer, IaaS. **Database services have higher reliability requirements than K8S**; for instance, many companies' cloud management platforms rely on an additional CMDB database. Where should this database be placed? You shouldn't let K8S manage things it depends on, nor should you add unnecessary extra dependencies. The [Alibaba-Cloud global epic failure](https://mp.weixin.qq.com/s/OIlR0rolEQff9YfCpj3wIQ) and [Didi's K8S architecture juggling disaster](https://mp.weixin.qq.com/s/FIOB_Oqefx1oez1iu7AGGg) have taught us this lesson. Moreover, maintaining a separate database system inside K8S when there's already one outside is even more unjustifiable.
 
 **Security**
 
 The database in a multi-tenant environment introduces additional attack surfaces, bringing higher risks and more complex audit compliance challenges. Does K8S make your database more secure? Maybe the complexity of K8S architecture juggling will deter script kiddies unfamiliar with K8S, but for real attackers, more components and dependencies often mean a broader attack surface.
 
-In ["BrokenSesame Alibaba Cloud PostgreSQL Vulnerability Technical Details"](https://mp.weixin.qq.com/s/Tvuy0kAiqh66sOwkr3WWMA), security personnel escaped to the K8S host node using their own PostgreSQL container and accessed the K8S API and other tenants' containers and data. This is clearly a K8S-specific issue — the risk is real, such attacks have occurred, and even Alibaba Cloud, a local cloud industry leader, has been compromised.
+In ["BrokenSesame Alibaba-Cloud PostgreSQL Vulnerability Technical Details"](https://mp.weixin.qq.com/s/Tvuy0kAiqh66sOwkr3WWMA), security personnel escaped to the K8S host node using their own PostgreSQL container and accessed the K8S API and other tenants' containers and data. This is clearly a K8S-specific issue — the risk is real, such attacks have occurred, and even Alibaba-Cloud, a local cloud industry leader, has been compromised.
 
 ![security.png](security.png)
 
-> 《[The Attacker Perspective - Insights From Hacking Alibaba Cloud](https://www.youtube.com/watch?v=d81qnGKv4EE)》
+> 《[The Attacker Perspective - Insights From Hacking Alibaba-Cloud](https://www.youtube.com/watch?v=d81qnGKv4EE)》
 
 **Performance**
 

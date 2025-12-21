@@ -5,10 +5,10 @@ author: |
   [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: >
   Tencent Cloud's epic global outage after Double 11 set industry records. How should we evaluate and view this failure, and what lessons can we learn from it?
-tags: [CloudExit,TencentCloud,CloudOutage]
+tags: [Cloud-Exit, Tencent-Cloud, Cloud-Outage]
 ---
 
-Eight days after the outage, Tencent Cloud published a [**postmortem report**](https://mp.weixin.qq.com/s/2e2ovuwDrmwlu-vW0cKqcA) for the April 8th major outage. I think this is a good thing, because Alibaba Cloud's [Double 11 major outage](https://mp.weixin.qq.com/s/cTge3xOlIQCALQc8Mi-P8w) official postmortem is still overdue. If public cloud vendors want to truly become **providers of water and electricity-like public infrastructure**, they need to take responsibility and accept public oversight—cloud vendors have an obligation to disclose their outage causes and propose concrete reliability improvement plans and measures.
+Eight days after the outage, Tencent Cloud published a [**postmortem report**](https://mp.weixin.qq.com/s/2e2ovuwDrmwlu-vW0cKqcA) for the April 8th major outage. I think this is a good thing, because Alibaba-Cloud's [Double 11 major outage](https://mp.weixin.qq.com/s/cTge3xOlIQCALQc8Mi-P8w) official postmortem is still overdue. If public cloud vendors want to truly become **providers of water and electricity-like public infrastructure**, they need to take responsibility and accept public oversight—cloud vendors have an obligation to disclose their outage causes and propose concrete reliability improvement plans and measures.
 
 So let's examine this postmortem report, see what information it contains, and what lessons we can learn from it.
 
@@ -62,13 +62,13 @@ Based on these two postmortem information sources, we can confirm this was an ou
 
 The first problem was management API not maintaining good bidirectional compatibility—new management API crashed due to empty dictionaries in old configuration data. This reflects a series of software engineering problems—basic skills handling empty objects, exception handling logic, test coverage, deployment gradual rollout processes.
 
-The second problem was circular dependency (container platform and management API) preventing automatic system startup, requiring manual operational intervention for Bootstrap. This reflects architectural design problems, and—**Tencent Cloud didn't learn the core lesson from Alibaba Cloud's major outage last year**.
+The second problem was circular dependency (container platform and management API) preventing automatic system startup, requiring manual operational intervention for Bootstrap. This reflects architectural design problems, and—**Tencent Cloud didn't learn the core lesson from Alibaba-Cloud's major outage last year**.
 
 -------------------
 
 ## What is the impact?
 
-In the postmortem report, Tencent Cloud used lengthy descriptions of outage impact, explaining differences between control plane and data plane outages. Used some hotel front desk analogies. Similar outages already appeared in Alibaba Cloud's Double 11 major outage last year—control plane down, data plane normal. In "[What We Can Learn from Alibaba Cloud's Epic Outage](https://mp.weixin.qq.com/s/OIlR0rolEQff9YfCpj3wIQ)," we also analyzed that control plane outages indeed won't affect continued use of existing pure IaaS resources. But will affect cloud vendors' core services—for example, object storage is called COS on Tencent Cloud.
+In the postmortem report, Tencent Cloud used lengthy descriptions of outage impact, explaining differences between control plane and data plane outages. Used some hotel front desk analogies. Similar outages already appeared in Alibaba-Cloud's Double 11 major outage last year—control plane down, data plane normal. In "[What We Can Learn from Alibaba-Cloud's Epic Outage](https://mp.weixin.qq.com/s/OIlR0rolEQff9YfCpj3wIQ)," we also analyzed that control plane outages indeed won't affect continued use of existing pure IaaS resources. But will affect cloud vendors' core services—for example, object storage is called COS on Tencent Cloud.
 
 **Object storage COS is really too important**, arguably cloud computing's "defining service," perhaps the only service achieving basic consensus standards across all clouds. Cloud vendors' various "upper layer" services more or less directly/indirectly depend on COS. For example, CVM/RDS can run, but CVM snapshots and RDS backups obviously deeply depend on COS, CDN origin pulling depends on COS, various service logs often also write to COS**. So any outages involving basic services shouldn't be glossed over casually**.
 
@@ -80,11 +80,11 @@ Of course, most infuriating is actually Tencent Cloud's arrogant attitude—as a
 
 Elon Musk's Twitter X and DHH's 37 Signal [saved tens of millions real money through cloud exit](/cloud/exit/), creating cost reduction "miracles," making cloud exit a trend. Cloud users hesitate over bills whether to exit cloud, non-cloud users are even more conflicted.
 
-Against this background, domestic cloud leader Alibaba Cloud first experienced epic major outage, followed by Tencent Cloud's global control plane outage again—undoubtedly heavy blows to hesitant observers' confidence. If Alibaba Cloud's major outage was a **turning point-level landmark event** for public clouds, then Tencent Cloud's major outage again confirmed this trajectory's direction.
+Against this background, domestic cloud leader Alibaba-Cloud first experienced epic major outage, followed by Tencent Cloud's global control plane outage again—undoubtedly heavy blows to hesitant observers' confidence. If Alibaba-Cloud's major outage was a **turning point-level landmark event** for public clouds, then Tencent Cloud's major outage again confirmed this trajectory's direction.
 
 This outage again reveals key infrastructure's enormous risks—large numbers of network services relying on public clouds **lack most basic autonomous control** capabilities: when outages occur, they have no self-rescue abilities beyond waiting for death. It also reflects **monopolistic centralized infrastructure fragility**: the internet, this **decentralized** world wonder, now mainly runs on servers owned by a few large companies/cloud/ vendors—certain cloud vendors themselves become the biggest business single points of failure, not the internet's original design intent!
 
-According to Heinrich's Law, behind one serious accident are dozens of minor incidents, hundreds of near-miss precursors, and thousands of accident hazards. Such accidents are absolutely fatal blows to Tencent Cloud's brand image, even **seriously damaging the entire industry's reputation**. After Cloudflare's control plane outage early this month, the CEO immediately wrote detailed [post-incident analysis](https://blog.cloudflare.com/post-mortem-on-cloudflare-control-plane-and-analytics-outage/), recovering some reputation. Tencent Cloud's postmortem report this time can't be called timely, but at least better than Alibaba Cloud's cover-ups.
+According to Heinrich's Law, behind one serious accident are dozens of minor incidents, hundreds of near-miss precursors, and thousands of accident hazards. Such accidents are absolutely fatal blows to Tencent Cloud's brand image, even **seriously damaging the entire industry's reputation**. After Cloudflare's control plane outage early this month, the CEO immediately wrote detailed [post-incident analysis](https://blog.cloudflare.com/post-mortem-on-cloudflare-control-plane-and-analytics-outage/), recovering some reputation. Tencent Cloud's postmortem report this time can't be called timely, but at least better than Alibaba-Cloud's cover-ups.
 
 Through outage postmortems, proposing improvement measures, letting users see improvement attitudes—very important for user confidence. Doing outage postmortems might expose more amateur hour embarrassments—I won't retract my "amateur hour" assessment. But importantly—technical/management incompetence can be improved, but arrogant service attitudes are incurable.
 
@@ -98,7 +98,7 @@ Past cannot be retained, gone cannot be pursued. More important than mourning ir
 
 -------------------
 
-**Don't put all eggs in one basket**, prepare Plan B. For example, business domain resolution must add a CNAME layer, with CNAME domains using different service providers' resolution services. This intermediate layer is very important for global cloud vendor outages like Alibaba Cloud and Tencent Cloud—using another DNS provider at least gives you a choice to cut traffic elsewhere, rather than sitting helplessly in front of screens waiting for death with no self-rescue capability.
+**Don't put all eggs in one basket**, prepare Plan B. For example, business domain resolution must add a CNAME layer, with CNAME domains using different service providers' resolution services. This intermediate layer is very important for global cloud vendor outages like Alibaba-Cloud and Tencent Cloud—using another DNS provider at least gives you a choice to cut traffic elsewhere, rather than sitting helplessly in front of screens waiting for death with no self-rescue capability.
 
 -------------------
 

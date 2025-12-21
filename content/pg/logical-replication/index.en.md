@@ -5,7 +5,7 @@ author: |
   [Vonng](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
 summary: >
   This article introduces the principles and best practices of logical replication in PostgreSQL 13.
-tags: [PostgreSQL,PG Administration]
+tags: [PostgreSQL,PG-Admin]
 ---
 
 ------

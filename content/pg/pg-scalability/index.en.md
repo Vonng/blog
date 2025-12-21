@@ -33,9 +33,9 @@ Most clients compete with each other for Postgres connections. But Postgres conn
 
 Furthermore, manually limiting misbehaving tenants is enormous work. A tenant might launch an expensive query, blocking neighboring tenants' queries and starving them. Once queries reach the database server, isolating them becomes very difficult.
 
-![Connection Pooling With PgBouncer](scalability-2.jpg)
+![Connection-Pooling With PgBouncer](scalability-2.jpg)
 
-> Connection Pooling with PgBouncer
+> Connection-Pooling with PgBouncer
 
 Therefore, they use *PgBouncer* as a connection pool in front of Postgres. **PgBouncer** acts as a TCP proxy, pooling Postgres connections. Tenants connect to PgBouncer instead of directly to Postgres, limiting the number of Postgres connections and preventing connection starvation.
 
@@ -121,7 +121,7 @@ In the past, PostgreSQL's scalability was particularly criticized for **massive 
 
 Internet scenarios mainly involve massive short connections for database access: creating a connection for each query, then destroying the connection after execution - PHP used to work this way, so it paired well with MySQL's thread model. But for PostgreSQL, massive backend processes and frequent process creation/destruction waste significant software/hardware resources, resulting in underwhelming performance in such scenarios.
 
-### Connection Pooling - Solving High Concurrency Issues
+### Connection-Pooling - Solving High Concurrency Issues
 
 PostgreSQL recommends using connection counts roughly twice the CPU core count by default, typically in the range of dozens to hundreds. Internet scenarios with thousands or tens of thousands of client connections directly connecting to PostgreSQL would create significant additional burden. Connection pooling emerged to solve this problem - it can be said that connection pooling is a **must-have** for using PostgreSQL in internet scenarios, capable of turning the mundane into magic.
 

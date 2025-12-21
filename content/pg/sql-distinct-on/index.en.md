@@ -4,7 +4,7 @@ date: 2018-04-06
 author: "vonng"
 summary: >
   Use Distinct On extension clause to quickly find records with maximum/minimum values within groups
-tags: [PostgreSQL, PG Development, SQL]
+tags: [PostgreSQL, PG-Development, SQL]
 ---
 
 Distinct On is a unique syntax provided by PostgreSQL that can efficiently solve typical query problems, for example, quickly finding records with maximum/minimum values within groups.

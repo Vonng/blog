@@ -169,7 +169,7 @@ MySQL的RR隔离等级因为无法阻止丢失更新问题，被认为没有提�
 | RR | RC | ✅  | ✅？ |  ✅  | ⚠️ | ⚠️  |
 | SR | SR | ✅  | ✅  |  ✅  | ✅  |  ✅  |
 
-参考测试用例：[ept/hermitage/mysql](ept/hermitage/mysql)
+参考测试用例：[ept/hermitage/mysql](https://github.com/ept/hermitage)
 
 
 

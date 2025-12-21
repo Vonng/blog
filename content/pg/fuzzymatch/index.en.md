@@ -5,7 +5,7 @@ author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: >
   How to implement relatively complex fuzzy search logic in PostgreSQL?
-tags: [PostgreSQL,PG Development,Full-text Search]
+tags: [PostgreSQL,PG-Development,Full-Text-Search]
 ---
 
 
@@ -288,7 +288,7 @@ ORDER BY 2 LIMIT 10;
  手写板for微信  | 6
 ```
 
-### Improving Full-text Search Methods
+### Improving Full-Text-Search Methods
 
 Next, we can make some improvements to the tokenization method:
 

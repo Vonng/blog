@@ -6,7 +6,7 @@ author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat Official Account](https://mp.weixin.qq.com/s/gfs8pBJuYjE_wfAvjcak8Q)
 summary: >
   FerretDB aims to provide a truly open-source MongoDB alternative based on PostgreSQL.
-tags: [PostgreSQL,PG Ecosystem,MongoDB,Extension]
+tags: [PostgreSQL,PG-Ecosystem,MongoDB,Extension]
 ---
 
 

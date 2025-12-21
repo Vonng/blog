@@ -6,7 +6,7 @@ author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [Zhihu Original](https://www.zhihu.com/question/275845393/answer/386816571)
 summary: >
   The term "consistency" is heavily overloaded, representing different concepts in different contexts. For example, the C in ACID and the C in CAP actually refer to different concepts.
-tags: [database]
+tags: [Database]
 ---
 
 The term **consistency** is heavily overloaded, representing different things in different contexts and situations:

@@ -5,7 +5,7 @@ author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: >
   PostgreSQL actually has only two transaction isolation levels: **Read Committed** and **Serializable**
-tags: [PostgreSQL,PG Development]
+tags: [PostgreSQL,PG-Development]
 ---
 
 

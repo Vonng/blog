@@ -5,7 +5,7 @@ date: 2023-06-28
 author: |
   [RuohangFeng](https://vonng.com)([@Vonng](https://vonng.com/en/))| [WeChat](https://mp.weixin.qq.com/s/xewE87WEaZHp-K5hjuk65A) | [Zhihu](https://zhuanlan.zhihu.com/p/542019272)
 summary: "StackOverflow 2023 Survey shows PostgreSQL is the most popular, loved, and wanted database, solidifying its status as the 'Linux of Database'."
-tags: [PostgreSQL,Ecosystem]
+tags: [PostgreSQL,PG-Ecosystem]
 ---
 
 
@@ -118,7 +118,7 @@ In 2023, some databases saw notable demand increases, likely driven by the surge
 
 ## But Why?
 
-PostgreSQL leads in demand, usage, and popularity, with the right mix of timing, location, and human support, making it arguably the most successful database with no visible challengers in the near future. The secret to its success lies in its slogan: **"The World's Most Advanced Open Source Relational Database."**
+PostgreSQL leads in demand, usage, and popularity, with the right mix of timing, location, and human support, making it arguably the most successful database with no visible challengers in the near future. The secret to its success lies in its slogan: **"The World's Most Advanced Open-Source Relational Database."**
 
 Relational databases are so prevalent and crucial that they might dwarf the combined significance of other types like key-value, document, search engine, time-series, graph, and vector databases. Typically, "database" implicitly refers to "relational database," where no other category dares claim mainstream status. Last year's "Why PostgreSQL Will Be the Most Successful Database?" delves into the competitive landscape of relational databases—a tripartite dominance. Excluding Microsoft’s relatively isolated SQL Server, the database scene, currently in a phase of consolidation, has three key players rooted in WireProtocol: Oracle, MySQL, and PostgreSQL, mirroring a **"Three Kingdoms"** saga in the relational database realm.
 
@@ -133,7 +133,7 @@ Oracle, no doubt skilled, lacks integrity, hence "talented but unprincipled." My
 
 ------
 
-## Open Source & Advanced
+## Open-Source & Advanced
 
 The primary reasons for choosing PostgreSQL, as reflected in the TimescaleDB community survey, are its open-source nature and stability. Open-source implies free use, potential for modification, no vendor lock-in, and no "chokepoint" issues. Stability means reliable, consistent performance with a proven track record in large-scale production environments. Experienced developers value these attributes highly.
 
@@ -148,7 +148,7 @@ Broadly, aspects like extensibility, ecosystem, community, and protocols fall un
 
 ------
 
-## The Virtue of Open Source
+## The Virtue of Open-Source
 
 > powered by developers worldwide. Friendly BSD license, thriving ecosystem, extensive expansion. A robust Oracle alternative, leading the charge.
 
@@ -231,7 +231,7 @@ The PostgreSQL database kernel's role in the database ecosystem mirrors the Linu
 
 However, users need more than an engine; they need the complete car, driving capabilities, and traffic services. The database competition has shifted from software to **Software enabled Service—complete database distributions and services**. The race for PostgreSQL-based distributions is just beginning. Who will be the PostgreSQL equivalent of Debian, RedHat, or Ubuntu?
 
-This is why we created **[Pigsty](https://pigsty.io/)** — to develop an battery-included, open-source, local-first PostgreSQL distribution, making it easy for everyone to access and utilize a **quality database service**. Due to space limits, the detailed story is for [another time](/db/pgsql-x-pigsty/).
+This is why we created **[Pigsty](https://pigsty.io/)** — to develop an battery-included, open-source, local-first PostgreSQL distribution, making it easy for everyone to access and utilize a **quality database service**.
 
 ![](pg-is-no1-18.png)
 

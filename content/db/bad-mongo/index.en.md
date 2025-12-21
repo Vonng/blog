@@ -6,7 +6,7 @@ author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [Chinese Original](https://mp.weixin.qq.com/s/I3ug7Qv9jz3-uD3x_N1jKw)
 summary: >
   MongoDB has a terrible track record on integrity, lackluster products and technology, gets beaten by PG in correctness, performance, and functionality, with collapsing developer reputation, declining popularity, stock price halving, and expanding losses. Provocative marketing against PG can't save it with "good marketing."
-tags: [MongoDB,PostgreSQL,PG Ecosystem]
+tags: [MongoDB,PostgreSQL,PG-Ecosystem]
 ---
 
 These past few days, MongoDB's marketing stunts have been dazzling: "[MongoDB Declares War on PostgreSQL](https://mp.weixin.qq.com/s/ypV31fanKB6ZsFzuRYTwmQ)", "[MongoDB Defeats PostgreSQL to Win $30 Billion Project](https://mp.weixin.qq.com/s/SJw6S6k82bxOq1pWP3kDfw)", and the original article from The Register "[MongoDB Prepares to Pummel PostgreSQL After Beating Strong Opponent](https://www.theregister.com/2024/08/30/mongodb_postgresql/)", presenting a stance of wanting to beat the old master with wild punches.

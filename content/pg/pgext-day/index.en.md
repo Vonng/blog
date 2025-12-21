@@ -4,7 +4,7 @@ linkTitle: "PGEXT.DAY: See You at Extension Day"
 date: 2025-04-09
 summary: The annual PostgreSQL developer conference will be held in Montreal in May. Like the first PG Con.Dev, there's also an additional dedicated event - Postgres Extensions Day
 
-tags: [PostgreSQL,Extensions]
+tags: [PostgreSQL, Extension]
 ---
 
 The annual PostgreSQL developer conference will be held in Montreal in May. Like the first PG Con.Dev, there's also an additional dedicated event - Postgres Extensions Day, focusing on all aspects of PG extension development, delivery, and release. The agenda has just been released with 14 sessions scheduled.

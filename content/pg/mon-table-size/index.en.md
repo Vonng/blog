@@ -3,7 +3,7 @@ title: "Monitoring Table Size in PostgreSQL"
 date: 2018-05-14
 author: "vonng"
 summary: "Tables in PostgreSQL correspond to many physical files. This article explains how to calculate the actual size of a table in PostgreSQL."
-tags: ["PostgreSQL","PG Management","Monitoring"]
+tags: ["PostgreSQL","PG-Admin","Monitoring"]
 ---
 
 ### Table Space Layout

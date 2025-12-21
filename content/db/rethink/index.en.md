@@ -28,7 +28,7 @@ In this storm in the tech world, someone needs to see through phenomena to essen
 - [Should Databases Go Into K8S?](https://mp.weixin.qq.com/s/4a8Qy4O80xqsnytC4l9lRg)
 - [Is Putting Databases in Docker a Good Idea?](https://mp.weixin.qq.com/s/kFftay1IokBDqyMuArqOpg)
 - [Are Vector Databases Dead?](https://mp.weixin.qq.com/s/0eBZ4zyX6XjBQO0GqlANnw)
-- [Harvest Alibaba Cloud Wool While You Can: $5K Cloud Servers for $300](https://mp.weixin.qq.com/s/Nh28VahZkQMdR8fDoi0_rQ)
+- [Harvest Alibaba-Cloud Wool While You Can: $5K Cloud Servers for $300](https://mp.weixin.qq.com/s/Nh28VahZkQMdR8fDoi0_rQ)
 - [Are Databases Really Being Strangled?](https://mp.weixin.qq.com/s/vh1JE_BdaLetWtt5vvPDDw)
 - [Which EL-Series OS Distribution Is Best?](https://mp.weixin.qq.com/s/xHG8OURTYlmnQTorFkzioA)
 - [What Kind of Self-Reliance Do Infrastructure Software Need?](https://mp.weixin.qq.com/s/hWbcc9cMM9qTjPJ0m6G0Kg)
@@ -40,8 +40,8 @@ In this storm in the tech world, someone needs to see through phenomena to essen
 - [Database Demand Hierarchy Pyramid](https://mp.weixin.qq.com/s/1xR92Z67kvvj2_NpUMie1Q)
 - [StackOverflow 2022 Database Annual Survey](https://mp.weixin.qq.com/s/xcORYy2suzOw50SOaOCodw)
 - [Is DBA Still a Good Job?](https://mp.weixin.qq.com/s/Py3o31w3db5E9FsviAZeCA)
-- [Will PostgreSQL Change Its Open Source License?](https://mp.weixin.qq.com/s/qNcqGHL-wVTSB7Kxko2eNw)
-- [Redis Going Non-Open Source Is a Disgrace to "Open Source" and Public Cloud](https://mp.weixin.qq.com/s/W5kOLxeJCIHjnWbIHc1Pzw)
+- [Will PostgreSQL Change Its Open-Source License?](https://mp.weixin.qq.com/s/qNcqGHL-wVTSB7Kxko2eNw)
+- [Redis Going Non-Open-Source Is a Disgrace to "Open-Source" and Public Cloud](https://mp.weixin.qq.com/s/W5kOLxeJCIHjnWbIHc1Pzw)
 - [PostgreSQL Is Eating the Database World](https://mp.weixin.qq.com/s/8_uhRH93oAoHZqoC90DA6g)
 - [RDS Has Castrated PostgreSQL's Soul](https://mp.weixin.qq.com/s/EH7RPB6ImfMHXhOMU7P5Qg)
 - [Tech Minimalism: Use Postgres for Everything](https://mp.weixin.qq.com/s/yI06zdqnW5uWnqvKmgM-9g)
@@ -89,7 +89,7 @@ In this storm in the tech world, someone needs to see through phenomena to essen
 
 "202x Database Selection Guide White Paper"
 
-"Open Source Rising: How Far Can Commercial Databases Go?"
+"Open-Source Rising: How Far Can Commercial Databases Go?"
 
 "[Paradigm Shift: Can Cloud Native Overthrow Public Cloud?](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485301&idx=1&sn=2fb038f8b9f26c095d97eb0d87e8b262&chksm=fe4b32aec93cbbb81fbb1d7dfadba404ff7015d2b83f590bbe46a7372b55ac0aac076a71a76b&scene=21#wechat_redirect)"
 

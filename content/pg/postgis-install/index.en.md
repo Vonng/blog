@@ -3,7 +3,7 @@ title: "Installing PostGIS from Source"
 date: 2017-09-07
 author: "vonng"
 summary: "PostGIS is PostgreSQL's killer extension, but compiling and installing it isn't easy."
-tags: [PostgreSQL, "PG Administration", Extensions]
+tags: [PostgreSQL, PG-Admin, Extension]
 ---
 
 ----------
@@ -136,7 +136,7 @@ PostgreSQL is the host platform for PostGIS. Here we use 10.1 as an example.
 
 ### GEOS
 
-GEOS is the abbreviation for Geometry Engine, Open Source, a C++ version of the geometry library and PostGIS's core dependency.
+GEOS is the abbreviation for Geometry Engine, Open-Source, a C++ version of the geometry library and PostGIS's core dependency.
 
 PostGIS 2.4 uses some new features from GEOS 3.7. However, as of now, the latest version officially released by GEOS is 3.6.2. GEOS version 3.7 can be obtained through [Nightly snapshot](http://geos.osgeo.org/snapshots/). So currently, if you want to use all new features, you need to compile and install GEOS 3.7 from source.
 

@@ -4,7 +4,7 @@ linkTitle: "PostgreSQL's KPI"
 date: 2020-05-29
 author: "vonng"
 summary: "Managing databases is similar to managing people - both need KPIs (Key Performance Indicators). So what are database KPIs? This article introduces a way to measure PostgreSQL load: using a single horizontally comparable metric that is basically independent of workload type and machine type, called **PG Load**."
-tags: ["PostgreSQL","PG Management","Monitoring","Metrics"]
+tags: ["PostgreSQL","PG-Admin","Monitoring","Metrics"]
 ---
 
 Managing databases is similar to managing people - both need KPIs (Key Performance Indicators). So what are database KPIs? This article introduces a way to measure PostgreSQL load: using a single horizontally comparable metric that is basically independent of workload type and machine type, called **PG Load**.

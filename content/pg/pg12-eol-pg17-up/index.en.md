@@ -111,7 +111,7 @@ This time, the replacement from PG 16 to PG 17 saw significantly accelerated eco
 
 This time from PG 16 to PG 17, ecosystem adaptation speed significantly accelerated, completing in less than three months what previously took six months. In this regard, I'm proud to say I did considerable work.
 
-For example, in the "[PostgreSQL Divine Skill Achievement! Most Complete Extension Repository](https://mp.weixin.qq.com/s/Dv3--O0K70Fevz39r3T4Ag)" introduction of https://ext.pigsty.io, maintaining over half of PG ecosystem extension plugins.
+For example, in the "[PostgreSQL Divine Skill Achievement! Most Complete Extension Repository](https://mp.weixin.qq.com/s/Dv3--O0K70Fevz39r3T4Ag)" introduction of https://pgext.cloud, maintaining over half of PG ecosystem extension plugins.
 
 I recently completed this major task, building over 140 extensions I maintain for PG 17 (also adding Ubuntu 24.04 and partial ARM support), and personally fixing or requesting extension authors to fix dozens of extensions with compatibility issues.
 
@@ -122,7 +122,7 @@ Current results: On EL systems, 301 of 334 available extensions are available on
 | RPM Extension  | 334 | 115  |  143   |   70    |  4   |  6   |   301    | 330  | 333  | 319  | 307  | 294  |
 | DEB Extension  | 326 | 104  |  144   |   70    |  4   |  14  |   302    | 322  | 325  | 316  | 303  | 293  |
 
-[![extension.png](extension.png)](https://ext.pigsty.io)
+[![extension.png](extension.png)](https://pgext.cloud)
 
 > Pigsty achieved PostgreSQL extension ecosystem grand alignment
 
@@ -151,7 +151,7 @@ Incidentally, we added PG kernel replacement capability in Pigsty v3, allowing y
 
 - Microsoft SQL Server compatible [Babelfish](/zh/docs/kernel/babelfish) kernel support
 - Oracle compatible [IvorySQL](/zh/docs/kernel/ivorysql) 3.4 kernel support  
-- Alibaba Cloud [PolarDB](/zh/docs/kernel/polardb) for PostgreSQL/Oracle domestic innovation kernel support
+- Alibaba-Cloud [PolarDB](/zh/docs/kernel/polardb) for PostgreSQL/Oracle domestic innovation kernel support
 - Allows users to more conveniently self-build [Supabase](/zh/docs/kernel/supabase) - open-source Firebase, one-stop backend platform
 
 If you want to use authentic PostgreSQL experience, welcome to use our distribution - open source and free, no vendor lock-in. We also provide commercial consulting support to solve your difficult problems and worries.

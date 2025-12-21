@@ -4,7 +4,7 @@ date: 2016-11-06
 author: "vonng"
 summary: >
   UUID properties, principles and applications, and how to manipulate UUIDs using PostgreSQL stored procedures.
-tags: [PostgreSQL, PG Development, Architecture]
+tags: [PostgreSQL, PG-Development, Architecture]
 ---
 
 A recent project needed to generate business transaction IDs with the following requirements:

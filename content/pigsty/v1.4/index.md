@@ -16,8 +16,6 @@ tags: [Pigsty]
 
 Pigsty v1.4 正式发布！全新的模块化架构：四大内置模块 **INFRA**、**NODES**、**PGSQL**、**REDIS** 可以独立使用并自由组合；新增时序数据仓库 MatrixDB 部署与监控支持；新建设了全球 CDN 加速下载。
 
-![](featured.jpg)
-
 Github Star 增长势头正式开始！
 
 ![](github-star.jpg)

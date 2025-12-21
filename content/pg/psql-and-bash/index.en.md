@@ -3,7 +3,7 @@ title: "Bash and psql Tips"
 date: 2018-04-07
 author: "vonng"
 summary: "Some tips for interacting between PostgreSQL and Bash."
-tags: [PostgreSQL, "PG Administration", Tools]
+tags: [PostgreSQL, "PG-Admin", Tools]
 ---
 
 Some tips for interacting between PostgreSQL and Bash.

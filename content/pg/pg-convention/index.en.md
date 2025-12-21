@@ -6,7 +6,7 @@ author: |
   [Ruohang Feng](https://vonng.com/en/) ([@Vonng](https://vonng.com/en/)) | [Wechat Column](https://mp.weixin.qq.com/s/W1hwbl3qmjC4Dcmadc8uSg)
 summary: >
   No rules, no standards. Some developer conventions for PostgreSQL 16.
-tags: [PostgreSQL,Develop]
+tags: [PostgreSQL,PG-Development]
 ---
 
 ![](pg-convention.jpg)

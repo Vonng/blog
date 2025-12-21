@@ -4,7 +4,7 @@ date: 2018-01-07
 author: "vonng"
 summary: >
   Quick configuration for passwordless login to all machines
-tags: [PostgreSQL, PG Management]
+tags: [PostgreSQL, PG-Admin]
 ---
 
 Configuring SSH is fundamental operations work - sometimes the basics need revisiting.

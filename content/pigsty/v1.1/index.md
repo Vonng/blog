@@ -16,8 +16,6 @@ tags: [Pigsty]
 
 Pigsty v1.1 正式发布，新增全新首页设计、Jupyter Lab、PGWeb、PEV2、PgBadger 等实用工具支持。
 
-![featured](featured.jpg)
-
 
 ----------------
 

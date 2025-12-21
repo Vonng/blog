@@ -5,7 +5,7 @@ author: |
   [Feng Ruohang](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [WeChat Official Account](https://mp.weixin.qq.com/s/s_MCdaCByDBuocXkY1tvKw)
 summary: >
   Luo Yonghao's livestream first spent half an hour selling robot vacuums, then Luo himself belatedly appeared to read scripts selling "cloud computing" for forty minutes — before seamlessly transitioning to selling Colgate enzyme-free toothpaste — leaving viewers bewildered between toothpaste and cloud computing.
-tags: [cloud-exit,aliyun]
+tags: [Cloud-Exit, Alibaba-Cloud]
 ---
 
 Luo Yonghao was once a brilliant digital product manager with decent IT industry credentials. But as they say, there's a world of difference between industries. Luo selling cloud is like a street vendor simultaneously hawking meat, vegetables, eggs, milk, and Office CDs. And that's exactly what happened — Luo's livestream first spent half an hour selling robot vacuums, then Luo himself belatedly appeared to read scripts selling "cloud computing" for forty minutes — before transitioning to selling Colgate enzyme-free toothpaste — leaving viewers bewildered between cloud computing and toothpaste.

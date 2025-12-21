@@ -12,7 +12,7 @@ tags: [Database,Supabase]
 
 Supabase is great, but having your own Supabase is even better.
 Pigsty helps you build enterprise-grade Supabase on your own servers (physical/virtual machines/cloud servers) with one-click deployment —
-[more extensions](https://ext.pgsty.com), better performance, deeper control, and much more cost-effective.
+[more extensions](https://pgext.cloud), better performance, deeper control, and much more cost-effective.
 
 > Pigsty is one of the three 3rd party self-hosting tutorials listed in the [official Supabase docs](https://supabase.com/docs/guides/self-hosting#third-party-guides)
 
@@ -74,7 +74,7 @@ Moreover, currently, sufficiently reliable [local enterprise-grade NVMe SSDs](ht
 
 Another important reason is **functionality** — Supabase cloud service functionality is limited. Many powerful PostgreSQL extensions cannot be provided as cloud services due to multi-tenant security challenges and licensing issues.
 Therefore, although [extensions are PostgreSQL's core feature](https://blog.vonng.com/pg/pg-eat-db-world), only **64** extensions are available on Supabase cloud service.
-Self-built Supabase with Pigsty provides up to [**423**](https://ext.pgsty.com/list) ready-to-use PostgreSQL extensions.
+Self-built Supabase with Pigsty provides up to [**440**](https://pgext.cloud/list) ready-to-use PostgreSQL extensions.
 
 Additionally, autonomy and avoiding vendor lock-in are important reasons for self-hosting — although Supabase aims to provide an open-source alternative to Google Firebase without vendor lock-in, the threshold for self-building enterprise-grade Supabase to high standards is actually quite high.
 Supabase includes a series of PostgreSQL extension plugins developed and maintained by them, and plans to replace the native PostgreSQL kernel with the acquired [OrioleDB](https://doc.pgsty.com/pgsql/kernel/orioledb), but these kernels and extensions are not provided in the official PGDG repository.
@@ -84,22 +84,22 @@ We package all 10 missing extensions developed and used by Supabase into ready-t
 
 | Extension                                                 | Description                                                                                                      |
 |-----------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
-| [`pg_graphql`](https://ext.pgsty.com/e/pg_graphql/)       | Provides GraphQL support within PostgreSQL (RUST), Rust extension, provided by PIGSTY                            |
-| [`pg_jsonschema`](https://ext.pgsty.com/e/pg_jsonschema/) | Provides JSON Schema validation capability, Rust extension, provided by PIGSTY                                   |
-| [`wrappers`](https://ext.pgsty.com/e/wrappers/)           | Supabase's external data source wrapper bundle, Rust extension, provided by PIGSTY                               |
-| [`index_advisor`](https://ext.pgsty.com/e/index_advisor/) | Query index advisor, SQL extension, provided by PIGSTY                                                           |
-| [`pg_net`](https://ext.pgsty.com/e/pg_net/)               | Extension for asynchronous non-blocking HTTP/HTTPS requests with SQL (supabase), C extension, provided by PIGSTY |
-| [`vault`](https://ext.pgsty.com/e/supabase_vault/)        | Extension for storing encrypted credentials in Vault (supabase), C extension, provided by PIGSTY                 |
-| [`pgjwt`](https://ext.pgsty.com/e/pgjwt/)                 | PostgreSQL implementation of JSON Web Token API (supabase), SQL extension, provided by PIGSTY                    |
-| [`pgsodium`](https://ext.pgsty.com/e/pgsodium/)           | Table data encryption storage TDE, extension, provided by PIGSTY                                                 |
-| [`supautils`](https://ext.pgsty.com/e/supautils/)         | Used to ensure database cluster security in cloud environments, C extension, provided by PIGSTY                  |
-| [`pg_plan_filter`](https://ext.pgsty.com/e/plan_filter/)  | Filter and block specific query statements using execution plan costs, C extension, provided by PIGSTY           |
+| [`pg_graphql`](https://pgext.cloud/e/pg_graphql/)       | Provides GraphQL support within PostgreSQL (RUST), Rust extension, provided by PIGSTY                            |
+| [`pg_jsonschema`](https://pgext.cloud/e/pg_jsonschema/) | Provides JSON Schema validation capability, Rust extension, provided by PIGSTY                                   |
+| [`wrappers`](https://pgext.cloud/e/wrappers/)           | Supabase's external data source wrapper bundle, Rust extension, provided by PIGSTY                               |
+| [`index_advisor`](https://pgext.cloud/e/index_advisor/) | Query index advisor, SQL extension, provided by PIGSTY                                                           |
+| [`pg_net`](https://pgext.cloud/e/pg_net/)               | Extension for asynchronous non-blocking HTTP/HTTPS requests with SQL (supabase), C extension, provided by PIGSTY |
+| [`vault`](https://pgext.cloud/e/supabase_vault/)        | Extension for storing encrypted credentials in Vault (supabase), C extension, provided by PIGSTY                 |
+| [`pgjwt`](https://pgext.cloud/e/pgjwt/)                 | PostgreSQL implementation of JSON Web Token API (supabase), SQL extension, provided by PIGSTY                    |
+| [`pgsodium`](https://pgext.cloud/e/pgsodium/)           | Table data encryption storage TDE, extension, provided by PIGSTY                                                 |
+| [`supautils`](https://pgext.cloud/e/supautils/)         | Used to ensure database cluster security in cloud environments, C extension, provided by PIGSTY                  |
+| [`pg_plan_filter`](https://pgext.cloud/e/plan_filter/)  | Filter and block specific query statements using execution plan costs, C extension, provided by PIGSTY           |
 
 Meanwhile, we [install](https://doc.pgsty.com/pgsql/extension/install) most extensions by default in Supabase self-hosting deployment. You can refer to the available extension list to [enable](https://doc.pgsty.com/pgsql/extension/create) them as needed.
 
 Additionally, Pigsty handles the automatic setup of underlying [high availability](https://doc.pgsty.com/feat/ha/) [PostgreSQL](https://doc.pgsty.com/pgsql/) database clusters, high availability [MinIO](https://doc.pgsty.com/minio/) object storage clusters, and even [Docker](https://doc.pgsty.com/docker/) container infrastructure deployment and [Nginx](https://doc.pgsty.com/admin/portal) reverse proxy, [domain configuration](https://doc.pgsty.com/admin/domain) and [HTTPS certificate issuance](https://doc.pgsty.com/admin/cert). You can deploy any number of stateless Supabase container clusters using Docker Compose and store state in external Pigsty self-hosted database services.
 
-In this self-hosting deployment architecture, you gain the freedom to use different kernels (PostgreSQL 15-17, OrioleDB), the freedom to install [**423**](https://ext.pgsty.com/list/) extensions, the freedom to scale Supabase/Postgres/MinIO,
+In this self-hosting deployment architecture, you gain the freedom to use different kernels (PostgreSQL 15-17, OrioleDB), the freedom to install [**440**](https://pgext.cloud/list/) extensions, the freedom to scale Supabase/Postgres/MinIO,
 the freedom from database operational chores, and the freedom from vendor lock-in to run locally indefinitely. Compared to the cost of using cloud services, the price is just preparing servers and typing a few more commands.
 
 
@@ -279,12 +279,12 @@ Complete domain/HTTPS configuration can refer to the [Certificate Management](ht
 
 ## Advanced Topic: External Object Storage
 
-You can use S3 or S3-compatible services as object storage for PostgreSQL backups and Supabase usage. Here we use Alibaba Cloud OSS object storage as an example.
+You can use S3 or S3-compatible services as object storage for PostgreSQL backups and Supabase usage. Here we use Alibaba-Cloud OSS object storage as an example.
 
 > Pigsty provides a [`terraform/spec/aliyun-meta-s3.tf`](https://github.com/pgsty/pigsty/blob/main/terraform/spec/aliyun-meta-s3.tf) template
-> that can be used to deploy a server and an OSS bucket on Alibaba Cloud.
+> that can be used to deploy a server and an OSS bucket on Alibaba-Cloud.
 
-First, modify the S3-related configuration in `all.children.supa.vars.apps.[supabase].conf`, pointing it to the Alibaba Cloud OSS bucket:
+First, modify the S3-related configuration in `all.children.supa.vars.apps.[supabase].conf`, pointing it to the Alibaba-Cloud OSS bucket:
 
 ```yaml
 # if using s3/minio as file storage
@@ -311,7 +311,7 @@ all:
     pgbackrest_method: aliyun          # pgbackrest backup method: local,minio,[other user-defined repositories...], in this example backup is stored to MinIO
     pgbackrest_repo:                   # pgbackrest backup repository: https://pgbackrest.org/configuration.html#section-repository
       aliyun:                          # Define a new backup repository aliyun
-        type: s3                       # Alibaba Cloud OSS is S3-compatible object storage
+        type: s3                       # Alibaba-Cloud OSS is S3-compatible object storage
         s3_endpoint: oss-cn-beijing-internal.aliyuncs.com
         s3_region: oss-cn-beijing
         s3_bucket: pigsty-oss

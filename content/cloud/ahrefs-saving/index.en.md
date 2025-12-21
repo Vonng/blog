@@ -5,8 +5,8 @@ date: 2024-05-22
 author: |
   [Efim Mirochnik](https://medium.com/@mirochnik) Translator: [Ruohang Feng](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [WeChat](https://mp.weixin.qq.com/s/csQmMrSGg5ukDgS06h8xXw)
 summary: >
-  After Alibaba Cloud's epic global outage on Double 11, setting industry records, how should we evaluate this incident and what lessons can we learn from it?
-tags: [Cloud Exit,AWS,EBS]
+  After Alibaba-Cloud's epic global outage on Double 11, setting industry records, how should we evaluate this incident and what lessons can we learn from it?
+tags: [Cloud-Exit,AWS,EBS]
 ---
 
 > Original: [How Ahrefs Saved US$400M in 3 Years by NOT Going to the Cloud](https://tech.ahrefs.com/how-ahrefs-saved-us-400m-in-3-years-by-not-going-to-the-cloud-8939dd930af8)
@@ -165,7 +165,7 @@ Based on this, I recommend that CFOs, CEOs, and business owners interested in su
 
 **Once you're in the cloud, leaving is complicated**. Cloud computing is convenient but brings vendor lock-in. And abandoning cloud infrastructure just because of higher costs may not be what engineering teams want. They might correctly think — cloud computing is easier and more flexible than traditional brick-and-mortar data centers and physical server environments.
 
-For companies at more mature stages, [migrating from cloud to own infrastructure is difficult](https://world.hey.com/dhh/we-stand-to-save-7m-over-five-years-from-our-cloud-exit-53996caa). Keeping the company alive during migration is also a challenge. But this painful transition could be key to saving the company, as it can avoid paying an ever-increasing portion of revenue to cloud vendors.
+For companies at more mature stages, [migrating from cloud to own infrastructure is difficult](https://world.hey.com/dhh/we-stand-to-save-7m-over-five-years-from-our-Cloud-Exit-53996caa). Keeping the company alive during migration is also a challenge. But this painful transition could be key to saving the company, as it can avoid paying an ever-increasing portion of revenue to cloud vendors.
 
 Large companies, especially FAANG, have absorbed a lot of talent over the years. They've been hiring engineers to operate their massive data centers and infrastructure, leaving few opportunities for smaller companies. But the recent months of mass layoffs at big tech companies have brought opportunities to re-evaluate cloud computing — it's definitely worth considering hiring senior professionals in the data center field and migrating from the cloud.
 
@@ -173,7 +173,7 @@ If you're starting a new company, consider this approach: buy a rack and servers
 
 ------
 
-## Cloud Exit Commentary by Feng
+## Cloud-Exit Commentary by Feng
 
 I'm delighted to see another major customer who can no longer tolerate the sky-high cloud rental prices stand up and launch a complaint against cloud vendors. Ahrefs' experience aligns with ours — the comprehensive cost of ownership for cloud servers is about 10 times that of on-premise infrastructure — even considering the best Saving Plans and deep discounts. DHH from 37 Signals provides [**another more representative cloud exit case**](/cloud/odyssey/).
 

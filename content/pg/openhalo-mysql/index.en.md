@@ -1,6 +1,6 @@
 ---
 title: "OpenHalo: MySQL Wire-Compatible PostgreSQL is Here!"
-linkTitle: "OpenHalo: MySQL-Compatible PG Kernel"
+linkTitle: "OpenHalo: MySQL-Compatible PG-Kernel"
 date: 2025-04-03
 summary: What? PostgreSQL can now be accessed using MySQL clients? That's right, openHalo, which was open-sourced on April Fool's Day, provides exactly this capability and has now joined the Pigsty kernel family.
 showAuthor: true
@@ -21,7 +21,7 @@ And now PostgreSQL can be compatible with the other four databases:
 
 - [**OpenHalo can be used as MySQL**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489368&idx=1&sn=d68f943fea34d9ee9e678b9d49bc162f&scene=21#wechat_redirect)
 - [**AWS's Babelfish can be used as Microsoft SQL Server**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488287&idx=1&sn=50f068767c6faab8c8f9ca01128090b9&scene=21#wechat_redirect)
-- **IvorySQL and Alibaba Cloud PolarDB O can be used as Oracle**
+- **IvorySQL and Alibaba-Cloud PolarDB O can be used as Oracle**
 - [**FerretDB / Microsoft DocumentDB can be used as MongoDB**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486241&idx=1&sn=f39b87095837b042e74f55f8e60bb7a9&scene=21#wechat_redirect)
 
 By the way, all of the above kernel capabilities are now available out-of-the-box in Pigsty.
@@ -87,7 +87,7 @@ Of course, Pigsty supports more than just OrioleDB as a [**PG branch kernel**](h
 - Microsoft SQL Server compatible [**Babelfish**](https://pigsty.cc/docs/kernel/babelfish/) (by AWS)
 - Oracle compatible [**IvorySQL**](https://pigsty.cc/docs/kernel/ivorysql/) (by HighGo)
 - Ultimate OLTP performance [**OrioleDB**](https://pigsty.cc/docs/kernel/orioledb/) (by Supabase)
-- Aurora RAC flavored [**PolarDB**](https://pigsty.cc/docs/kernel/polardb/) (by Alibaba Cloud)
+- Aurora RAC flavored [**PolarDB**](https://pigsty.cc/docs/kernel/polardb/) (by Alibaba-Cloud)
 - Proper domestic innovation-qualified, Oracle-compatible [**PolarDB O 2.0**](https://pigsty.cc/docs/kernel/polardb/).
 - You can also use [**FerretDB**](https://pigsty.cc/docs/kernel/ferret) + Microsoft's [**DocumentDB**](https://pigsty.cc/ext/sim/documentdb/) to simulate PG as a MongoDB.
 - Use Pigsty's self-built template to set up local [**Supabase**](https://pigsty.cc/docs/kernel/supabase/) with one click (OrioleDB's daddy!).

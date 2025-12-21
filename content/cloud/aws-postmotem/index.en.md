@@ -6,7 +6,7 @@ author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat](https://mp.weixin.qq.com/s/csopt3H5ZSh60vvcO-28hQ)
 summary: >
   AWS finally published the Oct 20 us-east-1 postmortem. I translated the key parts and added commentary on how one DNS bug toppled half the internet.
-tags: [下云,AWS]
+tags: [Cloud-Outage, AWS]
 ---
 
 AWS just released the official postmortem for the [Oct 20 us-east-1 meltdown](https://mp.weixin.qq.com/s/sCAOwNva__0L_iMP1QHngQ). It’s one of the rare times we get first-hand detail, so I translated it to Chinese and sprinkled in commentary. Here’s the English recap with my notes.

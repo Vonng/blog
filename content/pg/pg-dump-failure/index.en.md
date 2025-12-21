@@ -1,10 +1,10 @@
 ---
-title: "Incident Report: Connection Pool Contamination Caused by pg_dump"
-linkTitle: "Incident Report: Connection Pool Contamination"
+title: "Incident-Report: Connection-Pool Contamination Caused by pg_dump"
+linkTitle: "Incident-Report: Connection-Pool Contamination"
 date: 2018-12-11
 author: "vonng"
 summary: "Sometimes, interactions between components manifest in subtle ways. For example, using pg_dump to export data from a connection pool can cause connection pool contamination issues."
-tags: ["PostgreSQL","PG Management","Incident Report"]
+tags: ["PostgreSQL","PG-Admin","Incident-Report"]
 ---
 
 PostgreSQL is great, but that doesn't mean it's Bug-Free. This time in the production environment, I encountered another very interesting case: a production incident caused by `pg_dump`. This is a very subtle bug triggered by Pgbouncer, `search_path`, and special `pg_dump` operations.

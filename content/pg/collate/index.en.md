@@ -5,7 +5,7 @@ author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: >
   What? Don't know what COLLATION is? Remember one thing: using C COLLATE is always the right choice!
-tags: [PostgreSQL,PG Administration]
+tags: [PostgreSQL,PG-Admin]
 ---
 
 

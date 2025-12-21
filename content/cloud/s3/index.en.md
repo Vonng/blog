@@ -4,7 +4,7 @@ date: 2023-12-26
 author: vonng 
 summary: |
   S3 is no longer "cheap" with the evolution of hardware, and other challengers such as cloudflare R2.
-tags: [Cloud,CloudExit,S3,MinIO]
+tags: [Cloud, Cloud-Exit, S3, MinIO]
 ---
 
 > [WeChat](https://mp.weixin.qq.com/s/HathxpQ_KUuqxyrtyCDzWw)

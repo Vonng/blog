@@ -146,7 +146,7 @@ Pigsty's monitoring system itself is an exemplar of Datalet: all Pigsty advanced
 
 ---------------
 
-## Free Friendly Open Source License
+## Free Friendly Open-Source License
 
 ![](pigsty-v09-11.jpg)
 

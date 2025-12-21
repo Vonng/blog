@@ -6,7 +6,7 @@ author: |
   [Feng Ruohang](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [WeChat](https://mp.weixin.qq.com/s/PePSPDfyJt-ZkKjH8sUa6w) | [Zhihu](https://www.zhihu.com/question/273489729/answer/377084748)
 summary: >
   Those who only know how to code are just programmers; **learn databases well, and you can at least make a living**; but for **excellent** engineers, merely **using** databases is far from enough.
-tags: [database]
+tags: [Database]
 ---
 
 > Our school offers a database systems principles course. But I'm still confused. From the first few classes, the teacher started with a bunch of mind-numbing terms and concepts. I thought knowing "how to design and build tables" and "how to perform CRUD operations in MySQL" would be enough... So why do we need to understand relational schema representation, computation, normalization... conceptual models... mutual conversions between various models, and why do we need to know about relational algebra, Cartesian products... these theoretical knowledge? I'm very confused. What exactly is the purpose of this course or this textbook trying to teach students through these theoretical concepts?

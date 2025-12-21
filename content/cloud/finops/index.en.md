@@ -4,13 +4,13 @@ date: 2023-07-06
 author: |
   [Ruohang Feng](https://vonng.com/en/) ([@Vonng](https://vonng.com/en/)) | [WeChat](https://mp.weixin.qq.com/s/Yp_PU8nmyK-NVq0clD98RQ)
 summary: |
-  At the SACC 2023 FinOps session, I fiercely criticized cloud vendors. This is a transcript of my speech, introducing the ultimate FinOps concept — cloud-exit and its implementation path.
+  At the SACC 2023 FinOps session, I fiercely criticized cloud vendors. This is a transcript of my speech, introducing the ultimate FinOps concept — Cloud-Exit and its implementation path.
 module: []
 categories: [Cloud]
-tags: [Cloud,CloudExit,FinOps]
+tags: [Cloud, Cloud-Exit, FinOps]
 ---
 
-At the SACC 2023 FinOps session, I fiercely criticized cloud vendors. This is a transcript of my speech, introducing the ultimate FinOps concept — **cloud-exit** and its best practice.
+At the SACC 2023 FinOps session, I fiercely criticized cloud vendors. This is a transcript of my speech, introducing the ultimate FinOps concept — **Cloud-Exit** and its best practice.
 
 
 -----------------
@@ -41,7 +41,7 @@ The FinOps Foundation states that FinOps focuses on "**cloud cost optimization**
 
 **Total cost** depends on two factors: **Quantity ✖️ Unit Price**. Compared to quantity, **unit price might be the key to cost reduction and efficiency improvement**. Previous speakers mentioned that about 1/3 of cloud resources are wasted on average, which is the optimization space for FinOps. However, if you use non-elastic services on public clouds, the **unit price of the resources** you use is already several to dozens of times higher, making the wasted portion negligible in comparison.
 
-In the first stop of my career, I experienced a FinOps movement firsthand. Our BU was among the first internal users of Alibaba Cloud and also where the "**data middle platform**" concept originated. Alibaba Cloud sent over a dozen engineers to help us migrate to the cloud. After migrating to ODPS, our annual storage and computing costs were **70 million**, and through FinOps methods like health scoring, we did optimize and save tens of millions. However, running the same services with an in-house Hadoop suite in our data center cost **less than 10 million annually** — **savings are good, but they're nothing compared to the multiplied resource costs**.
+In the first stop of my career, I experienced a FinOps movement firsthand. Our BU was among the first internal users of Alibaba-Cloud and also where the "**data middle platform**" concept originated. Alibaba-Cloud sent over a dozen engineers to help us migrate to the cloud. After migrating to ODPS, our annual storage and computing costs were **70 million**, and through FinOps methods like health scoring, we did optimize and save tens of millions. However, running the same services with an in-house Hadoop suite in our data center cost **less than 10 million annually** — **savings are good, but they're nothing compared to the multiplied resource costs**.
 
 As cost reduction and efficiency become the main theme, cloud repatriation is becoming a trend. Alibaba, the inventor of the middle platform concept, has already started dismantling its own middle platform. Yet, many companies are still falling into the trap of the slaughterhouse, repeating the old path of cloud migration - cloud repatriation.
 
@@ -62,13 +62,13 @@ However, even a slight increase in configuration leads to a **magnitude** increa
 
 Compared to in-house solutions, **the price of cloud resources is generally several to more than ten times higher, with a rent-to-buy ratio ranging from a few days to several months**. For example, the cost of a physical server core month in an IDC, including all costs for network, electricity, maintenance, and IT staff, is about 19 yuan. Using a K8S container private cloud, the cost of a virtual core month is only 7 yuan.
 
-In contrast, the price per core month for Alibaba Cloud's ECS is a couple of hundred yuan, and for AWS EC2, it's two to three hundred yuan. If you "don't care about elasticity" and prepay for three years, you can usually get a discount of about 50-60%. But no matter how you calculate it, the price difference between cloud computing power and local in-house computing power is there and significant.
+In contrast, the price per core month for Alibaba-Cloud's ECS is a couple of hundred yuan, and for AWS EC2, it's two to three hundred yuan. If you "don't care about elasticity" and prepay for three years, you can usually get a discount of about 50-60%. But no matter how you calculate it, the price difference between cloud computing power and local in-house computing power is there and significant.
 
 ![](finops-2.png)
 
-The pricing of **cloud storage** resources is even more outrageous. A common 3.2 TB enterprise-grade NVMe SSD, with its formidable performance, reliability, and cost-effectiveness, has a wholesale price of just over **¥3000**, significantly outperforming older storage solutions. However, for the same storage on the cloud, providers dare to charge 100 times the price. Compared to direct hardware procurement, **the cost of AWS EBS io2 is 120 times higher, while Alibaba Cloud's ESSD PL3 is 200 times higher**.
+The pricing of **cloud storage** resources is even more outrageous. A common 3.2 TB enterprise-grade NVMe SSD, with its formidable performance, reliability, and cost-effectiveness, has a wholesale price of just over **¥3000**, significantly outperforming older storage solutions. However, for the same storage on the cloud, providers dare to charge 100 times the price. Compared to direct hardware procurement, **the cost of AWS EBS io2 is 120 times higher, while Alibaba-Cloud's ESSD PL3 is 200 times higher**.
 
-Using a 3.2TB enterprise-grade PCI-E SSD card as a benchmark, **the rent-to-buy ratio on AWS is 15 days, while on Alibaba Cloud it's less than 5 days**, meaning renting for this period allows you to purchase the entire disk outright. If you opt for a three-year prepaid purchase on Alibaba Cloud with the maximum discount of 50%, **the three-year rental fee could buy over 120 similar disks**.
+Using a 3.2TB enterprise-grade PCI-E SSD card as a benchmark, **the rent-to-buy ratio on AWS is 15 days, while on Alibaba-Cloud it's less than 5 days**, meaning renting for this period allows you to purchase the entire disk outright. If you opt for a three-year prepaid purchase on Alibaba-Cloud with the maximum discount of 50%, **the three-year rental fee could buy over 120 similar disks**.
 
 ![](finops-3.png)
 
@@ -82,10 +82,10 @@ Any rational enterprise user can see the folly in this: **If the procurement of 
 |------------------------------------------|----------------------|----------------------|
 | Self-hosted IDC (Single Physical Server) | ¥75k / 5 years       | 1.5                  |
 | Self-hosted IDC (2-3 Server HA Cluster)  | ¥150k / 5 years      | 3.0 ~ 4.5            |
-| Alibaba Cloud RDS (On-demand)            | ¥87.36/hour          | 76.5                 |
-| Alibaba Cloud RDS (Monthly)              | ¥42k / month         | 50                   |
-| Alibaba Cloud RDS (Yearly, 15% off)      | ¥425,095 / year      | 42.5                 |
-| Alibaba Cloud RDS (3-year, 50% off)      | ¥750,168 / 3 years   | 25                   |
+| Alibaba-Cloud RDS (On-demand)            | ¥87.36/hour          | 76.5                 |
+| Alibaba-Cloud RDS (Monthly)              | ¥42k / month         | 50                   |
+| Alibaba-Cloud RDS (Yearly, 15% off)      | ¥425,095 / year      | 42.5                 |
+| Alibaba-Cloud RDS (3-year, 50% off)      | ¥750,168 / 3 years   | 25                   |
 | AWS (On-demand)                          | $25,817 / month      | 217                  |
 | AWS (1-year, no upfront)                 | $22,827 / month      | 191.7                |
 | AWS (3-year, full upfront)               | $120k + $17.5k/month | 175                  |
@@ -98,7 +98,7 @@ Comparing the costs of self-hosting versus using a cloud database:
 | Method                                                                                 | Cost Per Year (¥10k) |
 |----------------------------------------------------------------------------------------|----------------------|
 | Self-hosted Servers 64C / 384G / 3.2TB NVME SSD 660K IOPS (2-3 servers)                | 3.0 ~ 4.5            |
-| Alibaba Cloud RDS PG High-Availability pg.x4m.8xlarge.2c, 64C / 256GB / 3.2TB ESSD PL3 | 25 ~ 50              |
+| Alibaba-Cloud RDS PG High-Availability pg.x4m.8xlarge.2c, 64C / 256GB / 3.2TB ESSD PL3 | 25 ~ 50              |
 | AWS RDS PG High-Availability db.m5.16xlarge, 64C / 256GB / 3.2TB io1 x 80k IOPS        | 160 ~ 217            |
 
 > **RDS** pricing compared to self-hosting, see "[Is Cloud Database an idiot Tax?](/cloud/rds/)"
@@ -133,7 +133,7 @@ Enterprises should evaluate their scale and stage, assess their business, and we
 
 > "To seek peace through struggle is to preserve peace; to seek peace through compromise is to lose peace."
 
-When the times are favorable, the world joins forces; when fortune fades, even heroes lose their freedom: During the bubble phase, it was easy to disregard spending heavily in the cloud. However, in an economic downturn, cost reduction and efficiency become central themes. An increasing number of companies are realizing that using cloud services is essentially paying a "no-expert tax" and "protection money". Consequently, a trend of "cloud repatriation" has emerged, with 37Signals' DHH being one of the most notable proponents. Correspondingly, the revenue growth rate of major cloud providers worldwide has been experiencing a continuous decline, with Alibaba Cloud's revenue even starting to shrink in the first quarter of 2023.
+When the times are favorable, the world joins forces; when fortune fades, even heroes lose their freedom: During the bubble phase, it was easy to disregard spending heavily in the cloud. However, in an economic downturn, cost reduction and efficiency become central themes. An increasing number of companies are realizing that using cloud services is essentially paying a "no-expert tax" and "protection money". Consequently, a trend of "cloud repatriation" has emerged, with 37Signals' DHH being one of the most notable proponents. Correspondingly, the revenue growth rate of major cloud providers worldwide has been experiencing a continuous decline, with Alibaba-Cloud's revenue even starting to shrink in the first quarter of 2023.
 
 ![](finops-5.png)
 

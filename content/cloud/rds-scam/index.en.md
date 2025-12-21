@@ -5,7 +5,7 @@ author: |
   [Feng Ruohang](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
 summary: >
   The paradigm shift brought by RDS, whether cloud databases are overpriced cafeteria meals. Quality, security, efficiency, and cost analysis, cloud exit database self-building: how to implement in practice!
-tags: [cloud-exit,RDS]
+tags: [Cloud-Exit,RDS]
 ---
 
 Are cloud databases overpriced cafeteria meals
@@ -53,7 +53,7 @@ Cloud databases are database services in the cloud - a new software delivery par
 Traditional commercial databases (like Oracle, DB2, SQL Server) and open source databases (like PostgreSQL, MySQL) correspond to this cloud database concept.
 The common feature of these two delivery paradigms is that software is a "product" (database kernel), users "own" software copies, buy/freely download and run on their own hardware;
 
-Cloud database services (AWS/Alibaba Cloud/... RDS) typically bundle software and hardware resources, packaging open source database kernels running on cloud servers as "services":
+Cloud database services (AWS/Alibaba-Cloud/... RDS) typically bundle software and hardware resources, packaging open source database kernels running on cloud servers as "services":
 Users access and use database services through cloud platform-provided database URLs, managing databases through cloud vendor proprietary management software (platform/PaaS).
 
 
@@ -117,7 +117,7 @@ Let's use specific examples to illustrate.
 
 For example at Tantan, we once evaluated post-cloud costs. Our overall server TCO was
 
-, one was... 75k for 5 years, 15k annual TCO. Two servers for high availability would be 30k annually. Alibaba Cloud East China 1 default AZ, dedicated 64-core 256GB instance: pg.x4m.8xlarge.2c, plus a 3.2TB ESSD PL3 cloud disk. Annual costs range from 250k (3 years) to 750k (on-demand). AWS overall ranges from 1.6-2.17 million annually.
+, one was... 75k for 5 years, 15k annual TCO. Two servers for high availability would be 30k annually. Alibaba-Cloud East China 1 default AZ, dedicated 64-core 256GB instance: pg.x4m.8xlarge.2c, plus a 3.2TB ESSD PL3 cloud disk. Annual costs range from 250k (3 years) to 750k (on-demand). AWS overall ranges from 1.6-2.17 million annually.
 
 Not just us, Ruby on Rails author DHH shared their complete 37 Signal company cloud exit journey in 2023.
 
@@ -145,7 +145,7 @@ For example on AWS, if you want to purchase a high-spec PostgreSQL cloud databas
 
 Last episode's cloud computing mudslide discussed Luo Yonghao selling "cloud" in Taobao livestream: first selling robot vacuums, then tardy Luo read scripts selling "cloud" for forty minutes, then abruptly switched to selling **Colgate enzyme-free toothpaste**. This was clearly a failed livestream attempt: over a thousand enterprises ordered cloud servers in the livestream, 100-200 yuan cloud server unit prices plus one-per-company purchase limits meant at most 200k revenue, possibly less than Luo's appearance fee.
 
-I wrote an article "[Luo Yonghao Can't Save Toothpaste Cloud](https://mp.weixin.qq.com/s/s_MCdaCByDBuocXkY1tvKw)" mocking Alibaba Cloud selling virtual machines in livestreams as toothpaste cloud. Then my friend Swedish Ma immediately wrote "[Toothpaste Cloud? You're Flattering Cloud Vendors](https://mp.weixin.qq.com/s/ffrwbLiGxTLO1jVh8mHiBA)" refuting: "No domestic cloud vendor deserves the toothpaste cloud title. From profit margins to social value to brand management, quality management and market education, public cloud vendors are completely outclassed by toothpaste manufacturers."
+I wrote an article "[Luo Yonghao Can't Save Toothpaste Cloud](https://mp.weixin.qq.com/s/s_MCdaCByDBuocXkY1tvKw)" mocking Alibaba-Cloud selling virtual machines in livestreams as toothpaste cloud. Then my friend Swedish Ma immediately wrote "[Toothpaste Cloud? You're Flattering Cloud Vendors](https://mp.weixin.qq.com/s/ffrwbLiGxTLO1jVh8mHiBA)" refuting: "No domestic cloud vendor deserves the toothpaste cloud title. From profit margins to social value to brand management, quality management and market education, public cloud vendors are completely outclassed by toothpaste manufacturers."
 
 
 -----------
@@ -206,7 +206,7 @@ Alibaba RDS: 7x-11x, PolarDB: 6x~10x, AWS: 14x ~ 22x
 |---------------------------|-------------------|-------------------|
 | HA RDS Series Core/Month Avg | **¥339**          | **¥432**          |
 | AWS RDS HA Reference      | **¥1,160**        | **¥1,582**        |
-| Alibaba Cloud PolarDB Ref | **¥250**          | **¥400**          |
+| Alibaba-Cloud PolarDB Ref | **¥250**          | **¥400**          |
 | DHH Tantan Self-Built 1C Computing (Excluding Storage) |                  | **¥40**           |
 
 Cloud servers - on-demand, monthly, annual, 5-year prepaid unit prices are **187¥, 125¥, 81¥, 37¥** respectively, compared to self-built **20¥** with markups of **8x, 5x, 3x, 1x**. After configuring common-ratio block storage (1 core:64GB, ESSD PL3), unit prices are: **571¥, 381¥, 298¥, 165¥**, compared to self-built **22.4¥** with markups of **24x, 16x, 12x, 6x**.
@@ -215,9 +215,9 @@ Cloud servers - on-demand, monthly, annual, 5-year prepaid unit prices are **187
 
 **Question: How to calculate storage costs?**
 
-First look at retail unit prices, GB·month unit price, 2 cents, Alibaba Cloud ESSD has several different tiers, from 1-4 yuan.
+First look at retail unit prices, GB·month unit price, 2 cents, Alibaba-Cloud ESSD has several different tiers, from 1-4 yuan.
 
-1TB storage·month price (full discount): self-purchase 16, AWS 1900, Alibaba Cloud 3200
+1TB storage·month price (full discount): self-purchase 16, AWS 1900, Alibaba-Cloud 3200
 
 
 -----------
@@ -254,9 +254,9 @@ We won't discuss MySQL that can only do OLTP, but RDS PostgreSQL is worth discus
 
 **Question: What deficiencies do cloud PostgreSQL databases have in functionality extension?**
 
-Contrib modules as part of PostgreSQL itself include 73 extension plugins. Among PG's built-in 73 extensions, Alibaba Cloud kept 23 and castrated 49; AWS kept 49 and castrated 24. PostgreSQL official repository PGDG contains about 100 extensions. Pigsty as a PG distribution maintains and packages 20 powerful extension plugins. Total available extensions on EL/Deb platforms reach 234 - AWS RDS only provides 94 extensions, Alibaba Cloud RDS provides 104 extensions.
+Contrib modules as part of PostgreSQL itself include 73 extension plugins. Among PG's built-in 73 extensions, Alibaba-Cloud kept 23 and castrated 49; AWS kept 49 and castrated 24. PostgreSQL official repository PGDG contains about 100 extensions. Pigsty as a PG distribution maintains and packages 20 powerful extension plugins. Total available extensions on EL/Deb platforms reach 234 - AWS RDS only provides 94 extensions, Alibaba-Cloud RDS provides 104 extensions.
 
-For important extensions, the situation is worse. Missing extensions from AWS and Alibaba Cloud include: (time-series TimescaleDB, distributed Citus, columnar Hydra, full-text search BM25, OLAP PG Analytics, message queue pgq, even some basic important components aren't provided, like WAL2JSON for CDC), version updates are also unsatisfactory.
+For important extensions, the situation is worse. Missing extensions from AWS and Alibaba-Cloud include: (time-series TimescaleDB, distributed Citus, columnar Hydra, full-text search BM25, OLAP PG Analytics, message queue pgq, even some basic important components aren't provided, like WAL2JSON for CDC), version updates are also unsatisfactory.
 
 -----------
 
@@ -282,7 +282,7 @@ We can discuss this separately in a later episode.
 
 Information, data, intelligence are crucial for management. But the monitoring systems provided by cloud are, quality-wise, hard to describe. Back in 2017 I surveyed all PostgreSQL database monitoring systems available... indicator count, chart count, information content. Observability concepts, all terrible. Monitoring granularity is also low (minute-level), want 5-second level? Sorry, please pay more.
 
-AustinDatabase host just published "[Give Me One Reason Not to Fire DBAs After Going to Cloud](https://mp.weixin.qq.com/s/IMgJBZ9uqU5x738p9mED4w)" discussing this issue: wanting to open tickets on Alibaba Cloud for problem analysis, customer service frantically recommends DAS (Database Autonomous Service), please pay more, 6K monthly per instance at sky-high prices.
+AustinDatabase host just published "[Give Me One Reason Not to Fire DBAs After Going to Cloud](https://mp.weixin.qq.com/s/IMgJBZ9uqU5x738p9mED4w)" discussing this issue: wanting to open tickets on Alibaba-Cloud for problem analysis, customer service frantically recommends DAS (Database Autonomous Service), please pay more, 6K monthly per instance at sky-high prices.
 
 Without good enough monitoring systems, how do you assign responsibility, how do you seek accountability? (Like hardware issues, overselling, IO contention causing performance avalanches, primary-replica failovers causing customer losses)
 
@@ -368,7 +368,7 @@ Amateur hour stages, no brand image. Like IBM DeveloperWorks. "[Defense Broken, 
 
 -----------
 
-## Cloud Exit Database Self-Building: Practical Implementation!
+## Cloud-Exit Database Self-Building: Practical Implementation!
 
 **Question: When should you use cloud databases, when shouldn't you? Or what scale should go to cloud, what scale should exit cloud?**
 

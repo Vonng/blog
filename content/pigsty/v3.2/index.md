@@ -18,8 +18,6 @@ Pigsty 迎来了 2024 年的最后一次发布 v3.2。本次发布带来了命�
 
 本次发布例行修复了一系列问题，同时跟进了 Supabase 发布周的密集变化，并为 Grafana 扩展插件与数据源提供了 RPM/DEB 包。
 
-![](featured.jpg)
-
 
 --------
 
@@ -80,7 +78,7 @@ Pigsty 搭建了一个跨发行版的流水线，将社区自研的新扩展、�
 
 ## Supabase 例行跟进
 
-Pigsty 之前推出的 [**Supabase 自建教程**](/blog/db/supabase/) 能让用户在一台机器上迅速拉起自建的 Supabase 服务。对于密集使用 Supabase 的创业群体引起了一定反响，因此持续在 Supabase 的最新版本上做跟进。
+Pigsty 之前推出的 **Supabase 自建教程** 能让用户在一台机器上迅速拉起自建的 Supabase 服务。对于密集使用 Supabase 的创业群体引起了一定反响，因此持续在 Supabase 的最新版本上做跟进。
 
 Supabase 在 2024 年的最后一个月里发布了一系列重要更新，Pigsty v3.2 也跟进了这些变化，为用户提供最新的 Supabase 版本。
 

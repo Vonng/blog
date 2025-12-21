@@ -4,7 +4,7 @@ date: 2019-11-12
 author: "vonng"
 summary: >
   Understanding the TCP protocol used for communication between PostgreSQL server and client, and printing messages using Go
-tags: [PostgreSQL, PG Development, PG Kernel]
+tags: [PostgreSQL, PG-Development, PG-Kernel]
 ---
 
 Understanding the TCP protocol used for communication between PostgreSQL server and client

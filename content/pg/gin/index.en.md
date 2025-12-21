@@ -4,7 +4,7 @@ date: 2019-04-12
 author: "vonng"
 summary: >
   When GIN indexes are used to search with very long keyword lists, performance degrades significantly. This article explains why GIN index keyword search has O(n^2) time complexity.
-tags: [PostgreSQL, PG Development, GIN]
+tags: [PostgreSQL, PG-Development, GIN]
 ---
 
 When GIN indexes are used to search with very long keyword lists, performance degrades significantly. This article explains why GIN index keyword search has O(n^2) time complexity.

@@ -6,7 +6,7 @@ author: |
   [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat](https://mp.weixin.qq.com/s/TJk9TUW7xsEglhEK_qYi-w)
 summary: >
   Just like the vector database extension race two years ago, the current PostgreSQL ecosystem extension competition has begun revolving around DuckDB. MotherDuck's official entry into the PostgreSQL extension space undoubtedly signals that competition has entered white-hot territory.
-tags: [PostgreSQL,PG Ecosystem]
+tags: [PostgreSQL,PG-Ecosystem]
 ---
 
 
@@ -78,7 +78,7 @@ Similarly, YC-funded startup database company ParadeDB (YC S23), after trying to
 
 ![paradedb.png](paradedb.png)
 
-Domestic individual developer Li Hongyan's [`duckdb_fdw`](https://ext.pgsty.com/zh/e/duckdb_fdw) is another path taking a different approach. Instead of directly using PostgreSQL's storage engine interface, it uses the Foreign Data Wrapper (FDW) infrastructure to connect PostgreSQL and DuckDB. This triggered official criticism, using it as a negative example, perhaps motivating MotherDuck to enter the field personally: "I'm still conceiving great blueprints on how to merge PostgreSQL and DuckDB's power, but you're moving too fast — let me show you some official shock."
+Domestic individual developer Li Hongyan's [`duckdb_fdw`](https://pgext.cloud/e/duckdb_fdw) is another path taking a different approach. Instead of directly using PostgreSQL's storage engine interface, it uses the Foreign Data Wrapper (FDW) infrastructure to connect PostgreSQL and DuckDB. This triggered official criticism, using it as a negative example, perhaps motivating MotherDuck to enter the field personally: "I'm still conceiving great blueprints on how to merge PostgreSQL and DuckDB's power, but you're moving too fast — let me show you some official shock."
 
 As for CrunchyData's `crunchy_bridge` or other database companies' closed-source wrapper extensions, I personally feel they're unlikely to succeed.
 
@@ -87,4 +87,4 @@ As for CrunchyData's `crunchy_bridge` or other database companies' closed-source
 
 Of course, as the author of the PostgreSQL distribution Pigsty, my strategy has always been — you race your horses, I'll package and distribute all these extensions to users, letting users choose and decide. Just like when vector databases rose, I packaged and distributed several of the most promising extensions like `pgvector`, `pg_embedding`, `pase`, `pg_sparse`. Regardless of who the final winner is, PostgreSQL and Pigsty are the ones reaping the benefits.
 
-Speed conquers all. In Pigsty v3, I've already implemented these three most promising extensions: [`pg_duckdb`](https://ext.pgsty.com/zh/e/pg_duckdb), [`pg_lakehouse`](https://ext.pgsty.com/zh/e/pg_lakehouse), and [`duckdb_fdw`](https://ext.pgsty.com/zh/e/pg_duckdb/duckdb_fdw), plus the `duckdb` binary itself, ready to use out of the box, letting users experience the joy of PostgreSQL handling everything, truly HTAP dual-champion all-in-one combination — OLTP/OLAP all-conquering.
+Speed conquers all. In Pigsty v3, I've already implemented these three most promising extensions: [`pg_duckdb`](https://pgext.cloud/e/pg_duckdb), [`pg_lakehouse`](https://pgext.cloud/e/pg_lakehouse), and [`duckdb_fdw`](https://pgext.cloud/e/duckdb_fdw), plus the `duckdb` binary itself, ready to use out of the box, letting users experience the joy of PostgreSQL handling everything, truly HTAP dual-champion all-in-one combination — OLTP/OLAP all-conquering.

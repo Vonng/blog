@@ -5,7 +5,7 @@ author: |
   [Ruohang Feng](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [Wechat](https://mp.weixin.qq.com/s/aBUwEMxZ_xKmHisaaT4uWw)
 summary: >
   MinIO announces it is entering maintenance mode, the dragon-slayer has become the dragon – how MinIO transformed from an open-source S3 alternative to just another commercial software company
-tags: [Database,MinIO,OpenSource]
+tags: [Database, MinIO, Open-Source]
 ---
 
 

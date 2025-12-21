@@ -122,7 +122,7 @@ PostgreSQL 12 是五年前发布的版本，我认为是继 PG 10 之后的一�
 
 
 而这一次从 PG 16 - PG 17，生态适配的速度显著加快了，这才三个月不到，就完成了之前需要半年的活计。在这一点上，我很自豪地说，我还是做了不少工作的。
-比如在《[PostgreSQL神功大成！最全扩展仓库](https://mp.weixin.qq.com/s/Dv3--O0K70Fevz39r3T4Ag)》中介绍过的 https://ext.pigsty.io ，这里维护了 PG 生态超过一半的扩展插件。
+比如在《[PostgreSQL神功大成！最全扩展仓库](https://mp.weixin.qq.com/s/Dv3--O0K70Fevz39r3T4Ag)》中介绍过的 https://pgext.cloud/zh ，这里维护了 PG 生态超过一半的扩展插件。
 
 而我也是在最近刚刚完成这件大活，把自己维护的一百四十个多个扩展针对 PG 17 进行了构建（当然还做了 Ubuntu 24.04 和部分 ARM 支持），并且自己修复或者提请扩展作者修复了几十个有兼容问题的扩展插件。
 目前实现的效果是：在 EL 系统上， 334 个可用扩展有 301 个已经在 PG 17 可用，而在 Debian 系统上，326 个扩展也已经有 302 个在 PG 17 上可用。
@@ -132,7 +132,7 @@ PostgreSQL 12 是五年前发布的版本，我认为是继 PG 10 之后的一�
 | RPM Extension  | 334 | 115  |  143   |   70    |  4   |  6   |   301    | 330  | 333  | 319  | 307  | 294  |
 | DEB Extension  | 326 | 104  |  144   |   70    |  4   |  14  |   302    | 322  | 325  | 316  | 303  | 293  |
 
-[![extension.png](extension.png)](https://ext.pigsty.io)
+[![extension.png](extension.png)](https://pgext.cloud/zh)
 
 > Pigsty 实现了 PostgreSQL 扩展生态的大对齐
 

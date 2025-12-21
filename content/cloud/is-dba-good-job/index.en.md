@@ -6,7 +6,7 @@ author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat Official Account](https://mp.weixin.qq.com/s/Py3o31w3db5E9FsviAZeCA) | [Zhihu](https://zhuanlan.zhihu.com/p/519075926)
 summary: >
   Ant Financial had a self-deprecating joke: besides regulation, only DBAs could bring down Alipay. Although DBA sounds like a profession with glorious history and dim prospects, who knows if it might become trendy again after a few terrifying major cloud database incidents?
-tags: [cloud-exit, RDS, DBA]
+tags: [Cloud-Exit, RDS, DBA]
 ---
 
 Ant Financial had a self-deprecating joke: besides regulation, only **DBAs** could bring down Alipay.
@@ -81,7 +81,7 @@ Although DBA sounds like a profession with glorious history and dim prospects, t
 
 ## What to Do?
 
-**Open source and free** database distribution solutions can also enable large numbers of development/operations engineers to become qualified part-time DBAs. This is exactly what I'm doing: **Pigsty - Ready-to-use Open Source Database Distribution**, ready to use out of the box, mass-producing DBAs.
+**Open source and free** database distribution solutions can also enable large numbers of development/operations engineers to become qualified part-time DBAs. This is exactly what I'm doing: **Pigsty - Ready-to-use Open-Source Database Distribution**, ready to use out of the box, mass-producing DBAs.
 
 ![pigsty-arch.png](pigsty-arch.png)
 

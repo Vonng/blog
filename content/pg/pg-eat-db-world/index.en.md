@@ -8,7 +8,7 @@ summary: >
 resources:
   - { src: "ddia.png", params: { byline: "*source*: Designing Data Intensive Applications, ch3, Martin Kleppmann" } }
   - { src: "pg-survey.png", params: {byline: "*source*: https://www.timescale.com/state-of-postgres/2022/"} }
-tags: [PostgreSQL,Ecosystem]
+tags: [PostgreSQL,PG-Ecosystem]
 ---
 
 PostgreSQL isn’t just a simple relational database; it’s a data management framework with the potential to engulf the entire database realm. The trend of “Using Postgres for Everything” is no longer limited to a few elite teams but is becoming a mainstream best practice.

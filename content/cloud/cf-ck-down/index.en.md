@@ -5,7 +5,7 @@ author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat](https://mp.weixin.qq.com/s/mss2hRqAxCF7N3kPLQ8_7g)
 summary: >
   A ClickHouse permission tweak doubled a feature file, tripped a Rust hard limit, and froze Cloudflare’s core traffic for six hours—their worst outage since 2019. Here’s the full translation plus commentary.
-tags: [Cloudflare, Cloud Incident]
+tags: [Cloudflare, Cloud-Outage]
 ---
 
 Yesterday the “cyber Bodhisattva” Cloudflare suffered its worst incident since 2019. For six hours, core network traffic couldn’t be delivered. ChatGPT, X, Spotify, Uber—everyone felt it.

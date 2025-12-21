@@ -7,7 +7,7 @@ author: |
   [Vonng](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [WeChat](https://mp.weixin.qq.com/s/R4jp1uTCiLOLGsiADZ9jxQ)
 summary: >
   This article focuses on vector databases hyped by AI, introduces the basic principles of AI embeddings and vector storage/retrieval, and demonstrates the functionality, performance, acquisition, and application of the vector database extension PGVECTOR through a concrete knowledge base retrieval case study.
-tags: [PostgreSQL,PG Development,Extensions,Vector]
+tags: [PostgreSQL, PG-Development, Extension, Vector]
 ---
 
 New AI applications have shown exponential growth over the past year, and these applications face a common challenge: how to **store** and **query** AI embeddings represented as vectors at scale. This article focuses on **vector databases** hyped by AI, introduces the basic principles of AI embeddings and vector storage/retrieval, and demonstrates the functionality, performance, acquisition, and application of the vector database extension **PGVECTOR** through a concrete knowledge base retrieval case study.

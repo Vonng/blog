@@ -102,9 +102,9 @@ PostgreSQL 允许用户开发功能模块，复用数据库公共基础设施，
 
 再比如，ElasticSearch 基于 Lucene 搜索库开发，而 Rust 生态有一个改进版的下一代 Tantivy 全文搜索库作为 Lucene 的替代；而 ParadeDB 只需要将其封装对接到 PostgreSQL 的接口上，即可提供比肩 ElasticSearch 的搜索服务。更重要的是，它可以站在 PostgreSQL 巨人的肩膀上，借用 PG 生态的全部合力（例如，与 PG Vector 做混合检索），不讲武德地用数据库全能王的力量，去与一个专用数据库单品来对比。
 
-[![img](https://pigsty.io/img/extension.png)](https://ext.pgsty.com/zh/list)
+[![img](https://pigsty.io/img/extension.png)](https://pgext.cloud/zh/list)
 
-> Pigsty 中提供了 [**255**](https://ext.pgsty.com/zh/list) 个可用扩展插件，在生态中还有 1000+ 扩展
+> Pigsty 中提供了 [**255**](https://pgext.cloud/zh/list) 个可用扩展插件，在生态中还有 1000+ 扩展
 
 ------
 

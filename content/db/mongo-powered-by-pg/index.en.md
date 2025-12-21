@@ -6,7 +6,7 @@ author: |
   [John De Goes](https://www.linkedin.com/in/jdegoes) [Original Article](https://www.linkedin.com/pulse/mongodb-32-now-powered-postgresql-john-de-goes)
 summary: >
   MongoDB 3.2's analytics subsystem turned out to be an embedded PostgreSQL database? A whistleblowing story from MongoDB's partner about betrayal and disillusionment.
-tags: [database]
+tags: [Database]
 ---
 
 -------------

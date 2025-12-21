@@ -1,10 +1,10 @@
 ---
-title: "Incident Report: Integer Overflow from Rapid Sequence Number Consumption"
+title: "Incident-Report: Integer Overflow from Rapid Sequence Number Consumption"
 date: 2018-07-20
 author: "vonng"
 summary: >
   If you use Integer sequences on tables, you should consider potential overflow scenarios.
-tags: [PostgreSQL, PG Management, Incident Report]
+tags: [PostgreSQL, PG-Admin, Incident-Report]
 ---
 
 -----------------

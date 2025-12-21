@@ -5,21 +5,21 @@ hero: /hero/smile.jpg
 author: |
   [Feng Ruohang](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [WeChat Official Account](https://mp.weixin.qq.com/s/FIOB_Oqefx1oez1iu7AGGg)
 summary: >
-  Alibaba Cloud and Didi had major outages one after another. This article discusses how to move from cost-reduction jokes to real cost reduction and efficiency — what costs should we really reduce, what efficiency should we improve?
-tags: [cloud-exit,Alibaba Cloud,cloud outages]
+  Alibaba-Cloud and Didi had major outages one after another. This article discusses how to move from cost-reduction jokes to real cost reduction and efficiency — what costs should we really reduce, what efficiency should we improve?
+tags: [Cloud-Exit,Alibaba-Cloud,Cloud-Outage]
 ---
 
 Year-end is performance rush time, but internet giants are having major incidents one after another. They've turned "cost reduction and efficiency improvement" into literal "**cost reduction jokes**" — this is no longer just a meme, but official self-mockery.
 
 ![smile.png](featured.png)
 
-Right after Double 11, Alibaba Cloud had a [**globally historic epic disaster**](/cloud/aliyun/) that broke industry records, then started November's cascade failure mode. After several minor incidents, came another [**cloud database management plane**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486512&idx=1&sn=43d6340fce93bfbf5439cc2cd8e3b8dd&chksm=fe4b39ebc93cb0fd192c69d9f589ccd36f1c1eb5d34fffc357cf0b8177c746c4b3445ea5f63a&scene=21#wechat_redirect) cross-border two-hour major outage — from monthly explosions to weekly explosions to daily explosions.
+Right after Double 11, Alibaba-Cloud had a [**globally historic epic disaster**](/cloud/aliyun/) that broke industry records, then started November's cascade failure mode. After several minor incidents, came another [**cloud database management plane**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486512&idx=1&sn=43d6340fce93bfbf5439cc2cd8e3b8dd&chksm=fe4b39ebc93cb0fd192c69d9f589ccd36f1c1eb5d34fffc357cf0b8177c746c4b3445ea5f63a&scene=21#wechat_redirect) cross-border two-hour major outage — from monthly explosions to weekly explosions to daily explosions.
 
 But before the dust settled, **Didi** had an outage lasting over 12 hours with **hundreds of millions** in losses — Alibaba's substitute Gaode ride-hailing directly exploded with orders and made a fortune, truly "what's lost in the east is gained in the west."
 
 ![didi.png](smile-didi.png)
 
-I already did a [**postmortem**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486468&idx=1&sn=7fead2b49f12bc2a2a94aae942403c22&chksm=fe4b39dfc93cb0c92e5d4c67241de0519ae6a23ce6f07fe5411b95041accb69e5efb86a38150&scene=21#wechat_redirect) for the silent Alibaba Cloud in "[What Can We Learn from Alibaba Cloud's Epic Failure](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486468&idx=1&sn=7fead2b49f12bc2a2a94aae942403c22&chksm=fe4b39dfc93cb0c92e5d4c67241de0519ae6a23ce6f07fe5411b95041accb69e5efb86a38150&scene=21#wechat_redirect)": Auth failed due to misconfiguration, suspected root cause is OSS/Auth circular dependency — one wrong whitelist/blacklist configuration and it deadlocks.
+I already did a [**postmortem**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486468&idx=1&sn=7fead2b49f12bc2a2a94aae942403c22&chksm=fe4b39dfc93cb0c92e5d4c67241de0519ae6a23ce6f07fe5411b95041accb69e5efb86a38150&scene=21#wechat_redirect) for the silent Alibaba-Cloud in "[What Can We Learn from Alibaba-Cloud's Epic Failure](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486468&idx=1&sn=7fead2b49f12bc2a2a94aae942403c22&chksm=fe4b39dfc93cb0c92e5d4c67241de0519ae6a23ce6f07fe5411b95041accb69e5efb86a38150&scene=21#wechat_redirect)": Auth failed due to misconfiguration, suspected root cause is OSS/Auth circular dependency — one wrong whitelist/blacklist configuration and it deadlocks.
 
 Didi's problem was reportedly a **Kubernetes** upgrade disaster. This shocking recovery time usually relates to storage/database issues. Reasonable speculation of root cause: accidentally downgraded k8s master, jumping multiple versions at once — etcd metadata got corrupted, all nodes failed, and couldn't be quickly rolled back.
 
@@ -85,7 +85,7 @@ However, organizational tacit knowledge is lost as veterans leave. When lost to 
 
 ## Increasing Management Effectiveness
 
-Can't Alibaba Cloud and Didi recruit excellent enough engineers? Not really — **their management levels and philosophies are inferior, not using these engineers well**. I've worked at Alibaba, also at Nordic-style startups like Tantan and foreign companies like Apple. I deeply understand the management level gaps. I can give a few simple examples:
+Can't Alibaba-Cloud and Didi recruit excellent enough engineers? Not really — **their management levels and philosophies are inferior, not using these engineers well**. I've worked at Alibaba, also at Nordic-style startups like Tantan and foreign companies like Apple. I deeply understand the management level gaps. I can give a few simple examples:
 
 **First is on-call duty**. At Apple, our team had over ten people across three time zones: Berlin Europe, Shanghai China, California USA, with work hours connecting end-to-end. Engineers in each location had complete brainpower for handling various problems, ensuring on-call capability during work hours at any moment, without affecting respective life quality.
 
@@ -99,7 +99,7 @@ Not being able to locate root causes reflects inadequate observability construct
 
 ![monitor-2.png](smile-monitor-2.png)
 
-Looking at Alibaba Cloud RDS for PostgreSQL and PolarDB cloud database monitoring systems, everything is just this pitiful single page of charts. If they're using this thing to analyze and locate failures, no wonder others need dozens of minutes.
+Looking at Alibaba-Cloud RDS for PostgreSQL and PolarDB cloud database monitoring systems, everything is just this pitiful single page of charts. If they're using this thing to analyze and locate failures, no wonder others need dozens of minutes.
 
 
 **Third is management philosophy and insight**. For example, stability construction needs 10 million investment. There's always opportunistic amateur hours jumping out saying: we only need 5 million or less — then maybe do nothing, just **bet** no problems occur. Win the bet, make easy money; lose the bet, leave. But it's also possible this team has real skills using technology to reduce costs. But how many people in leadership positions have enough insight to truly distinguish this?

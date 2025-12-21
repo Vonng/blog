@@ -4,7 +4,7 @@ linkTitle: "Implementing Cache Synchronization with Go and PostgreSQL"
 date: 2017-08-03
 author: "vonng"
 summary: "Cleverly utilizing PostgreSQL's Notify feature, you can conveniently notify applications of metadata changes and implement trigger-based logical replication."
-tags: ["PostgreSQL","PG Development","Triggers"]
+tags: ["PostgreSQL","PG-Development","Triggers"]
 ---
 
 Parallel and Hierarchy are the two great principles of architectural design, and **caching** is the embodiment of Hierarchy in the IO domain. Implementing caching mechanisms in single-threaded scenarios can be surprisingly simple, but it's hard to imagine mature applications having only one instance. When introducing concurrency while using caches, one must consider a problem: how to ensure data consistency (and real-time nature) between each instance's cache and the underlying data replicas.

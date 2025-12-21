@@ -3,7 +3,7 @@ title: "Pgbouncer Quick Start"
 date: 2018-02-07
 author: "vonng"
 summary: "Pgbouncer is a lightweight database connection pool. This guide covers basic Pgbouncer configuration, management, and usage."
-tags: [PostgreSQL, "PG Administration", "Connection Pool"]
+tags: [PostgreSQL, "PG-Admin", "Connection-Pool"]
 ---
 
 Pgbouncer is a lightweight database connection pool.

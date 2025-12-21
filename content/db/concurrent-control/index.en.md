@@ -6,7 +6,7 @@ author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat Public Account](https://mp.weixin.qq.com/s/xw_rwxXgIuCL-pcRZHF03w) | [Zhihu Original](https://zhuanlan.zhihu.com/p/38217080)
 summary: >
   Concurrent programs are hard to write correctly and even harder to write well. Many programmers simply throw these problems at the database... But even the most sophisticated databases won't help if you don't understand concurrency anomalies and isolation levels.
-tags: [database]
+tags: [Database]
 ---
 
 Concurrent programs are hard to write correctly and even harder to write well. Many programmers haven't truly figured out these problems - they just dump them all on the database. Concurrency anomalies aren't just theoretical problems: these anomalies have caused significant financial losses and consumed countless hours of financial auditors' efforts. But even the most popular and powerful relational databases (usually considered "ACID" databases) use weak isolation levels, so they may not prevent these concurrency anomalies from occurring.
@@ -165,7 +165,7 @@ MySQL's RR isolation level is considered not to provide true snapshot isolation/
 | RR | RC | ✅ | ✅? | ✅ | ⚠️ | ⚠️ |
 | SR | SR | ✅ | ✅ | ✅ | ✅ | ✅ |
 
-Reference test cases: [ept/hermitage/mysql](ept/hermitage/mysql)
+Reference test cases: [ept/hermitage/mysql](https://github.com/ept/hermitage)
 
 -------------
 

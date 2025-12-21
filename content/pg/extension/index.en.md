@@ -5,7 +5,7 @@ date: 2019-06-13
 author: vonng
 summary: >
   Today encountered an interesting case where a customer reported database connection issues caused by extensions.
-tags: [PostgreSQL,PG Administration,Extensions,Incident Report]
+tags: [PostgreSQL, PG-Admin, Extension, Incident-Report]
 ---
 
 > Author: [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))

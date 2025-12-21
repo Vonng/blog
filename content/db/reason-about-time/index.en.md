@@ -6,7 +6,7 @@ author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat](https://mp.weixin.qq.com/s/JNLMAzpLnk6y9lCSpClPlQ)
 summary: >
   A proper understanding of time is very helpful for correctly handling time-related issues in work and life. For example, time representation and processing in computers, as well as time handling in databases and programming languages.
-tags: [database]
+tags: [Database]
 ---
 
 

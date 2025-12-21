@@ -399,7 +399,7 @@ err = rows.Scan(dest...)
 
 ```
 
-## 8. Connection Pool
+## 8. Connection-Pool
 
 The `database/sql` package implements a generic connection pool that provides a very simple interface with basically no customization options besides limiting connection count and setting lifecycle. But understanding some of its characteristics is helpful.
 

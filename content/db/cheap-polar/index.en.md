@@ -6,7 +6,7 @@ summary: >
   Today we discuss the fair pricing of commercial databases, open-source databases, cloud databases, and domestic Chinese databases.
 series: ["Xinchang Localization"]
 series_order: 5
-tags: [database, domestic-database]
+tags: [Database, Domestic-Database]
 ---
 
 > [WeChat Public Account](https://mp.weixin.qq.com/s/AqcYpOgVj91JnkB1B3s4sA)
@@ -71,7 +71,7 @@ Cloud database billing models are consistent with commercial databases/open-sour
 
 This `a` is the monthly unit price per core for cloud databases. Internationally, cloud database unit prices fluctuate around $150-250/vCPU·month, plus storage costs, so this `a` is roughly in the 13K-21K range. This is basically in the same range as service support provided by open-source database companies. Considering that cloud vendors like AWS also provide hardware, smaller startup scale, more convenience, and don't pick customers, they have significant competitive advantages in small to medium scales.
 
-Of course, domestic cloud vendors are more competitive, and the average level of experts is also somewhat behind international peers, so cloud databases are sold cheaper. For example: domestically, taking Alibaba Cloud as an example, RDS/PolarDB unit prices fluctuate around 250-400 RMB/vCPU·month. So the `a` here is 3K-5K.
+Of course, domestic cloud vendors are more competitive, and the average level of experts is also somewhat behind international peers, so cloud databases are sold cheaper. For example: domestically, taking Alibaba-Cloud as an example, RDS/PolarDB unit prices fluctuate around 250-400 RMB/vCPU·month. So the `a` here is 3K-5K.
 
 Overall, cloud database pricing is still anchored to expert service costs, more specifically designed by watching traditional enterprise database professional service pricing. However, there are some preferential treatments for SMB micro scenarios - because oversold instances for patching don't cost much anyway. Services like Neon/Supabase simply offer this scenario for free.
 
@@ -97,7 +97,7 @@ Of course, ideals are beautiful, reality is harsh. To be realistic, database exp
 
 For example, Apple once recruited a PostgreSQL expert position in Shanghai and couldn't find a suitable candidate for two years. The logic is simple: why would truly awesome experts not start their own companies to earn the 10-20k RMB/vCPU per year mentioned above, instead of working for employers?
 
-The most typical example is PolarDB founder Cao Wei (nickname Mingsong), who left Alibaba Cloud a couple years ago to start his own database management company Kubeblocks. There's also Ye Zhengsheng's Jiuzhang Technology. According to reports: ***An early investor told us that in the past year or two, she has contacted database entrepreneurs who left Alibaba in the double digits.***
+The most typical example is PolarDB founder Cao Wei (nickname Mingsong), who left Alibaba-Cloud a couple years ago to start his own database management company Kubeblocks. There's also Ye Zhengsheng's Jiuzhang Technology. According to reports: ***An early investor told us that in the past year or two, she has contacted database entrepreneurs who left Alibaba in the double digits.***
 
 ## Back to the Twenty-Dollar Brother
 
@@ -109,9 +109,9 @@ Let me explain again - PolarDB isn't a single database, but a database brand. Br
 
 Of course, PolarDB for MySQL sells well on the cloud. As an early large-scale MySQL user domestically, Alibaba has deep expertise in MySQL and has produced many MySQL experts. PolarDB for MySQL is indeed the flagship product in PolarDB. Benchmark customer miHoYo also uses this. But offline private deployment and domestic Xinchang's for PostgreSQL/Oracle don't have benchmark cases like miHoYo for MySQL.
 
-But now, de-clouding is becoming a trend. According to reports, PolarDB MySQL benchmark customer miHoYo slashed 400 million yuan (annually) database budget in one go... What's the concept of 400 million? Although Alibaba Cloud's annual revenue is hundreds of billions, [profit in the past year was less than 9 billion](https://mp.weixin.qq.com/s/wUJiCKusK8GRe9yQd8inIQ). Database gross margins start at 50%, 70% isn't surprising - this cut is really hurtful.
+But now, de-clouding is becoming a trend. According to reports, PolarDB MySQL benchmark customer miHoYo slashed 400 million yuan (annually) database budget in one go... What's the concept of 400 million? Although Alibaba-Cloud's annual revenue is hundreds of billions, [profit in the past year was less than 9 billion](https://mp.weixin.qq.com/s/wUJiCKusK8GRe9yQd8inIQ). Database gross margins start at 50%, 70% isn't surprising - this cut is really hurtful.
 
-So, encountering Waterloo on the cloud, naturally they need to open a second battlefield, create a second growth curve, doing offline private deployment. Although Alibaba Cloud talks about public cloud priority, PolarDB's body is still honest about getting that Xinan national certification, creating a self-controllable domestic database identity. Watching illegitimate son OceanBase harvest everywhere with envy - Coach, I want to play basketball too! I want to be a domestic database too!
+So, encountering Waterloo on the cloud, naturally they need to open a second battlefield, create a second growth curve, doing offline private deployment. Although Alibaba-Cloud talks about public cloud priority, PolarDB's body is still honest about getting that Xinan national certification, creating a self-controllable domestic database identity. Watching illegitimate son OceanBase harvest everywhere with envy - Coach, I want to play basketball too! I want to be a domestic database too!
 
 ## Database Veteran Driver Commentary
 

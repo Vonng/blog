@@ -5,11 +5,11 @@ hero: /hero/dba-vs-rds.jpg
 author: |
   [Feng Ruohang](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [WeChat](https://mp.weixin.qq.com/s/W1hwbl3qmjC4Dcmadc8uSg)
 summary: >
-  Two days ago, the ninth episode of Open Source Talks had the theme "Will DBAs Be Eliminated by Cloud?" As the host, I restrained myself from jumping into the debate throughout, so I'm writing this article to discuss this question: Will DBAs be eliminated by cloud?  
-tags: [cloud-exit,DBA,RDS]
+  Two days ago, the ninth episode of Open-Source Talks had the theme "Will DBAs Be Eliminated by Cloud?" As the host, I restrained myself from jumping into the debate throughout, so I'm writing this article to discuss this question: Will DBAs be eliminated by cloud?  
+tags: [Cloud-Exit,DBA,RDS]
 ---
 
-Two days ago, the ninth episode of Open Source Talks had the theme "[Will DBAs Be Eliminated by Cloud?](https://mp.weixin.qq.com/s/T4waTPvcSRdCv8pCl4MdOw)" As the host, I restrained myself from jumping into the debate throughout, so I'm writing this article to discuss this question: Will DBAs be eliminated by cloud?
+Two days ago, the ninth episode of Open-Source Talks had the theme "[Will DBAs Be Eliminated by Cloud?](https://mp.weixin.qq.com/s/T4waTPvcSRdCv8pCl4MdOw)" As the host, I restrained myself from jumping into the debate throughout, so I'm writing this article to discuss this question: Will DBAs be eliminated by cloud?
 
 [![](featured.jpg)](https://mp.weixin.qq.com/s/W1hwbl3qmjC4Dcmadc8uSg)
 
@@ -40,7 +40,7 @@ At this stage, advanced experience is "monopolized" by a few top experts. In fac
 | Stage | Name | Characteristics | "Business Model" |
 |-------|------|----------------|------------------|
 | Stage 1 | Commercial Databases | Commercial database software monopolized database product supply. | Expensive software licensing |
-| Stage 2 | Open Source Databases | Open source broke commercial database monopoly,<br />but technical monopoly is in the hands of a few top open source experts. | High-paying expert positions |
+| Stage 2 | Open-Source Databases | Open source broke commercial database monopoly,<br />but technical monopoly is in the hands of a few top open source experts. | High-paying expert positions |
 | Stage 3 | Cloud Databases | Cloud broke the technical monopoly of open source experts<br />but formed monopoly on the ability to use databases well | Management software rental |
 | Stage 4 | "Cloud Native?" | Open source management software broke cloud management software monopoly<br />The ability to use databases well spread to thousands of households | Consulting and insurance backup |
 
@@ -156,6 +156,6 @@ Database product models are dying, while database consulting and expert service 
 
 Currently, server hardware resources are very cheap, database kernel software is open source free and awesome enough. Now, if management software is no longer monopolized by cloud providers, then the core element for providing complete database services is only the **expert capability** for backup! AI and GPT's emergence further amplifies individual database experts' leverage multipliers to an astonishing degree.
 
-So many cloud provider internal database veterans keenly perceive this trend and choose to leave cloud providers to go solo! For example, those who left Alibaba Cloud include Teacher Tang Cheng's Chengxu Technology, Teacher Cao Wei's Kubeblocks, Teacher Ye Zhengsheng's NineData, etc. So even cloud database provider internal teams aren't monolithic. Teams are also undergoing dramatic changes, withering and bleeding, with people's hearts stirring.
+So many cloud provider internal database veterans keenly perceive this trend and choose to leave cloud providers to go solo! For example, those who left Alibaba-Cloud include Teacher Tang Cheng's Chengxu Technology, Teacher Cao Wei's Kubeblocks, Teacher Ye Zhengsheng's NineData, etc. So even cloud database provider internal teams aren't monolithic. Teams are also undergoing dramatic changes, withering and bleeding, with people's hearts stirring.
 
 I believe the future world won't be one monopolized by cloud databases. Each RDS management quality level has stagnated long-term, reaching the capability ceiling allowed by scenario soil. But productivity tools precipitated from top DBA experience go further, letting many mid-tier DBAs regain fighting capability against RDS. Progressive DBAs will arm themselves with tools and compete with RDS on the same stage. I'm willing to uphold justice, carry the banner of cloud exit and self-build alternatives, develop these management software and tools and spread them to every DBA's hands, helping DBAs win the battle against cloud databases!

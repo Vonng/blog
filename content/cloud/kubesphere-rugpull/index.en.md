@@ -1,13 +1,13 @@
 ---
-title: "KubeSphere: Trust Crisis Behind Open Source Supply Cut"
-linkTitle: "KubeSphere: Trust Crisis Behind Open Source Supply Cut"
+title: "KubeSphere: Trust Crisis Behind Open-Source Supply Cut"
+linkTitle: "KubeSphere: Trust Crisis Behind Open-Source Supply Cut"
 date: 2025-08-02
 author: vonng
 summary: "Deleting images and running away - this isn't about commercial closed-source issues, but supply cut problems that directly destroy years of accumulated community trust."
-tags: [open-source, Kubernetes]
+tags: [Open-Source, Kubernetes]
 ---
 
-> KubeSphere Sudden Supply Cut: When Open Source Trust Gets "Unplugged"
+> KubeSphere Sudden Supply Cut: When Open-Source Trust Gets "Unplugged"
 
 ## A "Run" That Shocked the Cloud Native Circle
 
@@ -76,7 +76,7 @@ Trust building requires long years, but collapse happens overnight. This bad mov
 SUSE Cloud Native Department General Manager Peter Smalls stated: KubeSphere's sudden deviation from open source versions **destroyed the predictability and trust needed for open source ecosystems**.
 A core founding member of KubeSphere (who announced departure from QingCloud the day before the announcement) also subtly acknowledged: recent years of third parties violating open source licenses, modifying and profiting from KubeSphere affected QingCloud's interests, but he also admitted "stopping open source distributions is a difficult adjustment for today's collaborative open source ecosystem."
 
-## Why Did QingCloud Abandon Open Source? Competition and Profit Dilemma
+## Why Did QingCloud Abandon Open-Source? Competition and Profit Dilemma
 
 From QingCloud's official statements, they made this decision for multiple considerations.
 The direct trigger appears to be **competitor intrusion** making QingCloud feel threatened.
@@ -94,12 +94,12 @@ Unfortunately, QingCloud's performance hasn't been great in recent years, with m
 
 ![finance.jpg](finance.jpg)
 
-## Deceptive Open Source Strategy for Conversion Guidance
+## Deceptive Open-Source Strategy for Conversion Guidance
 
 From this perspective, QingCloud deserves sympathy. However, **understanding is understanding, but methods still have pros and cons**.
 The problem isn't that QingCloud wants to make money, but that they adopted **the most damaging method to community and user trust** to achieve profitable transformation.
 
-The logic behind this is thoroughly analyzed by Tison in "[Deceptive Open Source Strategy for Conversion Guidance](https://mp.weixin.qq.com/s/HsgoUoBzsyXSmDfV00DlgQ)":
+The logic behind this is thoroughly analyzed by Tison in "[Deceptive Open-Source Strategy for Conversion Guidance](https://mp.weixin.qq.com/s/HsgoUoBzsyXSmDfV00DlgQ)":
 **Under current commercial environments, enterprises trying to directly profit from selling open source software is almost impossible - once facing commercial competition, they can't sustain**.
 Therefore, they often use open source as early customer acquisition and reputation-building means. Once user base and visibility rise, but they discover competitors can "freeload," they quickly change licenses and close gaps.
 At this point, open source has served them well - reputation gained, users acquired, software polished - but interests can no longer let others hitchhike.
@@ -142,16 +142,16 @@ My friend and schoolmate Boss Fang quickly launched migration tutorials from Kub
 
 ## Reference Reading
 
-[KubeSphere Open Source Project Adjustment Announcement](https://ask.kubesphere.com.cn/forum/d/24963-guan-yu-kubespherekai-yuan-xiang-mu-diao-zheng-de-gong-gao)
+[KubeSphere Open-Source Project Adjustment Announcement](https://ask.kubesphere.com.cn/forum/d/24963-guan-yu-kubespherekai-yuan-xiang-mu-diao-zheng-de-gong-gao)
 
 [Understanding KubeSphere's "Turn" But Regretting It Didn't Say Goodbye Properly](https://jimmysong.io/blog/kubesphere-opensource-exit)
 
 [The Register: Another one bites the dust as KubeSphere kills open source edition](https://www.theregister.com/2025/08/01/kubesphere_open_source_edition)
 
-[Farewell KubeSphere, To Fellow Travelers on the Open Source Road](https://github.com/kubesphere/kubesphere/issues/6557)
+[Farewell KubeSphere, To Fellow Travelers on the Open-Source Road](https://github.com/kubesphere/kubesphere/issues/6557)
 
-[Night Sky Book #62 Deceptive Open Source Strategy for Conversion Guidance](https://mp.weixin.qq.com/s/HsgoUoBzsyXSmDfV00DlgQ)
+[Night Sky Book #62 Deceptive Open-Source Strategy for Conversion Guidance](https://mp.weixin.qq.com/s/HsgoUoBzsyXSmDfV00DlgQ)
 
-[Golden House #2 Should I Open Source My Product?](https://mp.weixin.qq.com/s/HsgoUoBzsyXSmDfV00DlgQ)
+[Golden House #2 Should I Open-Source My Product?](https://mp.weixin.qq.com/s/HsgoUoBzsyXSmDfV00DlgQ)
 
 [Understanding KubeSphere's "Turn" But Regretting It Didn't Say Goodbye Properly](https://mp.weixin.qq.com/s/YlAxMf3ezvKVmS_5P7pFQQ)

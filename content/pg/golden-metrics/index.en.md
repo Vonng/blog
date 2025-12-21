@@ -4,7 +4,7 @@ date: 2020-11-06
 author: "vonng"
 summary: >
   Understanding the golden monitoring metrics in PostgreSQL
-tags: [PostgreSQL, PG Administration, Monitoring, Metrics]
+tags: [PostgreSQL, PG-Admin, Monitoring, Metrics]
 ---
 
 
@@ -62,14 +62,14 @@ Based on experience and usage frequency, continuously subtracting, we can filter
 | Metric | Abbreviation | Level | Source | Type |
 |--------|-------------|-------|--------|------|
 | Error Log Count | Error Count | SYS/DB/APP | Log System | Error |
-| **Connection Pool Queue** | Queue Clients | DB | Connection Pool | Error |
-| **Database Load** | PG Load | DB | Connection Pool | Saturation |
-| **Database Saturation** | PG Saturation | DB | Connection Pool & Node | Saturation |
+| **Connection-Pool Queue** | Queue Clients | DB | Connection-Pool | Error |
+| **Database Load** | PG Load | DB | Connection-Pool | Saturation |
+| **Database Saturation** | PG Saturation | DB | Connection-Pool & Node | Saturation |
 | **Master-Slave Replication Lag** | Repl Lag | DB | Database | Latency |
-| **Average Query Response Time** | Query RT | DB | Connection Pool | Latency |
+| **Average Query Response Time** | Query RT | DB | Connection-Pool | Latency |
 | **Active Backend Processes** | Backends | DB | Database | Saturation |
 | **Database Age** | Age | DB | Database | Saturation |
-| **Queries Per Second** | QPS | **APP** | Connection Pool | Traffic |
+| **Queries Per Second** | QPS | **APP** | Connection-Pool | Traffic |
 | **CPU Usage** | CPU Usage | SYS | Machine Node | Saturation |
 
 In emergency situations: Errors are always the first priority golden metric.
@@ -138,7 +138,7 @@ The load metric users expect is a **saturation** metric. So-called saturation is
 
 | **Other Optional Metrics** | | | | |
 |------------|-----------|-----|------|-----|
-| Transactions Per Second | TPS | APP | Connection Pool | Traffic |
+| Transactions Per Second | TPS | APP | Connection-Pool | Traffic |
 | Disk IO Usage | Disk Usage | SYS | Machine Node | Saturation |
 | Memory Usage | Mem Usage | SYS | Machine Node | Saturation |
 | Network Bandwidth Usage | Net Usage | SYS | Machine Node | Saturation |

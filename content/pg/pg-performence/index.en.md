@@ -7,7 +7,7 @@ author: |
   [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: |
   Let performance data speak: Why PostgreSQL is the world's most advanced open-source relational database, aka the world's most successful database. MySQL vs PostgreSQL performance showdown and distributed database reality check.
-tags: [PostgreSQL,PG Ecosystem,Performance]
+tags: [PostgreSQL,PG-Ecosystem,Performance]
 ---
 
 Previously, we analyzed StackOverflow survey data to explain "[Why PostgreSQL is the Most Successful Database](/pg/pg-is-no1/)".
@@ -213,8 +213,8 @@ For horizontal comparison, we selected some other database official results or d
 | StoneDB    | 3388   | 100  | 64  | 1.7  | 64C / 128G           | StoneDB   |
 | ClickHouse | 11537  | 100  | 64  | 0.5  | 64C / 128G           | StoneDB   |
 | OceanBase  | 189    | 100  | 96  | 19.8 | 96C / 384G           | OceanBase |
-| PolarDB    | 387    | 50   | 32  | 14.5 | 32C / 128G           | Alibaba Cloud |
-| PolarDB    | 755    | 50   | 16  | 14.9 | 16C / 64G            | Alibaba Cloud |
+| PolarDB    | 387    | 50   | 32  | 14.5 | 32C / 128G           | Alibaba-Cloud |
+| PolarDB    | 755    | 50   | 16  | 14.9 | 16C / 64G            | Alibaba-Cloud |
 
 For easier measurement, we can normalize cores and warehouses using QPH (Queries Per Hour) - how many rounds of 1-warehouse TPC-H queries can be executed per hour per core, to approximately evaluate databases' relative analytical performance.
 

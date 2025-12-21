@@ -6,7 +6,7 @@ author: |
   [Feng Ruohang](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [WeChat Original](https://mp.weixin.qq.com/s/LefEAXTcBH-KBJNhXNoc7A) | [Vonng Blog](https://vonng.com/cn/cloud//rds/)
 summary: >
   Winter is coming, tech giants are laying off workers entering cost-reduction mode. Can cloud databases, the number one public cloud cash cow, still tell their story? The money you spend on cloud databases for one year is enough to buy several or even dozens of higher-performing servers. **Are you paying an IQ tax by using cloud databases?**
-tags: [cloud-exit,RDS,AWS,Alibaba Cloud]
+tags: [Cloud-Exit,RDS,AWS,Alibaba-Cloud]
 ---
 
 Winter is coming, tech giants are laying off workers entering cost-reduction mode. Can cloud databases, the number one public cloud cash cow, still tell their story?
@@ -35,7 +35,7 @@ Taking the physical machine model we heavily use for databases as an example: De
 
 DBA costs aren't included here: two or three people managing tens of thousands of cores isn't much.
 
-If you directly purchase cloud database of this specification, what are the costs? Let's look at domestic Alibaba Cloud pricing【3】. Since the basic version (beggar version) is really unusable for production (refer to: "[Cloud Database: From Database Drop to Exit](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485093&idx=1&sn=5815f71f1d832101d35a75f5aa4acd3c&chksm=fe4b337ec93cba68fbf30eb0ed50d052c6e8972d42cf506051b5016668f4555edaa0756688dc&scene=21#wechat_redirect)"), we choose high-availability version, typically with two to three instances underneath. Annual/monthly payment, PostgreSQL 15 on x86 engine, East China 1 default AZ, dedicated 64-core 256GB instance: pg.x4m.8xlarge.2c, with a 3.2TB ESSD PL3 cloud disk. Annual costs range from 250,000 (3 years) to 750,000 (on-demand), with storage costs accounting for about 1/3.
+If you directly purchase cloud database of this specification, what are the costs? Let's look at domestic Alibaba-Cloud pricing【3】. Since the basic version (beggar version) is really unusable for production (refer to: "[Cloud Database: From Database Drop to Exit](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485093&idx=1&sn=5815f71f1d832101d35a75f5aa4acd3c&chksm=fe4b337ec93cba68fbf30eb0ed50d052c6e8972d42cf506051b5016668f4555edaa0756688dc&scene=21#wechat_redirect)"), we choose high-availability version, typically with two to three instances underneath. Annual/monthly payment, PostgreSQL 15 on x86 engine, East China 1 default AZ, dedicated 64-core 256GB instance: pg.x4m.8xlarge.2c, with a 3.2TB ESSD PL3 cloud disk. Annual costs range from 250,000 (3 years) to 750,000 (on-demand), with storage costs accounting for about 1/3.
 
 
 ![](rds-1.png)
@@ -47,10 +47,10 @@ Let's also look at AWS, the public cloud leader【4】【5】. The closest on AW
 |------------------------|-----------------|---------------|
 | IDC Self-Built (Single Physical) | ¥75k / 5 years  | 1.5           |
 | IDC Self-Built (2-3 HA)      | ¥150k / 5 years | 3.0 ~ 4.5     |
-| Alibaba Cloud RDS On-Demand   | ¥87.36/hour     | 76.5          |
-| Alibaba Cloud RDS Monthly (Base) | ¥42k / month    | 50            |
-| Alibaba Cloud RDS Annual (15% off) | ¥425,095 / year | 42.5          |
-| Alibaba Cloud RDS 3-Year (50% off) | ¥750,168 / 3 years | 25            |
+| Alibaba-Cloud RDS On-Demand   | ¥87.36/hour     | 76.5          |
+| Alibaba-Cloud RDS Monthly (Base) | ¥42k / month    | 50            |
+| Alibaba-Cloud RDS Annual (15% off) | ¥425,095 / year | 42.5          |
+| Alibaba-Cloud RDS 3-Year (50% off) | ¥750,168 / 3 years | 25            |
 | AWS On-Demand         | $25,817 / month | 217           |
 | AWS 1-Year No Prepay   | $22,827 / month | 191.7         |
 | AWS 3-Year Full Prepay | $120k + $17.5k/month | 175           |
@@ -63,7 +63,7 @@ We can compare self-built vs cloud database cost differences:
 | Method                                                                 | Annual (¥10k) |
 |------------------------------------------------------------------------|---------------|
 | IDC Hosted Server 64C / 384G / 3.2TB NVME SSD 660K IOPS (2-3 units)  | 3.0 ~ 4.5     |
-| Alibaba Cloud RDS PG HA pg.x4m.8xlarge.2c, 64C / 256GB / 3.2TB ESSD PL3 | 25 ~ 50       |
+| Alibaba-Cloud RDS PG HA pg.x4m.8xlarge.2c, 64C / 256GB / 3.2TB ESSD PL3 | 25 ~ 50       |
 | AWS RDS PG HA db.m5.16xlarge, 64C / 256GB / 3.2TB io1 x 80k IOPS     | 160 ~ 217     |
 
 So the question is: **if one year of cloud database costs can buy you several or even dozens of higher-performing servers, what's the point of using cloud databases?** Of course, public cloud enterprise customers usually get commercial discounts, but no matter how much discount, the order-of-magnitude difference can't be bridged, right?
@@ -128,9 +128,9 @@ Here we can use a simple method to calculate unit costs: one core computing powe
 |        IDC Self-Built (Container, 200% Oversell)         |      17       |
 |        IDC Self-Built (Container, 500% Oversell)         |       7       |
 |      UCloud Elastic VM (8C16G, with Oversell)      |      25       |
-|       Alibaba Cloud Elastic Server 2x Memory (Dedicated No Oversell)       |      107      |
-|       Alibaba Cloud Elastic Server 4x Memory (Dedicated No Oversell)       |      138      |
-|       Alibaba Cloud Elastic Server 8x Memory (Dedicated No Oversell)       |      180      |
+|       Alibaba-Cloud Elastic Server 2x Memory (Dedicated No Oversell)       |      107      |
+|       Alibaba-Cloud Elastic Server 4x Memory (Dedicated No Oversell)       |      138      |
+|       Alibaba-Cloud Elastic Server 8x Memory (Dedicated No Oversell)       |      180      |
 |  AWS C5D.METAL 96C 200G (Monthly No Prepay)   |      100      |
 |   AWS C5D.METAL 96C 200G (3-Year Prepay)    |      80       |
 |              **Database**              |               |
@@ -138,9 +138,9 @@ Here we can use a simple method to calculate unit costs: one core computing powe
 |   AWS RDS PostgreSQL db.M5 (4x)   |      611      |
 |  AWS RDS PostgreSQL db.R6G (8x)   |      786      |
 | AWS RDS PostgreSQL db.M5 24xlarge |     1328      |
-|        Alibaba Cloud RDS PG 2x Memory (Dedicated)        |      260      |
-|        Alibaba Cloud RDS PG 4x Memory (Dedicated)        |      320      |
-|        Alibaba Cloud RDS PG 8x Memory (Dedicated)        |      410      |
+|        Alibaba-Cloud RDS PG 2x Memory (Dedicated)        |      260      |
+|        Alibaba-Cloud RDS PG 4x Memory (Dedicated)        |      320      |
+|        Alibaba-Cloud RDS PG 8x Memory (Dedicated)        |      410      |
 |            Oracle Database License            |     10000     |
 
 
@@ -158,7 +158,7 @@ Although domestic public cloud IaaS (storage, compute, network) revenue accounts
 
 Normally, if not treating public cloud purely as IDC 2.0 or CDN supplier, the most expensive service is databases. Are storage, compute, network resources on public cloud expensive? Strictly speaking, not particularly outrageous. IDC hosted physical machine maintenance core·month costs are about 20-30, while public cloud one-core CPU computing power for one month costs about 70-80 to 100-200, considering various discounts and activities plus elasticity premium, barely within acceptable reasonable range.
 
-But cloud databases are extremely outrageous - same one-core computing power for one month, cloud database prices can multiply several to dozens of times compared to corresponding hardware specifications. Cheaper Alibaba Cloud has core·month unit prices of 200-400, more expensive AWS has core·month unit prices of 700-800 or even over 1000.
+But cloud databases are extremely outrageous - same one-core computing power for one month, cloud database prices can multiply several to dozens of times compared to corresponding hardware specifications. Cheaper Alibaba-Cloud has core·month unit prices of 200-400, more expensive AWS has core·month unit prices of 700-800 or even over 1000.
 
 If you only have one or two cores of RDS, don't bother - pay some tax. But if your business has scaled up and still doesn't exit cloud quickly, you're really paying IQ tax.
 
@@ -193,9 +193,9 @@ AWS EBS service performance tested with fio is extremely poor【6】, default gp
 
 ![](rds-5.png)
 
-Indeed, sometimes cloud vendors provide good-performance local NVMe SSDs, but they sneakily set various restrictions to prevent users from using EC2 for self-built databases. AWS's restriction is only providing NVMe SSD Ephemeral Storage - these disks automatically wipe clean on EC2 restart, completely unusable. Alibaba Cloud's restriction is sky-high pricing - compared to direct hardware procurement, **Alibaba Cloud's ESSD PL3 costs 200 times more**. Using 3.2TB enterprise PCI-E SSD cards as reference, AWS rent-to-buy ratio is 1 month, Alibaba Cloud is 9 days - renting this duration can buy the entire disk. With Alibaba Cloud's maximum 3-year 50% discount, three years' rental can buy 123 equivalent disks, nearly 400TB permanent ownership.
+Indeed, sometimes cloud vendors provide good-performance local NVMe SSDs, but they sneakily set various restrictions to prevent users from using EC2 for self-built databases. AWS's restriction is only providing NVMe SSD Ephemeral Storage - these disks automatically wipe clean on EC2 restart, completely unusable. Alibaba-Cloud's restriction is sky-high pricing - compared to direct hardware procurement, **Alibaba-Cloud's ESSD PL3 costs 200 times more**. Using 3.2TB enterprise PCI-E SSD cards as reference, AWS rent-to-buy ratio is 1 month, Alibaba-Cloud is 9 days - renting this duration can buy the entire disk. With Alibaba-Cloud's maximum 3-year 50% discount, three years' rental can buy 123 equivalent disks, nearly 400TB permanent ownership.
 
-**Taking observability as another example, no RDS monitoring can be called "good"**. Just looking at monitoring indicator count - while knowing if a service is dead or alive needs only a few indicators, for failure root cause analysis, you need as many monitoring indicators as possible to build good context. Most RDS only provide basic monitoring indicators and pitifully simple monitoring dashboards. Taking Alibaba Cloud RDS PG as example【7】, so-called "enhanced monitoring" has only these pitiful indicators. AWS has similar PG-related indicators, under 100, while our own monitoring system has over 800 host indicator types, 610 PostgreSQL database indicator types, 257 Redis indicator types, about 3000 total indicator types, completely crushing these RDS systems.
+**Taking observability as another example, no RDS monitoring can be called "good"**. Just looking at monitoring indicator count - while knowing if a service is dead or alive needs only a few indicators, for failure root cause analysis, you need as many monitoring indicators as possible to build good context. Most RDS only provide basic monitoring indicators and pitifully simple monitoring dashboards. Taking Alibaba-Cloud RDS PG as example【7】, so-called "enhanced monitoring" has only these pitiful indicators. AWS has similar PG-related indicators, under 100, while our own monitoring system has over 800 host indicator types, 610 PostgreSQL database indicator types, 257 Redis indicator types, about 3000 total indicator types, completely crushing these RDS systems.
 
 ![](rds-6.png)
 
@@ -327,9 +327,9 @@ Pigsty lets you practice ultimate FinOps philosophy — using prices almost appr
 
 【1】[Why We're Leaving the Cloud](https://world.hey.com/dhh/why-we-re-leaving-the-cloud-654b47e0)
 
-【2】[Giving Up Cloud After Ten Years of Being "Scammed," Is the First Wave of "Cloud Exit" Coming This Winter?](https://www.infoq.cn/article/qoq3v6jfenwwzmpg4fre)
+【2】[Giving Up Cloud After Ten Years of Being "Scammed," Is the First Wave of "Cloud-Exit" Coming This Winter?](https://www.infoq.cn/article/qoq3v6jfenwwzmpg4fre)
 
-【3】[Alibaba Cloud RDS for PostgreSQL Pricing](https://rdsbuy.console.aliyun.com/create/rds/PostgreSQL)
+【3】[Alibaba-Cloud RDS for PostgreSQL Pricing](https://rdsbuy.console.aliyun.com/create/rds/PostgreSQL)
 
 【4】[AWS Pricing Calculator](https://calculator.aws/#/addService/RDSPostgreSQL)
 
@@ -337,17 +337,17 @@ Pigsty lets you practice ultimate FinOps philosophy — using prices almost appr
 
 【6】[FIO Testing AWS EBS Performance](https://github.com/Vonng/pgtpc/blob/master/fio/aws-ebs-bench.md)
 
-【7】[Alibaba Cloud RDS PG Enhanced Monitoring](https://help.aliyun.com/document_detail/299200.html)
+【7】[Alibaba-Cloud RDS PG Enhanced Monitoring](https://help.aliyun.com/document_detail/299200.html)
 
 【8】[Why Are You Still Hiring DBAs](https://mp.weixin.qq.com/s/DtRFnh8LgtfesCNMNl3eNw)
 
-【9】[Alibaba Cloud RDS PG Database Autonomous Service](https://help.aliyun.com/document_detail/159166.html)
+【9】[Alibaba-Cloud RDS PG Database Autonomous Service](https://help.aliyun.com/document_detail/159166.html)
 
 【10】[OpenGauss AI for DB](https://docs.opengauss.org/zh/docs/3.0.0/docs/Developerguide/AI4DB-数据库自治运维.html)
 
 【11】[Me-Better RDS PostgreSQL Alternative Pigsty](https://pigsty.cc/)
 
-【12】[Pigsty v2 Official Release: Better RDS PG Open Source Alternative](https://mp.weixin.qq.com/s/9lceZdyUZU9AzsqlAcpjTA)
+【12】[Pigsty v2 Official Release: Better RDS PG Open-Source Alternative](https://mp.weixin.qq.com/s/9lceZdyUZU9AzsqlAcpjTA)
 
 【13】[Time to Say Goodbye to GPL](https://mp.weixin.qq.com/s/DJsDRO18saZaxe3oyzzYrA)
 

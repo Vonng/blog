@@ -4,7 +4,7 @@ date: 2018-04-06
 author: "vonng"
 summary: >
   Exclude constraint is a PostgreSQL extension that can implement more advanced and sophisticated database constraints.
-tags: [PostgreSQL, PG Development, SQL]
+tags: [PostgreSQL, PG-Development, SQL]
 ---
 
 Exclude constraint is a PostgreSQL extension that can implement more advanced and sophisticated database constraints.

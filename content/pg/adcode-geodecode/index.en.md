@@ -5,7 +5,7 @@ date: 2018-06-06
 author: vonng
 summary: >
   How to efficiently solve the typical reverse geocoding problem: determining administrative regions based on user coordinates.
-tags: [PostgreSQL,PG Development,GIS]
+tags: [PostgreSQL,PG-Development,GIS]
 ---
 
 > Author: [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))

@@ -5,7 +5,7 @@ author: |
   [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: >
   A user consulted about distributed databases, but he wasn't dealing with data bursting through server cabinet doors—rather, he'd fallen into another cloud computing pig-butchering scam.
-tags: [CloudExit]
+tags: [Cloud-Exit]
 ---
 
 > This article comes from a real consultation case. Any resemblance to your situation is purely due to cloud vendors' deep affinity with your wallet.
@@ -94,7 +94,7 @@ But actually, go look at those cloud database's absurd pricing! [Are Cloud Datab
 
 ![price.webp](price.webp)
 
-As [Cloud Exit Odyssey: Is It Time to Abandon Cloud Computing?](https://mp.weixin.qq.com/s/CicctyvV1xk5B-AsKfzPjw) DHH said:
+As [Cloud-Exit Odyssey: Is It Time to Abandon Cloud Computing?](https://mp.weixin.qq.com/s/CicctyvV1xk5B-AsKfzPjw) DHH said:
 "In several key examples, cloud costs are extremely high—whether large physical machine databases, large NVMe storage, or just the latest fastest computing power.
 Renting the production team's donkey costs so much that a few months' rent equals directly buying it. In this situation, you should directly buy the donkey!"
 
@@ -103,7 +103,7 @@ And "Being locked trapped in Amazon's cloud, having to endure humiliatingly absu
 I think this case is typical **paying for pain**—spending 2 million annually, getting unacceptably poor performance junk.
 
 More critically, do you think cloud vendors will be responsible for your business to the end?
-Users spend huge money buying hardware marked up 100x, basically getting the after-sales support from [Amateur Hour Show: Alibaba Cloud RDS Failure Chronicle](https://mp.weixin.qq.com/s/kOIw8uPjZUZ0-QisC1TBOA)
+Users spend huge money buying hardware marked up 100x, basically getting the after-sales support from [Amateur Hour Show: Alibaba-Cloud RDS Failure Chronicle](https://mp.weixin.qq.com/s/kOIw8uPjZUZ0-QisC1TBOA)
 —thinking you can throw responsibility to cloud vendors for peace of mind? When real problems hit, boomerangs still hit your own head.
 
 -------
@@ -129,7 +129,7 @@ These affordable cloud prices are enough to make users accustomed to 10x-100x ma
 
 -------
 
-## Open Source RDS Solves Key Cloud Exit Challenges
+## Open-Source RDS Solves Key Cloud-Exit Challenges
 
 Databases are the key bottleneck for cloud exit. Microsoft CEO Nadella said: These apps and applications you see are just pretty wrappers around databases——
 So the biggest cloud exit bottleneck is: can you run PostgreSQL well on your own servers? How should this problem be solved?
@@ -144,7 +144,7 @@ fully utilizing new hardware's high performance and low costs. Solving the key c
 
 ![](https://pigsty.io/img/ecosystem.png)
 
-Pigsty contains PostgreSQL ecosystem's unique [351 extension plugins](https://ext.pigsty.io), [far superior to cloud's pitiful dozens of castrated plugins](https://mp.weixin.qq.com/s/EH7RPB6ImfMHXhOMU7P5Qg), plus provides zero-configuration out-of-box [high availability architecture](https://ext.pgsty.com/zh/pgsql/arch) and industry-leading monitoring systems.
+Pigsty contains PostgreSQL ecosystem's unique [351 extension plugins](https://pgext.cloud/zh), [far superior to cloud's pitiful dozens of castrated plugins](https://mp.weixin.qq.com/s/EH7RPB6ImfMHXhOMU7P5Qg), plus provides zero-configuration out-of-box [high availability architecture](https://pgext.cloud/zh/pgsql/arch) and industry-leading monitoring systems.
 
 It's widely used in internet, finance, new energy, military, manufacturing industries, currently ranking 22nd on [OSSRANK](https://ossrank.com/cat/368-postgresql-extension-ecosystem?page=2) global PostgreSQL ecosystem open source rankings.
 

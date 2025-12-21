@@ -4,7 +4,7 @@ linkTitle: "SO2025 Survey: PostgreSQL Has Dominated the Database World"
 date: 2025-07-31
 author: "vonng"
 summary: The 2025 SO global developer survey results are fresh out, and PostgreSQL has become the most popular, most loved, and most wanted database for the third consecutive year. Nothing can stop PostgreSQL from consolidating the entire database world!
-tags: [PostgreSQL,PG Ecosystem]
+tags: [PostgreSQL,PG-Ecosystem]
 ---
 
 The [2025 StackOverflow Global Developer Survey results](https://survey.stackoverflow.co/2025/technology#2-databases) are fresh out, with high-quality questionnaire feedback from 50,000 developers across 177 countries and regions. As a database veteran, I'm most interested in the "Database" section of this survey. Today, let's decode this data and examine the latest trends in the database field.

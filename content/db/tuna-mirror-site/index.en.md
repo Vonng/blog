@@ -5,7 +5,7 @@ author: |
   Feng Ruohang
 summary: >
   In serious production you can’t rely on an upstream that explicitly says “no guarantees.” When someone says “don’t count on me,” the right answer is “then I’ll run it myself.”
-tags: [Open Source, Supply Chain]
+tags: [Open-Source, Supply Chain]
 ---
 
 Yesterday’s post “[PG ‘Export Controls’ and Supply-Chain Trust](/en/pg/pg-mirror-pigsty/)” drew a comment from someone claiming to be an admin at a university mirror site (Tsinghua TUNA):
@@ -18,7 +18,7 @@ I replied:
 
 > Thanks for the feedback and for everything TUNA/university mirrors have done over the years. I see the PostgreSQL repo [has synced again](https://mirrors.tuna.tsinghua.edu.cn/postgresql/repos/yum/18/)—credit where it’s due.
 > 
-> When I first spotted the issue I was using Alibaba Cloud’s PG mirror. Later I noticed TUNA was in the same state, so out of community duty I [reported it on the mailing list](https://groups.google.com/g/tuna-general/c/BU8P7X3y4sI) and got “this list isn’t for Alibaba” followed by silence. That context colors my tone.
+> When I first spotted the issue I was using Alibaba-Cloud’s PG mirror. Later I noticed TUNA was in the same state, so out of community duty I [reported it on the mailing list](https://groups.google.com/g/tuna-general/c/BU8P7X3y4sI) and got “this list isn’t for Alibaba” followed by silence. That context colors my tone.
 > 
 > In hindsight, words like “lying flat” were too emotional—especially when applied to **your team**—and read like moral judgments on volunteers. That wasn’t my intent. If the wording hurt maintainers, I apologize. I already [changed the language](https://github.com/Vonng/blog/commit/916697a88f143679d658dc52338827ce603444fd) to neutral phrasing like “stale” or “no longer maintained.”
 > 

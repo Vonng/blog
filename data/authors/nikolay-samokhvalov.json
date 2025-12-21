@@ -1,0 +1,11 @@
+{
+  "name": "Nikolay Samokhvalov",
+  "bio": "PostgreSQL Expert, Founder of Postgres.ai",
+  "image": "img/nikolay-samokhvalov.jpg",
+  "social": [
+    { "link": "https://postgres.ai/" },
+    { "gitlab": "https://gitlab.com/samokhvalov" },
+    { "twitter": "https://twitter.com/samokhvalov" },
+    { "linkedin": "https://www.linkedin.com/in/samokhvalov/" }
+  ]
+}

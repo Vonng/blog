@@ -5,7 +5,7 @@ date: 2018-06-06
 author: "vonng"
 summary: >
   Ultimate optimization of KNN problems, from traditional relational design to PostGIS
-tags: [PostgreSQL, PG Development, KNN, GIS]
+tags: [PostgreSQL, PG-Development, KNN, GIS]
 ---
 
 

@@ -4,7 +4,7 @@ date: 2018-09-07
 author: "vonng"
 summary: >
   TimescaleDB is a PostgreSQL extension plugin that provides time-series database functionality.
-tags: [PostgreSQL, PG Management, Extensions]
+tags: [PostgreSQL, PG-Admin, Extension]
 ---
 
 * Official website: https://www.timescale.com

@@ -6,7 +6,7 @@ summary: >
   Many "domestic databases" are just shoddy, inferior products that can't be helped. Xinchuang domestic OS/databases are essentially **IT pre-made meals in schools**. Users hold their noses while migrating, developers pretend to work hard, and everyone plays along with leaders who neither understand nor care about technology. The infrastructure software industry isn't being strangled by anyone - the real chokehold comes from the so-called "insiders."
 series: ["Xinchuang Domestication"]
 series_order: 3
-tags: [Database, Domestic Database]
+tags: [Database, Domestic-Database]
 ---
 
 > [WeChat](https://mp.weixin.qq.com/s/vh1JE_BdaLetWtt5vvPDDw) | [Zhihu](https://zhuanlan.zhihu.com/p/664816961)

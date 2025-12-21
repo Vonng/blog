@@ -3,7 +3,7 @@ title: "PgAdmin Installation and Configuration"
 date: 2018-04-14
 author: "vonng"
 summary: "PgAdmin is a GUI program for managing PostgreSQL, written in Python, but it's quite dated and requires some additional configuration."
-tags: [PostgreSQL, "PG Administration", Tools]
+tags: [PostgreSQL, "PG-Admin", Tools]
 ---
 
 ## PgAdmin4 Installation and Configuration

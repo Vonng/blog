@@ -136,7 +136,7 @@ Percona 抛出了一个非常重要的问题。PostgreSQL 日益主宰数据库�
 ### Percona 发行版
 
 Percona 算是比较早一批明确提出 [“PostgreSQL 发行版”](https://docs.percona.com/postgresql/17/third-party.html) 概念的开源厂商，他们有两个非常不错的扩展 —— 
-[`pg_stat_monitor`](https://ext.pgsty.com/e/pg_stat_monitor) 与 [`pg_tde`](https://ext.pgsty.com/e/pg_tde)，前者提供了 PostgreSQL 中的高级可观测性指标，后者则提供透明加密的功能。
+[`pg_stat_monitor`](https://pgext.cloud/e/pg_stat_monitor) 与 [`pg_tde`](https://pgext.cloud/e/pg_tde)，前者提供了 PostgreSQL 中的高级可观测性指标，后者则提供透明加密的功能。
 Percona 也有一个 PMM 监控工具，算是 MySQL 生态做的非常好的监控平台，最近也做了一些 PostgreSQL 的支持。
 当然，因为 pg_tde 所需的补丁一直没有合入 PG 主干，因此 Percona 不得不自己制作了打补丁的 PostgreSQL 内核包，以配合他们的 pg_tde 透明加密扩展使用
 

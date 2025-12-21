@@ -92,7 +92,7 @@ pgloader mssql://user@mshost/dbname pgsql://pguser@pghost/dbname
 我们最近发布的开源 RDS PostgreSQL 方案 —— Pigsty 最近就支持了这些 PG 替换内核，允许用户在一套 PostgreSQL 部署中提供 MSSQL，Oracle，MongoDB，Firebase，MongoDB 的兼容性替代能力。不过限于篇幅，那就是后面几篇要介绍的内容了。
 
 
-除了 MSSQL，PostgreSQL 生态还有旨在替代 Oracle替代：PolarDB O 与 IvorySQL，旨在替代 MongoDB 的 FerretDB 与 PongoDB。[以及三百多个提供各式各样功能的扩展插件。](https://ext.pgsty.com/zh/list)
+除了 MSSQL，PostgreSQL 生态还有旨在替代 Oracle替代：PolarDB O 与 IvorySQL，旨在替代 MongoDB 的 FerretDB 与 PongoDB。[以及三百多个提供各式各样功能的扩展插件。](https://pgext.cloud/zh/list)
 
 ![](https://pigsty.io/img/ecosystemjpg)
 

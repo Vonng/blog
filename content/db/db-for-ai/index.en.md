@@ -17,7 +17,7 @@ According to insiders, this deal was priced at $250 million. While the price is 
 
 But this isn't just a grudge match between two data warehouse giants - PostgreSQL has indeed captured all the favorable timing for database rise in the AI era. Combined with the industry rumors of [OpenAI acquiring Supabase](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489695&idx=1&sn=eb0aa2286ecdbb014fd6b38023ae6749&scene=21#wechat_redirect), it's clear that the common thread among these acquisitions (or potential acquisition intentions) is that these are all PostgreSQL companies - PostgreSQL companies are becoming the hottest commodities in capital markets.
 
-- [PG Ecosystem Wins Capital Market Favor: Databricks Acquires Neon, Supabase Raises $200M, Microsoft Earnings Call Names PG](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489652&idx=1&sn=d68e7fc8433a82c1f1de59a9da0738ba&scene=21#wechat_redirect)
+- [PG-Ecosystem Wins Capital Market Favor: Databricks Acquires Neon, Supabase Raises $200M, Microsoft Earnings Call Names PG](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489652&idx=1&sn=d68e7fc8433a82c1f1de59a9da0738ba&scene=21#wechat_redirect)
 - [Database Tea Room: OpenAI to Acquire Supabase?](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489695&idx=1&sn=eb0aa2286ecdbb014fd6b38023ae6749&scene=21#wechat_redirect)
 
 > WSJ: Snowflake to acquire Crunchy Data for $250 million[1]
@@ -85,7 +85,7 @@ The **key obstacle** to this is PG's storage engine table access interface (TAM)
 
 
 
-### PG Kernel's Veto Power
+### PG-Kernel's Veto Power
 
 Over the past year, Tom Lane at CrunchyData has thrown quite a few wrenches into PG's table access interface (TAM), allowing CrunchyBridge to gain some advantages in data warehouse stitching (Duck/Iceberg), causing some controversy in the circle. For example, De Ge directly spoke about this:
 

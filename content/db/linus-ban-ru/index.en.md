@@ -1,12 +1,12 @@
 ---
-title: Open Source "Tyrant" Linus's Purge
-linkTitle: "Open Source Tyrant Linus Purges His Court"
+title: Open-Source "Tyrant" Linus's Purge
+linkTitle: "Open-Source Tyrant Linus Purges His Court"
 date: 2024-10-25
 author: |
   [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat Original](https://mp.weixin.qq.com/s/IcmXCMyflqGlAPA8vFzyyA)
 summary: >
   The Linux community is essentially imperial — and Linus himself is the earliest and most successful technical dictator. People are used to Linus's generosity but forget this point.
-tags: [Linux,opensource]
+tags: [Linux, Open-Source]
 ---
 
 Recently, Linus [**kicked out several Russian developers**](https://lore.kernel.org/all/CAHk-=whNGNVnYHHSXUAsWds_MoZ-iEgRMQMxZZ0z-jY4uHT+Gg@mail.gmail.com/) from the project, triggering an outcry in the open source world. But many people forget that Linux is Linus's personal project — it was 30 years ago, and it still is today. Linus himself has always personally held the supreme power of the open source project — the right to release Linux. The Linux community is essentially imperial — and Linus himself is the earliest and most successful technical dictator.

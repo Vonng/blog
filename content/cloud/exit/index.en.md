@@ -4,7 +4,7 @@ weight: 3
 date: 2025-08-08
 summary: A whole generation of developers has been told “cloud-first.” This column collects data, case studies, and commentary on the real economics—and traps—of public cloud rental models.
 showAuthor: true
-tags: [CloudExit]
+tags: [Cloud-Exit]
 ---
 
 <div style="text-align: center;"><p>
@@ -29,14 +29,14 @@ They see through fog to mountain tops because they walk the edge in pain.
 - [Don’t worship complexity—self-hosting can stay stable](https://mp.weixin.qq.com/s/yIVal-9U6_TXX-dZpVtjBg)
 - [Six months, a million saved: DHH’s downcloud FAQ](https://mp.weixin.qq.com/s/xaa079P4DRCz0hzNovGoOA)
 - [Ahrefs saves $400M by staying off cloud](https://mp.weixin.qq.com/s/csQmMrSGg5ukDgS06h8xXw)
-- [A sloppy show: Alibaba Cloud RDS meltdown](https://mp.weixin.qq.com/s/kOIw8uPjZUZ0-QisC1TBOA)
+- [A sloppy show: Alibaba-Cloud RDS meltdown](https://mp.weixin.qq.com/s/kOIw8uPjZUZ0-QisC1TBOA)
 - [Paying to suffer: Escaping the Myawaddy of cloud](https://mp.weixin.qq.com/s/zwJ2T2Vh_R7xD8IKPso31Q)
 
 ------
 
 ## When Things Explode
 
-- [Lessons from Alibaba Cloud’s epic outage](https://mp.weixin.qq.com/s/OIlR0rolEQff9YfCpj3wIQ)
+- [Lessons from Alibaba-Cloud’s epic outage](https://mp.weixin.qq.com/s/OIlR0rolEQff9YfCpj3wIQ)
 - [Tencent Cloud: clown car with no face left](https://mp.weixin.qq.com/s/PgduTGIvWSUgHZhVfnb7Bg)
 - [Dark forest: nuke an AWS bill with just an S3 bucket name](https://mp.weixin.qq.com/s/35ScjtPjC1GNGKaSArJhcA)
 - [No-equals delete: Google Cloud wiped a fund’s entire account](https://mp.weixin.qq.com/s/eH5HBbL7cQhjQY8rm1gFLQ)
@@ -87,9 +87,9 @@ They see through fog to mountain tops because they walk the edge in pain.
 
 ## Business Commentary
 
-- [Alibaba Cloud’s price cuts reek of desperation](https://mp.weixin.qq.com/s/BYu8nZjqAQbWc2yT8K_pFQ)
+- [Alibaba-Cloud’s price cuts reek of desperation](https://mp.weixin.qq.com/s/BYu8nZjqAQbWc2yT8K_pFQ)
 - [How state-owned IT views commercial clouds](https://mp.weixin.qq.com/s/qSTEf9txjHNTHeEFv3NkWg)
-- [Alibaba Cloud stuck outside the door](https://mp.weixin.qq.com/s/1dse1KSCq2xG-QaL1JzZ8Q)
+- [Alibaba-Cloud stuck outside the door](https://mp.weixin.qq.com/s/1dse1KSCq2xG-QaL1JzZ8Q)
 - [What do cloud vendors actually sell?](https://mp.weixin.qq.com/s/_ijL2OXAQJQrmWiE-KKzdw)
 - [Are Tencent/Ali really doing “cloud computing”?](https://mp.weixin.qq.com/s/mMvDiTiMOt6eiTTYbHvbbQ)
 

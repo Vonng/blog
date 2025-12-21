@@ -6,7 +6,7 @@ author: |
   [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: >
   ParadeDB aims to be an Elasticsearch alternative: "Modern Elasticsearch Alternative built on Postgres" — PostgreSQL for search and analytics.
-tags: [PostgreSQL,PG Ecosystem,Extensions]
+tags: [PostgreSQL, PG-Ecosystem, Extension]
 ---
 
 > [Original WeChat Article Link](https://mp.weixin.qq.com/s/bx2dRxlrtLcM6AD2qsplQQ)

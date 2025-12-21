@@ -9,7 +9,7 @@ summary: In 2023, I turned thirty. As Confucius said, "At thirty, one establishe
 
 In 2023, I turned thirty. As Confucius said, "At thirty, one establishes oneself." I've managed to accomplish something - started a family, built a career, gained some technical reputation. On the last day of 2023, let me take stock and leave a commemoration.
 
-## Open Source
+## Open-Source
 
 GitHub is the spiritual home for 100 million developers worldwide, the world's largest gay dating site. On GitHub, I'm quite an active open source contributor, ranking [81st in China](https://committers.top/china) by activity at the end of 2023, [410th in China](https://wangchujiang.com/github-rank/users.china.html) by followers, and [483rd globally](https://gitstar-ranking.com/Vonng) by star count.
 
@@ -53,7 +53,7 @@ In PostgreSQL distribution ecological competition, we chose the most reliable/pe
 
 ![stackgres-pigsty.png](stackgres-pigsty.png)
 
-Another overlapping competitor is **cloud databases/RDS** - many Pigsty subscription customers self-built because cloud RDS was too expensive. Although public cloud RDS teams might have dozens of people, I'm not intimidated at all. I'm always the one poaching RDS corners, ideologically dominating and writing articles about it. This became recreational entertainment during entrepreneurship - accumulating over twenty high-quality related articles this year, compiled into a "Cloud Computing Mudslide" cloud-exit handbook.
+Another overlapping competitor is **cloud databases/RDS** - many Pigsty subscription customers self-built because cloud RDS was too expensive. Although public cloud RDS teams might have dozens of people, I'm not intimidated at all. I'm always the one poaching RDS corners, ideologically dominating and writing articles about it. This became recreational entertainment during entrepreneurship - accumulating over twenty high-quality related articles this year, compiled into a "Cloud Computing Mudslide" Cloud-Exit handbook.
 
 ## Influence
 
@@ -69,7 +69,7 @@ Previously, I was an engineer who liked focusing on solid technical work; this y
 
 The "Database Veteran" series focuses on my primary professional domain, attempting to set the agenda for the DB technology circle: Is cloud freeloading off open source? Will RDS make DBAs unemployed? Are distributed databases fake demands? PG vs MySQL who's stronger? Do domestic DBs really create bottlenecks? Can vector databases compete? Should databases go in containers? Should databases use K8S? Several topics even had live debate streams with explosive effects. The database field actually has many clichés, stereotypes, outdated dogmas, and emperor's new clothes. One benefit of entrepreneurship is having complete freedom of expression. Not speaking falsehoods or nonsense, believing in common sense's power, telling your own story - you'll find many users share the same resonance, which is quite enjoyable.
 
-"Cloud Computing Mudslide" uses data to analyze and deconstruct public cloud aspects: costs and value of various basic cloud services, SLA promises, business models, profit margins, major incident reviews, future development. Many users were inspired to take their first steps toward independent operations, sharing their excitement and joy with me. Compared to the database main business, advocating cloud-exit/self-building is more like entertainment and adventure - and I'm happy to see ideological power transform into real impact - *"Make no little plans; they have no magic to stir men's blood and probably themselves will not be realized. Make big plans; aim high in hope and work."*
+"Cloud Computing Mudslide" uses data to analyze and deconstruct public cloud aspects: costs and value of various basic cloud services, SLA promises, business models, profit margins, major incident reviews, future development. Many users were inspired to take their first steps toward independent operations, sharing their excitement and joy with me. Compared to the database main business, advocating Cloud-Exit/self-building is more like entertainment and adventure - and I'm happy to see ideological power transform into real impact - *"Make no little plans; they have no magic to stir men's blood and probably themselves will not be realized. Make big plans; aim high in hope and work."*
 
 Besides writing articles, I occasionally speak at technical conferences, participate in panel discussions, or host live debates. Participating in such activities serves both evangelism and advertising while exercising eloquence and presentation skills, so I'm quite willing to participate.
 

@@ -1,12 +1,12 @@
 ---
-title: "Cloud Exit High Availability Secret: Rejecting Complexity Masturbation"
+title: "Cloud-Exit High Availability Secret: Rejecting Complexity Masturbation"
 hero: /hero/uptime.jpg
 date: 2024-01-10
 author: |
   [David Heinemeier Hansson](https://world.hey.com/dhh) | Translated by [Vonng](https://vonng.com/en/)
 summary: |
   Programmers are drawn to complexity like moths to flame. The more complex the system architecture diagram, the greater the intellectual masturbation high. Steadfast resistance to this behavior is a key reason for DHH's success in cloud-free availability.
-tags: [cloud-exit]
+tags: [Cloud-Exit]
 ---
 
 We don't need Kubernetes masters or fancy new databases — programmers are drawn to complexity like moths to flame. The more complex the system architecture diagram, the greater the intellectual masturbation high. Our steadfast resistance to this behavior is a key reason for our success in cloud-free availability.
@@ -41,7 +41,7 @@ I'm not talking about the technology needed to operate Netflix, Google, or Amazo
 
 To have good availability, you need not the cloud, but mature technology running on redundant hardware with proper backups configured, as always.
 
-> Note: DHH saved nearly $10 million in high cloud costs. This article translates DHH's latest cloud exit progress. For the cloud exit backstory and complete process, refer to: "[Cloud Exit Odyssey](https://blog.vonng.com/en/cloud//odyssey/)", "[Is It Time to Give Up on Cloud Computing?](https://blog.vonng.com/en/cloud//odyssey/)", and "[DHH Cloud Exit FAQ](https://blog.vonng.com/en/cloud//cloud/-exit-faq/)".
+> Note: DHH saved nearly $10 million in high cloud costs. This article translates DHH's latest cloud exit progress. For the cloud exit backstory and complete process, refer to: "[Cloud-Exit Odyssey](https://blog.vonng.com/en/cloud//odyssey/)", "[Is It Time to Give Up on Cloud Computing?](https://blog.vonng.com/en/cloud//odyssey/)", and "[DHH Cloud-Exit FAQ](https://blog.vonng.com/en/cloud//cloud/-exit-faq/)".
 
 --------------
 

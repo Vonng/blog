@@ -1,15 +1,15 @@
 ---
-title: Harvesting Alibaba Cloud Wool, Building Your Digital Homestead
+title: Harvesting Alibaba-Cloud Wool, Building Your Digital Homestead
 date: 2023-11-08
 hero: /hero/cheap-ecs.jpg
 author: |
   [Vonng](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [WeChat](https://mp.weixin.qq.com/s/Nh28VahZkQMdR8fDoi0_rQ)
 summary: >
-  Alibaba Cloud's Double 11 offered a great deal: 2C2G3M ECS servers for ¥99/year, low price for three years. This article shows how to use this decent ECS to build your own digital homestead.
-tags: [cloud-exit,alibaba-cloud,ECS]
+  Alibaba-Cloud's Double 11 offered a great deal: 2C2G3M ECS servers for ¥99/year, low price for three years. This article shows how to use this decent ECS to build your own digital homestead.
+tags: [Cloud-Exit, Alibaba-Cloud, ECS]
 ---
 
-Alibaba Cloud's Double 11 offered a great deal: 2C/2G/3M ECS servers with a list price of **¥1500/year** for just **¥99/year** for three years (¥99 annual renewal available until 2026), plus they're reportedly giving every Chinese university student a free one.
+Alibaba-Cloud's Double 11 offered a great deal: 2C/2G/3M ECS servers with a list price of **¥1500/year** for just **¥99/year** for three years (¥99 annual renewal available until 2026), plus they're reportedly giving every Chinese university student a free one.
 
 ![ecs-price-1.jpg](aliyun-ecs-price-1.jpg)
 
@@ -55,11 +55,11 @@ As a seasoned IaC user, I'm accustomed to [one-click provisioning](https://pigst
 
 ### Buying Campaign Virtual Machines
 
-If you don't have an Alibaba Cloud account, register with your phone number, then use Alipay to scan for real-name verification. Enter the campaign page, buy immediately. Choose a region closest to your location, availability zone can be higher alphabetically. Operating system and network don't matter, use defaults and change later. After selecting, check the bottom: I have read and agree to [ECS-Monthly Subscription Service Agreement](http://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud201912232014_30443.html). Click "Buy Now," pay with Alipay, done.
+If you don't have an Alibaba-Cloud account, register with your phone number, then use Alipay to scan for real-name verification. Enter the campaign page, buy immediately. Choose a region closest to your location, availability zone can be higher alphabetically. Operating system and network don't matter, use defaults and change later. After selecting, check the bottom: I have read and agree to [ECS-Monthly Subscription Service Agreement](http://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud201912232014_30443.html). Click "Buy Now," pay with Alipay, done.
 
 If you're not short on money, I recommend directly topping up ¥300, locking in ¥99 annual renewal first. The remainder can buy a domain for tens of yuan, supplement some OSS/ESSD/traffic fees. After all, if you want to use pay-as-you-go services, you still need ¥100 deposit.
 
-Directly click "Renew" on the instance page — current price for 1-year renewal is **¥99**, you can directly renew to lock in next year's discount. Of course, Alibaba Cloud only promises that in the third year you can continue using **¥99** pricing to renew until 2026 — can't operate that now.
+Directly click "Renew" on the instance page — current price for 1-year renewal is **¥99**, you can directly renew to lock in next year's discount. Of course, Alibaba-Cloud only promises that in the third year you can continue using **¥99** pricing to renew until 2026 — can't operate that now.
 
 ------------
 
@@ -88,11 +88,11 @@ ssh-copy-id root@<ip>   # Add your ssh key to the server (enter password)
 
 Domains are very cheap now, just teens of yuan annually. I highly recommend getting one for great convenience. Mainly you can use different subdomains to distinguish different services, letting Nginx forward traffic to different upstreams, multi-service on one machine. Of course, if you prefer using IP addresses + port numbers to directly access different services, that's fine. Mainly it's a bit crude, and more open ports create more security risks.
 
-For example, I bought a `pdata.cc` domain for tens of yuan on Alibaba Cloud, then in Alibaba Cloud DNS console I can add domain resolution pointing to the newly applied server IP address. One `@` record, one `*` wildcard record, A records pointing to the ECS instance's **public IP address**.
+For example, I bought a `pdata.cc` domain for tens of yuan on Alibaba-Cloud, then in Alibaba-Cloud DNS console I can add domain resolution pointing to the newly applied server IP address. One `@` record, one `*` wildcard record, A records pointing to the ECS instance's **public IP address**.
 
 ![dns-resolv.jpg](aliyun-dns-resolv.jpg)
 
-With a domain, you can login using `ssh root@pdata.cc` without remembering IP addresses. You can also configure more subdomains here pointing to different addresses. If the domain is for websites, in mainland China you also need ICP filing — Alibaba Cloud also provides one-stop service.
+With a domain, you can login using `ssh root@pdata.cc` without remembering IP addresses. You can also configure more subdomains here pointing to different addresses. If the domain is for websites, in mainland China you also need ICP filing — Alibaba-Cloud also provides one-stop service.
 
 ------------
 

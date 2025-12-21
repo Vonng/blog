@@ -3,12 +3,12 @@ title: "Post-90s, Quit Job to Start Business, Says Will Crush Cloud Databases"
 date: 2022-07-07
 author: "vonng"
 summary: |
-  Recently gave an interview to OSC Open Source China, discussing the motivation behind quitting my full-time job to start a business with Pigsty: making PostgreSQL easy to use for everyone, and crushing cloud databases!
+  Recently gave an interview to OSC Open-Source China, discussing the motivation behind quitting my full-time job to start a business with Pigsty: making PostgreSQL easy to use for everyone, and crushing cloud databases!
 ---
 
-> [Original WeChat Article](https://mp.weixin.qq.com/s/I7OA0thv9Dwvj4zoxIOhJQ) | [Open Source China Article](https://my.oschina.net/oscpyaqxylk/blog/5548404)
+> [Original WeChat Article](https://mp.weixin.qq.com/s/I7OA0thv9Dwvj4zoxIOhJQ) | [Open-Source China Article](https://my.oschina.net/oscpyaqxylk/blog/5548404)
 
-**Published by**: OSCHINA Open Source China
+**Published by**: OSCHINA Open-Source China
 
 **Interviewee**: Feng Ruohang (Pigsty Founder)
 
@@ -48,7 +48,7 @@ Upon graduating in 2015, Feng Ruohang joined Alibaba as a data development engin
 
 At Alibaba, Feng Ruohang worked his way down from high-level data analysis to the database itself, doing virtually every data-related job. It was during this time that **he discovered [PostgreSQL, this treasure](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484591&idx=1&sn=a6ab13d93bfa26fca969ba163b01e1d5&chksm=fe4b3174c93cb862899cbce4b9063ed009bfe735df16bce6b246042e897d494648473eea3cea&scene=21#wechat_redirect)**, and threw himself into it wholeheartedly.
 
-> Note: PostgreSQL's slogan is "The World's Most Advanced Open Source Relational Database." In 2022, according to the [StackOverflow Developer Survey](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485170&idx=1&sn=657c75be06557df26e4521ce64178f14&chksm=fe4b3329c93cba3f840283c9df0e836e96a410f540e34ac9b1b68ca4d6247d5f31c94e2a41f4&scene=21#wechat_redirect), PostgreSQL became the **most popular** database among professional developers, as well as the most loved and desired database.
+> Note: PostgreSQL's slogan is "The World's Most Advanced Open-Source Relational Database." In 2022, according to the [StackOverflow Developer Survey](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485170&idx=1&sn=657c75be06557df26e4521ce64178f14&chksm=fe4b3329c93cba3f840283c9df0e836e96a410f540e34ac9b1b68ca4d6247d5f31c94e2a41f4&scene=21#wechat_redirect), PostgreSQL became the **most popular** database among professional developers, as well as the most loved and desired database.
 
 Feng Ruohang's next stop was Apple. "My entrepreneurial idea sprouted at Apple: I created a demonstration sandbox there to share and demonstrate **how a highly available database should be designed, and to visually demonstrate this capability in an intuitive, graphical way**," he explains.
 
@@ -136,7 +136,7 @@ Public cloud databases/RDS are so-called "out-of-the-box" solutions, but their p
 
 After long-term iterative development, Pigsty now does many things better than cloud databases.
 
-Take **observability** as an example: Alibaba Cloud RDS for PostgreSQL provides 8 database-related monitoring metrics, commercial monitoring software DataDog provides 69, and AWS's advanced monitoring has 99 categories. But Pigsty includes 675 categories of pure database metrics, comprehensively collected, using data analysis approaches for monitoring.
+Take **observability** as an example: Alibaba-Cloud RDS for PostgreSQL provides 8 database-related monitoring metrics, commercial monitoring software DataDog provides 69, and AWS's advanced monitoring has 99 categories. But Pigsty includes 675 categories of pure database metrics, comprehensively collected, using data analysis approaches for monitoring.
 
 ![5.png](5.png)
 
@@ -164,7 +164,7 @@ Feng Ruohang states that cloud vendors have raised cloud service pricing far bey
 
 > Cloud vendors' foundation is IaaS. Their story is: making computing and storage resources like utilities, playing the role of infrastructure providers. Public cloud vendors use economies of scale to reduce hardware costs and amortize labor costs, giving them advantages in storage and computing prices. But this doesn't hold for PaaS/SaaS.
 >
-> Cloud vendors don't invest many people in any specific field, and the quality varies. More importantly, they lack the focused dedication, courage, and vitality of startups fighting with their backs to the wall. Besides, top talent with this vision and understanding have come out to start businesses. For example, Sealos from our same batch and group left Alibaba Cloud to do open-source software entrepreneurship, providing out-of-the-box Kubernetes. We're "rolling" cloud vendors from different directions.
+> Cloud vendors don't invest many people in any specific field, and the quality varies. More importantly, they lack the focused dedication, courage, and vitality of startups fighting with their backs to the wall. Besides, top talent with this vision and understanding have come out to start businesses. For example, Sealos from our same batch and group left Alibaba-Cloud to do open-source software entrepreneurship, providing out-of-the-box Kubernetes. We're "rolling" cloud vendors from different directions.
 >
 > I believe in the coming years, such open-source startups will spring up like mushrooms after rain, beating cloud vendors' PaaS/SaaS to pieces. The equilibrium point of this game will be cloud vendors converging to the IaaS layer, while PaaS and SaaS layers are divided among many similar open-source software companies.
 
@@ -172,7 +172,7 @@ Feng Ruohang states that cloud vendors have raised cloud service pricing far bey
 
 -------------
 
-## **03 Open Source is the Highest Program**
+## **03 Open-Source is the Highest Program**
 
 In February 2022, Miracle Plus startup camp found him. Counting from then, Feng Ruohang has only been doing full-time entrepreneurship for two to three months. If this pitch goes smoothly, he will complete Pre-A round financing while also building his team—a lean team of fewer than ten people.
 

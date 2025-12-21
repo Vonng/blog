@@ -297,7 +297,7 @@ Devrim 老爷子是一个很有意思的人，土耳其人，现居伦敦，还�
 
 ### 议题：关于服务端中文字符集支持
 
-Jeremy Schneider 在本次大会带来一场关于字符排序规则（ Collation） 的分享，我非常关注。这个分享抛出了一系列 Collate 规则变化导致的问题。说实话，我以前也专门[写过一篇文章研究过这个问题](/pg/admin/collate/)，最终结论与 Jeremy 高度一致，应该用 `C.UTF8` ，我一直是这么做的，并制定开发规约，也在发行版中强制默认配置推行这一点，而 Jeremy 的分享，则详细阐述了[不这么做会导致哪些坑爹的结果](https://www.pgevents.ca/events/pgconfdev2024/sessions/session/95/slides/26/pgcon24_collation.pdf)。
+Jeremy Schneider 在本次大会带来一场关于字符排序规则（ Collation） 的分享，我非常关注。这个分享抛出了一系列 Collate 规则变化导致的问题。说实话，我以前也专门[写过一篇文章研究过这个问题](/pg/collate/)，最终结论与 Jeremy 高度一致，应该用 `C.UTF8` ，我一直是这么做的，并制定开发规约，也在发行版中强制默认配置推行这一点，而 Jeremy 的分享，则详细阐述了[不这么做会导致哪些坑爹的结果](https://www.pgevents.ca/events/pgconfdev2024/sessions/session/95/slides/26/pgcon24_collation.pdf)。
 
 会后在大厅里，我和 Jeremy 进一步地讨论了这个问题，核心组的 Peter Eisentraut 也参与了进来。Jeremy 问我中国用户是怎样使用字符集与 Collation 的，我说新应用大体上都用的是 `C.UTF8`，通常只有一些政企单位和传统行业的老系统才会去折腾服务端中文字符集。
 

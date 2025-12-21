@@ -5,7 +5,7 @@ author: |
   [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: >
   Public cloud margins worse than sand mining—why are pig-butchering schemes losing money? Resource-selling models heading toward price wars, open source alternatives breaking monopoly dreams! Service competitiveness gradually neutralized—where is the cloud computing industry heading? How did domestic cloud vendors make a business with 30-40% pure profit less profitable than sand mining?
-tags: [CloudExit,Business]
+tags: [Cloud-Exit, Business]
 ---
 
 [Public cloud margins worse than sand mining](#public-cloud-margins-worse-than-sand-mining),
@@ -28,9 +28,9 @@ tags: [CloudExit,Business]
 
 In "[Are Cloud Disks Pig-Butchering Schemes](/cloud/ebs/)," "[Are Cloud Databases Intelligence Tax](/cloud/rds/)," and "[Are Cloud SLAs Placebo or Toilet Paper Contracts](/cloud/sla/)," we've studied the true costs of key cloud services. Enterprise-scale cloud servers cost 5-10x self-building per core·month, cloud databases can reach over 10x, cloud disks can be 100x+ higher. With this pricing model, cloud margins of 80-90% wouldn't be surprising.
 
-Industry benchmarks AWS and Azure easily achieve 60% and 70% margins. Looking at domestic cloud computing, margins generally hover between single digits to **15%**. Top dog Alibaba Cloud at most gives a "projected long-term overall margin of 40%." As for cloud vendors like Kingsoft Cloud, margins directly drop to **2.1%**—worse than working sand mining jobs.
+Industry benchmarks AWS and Azure easily achieve 60% and 70% margins. Looking at domestic cloud computing, margins generally hover between single digits to **15%**. Top dog Alibaba-Cloud at most gives a "projected long-term overall margin of 40%." As for cloud vendors like Kingsoft Cloud, margins directly drop to **2.1%**—worse than working sand mining jobs.
 
-Regarding net profits, domestic public cloud vendors are even more miserable. AWS/Azure net profit margins can reach 30%-40%. Benchmark Alibaba Cloud merely struggles around the break-even line. This begs the question: how did these cloud vendors turn a 30-40% pure profit business into this state?
+Regarding net profits, domestic public cloud vendors are even more miserable. AWS/Azure net profit margins can reach 30%-40%. Benchmark Alibaba-Cloud merely struggles around the break-even line. This begs the question: how did these cloud vendors turn a 30-40% pure profit business into this state?
 
 ![](profit-1.png)
 
@@ -56,7 +56,7 @@ For public clouds, **PaaS is the core technical barrier**, **IaaS is the revenue
 
 ![](profit-3.png)
 
-AWS's barrier is first-mover advantage and thriving software ecosystem, Azure's barrier is Office SaaS and large model PaaS, GCP's barrier is global unified network. Looking at domestic cloud vendor barriers: Alibaba Cloud's databases, Tencent Cloud's WeChat ecosystem, Baidu Cloud's large models?
+AWS's barrier is first-mover advantage and thriving software ecosystem, Azure's barrier is Office SaaS and large model PaaS, GCP's barrier is global unified network. Looking at domestic cloud vendor barriers: Alibaba-Cloud's databases, Tencent Cloud's WeChat ecosystem, Baidu Cloud's large models?
 
 -------------------
 
@@ -74,7 +74,7 @@ When public cloud vendors face these opponents, their biggest **barrier** for da
 
 -------------------
 
-## Open Source Alternatives Breaking Monopoly Dreams
+## Open-Source Alternatives Breaking Monopoly Dreams
 
 Free software/open source software once completely changed the entire software and internet industry, and we will witness history again.
 
@@ -124,7 +124,7 @@ Looking back to early 20th century, drawing historical experience from electrici
 
 ![](profit-8.jpeg)
 
-**Resource and infrastructure-natured industries' ultimate destination is state monopoly**. Public cloud resource parts—IaaS layers will be stripped, integrated, recruited, becoming computing/storage "State Grid." As state enterprises, State Grid doesn't generate electricity or manufacture appliances—it does power monopoly resource transmission and distribution. Cloud IaaS also won't manufacture chips, hard drives, fiber, servers, but integrate them into storage/compute/network resources, delivering to users. State clouds, telecom clouds, Alibaba Cloud/Huawei Cloud will divide this market.
+**Resource and infrastructure-natured industries' ultimate destination is state monopoly**. Public cloud resource parts—IaaS layers will be stripped, integrated, recruited, becoming computing/storage "State Grid." As state enterprises, State Grid doesn't generate electricity or manufacture appliances—it does power monopoly resource transmission and distribution. Cloud IaaS also won't manufacture chips, hard drives, fiber, servers, but integrate them into storage/compute/network resources, delivering to users. State clouds, telecom clouds, Alibaba-Cloud/Huawei Cloud will divide this market.
 
 **Capability-natured industries' main theme will be free competition, flourishing diversity**. If IaaS is power supply industry, then PaaS/SaaS is appliance industry—providing various different capabilities using storage/compute/network resources. Washing machines, refrigerators, water heaters, computers will see countless startups and open source communities competing on same stage, fully competing. Of course, some software can enjoy exceptional monopoly protection status—like domestic security and innovation.
 

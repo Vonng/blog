@@ -6,7 +6,7 @@ author: |
   [Feng Ruohang](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [WeChat](https://mp.weixin.qq.com/s/AGEW1iHQkQy4NQyYC2GonQ)
 summary: >
   I recently witnessed a live cloud database drop-and-run incident. This article discusses how to handle accidentally deleted data when using PostgreSQL in production environments.
-tags: [cloud-exit,DBA,RDS]
+tags: [Cloud-Exit,DBA,RDS]
 ---
 
 In my previous article "[Is DBA Still a Good Job](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485064&idx=1&sn=6225a044d8f145cdb07a21a1e0c54ad8&chksm=fe4b3353c93cba4582576b4de151ac48247052a1494adcc820dc64a32dafb0b99e33085c7bbb&scene=21#wechat_redirect)", I mentioned: Although DBA as a profession is declining, who knows if DBAs might become trendy again after several terrifying large-scale cloud database failures.

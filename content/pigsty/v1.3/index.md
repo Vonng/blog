@@ -16,8 +16,6 @@ tags: [Pigsty]
 
 Pigsty v1.3 正式发布，新增 Redis 支持、PGCAT 应用重构、PGSQL 监控增强。
 
-![featured](featured.jpg)
-
 
 ----------------
 

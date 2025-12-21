@@ -16,8 +16,6 @@ tags: [Pigsty]
 
 Pigsty v1.2 正式发布，将 PostgreSQL 14 作为默认版本，并支持独立监控现有数据库实例。
 
-![featured](featured.jpg)
-
 
 ----------------
 

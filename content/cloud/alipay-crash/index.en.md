@@ -5,7 +5,7 @@ author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: |
     Dec 4, 2025, Taobao, Alipay, and Xianyu all cratered. Users got charged while orders still showed “unpaid,” a carbon copy of the 2024 Double-11 fiasco.
-tags: [Cloud Exit, Alibaba Cloud, Cloud Incident]
+tags: [Cloud-Exit, Alibaba-Cloud, Cloud-Outage]
 ---
 
 Taobao, Alipay, and Xianyu simultaneously faceplanted on Dec 4. Cards were debited, yet orders sat frozen at “pending.” The story rhymes perfectly with the 2024 Double-11 outage, so the leading suspect is once again the message queue or whatever coordinates distributed transactions.
@@ -73,21 +73,21 @@ Payment infra is a trust machine. Complexity makes outages inevitable, but silen
 
 Stability has been shaky across Alibaba properties these past years. Every peak season brings a new clown show:
 
-2025-06-06 [Catastrophe: Alibaba Cloud Let Its Core Domains Expire](https://mp.weixin.qq.com/s/l1b-eq06NyuN61cqZoYJjA)
+2025-06-06 [Catastrophe: Alibaba-Cloud Let Its Core Domains Expire](https://mp.weixin.qq.com/s/l1b-eq06NyuN61cqZoYJjA)
 
 2024-11-11 [Alipay Down?](https://mp.weixin.qq.com/s/D2XmL2YYN2kqHtwFN4FVGQ)
 
-2024-09-10 [Alibaba Cloud Singapore AZ-C Fire](https://mp.weixin.qq.com/s/EDRmP7ninfSx-CgNDb8mpg)
+2024-09-10 [Alibaba-Cloud Singapore AZ-C Fire](https://mp.weixin.qq.com/s/EDRmP7ninfSx-CgNDb8mpg)
 
-2024-07-02 [Another Alibaba Cloud Outage, This Time a Cable Cut](https://mp.weixin.qq.com/s/cb2Lh56uINxacM2uUaB6Vw)
+2024-07-02 [Another Alibaba-Cloud Outage, This Time a Cable Cut](https://mp.weixin.qq.com/s/cb2Lh56uINxacM2uUaB6Vw)
 
 2024-04-20 [taobao.com Certificate Expired](https://mp.weixin.qq.com/s/-ntsNfdEq3b4qs5tKP7tfQ)
 
-2023-11-27 [Alibaba Cloud Database Control Plane Down](https://mp.weixin.qq.com/s/3F1ud-tWB3eymu1-dxSHMA)
+2023-11-27 [Alibaba-Cloud Database Control Plane Down](https://mp.weixin.qq.com/s/3F1ud-tWB3eymu1-dxSHMA)
 
-2023-11-14 [Lessons From Alibaba Cloud’s Epic Meltdown](https://mp.weixin.qq.com/s/OIlR0rolEQff9YfCpj3wIQ)
+2023-11-14 [Lessons From Alibaba-Cloud’s Epic Meltdown](https://mp.weixin.qq.com/s/OIlR0rolEQff9YfCpj3wIQ)
 
-2023-11-12 [Alibaba Cloud’s Historic Crash](https://mp.weixin.qq.com/s/cTge3xOlIQCALQc8Mi-P8w)
+2023-11-12 [Alibaba-Cloud’s Historic Crash](https://mp.weixin.qq.com/s/cTge3xOlIQCALQc8Mi-P8w)
 
 AWS, GCP, Cloudflare—whenever they screw up, they publish detailed postmortems: timeline, root cause, follow-up fixes. This Alipay outage messed with real money. We deserve the same transparency.
 

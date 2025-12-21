@@ -4,7 +4,7 @@ date: 2025-08-15
 author: vonng
 summary: >
   PostgreSQL official repos cut off global mirror sync channels, open-source binaries supply disrupted, revealing the true colors of various database and cloud vendors.
-tags: [PostgreSQL,PG Administration]
+tags: [PostgreSQL,PG-Admin]
 ---
 
 This month saw a high-profile "open source supply cut" incident — [KubeSphere deleting images and running away](/en/cloud/kubesphere-rugpull),
@@ -28,7 +28,7 @@ At that time, I observed Germany's XTOM actually attempting a manual monthly upd
 
 | Provider        | Region  | Sync Timestamp     | URL                                                                   |
 |-----------------|---------|-------------------|-----------------------------------------------------------------------|
-| Alibaba Cloud   | China   | 2025-03-31        | https://mirrors.aliyun.com/postgresql/sync_timestamp                  |
+| Alibaba-Cloud   | China   | 2025-03-31        | https://mirrors.aliyun.com/postgresql/sync_timestamp                  |
 | Tencent Cloud   | China   | 2025-03-31        | https://mirrors.cloud.tencent.com/postgresql/sync_timestamp           |
 | Volcano Cloud   | China   | 2025-03-10        | https://mirrors.volces.com/postgresql/sync_timestamp                  |
 | Huawei Cloud    | China   | 2024-01-02        | https://repo.huaweicloud.com/postgresql/sync_timestamp                |
@@ -80,15 +80,15 @@ Sure, you can still use it with VPN or whatever. But you can't expect everyone t
 From this angle, **Chinese users really got choked** — though essentially shooting ourselves in the foot — they just shut down incremental sync, and you can't use their alternative solution.
 But this is the situation, what matters is how to solve users' problems in this context. Who will solve this?
 
-Chinese users wanting YUM/APT PostgreSQL installation typically can only use domestic mirrors, most famously Alibaba Cloud and Tsinghua University's TUNA mirror, plus Zhejiang University/USTC sources.
+Chinese users wanting YUM/APT PostgreSQL installation typically can only use domestic mirrors, most famously Alibaba-Cloud and Tsinghua University's TUNA mirror, plus Zhejiang University/USTC sources.
 Unfortunately, all these mirrors without exception lay flat, showing no responsibility — but you can't blame them, after all, it's free.
 
 
 
 ## Supply Chain Risk
 
-Open source expert Tison explained in his articles ["How to Safely Use Open Source Software?"](https://mp.weixin.qq.com/s/-2CeJq1XZdwifZkJY2oXNA) and
-["Does Open Source Software Have Supply Cut Risk?"](https://mp.weixin.qq.com/s/vSxWUcFgbS3D_0tZnBIfdg) that open source software (source code) itself has no "supply cut" risk —
+Open source expert Tison explained in his articles ["How to Safely Use Open-Source Software?"](https://mp.weixin.qq.com/s/-2CeJq1XZdwifZkJY2oXNA) and
+["Does Open-Source Software Have Supply Cut Risk?"](https://mp.weixin.qq.com/s/vSxWUcFgbS3D_0tZnBIfdg) that open source software (source code) itself has no "supply cut" risk —
 the basic rights granted by open source licenses are irrevocable, in this dimension **"open source supply cut has never happened"**. Supply cut concerns often stem from misunderstanding due to excessive expectations of open source.
 
 But user dependency on open source always happens in specific software supply chains, ensuring open source dependency supply chain security has costs —
@@ -107,16 +107,16 @@ after all they didn't charge, providing source code is duty, but open source lic
 ## How to Solve Supply Chain Risk?
 
 Can commercial services solve this? After all, so many domestic databases are PostgreSQL reskins, shells, or forks, yet the upstream ancestor gets banned — quite comical. Nobody sets up a Chinese mirror?
-Well, maybe not — most database vendors just freeload off mirrors (Alibaba Cloud, Tsinghua) repositories, or rather, their delivery method isn't even software repositories but throwing you an EL7 RPM package, completely unable to maintain repositories.
+Well, maybe not — most database vendors just freeload off mirrors (Alibaba-Cloud, Tsinghua) repositories, or rather, their delivery method isn't even software repositories but throwing you an EL7 RPM package, completely unable to maintain repositories.
 
 I independently maintain a PostgreSQL extension repository containing 9 PG kernel flavors and 200+ PG extensions (423 available extensions total with PGDG). Currently the world's largest PG ecosystem repository with most available extension artifacts.
 Not modestly, speaking of PostgreSQL packaging and building, me and Devrim (YUM repo), Christoph (APT repo), Álvaro (OCI repo), David Wheeler (PGXN) are top players and original suppliers in this track.
 
 But though I can package, build, and maintain repositories, when installing and delivering native PG kernels, I still choose "official PG" PGDG APT/YUM repositories, with PIGSTY's own repository as extension supplement,
 because Devrim and Christoph already do great work! I do complementary differentiated work. So for my PostgreSQL distribution Pigsty, PGDG repository is PIGSTY's upstream supply chain,
-domestically due to the firewall, Alibaba Cloud mirror is my indirect upstream. Now the problem is this indirect upstream, including all mirrors like Alibaba Cloud, Tsinghua, Zhejiang University, various clouds, all broke and stopped updating. What to do?
+domestically due to the firewall, Alibaba-Cloud mirror is my indirect upstream. Now the problem is this indirect upstream, including all mirrors like Alibaba-Cloud, Tsinghua, Zhejiang University, various clouds, all broke and stopped updating. What to do?
 
-When I discovered this issue, I immediately reported to Alibaba Cloud and Tsinghua TUNA mailing lists, also chatted with Dege. Unfortunately, dozens of days passed, still no ripples, no movement.
+When I discovered this issue, I immediately reported to Alibaba-Cloud and Tsinghua TUNA mailing lists, also chatted with Dege. Unfortunately, dozens of days passed, still no ripples, no movement.
 Nobody has the responsibility to step up and solve this. I'm really disappointed in these domestic cloud vendors, database vendors, and university mirror maintenance teams. But you can't blame them — right, they're letting you use it free, what can you say?
 
 
@@ -129,7 +129,7 @@ threw them into Pigsty's repository, tested once, super smooth. My feeling after
 
 Of course, total PG repository is hundreds of GB, downloading everything would be too large, so I only took Linux x86/aarch64 architecture packages, synced Debian 11/12/13, Ubuntu 22/24,
 EL 7/8/9/10 these major Linux OS distribution versions' PG 13-17 packages, keeping only latest versions, total size just dozens of GB.
-Pulled for two hours, synced back, threw on domestic CDN, now in pig 0.6.1 and pigsty 3.6.1, I've replaced Alibaba Cloud and Tsinghua sources, will release in coming days, completely getting rid of lying-flat middleman dependency, achieving true self-reliance.
+Pulled for two hours, synced back, threw on domestic CDN, now in pig 0.6.1 and pigsty 3.6.1, I've replaced Alibaba-Cloud and Tsinghua sources, will release in coming days, completely getting rid of lying-flat middleman dependency, achieving true self-reliance.
 
 
 

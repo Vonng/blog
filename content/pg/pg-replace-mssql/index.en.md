@@ -6,7 +6,7 @@ author: |
   [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: >
   PostgreSQL can directly replace Oracle, SQL Server, and MongoDB at the kernel level. Of course, the most thorough replacement is SQL Server - AWS's Babelfish provides wire-protocol-level compatibility.
-tags: [PostgreSQL,PG Ecosystem,MSSQL]
+tags: [PostgreSQL,PG-Ecosystem,MSSQL]
 ---
 
 Many people don't have an intuitive impression of how far PostgreSQL's ecosystem has developed. Beyond [devouring the database world](/pg/pg-eat-db-world) and its all-encompassing extension ecosystem, PostgreSQL can directly replace Oracle, SQL Server, and MongoDB at the kernel level. MySQL is naturally even less of a concern.
@@ -77,7 +77,7 @@ Besides MSSQL, PostgreSQL's ecosystem also has Oracle replacements: PolarDB O an
 
 Our recently released open-source RDS PostgreSQL solution - Pigsty - recently supports these PG replacement kernels, allowing users to provide MSSQL, Oracle, MongoDB, Firebase compatibility replacement capabilities in one PostgreSQL deployment.
 
-Besides MSSQL, PostgreSQL's ecosystem also has Oracle replacements: PolarDB O and IvorySQL; MongoDB replacements: FerretDB and PongoDB; [plus over 300 extension plugins providing various functionalities](https://ext.pgsty.com/zh/list).
+Besides MSSQL, PostgreSQL's ecosystem also has Oracle replacements: PolarDB O and IvorySQL; MongoDB replacements: FerretDB and PongoDB; [plus over 300 extension plugins providing various functionalities](https://pgext.cloud/zh/list).
 
 ![](https://pigsty.io/img/ecosystemjpg)
 

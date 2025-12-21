@@ -6,7 +6,7 @@ author: |
   [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: >
   Cloud databases' exorbitant markups—sometimes 10x or more—are undoubtedly a scam for users outside the applicable spectrum. But we can dig deeper: why are public clouds, especially cloud databases, like this? And based on their underlying logic, make predictions about the industry's future.
-tags: [CloudExit,OpenSource]
+tags: [Cloud-Exit, Open-Source]
 ---
 
 In the previous article, we used data to answer "[Are Cloud Databases an Intelligence Tax?](/cloud/rds/)"—**the exorbitant markups of several to over ten times are undoubtedly a scam for users outside the applicable spectrum**. But we can dig deeper: why are public clouds, especially cloud databases, like this? And based on their underlying logic, make predictions and judgments about the industry's future.
@@ -69,9 +69,9 @@ When cloud first appeared, their core was hardware/**IaaS** layer: storage, band
 |        IDC Self-built (Container, 200% Oversell)         |  17   |
 |        IDC Self-built (Container, 500% Oversell)         |   7   |
 |      UCloud Elastic VM (8C16G, with oversell)      |  25   |
-|       Alibaba Cloud Elastic Server 2x Memory (Dedicated)       |  107  |
-|       Alibaba Cloud Elastic Server 4x Memory (Dedicated)       |  138  |
-|       Alibaba Cloud Elastic Server 8x Memory (Dedicated)       |  180  |
+|       Alibaba-Cloud Elastic Server 2x Memory (Dedicated)       |  107  |
+|       Alibaba-Cloud Elastic Server 4x Memory (Dedicated)       |  138  |
+|       Alibaba-Cloud Elastic Server 8x Memory (Dedicated)       |  180  |
 |  AWS C5D.METAL 96C 200G (Monthly, No Upfront)   |  100  |
 |   AWS C5D.METAL 96C 200G (3-Year Prepaid)    |  80   |
 |              **Database**              |       |
@@ -79,9 +79,9 @@ When cloud first appeared, their core was hardware/**IaaS** layer: storage, band
 |   AWS RDS PostgreSQL db.M5 (4x)   |  611  |
 |  AWS RDS PostgreSQL db.R6G (8x)   |  786  |
 | AWS RDS PostgreSQL db.M5 24xlarge | 1328  |
-|        Alibaba Cloud RDS PG 2x Memory (Dedicated)        |  260  |
-|        Alibaba Cloud RDS PG 4x Memory (Dedicated)        |  320  |
-|        Alibaba Cloud RDS PG 8x Memory (Dedicated)        |  410  |
+|        Alibaba-Cloud RDS PG 2x Memory (Dedicated)        |  260  |
+|        Alibaba-Cloud RDS PG 4x Memory (Dedicated)        |  320  |
+|        Alibaba-Cloud RDS PG 8x Memory (Dedicated)        |  410  |
 |            Oracle Database License            | 10000 |
 
 > How cloud sells ~20 RMB hardware at ten-times markups

@@ -1,22 +1,22 @@
 ---
-title: "DHH: Cloud Exit Saves Over Ten Million, More Than Expected!"
+title: "DHH: Cloud-Exit Saves Over Ten Million, More Than Expected!"
 date: 2023-07-07
 hero: /hero/odyssey.jpg
 author: |
   [DHH](https://world.hey.com/dhh) | Trans: [Feng Ruohang](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [WeChat Official Account](https://mp.weixin.qq.com/s/mknFXO5DSfxw7st8hhxjBQ)
 summary: >
   DHH migrated their seven cloud applications from AWS to their own hardware. 2024 is the first year of full savings realization. They're delighted to find the savings exceed initial estimates.
-tags: [cloud-exit,DHH]
+tags: [Cloud-Exit,DHH]
 ---
 
 
-> Author: DHH, "[Our cloud-exit savings will now top ten million over five years](https://world.hey.com/dhh/our-cloud-exit-savings-will-now-top-ten-million-over-five-years-c7d9b5bd)"
+> Author: DHH, "[Our Cloud-Exit savings will now top ten million over five years](https://world.hey.com/dhh/our-Cloud-Exit-savings-will-now-top-ten-million-over-five-years-c7d9b5bd)"
 
 Last summer, we [completed our cloud exit](https://world.hey.com/dhh/we-have-left-the-cloud-251760fb), migrating seven cloud applications including [HEY](https://hey.com/) from AWS to our own hardware. But it wasn't until year-end that all our long-term contracts ended, so 2024 is the first year of full savings realization. We're delighted to find the savings exceed our initial estimates.
 
-In 2024, we've reduced our cloud bill from **$3.2 million annually to $1.3 million, saving nearly $2 million per year!** The savings exceed our initial [five-year $7 million estimate](https://world.hey.com/dhh/we-stand-to-save-7m-over-five-years-from-our-cloud-exit-53996caa) because we successfully fit all new hardware within our existing data center racks and power limits.
+In 2024, we've reduced our cloud bill from **$3.2 million annually to $1.3 million, saving nearly $2 million per year!** The savings exceed our initial [five-year $7 million estimate](https://world.hey.com/dhh/we-stand-to-save-7m-over-five-years-from-our-Cloud-Exit-53996caa) because we successfully fit all new hardware within our existing data center racks and power limits.
 
-Purchasing this new [Dell hardware](https://world.hey.com/dhh/the-hardware-we-need-for-our-cloud-exit-has-arrived-99d66966) cost approximately $700,000, but we fully recouped costs during 2023 as long-term contracts gradually expired. Think about that - this is equipment we expect to use for the next five, maybe even seven years! All paid off from savings accrued during the second half of 2023. Pretty sweet!
+Purchasing this new [Dell hardware](https://world.hey.com/dhh/the-hardware-we-need-for-our-Cloud-Exit-has-arrived-99d66966) cost approximately $700,000, but we fully recouped costs during 2023 as long-term contracts gradually expired. Think about that - this is equipment we expect to use for the next five, maybe even seven years! All paid off from savings accrued during the second half of 2023. Pretty sweet!
 
 But it gets even better. **The remaining $1.3 million we still spend on cloud services is entirely on AWS S3**. While all our former cloud compute and managed database/search services had one-year contracts, our file storage has been locked into a four-year contract since 2021, not expiring until next summer. That's when we plan our complete exit.
 
@@ -28,7 +28,7 @@ Therefore, our total projected cloud exit savings will exceed **$10 million over
 
 Of course, cloud vs on-premises comparisons are never perfectly apples-to-apples. If you're entirely in the cloud without existing data center racks, you'll pay to rent those too (but you'll probably be shocked how cheap it is compared to cloud!). Even for our savings estimates, targets keep moving as we need more hardware and storage as Basecamp and HEY continue growing.
 
-But it's remarkable that we're reaping savings of this magnitude from leaving the cloud. We've been out over a year now, and our management team remains the same size. There were no hidden dragons of additional workload requiring team expansion, as some speculated when we announced it. All answers in our [Cloud Exit FAQ](https://world.hey.com/dhh/the-big-cloud-exit-faq-20274010) continue to hold.
+But it's remarkable that we're reaping savings of this magnitude from leaving the cloud. We've been out over a year now, and our management team remains the same size. There were no hidden dragons of additional workload requiring team expansion, as some speculated when we announced it. All answers in our [Cloud-Exit FAQ](https://world.hey.com/dhh/the-big-Cloud-Exit-faq-20274010) continue to hold.
 
 It's still work though! Running applications like [Basecamp](https://basecamp.com/) and HEY across two data centers (soon at least one more internationally!) requires a dedicated team. There's always maintenance work for applications, databases, virtual machines, and occasionally requesting power supply or drive swaps for machines showing warning lights (handled by [Deft's](https://deft.com/) white-glove service) — but most of this work was required in the cloud too!
 
@@ -48,11 +48,11 @@ At [37signals](https://37signals.com/), we look forward to literally deleting ou
 Here's DHH's complete cloud exit journey with Q&A:
 
 - [Is It Time to Give Up on Cloud Computing?](https://mp.weixin.qq.com/s/CicctyvV1xk5B-AsKfzPjw)
-- [Cloud Exit Odyssey](https://mp.weixin.qq.com/s/H2S3TV-AsqS43A5Hh-XMhQ)
-- [Six Months Cloud Exit Saves Tens of Millions: DHH Cloud Exit FAQ](https://mp.weixin.qq.com/s/xaa079P4DRCz0hzNovGoOA)
+- [Cloud-Exit Odyssey](https://mp.weixin.qq.com/s/H2S3TV-AsqS43A5Hh-XMhQ)
+- [Six Months Cloud-Exit Saves Tens of Millions: DHH Cloud-Exit FAQ](https://mp.weixin.qq.com/s/xaa079P4DRCz0hzNovGoOA)
 - [Optimize Carbon-Based Bio Cores First, Then Silicon CPU Cores](https://mp.weixin.qq.com/s/Yxyir8kjRDUZwkkE_dscZQ)
 - [Single-Tenant Era: SaaS Paradigm Shift](https://mp.weixin.qq.com/s/jKv9l_ro6rWei4QnXck-zw)
-- [Refuse Complexity Masturbation, Maintain Stability Post-Cloud Exit](https://mp.weixin.qq.com/s/yIVal-9U6_TXX-dZpVtjBg)
+- [Refuse Complexity Masturbation, Maintain Stability Post-Cloud-Exit](https://mp.weixin.qq.com/s/yIVal-9U6_TXX-dZpVtjBg)
 
 
 --------
@@ -73,7 +73,7 @@ The massive savings potential from cloud exit, using DHH's not-yet-migrated S3 o
 With a one-time investment equal to one year's S3 costs, you can get a Pure Storage system with nearly double capacity, meaning first-year breakeven with four to six years of pure profit afterward.
 
 The math is straightforward. Previously we calculated self-built object storage TCO (assuming 60-bay 12PB storage models, Century Internet hosting, three replicas) at approximately 200-300 ¥/TB (one-time purchase, five to seven years usage) — so 10 PB storage requires only 350k¥ one-time investment.
-In contrast, AWS/Alibaba Cloud object storage costs 110-170 ¥/TB (**monthly**, just for storage space, excluding request volumes, traffic fees, retrieval fees), creating a two-order-of-magnitude cost difference versus self-built solutions.
+In contrast, AWS/Alibaba-Cloud object storage costs 110-170 ¥/TB (**monthly**, just for storage space, excluding request volumes, traffic fees, retrieval fees), creating a two-order-of-magnitude cost difference versus self-built solutions.
 
 Yes, self-built object storage can achieve two orders of magnitude, dozens of times cost savings versus cloud object storage. As someone who built 25 PB MinIO storage, I guarantee these cost figures' authenticity.
 
@@ -105,17 +105,17 @@ I believe under such competitive pressure, the cloud computing market landscape 
 
 --------
 
-## Our cloud-exit savings will now top ten million over five years
+## Our Cloud-Exit savings will now top ten million over five years
 
 We [finished](https://world.hey.com/dhh/we-have-left-the-cloud-251760fb) pulling seven cloud apps, including [HEY](https://hey.com/), out of AWS and onto our own hardware last summer. But it took until the end of that year for all the long-term contract commitments to end, so 2024 has been the first clean year of savings, and we've been pleasantly surprised that they've been even better than originally estimated.
 
 
 
-For 2024, we've brought the cloud bill down from the original $3.2 million/year run rate to $1.3 million. That's a saving of almost two million dollars per year for our setup! The reason it's more than [our original estimate of $7 million over five years](https://world.hey.com/dhh/we-stand-to-save-7m-over-five-years-from-our-cloud-exit-53996caa) is that we got away with putting all the new hardware into our existing data center racks and power limits.
+For 2024, we've brought the cloud bill down from the original $3.2 million/year run rate to $1.3 million. That's a saving of almost two million dollars per year for our setup! The reason it's more than [our original estimate of $7 million over five years](https://world.hey.com/dhh/we-stand-to-save-7m-over-five-years-from-our-Cloud-Exit-53996caa) is that we got away with putting all the new hardware into our existing data center racks and power limits.
 
 
 
-The expenditure on [all that new Dell hardware](https://world.hey.com/dhh/the-hardware-we-need-for-our-cloud-exit-has-arrived-99d66966) – about $700,000 in the end – was also entirely recouped during 2023 while the long-term commitments slowly rolled off. Think about that for a second. This is gear we expect to use for the next five, maybe even seven years! All paid off from savings accrued during the second half of 2023. Pretty sweet!
+The expenditure on [all that new Dell hardware](https://world.hey.com/dhh/the-hardware-we-need-for-our-Cloud-Exit-has-arrived-99d66966) – about $700,000 in the end – was also entirely recouped during 2023 while the long-term commitments slowly rolled off. Think about that for a second. This is gear we expect to use for the next five, maybe even seven years! All paid off from savings accrued during the second half of 2023. Pretty sweet!
 
 
 
@@ -137,7 +137,7 @@ Now, as with all things cloud vs on-prem, it's never fully apples-to-apples. If 
 
 
 
-But it's still remarkable that we're able to reap savings of this magnitude from leaving the cloud. We've been out for just over a year now, and the team managing everything is still the same. There were no hidden dragons of additional workload associated with the exit that required us to balloon the team, as some spectators speculated when we announced it. All the answers in our [Big Cloud Exit FAQ](https://world.hey.com/dhh/the-big-cloud-exit-faq-20274010) continue to hold.
+But it's still remarkable that we're able to reap savings of this magnitude from leaving the cloud. We've been out for just over a year now, and the team managing everything is still the same. There were no hidden dragons of additional workload associated with the exit that required us to balloon the team, as some spectators speculated when we announced it. All the answers in our [Big Cloud-Exit FAQ](https://world.hey.com/dhh/the-big-Cloud-Exit-faq-20274010) continue to hold.
 
 
 

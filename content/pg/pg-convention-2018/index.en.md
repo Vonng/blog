@@ -4,7 +4,7 @@ linkTitle: "PostgreSQL Development Convention 2018 Edition"
 date: 2018-06-20
 author: "vonng"
 summary: "Without rules, there can be no order. This article compiles a development specification for PostgreSQL database principles and features, which can reduce confusion encountered when using PostgreSQL."
-tags: ["PostgreSQL","PG Development","Convention"]
+tags: ["PostgreSQL","PG-Development","Convention"]
 ---
 
 ## 0x00 Background

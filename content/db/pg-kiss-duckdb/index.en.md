@@ -60,7 +60,7 @@ Take a quick peek and you’ll see [competition is fierce](https://pigsty.io/pg/
 - By March 2024, ParadeDB retooled [`pg_analytics`](https://github.com/paradedb/pg_analytics) to stitch in DuckDB.
 - Hydra, in the PG ecosystem, and DuckDB’s parent MotherDuck launched [`pg_duckdb`](https://github.com/duckdb/pg_duckdb). DuckDB officially jumped into Postgres integration — ironically pausing their own direct approach `hydra` for a long time.
 - Neon, always quick to ride the wave, sponsored [`pg_mooncake`](https://github.com/Mooncake-Labs/pg_mooncake), built on `pg_duckdb`. It aims to embed DuckDB’s compute engine in PG while also fusing Parquet-based lakehouse storage.
-- Even big clouds like [Alibaba Cloud RDS](https://help.aliyun.com/zh/rds/apsaradb-rds-for-postgresql/use-the-rds-duckdb-extension/) are experimenting with DuckDB add-ons (`rds_duckdb`). That’s a sure sign the giants have caught on.
+- Even big clouds like [Alibaba-Cloud RDS](https://help.aliyun.com/zh/rds/apsaradb-rds-for-postgresql/use-the-rds-duckdb-extension/) are experimenting with DuckDB add-ons (`rds_duckdb`). That’s a sure sign the giants have caught on.
 
 It’s eerily reminiscent of the vector-database frenzy. Once AI and semantic search took off, vendors piled on. In Postgres alone, at least six vector DB extensions sprang up: `pgvector`, `pgvector.rs`, `pg_embedding`, `latern`, `pase`, `pgvectorscale`. It was a good ol’ Wild West. Ultimately, `pgvector`—fueled by AWS—triumphed, overshadowing latecomers from Oracle/MySQL/MariaDB. Now OLAP might be next in line.
 
@@ -108,7 +108,7 @@ When [`pgvector`](https://github.com/pgvector/pgvector) was just getting started
 
 As a seasoned data hand, I’m bundling all the PG+DuckDB integration [**extensions**](https://pigsty.io/ext/olap/) into simple RPMs/DEBs for [**major Linux distros**](https://pigsty.io/ext/pig/distro/)., fully compatible with official PGDG binaries. Anyone can install them and start playing with “DuckDB+PG” [in minutes](https://pigsty.io/ext/pig/) — call it a battleground where the new contenders can test their mettle on equal footing.
 
-> The missing package manager for PostgreSQL: [`pig`](https://ext.pgsty.com/pig/)
+> The missing package manager for PostgreSQL: [`pig`](https://pgext.cloud/pig/)
 
 | Name (Detail)                                                    |  Repo   | Description                                                    |
 |------------------------------------------------------------------|:-------:|----------------------------------------------------------------|
@@ -144,6 +144,6 @@ For database vendors, this is an epic collision; for businesses, it’s a chance
 
 - [PostgreSQL Is Eating the Database World](https://pigsty.io/pg/pg-eat-db-world/)
 - [Whoever Masters DuckDB Integration Wins the OLAP Database World](https://pigsty.io/pg/pg-duckdb/)
-- [Alibaba Cloud rds_duckdb: Homage or Ripoff?](https://mp.weixin.qq.com/s/3M6qQCsNUETEWcMwI3eFIQ)
+- [Alibaba-Cloud rds_duckdb: Homage or Ripoff?](https://mp.weixin.qq.com/s/3M6qQCsNUETEWcMwI3eFIQ)
 - [Is Distributed Databases a Mythical Need?](https://mp.weixin.qq.com/s/-eaCoZR9Z5srQ-1YZm1QJA)
 - [Andy Pavlo’s 2024 Database Recap](https://mp.weixin.qq.com/s/jgYDHdCqWDRDfoFkfs7W8Q)

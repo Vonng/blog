@@ -6,7 +6,7 @@ author: |
   [Ruohang Feng](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [WeChat](https://mp.weixin.qq.com/s/UeNibtbN8JlA1QIlio1mkw)
 summary: |
   Database users are developers, but what about developers' preferences, likes, and choices? Looking at StackOverflow survey results over the past six years, it's clear that in 2022, PostgreSQL has won all three categories, becoming literally the "most successful database"
-tags: [PostgreSQL,PG Ecosystem]
+tags: [PostgreSQL,PG-Ecosystem]
 ---
 
 ![](pg-is-best-1.jpg)
@@ -145,7 +145,7 @@ PostgreSQL's secret to virtuous victory is being **advanced** and **open source*
 
 ---------------
 
-## The Virtue of Open Source
+## The Virtue of Open-Source
 
 > **PG's "virtue" lies in open source**. A grandmaster-level open source project, the great achievement of global developer collaboration.
 >

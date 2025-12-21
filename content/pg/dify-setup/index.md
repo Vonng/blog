@@ -58,7 +58,7 @@ redis-dify:
   vars: { redis_cluster: redis-dify ,redis_password: 'redis.dify' ,redis_max_memory: 64MB }
 ```
 
-这里出于演示目的，我们全部使用单实例配置，你可以参考 Pigsty 文档部署 [高可用](https://ext.pgsty.com/zh/pgsql/arch) 的 PG 集群与 Redis 集群。总之，在定义完成后，使用以下命令创建 PG 和 Redis 。
+这里出于演示目的，我们全部使用单实例配置，你可以参考 Pigsty 文档部署 [高可用](https://pigsty.cc/docs/concept/ha) 的 PG 集群与 Redis 集群。总之，在定义完成后，使用以下命令创建 PG 和 Redis 。
 
 ```bash
 bin/pgsql-add  pg-meta                # create the dify database cluster

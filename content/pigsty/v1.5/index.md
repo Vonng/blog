@@ -18,8 +18,6 @@ Pigsty v1.5 正式发布！完整的 Docker 支持带来了丰富的应用生态
 
 其他改进包括：基础设施自我监控、更好的冷备份支持、兼容 Redis 与 Greenplum 的新 CMDB、ETCD 作为高可用 DCS、更好的日志收集与呈现。Github Star 突破 500！
 
-![](featured.jpg)
-
 
 --------
 

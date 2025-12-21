@@ -1,11 +1,11 @@
 ---
-title: "Incident Report: Uneven Load Avalanche"
+title: "Incident-Report: Uneven Load Avalanche"
 linkTitle: "Incident: Uneven Load Avalanche"
 date: 2018-04-08
 author: vonng
 summary: >
   Recently there was a perplexing incident where a database had half its data volume and load migrated away, but ended up being overwhelmed due to increased load.
-tags: [PostgreSQL,PG Administration,Incident Report]
+tags: [PostgreSQL,PG-Admin,Incident-Report]
 ---
 
 > Author: [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
@@ -74,10 +74,10 @@ Production environments used connection pools. Normally 5-10 actual database con
 
 #### Evidence
 
-##### Connection Pool Active Connections
+##### Connection-Pool Active Connections
 ![pgb-active-conn-5888653](download-failure-pgb-active-conn.png)
 
-##### Connection Pool Queued Connections
+##### Connection-Pool Queued Connections
 ![pgb-wait-conn](download-failure-pgb-wait-conn.png)
 
 ##### Database Backend Connections

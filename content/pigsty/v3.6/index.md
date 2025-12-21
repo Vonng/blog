@@ -50,7 +50,7 @@ Pigsty 已成为 PostgreSQL 发行版的发行版 —— 一个"**元发行版**
 
 可用扩展数量达到 **423 个**。PG18 beta2、OrioleDB、TimescaleDB、Citus、FerretDB & DocumentDB、DuckDB、Etcd 等均完成例行版本更新。
 
-扩展目录站点也已全面翻新，采用 Next.js 重构，观感大幅提升，新地址：[https://ext.pgsty.com](https://ext.pgsty.com)
+扩展目录站点也已全面翻新，采用 Next.js 重构，观感大幅提升，新地址：[https://pgext.cloud](https://pgext.cloud)
 
 ![](ext-catalog.jpg)
 

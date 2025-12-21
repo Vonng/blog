@@ -2,7 +2,11 @@
 title: "PostgreSQL 宏观查询优化之 pg_stat_statements"
 linkTitle: "PG查询优化：观宏之道"
 date: 2023-10-26
-author: 冯若航
+authors: [nikolay-samokhvalov]
+author: |
+  [Nikolay Samokhvalov](https://postgres.ai/) | 2024-02-07 | [Postgres Howto](https://gitlab.com/postgres-ai/postgresql-consulting/postgres-howtos)
+
+  译者：[Vonng](https://vonng.com)（February 13, 2024）
 summary: >
   查询优化是 DBA 的核心工作内容之一，本文介绍了如何使用 pg_stat_statements 提供的指标，针对 PostgreSQL 进行宏观查询优化。
 tags: [PostgreSQL, PG管理, 性能]

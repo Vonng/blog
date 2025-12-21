@@ -4,7 +4,7 @@ date: 2018-02-09
 author: vonng
 summary: >
   Backup is the foundation of a DBA's livelihood. With backups, there's no need to panic.
-tags: [PostgreSQL,PG Administration,Backup]
+tags: [PostgreSQL,PG-Admin,Backup]
 ---
 
 > Author: [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))

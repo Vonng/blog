@@ -4,7 +4,7 @@ date: 2017-06-09
 author: vonng
 summary: >
   Sometimes we want to record important metadata changes for audit purposes. PostgreSQL triggers can conveniently solve this need automatically.
-tags: [PostgreSQL,PG Development,Triggers]
+tags: [PostgreSQL,PG-Development,Triggers]
 ---
 
 > Author: [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))

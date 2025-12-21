@@ -7,7 +7,7 @@ summary: >
   The real business model of cloud: **"Cheap" EC2/S3 to attract customers, and fleece with "Expensive" EBS/RDS**   
 module: []
 categories: [Cloud]
-tags: [Cloud,CloudExit,EBS]
+tags: [Cloud, Cloud-Exit, EBS]
 ---
 
 We already answer the question: [Is RDS an Idiot Tax?](/cloud/rds/).
@@ -29,7 +29,7 @@ But when compared to the **hundredfold markup of public cloud block storage**, c
 
 ## TL; DR
 
-EC2/S3/EBS pricing serves as the anchor for all cloud services pricing. While the pricing for EC2/S3 might still be considered reasonable, EBS pricing is outright extortionate. The best block storage services offered by public cloud providers are essentially on par with off-the-shelf PCI-E NVMe SSDs in terms of performance specifications. Yet, compared to direct hardware purchases, **the cost of AWS EBS can be up to 60 times higher, and Alibaba Cloud's ESSD can reach up to 100 times higher.**
+EC2/S3/EBS pricing serves as the anchor for all cloud services pricing. While the pricing for EC2/S3 might still be considered reasonable, EBS pricing is outright extortionate. The best block storage services offered by public cloud providers are essentially on par with off-the-shelf PCI-E NVMe SSDs in terms of performance specifications. Yet, compared to direct hardware purchases, **the cost of AWS EBS can be up to 60 times higher, and Alibaba-Cloud's ESSD can reach up to 100 times higher.**
 
 Why is there such a staggering markup for plug-and-play disk hardware? Cloud providers fail to justify the exorbitant prices. When considering the design and pricing models of other cloud storage services, there's only one plausible explanation: **The high markup on EBS is a deliberately set barrier, intended to fleece cloud database customers**.
 
@@ -137,10 +137,10 @@ For instance, using RDS for PostgreSQL on AWS, the price for a 64C / 256GB db.m5
 |------------------------------------------|----------------------|----------------------|
 | Self-hosted IDC (Single Physical Server) | ¥75k / 5 years       | 1.5                  |
 | Self-hosted IDC (2-3 Server HA Cluster)  | ¥150k / 5 years      | 3.0 ~ 4.5            |
-| Alibaba Cloud RDS (On-demand)            | ¥87.36/hour          | 76.5                 |
-| Alibaba Cloud RDS (Monthly)              | ¥42k / month         | 50                   |
-| Alibaba Cloud RDS (Yearly, 15% off)      | ¥425,095 / year      | 42.5                 |
-| Alibaba Cloud RDS (3-year, 50% off)      | ¥750,168 / 3 years   | 25                   |
+| Alibaba-Cloud RDS (On-demand)            | ¥87.36/hour          | 76.5                 |
+| Alibaba-Cloud RDS (Monthly)              | ¥42k / month         | 50                   |
+| Alibaba-Cloud RDS (Yearly, 15% off)      | ¥425,095 / year      | 42.5                 |
+| Alibaba-Cloud RDS (3-year, 50% off)      | ¥750,168 / 3 years   | 25                   |
 | AWS (On-demand)                          | $25,817 / month      | 217                  |
 | AWS (1-year, no upfront)                 | $22,827 / month      | 191.7                |
 | AWS (3-year, full upfront)               | $120k + $17.5k/month | 175                  |
@@ -153,7 +153,7 @@ Comparing the costs of self-hosting versus using a cloud database:
 | Method                                                                                 | Cost Per Year (¥10k) |
 |----------------------------------------------------------------------------------------|----------------------|
 | Self-hosted Servers 64C / 384G / 3.2TB NVME SSD 660K IOPS (2-3 servers)                | 3.0 ~ 4.5            |
-| Alibaba Cloud RDS PG High-Availability pg.x4m.8xlarge.2c, 64C / 256GB / 3.2TB ESSD PL3 | 25 ~ 50              |
+| Alibaba-Cloud RDS PG High-Availability pg.x4m.8xlarge.2c, 64C / 256GB / 3.2TB ESSD PL3 | 25 ~ 50              |
 | AWS RDS PG High-Availability db.m5.16xlarge, 64C / 256GB / 3.2TB io1 x 80k IOPS        | 160 ~ 217            |
 
 > **RDS** pricing compared to self-hosting, see "[Is Cloud Database an idiot Tax?](/cloud/rds/)"

@@ -6,7 +6,7 @@ author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat Official Account](https://mp.weixin.qq.com/s/bx2dRxlrtLcM6AD2qsplQQ)
 summary: >
   Whether **production databases** should be containerized remains a controversial topic. From a DBA's perspective, I believe that **currently**, putting production databases in Docker is still a bad idea.
-tags: [PostgreSQL,PG Ecosystem]
+tags: [PostgreSQL,PG-Ecosystem]
 ---
 
 This article was **published by Stephan Schmidt @ KingOfCoders on Hacker News and sparked heated discussion**: Using PostgreSQL to replace Kafka, RabbitMQ, ElasticSearch, MongoDB, and Redis is a viable approach that can dramatically reduce system complexity and maximize agility.
@@ -115,7 +115,7 @@ PostgreSQL isn't just a simple relational database but a data management abstrac
 
 [Why PostgreSQL Has an Unlimited Future?](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484591&idx=1&sn=a6ab13d93bfa26fca969ba163b01e1d5&scene=21#wechat_redirect)
 
-[Better Open Source RDS Alternative: Pigsty](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485518&idx=1&sn=3d5f3c753facc829b2300a15df50d237&scene=21#wechat_redirect)
+[Better Open-Source RDS Alternative: Pigsty](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485518&idx=1&sn=3d5f3c753facc829b2300a15df50d237&scene=21#wechat_redirect)
 
 
 

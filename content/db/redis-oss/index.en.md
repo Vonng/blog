@@ -1,12 +1,12 @@
 ---
-title: Redis Going Non-Open Source is a Disgrace to "Open Source" and Public Cloud
-linkTitle: Redis Non-Open Source is a Disgrace
+title: Redis Going Non-Open-Source is a Disgrace to "Open-Source" and Public Cloud
+linkTitle: Redis Non-Open-Source is a Disgrace
 date: 2024-03-25
 author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat](https://mp.weixin.qq.com/s/W5kOLxeJCIHjnWbIHc1Pzw)
 summary: >
   Redis "going non-open source" is not a disgrace to Redis, but a disgrace to "open source/OSI" and even more so to public cloud. What truly matters has always been software freedom, while open source is just one means to achieve software freedom.
-tags: [database,open source,Redis]
+tags: [Database, Open-Source, Redis]
 ---
 
 Recently, Redis changed its license, causing controversy: starting from version 7.4, it uses RSALv2 and SSPLv1, no longer meeting OSI's definition of "open source software." But don't get it wrong: **Redis "going non-open source" is not a disgrace to Redis, but a disgrace to "open source/OSI"** — it reflects the obsolescence of open source [**organizations**](https://opensource.org/) and ideologies.
@@ -20,7 +20,7 @@ What truly matters has always been software freedom, while "open source" is just
 
 ------
 
-## Open Source Software Changing Licenses
+## Open-Source Software Changing Licenses
 
 > "**I want to be frank: for years, we've been like fools while they made a fortune from what we developed**."
 >
@@ -127,7 +127,7 @@ Where there's force, there's reaction force. The rise of cloud software will tri
 
 -------------------
 
-### Modifying Open Source Licenses
+### Modifying Open-Source Licenses
 
 The most common reaction by software communities to cloud service challenges is modifying licenses, like Grafana, MinIO, Pigsty changing to AGPLv3, or like Redis, MongoDB, ElasticSearch changing to SSPL, or using dual licensing/BSL approaches. The general direction is consistent — **redefining community boundaries, directly excluding competitors and enemies from the community.**
 

@@ -5,7 +5,7 @@ author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: >
   Snapshot isolation does most of the heavy lifting in PG, but locks still matter. Here’s a practical guide to table locks, row locks, intention locks, and `pg_locks`.
-tags: [PostgreSQL, Development, Lock]
+tags: [PostgreSQL, PG-Development, Lock]
 ---
 
 PostgreSQL relies on **snapshot isolation (SI)** for concurrency and **two-phase locking (2PL)** as a supporting act. DML (`SELECT/INSERT/UPDATE/DELETE`) uses SSI; DDL (`CREATE TABLE` etc.) still uses 2PL. Understanding locks is essential when diagnosing blocking, deadlocks, or weird error messages.

@@ -4,7 +4,7 @@ date: 2018-07-07
 author: "vonng"
 summary: >
   Detailed understanding of trigger management and usage in PostgreSQL
-tags: [PostgreSQL, PG Development, Triggers]
+tags: [PostgreSQL, PG-Development, Triggers]
 ---
 
 ## Overview

@@ -3,7 +3,7 @@ title: "Alicloud’s rds_duckdb: Tribute or Rip-Off?"
 summary: >
   Does bolting DuckDB onto RDS suddenly make open-source Postgres ‘trash’? Business and open source should be symbiotic. If a vendor only extracts without giving back, the community will spit it out."
 date: 2025-03-06
-tags: [PostgreSQL,PG生态]
+tags: [PostgreSQL, PG-Ecosystem]
 categories: [Blog]
 ---
 
