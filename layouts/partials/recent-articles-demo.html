@@ -1,24 +1,104 @@
-{{ $recentArticles := 5 }}
+{{ $recentArticles := 24 }}
 {{ $showMoreLinkDest := "/cloud/" }}
 {{ if index .Site.Params.homepage "showRecentItems" }}
   {{ $recentArticles = .Site.Params.homepage.showRecentItems }}
 {{ end }}
 
+<div class="flex items-center justify-between mt-8 mb-6">
+  <h2 class="text-2xl font-extrabold">{{ i18n "shortcode.recent_articles" | emojify }}</h2>
+  <button
+    id="home-layout-switch-btn"
+    class="p-1.5 text-neutral-100 hover:text-white transition-colors"
+    title="{{ i18n "layout.switch" | default "Switch layout" }}"
+    aria-label="{{ i18n "layout.switch" | default "Switch layout" }}">
+    <svg id="home-layout-icon-list" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+    </svg>
+    <svg id="home-layout-icon-card" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-4zM14 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"/>
+    </svg>
+    <svg id="home-layout-icon-card-wide" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 15a1 1 0 011-1h14a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-4z"/>
+    </svg>
+  </button>
+</div>
 
-<h2 class="mt-8 text-2xl font-extrabold mb-10">{{ i18n "shortcode.recent_articles" | emojify }}</h2>
+{{/* List View (hidden by default) */}}
+<div id="home-layout-list" class="hidden h-full">
+  <section class="space-y-10 w-full">
+    {{ range first $recentArticles (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+      {{ partial "article-link/simple.html" . }}
+    {{ end }}
+  </section>
+</div>
 
-
-<div id="CardViewProse" class="h-full">
+{{/* Card View (default - visible) */}}
+<div id="home-layout-card" class="h-full">
   {{ partial "recent-articles/cardview.html" . }}
 </div>
 
-<div id="CardViewScreenWidth" class="hidden h-full">
+{{/* Card View Wide (hidden) */}}
+<div id="home-layout-card-wide" class="hidden h-full">
   {{ partial "recent-articles/cardview-fullwidth.html" . }}
 </div>
 
-<div id="NormalView" class="hidden h-full">
-  {{ partial "recent-articles/list.html" . }}
-</div>
+{{/* Layout Switch Script */}}
+<script>
+(function() {
+  const layouts = ['list', 'card', 'card-wide'];
+  const storageKey = 'home-layout-preference';
+
+  function getStoredLayout() {
+    try {
+      return localStorage.getItem(storageKey) || 'card';
+    } catch (e) {
+      return 'card';
+    }
+  }
+
+  function setStoredLayout(layout) {
+    try {
+      localStorage.setItem(storageKey, layout);
+    } catch (e) {}
+  }
+
+  function updateIcons(layout) {
+    document.getElementById('home-layout-icon-list').classList.toggle('hidden', layout !== 'list');
+    document.getElementById('home-layout-icon-card').classList.toggle('hidden', layout !== 'card');
+    document.getElementById('home-layout-icon-card-wide').classList.toggle('hidden', layout !== 'card-wide');
+  }
+
+  function switchLayout(newLayout) {
+    layouts.forEach(l => {
+      const el = document.getElementById('home-layout-' + l);
+      if (el) {
+        el.classList.toggle('hidden', l !== newLayout);
+      }
+    });
+    updateIcons(newLayout);
+    setStoredLayout(newLayout);
+  }
+
+  function getNextLayout(current) {
+    const idx = layouts.indexOf(current);
+    return layouts[(idx + 1) % layouts.length];
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.getElementById('home-layout-switch-btn');
+    if (!btn) return;
+
+    let currentLayout = getStoredLayout();
+    switchLayout(currentLayout);
+
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      currentLayout = getNextLayout(currentLayout);
+      switchLayout(currentLayout);
+    });
+  });
+})();
+</script>
 
 {{ if .Site.Params.homepage.showMoreLink | default false }}
   {{ if index .Site.Params.homepage "showRecentItems" }}

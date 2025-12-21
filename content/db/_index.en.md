@@ -1,6 +1,7 @@
 ---
 title: Database Guru
-weight: 20
+weight: 10
 showSummary: true
 tags: []
+showLayoutSwitch: true
 ---

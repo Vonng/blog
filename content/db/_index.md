@@ -6,5 +6,6 @@ icon: fas fa-database
 module: [BLOG]
 categories: [Database]
 tags: []
+showLayoutSwitch: true
 ---
 

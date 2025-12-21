@@ -14,7 +14,7 @@ enableCodeCopy = true
 
 replyByEmail = false
 
-mainSections = ["pg","db", "cloud"]
+mainSections = ["pigsty", "pg", "db", "cloud"]
 # robots = ""
 
 disableImageOptimization = false
@@ -49,7 +49,7 @@ fingerprintAlgorithm = "sha512" # Valid values are "sha512" (default), "sha384",
   layout = "custom" # valid options: page, profile, hero, card, background, custom
   homepageImage = "/img/wusu.jpg" # used in: hero, and card
   showRecent = false
-  showRecentItems = 12
+  showRecentItems = 24
   showMoreLink = true
   showMoreLinkDest = "cloud"
   cardView = true

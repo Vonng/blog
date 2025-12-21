@@ -16,19 +16,24 @@ pageRef = "about"
 weight = 3
 
 [[main]]
+name = "PIGSTY"
+pageRef = "pigsty"
+weight = 5
+
+[[main]]
 name = "PGSQL"
 pageRef = "pg"
-weight = 4
+weight = 6
 
 [[main]]
 name = "云计算"
 pageRef = "cloud"
-weight = 5
+weight = 7
 
 [[main]]
 name = "数据库"
 pageRef = "db"
-weight = 6
+weight = 8
 
 
 [[main]]
@@ -55,15 +60,21 @@ weight = 10
 
 [[main]]
   parent = "专栏"
+  name = "Pigsty 发行版"
+  pageRef = "pigsty"
+  weight = 14
+
+[[main]]
+  parent = "专栏"
   name = "行万里路"
   pageRef = "trip"
-  weight = 14
+  weight = 15
 
 [[main]]
   parent = "专栏"
   name = "闲言随笔"
   pageRef = "misc"
-  weight = 15
+  weight = 16
 
 
 [[main]]
@@ -73,7 +84,7 @@ weight = 10
 [[main]]
   name = "Pigsty, 开源 PG RDS"
   parent = "作品"
-  url = "https://pgsty.com/zh/"
+  url = "https://pigsty.cc"
   weight = 50
 
 [[main]]

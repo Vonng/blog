@@ -76,3 +76,9 @@ shortcode:
 
 recent:
   show_more: "Show More"
+
+layout:
+  switch: "Switch layout"
+  list: "Layout"
+  card: "Layout"
+  card_wide: "Layout"

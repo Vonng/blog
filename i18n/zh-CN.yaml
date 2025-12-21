@@ -1,5 +1,5 @@
 global:
-  language: "Chinese"
+  language: "CN"
 
 article:
   anchor_label: "锚点"
@@ -63,3 +63,9 @@ shortcode:
 
 recent:
   show_more: "显示更多"
+
+layout:
+  switch: "切换"
+  list: "切换"
+  card: "切换"
+  card_wide: "切换"
