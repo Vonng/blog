@@ -5,7 +5,7 @@ date: 2025-12-20
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信原文]https://mp.weixin.qq.com/s/SBZRQCCZ7PmsbDSgcRaqBQ)
 summary: >
-  互联网的 MySQL 就像中国的白酒：明明很难喝，却在文化规训下成了琼浆玉液。本质都是服从测试——你愿意为了合群而接受不适吗？
+  互联网的 MySQL 就像中国的白酒：明明很难喝，却在文化规训下成了琼浆玉液。本质都是一种服从测试。
 series: [MySQL走好]
 tags: [MySQL,数据库]
 ---

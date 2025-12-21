@@ -1,5 +1,5 @@
 ---
-title: "Column: PostgreSQL Mage"
+title: "Column: Postgres Mage"
 weight: 1
 date: 2025-08-08
 summary: Navigation of articles about PostgreSQL development, administration, principles, ecosystem, tools, architecture design, performance optimization, troubleshooting, and more.

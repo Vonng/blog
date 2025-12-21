@@ -4,7 +4,7 @@ date: 2025-12-08
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信公众号](https://mp.weixin.qq.com/s/A7bAFSAk3dte7QfXu5qHQw)
 summary: >
-  MinIO 进入维护模式，有什么替代品？RustFS 是否可以替代 MinIO？老冯替你测一把。
+  MinIO 进入维护模式，有什么替代品？RustFS 是否可以替代 MinIO？老冯替你测一把，并打好包供尝鲜。
 tags: [数据库,MinIO]
 ---
 

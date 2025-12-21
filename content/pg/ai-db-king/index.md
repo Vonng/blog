@@ -5,7 +5,7 @@ date: 2025-12-01
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/)）
 summary: >
-  上下文窗口经济学，多元持久化的问题，以及零胶水架构的胜利，让 PostgreSQL 成为 AI 时代的数据库之王。
+  上下文窗口经济学，多元持久化的问题，以及零胶水架构的胜利，让 PG 成为 AI 时代的数据库之王。
 tags: [PostgreSQL, AI, 数据库]
 ---
 

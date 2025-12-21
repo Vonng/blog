@@ -5,7 +5,7 @@ date: 2025-12-17
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信原文](https://mp.weixin.qq.com/s/RLN0DMzfvSibkGgq2VRcoQ)
 summary: >
-  Victoria 是朴实无华的强悍 —— 用几分之一的资源，实现 Prometheus + Loki 几倍的效果，效果非常炸裂。这一部分已经完工，发布一个 Beta 版本让有需要的朋友先耍一耍。
+  Victoria 是朴实无华的强悍 —— 用几分之一的资源，实现 Prometheus + Loki 几倍的效果，效果非常炸裂。
 tags: [Victoria,可观测性]
 ---
 

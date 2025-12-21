@@ -4,7 +4,7 @@ date: 2025-11-27
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
 summary: >
-  如何打造一个立足中国，面向全球的 PostgreSQL 数据库发行版
+  如何打造一个立足中国，面向全球的 PostgreSQL 数据库发行版？在第八届中国PG生态大会上的主题演讲。
 tags: [PostgreSQL,Pigsty]
 ---
 
