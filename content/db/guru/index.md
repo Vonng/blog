@@ -9,8 +9,11 @@ tags: [数据库]
 
 > [微信公众号](https://mp.weixin.qq.com/s/Q0OtrpEhF24XN7gwMjbSRA)
 
-### 国产信创篇
+### 自主可控篇
 
+- 2025-11-29 [打造一个立足中国，面向世界的PG数据库发行版](https://mp.weixin.qq.com/s/kYl31hRXDvE65i_eewJ68A)
+- 2025-11-22 [开源供应链信任：我不愿寄希望于维护者缺席的项目上](https://mp.weixin.qq.com/s/ka7Akl6BeG_holMwEsdC9w)
+- 2025-08-15 [从PG“断供”看软件供应链中的信任问题](https://mp.weixin.qq.com/s/SBVcO8fi5mK1Qnb3AWbqxQ)
 - 2025-02-28 [国产数据库里有能打的吗？](https://mp.weixin.qq.com/s/iVgV_sT5V6AE1v4thJD8ow)
 - 2024-11-18 [这么吹国产数据库，听的尴尬癌都要犯了](https://mp.weixin.qq.com/s/MrRsK5lqZsCZwCUnnO1VMQ)
 - 2024-10-25 [开源皇帝Linus清洗整风](https://mp.weixin.qq.com/s/IcmXCMyflqGlAPA8vFzyyA)
@@ -58,6 +61,9 @@ tags: [数据库]
 
 ### PG生态篇
 
+- 2025-12-01 [为什么PG将主宰AI时代的数据库](https://mp.weixin.qq.com/s/dkQaj4xt11uHrwGK6Dm4QA)
+- 2025-11-29 [打造一个立足中国，面向世界的PG数据库发行版](https://mp.weixin.qq.com/s/kYl31hRXDvE65i_eewJ68A)
+- 2025-11-25 [PostgreSQL 18 可以上生产用了吗？](https://mp.weixin.qq.com/s/immOsWr2lkqWADx_6yOGCQ)
 - 2025-05-16 [PGCon.dev闪电演讲，硬控PG大佬5分钟](https://mp.weixin.qq.com/s/rZ4lcsdld1_Fxck77KRIvw)
 - 2025-04-09 [PG扩展峰会日程出炉，蒙特利尔见](https://mp.weixin.qq.com/s/IMB3_-_-clTGGz79Zn3jUw)
 - 2025-04-06 [OrioleDB 奥利奥数据库来了！](https://mp.weixin.qq.com/s/QG7_UyT08fNFiBj6qujSEA)
@@ -121,6 +127,9 @@ tags: [数据库]
 
 ### 其他DB篇
 
+- 2025-12-17 [Victoria：吊打业界的可观测性全家桶来了](https://mp.weixin.qq.com/s/RLN0DMzfvSibkGgq2VRcoQ)
+- 2025-12-08 [MinIO 已死，谁能接盘？](https://mp.weixin.qq.com/s/A7bAFSAk3dte7QfXu5qHQw)
+- 2025-12-21 [MinIO 已死](https://mp.weixin.qq.com/s/aBUwEMxZ_xKmHisaaT4uWw)
 - 2024-09-04 [MongoDB没有未来：“好营销”救不了烂芒果](https://mp.weixin.qq.com/s/I3ug7Qv9jz3-uD3x_N1jKw)
 - 2024-09-03 [《黑历史：Mongo》：现由PostgreSQL驱动](https://mp.weixin.qq.com/s/e3_32Neoy5RVRBSozsa_7A)
 - 2024-09-02 [PostgreSQL可以替换微软SQL Server吗？](https://mp.weixin.qq.com/s/c2TmMo0DflkSUli1BsLthQ)
