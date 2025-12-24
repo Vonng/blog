@@ -1,5 +1,5 @@
 ---
-title: How Can MySQL's Correctness Be This Garbage?
+title: "MySQL's ACID is a real mess"
 date: 2023-12-28
 hero: /hero/bad-mysql.jpg
 author: |

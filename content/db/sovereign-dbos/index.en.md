@@ -1,5 +1,5 @@
 ---
-title: "What Kind of Self-Reliance Do Infrastructure Software Need?"
+title: "What Kind of Self-Reliance Do Infra Software Need?"
 date: 2023-08-31
 hero: /hero/sovereign-dbos.jpg
 author: vonng

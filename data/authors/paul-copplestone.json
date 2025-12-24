@@ -1,0 +1,10 @@
+{
+  "name": "Paul Copplestone",
+  "bio": "CEO & Co-founder @ Supabase",
+  "image": "img/paul-copplestone.jpg",
+  "social": [
+    { "link": "https://supabase.com" },
+    { "twitter": "https://twitter.com/kiwicopple" },
+    { "github": "https://github.com/kiwicopple" }
+  ]
+}

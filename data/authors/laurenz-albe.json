@@ -1,0 +1,9 @@
+{
+  "name": "Laurenz Albe",
+  "bio": "Principal Consultant @ Cybertec, PostgreSQL Major Contributor",
+  "image": "img/laurenz-albe.jpg",
+  "social": [
+    { "link": "https://www.cybertec-postgresql.com/en/author/laurenz-albe/" },
+    { "github": "https://github.com/laurenz" }
+  ]
+}

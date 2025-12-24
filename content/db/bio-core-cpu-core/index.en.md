@@ -2,8 +2,7 @@
 title: Optimize Bio Cores First, CPU Cores Second
 linkTitle: Optimize Bio Cores First, CPU Cores Second
 date: 2024-09-07
-author: |
-  [DHH](https://world.hey.com/dhh/optimize-for-bio-cores-first-silicon-cores-second-112a6c3f) | [Translator: Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat Official Account]()
+authors: ["dhh"]
 summary: >
   Programmers are expensive, scarce biological computing cores, the anchor point of software costs — please prioritize optimizing biological cores before optimizing CPU cores.
 module: []

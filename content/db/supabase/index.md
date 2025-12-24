@@ -18,7 +18,7 @@ Pigsty 可以帮助您在自己的服务器上（物理机/虚拟机/云服务�
 
 --------
 
-## 简短版本 [#short-version]
+## 简短版本
 
 [准备](https://doc.pgsty.com/zh/prepare) [Linux](https://doc.pgsty.com/zh/prepare/linux)，执行 Pigsty [标准安装](https://doc.pgsty.com/zh/install/) 流程，选择 `supabase` 配置模板，依次执行：
 

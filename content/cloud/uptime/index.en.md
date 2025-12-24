@@ -2,8 +2,7 @@
 title: "Cloud-Exit High Availability Secret: Rejecting Complexity Masturbation"
 hero: /hero/uptime.jpg
 date: 2024-01-10
-author: |
-  [David Heinemeier Hansson](https://world.hey.com/dhh) | Translated by [Vonng](https://vonng.com/en/)
+authors: ["dhh"]
 summary: |
   Programmers are drawn to complexity like moths to flame. The more complex the system architecture diagram, the greater the intellectual masturbation high. Steadfast resistance to this behavior is a key reason for DHH's success in cloud-free availability.
 tags: [Cloud-Exit]
