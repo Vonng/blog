@@ -1,0 +1,10 @@
+{
+  "name": "Andy Pavlo",
+  "bio": "Associate Professor at Carnegie Mellon University, Database Researcher",
+  "image": "img/andy-pavlo.jpg",
+  "social": [
+    { "link": "https://www.cs.cmu.edu/~pavlo/" },
+    { "x-twitter": "https://twitter.com/andy_pavlo" },
+    { "github": "https://github.com/apavlo" }
+  ]
+}

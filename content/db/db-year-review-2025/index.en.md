@@ -1,6 +1,8 @@
 ---
 title: "Data 2025: The year in review with Mike Stonebraker"
 date: 2025-12-24
+showAuthor: false
+authors: [andy-pavlo, mike-stonebraker, vonng]
 original: "https://www.dbos.dev/webcast-2025-in-review-with-mike-stonebraker-and-andy-pavlo"
 summary: >
   A conversation between Mike Stonebraker (MIT CSAIL, Turing Award Winner, Creator of PostgreSQL), Andy Pavlo (Carnegie Mellon University), and the DBOS team.
@@ -404,3 +406,126 @@ Want to wish you guys and everybody online a great holiday season and happy new 
 ---
 
 *End of transcript.*
+
+--------
+
+# Summary & Translator's Commentary
+
+> *The following section contains the translator's (Vonng's) summary and commentary on the key points discussed in this conversation.*
+
+## Mike Stonebraker's Core Views
+
+### 1. Skeptical of LLMs for Text-to-SQL
+
+**Summary:** Testing LLMs on real enterprise data warehouses yields near-zero accuracy. Four key reasons: non-public data, idiosyncratic terminology, semantic overlap, and complex queries. Mike advocates wrapping data sources in SQL and letting query optimizers solve the problem rather than relying on LLMs.
+
+**Commentary:** This is a sobering reality check on Text-to-SQL hype. Academia and media tout 60-90% accuracy, but that's on toy datasets. In real enterprise environments—like MIT's data warehouse where "Course 6.2" means "Computer Science"—LLMs immediately fall apart.
+
+This reveals a fundamental limitation of LLMs: **they're pattern matchers, not reasoning engines**. The "dark knowledge" of enterprise data—implicit business rules, legacy terminology—isn't in the training corpus, so LLMs are helpless. Mike's "SQL wrapper + query optimizer" approach essentially admits: **structured problems still need structured solutions**.
+
+---
+
+### 2. Agentic AI Needs ACID, Database Technology Will Shine
+
+**Summary:** Current agentic AI is "read-only"; it will soon become "read-write." Once updates are involved (like online shopping flows), you need transaction semantics—atomicity, durability, rollback capability. This is exactly what database technology has solved for decades.
+
+**Commentary:** This is Mike's most prescient observation. Current AI Agent frameworks are essentially "optimistic execution"—assuming everything goes well, retry on failure. This is a disaster in real business scenarios.
+
+Mike's bicycle shop example is clear: check inventory → verify credit → collect payment → ship product. Each step can fail, and failure requires rolling back previous operations. This isn't a new problem—**this is exactly what ACID transactions solve, just wearing an AI costume**.
+
+I fully agree with this assessment: **in the next 1-2 years, database technology (especially workflow transactions, Saga patterns) will become core infrastructure for Agentic AI**. DBOS has positioned itself well here.
+
+---
+
+### 3. Postgres Has Won, Betting on Postgres is Correct
+
+**Summary:** All major cloud vendors have chosen the Postgres wire protocol. Postgres's governance model is "open source as it should be"—community-owned, no single enterprise in control. Oracle's acquisition of MySQL soured community trust; Postgres benefited.
+
+**Commentary:** This is a statement of fact, not a prediction. Postgres has indeed won—at least in the open-source relational database space. AWS Aurora, Google AlloyDB, Azure Horizon DB, Supabase, Neon... everyone is playing in the Postgres ecosystem.
+
+As the creator of Postgres, Mike saying this might seem self-serving, but objectively he's not wrong. MySQL under Oracle has indeed declined—this year Oracle laid off almost the entire MySQL team.
+
+One addition: **Postgres won the "protocol war," but this also means the PG distribution war is about to begin**.
+
+---
+
+### 4. Vector Databases are "In-Memory Graph Indexes + Relational Blobs," Narrow Moat
+
+**Summary:** Vector databases are essentially JSON blobs with graph-structured indexes. Two major limitations: only works in memory (performance cliff when data is large), updating indexes is a nightmare.
+
+**Commentary:** This is the most precise takedown of vector databases. Pinecone, Weaviate, Milvus are hyped, but Mike's one sentence bursts the bubble: **you're doing nothing more than what a Postgres extension can do**.
+
+Indeed—after pgvector emerged, most scenarios don't need specialized vector databases. Mike says "99% of people can use pgvector," and Andy agrees.
+
+Vector database companies' way out: either achieve extreme performance (serving that 1% of large-scale scenarios), or transform into complete databases (add transactions, add SQL)—but the latter means competing head-on with Postgres, essentially a dead end.
+
+---
+
+## Andy Pavlo's Core Views
+
+### 1. Vibe Coding is Real, LLMs are Changing Software Development
+
+**Summary:** Andrej Karpathy's "vibe coding" concept is becoming reality. CMU's course projects can now be almost entirely solved by LLMs. Code quality is about the same as human-written—because both learned from the same code corpus.
+
+**Commentary:** Andy is 40 years younger than Mike; his optimism reflects the new generation of researchers' mindset. Vibe coding is indeed happening—the proliferation of GitHub Copilot, Cursor, and Claude Code proves it.
+
+But Andy has a key caveat often overlooked: **vibe coding only works for greenfield projects**. He himself admits 95% of enterprise programmers aren't doing greenfield development. Those decades of accumulated legacy systems—repeatedly "updated, maintained, hacked"—LLMs are equally helpless with.
+
+So vibe coding's real impact may be: **accelerated new application development, but legacy system maintenance remains a nightmare**. This will exacerbate the polarization between new and old—more new systems written with AI, old systems increasingly untouchable.
+
+---
+
+### 2. Database Auto-Tuning Needs LLM + Specialized Algorithms Combined
+
+**Summary:** Specialized tuning algorithms are 2-3x better than LLMs, but LLMs are much faster (15 minutes vs 50 minutes). The future direction is using "reasoning agents" to orchestrate—sometimes calling LLMs, sometimes specialized algorithms.
+
+**Commentary:** This is Andy's post-mortem summary as OtterTune's founder. He's clear about why OtterTune failed: **form factor problem**—requiring user authorization to connect, passive observation rather than active intervention. The new approach solves this pain point through a proxy model.
+
+The "LLM + specialized algorithm" combined approach is very pragmatic: LLMs excel at quickly giving "good enough" answers, specialized algorithms excel at fine-tuning, using reasoning agents to orchestrate both is entirely feasible in engineering.
+
+However, I've always had a question: **does database tuning really need to be this complex?** Most Postgres performance issues can be identified by an experienced DBA in 10 minutes. With a distribution like Pigsty, important parameters are already automatically tuned to "good enough for production"—what's the marginal gain of going from "good enough" to "optimal"?
+
+---
+
+### 3. Core of CS Education Unchanged: Understand Fundamentals
+
+**Summary:** LLMs can solve CMU's assignments, but students still need to understand fundamentals—ACID, data structures, algorithmic complexity, concurrency control. Languages and tools will change, fundamentals don't.
+
+**Commentary:** An old truism, but worth repeating in the AI era. Andy is right: **if you don't understand what the code is doing, it doesn't matter how much code the LLM generates**.
+
+Mike is more blunt: people from Control Data Institute (vocational training) will struggle, but those from top universities will be fine.
+
+The implication: **programming is bifurcating—top talent designs systems, AI writes code, elite experts multiply their effectiveness by tens of times, ordinary programmers are eliminated**.
+
+Brutal, but possibly the real future.
+
+---
+
+### 4. Vector Database Moat Isn't Wide, pgvector is Enough for 99%
+
+**Summary:** Vector indexes are just indexes; Postgres added them within a year. Vector databases either specialize (secondary index) or add transactions/SQL to become complete databases—the latter means competing directly with Postgres.
+
+**Commentary:** Andy completely agrees with Mike on this point—indicating this is the database community's consensus.
+
+------
+
+## Comparison of Views
+
+| Topic | Mike Stonebraker | Andy Pavlo |
+|-------|------------------|------------|
+| **Attitude toward LLMs** | Pessimistic, nearly useless in enterprise data scenarios | Optimistic, valuable in code generation and auto-tuning |
+| **Future direction** | Database technology will dominate Agentic AI infrastructure | LLM + specialized algorithms, reasoning agent orchestration |
+| **Postgres** | Has won, betting on it is correct | Agrees, but notes backend needs modernization (OrioleDB) |
+| **Vector databases** | Narrow moat, essentially in-memory graph indexes | Agrees, 99% can use pgvector |
+| **CS education** | Top universities fine, vocational training graduates will struggle | Fundamentals unchanged, but barrier to building things is lowered |
+| **Career motivation** | Avoiding Vietnam War draft | Avoiding prison |
+
+------
+
+## My Overall Assessment
+
+**Mike Stonebraker** represents "old-school wisdom"—50 years of database experience keeps him vigilant against technology hype. His skepticism isn't from not understanding AI, but from having seen too many boom-bust cycles. His judgment that **Agentic AI needs ACID databases** is very precise—possibly the most valuable insight from this conversation.
+
+**Andy Pavlo** is the "pragmatic new generation"—neither blindly optimistic nor clinging to old views. He acknowledges why OtterTune failed and adjusted strategy to OEM integration; he sees vibe coding's real impact but admits it only works for greenfield projects. As an academic, he maintains a rare commercial sensibility.
+
+The consensus between them is more important than their differences: **Postgres has won, vector databases are overrated, fundamentals matter more than tools, AI won't replace people who understand systems**.

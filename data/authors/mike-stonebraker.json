@@ -1,0 +1,8 @@
+{
+  "name": "Mike Stonebraker",
+  "bio": "Turing Award Winner, Creator of PostgreSQL, MIT CSAIL",
+  "image": "img/mike-stonebraker.jpg",
+  "social": [
+    { "link": "https://en.wikipedia.org/wiki/Michael_Stonebraker" }
+  ]
+}
