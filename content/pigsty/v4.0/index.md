@@ -1,7 +1,7 @@
 ---
-title: "Pigsty v4.0：可观测性与安全性史诗改进"
-linkTitle: "Pigsty v4.0 发布注记"
-date: 2025-12-19
+title: "Pigsty v4.0b2：可观测性与安全性史诗改进"
+linkTitle: "Pigsty v4.0b2 发布注记"
+date: 2025-12-25
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v4.0.0)）
 summary: >
@@ -16,8 +16,13 @@ tags: [Pigsty]
 
 --------
 
-## v4.0.0-b1
+## v4.0.0-b2
 
+```bash
+curl https://pigsty.cc/get | bash
+```
+
+GitHub Release: https://github.com/pgsty/pigsty/releases/tag/v4.0.0-b2
 
 ### 亮点
 
@@ -26,6 +31,7 @@ tags: [Pigsty]
 - Pigsty UI 集成，带来浑然一体的 UI 使用体验。
 - 全局安全性提升，防火墙 SELinux 权限加固
 - Docker 容器版本，可供快速评估试用
+- 提供瞬间克隆数据库的能力
 
 ### 软件版本
 
@@ -39,11 +45,14 @@ tags: [Pigsty]
 - duckdb            : 1.4.3
 - rclone            : 1.72.1
 - pev2              : 1.19.0
-- pg_exporrter      : 1.1.0
+- pg_exporter       : 1.1.0
 - pig               : 0.8.0
 - rclone            : 1.72.1
 - genai-toolbox     : 0.23.0
 - minio             : 20251203120000
+- uv : new package
+- claude code switch : 2.0.76
+
 
 **PG 扩展软件包**
 
@@ -52,7 +61,7 @@ tags: [Pigsty]
 - [pg_ai_query](https://github.com/benodiwal/pg_ai_query): 0.1.1 新扩展
 - timescaledb    : 2.23.1  -> 2.24.0
 - pg_search      : 0.20.0  -> 0.20.4
-- pg_duckdb      : 1.1.0-1 -> 1.1.0-2 ，官方正式发布版本
+- pg_duckdb      : 1.1.0   -> 1.1.1 ，官方正式发布版本
 - pg_biscuit     : 1.0     -> 2.0.1   ，仓库重命名
 - pg_convert     : 0.0.4   -> 0.0.5   ，移除 PG 13 支持
 - pgdd           : 0.6.0   -> 0.6.1   ，移除 PG 13 支持
@@ -62,8 +71,10 @@ tags: [Pigsty]
 - pg_enigma      : 0.4.0   -> 0.5.0
 - wrappers       : 0.5.6   -> 0.5.7
 - pg_vectorize   : 0.25.0  -> 0.26.0
+- vchord_bm25    : 0.2.2   -> 0.3.0
+- pg_timeseries  : 0.1.7   -> 0.1.8
 
-修复 PG 18 Deb 包：pg_vectorize ,pg_tiktoken ,pg_tzf ,pglite_fusion ,pgsmcrypto ,pgx_ulid ,plprql
+修复 PG 18 Deb 包：pg_vectorize ,pg_tiktoken ,pg_tzf ,pglite_fusion ,pgsmcrypto ,pgx_ulid ,plprql ,pg_summarize ,supautils
 
 
 ### 可观测性
@@ -87,6 +98,7 @@ tags: [Pigsty]
 - `log_connections`，oltp/olap 开启认证日志，crit 开启全部日志。
 - `maintenance_io_concurrency` 设置为 100，如果使用 SSD
 - `effective_io_concurrency` 从 1000 减小为 200
+- `file_copy_method` 参数为 PG18 默认设置为 `clone`，提供瞬间克隆数据库的能力
 - 对于 PG17+，如果 `pg_checksums` 开关关闭，在 patroni 初始化集群时显式禁用校验和
 - 修复了 `duckdb.allow_community_extensions` 总是生效的问题
 - 允许通过 `node_firewall_intranet` 指定 HBA 信任的 “内网网段”
@@ -100,7 +112,7 @@ tags: [Pigsty]
 - 本地软件仓库现在放置于 /data/nginx/pigsty, /www 现在作为软链接指向 /data/nginx 确保兼容。
 - DNS 解析记录现在放置于 `/infra/hosts` 目录下，解决了 Ansible SELinux 竞态问题
 - pg_remove/pg_pitr 移除 etcd 元数据的任务，现在不再依赖 admin_ip 管理节点，而在 etcd 集群上执行
-
+- 36 节点仿真模板 simu 简化为 20 节点的版本。
 
 ### 安全改进
 

@@ -17,8 +17,14 @@ tags: [Pigsty]
 
 --------
 
-## v4.0.0-b1
+## v4.0.0-b2
 
+
+```bash
+curl https://pigsty.cc/get | bash
+```
+
+GitHub Release: https://github.com/pgsty/pigsty/releases/tag/v4.0.0-b2
 
 ### Highlights
 
@@ -27,6 +33,7 @@ tags: [Pigsty]
 - Pigsty UI integrated for a cohesive user experience.
 - Global security enhancements — firewall, SELinux, permission hardening
 - Docker container version available for quick evaluation
+- Instat database clone on support fs (xfs) and pg version (18)
 
 ### Software Versions
 
@@ -45,6 +52,8 @@ MinIO now uses RPM/DEB packages maintained by pgsty itself.
 - rclone            : 1.72.1
 - genai-toolbox     : 0.23.0
 - minio             : 20251203120000
+- uv : new package
+- claude code switch : 2.0.76
 
 **PG Extension Packages**
 
@@ -53,7 +62,7 @@ MinIO now uses RPM/DEB packages maintained by pgsty itself.
 - [pg_ai_query](https://github.com/benodiwal/pg_ai_query): 0.1.1 new extension
 - timescaledb    : 2.23.1  -> 2.24.0
 - pg_search      : 0.20.0  -> 0.20.4
-- pg_duckdb      : 1.1.0-1 -> 1.1.0-2, official release version
+- pg_duckdb      : 1.1.0   -> 1.1.1, official release version
 - pg_biscuit     : 1.0     -> 2.0.1, repository renamed
 - pg_convert     : 0.0.4   -> 0.0.5, removed PG 13 support
 - pgdd           : 0.6.0   -> 0.6.1, removed PG 13 support
@@ -63,8 +72,10 @@ MinIO now uses RPM/DEB packages maintained by pgsty itself.
 - pg_enigma      : 0.4.0   -> 0.5.0
 - wrappers       : 0.5.6   -> 0.5.7
 - pg_vectorize   : 0.25.0  -> 0.26.0
+- vchord_bm25    : 0.2.2   -> 0.3.0
+- pg_timeseries  : 0.1.7   -> 0.1.8
 
-Fixed PG 18 Deb packages: pg_vectorize, pg_tiktoken, pg_tzf, pglite_fusion, pgsmcrypto, pgx_ulid, plprql
+Fixed PG 18 Deb packages: pg_vectorize, pg_tiktoken, pg_tzf, pglite_fusion, pgsmcrypto, pgx_ulid, plprql, pg_summarize, supautils
 
 
 ### Observability
@@ -88,6 +99,7 @@ Fixed PG 18 Deb packages: pg_vectorize, pg_tiktoken, pg_tzf, pglite_fusion, pgsm
 - `log_connections`, oltp/olap enables authentication logs, crit enables all logs.
 - `maintenance_io_concurrency` set to 100 if using SSD
 - `effective_io_concurrency` reduced from 1000 to 200
+- `file_copy_method` not default to `clone` on pg18
 - For PG17+, if `pg_checksums` switch is off, explicitly disable checksums during patroni cluster initialization
 - Fixed issue where `duckdb.allow_community_extensions` always took effect
 - Allow specifying HBA trusted "intranet segments" via `node_firewall_intranet`
@@ -101,7 +113,7 @@ Fixed PG 18 Deb packages: pg_vectorize, pg_tiktoken, pg_tzf, pglite_fusion, pgsm
 - Local software repo now placed at /data/nginx/pigsty, /www now a symlink to /data/nginx for compatibility.
 - DNS resolution records now placed under `/infra/hosts` directory, solving Ansible SELinux race condition issues
 - pg_remove/pg_pitr etcd metadata removal tasks now run on etcd cluster instead of depending on admin_ip management node
-
+- simplify the 36-node simu template into the 20-node version
 
 ### Security Improvements
 
