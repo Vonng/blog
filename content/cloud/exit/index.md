@@ -26,6 +26,8 @@ weight: 3
 
 ## **下云案例篇**
 
+[小红书究竟有没有下云？](https://mp.weixin.qq.com/s/Dr6zsb8aBJ9CMuei2Bd0VA)
+
 [DHH：下云超预期，能省一个亿](https://mp.weixin.qq.com/s/mknFXO5DSfxw7st8hhxjBQ)
 
 [下云奥德赛：是时候放弃云计算了吗？](https://mp.weixin.qq.com/s/CicctyvV1xk5B-AsKfzPjw)
@@ -145,6 +147,7 @@ weight: 3
 
 **阿里云**
 
+- 2025-12-25 [小红书究竟有没有下云？](https://mp.weixin.qq.com/s/Dr6zsb8aBJ9CMuei2Bd0VA)
 - 2025-12-05 [支付宝淘宝闲鱼崩了？又是消息队列的锅？](https://mp.weixin.qq.com/s/6xMuQCshXtt-Uu20GLWZ-g)
 - 2025-07-03 [草台互殴，赔三千万？阿里大战小旺神](https://mp.weixin.qq.com/s/O4LvUspOgrVBWHzmBvfmUA)
 - 2025-06-26 [阿里云故障，CDN挂了，记得申请SLA赔付](https://mp.weixin.qq.com/s/Y2PZiH63EAXRKP8gele8NQ)
@@ -247,6 +250,7 @@ weight: 3
 
 ## 云计算泥石流专栏原文
 
+- 2025-12-25 [小红书究竟有没有下云？](https://mp.weixin.qq.com/s/Dr6zsb8aBJ9CMuei2Bd0VA)
 - 2025-12-05 [支付宝淘宝闲鱼崩了？又是消息队列的锅？](https://mp.weixin.qq.com/s/6xMuQCshXtt-Uu20GLWZ-g)
 - 2025-11-19 [Cloudflare 11-18 故障复盘报告](https://mp.weixin.qq.com/s/mss2hRqAxCF7N3kPLQ8_7g)
 - 2025-10-24 [AWS 故障官方复盘报告](https://mp.weixin.qq.com/s/csopt3H5ZSh60vvcO-28hQ)

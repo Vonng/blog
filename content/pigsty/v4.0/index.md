@@ -50,8 +50,8 @@ GitHub Release: https://github.com/pgsty/pigsty/releases/tag/v4.0.0-b2
 - rclone            : 1.72.1
 - genai-toolbox     : 0.23.0
 - minio             : 20251203120000
-- uv : new package
-- claude code switch : 2.0.76
+- uv                : 0.9.18 new package
+- ccm (claude mgr)  : 2.0.76
 
 
 **PG 扩展软件包**
