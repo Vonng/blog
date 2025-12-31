@@ -14,7 +14,7 @@ enableCodeCopy = true
 
 replyByEmail = false
 
-mainSections = ["pigsty", "pg", "db", "cloud"]
+mainSections = ["pigsty", "pg", "db", "cloud", "misc"]
 # robots = ""
 
 disableImageOptimization = false
