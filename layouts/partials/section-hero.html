@@ -1,0 +1,94 @@
+{{/* Section Hero Profile - Similar to homepage profile but for section pages */}}
+{{/* Usage: Add these params to your section's _index.md front matter:
+  sectionHero:
+    show: true
+    image: "/img/your-image.jpg"  # optional, falls back to site author image
+    title: "Section Title"         # optional, falls back to section title
+    headline: "Section description"
+    links:
+      - name: "GitHub"
+        url: "https://github.com/..."
+        icon: "github"
+      - name: "Website"
+        url: "https://..."
+        icon: "link"
+*/}}
+
+{{ $hero := .Params.sectionHero }}
+{{ if and $hero $hero.show }}
+  {{ $disableImageOptimization := .Site.Params.disableImageOptimization | default false }}
+  <article class="flex flex-col items-center justify-center text-center py-8 relative z-10">
+    <header class="relative px-1 py-1 flex flex-col items-center mb-3">
+      {{/* Image - use section image or fall back to site author image */}}
+      {{ $imageSource := $hero.image | default .Site.Params.Author.image }}
+      {{ with $imageSource }}
+        {{ $heroImage := "" }}
+        {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+          {{ $heroImage = resources.GetRemote . }}
+        {{ else }}
+          {{ $heroImage = resources.Get . }}
+        {{ end }}
+        {{ if $heroImage }}
+          {{ $final := $heroImage }}
+          {{ $squareImage := $heroImage }}
+          {{ if not (or $disableImageOptimization (eq $heroImage.MediaType.SubType "svg")) }}
+            {{ $final = $heroImage.Fill "288x288 q96" }}
+            {{ $shortSide := int (math.Min $heroImage.Width $heroImage.Height) }}
+            {{ $squareImage = $heroImage.Crop (printf "%dx%d" $shortSide $shortSide) }}
+          {{ end }}
+          <img
+            class="mb-2 h-36 w-36 rounded-full"
+            width="144"
+            height="144"
+            alt="{{ $hero.title | default $.Title }}"
+            src="{{ $final.RelPermalink }}"
+            data-zoom-src="{{ $squareImage.RelPermalink }}">
+        {{ end }}
+      {{ end }}
+
+      {{/* Title */}}
+      {{ with $hero.title | default $.Title }}
+        <h1 class="text-4xl font-extrabold">{{ . }}</h1>
+      {{ end }}
+
+      {{/* Headline */}}
+      {{ with $hero.headline }}
+        <h2 class="text-xl text-neutral-500 dark:text-neutral-400">
+          {{ . | markdownify }}
+        </h2>
+      {{ end }}
+
+      {{/* Links */}}
+      {{ with $hero.links }}
+        <div class="mt-3 flex flex-wrap justify-center gap-4 text-2xl">
+          {{ range . }}
+            <a
+              href="{{ .url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-neutral-500 hover:text-primary-500 dark:text-neutral-400 dark:hover:text-primary-400 transition-colors"
+              title="{{ .name }}">
+              {{ if .icon }}
+                {{ $iconPath := printf "icons/%s.svg" .icon }}
+                {{ with resources.Get $iconPath }}
+                  {{ .Content | safeHTML }}
+                {{ else }}
+                  {{ partial "icon.html" .icon }}
+                {{ end }}
+              {{ else }}
+                {{ .name }}
+              {{ end }}
+            </a>
+          {{ end }}
+        </div>
+      {{ end }}
+    </header>
+
+    {{/* Description / Content */}}
+    {{ with $hero.description }}
+      <section class="prose dark:prose-invert max-w-2xl">
+        {{ . | markdownify }}
+      </section>
+    {{ end }}
+  </article>
+{{ end }}

@@ -1,12 +1,14 @@
 # Vonng's Blog
 
-[![Webite: Blog](https://img.shields.io/badge/Website-blog.vonng.com-slategray?style=flat)](https://vonng.com)
+[![Webite: Blog](https://img.shields.io/badge/Website-vonng.com-slategray?style=flat)](https://vonng.com)
 
-This is Vonng's blog, about PostgreSQL, Database, and Cloud-Exit.
+This is **Ruohang Feng** / [Vonng](https://github.com/Vonng)'s blog, about PostgreSQL, Database, Cloud-Exit, and other tech topics.
 
-- main site: https://vonng.com
-- en blog: https://vonng.com/en/
+- The Main Blog Site: https://vonng.com
+- The English Blog: https://vonng.com/en/
+- GitHub Pages: https://blog.vonng.com
 
+--------
 
 ## License
 

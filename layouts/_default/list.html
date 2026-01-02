@@ -13,6 +13,9 @@
     {{ end }}
   {{ end }}
 
+  {{/* Section Hero Profile */}}
+  {{ partial "section-hero.html" . }}
+
   {{/* Header */}}
   <header>
     {{ if .Params.showBreadcrumbs | default (site.Params.list.showBreadcrumbs | default false) }}
