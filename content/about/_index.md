@@ -14,4 +14,6 @@ showAuthor: true
 
 ![](img/vonng.jpg)
 
+本博客使用 [**CC BY 4.0**](https://github.com/Vonng/blog/blob/main/LICENSE) 许可证开源，由 [Hugo](https://github.com/gohugoio/hugo) 与 [**Blowfish**](https://blowfish.page/) 主题驱动。
+
 --------
