@@ -269,6 +269,3 @@ If OpenAI is interested, I’d certainly be happy to provide some help. But I th
 [11] Reclaim hardware bouns: https://pigsty.io/cloud//bonus/
 
 [12] Distributed Databases Are a False Need: https://pigsty.io/db/distributive-bullshit/
-
--
-- 

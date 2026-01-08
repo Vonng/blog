@@ -511,14 +511,14 @@ Brutal, but possibly the real future.
 
 ## Comparison of Views
 
-| Topic | Mike Stonebraker | Andy Pavlo |
-|-------|------------------|------------|
-| **Attitude toward LLMs** | Pessimistic, nearly useless in enterprise data scenarios | Optimistic, valuable in code generation and auto-tuning |
-| **Future direction** | Database technology will dominate Agentic AI infrastructure | LLM + specialized algorithms, reasoning agent orchestration |
-| **Postgres** | Has won, betting on it is correct | Agrees, but notes backend needs modernization (OrioleDB) |
-| **Vector databases** | Narrow moat, essentially in-memory graph indexes | Agrees, 99% can use pgvector |
-| **CS education** | Top universities fine, vocational training graduates will struggle | Fundamentals unchanged, but barrier to building things is lowered |
-| **Career motivation** | Avoiding Vietnam War draft | Avoiding prison |
+| Topic                    | Mike Stonebraker                                                   | Andy Pavlo                                                        |
+|--------------------------|--------------------------------------------------------------------|-------------------------------------------------------------------|
+| **Attitude toward LLMs** | Pessimistic, nearly useless in enterprise data scenarios           | Optimistic, valuable in code generation and auto-tuning           |
+| **Future direction**     | Database technology will dominate Agentic AI infrastructure        | LLM + specialized algorithms, reasoning agent orchestration       |
+| **Postgres**             | Has won, betting on it is correct                                  | Agrees, but notes backend needs modernization (OrioleDB)          |
+| **Vector databases**     | Narrow moat, essentially in-memory graph indexes                   | Agrees, 99% can use pgvector                                      |
+| **CS education**         | Top universities fine, vocational training graduates will struggle | Fundamentals unchanged, but barrier to building things is lowered |
+| **Career motivation**    | Avoiding Vietnam War draft                                         | Avoiding prison                                                   |
 
 ------
 
