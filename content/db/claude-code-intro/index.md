@@ -1,5 +1,5 @@
 ---
-title: "Claude Code 免翻上手教程：以及国产模型也能吊打 Claude？"
+title: "Claude Code 免翻上手教程，以及改用 GLM 指南"
 linkTitle: "Claude Code 免翻上手教程"
 date: 2026-01-04
 summary: >
