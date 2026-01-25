@@ -1,7 +1,7 @@
 ---
 title: "Pigsty v4.0.0：可观测性革命与安全性大改进"
-linkTitle: "Pigsty v4.0.0 发布注记"
-date: 2026-01-25
+linkTitle: "Pigsty v4.0：迎接AI时代！"
+date: 2026-01-24
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/pgsty/pigsty/releases/tag/v4.0.0)）
 summary: >
@@ -44,19 +44,21 @@ curl https://pigsty.cc/get | bash -s v4.0.0
 
 MinIO 开始使用 [**pgsty/minio**](https://github.com/pgsty/minio) fork RPM/DEB.
 
-| 软件包               | 版本       | 软件包                 | 版本      |
-|-------------------|----------|---------------------|---------|
-| victoria-metrics  | 1.133.0  | victoria-logs       | 1.43.1  |
-| vector            | 0.52.0   |                     |         |
-| grafana           | 12.3.1   | alertmanager        | 0.30.0  |
-| etcd              | 3.6.7    | duckdb              | 1.4.3   |
-| pg_exporter       | 1.1.2    | pgbackrest_exporter | 0.22.0  |
-| blackbox_exporter | 0.28.0   | node_exporter       | 1.10.2  |
-| minio             | 20251203 | pig                 | 0.9.1   |
-| claude            | 2.1.9    | opencode            | 1.1.23  |
-| uv                | 0.9.26   | asciinema           | 3.1.0   |
-| prometheus        | 3.9.1    | pushgateway         | 1.11.2  |
-| juicefs           | 1.4.0    | code-server         | 4.100.2 |
+| 软件包               | 版本       | 软件包                 | 版本       |
+|-------------------|----------|---------------------|----------|
+| victoria-metrics  | 1.134.0  | victoria-logs       | 1.43.1   |
+| vector            | 0.52.0   | grafana             | 12.3.1   |
+| alertmanager      | 0.30.1   | etcd                | 3.6.7    |
+| duckdb            | 1.4.3    | pg_exporter         | 1.1.2    |
+| pgbackrest_exporter | 0.22.0 | blackbox_exporter   | 0.28.0   |
+| node_exporter     | 1.10.2   | minio               | 20251203 |
+| pig               | 1.0.0    | claude              | 2.1.19   |
+| opencode          | 1.1.34   | uv                  | 0.9.26   |
+| asciinema         | 3.1.0    | prometheus          | 3.9.1    |
+| pushgateway       | 1.11.2   | juicefs             | 1.4.0    |
+| code-server       | 4.100.2  | caddy               | 2.10.2   |
+| hugo              | 0.154.5  | cloudflared         | 2026.1.1 |
+| headscale         | 0.27.1   |                     |          |
 
 ---
 
@@ -106,7 +108,7 @@ v4.0.0 新增两个**可选模块**，不影响 Pigsty 核心功能，按需安�
 
 **新增扩展**：
 - [pg_textsearch](https://github.com/timescale/pg_textsearch) 0.4.0 - TimescaleDB 全文搜索
-- [pg_clickhouse](https://github.com/clickhouse/pg_clickhouse/) 0.1.2 - ClickHouse FDW
+- [pg_clickhouse](https://github.com/clickhouse/pg_clickhouse/) 0.1.3 - ClickHouse FDW
 - [pg_ai_query](https://github.com/benodiwal/pg_ai_query) 0.1.1 - AI 查询扩展
 - [etcd_fdw](https://github.com/pgsty/etcd_fdw) 0.0.0 - etcd 外部数据包装器
 - [pg_ttl_index](https://github.com/pg-ttl-index) 0.1.0 - TTL 索引
@@ -123,10 +125,10 @@ v4.0.0 新增两个**可选模块**，不影响 Pigsty 核心功能，按需安�
 | 扩展             | 旧版本    | 新版本    | 备注                |
 |----------------|--------|--------|-------------------|
 | timescaledb    | 2.23.x | 2.24.0 | +PG18             |
-| pg_search      | 0.19.x | 0.21.2 | ParadeDB, +PG18   |
+| pg_search      | 0.19.x | 0.21.4 | ParadeDB, +PG18   |
 | citus          | 13.2.0 | 14.0.0 | 分布式 PG, +PG18 预发布 |
 | documentdb     | 0.106  | 0.109  | MongoDB 兼容, +PG18 |
-| age            | 1.5.0  | 1.6.0  | 图数据库, +PG18       |
+| age            | 1.5.0  | 1.7.0  | 图数据库, +PG18       |
 | pg_duckdb      | 1.1.0  | 1.1.1  | DuckDB 集成         |
 | vchord         | 0.5.3  | 1.0.0  | VectorChord       |
 | vchord_bm25    | 0.2.2  | 0.3.0  | BM25 全文搜索         |
@@ -136,10 +138,11 @@ v4.0.0 新增两个**可选模块**，不影响 Pigsty 核心功能，按需安�
 | pg_vectorize   | 0.25.0 | 0.26.0 | 向量化               |
 | pg_session_jwt | 0.3.3  | 0.4.0  | JWT 会话            |
 | pg_partman     | 5.3.x  | 5.4.0  | 分区管理, PGDG        |
-| pgmq           | 1.8.0  | 1.8.1  | 消息队列              |
+| pgmq           | 1.8.0  | 1.9.0  | 消息队列              |
 | pg_bulkload    | 3.1.22 | 3.1.23 | 批量加载, +PG18       |
 | pg_timeseries  | 0.1.7  | 0.2.0  | 时序扩展              |
 | pg_convert     | 0.0.4  | 0.1.0  | 类型转换              |
+| pg_clickhouse  | 0.1.2  | 0.1.3  | ClickHouse FDW    |
 
 pgBackRest 更新至 2.58，支持 HTTP。
 
