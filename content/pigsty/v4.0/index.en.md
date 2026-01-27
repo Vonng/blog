@@ -1,11 +1,11 @@
 ---
-title: "Pigsty v4.0.0: Observability Revolution & Security Hardening"
+title: "Pigsty v4.0: Observability Revolution & Security Hardening"
 linkTitle: "Pigsty v4.0: Into the AI Era"
-date: 2026-01-24
+date: 2026-01-27
 author: |
   [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v4.0.0))
 summary: >
-  VictoriaMetrics/Logs replace Prometheus/Loki, new JUICE/VIBE modules, comprehensive security improvements, multi-cloud support, license change to Apache-2.0.
+  VictoriaMetrics/Logs replace Prometheus/Loki, new JUICE/VIBE modules, security improvements, multi-cloud/docker support, license change to Apache-2.0.
 series: [Pigsty]
 tags: [Pigsty]
 ---
@@ -16,7 +16,7 @@ tags: [Pigsty]
 curl https://pigsty.io/get | bash -s v4.0.0
 ```
 
-**299 commits**, 595 files changed, +117,624 / -327,455 lines
+**318 commits**, 604 files changed, +118,655 / -327,552 lines
 
 **Release Date: 2025-12-25** | [GitHub](https://github.com/pgsty/pigsty/releases/tag/v4.0.0) | [Docs EN](https://pigsty.io) | [Docs CN](https://pigsty.cc)
 
@@ -26,8 +26,9 @@ curl https://pigsty.io/get | bash -s v4.0.0
 
 - **Observability Revolution**: Prometheus → VictoriaMetrics (10x perf), Loki+Promtail → VictoriaLogs+Vector
 - **Security Hardening**: Auto-generated passwords, etcd RBAC, firewall/SELinux modes, permission tightening, Nginx Basic Auth
+- **Docker Support**: Run Pigsty in Docker containers with full systemd support (macOS & Linux)
 - **New Module**: JUICE - Mount PostgreSQL as filesystem with PITR recovery capability
-- **New Module**: VIBE - AI coding sandbox with Claude Code, JupyterLab, VS Code Server
+- **New Module**: VIBE - AI coding sandbox with Claude Code, JupyterLab, VS Code Server, Node.js
 - **Database Management**: `pg_databases` state (create/absent/recreate), instant clone with `strategy`
 - **PITR & Fork**: `/pg/bin/pg-fork` for instant CoW cloning, enhanced `pg-pitr` with pre-backup
 - **HA Enhancement**: `pg_rto_plan` with 4 RTO presets (fast/norm/safe/wide), `pg_crontab` scheduled tasks
@@ -44,21 +45,32 @@ curl https://pigsty.io/get | bash -s v4.0.0
 
 MinIO now uses [**pgsty/minio**](https://github.com/pgsty/minio) fork RPM/DEB.
 
-| Package             | Version  | Package             | Version  |
-|---------------------|----------|---------------------|----------|
-| victoria-metrics    | 1.134.0  | victoria-logs       | 1.43.1   |
-| vector              | 0.52.0   | grafana             | 12.3.1   |
-| alertmanager        | 0.30.1   | etcd                | 3.6.7    |
-| duckdb              | 1.4.3    | pg_exporter         | 1.1.2    |
-| pgbackrest_exporter | 0.22.0   | blackbox_exporter   | 0.28.0   |
-| node_exporter       | 1.10.2   | minio               | 20251203 |
-| pig                 | 1.0.0    | claude              | 2.1.19   |
-| opencode            | 1.1.34   | uv                  | 0.9.26   |
-| asciinema           | 3.1.0    | prometheus          | 3.9.1    |
-| pushgateway         | 1.11.2   | juicefs             | 1.4.0    |
-| code-server         | 4.100.2  | caddy               | 2.10.2   |
-| hugo                | 0.154.5  | cloudflared         | 2026.1.1 |
-| headscale           | 0.27.1   |                     |          |
+| Package             | Version | Package             | Version  |
+|---------------------|---------|---------------------|----------|
+| victoria-metrics    | 1.134.0 | victoria-logs       | 1.43.1   |
+| vector              | 0.52.0  | grafana             | 12.3.1   |
+| alertmanager        | 0.30.1  | etcd                | 3.6.7    |
+| duckdb              | 1.4.4   | pg_exporter         | 1.1.2    |
+| pgbackrest_exporter | 0.22.0  | blackbox_exporter   | 0.28.0   |
+| node_exporter       | 1.10.2  | minio               | 20251203 |
+| pig                 | 1.0.0   | claude              | 2.1.19   |
+| opencode            | 1.1.34  | uv                  | 0.9.26   |
+| asciinema           | 3.1.0   | prometheus          | 3.9.1    |
+| pushgateway         | 1.11.2  | juicefs             | 1.4.0    |
+| code-server         | 4.100.2 | caddy               | 2.10.2   |
+| hugo                | 0.154.5 | cloudflared         | 2026.1.1 |
+| headscale           | 0.27.1  |                     |          |
+
+---
+
+## Docker Support
+
+Pigsty now supports running in **Docker containers** with full systemd support, working on both macOS (Docker Desktop) and Linux.
+
+**Quick Start**:
+```bash
+cd ~/pigsty/docker; make launch    # = make up config deploy
+```
 
 ---
 
@@ -75,7 +87,7 @@ v4.0.0 adds two **optional modules** that don't affect core Pigsty functionality
 - New `juice.yml` playbook for deployment
 - Parameters: `juice_cache`, `juice_instances`
 
-**VIBE Module**: AI Coding Sandbox (Code-Server + JupyterLab + Claude Code)
+**VIBE Module**: AI Coding Sandbox (Code-Server + JupyterLab + Node.js + Claude Code)
 
 - **Code-Server**: VS Code in browser
   - Deploy Code-Server with Nginx reverse proxy for HTTPS
@@ -88,6 +100,12 @@ v4.0.0 adds two **optional modules** that don't affect core Pigsty functionality
   - Python venv configuration for data science libraries
   - Set `jupyter_enabled: false` to disable
   - Parameters: `jupyter_enabled`, `jupyter_port`, `jupyter_data`, `jupyter_password`, `jupyter_venv`
+
+- **Node.js**: JavaScript runtime environment
+  - Install Node.js with npm package manager
+  - Auto-configure China npm mirror when `region=china`
+  - Set `nodejs_enabled: false` to disable
+  - Parameters: `nodejs_enabled`, `nodejs_registry`
 
 - **Claude Code**: AI coding assistant CLI configuration
   - Configure Claude Code CLI, skip onboarding
@@ -162,7 +180,10 @@ pgBackRest updated to 2.58 with HTTP support.
 - `pgbackrest_exporter` default cache interval reduced from 600s to 120s
 - `grafana_clean` default changed from `true` to `false`
 - New `pg_timeline` collector for real-time timeline metrics `pg_timeline_id`
+- New `pg:ixact_ratio` metric for idle transaction ratio monitoring
 - `pg_exporter` updated to 1.1.2 with `pg_timeline` collector and numerous fixes
+- Added slot name coalesce for `pg_recv` metrics collector
+- Blackbox ping monitoring support enabled
 - New `node-vector` dashboard for Vector monitoring
 - New `node-juice` dashboard for JuiceFS monitoring
 - New `claude-code` dashboard for Claude Code usage monitoring
@@ -253,7 +274,7 @@ pgBackRest updated to 2.58 with HTTP support.
 
 **New Playbooks**
 - `juice.yml`: Deploy JuiceFS instances
-- `vibe.yml`: Deploy VIBE AI sandbox (Code-Server, JupyterLab, Claude Code)
+- `vibe.yml`: Deploy VIBE AI sandbox (Code-Server, JupyterLab, Node.js, Claude Code)
 
 **Module Improvements**
 - Explicit cron/cronie package installation for minimal system compatibility
@@ -267,6 +288,12 @@ pgBackRest updated to 2.58 with HTTP support.
 - Ensure pgbouncer doesn't modify `0.0.0.0` to `*`
 - New 10-node and Citus Vagrant templates
 - Restored EL7 compatibility
+
+**System Tuning**
+- Tuned systemd service NOFILE limits based on actual workload requirements
+- Fixed tuned profile activation by restarting tuned service after changes
+- Added runtime directory for PostgreSQL systemd service
+- Fixed `ip_local_port_range` start/end value parity alignment
 
 **Multi-Cloud**
 - Terraform templates: AWS, Azure, GCP, Hetzner, DigitalOcean, Linode, Vultr, TencentCloud
@@ -332,6 +359,8 @@ pgBackRest updated to 2.58 with HTTP support.
 | Docker default data directory            | Updated to correct path                 |
 | EL10 cache compatibility                 | Fixed EL10 cache issues                 |
 | etcd/MinIO removal cleanup incomplete    | Fixed systemd service and DNS cleanup   |
+| IvorySql 18 file_copy_method             | Fixed incompatibility with clone method |
+| tuned profile activation                 | Fixed by restarting tuned service       |
 
 ---
 
@@ -358,15 +387,17 @@ pgBackRest updated to 2.58 with HTTP support.
 | `code_enabled`           | bool   | true          | Enable Code-Server                    |
 | `code_port`              | port   | 8443          | Code-Server listen port               |
 | `code_data`              | path   | /data/code    | Code-Server data directory            |
-| `code_password`          | string | Code.Server   | Code-Server password                  |
+| `code_password`          | string | Vibe.Coding   | Code-Server password                  |
 | `code_gallery`           | enum   | openvsx       | Extension gallery: openvsx/microsoft  |
 | `jupyter_enabled`        | bool   | true          | Enable JupyterLab                     |
 | `jupyter_port`           | port   | 8888          | JupyterLab listen port                |
 | `jupyter_data`           | path   | /data/jupyter | JupyterLab data directory             |
-| `jupyter_password`       | string | Jupyter.Lab   | JupyterLab access token               |
+| `jupyter_password`       | string | Vibe.Coding   | JupyterLab access token               |
 | `jupyter_venv`           | path   | /data/venv    | Python venv path                      |
 | `claude_enabled`         | bool   | true          | Enable Claude Code configuration      |
 | `claude_env`             | dict   | {}            | Claude Code extra env vars            |
+| `nodejs_enabled`         | bool   | true          | Enable Node.js installation           |
+| `nodejs_registry`        | string | ''            | npm registry, auto china mirror       |
 | `node_uv_env`            | path   | /data/venv    | Node UV venv path, empty to skip      |
 | `node_pip_packages`      | string | ''            | pip packages for UV venv              |
 
@@ -407,6 +438,21 @@ pgBackRest updated to 2.58 with HTTP support.
 
 ## Checksums
 
+
 ```bash
-# v4.0.0 offline package checksums (TBD)
+bca8a819ed83e5fc228af9e991de1f17  pigsty-v4.0.0.tgz
+db9797c3c8ae21320b76a442c1135c7b  pigsty-pkg-v4.0.0.d12.aarch64.tgz
+1eed26eee42066ca71b9aecbf2ca1237  pigsty-pkg-v4.0.0.d12.x86_64.tgz
+03540e41f575d6c3a7c63d1d30276d49  pigsty-pkg-v4.0.0.d13.aarch64.tgz
+36a6ee284c0dd6d9f7d823c44280b88f  pigsty-pkg-v4.0.0.d13.x86_64.tgz
+f2b6ec49d02916944b74014505d05258  pigsty-pkg-v4.0.0.el10.aarch64.tgz
+73f64c349366fe23c022f81fe305d6da  pigsty-pkg-v4.0.0.el10.x86_64.tgz
+287f767fbb66a9aaca9f0f22e4f20491  pigsty-pkg-v4.0.0.el8.aarch64.tgz
+c0886aab454bd86245f3869ef2ab4451  pigsty-pkg-v4.0.0.el8.x86_64.tgz
+094ab31bcf4a3cedbd8091bc0f3ba44c  pigsty-pkg-v4.0.0.el9.aarch64.tgz
+235ccba44891b6474a76a81750712544  pigsty-pkg-v4.0.0.el9.x86_64.tgz
+f2791c96db4cc17a8a4008fc8d9ad310  pigsty-pkg-v4.0.0.u22.aarch64.tgz
+3099c4453eef03b766d68e04b8d5e483  pigsty-pkg-v4.0.0.u22.x86_64.tgz
+49a93c2158434f1adf0d9f5bcbbb1ca5  pigsty-pkg-v4.0.0.u24.aarch64.tgz
+4acaa5aeb39c6e4e23d781d37318d49b  pigsty-pkg-v4.0.0.u24.x86_64.tgz
 ```

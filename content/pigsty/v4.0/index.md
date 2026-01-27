@@ -1,11 +1,11 @@
 ---
-title: "Pigsty v4.0.0：可观测性革命与安全性大改进"
+title: "Pigsty v4.0：可观测性革命与安全性大改进"
 linkTitle: "Pigsty v4.0：迎接AI时代！"
-date: 2026-01-24
+date: 2026-01-27
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/pgsty/pigsty/releases/tag/v4.0.0)）
 summary: >
-  VictoriaMetrics/Logs 替代 Prometheus/Loki，新增 JUICE/VIBE 模块，安全性全面改进，多云支持，许可证变更为 Apache-2.0。
+  VictoriaMetrics/Logs 替代 Prometheus/Loki，新增 JUICE/VIBE 模块，安全性全面改进，容器支持，多云支持，许可证变更为 Apache-2.0。
 series: [Pigsty]
 tags: [Pigsty]
 ---
@@ -16,9 +16,9 @@ tags: [Pigsty]
 curl https://pigsty.cc/get | bash -s v4.0.0
 ```
 
-**299 个提交**，595 文件变更，+117,624 / -327,455 行
+**318 个提交**，604 文件变更，+118,655 / -327,552 行
 
-**发布日期: 2025-12-25** | [GitHub](https://github.com/pgsty/pigsty/releases/tag/v4.0.0) | [英文文档](https://pigsty.io) | [中文文档](https://pigsty.cc)
+**发布日期: 2026-01-28** | [GitHub](https://github.com/pgsty/pigsty/releases/tag/v4.0.0) | [英文文档](https://pigsty.io) | [中文文档](https://pigsty.cc)
 
 ---
 
@@ -26,8 +26,9 @@ curl https://pigsty.cc/get | bash -s v4.0.0
 
 - **可观测性革命**: Prometheus → VictoriaMetrics（10x 性能提升），Loki + Promtail → VictoriaLogs + Vector
 - **安全加固**: 自动生成强密码、etcd RBAC、防火墙/SELinux 模式、权限收紧、Nginx Basic Auth
+- **Docker 支持**：支持在 Docker 容器中运行 Pigsty
 - **新增模块**：Juice，提供将 PG 挂载为文件系统并进行 PITR 的能力
-- **新增模块**：VIBE，提供 Claude Code，Jupyter，VS Code Server 的配置与可观测性
+- **新增模块**：VIBE，提供 Claude Code、Jupyter、VS Code Server、Node.js 的配置与可观测性
 - **数据库管理**: `pg_databases` state（create/absent/recreate）、`strategy` 瞬间克隆数据库
 - **PITR 与分叉**: `/pg/bin/pg-fork` CoW 瞬间克隆、`pg-pitr` 增强支持 PITR 前备份
 - **高可用增强**: `pg_rto` 提供四档 RTO 预置参数（fast/norm/safe/wide），`pg_crontab` 定时任务
@@ -44,21 +45,33 @@ curl https://pigsty.cc/get | bash -s v4.0.0
 
 MinIO 开始使用 [**pgsty/minio**](https://github.com/pgsty/minio) fork RPM/DEB.
 
-| 软件包               | 版本       | 软件包                 | 版本       |
-|-------------------|----------|---------------------|----------|
-| victoria-metrics  | 1.134.0  | victoria-logs       | 1.43.1   |
-| vector            | 0.52.0   | grafana             | 12.3.1   |
-| alertmanager      | 0.30.1   | etcd                | 3.6.7    |
-| duckdb            | 1.4.3    | pg_exporter         | 1.1.2    |
-| pgbackrest_exporter | 0.22.0 | blackbox_exporter   | 0.28.0   |
-| node_exporter     | 1.10.2   | minio               | 20251203 |
-| pig               | 1.0.0    | claude              | 2.1.19   |
-| opencode          | 1.1.34   | uv                  | 0.9.26   |
-| asciinema         | 3.1.0    | prometheus          | 3.9.1    |
-| pushgateway       | 1.11.2   | juicefs             | 1.4.0    |
-| code-server       | 4.100.2  | caddy               | 2.10.2   |
-| hugo              | 0.154.5  | cloudflared         | 2026.1.1 |
-| headscale         | 0.27.1   |                     |          |
+| 软件包                 | 版本      | 软件包               | 版本       |
+|---------------------|---------|-------------------|----------|
+| victoria-metrics    | 1.134.0 | victoria-logs     | 1.43.1   |
+| vector              | 0.52.0  | grafana           | 12.3.1   |
+| alertmanager        | 0.30.1  | etcd              | 3.6.7    |
+| duckdb              | 1.4.4   | pg_exporter       | 1.1.2    |
+| pgbackrest_exporter | 0.22.0  | blackbox_exporter | 0.28.0   |
+| node_exporter       | 1.10.2  | minio             | 20251203 |
+| pig                 | 1.0.0   | claude            | 2.1.19   |
+| opencode            | 1.1.34  | uv                | 0.9.26   |
+| asciinema           | 3.1.0   | prometheus        | 3.9.1    |
+| pushgateway         | 1.11.2  | juicefs           | 1.4.0    |
+| code-server         | 4.100.2 | caddy             | 2.10.2   |
+| hugo                | 0.154.5 | cloudflared       | 2026.1.1 |
+| headscale           | 0.27.1  |                   |          |
+
+---
+
+## Docker 支持
+
+Pigsty 现在支持在 **Docker 容器**中运行，完整支持 systemd，兼容 macOS (Docker Desktop) 与 Linux。
+
+**快速开始**：
+```bash
+cd ~/pigsty/docker; make launch    # = make up config deploy
+```
+
 
 ---
 
@@ -75,7 +88,7 @@ v4.0.0 新增两个**可选模块**，不影响 Pigsty 核心功能，按需安�
 - 新增剧本 `juice.yml` 用于部署和管理 JuiceFS 实例
 - 参数：`juice_cache`、`juice_instances`
 
-**VIBE 模块**：AI 辅助编程沙箱环境（整合了 Code-Server、JupyterLab 与 Claude Code）
+**VIBE 模块**：AI 辅助编程沙箱环境（整合了 Code-Server、JupyterLab、Node.js 与 Claude Code）
 
 - **Code-Server**：浏览器中的 VS Code
   - 在节点上部署 Code-Server，通过 Nginx 反向代理提供 HTTPS 访问
@@ -88,6 +101,12 @@ v4.0.0 新增两个**可选模块**，不影响 Pigsty 核心功能，按需安�
   - 支持 Python 虚拟环境配置，便于安装数据科学库
   - 设置 `jupyter_enabled: false` 可禁用
   - 参数：`jupyter_enabled`、`jupyter_port`、`jupyter_data`、`jupyter_password`、`jupyter_venv`
+
+- **Node.js**：JavaScript 运行时环境
+  - 安装 Node.js 和 npm 包管理器
+  - 当 `region=china` 时自动配置中国 npm 镜像
+  - 设置 `nodejs_enabled: false` 可禁用
+  - 参数：`nodejs_enabled`、`nodejs_registry`
 
 - **Claude Code**：AI 编程助手 CLI 配置
   - 配置 Claude Code CLI，跳过 onboarding 流程
@@ -163,7 +182,10 @@ pgBackRest 更新至 2.58，支持 HTTP。
 - `pgbackrest_exporter` 的默认选项现在设置 120 秒的内部缓存间隔（原本为 600s）
 - `grafana_clean` 参数的默认值现在由 `true` 改为 `false`，即默认不清除
 - 新增指标收集器 `pg_timeline`，收集更实时的时间线指标 `pg_timeline_id`
+- 新增 `pg:ixact_ratio` 指标，监控空闲事务占比
 - `pg_exporter` 更新至 1.1.2，新增 `pg_timeline` 采集器，修复大量历史遗留问题
+- 修复 `pg_recv` 指标采集器的 slot name coalesce 问题
+- 启用 Blackbox ping 监控支持
 - 新增 `node-vector` 仪表盘，监控 Vector 日志收集器状态
 - 新增 `node-juice` 仪表盘，监控 JuiceFS 分布式文件系统状态
 - 新增 `claude-code` 仪表盘，监控 Claude Code AI 编程助手使用情况
@@ -254,7 +276,7 @@ pgBackRest 更新至 2.58，支持 HTTP。
 
 **新增剧本**
 - `juice.yml`：部署 JuiceFS 分布式文件系统实例
-- `vibe.yml`：部署 VIBE AI 编程沙箱环境（含 Code-Server、JupyterLab、Claude Code）
+- `vibe.yml`：部署 VIBE AI 编程沙箱环境（含 Code-Server、JupyterLab、Node.js、Claude Code）
 
 **模块改进**
 - 显式安装 cron/cronie 包，确保定时任务功能在最小化安装的系统上可用
@@ -268,6 +290,12 @@ pgBackRest 更新至 2.58，支持 HTTP。
 - 确保 pgbouncer 不再将 `0.0.0.0` 监听地址修改为 `*`
 - 新增 10 节点、Citus 等 Vagrant 配置模板
 - 恢复 EL7 系统兼容性支持
+
+**系统调优**
+- 基于实际工作负载调整 systemd 服务的 NOFILE 限制
+- 修复 tuned profile 激活问题（通过重启 tuned 服务）
+- 添加 PostgreSQL systemd 服务运行时目录
+- 修复 `ip_local_port_range` 起止值奇偶对齐问题
 
 **多云支持**
 - 多云 Terraform 模板：AWS、Azure、GCP、Hetzner、DigitalOcean、Linode、Vultr、腾讯云
@@ -335,6 +363,8 @@ pgBackRest 更新至 2.58，支持 HTTP。
 | Docker 默认数据目录                            | 更新为正确的默认数据目录路径                |
 | EL10 缓存兼容性                               | 修复 EL10 系统上的缓存问题              |
 | etcd/MinIO 移除时清理不完整                      | 修复 systemd 服务和 DNS 条目清理       |
+| IvorySql 18 file_copy_method             | 修复 IvorySql 18 不支持 clone 方法问题 |
+| tuned profile 激活                         | 通过重启 tuned 服务修复激活问题           |
 
 
 ---
@@ -362,15 +392,17 @@ pgBackRest 更新至 2.58，支持 HTTP。
 | `code_enabled`           | bool   | true          | 是否启用 Code-Server                 |
 | `code_port`              | port   | 8443          | Code-Server 监听端口                 |
 | `code_data`              | path   | /data/code    | Code-Server 数据目录                 |
-| `code_password`          | string | Code.Server   | Code-Server 登录密码                 |
+| `code_password`          | string | Vibe.Coding   | Code-Server 登录密码                 |
 | `code_gallery`           | enum   | openvsx       | 扩展市场：openvsx/microsoft           |
 | `jupyter_enabled`        | bool   | true          | 是否启用 JupyterLab                  |
 | `jupyter_port`           | port   | 8888          | JupyterLab 监听端口                  |
 | `jupyter_data`           | path   | /data/jupyter | JupyterLab 数据目录                  |
-| `jupyter_password`       | string | Jupyter.Lab   | JupyterLab 登录 Token              |
+| `jupyter_password`       | string | Vibe.Coding   | JupyterLab 登录 Token              |
 | `jupyter_venv`           | path   | /data/venv    | Python 虚拟环境路径                    |
 | `claude_enabled`         | bool   | true          | 是否启用 Claude Code 配置              |
 | `claude_env`             | dict   | {}            | Claude Code 额外环境变量               |
+| `nodejs_enabled`         | bool   | true          | 是否启用 Node.js 安装                  |
+| `nodejs_registry`        | string | ''            | npm registry，自动配置中国镜像            |
 | `node_uv_env`            | path   | /data/venv    | 节点 UV 虚拟环境路径，空则跳过                |
 | `node_pip_packages`      | string | ''            | UV 虚拟环境中安装的 pip 包                |
 
@@ -413,5 +445,19 @@ pgBackRest 更新至 2.58，支持 HTTP。
 ## 校验和
 
 ```bash
-# v4.0.0 离线安装包校验和 (待补充)
+bca8a819ed83e5fc228af9e991de1f17  pigsty-v4.0.0.tgz
+db9797c3c8ae21320b76a442c1135c7b  pigsty-pkg-v4.0.0.d12.aarch64.tgz
+1eed26eee42066ca71b9aecbf2ca1237  pigsty-pkg-v4.0.0.d12.x86_64.tgz
+03540e41f575d6c3a7c63d1d30276d49  pigsty-pkg-v4.0.0.d13.aarch64.tgz
+36a6ee284c0dd6d9f7d823c44280b88f  pigsty-pkg-v4.0.0.d13.x86_64.tgz
+f2b6ec49d02916944b74014505d05258  pigsty-pkg-v4.0.0.el10.aarch64.tgz
+73f64c349366fe23c022f81fe305d6da  pigsty-pkg-v4.0.0.el10.x86_64.tgz
+287f767fbb66a9aaca9f0f22e4f20491  pigsty-pkg-v4.0.0.el8.aarch64.tgz
+c0886aab454bd86245f3869ef2ab4451  pigsty-pkg-v4.0.0.el8.x86_64.tgz
+094ab31bcf4a3cedbd8091bc0f3ba44c  pigsty-pkg-v4.0.0.el9.aarch64.tgz
+235ccba44891b6474a76a81750712544  pigsty-pkg-v4.0.0.el9.x86_64.tgz
+f2791c96db4cc17a8a4008fc8d9ad310  pigsty-pkg-v4.0.0.u22.aarch64.tgz
+3099c4453eef03b766d68e04b8d5e483  pigsty-pkg-v4.0.0.u22.x86_64.tgz
+49a93c2158434f1adf0d9f5bcbbb1ca5  pigsty-pkg-v4.0.0.u24.aarch64.tgz
+4acaa5aeb39c6e4e23d781d37318d49b  pigsty-pkg-v4.0.0.u24.x86_64.tgz
 ```
