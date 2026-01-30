@@ -157,19 +157,22 @@ ISVs and independent DBAs building commercial services on Pigsty: welcome. The m
 
 ## Business Model
 
-How do you make money with open source?
+People often ask, How do you make money with it?
 
-A model I admire: VictoriaMetrics. One developer built a monitoring system that dominates on performance and quality. Started a company for enterprise support, kept some modules enterprise-only. No fundraising, no pressure, sustainable. Pigsty follows a similar path.
+The model I admire: VictoriaMetrics. One developer built a monitoring system that dominates on performance in the observability area.
+Started a company for enterprise support, kept some modules enterprise-only. No fundraising, no pressure, sustainable. Pigsty follows a similar path.
 
 Pigsty has a commercial edition — same codebase, but supports more operating systems and legacy PG versions. Includes CLI tooling, DBA agent, SOPs, and a non-open-source test suite with failure scenarios — similar to SQLite's approach.
 
-But the commercial edition isn't the point. Enterprises don't pay for what you've open-sourced — they pay for delivered value: taking production from "works fine" to "rock solid." That includes warranties, SLAs, edge case troubleshooting, and operational know-how from running Postgres at scale — things that won't appear in AI training data.
 
-I'm not selling the product — that's free. **Pigsty is free; my consulting isn't.**
+But the commercial edition isn't the point. Enterprises don't pay for what you've open-sourced — they pay for delivered value: 
+taking production from "works well" to "bulletproof" That includes warranties, SLAs, troubleshooting, and operational know-how from running Postgres at scale 
+— things that won't appear in AI training dataset. So I'm not selling the product — that's free. **Pigsty is free; while the consulting isn't.**
 
-AI has been a force multiplier. Most of my time now goes to asking the right questions and validating outputs. Scales well.
+AI Agent has been a force multiplier. Most of my time now goes to asking the right questions and validating outputs. Scales quiet well.
 
 If you're using Pigsty and find value in what I'm building, subscriptions are welcome. You get commercial guarantees; I get to keep building.
+
 
 --------
 
@@ -181,13 +184,11 @@ My view: permissive-to-restrictive is ethically problematic — textbook bait-an
 
 Restrictive-to-permissive is fundamentally different. You're giving *more* freedom to everyone, including past contributors.
 
-That said, I wanted to do this cleanly. I reached out to contributors for explicit consent. Most responded. Not everyone did — and I won't assume consent.
+That said, I wanted to do this cleanly. I reached out to contributors for explicit consent. Not everyone responded — and I won't assume consent.
+So I rewrote all code from non-responding contributors. In a ~150k lines codebase, this was roughly 500 lines, not much.
 
-So I rewrote all code from non-responding contributors. In ~150k lines, this was roughly 500 lines. Not huge, but real work.
-
-Result: Pigsty is now sole-author from a copyright perspective. Every line is either mine or explicitly relicensed with consent. Clean slate.
-
-Was this strictly necessary? Legally, probably not — going permissive doesn't require unanimous consent like going restrictive would. But I'd rather over-comply than leave gray areas. Practice what you preach.
+Was this strictly necessary? Legally, probably not — going permissive doesn't require unanimous consent like going restrictive would.
+But I'd rather over-comply than leave gray areas. Practice what you preach.
 
 --------
 

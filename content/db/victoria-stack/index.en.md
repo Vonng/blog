@@ -20,7 +20,7 @@ Maybe you haven’t heard of VictoriaMetrics, but you definitely know Prometheus
 
 Industry benchmarks back it up. VM routinely crushes InfluxDB, Prometheus, TimescaleDB in ingestion throughput and high-cardinality queries.
 
-![benchmark-comparison.png](benchmark-comparison.png)
+![arch.png](arch.png)
 
 Pigsty used to ship Prometheus by default and keep VM as a “pro” module. Two things pushed me to refactor:
 

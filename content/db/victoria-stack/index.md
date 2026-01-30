@@ -19,7 +19,8 @@ tags: [可观测性, VictoriaMetrics, Prometheus, 监控]
 
 业界有很多性能对比（Benchmark），VM 基本都吊打 InfluxDB 、Prometheus、TimescaleDB 的。不管是写入吞吐量还是高基数查询（High Cardinality），VM 都是碾压级的存在。
 
-![Benchmark Comparison](benchmark-comparison.png)
+![arch.png](arch.png)
+
 
 在 Pigsty 里面，我之前一直用 **Prometheus**，而 VM 作为专业版可选模块。不过最近有个契机，让我感觉有必要给 Pigsty 的监控基建也翻新一下了 —— 第一是原本使用的日志方案 Grafana Loki 和 Promtail 要淘汰了，想来想去还是得上 VictoriaLogs。第二是正好有个客户 —— **影视飓风** 要部署生产级别的 VictoriaMetrics，我就干脆一起搞了。
 

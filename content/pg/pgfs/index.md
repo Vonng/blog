@@ -36,22 +36,28 @@ juicefs mount sqlite3:/tmp/jfs.db ~/jfs -d   # 将这个文件系统挂载到 ~/
 
 **妙就妙在**：JuiceFS 还支持使用PostgreSQL 作为**元数据**和**对象数据**的存储后端！ 也就是说，你只需要把JuiceFS的后端改成一个已经安装好的PostgreSQL实例，就能得到一个基于数据库的“文件系统”。
 
-于是，如果你有现成的PostgreSQL数据库（例如通过 Pigsty 单机安装），就能一键拉起一套 “PGFS”：
+于是，如果你有现成的PostgreSQL数据库（例如通过 Pigsty 单机安装），就能一键拉起一套 "PGFS"：
 
 ```bash
-METAURL=postgres://dbuser_meta:DBUser.Meta@:5432/meta
-OPTIONS=(
-  --storage postgres
-  --bucket :5432/meta
-  --access-key dbuser_meta
-  --secret-key DBUser.Meta
-  ${METAURL}
-  jfs
-)
-juicefs format "${OPTIONS[@]}"     # 创建一个 PG 文件系统
-juicefs mount ${METAURL} /data2 -d # 后台挂载到 /data2 目录
-juicefs bench /data2               # 测试性能
-juicefs umount /data2              # 停止挂载
+# 元数据引擎 URL（PostgreSQL 连接串）
+METAURL="postgres://dbuser_meta:DBUser.Meta@10.10.10.10:5432/meta"
+
+# 格式化 JuiceFS 文件系统，使用 PostgreSQL 作为元数据和数据存储
+juicefs format \
+  --storage postgres \
+  --bucket 10.10.10.10:5432/meta \
+  --access-key dbuser_meta \
+  --secret-key DBUser.Meta \
+  "${METAURL}" jfs
+
+# 挂载文件系统到 /data2 目录
+juicefs mount "${METAURL}" /data2 -d
+
+# 测试性能
+juicefs bench /data2
+
+# 停止挂载
+juicefs umount /data2
 ```
 
 如此一来，任何写到/data2目录的数据，其实都会存进 PG 中的 `jfs_blob` 这张表里。换言之，这个文件系统和PG数据库已经融为一体！
@@ -151,7 +157,6 @@ Pigsty 提供了外部高可用、自动备份、监控、PITR等能力的PG，�
 
 ```bash
 curl -fsSL https://repo.pigsty.cc/get | bash; cd ~/pigsty 
-./bootstrap                # 安装 Pigsty 依赖
 ./configure -c app/odoo    # 使用 Odoo 配置模板
 ./install.yml              # 安装 Pigsty
 ```
@@ -170,26 +175,24 @@ curl -fsSL https://repo.pigsty.cc/get | bash; cd ~/pigsty
 
 ```yaml
 odoo:
-  hosts: { 10.10.10.10: {} }
+  hosts:
+    10.10.10.10:
+      # ./juice.yml -l odoo : JuiceFS 实例配置（节点级参数）
+      juice_instances:
+        jfs:                           # 文件系统名称
+          path  : /data/odoo           # 挂载点路径
+          meta  : postgres://dbuser_meta:DBUser.Meta@10.10.10.10:5432/meta
+          data  : --storage postgres --bucket 10.10.10.10:5432/meta --access-key dbuser_meta --secret-key DBUser.Meta
+          port  : 9567                 # Prometheus 指标端口
+          owner : '100'                # Odoo 容器用户 UID
+          group : '101'                # Odoo 容器用户 GID
+
   vars:
-
-    # ./juice.yml -l odoo
-    juice_fsname: jfs
-    juice_mountpoint: /data/odoo
-    juice_options:
-      - --storage postgres
-      - --bucket :5432/meta
-      - --access-key dbuser_meta
-      - --secret-key DBUser.Meta
-      - postgres://dbuser_meta:DBUser.Meta@:5432/meta
-      - ${juice_fsname}
-
     # ./app.yml -l odoo
     app: odoo   # specify app name to be installed (in the apps)
     apps:       # define all applications
       odoo:     # app name, should have corresponding ~/app/odoo folder
         file:   # optional directory to be created
-          - { path: /data/odoo         ,state: directory, owner: 100, group: 101 }
           - { path: /data/odoo/webdata ,state: directory, owner: 100, group: 101 }
           - { path: /data/odoo/addons  ,state: directory, owner: 100, group: 101 }
         conf:   # override /opt/<app>/.env config file

@@ -39,19 +39,25 @@ juicefs mount sqlite3:/tmp/jfs.db ~/jfs -d   # Mount this filesystem to ~/jfs
 So if you have an existing PostgreSQL database (installed via Pigsty single-node setup, for example), you can spin up a "PGFS" with one command:
 
 ```bash
-METAURL=postgres://dbuser_meta:DBUser.Meta@:5432/meta
-OPTIONS=(
-  --storage postgres
-  --bucket :5432/meta
-  --access-key dbuser_meta
-  --secret-key DBUser.Meta
-  ${METAURL}
-  jfs
-)
-juicefs format "${OPTIONS[@]}"     # Create a PG filesystem
-juicefs mount ${METAURL} /data2 -d # Mount in background to /data2 directory
-juicefs bench /data2               # Test performance
-juicefs umount /data2              # Unmount
+# Metadata engine URL (PostgreSQL connection string)
+METAURL="postgres://dbuser_meta:DBUser.Meta@10.10.10.10:5432/meta"
+
+# Format JuiceFS filesystem using PostgreSQL as metadata and data storage
+juicefs format \
+  --storage postgres \
+  --bucket 10.10.10.10:5432/meta \
+  --access-key dbuser_meta \
+  --secret-key DBUser.Meta \
+  "${METAURL}" jfs
+
+# Mount filesystem to /data2 directory
+juicefs mount "${METAURL}" /data2 -d
+
+# Test performance
+juicefs bench /data2
+
+# Unmount
+juicefs umount /data2
 ```
 
 This way, any data written to the /data2 directory actually gets stored in PG's `jfs_blob` table. In other words, this filesystem and the PG database have become one!
@@ -170,26 +176,24 @@ The configuration file `pigsty.yml` would look something like this, with the onl
 
 ```yaml
 odoo:
-  hosts: { 10.10.10.10: {} }
+  hosts:
+    10.10.10.10:
+      # ./juice.yml -l odoo : JuiceFS instance config (host-level parameter)
+      juice_instances:
+        jfs:                           # filesystem name
+          path  : /data/odoo           # mountpoint path
+          meta  : postgres://dbuser_meta:DBUser.Meta@10.10.10.10:5432/meta
+          data  : --storage postgres --bucket 10.10.10.10:5432/meta --access-key dbuser_meta --secret-key DBUser.Meta
+          port  : 9567                 # Prometheus metrics port
+          owner : '100'                # Odoo container user UID
+          group : '101'                # Odoo container user GID
+
   vars:
-
-    # ./juice.yml -l odoo
-    juice_fsname: jfs
-    juice_mountpoint: /data/odoo
-    juice_options:
-      - --storage postgres
-      - --bucket :5432/meta
-      - --access-key dbuser_meta
-      - --secret-key DBUser.Meta
-      - postgres://dbuser_meta:DBUser.Meta@:5432/meta
-      - ${juice_fsname}
-
     # ./app.yml -l odoo
     app: odoo   # specify app name to be installed (in the apps)
     apps:       # define all applications
       odoo:     # app name, should have corresponding ~/app/odoo folder
         file:   # optional directory to be created
-          - { path: /data/odoo         ,state: directory, owner: 100, group: 101 }
           - { path: /data/odoo/webdata ,state: directory, owner: 100, group: 101 }
           - { path: /data/odoo/addons  ,state: directory, owner: 100, group: 101 }
         conf:   # override /opt/<app>/.env config file
