@@ -1,11 +1,11 @@
 ---
 title: "Pigsty v4.0 发布：进入 AI 时代"
 linkTitle: "Pigsty v4.0 发布：进入 AI 时代"
-date: 2026-01-30
+date: 2026-01-31
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/pgsty/pigsty/releases/tag/v4.0.0)）
 summary: >
-  一个里程碑式的大版本，Pigsty 进入“完成态”，为 Agent 时代准备就绪！
+  一个里程碑版本，也是我心目中的"完工软件"。它的真正主题是 “为Agent而生” —— 敢让 AI 放手干活，也敢在它干错时一键回滚到昨天。
 series: [Pigsty]
 tags: [Pigsty]
 ---

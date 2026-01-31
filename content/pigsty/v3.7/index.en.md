@@ -1,5 +1,5 @@
 ---
-title: "Pigsty v3.7: PostgreSQL Magneto Award, PG18 Deep Support"
+title: "Pigsty v3.7: Magneto Award and PG18 Ready"
 linkTitle: "Pigsty v3.7 Release"
 date: 2025-12-03
 author: |
