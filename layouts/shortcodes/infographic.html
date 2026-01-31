@@ -1,0 +1,87 @@
+{{- /*
+  AntV Infographic Shortcode for Hugo/Docsy
+
+  Usage:
+    {{< infographic >}}
+    infographic list-row-simple-horizontal-arrow
+    data
+      items
+        - label Step 1
+          desc Start
+        - label Step 2
+          desc In Progress
+    {{< /infographic >}}
+
+    {{< infographic height="600px" full="true" >}}
+    infographic compare-vs-horizontal
+    data
+      title PostgreSQL vs MySQL
+      items
+        - label PostgreSQL
+          desc 功能强大的开源数据库
+        - label MySQL
+          desc 流行的开源数据库
+    theme
+      colorPrimary #336791
+    {{< /infographic >}}
+
+  Parameters:
+    height  - Container height (default: auto)
+    full    - If true, fills entire container width; if false (default),
+              aligns with content max-width (90% on large screens)
+
+  Notes:
+    - Uses AntV Infographic DSL syntax (similar to Mermaid)
+    - ~200 built-in templates available
+    - Outputs high-quality SVG
+    - See: https://infographic.antv.vision/
+*/ -}}
+
+{{- $height := .Get "height" | default "auto" -}}
+{{- $full := .Get "full" | default false -}}
+{{- $id := printf "infographic-%s" (md5 .Inner) -}}
+{{- $containerClass := "infographic-container" -}}
+{{- if not $full -}}
+  {{- $containerClass = "infographic-container td-max-width-on-larger-screens" -}}
+{{- end -}}
+
+<div id="{{ $id }}" class="{{ $containerClass }}"{{ with $height | ne "auto" }} style="height: {{ $height }};"{{ end }}></div>
+
+<script>
+(function() {
+  var containerId = '{{ $id }}';
+  var syntax = {{ .Inner | strings.TrimSpace | safeJS | printf "`%s`" }};
+
+  function renderInfographic() {
+    var dom = document.getElementById(containerId);
+    if (!dom) { console.error('Infographic: container not found:', containerId); return; }
+    try {
+      var ig = new AntVInfographic.Infographic({
+        container: '#' + containerId,
+        width: dom.offsetWidth || '100%',
+        height: '{{ $height }}',
+      });
+      ig.render(syntax);
+    } catch (e) {
+      console.error('Infographic render error:', e);
+      dom.innerHTML = '<pre style="color: red;">Infographic Error: ' + e.message + '</pre>';
+    }
+  }
+
+  // Load library dynamically if not already loaded
+  if (typeof AntVInfographic !== 'undefined') {
+    renderInfographic();
+  } else if (!window._infographicLoading) {
+    window._infographicLoading = true;
+    window._infographicCallbacks = [renderInfographic];
+    var script = document.createElement('script');
+    script.src = '/js/infographic.min.js';
+    script.onload = function() {
+      window._infographicCallbacks.forEach(function(cb) { cb(); });
+    };
+    document.head.appendChild(script);
+  } else {
+    window._infographicCallbacks.push(renderInfographic);
+  }
+})();
+</script>
