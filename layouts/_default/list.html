@@ -23,10 +23,20 @@
     {{ end }}
     <div class="flex items-center justify-between mt-5">
       <h1 class="text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
-      {{/* Layout Switch Button - only show for specific sections */}}
-      {{ $showLayoutSwitch := .Params.showLayoutSwitch | default (site.Params.list.showLayoutSwitch | default false) }}
-      {{ if $showLayoutSwitch }}
-        <button
+      <div class="flex items-center gap-2">
+        {{/* RSS Subscribe Button */}}
+        {{ with .OutputFormats.Get "RSS" }}
+          <a href="{{ .RelPermalink }}"
+             class="p-1.5 text-neutral-100 hover:text-primary-400 transition-colors"
+             title="{{ i18n "rss.subscribe" | default "Subscribe via RSS" }}"
+             aria-label="{{ i18n "rss.subscribe" | default "Subscribe via RSS" }}">
+            {{ partial "icon.html" "rss" }}
+          </a>
+        {{ end }}
+        {{/* Layout Switch Button - only show for specific sections */}}
+        {{ $showLayoutSwitch := .Params.showLayoutSwitch | default (site.Params.list.showLayoutSwitch | default false) }}
+        {{ if $showLayoutSwitch }}
+          <button
           id="layout-switch-btn"
           class="p-1.5 text-neutral-100 hover:text-white transition-colors"
           title="{{ i18n "layout.switch" | default "Switch layout" }}"
@@ -40,8 +50,9 @@
           <svg id="layout-icon-card-wide" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 15a1 1 0 011-1h14a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-4z"/>
           </svg>
-        </button>
-      {{ end }}
+          </button>
+        {{ end }}
+      </div>
     </div>
     <div class="mt-1 mb-2 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       {{ partial "article-meta/list.html" (dict "context" . "scope" "single") }}

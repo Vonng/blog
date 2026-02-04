@@ -6,8 +6,18 @@
 
 <div class="flex items-center justify-between mt-8 mb-6">
   <h2 class="text-2xl font-extrabold">{{ i18n "shortcode.recent_articles" | emojify }}</h2>
-  <button
-    id="home-layout-switch-btn"
+  <div class="flex items-center gap-2">
+    {{/* RSS Subscribe Button */}}
+    {{ with .OutputFormats.Get "RSS" }}
+      <a href="{{ .RelPermalink }}"
+         class="p-1.5 text-neutral-100 hover:text-primary-400 transition-colors"
+         title="{{ i18n "rss.subscribe" | default "Subscribe via RSS" }}"
+         aria-label="{{ i18n "rss.subscribe" | default "Subscribe via RSS" }}">
+        {{ partial "icon.html" "rss" }}
+      </a>
+    {{ end }}
+    <button
+      id="home-layout-switch-btn"
     class="p-1.5 text-neutral-100 hover:text-white transition-colors"
     title="{{ i18n "layout.switch" | default "Switch layout" }}"
     aria-label="{{ i18n "layout.switch" | default "Switch layout" }}">
@@ -20,7 +30,8 @@
     <svg id="home-layout-icon-card-wide" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 15a1 1 0 011-1h14a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-4z"/>
     </svg>
-  </button>
+    </button>
+  </div>
 </div>
 
 {{/* List View (hidden by default) */}}

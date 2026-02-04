@@ -40,7 +40,7 @@ I'm not talking about the technology needed to operate Netflix, Google, or Amazo
 
 To have good availability, you need not the cloud, but mature technology running on redundant hardware with proper backups configured, as always.
 
-> Note: DHH saved nearly $10 million in high cloud costs. This article translates DHH's latest cloud exit progress. For the cloud exit backstory and complete process, refer to: "[Cloud-Exit Odyssey](https://blog.vonng.com/en/cloud//odyssey/)", "[Is It Time to Give Up on Cloud Computing?](https://blog.vonng.com/en/cloud//odyssey/)", and "[DHH Cloud-Exit FAQ](https://blog.vonng.com/en/cloud//cloud/-exit-faq/)".
+> Note: DHH saved nearly $10 million in high cloud costs. This article translates DHH's latest cloud exit progress. For the cloud exit backstory and complete process, refer to: "[Cloud-Exit Odyssey](https://vonng.com/en/cloud//odyssey/)", "[Is It Time to Give Up on Cloud Computing?](https://vonng.com/en/cloud//odyssey/)", and "[DHH Cloud-Exit FAQ](https://vonng.com/en/cloud//cloud/-exit-faq/)".
 
 --------------
 
@@ -54,7 +54,7 @@ Some programmers, out of **intellectual masturbation** or **job security** reaso
 
 > Rube Goldberg machine: "Accomplishing through extremely complex and circuitous methods what could actually or seemingly be done easily" — a form of intellectual masturbation through complexity.
 
-Complexity slows everyone down and significantly increases maintenance costs. Making changes in complex systems carries greater risk of introducing bugs (such as the major failures described in "[From Cost-Reduction Jokes to Real Cost Reduction](https://blog.vonng.com/en/cloud//smile/)"). When complexity leads to maintenance difficulties, budgets and timelines typically overrun. When developers struggle to understand the system, hidden assumptions, unintended consequences, and unexpected interactions are more easily overlooked. Reducing complexity can dramatically improve software maintainability, so **simplicity** should be a key goal in building systems.
+Complexity slows everyone down and significantly increases maintenance costs. Making changes in complex systems carries greater risk of introducing bugs (such as the major failures described in "[From Cost-Reduction Jokes to Real Cost Reduction](https://vonng.com/en/cloud//smile/)"). When complexity leads to maintenance difficulties, budgets and timelines typically overrun. When developers struggle to understand the system, hidden assumptions, unintended consequences, and unexpected interactions are more easily overlooked. Reducing complexity can dramatically improve software maintainability, so **simplicity** should be a key goal in building systems.
 
 Not every company has Google's scale and scenarios, requiring starships to solve their unique problems. PostgreSQL + Go/Ruby/Python on bare metal/VMs or classic LAMP has taken countless companies all the way to IPO. Never forget that **designing for unneeded scale is wasted effort** — this is a form of **premature optimization** — and that is the root of all evil.
 
@@ -62,12 +62,12 @@ Using my personal experience as an example, during Tantan's early-to-mid stages 
 
 Therefore, when we conduct architectural design and reviews, we might use the complexity perspective for additional scrutiny. For more discussion on complexity, please refer to the following articles:
 
-[Should Databases Go into K8S?](https://blog.vonng.com/en/cloud//k8s-vs-db/)
+[Should Databases Go into K8S?](https://vonng.com/en/cloud//k8s-vs-db/)
 
-[From Cost-Reduction Jokes to Real Cost Reduction](https://blog.vonng.com/en/cloud//smile/)
+[From Cost-Reduction Jokes to Real Cost Reduction](https://vonng.com/en/cloud//smile/)
 
-[Is Putting Databases in Docker a Good Idea?](https://blog.vonng.com/en/cloud//docker-vs-db/)
+[Is Putting Databases in Docker a Good Idea?](https://vonng.com/en/cloud//docker-vs-db/)
 
-[Are Microservices a Stupid Idea?](https://blog.vonng.com/en/cloud//microservices/)
+[Are Microservices a Stupid Idea?](https://vonng.com/en/cloud//microservices/)
 
-[Are Distributed Databases False Needs?](https://blog.vonng.com/en/cloud//distributed-db/)
+[Are Distributed Databases False Needs?](https://vonng.com/en/cloud//distributed-db/)

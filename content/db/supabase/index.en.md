@@ -69,11 +69,11 @@ Supabase also provides "generous" free cloud service quotas for small entreprene
 
 Since Supabase cloud service is so attractive, why self-host?
 
-The most intuitive reason is what we mentioned in "[Are Cloud Databases an Intelligence Tax?](https://blog.vonng.com/cloud/rds/)": when your data/computing scale exceeds the cloud computing applicable spectrum (Supabase: 4C/8G/500MB free storage), costs can easily explode.
-Moreover, currently, sufficiently reliable [local enterprise-grade NVMe SSDs](https://blog.vonng.com/cloud/bonus/) have a three to four order of magnitude advantage in cost-effectiveness compared to [cloud storage](https://blog.vonng.com/cloud/ebs/), and self-hosting can better leverage this advantage.
+The most intuitive reason is what we mentioned in "[Are Cloud Databases an Intelligence Tax?](https://vonng.com/cloud/rds/)": when your data/computing scale exceeds the cloud computing applicable spectrum (Supabase: 4C/8G/500MB free storage), costs can easily explode.
+Moreover, currently, sufficiently reliable [local enterprise-grade NVMe SSDs](https://vonng.com/cloud/bonus/) have a three to four order of magnitude advantage in cost-effectiveness compared to [cloud storage](https://vonng.com/cloud/ebs/), and self-hosting can better leverage this advantage.
 
 Another important reason is **functionality** — Supabase cloud service functionality is limited. Many powerful PostgreSQL extensions cannot be provided as cloud services due to multi-tenant security challenges and licensing issues.
-Therefore, although [extensions are PostgreSQL's core feature](https://blog.vonng.com/pg/pg-eat-db-world), only **64** extensions are available on Supabase cloud service.
+Therefore, although [extensions are PostgreSQL's core feature](https://vonng.com/pg/pg-eat-db-world), only **64** extensions are available on Supabase cloud service.
 Self-built Supabase with Pigsty provides up to [**440**](https://pgext.cloud/list) ready-to-use PostgreSQL extensions.
 
 Additionally, autonomy and avoiding vendor lock-in are important reasons for self-hosting — although Supabase aims to provide an open-source alternative to Google Firebase without vendor lock-in, the threshold for self-building enterprise-grade Supabase to high standards is actually quite high.

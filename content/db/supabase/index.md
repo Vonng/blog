@@ -68,11 +68,11 @@ Supabase 还为小微创业者提供了“慷慨”的免费云服务额度 —�
 
 既然 Supabase 云服务这么香，为什么要自建呢？
 
-最直观的原因是是我们在《[云数据库是智商税吗？](https://blog.vonng.com/cloud/rds/)》中提到过的：当你的数据/计算规模超出云计算适用光谱（Supabase：4C/8G/500MB免费存储），成本很容易出现爆炸式增长。
-而且在当下，足够可靠的 [本地企业级 NVMe SSD](https://blog.vonng.com/cloud/bonus/) 在性价比上与 [云端存储](https://blog.vonng.com/cloud/ebs/) 有着三到四个数量级的优势，而自建能更好地利用这一点。
+最直观的原因是是我们在《[云数据库是智商税吗？](https://vonng.com/cloud/rds/)》中提到过的：当你的数据/计算规模超出云计算适用光谱（Supabase：4C/8G/500MB免费存储），成本很容易出现爆炸式增长。
+而且在当下，足够可靠的 [本地企业级 NVMe SSD](https://vonng.com/cloud/bonus/) 在性价比上与 [云端存储](https://vonng.com/cloud/ebs/) 有着三到四个数量级的优势，而自建能更好地利用这一点。
 
 另一个重要的原因是 **功能**， Supabase 云服务的功能受限 —— 很多强力PG扩展因为多租户安全挑战与许可证的原因无法以云服务的形式。
-故而尽管 [扩展是 PostgreSQL 的核心特色](https://blog.vonng.com/pg/pg-eat-db-world)，在 Supabase 云服务上也依然只有 **64** 个扩展可用。
+故而尽管 [扩展是 PostgreSQL 的核心特色](https://vonng.com/pg/pg-eat-db-world)，在 Supabase 云服务上也依然只有 **64** 个扩展可用。
 而通过 Pigsty 自建的 Supabase 则提供了多达 [**440**](https://pgext.cloud/zh/list) 个开箱即用的 PG 扩展。
 
 此外，自主可控与规避供应商锁定也是自建的重要原因 —— 尽管 Supabase 虽然旨在提供一个无供应商锁定的 Google Firebase 开源替代，但实际上自建高标准企业级的 Supabase 门槛并不低。

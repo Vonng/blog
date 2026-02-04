@@ -1,0 +1,8 @@
+{{- if .IsTranslated -}}
+  {{- $translation := index .Translations 0 -}}
+  <a href="{{ $translation.RelPermalink }}"
+     class="cursor-pointer flex items-center bf-icon-color-hover"
+     title="{{ $translation.Language.Params.displayName }}">
+    {{ partial "icon.html" "language" }}
+  </a>
+{{- end -}}

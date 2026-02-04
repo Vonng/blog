@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document summarizes the Chinese to English translation work completed on 2025-08-05 for the blog.vonng.com website.
+This document summarizes the Chinese to English translation work completed on 2025-08-05 for the vonng.com website.
 
 ## Statistics
 

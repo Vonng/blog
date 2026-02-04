@@ -2,7 +2,7 @@
 title: "WordPress Community Civil War: On Community Boundary Demarcation"
 date: 2024-10-17
 author: |
-  [Vonng (Feng Ruohang)](https://vonng.com/en/) | [WeChat Public Account](https://blog.vonng.com/en/)
+  [Vonng (Feng Ruohang)](https://vonng.com/en/) | [WeChat Public Account](https://vonng.com/en/)
 summary: >
   When open source ideals meet commercial conflicts, what insights can this conflict between open source software communities and cloud vendors bring? On the importance of community boundary demarcation.
 tags: [Open-Source]
@@ -64,7 +64,7 @@ But hosting services represented by traditional public cloud vendors, by control
 
 ---------
 
-How to solve this problem? Open source communities have actually provided their own answer. In "[Redis Going Closed Source is a Disgrace to 'Open-Source' and Public Clouds](https://blog.vonng.com/en/db/redis-not-oss/)", I've already analyzed in detail — for example, in the database field, it's not hard to see that relationships between leading database companies/communities and cloud vendors have been escalating in recent years. [Redis changed its open source license to RSAL/SSPL](https://blog.vonng.com/en/db/redis-not-oss/), [ElasticSearch changed to AGPLv3](https://blog.vonng.com/en/db/elastic-license/), [MongoDB uses the more restrictive SSPL](https://blog.vonng.com/en/db/mongo-sspl/), MinIO and Grafana also switched to the more restrictive AGPLv3. [Oracle slacks off on MySQL open source version](https://blog.vonng.com/en/db/mysql-vs-pg/), and even [the most friendly PostgreSQL ecosystem is starting to show different voices](https://blog.vonng.com/en/pg/pg-vs-cloud/).
+How to solve this problem? Open source communities have actually provided their own answer. In "[Redis Going Closed Source is a Disgrace to 'Open-Source' and Public Clouds](https://vonng.com/en/db/redis-not-oss/)", I've already analyzed in detail — for example, in the database field, it's not hard to see that relationships between leading database companies/communities and cloud vendors have been escalating in recent years. [Redis changed its open source license to RSAL/SSPL](https://vonng.com/en/db/redis-not-oss/), [ElasticSearch changed to AGPLv3](https://vonng.com/en/db/elastic-license/), [MongoDB uses the more restrictive SSPL](https://vonng.com/en/db/mongo-sspl/), MinIO and Grafana also switched to the more restrictive AGPLv3. [Oracle slacks off on MySQL open source version](https://vonng.com/en/db/mysql-vs-pg/), and even [the most friendly PostgreSQL ecosystem is starting to show different voices](https://vonng.com/en/pg/pg-vs-cloud/).
 
 We must understand that open source licenses are like charters for open source communities. Switching open source licenses is essentially an act of re-demarcating community boundaries. Through "implicit discriminatory clauses" in AGPLv3/SSPL or other more restrictive open source agreements, participants who don't align with open source community values are legally excluded.
 
