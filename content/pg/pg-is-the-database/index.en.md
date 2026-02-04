@@ -3,6 +3,7 @@ title: Postgres is eating the database world
 date: 2024-03-04
 author: |
   [Ruohang Feng](https://vonng.com)([@Vonng](https://vonng.com/en/))| [WeChat](https://mp.weixin.qq.com/s/8_uhRH93oAoHZqoC90DA6g) | [Medium](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4)
+draft: true
 summary: >
   PostgreSQL isn't just a simple relational database; it's a data management framework with the potential to engulf the entire database realm.
 resources:
