@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 520" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="780" height="520" fill="#0a0a0a"/>
+  
+  <!-- Column positions: width=120, gap=16 -->
+  <!-- Col 1: x=30, Col 2: x=166, Col 3: x=302, Col 4: x=438, divider: x=574, Col 5: x=606 -->
+  
+  <!-- Column Headers -->
+  <text x="90" y="40" fill="#ffffff" font-size="15" font-weight="bold" text-anchor="middle">On-site</text>
+  <text x="226" y="40" fill="#ffffff" font-size="15" font-weight="bold" text-anchor="middle">IaaS</text>
+  <text x="362" y="40" fill="#ffffff" font-size="15" font-weight="bold" text-anchor="middle">PaaS</text>
+  <text x="498" y="40" fill="#ffffff" font-size="15" font-weight="bold" text-anchor="middle">SaaS</text>
+  <text x="666" y="40" fill="#ffffff" font-size="15" font-weight="bold" text-anchor="middle">AI Agent</text>
+  
+  <!-- Row height=36, gap=4 -->
+  
+  <!-- Column 1: On-site (all teal) -->
+  <rect x="30" y="60" width="120" height="36" rx="6" fill="#2dd4bf"/>
+  <text x="90" y="83" fill="#000" font-size="12" font-weight="500" text-anchor="middle">Applications</text>
+  
+  <rect x="30" y="100" width="120" height="36" rx="6" fill="#2dd4bf"/>
+  <text x="90" y="123" fill="#000" font-size="12" font-weight="500" text-anchor="middle">Data</text>
+  
+  <rect x="30" y="140" width="120" height="36" rx="6" fill="#2dd4bf"/>
+  <text x="90" y="163" fill="#000" font-size="12" font-weight="500" text-anchor="middle">Runtime</text>
+  
+  <rect x="30" y="180" width="120" height="36" rx="6" fill="#2dd4bf"/>
+  <text x="90" y="203" fill="#000" font-size="12" font-weight="500" text-anchor="middle">Middleware</text>
+  
+  <rect x="30" y="220" width="120" height="36" rx="6" fill="#2dd4bf"/>
+  <text x="90" y="243" fill="#000" font-size="12" font-weight="500" text-anchor="middle">O/S</text>
+  
+  <rect x="30" y="260" width="120" height="36" rx="6" fill="#2dd4bf"/>
+  <text x="90" y="283" fill="#000" font-size="12" font-weight="500" text-anchor="middle">Virtualization</text>
+  
+  <rect x="30" y="300" width="120" height="36" rx="6" fill="#2dd4bf"/>
+  <text x="90" y="323" fill="#000" font-size="12" font-weight="500" text-anchor="middle">Servers</text>
+  
+  <rect x="30" y="340" width="120" height="36" rx="6" fill="#2dd4bf"/>
+  <text x="90" y="363" fill="#000" font-size="12" font-weight="500" text-anchor="middle">Storage</text>
+  
+  <rect x="30" y="380" width="120" height="36" rx="6" fill="#2dd4bf"/>
+  <text x="90" y="403" fill="#000" font-size="12" font-weight="500" text-anchor="middle">Networking</text>
+  
+  <!-- Column 2: IaaS (top 5 teal, bottom 4 red) -->
+  <rect x="166" y="60" width="120" height="36" rx="6" fill="#2dd4bf"/>
+  <text x="226" y="83" fill="#000" font-size="12" font-weight="500" text-anchor="middle">Applications</text>
+  
+  <rect x="166" y="100" width="120" height="36" rx="6" fill="#2dd4bf"/>
+  <text x="226" y="123" fill="#000" font-size="12" font-weight="500" text-anchor="middle">Data</text>
+  
+  <rect x="166" y="140" width="120" height="36" rx="6" fill="#2dd4bf"/>
+  <text x="226" y="163" fill="#000" font-size="12" font-weight="500" text-anchor="middle">Runtime</text>
+  
+  <rect x="166" y="180" width="120" height="36" rx="6" fill="#2dd4bf"/>
+  <text x="226" y="203" fill="#000" font-size="12" font-weight="500" text-anchor="middle">Middleware</text>
+  
+  <rect x="166" y="220" width="120" height="36" rx="6" fill="#2dd4bf"/>
+  <text x="226" y="243" fill="#000" font-size="12" font-weight="500" text-anchor="middle">O/S</text>
+  
+  <rect x="166" y="260" width="120" height="36" rx="6" fill="#dc2626"/>
+  <text x="226" y="283" fill="#fff" font-size="12" font-weight="500" text-anchor="middle">Virtualization</text>
+  
+  <rect x="166" y="300" width="120" height="36" rx="6" fill="#dc2626"/>
+  <text x="226" y="323" fill="#fff" font-size="12" font-weight="500" text-anchor="middle">Servers</text>
+  
+  <rect x="166" y="340" width="120" height="36" rx="6" fill="#dc2626"/>
+  <text x="226" y="363" fill="#fff" font-size="12" font-weight="500" text-anchor="middle">Storage</text>
+  
+  <rect x="166" y="380" width="120" height="36" rx="6" fill="#dc2626"/>
+  <text x="226" y="403" fill="#fff" font-size="12" font-weight="500" text-anchor="middle">Networking</text>
+  
+  <!-- Column 3: PaaS (top 2 teal, bottom 7 red) -->
+  <rect x="302" y="60" width="120" height="36" rx="6" fill="#2dd4bf"/>
+  <text x="362" y="83" fill="#000" font-size="12" font-weight="500" text-anchor="middle">Applications</text>
+  
+  <rect x="302" y="100" width="120" height="36" rx="6" fill="#2dd4bf"/>
+  <text x="362" y="123" fill="#000" font-size="12" font-weight="500" text-anchor="middle">Data</text>
+  
+  <rect x="302" y="140" width="120" height="36" rx="6" fill="#dc2626"/>
+  <text x="362" y="163" fill="#fff" font-size="12" font-weight="500" text-anchor="middle">Runtime</text>
+  
+  <rect x="302" y="180" width="120" height="36" rx="6" fill="#dc2626"/>
+  <text x="362" y="203" fill="#fff" font-size="12" font-weight="500" text-anchor="middle">Middleware</text>
+  
+  <rect x="302" y="220" width="120" height="36" rx="6" fill="#dc2626"/>
+  <text x="362" y="243" fill="#fff" font-size="12" font-weight="500" text-anchor="middle">O/S</text>
+  
+  <rect x="302" y="260" width="120" height="36" rx="6" fill="#dc2626"/>
+  <text x="362" y="283" fill="#fff" font-size="12" font-weight="500" text-anchor="middle">Virtualization</text>
+  
+  <rect x="302" y="300" width="120" height="36" rx="6" fill="#dc2626"/>
+  <text x="362" y="323" fill="#fff" font-size="12" font-weight="500" text-anchor="middle">Servers</text>
+  
+  <rect x="302" y="340" width="120" height="36" rx="6" fill="#dc2626"/>
+  <text x="362" y="363" fill="#fff" font-size="12" font-weight="500" text-anchor="middle">Storage</text>
+  
+  <rect x="302" y="380" width="120" height="36" rx="6" fill="#dc2626"/>
+  <text x="362" y="403" fill="#fff" font-size="12" font-weight="500" text-anchor="middle">Networking</text>
+  
+  <!-- Column 4: SaaS (all red) -->
+  <rect x="438" y="60" width="120" height="36" rx="6" fill="#dc2626"/>
+  <text x="498" y="83" fill="#fff" font-size="12" font-weight="500" text-anchor="middle">Applications</text>
+  
+  <rect x="438" y="100" width="120" height="36" rx="6" fill="#dc2626"/>
+  <text x="498" y="123" fill="#fff" font-size="12" font-weight="500" text-anchor="middle">Data</text>
+  
+  <rect x="438" y="140" width="120" height="36" rx="6" fill="#dc2626"/>
+  <text x="498" y="163" fill="#fff" font-size="12" font-weight="500" text-anchor="middle">Runtime</text>
+  
+  <rect x="438" y="180" width="120" height="36" rx="6" fill="#dc2626"/>
+  <text x="498" y="203" fill="#fff" font-size="12" font-weight="500" text-anchor="middle">Middleware</text>
+  
+  <rect x="438" y="220" width="120" height="36" rx="6" fill="#dc2626"/>
+  <text x="498" y="243" fill="#fff" font-size="12" font-weight="500" text-anchor="middle">O/S</text>
+  
+  <rect x="438" y="260" width="120" height="36" rx="6" fill="#dc2626"/>
+  <text x="498" y="283" fill="#fff" font-size="12" font-weight="500" text-anchor="middle">Virtualization</text>
+  
+  <rect x="438" y="300" width="120" height="36" rx="6" fill="#dc2626"/>
+  <text x="498" y="323" fill="#fff" font-size="12" font-weight="500" text-anchor="middle">Servers</text>
+  
+  <rect x="438" y="340" width="120" height="36" rx="6" fill="#dc2626"/>
+  <text x="498" y="363" fill="#fff" font-size="12" font-weight="500" text-anchor="middle">Storage</text>
+  
+  <rect x="438" y="380" width="120" height="36" rx="6" fill="#dc2626"/>
+  <text x="498" y="403" fill="#fff" font-size="12" font-weight="500" text-anchor="middle">Networking</text>
+  
+  <!-- Divider line - centered between col4 and col5 -->
+  <line x1="574" y1="50" x2="574" y2="425" stroke="#555" stroke-width="1" stroke-dasharray="4,4"/>
+  
+  <!-- Column 5: AI Agent -->
+  <!-- Agent block (covers Applications + Data: y=60 to y=136, height=76) -->
+  <rect x="606" y="60" width="120" height="76" rx="6" fill="#2dd4bf"/>
+  <text x="666" y="105" fill="#000" font-size="14" font-weight="bold" text-anchor="middle">Agent</text>
+  
+  <!-- AI Infra block (covers Runtime + Middleware + O/S: y=140 to y=256, height=116) -->
+  <rect x="606" y="140" width="120" height="116" rx="6" fill="#8b5cf6"/>
+  <text x="666" y="190" fill="#fff" font-size="14" font-weight="bold" text-anchor="middle">AI Infra</text>
+  <text x="666" y="215" fill="#fff" font-size="14" font-weight="bold" text-anchor="middle">Agent OS</text>
+  
+  <!-- IaaS block (covers Virtualization + Servers + Storage + Networking: y=260 to y=416, height=156) -->
+  <rect x="606" y="260" width="120" height="156" rx="6" fill="#dc2626"/>
+  <text x="666" y="345" fill="#fff" font-size="14" font-weight="bold" text-anchor="middle">IaaS</text>
+  
+  <!-- Legend -->
+  <rect x="30" y="450" width="18" height="18" rx="4" fill="#2dd4bf"/>
+  <text x="56" y="464" fill="#888" font-size="11">You manage</text>
+  
+  <rect x="170" y="450" width="18" height="18" rx="4" fill="#dc2626"/>
+  <text x="196" y="464" fill="#888" font-size="11">Service provider manages</text>
+  
+  <rect x="380" y="450" width="18" height="18" rx="4" fill="#8b5cf6"/>
+  <text x="406" y="464" fill="#888" font-size="11">AI Infrastructure layer</text>
+  
+</svg>

@@ -1,0 +1,225 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+  <defs>
+    <!-- Gradients for each column -->
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EE5A5A;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFA94D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF922B;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="yellowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD43B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FCC419;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#69DB7C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#51CF66;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#38D9A9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#20C997;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Arrow gradient -->
+    <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#FFA94D;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFD43B;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#69DB7C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38D9A9;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Shadow filter -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+    
+    <!-- Subtle inner glow -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="700" fill="#1a1a2e"/>
+  
+  <!-- Subtle grid pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.03"/>
+  </pattern>
+  <rect width="1200" height="700" fill="url(#grid)"/>
+  
+  <!-- Title -->
+  <text x="600" y="55" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="2">
+    AI 时代软件可替代性光谱
+  </text>
+  <text x="600" y="82" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#888" text-anchor="middle" letter-spacing="1">
+    AI Era Software Replaceability Spectrum
+  </text>
+  
+  <!-- Arrow bar -->
+  <rect x="60" y="110" width="1080" height="8" rx="4" fill="url(#arrowGrad)" opacity="0.8"/>
+  
+  <!-- Arrow endpoints -->
+  <polygon points="55,114 70,108 70,120" fill="#FF6B6B"/>
+  <polygon points="1145,114 1130,108 1130,120" fill="#38D9A9"/>
+  
+  <!-- Labels above arrow -->
+  <text x="100" y="100" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#FF6B6B" font-weight="500">
+    最容易被替代
+  </text>
+  <text x="1100" y="100" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#38D9A9" text-anchor="end" font-weight="500">
+    最难被替代
+  </text>
+  
+  <!-- Column 1: Red - 界面仪表盘 -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="145" width="210" height="500" rx="16" fill="url(#redGrad)"/>
+  </g>
+  <text x="165" y="195" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#fff" text-anchor="middle">
+    界面仪表盘
+  </text>
+  <text x="165" y="218" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">
+    UI / Dashboard
+  </text>
+  <line x1="90" y1="240" x2="240" y2="240" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  
+  <!-- Company cards - Column 1 -->
+  <rect x="80" y="265" width="170" height="60" rx="10" fill="rgba(255,255,255,0.15)"/>
+  <text x="165" y="302" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#fff" text-anchor="middle">Figma</text>
+  
+  <rect x="80" y="340" width="170" height="60" rx="10" fill="rgba(255,255,255,0.15)"/>
+  <text x="165" y="377" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#fff" text-anchor="middle">Atlassian</text>
+  
+  <rect x="80" y="415" width="170" height="60" rx="10" fill="rgba(255,255,255,0.15)"/>
+  <text x="165" y="452" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#fff" text-anchor="middle">Monday</text>
+  
+  <!-- Risk indicator -->
+  <text x="165" y="560" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="rgba(255,255,255,0.6)" text-anchor="middle">风险指数</text>
+  <rect x="90" y="575" width="150" height="8" rx="4" fill="rgba(0,0,0,0.2)"/>
+  <rect x="90" y="575" width="150" height="8" rx="4" fill="rgba(255,255,255,0.9)"/>
+  <text x="165" y="605" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700" fill="#fff" text-anchor="middle">极高</text>
+  
+  <!-- Column 2: Orange - 工作流编排 -->
+  <g filter="url(#shadow)">
+    <rect x="288" y="145" width="210" height="500" rx="16" fill="url(#orangeGrad)"/>
+  </g>
+  <text x="393" y="195" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#fff" text-anchor="middle">
+    工作流编排
+  </text>
+  <text x="393" y="218" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">
+    Workflow Orchestration
+  </text>
+  <line x1="318" y1="240" x2="468" y2="240" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  
+  <!-- Company cards - Column 2 -->
+  <rect x="308" y="265" width="170" height="60" rx="10" fill="rgba(255,255,255,0.15)"/>
+  <text x="393" y="302" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#fff" text-anchor="middle">HubSpot</text>
+  
+  <rect x="308" y="340" width="170" height="60" rx="10" fill="rgba(255,255,255,0.15)"/>
+  <text x="393" y="377" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#fff" text-anchor="middle">ServiceNow</text>
+  
+  <rect x="308" y="415" width="170" height="60" rx="10" fill="rgba(255,255,255,0.15)"/>
+  <text x="393" y="452" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#fff" text-anchor="middle">Salesforce</text>
+  
+  <!-- Risk indicator -->
+  <text x="393" y="560" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="rgba(255,255,255,0.6)" text-anchor="middle">风险指数</text>
+  <rect x="318" y="575" width="150" height="8" rx="4" fill="rgba(0,0,0,0.2)"/>
+  <rect x="318" y="575" width="120" height="8" rx="4" fill="rgba(255,255,255,0.9)"/>
+  <text x="393" y="605" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700" fill="#fff" text-anchor="middle">高</text>
+  
+  <!-- Column 3: Yellow - 业务逻辑 -->
+  <g filter="url(#shadow)">
+    <rect x="516" y="145" width="210" height="500" rx="16" fill="url(#yellowGrad)"/>
+  </g>
+  <text x="621" y="195" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#5c4813" text-anchor="middle">
+    业务逻辑
+  </text>
+  <text x="621" y="218" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="rgba(92,72,19,0.7)" text-anchor="middle">
+    Business Logic
+  </text>
+  <line x1="546" y1="240" x2="696" y2="240" stroke="rgba(92,72,19,0.3)" stroke-width="1"/>
+  
+  <!-- Company cards - Column 3 -->
+  <rect x="536" y="265" width="170" height="60" rx="10" fill="rgba(255,255,255,0.4)"/>
+  <text x="621" y="302" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#5c4813" text-anchor="middle">SAP</text>
+  
+  <rect x="536" y="340" width="170" height="60" rx="10" fill="rgba(255,255,255,0.4)"/>
+  <text x="621" y="377" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#5c4813" text-anchor="middle">Intuit</text>
+  
+  <rect x="536" y="415" width="170" height="60" rx="10" fill="rgba(255,255,255,0.4)"/>
+  <text x="621" y="452" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#5c4813" text-anchor="middle">ADP</text>
+  
+  <!-- Risk indicator -->
+  <text x="621" y="560" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="rgba(92,72,19,0.6)" text-anchor="middle">风险指数</text>
+  <rect x="546" y="575" width="150" height="8" rx="4" fill="rgba(0,0,0,0.1)"/>
+  <rect x="546" y="575" width="90" height="8" rx="4" fill="rgba(92,72,19,0.7)"/>
+  <text x="621" y="605" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700" fill="#5c4813" text-anchor="middle">中</text>
+  
+  <!-- Column 4: Green - 基础设施 -->
+  <g filter="url(#shadow)">
+    <rect x="744" y="145" width="210" height="500" rx="16" fill="url(#greenGrad)"/>
+  </g>
+  <text x="849" y="195" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#1a5928" text-anchor="middle">
+    基础设施
+  </text>
+  <text x="849" y="218" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="rgba(26,89,40,0.7)" text-anchor="middle">
+    Infrastructure
+  </text>
+  <line x1="774" y1="240" x2="924" y2="240" stroke="rgba(26,89,40,0.3)" stroke-width="1"/>
+  
+  <!-- Company cards - Column 4 -->
+  <rect x="764" y="265" width="170" height="60" rx="10" fill="rgba(255,255,255,0.4)"/>
+  <text x="849" y="302" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#1a5928" text-anchor="middle">Datadog</text>
+  
+  <rect x="764" y="340" width="170" height="60" rx="10" fill="rgba(255,255,255,0.4)"/>
+  <text x="849" y="377" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#1a5928" text-anchor="middle">Splunk</text>
+  
+  <rect x="764" y="415" width="170" height="60" rx="10" fill="rgba(255,255,255,0.4)"/>
+  <text x="849" y="452" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#1a5928" text-anchor="middle">CrowdStrike</text>
+  
+  <!-- Risk indicator -->
+  <text x="849" y="560" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="rgba(26,89,40,0.6)" text-anchor="middle">风险指数</text>
+  <rect x="774" y="575" width="150" height="8" rx="4" fill="rgba(0,0,0,0.1)"/>
+  <rect x="774" y="575" width="60" height="8" rx="4" fill="rgba(26,89,40,0.7)"/>
+  <text x="849" y="605" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700" fill="#1a5928" text-anchor="middle">低</text>
+  
+  <!-- Column 5: Cyan - 数据库 -->
+  <g filter="url(#shadow)">
+    <rect x="972" y="145" width="210" height="500" rx="16" fill="url(#cyanGrad)"/>
+  </g>
+  <text x="1077" y="195" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#0b5c4d" text-anchor="middle">
+    数据库
+  </text>
+  <text x="1077" y="218" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="rgba(11,92,77,0.7)" text-anchor="middle">
+    Database
+  </text>
+  <line x1="1002" y1="240" x2="1152" y2="240" stroke="rgba(11,92,77,0.3)" stroke-width="1"/>
+  
+  <!-- Company cards - Column 5 -->
+  <rect x="992" y="265" width="170" height="60" rx="10" fill="rgba(255,255,255,0.4)"/>
+  <text x="1077" y="302" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#0b5c4d" text-anchor="middle">PostgreSQL</text>
+  
+  <rect x="992" y="340" width="170" height="60" rx="10" fill="rgba(255,255,255,0.4)"/>
+  <text x="1077" y="377" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#0b5c4d" text-anchor="middle">Snowflake</text>
+  
+  <rect x="992" y="415" width="170" height="60" rx="10" fill="rgba(255,255,255,0.4)"/>
+  <text x="1077" y="452" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#0b5c4d" text-anchor="middle">Excel</text>
+  
+  <!-- Risk indicator -->
+  <text x="1077" y="560" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="rgba(11,92,77,0.6)" text-anchor="middle">风险指数</text>
+  <rect x="1002" y="575" width="150" height="8" rx="4" fill="rgba(0,0,0,0.1)"/>
+  <rect x="1002" y="575" width="30" height="8" rx="4" fill="rgba(11,92,77,0.7)"/>
+  <text x="1077" y="605" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700" fill="#0b5c4d" text-anchor="middle">极低</text>
+  
+  <!-- Footer -->
+  <text x="600" y="680" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#555" text-anchor="middle">
+    © 2026 · 核心洞察：离用户越近、离数据越远 → 越容易被AI替代
+  </text>
+</svg>
