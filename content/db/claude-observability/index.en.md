@@ -1,6 +1,6 @@
 ---
 title: "Claude Code Observability"
-date: 2026-01-26
+date: 2026-01-25
 description: "Export Claude Code's OTEL logs and metrics to Victoria stack, visualize with Grafana dashboards."
 tags: [ClaudeCode, Observability, VictoriaMetrics, Grafana]
 ---
