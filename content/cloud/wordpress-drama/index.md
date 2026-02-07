@@ -32,7 +32,7 @@ tags: [开源]
 
 - [Open source royalty and mad kings](https://world.hey.com/dhh/open-source-royalty-and-mad-kings-a8f79d16)
 
-![dhh2.png](dhh2.png)
+![dhh2.webp](dhh2.webp)
 
 然后是当事人 Mullenweg 的两篇博客回应
 

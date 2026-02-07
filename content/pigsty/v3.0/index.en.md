@@ -20,8 +20,8 @@ tags: [Pigsty]
 
 **Extension Explosion**:
 
-Pigsty v3 ships an unprecedented [**340**](/docs/pgsql/ext/) available PostgreSQL extensions.
-This includes **121** extension [**RPM packages**](/docs/pgsql/ext/) and **133** [**DEB packages**](/docs/pgsql/ext/) — more than the total extension count in the official PGDG repositories (135 RPM / 109 DEB).
+Pigsty v3 ships an unprecedented [**340**](https://pigsty.cc/docs/pgsql/ext/) available PostgreSQL extensions.
+This includes **121** extension [**RPM packages**](https://pigsty.cc/docs/pgsql/ext/) and **133** [**DEB packages**](https://pigsty.cc/docs/pgsql/ext/) — more than the total extension count in the official PGDG repositories (135 RPM / 109 DEB).
 Moreover, Pigsty cross-ports EL-exclusive and Debian-exclusive extensions, achieving full ecosystem parity between the two major Linux families.
 
 ```yaml
@@ -51,7 +51,7 @@ You can run production-grade PostgreSQL clusters with HA, IaC, PITR, and full ob
 
 **Pro Edition**:
 
-We now offer Pigsty Pro [**Professional Edition**](/docs/about/service), providing value-added services on top of the open-source version. Pro includes additional modules: MSSQL, Oracle, Mongo, K8S, Victoria, Kafka, TigerBeetle, and more, with broader support for PG major versions, operating systems, and chip architectures.
+We now offer Pigsty Pro [**Professional Edition**](https://pigsty.cc/docs/about/service), providing value-added services on top of the open-source version. Pro includes additional modules: MSSQL, Oracle, Mongo, K8S, Victoria, Kafka, TigerBeetle, and more, with broader support for PG major versions, operating systems, and chip architectures.
 It provides precision-tuned offline packages for every OS minor version, plus support for legacy systems like EL7, Debian 11, and Ubuntu 20.04. Pro also offers customizable kernel support with native deployment, monitoring, and management for PolarDB PG/Oracle to meet localization requirements.
 
 **Quick Install**:
@@ -173,7 +173,7 @@ At release time, Pigsty's major component versions are:
 - [sealos](https://github.com/labring/sealos): 5.0.0
 - [vector](https://github.com/vectordotdev/vector/releases) : 0.40.0
 
-Pigsty has recompiled all PostgreSQL extensions. For the latest extension versions, see the [Extension List](/docs/pgsql/ext/).
+Pigsty has recompiled all PostgreSQL extensions. For the latest extension versions, see the [Extension List](https://pigsty.cc/docs/pgsql/ext/).
 
 
 --------
@@ -182,8 +182,8 @@ Pigsty has recompiled all PostgreSQL extensions. For the latest extension versio
 
 Pigsty now provides out-of-the-box Docker Compose templates for Dify and Odoo:
 
-- [Dify](/docs/software/dify): AI agent workflow orchestration and LLMOps
-- [Odoo](/docs/software/odoo): Enterprise-grade open-source ERP system
+- [Dify](https://pigsty.cc/docs/software/dify): AI agent workflow orchestration and LLMOps
+- [Odoo](https://pigsty.cc/docs/software/odoo): Enterprise-grade open-source ERP system
 
 Pigsty Pro now offers pilot Kubernetes deployment support and Kafka KRaft cluster deployment with monitoring:
 

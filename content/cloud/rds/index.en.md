@@ -19,7 +19,7 @@ Recently, an article by DHH, co-founder of Basecamp & HEY, caused a stir„Äê1,2„Ä
 
 **So, how many awesome servers can $500,000 buy?**
 
-[![](featured.png)](https://mp.weixin.qq.com/s/YKqH324Qtg0mj6WfSMb66w)
+[![](featured.webp)](https://mp.weixin.qq.com/s/YKqH324Qtg0mj6WfSMb66w)
 
 
 

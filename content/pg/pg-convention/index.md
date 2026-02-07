@@ -385,7 +385,7 @@ PostgreSQL的功能非常强大，但是要把PostgreSQL用好，需要后端、
 
 **使用服务接入**
 
-- 生产数据库接入必须通过域名接入[服务](/zh/docs/concept/svc)，严禁使用 IP 地址直连。
+- 生产数据库接入必须通过域名接入[服务](https://pigsty.cc/docs/concept/svc)，严禁使用 IP 地址直连。
 - 服务与接入使用 VIP，LVS/HAProxy 屏蔽集群实例成员的角色变化，主从切换无需应用重启。
 
 

@@ -12,7 +12,7 @@ Yesterday’s post “[PG ‘Export Controls’ and Supply-Chain Trust](/en/pg/p
 
 > “As a university mirror admin, calling us ‘lying flat’ or ‘irresponsible’ is unfair and demoralizing.”
 
-![comment.png](comment.png)
+![comment.webp](comment.webp)
 
 I replied:
 

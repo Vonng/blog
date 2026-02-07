@@ -82,10 +82,10 @@ Pigsty提供了 [**仅监控部署（monly, monitor-only）**](https://pigsty.cc
 
 仅监控模式的部署流程与标准模式大体上保持一致，但省略了很多步骤
 
-- 在**元节点**上完成[基础设施初始化](/docs/pgsql/playbook)的部分与标准流程保持一致，仍然通过`./infra.yml`完成。
+- 在**元节点**上完成[基础设施初始化](https://pigsty.cc/docs/pgsql/playbook)的部分与标准流程保持一致，仍然通过`./infra.yml`完成。
 - 不需要在**数据库节点**上完成 **基础设施初始化**。
-- 不需要在**数据库节点**上执行[数据库初始化](/docs/pgsql/playbook)的绝大多数任务，而是通过专用的`./pgsql-monitor.yml` 完成仅监控系统部署。
-- 实际使用的配置项大大减少，只保留基础设施相关变量，与 [监控系统](/docs/pgsql/monitor/) 相关的少量变量。
+- 不需要在**数据库节点**上执行[数据库初始化](https://pigsty.cc/docs/pgsql/playbook)的绝大多数任务，而是通过专用的`./pgsql-monitor.yml` 完成仅监控系统部署。
+- 实际使用的配置项大大减少，只保留基础设施相关变量，与 [监控系统](https://pigsty.cc/docs/pgsql/monitor/) 相关的少量变量。
 
 
 

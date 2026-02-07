@@ -29,7 +29,7 @@ ParadeDB actually consists of three PostgreSQL extensions: `pg_bm25`, `pg_analyt
 
 I've translated ParadeDB's official website introduction and four blog articles to introduce this new star in the PostgreSQL ecosystem. Today's article is the first one — an overview.
 
-![](paradedb-rank.png)
+![](paradedb-rank.webp)
 
 
 

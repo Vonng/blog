@@ -22,7 +22,7 @@ ParadeDB 实际上是由三个 PostgreSQL 扩展组成：`pg_bm25`，`pg_analyti
 
 我翻译了 ParadeDB 的官网介绍与四篇博客文章，为您介绍这个 PostgreSQL 生态的新星。 今天是第一篇 —— 概览
 
-![](paradedb-rank.png)
+![](paradedb-rank.webp)
 
 
 

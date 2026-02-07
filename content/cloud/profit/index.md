@@ -19,7 +19,7 @@ tags: [下云, 商业]
 
 [云计算行业将走向何方](#云计算行业将走向何方)？
 
-[![](featured.png)](https://mp.weixin.qq.com/s/JU4lznF6-5Q4LaJTnG8SSQ)
+[![](featured.webp)](https://mp.weixin.qq.com/s/JU4lznF6-5Q4LaJTnG8SSQ)
 
 
 -------------------

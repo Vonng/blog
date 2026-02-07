@@ -39,7 +39,7 @@ There are many bad databases in this world - but those that can successfully blo
 Among all the stories about MongoDB's great deceptions, the most memorable is this LinkedIn post "[MongoDB 3.2 - Now Powered by PostgreSQL](https://mp.weixin.qq.com/s/e3_32Neoy5RVRBSozsa_7A)".
 The brilliance of this article lies in it being a bloody accusation from a MongoDB partner: MongoDB ignored their partner's loyal advice, took a PostgreSQL and disguised it as their own analytics engine, then deceived users at the launch event.
 
-![](mongo-powered-by-pg.png)
+![](mongo-powered-by-pg.webp)
 
 As a MongoDB partner in the analytics field, the author was completely disheartened and publicly wrote an accusation - "*MongoDB's analytics engine is a PostgreSQL, so you might as well just use PostgreSQL directly*."
 
@@ -87,7 +87,7 @@ For databases, **correctness is paramount** - the neutral distributed transactio
 
 Of course, MongoDB's strength is shameless "deception." Despite JEPSEN raising so many issues, on MongoDB's official website, their introduction to Jespen's evaluation goes: "*So far, causal consistency has generally been limited to research projects... MongoDB is one of the first commercial databases we know of to provide an implementation*"
 
-![](jepsen-mongo.png)
+![](jepsen-mongo.webp)
 
 This example once again demonstrates MongoDB's marketing shamelessness - using extremely refined language arts, carefully selecting an undigested peanut from a pile of bullshit, while glossing over various fatal flaws in correctness/consistency.
 
@@ -120,7 +120,7 @@ Honestly, MongoDB's performance is completely outdated, and its proud "built-in 
 
 If we observe DB-Engine popularity scores, it's clear that over the past decade, the two databases with the greatest growth have been PostgreSQL and MongoDB. These two can be said to be the biggest winners in the data field during the mobile internet era.
 
-![db-engine.png](db-engine.png)
+![db-engine.webp](db-engine.webp)
 
 But their difference is that PostgreSQL continues to grow, even becoming the [**most popular database**](/pg/pg-in-2024) in StackOverflow's global developer survey for three consecutive years with undiminished momentum. MongoDB started declining after 2021 and began to fade. Usage rates, reputation, and demand have all shown stagnation or downward development trends:
 
@@ -166,7 +166,7 @@ Of course, I later discovered I wasn't the only one with this feeling. On HN and
 
 **About this "MongoDB Challenges PG" news, HN comments are like this:**
 
-![hackernews.png](hackernews.png)
+![hackernews.webp](hackernews.webp)
 
 --------
 
@@ -184,7 +184,7 @@ Of course, I later discovered I wasn't the only one with this feeling. On HN and
 
 Partners [breaking into curses and whistleblowing](https://mp.weixin.qq.com/s/e3_32Neoy5RVRBSozsa_7A), I think MongoDB is unique:
 
-![shotgun.png](shotgun.png)
+![shotgun.webp](shotgun.webp)
 
 
 

@@ -33,7 +33,7 @@ UK government portals, tax systems, customs, banks, and several airlines reporte
 
 11:49 PM PDT, Oct 19: error rates in us-east-1 spiked. AWS didn’t confirm until 22 minutes later, and the mess dragged on until 3:53 PM Oct 20—a 16-hour saga.
 
-[![health-status.jpg](health-status.jpg)](#incident-log)
+[![health-status.webp](health-status.webp)](#incident-log)
 
 AWS’s [status post](https://health.aws.amazon.com/health/status?eventID=arn:aws:health:us-east-1::event/MULTIPLE_SERVICES/AWS_MULTIPLE_SERVICES_OPERATIONAL_ISSUE/AWS_MULTIPLE_SERVICES_OPERATIONAL_ISSUE_BA540_514A652BE1A) reads like slapstick: an internal DNS lookup failed. That single failure cut DynamoDB off from everything else. DynamoDB underpins IAM, EC2, Lambda, CloudWatch—the entire control plane.
 

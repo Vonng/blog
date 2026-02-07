@@ -40,7 +40,7 @@ According to Alibaba-Cloud's official [status page](https://status.aliyun.com/#/
 
 Numerous applications relying on Alibaba-Cloud services, including Alibaba's own suite of apps: Taobao, DingTalk, Xianyu, ... all experienced issues. This created significant external impact, with "app crashes" trending on social media.
 
-![yunpan.png](yunpan.png)
+![yunpan.webp](yunpan.webp)
 
 Taobao couldn't load chat images, courier services couldn't upload proof of delivery, charging stations were unusable, games couldn't send verification codes, food delivery orders couldn't be placed, delivery drivers couldn't access systems, parking gates wouldn't lift, supermarkets couldn't process payments. Even some schools' smart laundry machines and water dispensers stopped working. Countless developers and operations staff were called in to troubleshoot during their weekend rest...
 
@@ -110,7 +110,7 @@ More severe challenges may lie ahead. Global users seeking monetary compensation
 
 According to Heinrich's Law, behind one serious accident lie dozens of minor incidents, hundreds of near-misses, and thousands of hidden dangers. Last December's Alibaba-Cloud Hong Kong data center major outage already exposed many problems, yet a year later brought users an even bigger "surprise" (shock!). Such incidents are absolutely fatal to Alibaba-Cloud's brand image and even **seriously damage the entire industry's reputation**. Alibaba-Cloud should quickly provide users with explanations and accountability, publish detailed post-mortem reports, clarify subsequent improvement measures, and restore user trust.
 
-![cf-post-moterm.png](cf-post-moterm.png)
+![cf-post-moterm.webp](cf-post-moterm.webp)
 
 After all, failures of this scale can't be solved by "finding a scapegoat, sacrificing a programmer" — the CEO must personally apologize and resolve it. After Cloudflare's control plane outage earlier this month, the CEO immediately wrote a detailed [post-mortem analysis](https://blog.cloudflare.com/post-mortem-on-cloudflare-control-plane-and-analytics-outage/), recovering some reputation. Unfortunately, after several rounds of layoffs and three CEO changes in a year, Alibaba-Cloud probably struggles to find someone capable of taking responsibility.
 

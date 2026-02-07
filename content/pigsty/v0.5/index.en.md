@@ -18,7 +18,7 @@ tags: [Pigsty]
 
 - The official docs site (http://pigsty.cc/) is live.
 - Database templating becomes fully declarative: define users, roles, databases, ACLs, extensions, and schemas in config.
-- The default [access model](/docs/setup/security) is refined and HBA management now comes straight from Pigsty instead of Patroni.
+- The default [access model](https://pigsty.cc/docs/setup/security) is refined and HBA management now comes straight from Pigsty instead of Patroni.
 - Grafana provisioning switched from shoving a sqlite file to JSON provisioning via API.
 - Added the `pg-cluster-replication` dashboard to the open bundle.
 - CentOS 7.8 offline bundle: `pkg.tgz`.

@@ -40,6 +40,6 @@ Postgres fixed it with autovacuum: background workers scan and reclaim junk auto
 
 ## Pigsty’s scar tissue
 
-Pigsty shipped etcd as the DCS starting with v2.0.0 (2023‑02‑28). We didn’t patch the auto-compaction landmine until v2.6.0 (2024‑02‑13). That means an entire year of releases inherited the flaw. We call it out repeatedly in the docs: see the [Bug Log](/en/docs/bug/) and the [ETCD FAQ](/en/docs/etcd/faq/).
+Pigsty shipped etcd as the DCS starting with v2.0.0 (2023‑02‑28). We didn’t patch the auto-compaction landmine until v2.6.0 (2024‑02‑13). That means an entire year of releases inherited the flaw. We call it out repeatedly in the docs: see the [Bug Log](https://pigsty.cc/docs/bug/) and the [ETCD FAQ](https://pigsty.io/docs/etcd/faq/).
 
 If you’re still on Pigsty v2.0–v2.5, update your etcd config now. Don’t wait for the 2 GB wall to punch you in the face.

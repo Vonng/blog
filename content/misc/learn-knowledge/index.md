@@ -61,7 +61,7 @@ menu:
 
 ##### 图：笔者看见汉字“知”字时脑中激活的概念，用党性保证没有用过搜索引擎
 
-![图片](Users/vonng/dev/www/vonng.com/content/cn/blog/misc/640-20231108093555197.jpeg)
+![图片](featured.jpg)
 
 
 

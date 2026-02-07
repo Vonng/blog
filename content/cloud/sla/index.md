@@ -9,7 +9,7 @@ tags: [下云, SLA, 腾讯云]
 
 在云计算的世界里，服务等级协议（SLA）被视为云厂商对其服务质量的承诺。然而，当我们深入研究这些 SLA 时，会发现它们并不能像期望的那样“兜底”：你以为给自己的数据库上了保险可以高枕无忧，但其实白花花的银子买的是提供情绪价值的安慰剂。
 
-[![](featured.png)](https://mp.weixin.qq.com/s/LC5jAhuVObRcrTLxI1FUQA)
+[![](featured.webp)](https://mp.weixin.qq.com/s/LC5jAhuVObRcrTLxI1FUQA)
 
 
 ----------------
@@ -77,7 +77,7 @@ tags: [下云, SLA, 腾讯云]
 
 如果您是企业主或IT负责人，会觉得这样的甩锅有意义吗？
 
-![](sla-4.png)
+![](sla-4.webp)
 
 
 

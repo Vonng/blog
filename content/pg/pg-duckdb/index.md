@@ -77,7 +77,7 @@ DuckDB 是一个可以独立使用的数据库，但更是一个嵌入式的分�
 
 ![paradedb.png](paradedb.png)
 
-国内个人开发者李红艳开发的 [`duckdb_fdw`](/zh/docs/pgext/olap/duckdb_fdw) 是另一条另辟蹊径的道路。不是直接利用 PG的存储引擎接口，而是直接用外部数据源包装器（FDW）的基础设施，将 PG 和 DuckDB 对接到了一起。这引发了官方亲自下场吐槽，将其作为反例批判，也许是 MotherDuck 亲自下场的一个动机：“我还在构思伟大蓝图，如何融合PG与Duck的力量，你小子动作也太快了，得给你一点官方震撼看看”。
+国内个人开发者李红艳开发的 [`duckdb_fdw`](https://pgext.cloud/e/duckdb_fdw) 是另一条另辟蹊径的道路。不是直接利用 PG的存储引擎接口，而是直接用外部数据源包装器（FDW）的基础设施，将 PG 和 DuckDB 对接到了一起。这引发了官方亲自下场吐槽，将其作为反例批判，也许是 MotherDuck 亲自下场的一个动机：“我还在构思伟大蓝图，如何融合PG与Duck的力量，你小子动作也太快了，得给你一点官方震撼看看”。
 
 至于 CrunchyData 搞的 `cunchy_bridge` ，或者其他数据库公司搞的闭源套壳扩展，我个人感觉是很难有出息的。
 
@@ -86,5 +86,4 @@ DuckDB 是一个可以独立使用的数据库，但更是一个嵌入式的分�
 
 当然，作为 PostgreSQL 发行版 Pigsty 的作者，我的策略始终是 —— 你们赛你们的马，反正所有这些扩展我都会打包并分发给用户，让用户自己选择与决策。就好比当初向量数据库崛起的时候一样，我就把 `pgvector` ，`pg_embedding`，`pase`，`pg_sparse` 等等这几个最有前途的扩展打包分发出去。不管谁是最后的胜利者，反正 PG 和 Pigsty 都是摘桃子的赢家。
 
-天下武功，唯快不破，在 Pigsty v3 中已经实装了这三个最有前途的扩展插件： [`pg_duckdb`](/zh/docs/pgext/olap/pg_duckdb)，[`pg_lakehouse`](/zh/docs/pgext/olap/pg_lakehouse)，以及 [`duckdb_fdw`](/zh/docs/pgext/olap/duckdb_fdw)，当然还有 `duckdb` 二进制本体，开箱即用，让用户体验一个 PostgreSQL 包打天下，OLTP / OLAP 双冠全能王合体，真正 HTAP 的快乐。
-
+天下武功，唯快不破，在 Pigsty v3 中已经实装了这三个最有前途的扩展插件： [`pg_duckdb`](https://pgext.cloud/e/pg_duckdb)，[`pg_lakehouse`](https://pgext.cloud/e/pg_lakehouse)，以及 [`duckdb_fdw`](https://pgext.cloud/e/duckdb_fdw)，当然还有 `duckdb` 二进制本体，开箱即用，让用户体验一个 PostgreSQL 包打天下，OLTP / OLAP 双冠全能王合体，真正 HTAP 的快乐。

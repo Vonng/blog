@@ -25,7 +25,7 @@ available as RPM / DEB packages on mainstream Linux OS distros.  And the goal is
 
 > [**TL;DR: Take me to the HOW-TO part!**](#apt-repo)
 
-<a href="/pg/pg-eat-deb-world"><img src="https://pigsty.io/img/ecosystem.jpg" style="max-width: 800px; max-height: 1000px; width: 100%; height: auto;"></a>
+<a href="/pg/pg-eat-db-world"><img src="https://pigsty.io/img/ecosystem.jpg" style="max-width: 800px; max-height: 1000px; width: 100%; height: auto;"></a>
 
 
 
@@ -129,10 +129,10 @@ I hope this repository can serve as the ultimate solution to the frustration use
 Now, for a quick plug — what’s the easiest way to install and use these extensions?
 
 The simplest option is to use the OSS PostgreSQL distribution: [**Pigsty**](https://pgsty.com/).
-The repo is autoconfigured by default, so all you need to do is declare them in the [config inventory](/docs/setup/config).
+The repo is autoconfigured by default, so all you need to do is declare them in the [config inventory](https://pigsty.cc/docs/setup/config).
 
-For example,  the [self-hosting supabase](/docs/db/supabase) template requires extensions that aren’t available in the PGDG repo.
-You can simply  [download](/docs/pgext/usage/download/), [install](/docs/pgext/usage/install/), [preload](/docs/pgext/usage/load/), [config](/docs/pgext/usage/config) and [create](/docs/pgext/usage/create) extensions by referring to their names.
+For example,  the [self-hosting supabase](https://pigsty.cc/docs/conf/supabase/) template requires extensions that aren’t available in the PGDG repo.
+You can simply  [download](https://pigsty.cc/docs/pgext/usage/download/), [install](https://pigsty.cc/docs/pgext/usage/install/), [preload](https://pigsty.cc/docs/pgext/usage/load/), [config](https://pigsty.cc/docs/pgsql/ext/config/) and [create](https://pigsty.cc/docs/pgext/usage/create) extensions by referring to their names.
 
 ```yaml
 all:
@@ -255,7 +255,7 @@ Each major PostgreSQL version introduces changes, making the maintenance of **14
 Especially when some extension authors haven’t updated their work in years. In these cases, you often have no choice but to take matters into your own hands.
 I’ve personally fixed several extensions and ensured they support the latest PostgreSQL major versions. For those authors I could reach, I’ve submitted numerous PRs and issues to keep things moving forward.
 
-<a href="https://github.com/Vonng"><img src="github-contrib.png" style="max-width: 800px; width: 100%; height: auto;"></a>
+<a href="https://github.com/Vonng"><img src="github-contrib.webp" style="max-width: 800px; width: 100%; height: auto;"></a>
 
 Back to the point: **my goal with this repo is to establish a standard for PostgreSQL extension installation and distribution, solving the distribution challenges that have long troubles the users**.
 

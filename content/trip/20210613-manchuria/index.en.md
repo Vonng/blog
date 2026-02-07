@@ -9,7 +9,7 @@ The Dragon Boat Festival holiday coincided with college entrance exams. Not want
 
 We settled on Hulunbuir - Friday night flight from Beijing to Hailar, returning Monday morning. With major transportation set, we stopped worrying and were too lazy to make detailed plans. Anyway, we'd rent a car there for a spontaneous trip. Hulunbuir is most famous for its grasslands - birthplace of Genghis Khan, reportedly (according to Hulunbuir Municipal Government itself) the world's best grassland. It also has the famous port - Manchuria.
 
-![featured.jpg](featured.jpg)
+![featured.webp](featured.webp)
 
 Hulunbuir administratively belongs to Inner Mongolia, bordering Mongolia and Russia, part of the broader "Northeast" region. In fact, this area did belong to Heilongjiang for a period historically.
 

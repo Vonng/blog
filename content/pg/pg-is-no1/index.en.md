@@ -233,7 +233,7 @@ However, users need more than an engine; they need the complete car, driving cap
 
 This is why we created **[Pigsty](https://pigsty.io/)** — to develop an battery-included, open-source, local-first PostgreSQL distribution, making it easy for everyone to access and utilize a **quality database service**.
 
-![](pg-is-no1-18.png)
+![](pg-is-no1-18.webp)
 
 
 

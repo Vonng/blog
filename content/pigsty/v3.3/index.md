@@ -191,7 +191,7 @@ curl https://repo.pigsty.cc/get | bash -s v3.3.0
 
 ### 亮点特性
 
-- 可用扩展总数增加到 [**404**](/docs/pgsql/ext/) 个！
+- 可用扩展总数增加到 [**404**](https://pigsty.cc/docs/pgsql/ext/) 个！
 - PostgreSQL 二月小版本更新：17.4、16.8、15.12、14.17、13.20
 - 新功能：`app.yml` 脚本，用于自动安装 Odoo、Supabase、Dify 等应用。
 - 新功能：在 `infra_portal` 中进一步自定义 Nginx 配置。

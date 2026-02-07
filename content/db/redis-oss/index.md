@@ -47,9 +47,9 @@ Redis 切换为更为严格的 SSPL 协议的核心原因，用 Redis Labs CEO �
 
 越来越多的知名开源软件，都开始切换到敌视针对云厂商白嫖的许可证协议上来。不仅仅是 Redis，MongoDB，与 ElasticSearch 。MinIO 与 Grafana 分别在 2020，2021年从 Apache v2 协议切换到了 AGPLv3 协议。HashipCrop 的各种组件，MariaDB MaxScale， Percona MongoDB 也都使用了风格类似的 BSL 协议。
 
-一些老牌的开源项目例如 PostgreSQL ，正如PG核心组成员 Jonathan 所说，三十年的声誉历史沉淀让它们已经[在事实上无法变更开源协议](/pg/pg-license) 了。但我们可以看到，许多新强力的 PostgreSQL [扩展插件](/zh/docs/about/license#协议清单)开始使用 AGPLv3 作为默认的开源协议，而不是以前默认使用的 BSD-like / PostgreSQL 友善协议。例如分布式扩展 Citus，列存扩展 Hydra，ES全文检索替代扩展 BM25，OLAP 加速组件 PG Analytics …… 等等等等。
+一些老牌的开源项目例如 PostgreSQL ，正如PG核心组成员 Jonathan 所说，三十年的声誉历史沉淀让它们已经[在事实上无法变更开源协议](/pg/pg-license) 了。但我们可以看到，许多新强力的 PostgreSQL [扩展插件](https://pigsty.cc/docs/about/license#协议清单)开始使用 AGPLv3 作为默认的开源协议，而不是以前默认使用的 BSD-like / PostgreSQL 友善协议。例如分布式扩展 Citus，列存扩展 Hydra，ES全文检索替代扩展 BM25，OLAP 加速组件 PG Analytics …… 等等等等。
 
-包括我们自己的 PostgreSQL 发行版 Pigsty，也在 2.0 的时候由 Apache 协议切换到了 [AGPLv3 协议](/zh/docs/about/license)，背后的动机都是相似的 —— 针对软件自由的最大敌人 —— 云厂商进行反击。我们改变不了存量，但对于增量功能，是可以做出有效的回击与改变的。
+包括我们自己的 PostgreSQL 发行版 Pigsty，也在 2.0 的时候由 Apache 协议切换到了 [AGPLv3 协议](https://pigsty.cc/docs/about/license)，背后的动机都是相似的 —— 针对软件自由的最大敌人 —— 云厂商进行反击。我们改变不了存量，但对于增量功能，是可以做出有效的回击与改变的。
 
 在抵御云厂商白嫖的实践中，修改协议是最常见的做法：AGPLv3 是一种比较主流的实践，更激进的 SSPL 因为明确表达这种敌我歧视，不被算作开源。使用双协议进行明确的边界区分，也开始成为一种主流的开源商业化实践。但重要的是：**业界需要一种新的歧视性软件许可证协议，达到名正言顺辨识敌我，区别对待的效果 —— 来解决软件自由在当下面临的最大挑战 —— 云服务。**
 
@@ -134,7 +134,7 @@ Redis 切换为更为严格的 SSPL 协议的核心原因，用 Redis Labs CEO �
 
 使用 Copyleft 协议族可以将公有云厂商排除在社区之外，从而保护软件自由。然而这些协议也容易出现伤敌一千，自损一百的情况。 在更为严格的许可要求下，一部分软件自由也受到了不必要的连带损失，例如：Copyleft 协议族也与其他广泛使用的许可证不兼容，这使得在同一个项目中使用某些库的组合变得更为困难。因此业界需要更好的实践来真正落实好这一点。
 
-例如，我们的自由 PostgreSQL 发行版 Pigsty 使用了 AGPLv3 协议，但我们添加了对普通用户的 [补充豁免条款](/zh/docs/about/license#补充条款) —— 我们只保留对公有云供应商，与换皮套壳魔改同行进行违规追索的权利，对于普通终端用户来说实际执行的是 Apache 2.0 等效条款 —— 采购我们服务订阅的客户也可以得到书面承诺：不就违反 AGPLv3 的协议进行任何追索 —— 从某种意义上来说，这也是一种 “双协议” 实践。
+例如，我们的自由 PostgreSQL 发行版 Pigsty 使用了 AGPLv3 协议，但我们添加了对普通用户的 [补充豁免条款](https://pigsty.cc/docs/about/license#补充条款) —— 我们只保留对公有云供应商，与换皮套壳魔改同行进行违规追索的权利，对于普通终端用户来说实际执行的是 Apache 2.0 等效条款 —— 采购我们服务订阅的客户也可以得到书面承诺：不就违反 AGPLv3 的协议进行任何追索 —— 从某种意义上来说，这也是一种 “双协议” 实践。
 
 -------------------
 

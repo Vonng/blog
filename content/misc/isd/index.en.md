@@ -98,7 +98,7 @@ Of course, there's also some metadata about weather stations in auxiliary tables
 
 Besides auxiliary tables and dictionary tables, other data needs to be downloaded from NOAA. Here, I provide a series of wrapper scripts that allow you to complete configuration with simple commands. Especially if you're using Pigsty—an out-of-the-box PostgreSQL database distribution—PostgreSQL and Grafana are already configured during standalone installation. You only need `make all` to complete all configuration work.
 
-![intro.png](intro.png)
+![intro.png](isd-intro.png)
 
 In the original Daily dataset, there's a tiny amount of duplicate and dirty data that I've cleaned. You can choose to directly import our parsed and cleaned CSV dataset. If you need updates for the most recent days of this year, you can choose to use the Go Parser to directly download raw data from the NOAA website and parse it.
 
@@ -124,7 +124,7 @@ The summary section provides monthly observation counts, historical extreme reco
 
 If you're interested in finer granularity data, clicking month navigation automatically jumps to the ISD Detail panel, which provides daily summary-level data and sub-hourly raw observational records. Additionally, the meteorological elements section displays additional indicators, including minute-level temperature, dew point, pressure, wind speed, wind direction, cloud cover, visibility, precipitation, snowfall, and other weather condition codes.
 
-![isd-detail.png](isd-detail.png)
+![isd-detail.webp](isd-detail.webp)
 
 ---------------
 
@@ -136,4 +136,4 @@ For example, observational data is typical time-series data, so we can use it to
 
 Of course, how the dataset is used depends on the user. For example, you could ask GPT whether, based on this data, we can conclude that global temperatures are warming?
 
-![isd-question.png](isd-question.png)
+![isd-question.webp](isd-question.webp)

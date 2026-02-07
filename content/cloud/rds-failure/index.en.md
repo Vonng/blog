@@ -123,7 +123,7 @@ Honestly, I find this operation suffocating. Primary fencing is indeed a core is
 
 After fixing the primary-replica failure issues, spending another hour and a half, the primary memory expansion was finally completed. However, when one wave subsides, another rises - WAL logs started accumulating again, reaching nearly 800 GB within a few hours. If not discovered and handled in time, filling up the disk causing database unavailability would be inevitable.
 
-![wal-jam.jpg](wal-jam.jpg)
+![wal-jam.webp](wal-jam.webp)
 
 > The two pitfalls are also visible from monitoring
 
@@ -225,7 +225,7 @@ For client L, the benefits of cloud exit are immediate: just a **one-time invest
 
 In cloud exit matters, I'm happy to provide help and support for client L. [Pigsty](https://pigsty.cc/zh/) distills my domain knowledge and experience as a top PG DBA into an open-source RDS [self-building tool](/cloud/rds/#dba的工作与自动化管控), having helped countless users worldwide build their own enterprise-grade PostgreSQL database services. Although it has solved operational issues like out-of-box usability, scaling integration, monitoring systems, backup recovery, security compliance, and IaC quite well, to fully unleash the complete power of PostgreSQL and Pigsty still requires expert help for implementation.
 
-So I provide clearly priced [**expert consulting services**](/zh/docs/about/service) — for clients like L with mature technical teams who just lack domain knowledge, I only charge a fixed **5K ¥/month** consulting fee, equivalent to half a junior operations engineer's salary. But sufficient to let clients confidently use hardware resource costs an order of magnitude lower than cloud, self-building better local PG RDS services — and even when continuing to run RDS on cloud, avoid being fooled and harvested by "experts".
+So I provide clearly priced [**expert consulting services**](https://pigsty.cc/docs/about/service) — for clients like L with mature technical teams who just lack domain knowledge, I only charge a fixed **5K ¥/month** consulting fee, equivalent to half a junior operations engineer's salary. But sufficient to let clients confidently use hardware resource costs an order of magnitude lower than cloud, self-building better local PG RDS services — and even when continuing to run RDS on cloud, avoid being fooled and harvested by "experts".
 
 ![subscription.png](subscription.png)
 

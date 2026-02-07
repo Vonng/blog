@@ -97,7 +97,7 @@ However, using JavaScript for stored procedures isn't a novel concept—back in 
 
 A glance at the past twelve years of the "[Database Popularity Trend](https://demo.pigsty.cc/d/db-analysis/db-engine-analysis?orgId=1&var-year=2012)" on DB-Engine shows that only PostgreSQL and Mongo have truly led the pack. MongoDB (2009) and PostgreSQL 9.2 (2012) were quick to grasp internet developers' needs, adding [JSON feature support]() (document databases) right as the "Rise of JSON" began, thereby capturing the largest growth share in the database realm over the last decade.
 
-![db-engine.png](db-engine.png)
+![db-engine.webp](db-engine.webp)
 
 Of course, Oracle, MySQL's stepfather, added JSON features and JavaScript stored procedure support by the end of 2014 in version 12.1—while MySQL itself unfortunately didn’t catch up until 2024—**but it's too late now!**
 

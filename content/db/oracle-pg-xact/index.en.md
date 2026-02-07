@@ -133,7 +133,7 @@ In “[PostgreSQL 17: Cards on the Table, We’re Not Pretending Anymore](https:
 
 This piece reads neutral but lands the punch: ACID’s “A,” “C,” “D” are fine everywhere; the real story is isolation. Oracle’s “serializable” is mislabeled snapshot isolation. I already called it out in “[Why MySQL’s Correctness Falls Apart](https://mp.weixin.qq.com/s/gQZ3Q5JKV8gaBNhc1puPcA).” Among mainstream DBMSes, only PostgreSQL (and CockroachDB, derived from it) offers true serializable isolation.
 
-- [← Previous](/en/blog/db/db-is-the-arch/)
-- [Next →](/en/blog/db/pg-kiss-duckdb/)
+- [← Previous](/en/db/db-is-the-arch/)
+- [Next →](/en/db/pg-kiss-duckdb/)
 
 Last updated 2025-02-27 — [optimize image (7cb69ff)](https://github.com/pgsty/web.cc/commit/7cb69ff32df80eba158e90dfd39b124ff85b79ab)

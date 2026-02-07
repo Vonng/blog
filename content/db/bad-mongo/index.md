@@ -37,7 +37,7 @@ tags: [数据库, MongoDB, PostgreSQL, 技术评论]
 在所有关于 MongoDB 大忽悠的故事中，最让人印象深刻的是 LinkedIn 上的这篇《[MongoDB 3.2 —— 现由 PostgreSQL 强力驱动](https://mp.weixin.qq.com/s/e3_32Neoy5RVRBSozsa_7A)》 。
 这篇文章的精彩之处在于，它是由 MongoDB 合作伙伴发出的血泪控诉：MongoDB 无视了自己合作伙伴的忠言劝告，拿了一个 PostgreSQL 伪装成自己的分析引擎，并在发布会上忽悠用户。
 
-![](mongo-powered-by-pg.png)
+![](mongo-powered-by-pg.webp)
 
 作者作为 MongoDB 在分析领域的合作伙伴彻底灰心丧气，公开撰文发起控诉 —— “*MongoDB 的分析引擎是一个 PostgreSQL ，那你们真还不如直接去用 PostgreSQL*”。
 
@@ -85,7 +85,7 @@ PostgreSQL 在功能上是 MongoDB 的上位替代，所以可以对 MongoDB 的
 
 当然，MongoDB 的强项就是面不改色心不跳的 “忽悠“，尽管 JEPSEN 提了这么多的问题，在 MongoDB 官网上，关于 Jespen 的评测是这么介绍的：”*到目前为止，因果一致性通常仅限于研究项目......MongoDB 是我们所知的第一个提供实现的商业数据库之一*“
 
-![](jepsen-mongo.png)
+![](jepsen-mongo.webp)
 
 这个例子再次体现了 MongoDB 在营销上的脸皮 —— 用一种极其精致的语言艺术，从一大坨 Bullshit 中精心挑选出了一颗未消化的花生米，而一笔带过在正确性/一致性上的各种致命硬伤。
 
@@ -118,7 +118,7 @@ PostgreSQL 在功能上是 MongoDB 的上位替代，所以可以对 MongoDB 的
 
 如果我们观察 DB-Engine 热度分数，不难看出过去十年中，拥有最大增长的两个数据库就是 PostgreSQL 与 MongoDB 。可以说这两者是移动互联网时代中数据领域的最大赢家。
 
-![db-engine.png](db-engine.png)
+![db-engine.webp](db-engine.webp)
 
 但它们的区别在于，PostgreSQL 仍然在继续增长，甚至已经在 StackOverflow 全球开发者调研中，连续三年成为 [**最流行的数据库**](/pg/pg-in-2024) 并势头不减赢麻了。而 MongoDB 在 2021 年开始就掉头向下开始过气。使用率，口碑，需求度都出现了停滞或扭头向下的发展趋势：
 
@@ -164,7 +164,7 @@ MongoDB 和 MySQL 属于那种典型的 “面向初学者” 的数据库，针
 
 **关于这篇《MongoDB挑战PG》的新闻，HN评论区是这样的：**
 
-![hackernews.png](hackernews.png)
+![hackernews.webp](hackernews.webp)
 
 --------
 
@@ -182,7 +182,7 @@ MongoDB 和 MySQL 属于那种典型的 “面向初学者” 的数据库，针
 
 能让合作伙伴[破口大骂，吹哨揭发](https://mp.weixin.qq.com/s/e3_32Neoy5RVRBSozsa_7A)，我看 MongoDB 也是独此一家：
 
-![shotgun.png](shotgun.png)
+![shotgun.webp](shotgun.webp)
 
 
 

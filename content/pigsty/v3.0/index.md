@@ -20,8 +20,8 @@ tags: [Pigsty]
 
 **扩展大爆炸**：
 
-Pigsty v3 提供了史无前例的 [**340**](/docs/pgsql/ext/) 个可用扩展插件。
-包括 **121** 个扩展 [**RPM包**](/docs/pgsql/ext/) 与 **133** 个 [**DEB包**](/docs/pgsql/ext/)，数量已经超过了 PGDG 官方仓库提供的扩展数量总和（135 RPM/ 109 DEB）。
+Pigsty v3 提供了史无前例的 [**340**](https://pigsty.cc/docs/pgsql/ext/) 个可用扩展插件。
+包括 **121** 个扩展 [**RPM包**](https://pigsty.cc/docs/pgsql/ext/) 与 **133** 个 [**DEB包**](https://pigsty.cc/docs/pgsql/ext/)，数量已经超过了 PGDG 官方仓库提供的扩展数量总和（135 RPM/ 109 DEB）。
 而且，Pigsty 还将EL系统与Debian生态的独有PG扩展插件相互移植，实现了两大发行版的插件生态大对齐。
 
 ```yaml
@@ -51,10 +51,10 @@ Pigsty v3 允许您更换 PostgreSQL 内核，目前支持了 SQL Server 兼容�
 
 **企业版**：
 
-我们现在提供 Pigsty Pro [**专业版**](/docs/about/service)，在开源版的功能基础上提供增值服务。专业版提供额外的功能模块：MSSQL，Oracle，Mongo，K8S，Victoria，Kafka，TigerBeetle 等……，并提供更广泛的 PG 大版本、操作系统、芯片架构的支持。
+我们现在提供 Pigsty Pro [**专业版**](https://pigsty.cc/docs/about/service)，在开源版的功能基础上提供增值服务。专业版提供额外的功能模块：MSSQL，Oracle，Mongo，K8S，Victoria，Kafka，TigerBeetle 等……，并提供更广泛的 PG 大版本、操作系统、芯片架构的支持。
 提供针对全系操作系统精准小版本定制的离线安装包，以及 EL7，Debian 11，Ubuntu 20.04 等过保老系统的支持；此外，专业版还提供内核可插拔定制服务，并对PolarDB PG/Oracle 的原生部署、监控管控支持以满足“国产化”需要。
 
-使用以下命令[**快速安装**](/docs/setup/install)：
+使用以下命令[**快速安装**](https://pigsty.cc/docs/setup/install)：
 
 ```bash
 curl -fsSL https://repo.pigsty.cc/get | bash
@@ -172,7 +172,7 @@ cd ~/pigsty; ./bootstrap; ./configure; ./install.yml
 - [sealos](https://github.com/labring/sealos): 5.0.0
 - [vector](https://github.com/vectordotdev/vector/releases) : 0.40.0
 
-Pigsty 重新编译了所有 PostgreSQL 扩展插件，PostgreSQL 扩展插件的最新版本，请参考 [扩展列表](/docs/pgsql/ext/)
+Pigsty 重新编译了所有 PostgreSQL 扩展插件，PostgreSQL 扩展插件的最新版本，请参考 [扩展列表](https://pigsty.cc/docs/pgsql/ext/)
 
 
 --------
@@ -181,8 +181,8 @@ Pigsty 重新编译了所有 PostgreSQL 扩展插件，PostgreSQL 扩展插件�
 
 Pigsty 现在提供开箱即用的 Dify 与 Odoo Docker Compose 模板：
 
-- [Dify](/docs/software/dify)： AI智能体工作流编排与 LLMOps
-- [Odoo](/docs/software/odoo)： 企业级开源 ERP 系统
+- [Dify](https://pigsty.cc/docs/software/dify)： AI智能体工作流编排与 LLMOps
+- [Odoo](https://pigsty.cc/docs/software/odoo)： 企业级开源 ERP 系统
 
 Pigsty 专业版现在提供试点的 Kubernetes 部署支持与 Kafka KRaft 集群部署与监控支持
 

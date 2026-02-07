@@ -95,7 +95,7 @@ In ["BrokenSesame Alibaba-Cloud PostgreSQL Vulnerability Technical Details"](htt
 
 As stated in ["Is it a Good Idea to Put Databases into Docker?"](https://mp.weixin.qq.com/s/kFftay1IokBDqyMuArqOpg), whether it's additional network overhead, Ingress bottlenecks, or underperforming cloud disks, all negatively impact database performance. For example, as revealed in ["PostgreSQL@K8s Performance Optimization"](https://mp.weixin.qq.com/s/SCImfwEvkCPqZhLGx758Sw) — you need a considerable level of technical prowess to make database performance in K8S barely match that on bare metal.
 
-![performence.png](performence.png)
+![performence.webp](performence.webp)
 
 > Latency is measured in **ms**, not **µs**; I almost thought my eyes were deceiving me.
 
@@ -120,7 +120,7 @@ Under [modern hardware conditions](https://mp.weixin.qq.com/s/1OSRcBfd58s0tgZTUZ
 
 The cloud-native landscape is filled with fancy projects. Every new development team wants to introduce something new: Helm today, Kubevela tomorrow. They talk big about bright futures and peak efficiency, but in reality, they create a mountain of architectural complexities and a playground for "YAML Boys" - tinkering with the latest tech, inventing concepts, earning experience and reputation at the expense of users who bear the complexity and maintenance costs.
 
-![cncf-landscape.png](cncf-landscape.png)
+![cncf-landscape.webp](cncf-landscape.webp)
 
 > CNCF Landscape
 

@@ -27,7 +27,7 @@ Once upon a time, "going to cloud" was almost politically correct in tech circle
 
 [Tencent Cloud CDN: From Getting Started to Giving Up](/cloud/cdn/)
 
-[![](featured.png)](https://mp.weixin.qq.com/s/eag0CqfUTeNPbIB6TZqFVg)
+[![](featured.webp)](https://mp.weixin.qq.com/s/eag0CqfUTeNPbIB6TZqFVg)
 
 -------------
 

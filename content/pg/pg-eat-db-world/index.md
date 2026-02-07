@@ -76,7 +76,7 @@ ParadeDB 与 DuckDB 的出现让 PostgreSQL 的分析性能来到了 OLAP 的第
 
 同样的事情已经发生过很多次，而现在，我们将在拆分最早，地盘最大的一个子领域 OLAP 分析中再次见证这一点。但 PostgreSQL 要替代的可不仅仅是 OLAP 数仓，它的野望是整个数据库世界！
 
-[![ecosystem.jpg](ecosystem.jpg)](/zh/docs/reference/extension)
+[![ecosystem.jpg](ecosystem.jpg)](https://pigsty.cc/docs/reference/extension/)
 
 然 PostgreSQL 有何德何能，可当此大任？诚然 PostgreSQL 先进，但 Oracle 也先进；PostgreSQL 开源，但 MySQL 也开源。PostgreSQL **先进且开源**，这是它与 Oracle / MySQL 竞争的底气，但要说其独一无二的特点，那还得是它的**极致可扩展性，与繁荣的扩展生态**！
 
@@ -176,7 +176,7 @@ PostgreSQL 生态中的一个困境就是，许多扩展插件，生态工具都
 
 > 这里列出了一些重要扩展，对比基于最新的 PostgreSQL 16 主干版本进行，截止至 2024-02-28
 >
-> | **扩展类目** | [**Pigsty RDS**](/zh/docs/reference/extension) / PGDG 官方仓库                      | [**阿里云 RDS**](https://help.aliyun.com/zh/rds/apsaradb-rds-for-postgresql/extensions-supported-by-apsaradb-rds-for-postgresql) | [**AWS RDS PG**](https://docs.aws.amazon.com/AmazonRDS/latest/PostgreSQLReleaseNotes/postgresql-extensions.html) |
+> | **扩展类目** | [**Pigsty RDS**](https://pigsty.cc/docs/reference/extension) / PGDG 官方仓库                      | [**阿里云 RDS**](https://help.aliyun.com/zh/rds/apsaradb-rds-for-postgresql/extensions-supported-by-apsaradb-rds-for-postgresql) | [**AWS RDS PG**](https://docs.aws.amazon.com/AmazonRDS/latest/PostgreSQLReleaseNotes/postgresql-extensions.html) |
 > |----------|---------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------:|
 > | 加装扩展     | <i class="fas fa-circle-check text-success"></i> 自由加装                           |                                      <i class="fas fa-circle-xmark text-danger"></i> 不允许                                      |                               <i class="fas fa-circle-xmark text-danger"></i> 不允许                                |
 > | 地理空间     | <i class="fas fa-circle-check text-success"></i> PostGIS 3.4.2                  |                          <i class="fas fa-circle-check text-success"></i> PostGIS 3.3.4 / Ganos 6.1                           |                          <i class="fas fa-circle-check text-success"></i> PostGIS 3.4.1                          |
@@ -253,7 +253,7 @@ Pigsty 六点价值主张的首字母合起来，则为 Pigsty 提供了另外�
 - [**FerretDB**](https://github.com/Vonng/pigsty/tree/master/app/ferretdb)：基于 PostgreSQL 的开源 MongoDB 替代，兼容 MongoDB API / 驱动协议。
 - [**PostgresML**](https://github.com/Vonng/pigsty/tree/master/app/pgml)：使用SQL完成经典机器学习算法，调用、部署、训练 AI 模型。
 
-> Pigsty 支持的 180+ [**扩展列表**](/zh/docs/reference/extension/)
+> Pigsty 支持的 180+ [**扩展列表**](https://pigsty.cc/docs/reference/extension/)
 
 ![](https://pigsty.io/img/desc.png)
 

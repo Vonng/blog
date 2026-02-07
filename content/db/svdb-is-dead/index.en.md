@@ -33,13 +33,13 @@ More specifically, the key moment vector databases exploded was March 23 this ye
 
 Meanwhile, after being quiet for a while, the database field welcomed a small spring in the investment arena — "specialized vector databases" like Pinecone, Qdrant, Weaviate popped up, raising hundreds of millions, afraid of missing the AI era infrastructure express train.
 
-![landscape.png](svdb-landscape.png)
+![landscape.png](svdb-landscape.webp)
 
 > Vector Database Ecosystem Landscape
 
 But these violent celebrations will eventually end in violent collapse. This cooldown came faster than expected — in less than half a year, the situation turned upside down. Now except for some second-tier cloud vendors catching the late train still pushing soft articles, nobody talks about specialized vector databases anymore.
 
-![gartner-hype-cycle.png](svdb-gartner-hype-cycle.png)
+![gartner-hype-cycle.png](svdb-gartner-hype-cycle.webp)
 
 > How far is the specialized vector database myth from collapse?
 
@@ -54,7 +54,7 @@ Specialized vector databases like Pinecone, Weaviate, Qdrant, Chroma initially a
 
 More deadly is the new feature OpenAI released at their first developer conference in November — GPTs. For typical small-to-medium knowledge base scenarios, OpenAI has already packaged "memory" and "knowledge base" functionality for you. You don't need to mess with vector databases — just upload knowledge files, write prompts to tell GPT how to use them, and you can develop an Agent. Although current knowledge base size is limited to tens of MB, this is sufficient for many scenarios, and the upper limit still has huge room for improvement.
 
-![gpts.png](svdb-gpts.png)
+![gpts.png](svdb-gpts.webp)
 
 > GPTs bring AI usability to a whole new level
 
@@ -79,7 +79,7 @@ Therefore, specialized vector databases are trapped in a dead end: small needs a
 
 The essential complexity difference between "vectors" and "databases" is night and day. Taking the world's most popular PostgreSQL database kernel as an example, it's written in millions of lines of C code, solving the "database" problem. However, the PostgreSQL-based vector database extension `pgvector` uses less than two thousand lines of C code to solve vector storage and retrieval problems. This roughly quantifies the complexity threshold of "vectors" relative to "databases": **one ten-thousandth**.
 
-![distro.png](svdb-distro.png)
+![distro.png](svdb-distro.webp)
 
 > Including ecosystem extensions makes the comparison even more stunning
 
@@ -104,7 +104,7 @@ Abstract theoretical analysis isn't as convincing as actual cases, so let's look
 
 On Pinecone's official website, Pinecone's main highlighted features are: "high performance, easier to use". First, let's look at the **high performance** that specialized vector databases pride themselves on. Supabase provided a latest [test case](https://supabase.com/blog/pgvector-vs-pinecone) using DBPedia from ANN Benchmark as the benchmark — a dataset of one million OpenAI 1536-dimensional vectors. At the same recall rate, PGVector had better latency performance and overall throughput, and much cheaper costs. Even the old IVFFLAT index performed better than Pinecone.
 
-![bench.png](svdb-bench.png)
+![bench.png](svdb-bench.webp)
 
 > Results from Supabase - DBPedia tests
 

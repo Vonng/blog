@@ -32,13 +32,13 @@ tags: [数据库, 向量数据库, AI, 技术评论]
 
 与此同时，数据库领域在投资领域沉寂了一段时间后，又迎来了一波小阳春 —— Pinecone，Qdrant，Weaviate 诸如此类的“专用向量数据库” 冒了出来，几亿几亿的融钱，生怕错过了这趟 AI 时代的基础设施快车。
 
-![landscape.png](svdb-landscape.png)
+![landscape.png](svdb-landscape.webp)
 
 > 向量数据库生态全景图
 
 但是，这些暴烈地狂欢也终将以暴烈的崩塌收场。这一次茶凉的比较快，半年不到的时间，形势就翻天覆地了 —— 现在除了某些二流云厂商赶了个晚集还在发软文叫卖，已经听不到谁还在炒专用向量数据库这个冷饭了。
 
-![gartner-hype-cycle.png](svdb-gartner-hype-cycle.png)
+![gartner-hype-cycle.png](svdb-gartner-hype-cycle.webp)
 
 > 专用向量数据库神话的破灭还有多远？
 
@@ -53,7 +53,7 @@ tags: [数据库, 向量数据库, AI, 技术评论]
 
 更致命的是 OpenAI 在今年11月首次开发者大会上发布的新功能 —— GPTs，对于典型的中小知识库场景，OpenAI 已经替你封装好了 “记忆” 与 “知识库” 的功能。你不需要折腾什么向量数据库，只要把知识文件上传上去写好提示词告诉 GPT 怎么用，你就可以开发出一个 Agent 来。尽管目前知识库的大小仅限于几十MB，但这对于很多场景都绰绰有余，而且上限仍有巨大提升空间。
 
-![gpts.png](svdb-gpts.png)
+![gpts.png](svdb-gpts.webp)
 
 > GPTs 将 AI 的易用性提高到一个全新的层次
 
@@ -78,7 +78,7 @@ tags: [数据库, 向量数据库, AI, 技术评论]
 
 “向量”与“数据库”这两个问题的本质复杂度有着天差地别的区别，以世界上最流行的 PostgreSQL 数据库内核为例，它由上百万行C语言代码编写而成，解决“数据库”这个问题；然而基于 PostgreSQL 的向量数据库扩展 `pgvector` 只用了不到两千行不到的 C 代码，就解决了“向量”存储与检索的问题。这是对“向量”相对于与“数据库”这件事复杂度门槛的一个粗略量化：**万分之一**。
 
-![distro.png](svdb-distro.png)
+![distro.png](svdb-distro.webp)
 
 > 如果算上生态扩展，对比就更惊人了。
 
@@ -103,7 +103,7 @@ tags: [数据库, 向量数据库, AI, 技术评论]
 
 在 Pinecone 的官方网站上，Pinecone 提出的主要亮点特性是：“高性能，更易用”。首先来看专用向量数据库引以为豪的**高性能**。Supabase 给出了一个最新的[测试案例](https://supabase.com/blog/pgvector-vs-pinecone)，以 ANN Benchmark 中的 DBPedia 作为基准，这是由一百万个 OpenAI 1536 维向量组成的数据集。在相同的召回率下，PGVector 都有着更佳的延迟表现与总体吞吐，而且成本上要便宜得多。即使是老版本的 IVFFLAT 索引，都比 Pinecone 表现更好。
 
-![bench.png](svdb-bench.png)
+![bench.png](svdb-bench.webp)
 
 > 来自 Supabase - DBPedia 的测试结果
 

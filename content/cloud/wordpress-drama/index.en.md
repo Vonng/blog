@@ -30,7 +30,7 @@ Finally, social media platforms erupted with flame wars between the two companie
 
 - [Open source royalty and mad kings](https://world.hey.com/dhh/open-source-royalty-and-mad-kings-a8f79d16)
 
-![dhh2.png](dhh2.png)
+![dhh2.webp](dhh2.webp)
 
 Then Mullenweg's two blog responses:
 

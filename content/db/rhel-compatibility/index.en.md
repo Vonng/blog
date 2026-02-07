@@ -83,7 +83,7 @@ Most importantly, besides RHEL, RockyLinux is the EL-series OS that PostgreSQL o
 
 Anolis/OpenAnolis is Alibaba-Cloud's domestic OS, claiming 100% EL compatibility. I didn't have high expectations initially - I just supported it because users wanted it, but the actual results exceeded expectations: all EL8 RPM packages passed on the first try. Adaptation required no additional work besides handling /etc/os-release. Adapting one Anolis equals adapting over ten "domestic OS" distributions: Alibaba-Cloud, Tongxin Software, China Mobile, Kylin Software, CS2C, Linx Software, Inspur, NFSC, Xinyidian, Softpower, Boyant Technology. Very cost-effective.
 
-![openAnolis.png](rhel-openAnolis.png)
+![openAnolis.png](rhel-openAnolis.webp)
 
 > Commercial OS distributions based on OpenAnolis
 

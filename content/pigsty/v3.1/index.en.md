@@ -16,7 +16,7 @@ tags: [Pigsty]
 
 With PostgreSQL 17.2 released just days ago, Pigsty immediately follows up with v3.1. In this version, PostgreSQL 17 becomes the default major version, with nearly 340 extensions available out of the box.
 
-Additionally, Pigsty 3.1 delivers one-click [self-hosted Supabase](/docs/pgsql/kernel/supabase) capability and improved [MinIO](/docs/minio) object storage best practices.
+Additionally, Pigsty 3.1 delivers one-click [self-hosted Supabase](https://pigsty.cc/docs/pgsql/kernel/supabase) capability and improved [MinIO](https://pigsty.cc/docs/minio) object storage best practices.
 Meanwhile, Pigsty provides initial ARM64 architecture support and adds support for the newly released Ubuntu 24.04 major OS release.
 Finally, this version offers a series of ready-to-use scenario templates, unifying configuration files across different OS distributions and dramatically simplifying configuration management.
 
@@ -33,10 +33,10 @@ It's a low-code one-stop backend platform that lets you say goodbye to most back
 
 For small-scale workloads (4c8g), Supabase cloud [pricing is extremely competitive](https://supabase.com/pricing) — practically a bargain. So why self-host when Supabase cloud is so attractive? A few reasons:
 
-The most obvious reason is what we discussed in "[Cloud Computing Mudslide](/blog/cloud)": cloud database services quickly explode in cost once you scale up even a little. Considering the unbeatable price-performance of local NVMe drives, the cost and performance advantages of self-hosting are obvious.
+The most obvious reason is what we discussed in "[Cloud Computing Mudslide](/cloud)": cloud database services quickly explode in cost once you scale up even a little. Considering the unbeatable price-performance of local NVMe drives, the cost and performance advantages of self-hosting are obvious.
 
 Another important reason is Supabase cloud's feature limitations — [following the same logic as RDS](https://mp.weixin.qq.com/s/EH7RPB6ImfMHXhOMU7P5Qg), many powerful extensions can't be offered in multi-tenant cloud environments for security reasons. Supabase cloud has 64 available extensions, but when self-hosting Supabase with Pigsty, you get all [**340**](https://pgext.cloud/en/list).
-Additionally, Supabase officially uses PostgreSQL 15 as the underlying database, while with Pigsty, you can use any version from PG 14-17, running on EL / Debian / Ubuntu mainstream Linux [bare metal](/docs/ref/compare) without virtualization, fully leveraging modern hardware's performance and cost advantages.
+Additionally, Supabase officially uses PostgreSQL 15 as the underlying database, while with Pigsty, you can use any version from PG 14-17, running on EL / Debian / Ubuntu mainstream Linux [bare metal](https://pigsty.cc/docs/ref/compare) without virtualization, fully leveraging modern hardware's performance and cost advantages.
 
 I've noticed many startups going overseas are using Supabase, and some have reached a scale where self-hosting makes sense — and people are willing to pay for consulting to make it happen.
 So Pigsty has supported self-hosting Supabase (the required PostgreSQL) since v2.4 released last September. But that still involved some manual steps like configuring the PG cluster and spinning up Docker.
@@ -44,7 +44,7 @@ In this version, we've optimized the experience to this state — on a fresh OS 
 
 ![supabase-selfhosting.png](supabase-selfhosting.jpg)
 
-I'll be preparing some tutorials on [Supabase self-hosting best practices](/docs/pgsql/kernel/supabase) in the coming days, stay tuned.
+I'll be preparing some tutorials on [Supabase self-hosting best practices](https://pigsty.cc/docs/pgsql/kernel/supabase) in the coming days, stay tuned.
 
 
 
@@ -52,10 +52,10 @@ I'll be preparing some tutorials on [Supabase self-hosting best practices](/docs
 
 ## PostgreSQL 17
 
-In "[PG12 EOL, PG17 Rises](/blog/pg/pg12-eol-pg17-up/)", we already detailed PostgreSQL 17's new features and improvements.
+In "[PG12 EOL, PG17 Rises](/pg/pg12-eol-pg17-up/)", we already detailed PostgreSQL 17's new features and improvements.
 
 The most gratifying is the free performance improvement: PostgreSQL 17 reportedly has significant write performance gains. I tested it on a physical machine, and it's impressive.
-Compared to the tests against PostgreSQL 14 three years ago in "[How Powerful is PostgreSQL Really](/blog/pg/pg-performence)", write performance has noticeably improved.
+Compared to the tests against PostgreSQL 14 three years ago in "[How Powerful is PostgreSQL Really](/pg/pg-performence)", write performance has noticeably improved.
 
 For example, PG 14 with standard config had WAL write throughput around 110 MB/s — that was a software bottleneck, not hardware.
 Under PG 17, that number reaches 180 MB/s. Of course, turning off all safety switches can multiply performance further, but fair benchmarks don't play those games.
@@ -84,7 +84,7 @@ I'm pleased that a popular open-source cluster deployment project, postgresql-cl
 
 ![postgresql-cluster.png](postgresql-cluster.jpg)
 
-For more details, see "[PostgreSQL Achieves Mastery: The Most Complete Extension Repository](/blog/pg/pg-ext-repo/)".
+For more details, see "[PostgreSQL Achieves Mastery: The Most Complete Extension Repository](/pg/pg-ext-repo/)".
 Currently, there are quite a few new projects developing extensions with Rust + pgrx, and Pigsty includes **23** Rust extensions.
 If you have good extension recommendations, let me know — I'll evaluate and test them and add them to the repository ASAP.
 If you're a PostgreSQL extension author, we welcome you to submit your extension to the Pigsty repository — we can help you package and distribute it, solving the last-mile delivery problem.

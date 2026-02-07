@@ -17,7 +17,7 @@ tags: [Pigsty]
 随着前天 PostgreSQL 17.2 的发布，Pigsty 也立即跟进了 v3.1 版本。
 在这个版本中，PostgreSQL 17 被提升成为默认使用的大版本，近 340 个 PG 扩展插件开箱即用。
 
-此外，Pigsty 3.1 还提供了一键 [自建 Supabase](/docs/pgsql/kernel/supabase) 的能力，改进了 [MinIO](/docs/minio) 对象存储的使用最佳实践。
+此外，Pigsty 3.1 还提供了一键 [自建 Supabase](https://pigsty.cc/docs/pgsql/kernel/supabase) 的能力，改进了 [MinIO](https://pigsty.cc/docs/minio) 对象存储的使用最佳实践。
 与此同时，Pigsty还提供了ARM64 架构的初步支持，并且支持了新发布的 Ubuntu 24.04 大操作系统发行版大版本。
 最后，这个版本提供了一系列开箱即用的场景化模板，统一了不同操作系统发行版使用配置文件，极大简化了配置管理工作。
 
@@ -34,10 +34,10 @@ Supabase 的口号是：“**花个周末写写，随便扩容至百万**”。�
 
 小微规模（4c8g）内的 Supabase 云服务[极有性价比](https://supabase.com/pricing)，堪称赛博菩萨。那 Supabase 云服务这么香，为什么要自建呢？有几个原因：
 
-最直观的原因是是《[云计算泥石流](/blog/cloud)》中说过的：云数据库服务只要稍微上一点儿规模，成本就很容易爆炸。而且考虑到当下本地 NVMe 盘的无敌性价比，自建的成本与性能优势是显而易见的。
+最直观的原因是是《[云计算泥石流](/cloud)》中说过的：云数据库服务只要稍微上一点儿规模，成本就很容易爆炸。而且考虑到当下本地 NVMe 盘的无敌性价比，自建的成本与性能优势是显而易见的。
 
 另一个重要的原因是 Supabase 云服务的功能受限 —— [与RDS逻辑相同](https://mp.weixin.qq.com/s/EH7RPB6ImfMHXhOMU7P5Qg)，很多强力扩展出于多租户的安全问题考虑是不太可能在云端提供的 —— supabase 云服务中有64个可用扩展，但使用 Pigsty 自建 supabase 时，你可以拥有全部 [**340**](https://pgext.cloud/zh/list) 个。
-此外，Supabase 官方使用 PostgreSQL 15 作为底层数据库，而在 Pigsty 中，你可以使用 PG 14 - 17 的任意版本，运行在 EL / Debian / Ubuntu 主流 Linux [操作系统裸机](/docs/ref/compare) 上而无需虚拟化支持，充分地利用现代硬件的性能与成本优势。
+此外，Supabase 官方使用 PostgreSQL 15 作为底层数据库，而在 Pigsty 中，你可以使用 PG 14 - 17 的任意版本，运行在 EL / Debian / Ubuntu 主流 Linux [操作系统裸机](https://pigsty.cc/docs/ref/compare) 上而无需虚拟化支持，充分地利用现代硬件的性能与成本优势。
 
 我发现身边很多创业出海公司都在使用 Supabase，而其中一些的规模确实已经达到了需要自建的状态，而且有人愿意付费咨询来做这件事了。
 所以 Pigsty 早在去年9月发布的 v2.4 就支持自建 Supabase （所需的 PostgreSQL）了。但那毕竟还涉及到一些手工操作，比如配置 PG 集群，拉起 Docker。
@@ -45,7 +45,7 @@ Supabase 的口号是：“**花个周末写写，随便扩容至百万**”。�
 
 ![supabase-selfhosting.png](supabase-selfhosting.jpg)
 
-这两天我会准备一些关于 [自建 Supabase 最佳实践](/docs/pgsql/kernel/supabase) 的教程，敬请期待。
+这两天我会准备一些关于 [自建 Supabase 最佳实践](https://pigsty.cc/docs/pgsql/kernel/supabase) 的教程，敬请期待。
 
 
 
@@ -53,10 +53,10 @@ Supabase 的口号是：“**花个周末写写，随便扩容至百万**”。�
 
 ## PostgreSQL 17
 
-在《[PG12过保，PG17上位](/blog/pg/pg12-eol-pg17-up/)》中，我们已经详细介绍了 PostgreSQL 17 的新特性与改进。
+在《[PG12过保，PG17上位](/pg/pg12-eol-pg17-up/)》中，我们已经详细介绍了 PostgreSQL 17 的新特性与改进。
 
 其中最令人欣慰的莫过于白给的性能优化了：PostgreSQL 17 据说在写入性能上有了显著提升。我找了一台物理机测试了一下，确实不错。
-相比与三年前针对 PostgreSQL 14 的测试结果《[PostgreSQL到底有多强](/blog/pg/pg-performence)》，写入确实有不小的提升。
+相比与三年前针对 PostgreSQL 14 的测试结果《[PostgreSQL到底有多强](/pg/pg-performence)》，写入确实有不小的提升。
 
 例如，以前 PG 14 在标准配置下，PG 的 WAL 写入吞吐量在 110 MB/s 附近，这是软件的瓶颈，不是硬件的。
 而在 PG 17 下，这个数字能达到 180 MB/s。当然，把安全开关都关掉后性能还能翻几番，但体面评测就不玩那些作弊手段了
@@ -85,7 +85,7 @@ Pigsty 的扩展仓库基于原生的操作系统包管理器，公开共享，�
 
 ![postgresql-cluster.png](postgresql-cluster.jpg)
 
-当然，更多细节，在《[PostgreSQL神功大成，最全扩展仓库](/blog/pg/pg-ext-repo/)》中对此已经有过介绍。
+当然，更多细节，在《[PostgreSQL神功大成，最全扩展仓库](/pg/pg-ext-repo/)》中对此已经有过介绍。
 目前使用 Rust + pgrx 开发扩展的新项目不少，Pigsty 收录了 **23** 个 Rust 扩展。
 如果你有好的扩展推荐，欢迎告诉我，我会考察测试后，尽快将其加入到仓库中。
 如果你是 PostgreSQL 扩展作者，我们也欢迎将你的扩展提交到 Pigsty 仓库中，我们可以帮助您打包分发，解决最后一公里的交付问题。

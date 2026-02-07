@@ -25,7 +25,7 @@ We've also paved the way for upcoming container versions, provided PolarDB suppo
 
 ## Extensions Galore
 
-In "[PostgreSQL is Eating the Database World](/blog/pg/pg-eat-db-world)," I argued that PostgreSQL isn't just a relational database — it's a data management abstraction framework with the power to encompass everything and devour the entire database world.
+In "[PostgreSQL is Eating the Database World](/pg/pg-eat-db-world)," I argued that PostgreSQL isn't just a relational database — it's a data management abstraction framework with the power to encompass everything and devour the entire database world.
 
 What enables PG to do this, beyond being **open source** and **advanced**, is the real secret: **extensions** — **extreme extensibility and a thriving extension ecosystem** are PostgreSQL's unique characteristics and the secret weapon that sets it apart from countless other databases.
 
@@ -187,7 +187,7 @@ Extensions are organized into **11** categories by function:
 
 These extensions can be combined for synergy, achieving 1+1 >> 2 effects.
 
-As TimescaleDB CEO Ajay stated in "[Why PostgreSQL is the Foundation of Future Data](/blog/pg/pg-for-everything)," **PostgreSQL is becoming the de facto database standard**.
+As TimescaleDB CEO Ajay stated in "[Why PostgreSQL is the Foundation of Future Data](/pg/pg-for-everything)," **PostgreSQL is becoming the de facto database standard**.
 
 Through the magic of extreme extensibility, PostgreSQL achieves completeness, balancing core stability with feature agility. A solid foundation plus amazing evolution speed makes it an anomaly in the database world, fundamentally changing the rules of the game.
 

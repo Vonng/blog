@@ -30,7 +30,7 @@ DHH一直以来都是下云先锋，本文摘取了DHH博客关于下云相关�
 
 译者：**Vonng**，磐吉云数创始人与CEO。Pigsty 作者，PostgreSQL 专家与布道师。云计算泥石流，数据库老司机，下云倡导者，数据库下云实践者。[Vonng博客](https://vonng.com/cn/)
 
-[![](featured.png)](https://mp.weixin.qq.com/s/H2S3TV-AsqS43A5Hh-XMhQ)
+[![](featured.webp)](https://mp.weixin.qq.com/s/H2S3TV-AsqS43A5Hh-XMhQ)
 
 
 
@@ -234,7 +234,7 @@ Basecamp Classic 以前跑在 AWS EKS 上（那是他们的托管 Kubernetes ）
 
 距离我上次看到运行我们 37Signal 公司服务所使用的物理服务器硬件已经过去很长时间了。我依稀记得上次是十年前参观我们在芝加哥的数据中心，但是在某个时间点，我对硬件就失去兴趣了。然而现在我又重新对它感兴趣了 —— **因为硬件领域变得越来越有趣起来**。所以让我来和你们分享一下这种兴奋吧：
 
-![](odyssey-2.png)
+![](odyssey-2.webp)
 
 这是最近运抵我们芝加哥数据中心的两个托盘。同一天，一套同样的设备也到达了我们在弗吉尼亚州 Ashburn 的第二个数据中心。总的来说，我们收到了二十台R7625 Dell 服务器，是支撑我们的下云计划的主力。如此令人震惊的算力，占用的空间却惊人的小。
 

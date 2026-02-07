@@ -25,7 +25,7 @@ tags: [下云]
 
 [腾讯云CDN：从入门到放弃](/cloud/cdn/)
 
-[![](featured.png)](https://mp.weixin.qq.com/s/eag0CqfUTeNPbIB6TZqFVg)
+[![](featured.webp)](https://mp.weixin.qq.com/s/eag0CqfUTeNPbIB6TZqFVg)
 
 -------------
 

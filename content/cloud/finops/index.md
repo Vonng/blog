@@ -23,7 +23,7 @@ tags: [下云, FinOps]
 
 **数据库是自建关键**：K8S 上的无状态应用与数据仓库搬迁相对容易，真正的难点是在不影响**质量安全**的前提下，完成数据库的自建。
 
-[![](featured.png)](https://mp.weixin.qq.com/s/Yp_PU8nmyK-NVq0clD98RQ)
+[![](featured.webp)](https://mp.weixin.qq.com/s/Yp_PU8nmyK-NVq0clD98RQ)
 
 
 

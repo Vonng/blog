@@ -45,7 +45,7 @@ Therefore, future history will be a process of new things conquering old things,
 >
 > —— Hegel
 
-![](winter-coldwar.png)
+![](winter-coldwar.webp)
 
 Cold War 2.0 has arrived. Many people think CW is a conflict between the two nation-states of China and America. I believe things aren't that simple—this is a script with cooperation within struggle and struggle within cooperation. To understand this script, we first need to understand all the characters: the Chinese government, Chinese **local governments**, the US government, capital, manufacturing, internet companies, globalization elites, Chinese middle class, American middle class, Chinese lower class, American lower class, the EU, third-world countries, etc. These are all **different interest entities** with their own demands and behavioral logic.
 

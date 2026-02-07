@@ -228,7 +228,7 @@ Bruce 是 PG 中文社区的老朋友了，上面介绍过了；来自德国的 
 
 Robert Hass 在会后的博客中提到：***他真的很想看到更多来自印度与日本的人参与到 PG 的高级职位中来，因为这两个国家有着庞大的开发者社区，却没有核心组成员，高级职位代表性不足***。
 
-![robert-hass.jpg](robert-hass.jpg)
+![robert-hass.jpg](robert-hass.png)
 
 说老实话，听着有些五味杂陈，因为在包容性的议题中没有提到**中国**，而强调的是日本与印度。但这也是确实是没有办法的事情，中国在国际社区参与上，确实做的很拉垮。中国有三四百款国产数据库，其中很多都是基于 PG 魔改换皮套壳的，但这么多公司与用户，总共也只出了一个 PG 贡献者（ ——拓数派的 Richard Guo，原来在 Pivotal，今年刚晋为 Committer）。
 
@@ -253,7 +253,7 @@ Robert Hass 在会后的博客中提到：***他真的很想看到更多来自�
 
 Devrim 老爷子是一个很有意思的人，土耳其人，现居伦敦，还兼职酒吧 DJ 打碟，身上有一个 PostgreSQL Logo 的纹身，是 PGDG RPM 仓库的维护者。我跟他聊了一个多小时，了解了 PGDG 仓库的方方面面，讨论了许多问题。比如，一个扩展想弄进 PGDG 仓库里，一般需要什么条件，是什么流程。Devrim 说他会去关注 PGXN ，以及社区讨论，像最近最近大火的 `pgvector` 向量数据库扩展就是有人推荐给他，然后就收录进去了。我就白了一眼说：你看看[推给你的那个人莫不是我](https://github.com/pgvector/pgvector/issues/76)…，哈哈哈哈。
 
-说起来很有趣，在最近发布 [Pigsty v2.7](https://mp.weixin.qq.com/s/CzNUNAVnafO-hMCMdfxgZA) 中，我发现我维护的34个扩展里有4个 `pgsql-http`, `pgsql-gzip`, `pg_net`, `pg_bigm` 被纳入了进入了 PGDG 官方仓库。我一和 Devrim 提起这个事，他就笑眯眯地跟说我：我跑到你的 Pigsty 网站[扩展列表](/zh/docs/reference/extension/)上扒拉了一圈，发现有几个不错的，就弄进官方仓库了。我就问，我打包的那些不错的 RUST 扩展有没有机会弄进官方仓库里？他马上义正严辞地表态 —— 这些 Go 和 Rust 异端插件想也别想！但反正你不是自己弄了个 YUM / APT 软件仓库专门放这些扩展吗？
+说起来很有趣，在最近发布 [Pigsty v2.7](https://mp.weixin.qq.com/s/CzNUNAVnafO-hMCMdfxgZA) 中，我发现我维护的34个扩展里有4个 `pgsql-http`, `pgsql-gzip`, `pg_net`, `pg_bigm` 被纳入了进入了 PGDG 官方仓库。我一和 Devrim 提起这个事，他就笑眯眯地跟说我：我跑到你的 Pigsty 网站[扩展列表](https://pigsty.cc/docs/reference/extension/)上扒拉了一圈，发现有几个不错的，就弄进官方仓库了。我就问，我打包的那些不错的 RUST 扩展有没有机会弄进官方仓库里？他马上义正严辞地表态 —— 这些 Go 和 Rust 异端插件想也别想！但反正你不是自己弄了个 YUM / APT 软件仓库专门放这些扩展吗？
 
 我和 Devrim 聊得非常尽兴。最后我答应当一个 **PG扩展猎手**，发掘新的 PG 插件。如果觉得不错就交给他，收纳进 PG 的官方仓库里。
 
@@ -271,7 +271,7 @@ Devrim 老爷子是一个很有意思的人，土耳其人，现居伦敦，还�
 
 ![unconference.jpg](unconference.jpg)
 
-![unconference2.jpg](unconference2.jpg)
+![unconference2.jpg](unconference2.png)
 
 看得出来，大家都非常重视可观测性上的特性。在 PostgreSQL 可观测性上，我确实是当仁不让的专家，`pg_exporter` 就是我写的。所以我抛出来的议题是：为 PostgreSQL 添加一个第一方的监控扩展，内置 Prometheus 监控端点，直接通过 HTTP 对外暴露监控指标。
 
@@ -317,7 +317,7 @@ PostgreSQL 可以在**客户端**支持 GB 18030 编码，也提供了 `convert_
 
 顺带一提，参会的效果确实很明显，参会后，Pigsty 的海外下载 CDN 流量（这还只是一家云上的一部分）出现显著增长，打掉了我接近大几百G 的流量。更多的国际友人了解到了国内的 PostgreSQL 数据库发行版 Pigsty，哈哈。
 
-![pigsty-traffic.jpg](pigsty-traffic.jpg)
+![pigsty-traffic.jpg](pigsty-traffic.png)
 
 > 参会后来自海外的 CDN 流量有了一波暴增
 
@@ -339,6 +339,5 @@ PostgreSQL 可以在**客户端**支持 GB 18030 编码，也提供了 `convert_
 - [PGCon.Dev 扩展生态峰会小记 @ 温哥华](https://mp.weixin.qq.com/s/C0YyE52KbLLbnG1C2FqGRg)
 
 - [PG大会2024开幕，温哥华饭搭子驴友团呢？](https://mp.weixin.qq.com/s/4t1thBCDVS8y9dHiOxPZaA)
-
 
 

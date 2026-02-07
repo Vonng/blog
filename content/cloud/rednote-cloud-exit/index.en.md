@@ -101,7 +101,7 @@ Using standard industry models, RedNote's annual IT infrastructure spend could t
 I've written extensively about this before: [cloud compute typically costs 5-10x self-built](/cloud/ecs), and [storage price differentials can reach 100x](/cloud/ebs).
 
 - [The Real Cost of Alibaba Cloud Compute](/cloud/ecs)
-- [Object Storage: From Cost Cutting to Highway Robbery](/cloud/oss)
+- [Object Storage: From Cost Cutting to Highway Robbery](/cloud/s3)
 - [Are Cloud Block Storage Prices a Scam?](/cloud/ebs)
 - [Is Managed Cloud Database a Tax on the Gullible?](/cloud/rds)
 

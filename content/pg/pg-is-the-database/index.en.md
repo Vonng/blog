@@ -97,9 +97,9 @@ Why? Because pgvector's creators didn't need to worry about the database's gener
 
 For example, ElasticSearch was developed on the Lucene search library, while the Rust ecosystem has an improved next-gen full-text search library, [Tantivy](https://github.com/quickwit-oss/tantivy), as a Lucene alternative. ParadeDB only needs to wrap and connect it to PostgreSQL's interface to offer search services comparable to ElasticSearch. More importantly, it can stand on the shoulders of PostgreSQL, leveraging the entire PG ecosystem's united strength (e.g., mixed searches with PG Vector) to "unfairly" compete with another dedicated database.
 
-[![img](https://pigsty.io/img/extension.png)](/docs/reference/extension/)
+[![img](https://pigsty.io/img/extension.png)](https://pigsty.cc/docs/reference/extension/)
 
-> Pigsty has 255 [**extensions**](/docs/reference/extension/) available. And there are [**1000+**](https://gist.github.com/joelonsql/e5aa27f8cc9bd22b8999b7de8aee9d47) more in the ecosystem
+> Pigsty has 255 [**extensions**](https://pigsty.cc/docs/reference/extension/) available. And there are [**1000+**](https://gist.github.com/joelonsql/e5aa27f8cc9bd22b8999b7de8aee9d47) more in the ecosystem
 
 ------
 

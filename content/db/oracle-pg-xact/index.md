@@ -225,8 +225,8 @@ PostgreSQL 支持所有四个隔离级别，但它会默默地将 `READ UNCOMMIT
 
 在主流 DBMS 中，只有 PostgreSQL （以及基于PostgreSQL的CockroachDB）提供了真正的 Serializable 。
 
-  * [←上一页](/blog/db/db-is-the-arch/)
-  * [下一页→](/blog/db/pg-kiss-duckdb/)
+  * [←上一页](/db/db-is-the-arch/)
+  * [下一页→](/db/pg-kiss-duckdb/)
 
 
 

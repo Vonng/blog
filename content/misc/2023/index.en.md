@@ -19,7 +19,7 @@ As an open source contributor, my proudest project is [Pigsty](https://pigsty.cc
 
 In this endeavor, I can proudly say Pigsty has performed quite well. In 2023, Pigsty's GitHub stars tripled from 719 at the beginning of the year to 2200. It made it to Hacker News front page, and growth began snowballing. In the [OSSRank open source rankings](https://ossrank.com/cat/368-postgresql-extension?page=2), Pigsty ranks 37th among PostgreSQL ecosystem projects, likely the highest-ranking Chinese-led project, bringing some honor.
 
-![pigsty.png](pigsty.png)
+![pigsty.webp](pigsty.webp)
 
 In 2023, Pigsty released its second major version with 11 total releases. Previously it only ran on CentOS7, but now covers basically all mainstream Linux distributions. It supports PostgreSQL major versions 12-16, incorporating 150+ extensions from the PG ecosystem. Some extensions not available in official repositories were compiled, packaged, tested, and maintained by me personally. Including Pigsty itself, "based on open source, giving back to open source," it contributes to the PG ecosystem.
 
@@ -43,7 +43,7 @@ In April 2022, Miracle Plus invested in the Pigsty project, giving me the opport
 
 For myself, this entrepreneurial year brought many joys and some troubles. For various reasons, I was actually the only one doing the work: from technical design and implementation to marketing, promotion, and customer service - becoming the dragon in one-stop service. Fortunately, for the internet/software industry, with the special variable of open source plus GPT assistance, individual heroism remains viable. Investing in R&D and reinventing wheels might not be as effective as deeply integrating existing open source projects. By fully leveraging the open source ecosystem, you can achieve tremendous leverage. Database distributions are exactly this kind of product: their quality mainly depends on the leader's expertise and cognition, and I'm not intimidated on this front.
 
-![bp.png](bp.png)
+![bp.webp](bp.webp)
 
 In product positioning, Pigsty has secured multiple key strategic points, prioritizing user needs while considering investor hype requirements. Since 2023 saw upheaval in capital markets and VC industry, we didn't secure the next funding round. However, in this economic environment, being able to support ourselves while building something people truly need makes fundraising almost irrelevant - not taking money might even be more comfortable.
 
@@ -51,7 +51,7 @@ Projects with ecological niches similar to Pigsty include EDB's CloudNative-PG f
 
 In PostgreSQL distribution ecological competition, we chose the most reliable/performant/simple bare metal/bare OS deployment, rejecting the trendy [K8S](https://mp.weixin.qq.com/s/4a8Qy4O80xqsnytC4l9lRg) and even [Docker](https://mp.weixin.qq.com/s/kFftay1IokBDqyMuArqOpg) containerization. This indeed created much grunt work adapting different operating systems, but it was the right thing to do, and these efforts became moats: while a bunch of PG Operators compete fiercely, users who crashed out of K8S all benefited Pigsty instead.
 
-![stackgres-pigsty.png](stackgres-pigsty.png)
+![stackgres-pigsty.webp](stackgres-pigsty.webp)
 
 Another overlapping competitor is **cloud databases/RDS** - many Pigsty subscription customers self-built because cloud RDS was too expensive. Although public cloud RDS teams might have dozens of people, I'm not intimidated at all. I'm always the one poaching RDS corners, ideologically dominating and writing articles about it. This became recreational entertainment during entrepreneurship - accumulating over twenty high-quality related articles this year, compiled into a "Cloud Computing Mudslide" Cloud-Exit handbook.
 
@@ -63,7 +63,7 @@ I started a WeChat public account "[Illegal Addition Feng](https://mp.weixin.qq.
 
 Previously, I was an engineer who liked focusing on solid technical work; this year, I added a new hobby of **writing articles**. Because I believe that no matter how good or awesome your technology is, if you can't articulate or promote it, it's wasted. So I started writing articles, outputting my vision, philosophy, and viewpoints. The response has been good this year: mainly two new series "**Database Veteran**" and "**Cloud Computing Mudslide**."
 
-![heros.jpg](heros.jpg)
+![heros.webp](heros.webp)
 
 ![posts.jpg](posts.jpg)
 

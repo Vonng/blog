@@ -62,7 +62,7 @@ Using medical equipment as an analogy, **ordinary monitoring systems** are like 
 
 Pigsty's monitoring system is based on industry best practices, using Prometheus and Grafana as monitoring infrastructure. It's open-source, highly customizable, reusable, portable, with no vendor lock-in. It can integrate with various existing database instances.
 
-![](pigsty-v09-3.png)
+![](pigsty-v09-3.webp)
 
 
 

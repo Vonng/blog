@@ -60,6 +60,6 @@ auto-compaction-retention: "24h"
 ## Pigsty 的例子
 
 Pigsty 也在这个问题上翻过车。从 2023-02-28 发布的 v2.0.0 首次引入 etcd 作为 DCS 开始，到 2024-02-13 v2.6.0 修复 etcd 的这个问题， 
-整整一年的版本都受到 etcd 这个问题的影响。我们在文档的 [漏洞缺陷](/docs/bug/) 与 [ETCD FAQ](/docs/etcd/faq/) 中多次强调过这个问题。
+整整一年的版本都受到 etcd 这个问题的影响。我们在文档的 [漏洞缺陷](https://pigsty.cc/docs/bug/) 与 [ETCD FAQ](https://pigsty.cc/docs/etcd/faq/) 中多次强调过这个问题。
 
 在这里还是要特别提醒一下使用 Pigsty v2.0 ~ v2.5 的用户，请尽快更新升级一下 Etcd 的配置。

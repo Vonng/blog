@@ -21,7 +21,7 @@ tags: [数据库, Docker, 容器化, 架构设计]
 
 让我们先来看一看Docker对自己的描述。
 
-![docker-dev](pg-in-docker-1.png)
+![docker-dev](pg-in-docker-1.webp)
 
 ![docker-ops](pg-in-docker-2.png)
 

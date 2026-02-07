@@ -81,7 +81,7 @@ RockyLinux 的使用体验最好，它的创始人就是原来 CentOS 的创始�
 
 龙蜥 / OpenAnolis 是阿里云牵头的国产化操作系统，号称100%兼容EL。本来我并没抱太大期望：只是有用户想用，我就支持一下，但实际效果超出了预期：EL8 的所有 RPM 包都一遍过，适配除了处理下 /etc/os-release 之外没有任何额外工作。适配了 Anolis 一个，就等于适配了十几种 “国产操作系统系统”发行版：阿里云、统信软件、中国移动、麒麟软件、中标软件、凝思软件、浪潮信息、中科方德、新支点、软通动力、博彦科技，可以说是很划算了。
 
-![openAnolis.png](rhel-openAnolis.png)
+![openAnolis.png](rhel-openAnolis.webp)
 
 > 基于 OpenAnolis 的商业操作系统发行版
 

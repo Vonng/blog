@@ -334,8 +334,8 @@ curl https://repo.pigsty.cc/get | bash -s v3.4.1
 
 ### 亮点特性
 
-- 在 EL 系统上增加了对 MySQL 协议兼容 PostgreSQL 内核的支持：[openHalo](/docs/pgsql/kernel/openhalo)
-- 在 EL 系统上增加了对 OLTP 增强 PostgreSQL 内核的支持：[orioledb](/docs/pgsql/kernel/orioledb)
+- 在 EL 系统上增加了对 MySQL 协议兼容 PostgreSQL 内核的支持：[openHalo](https://pigsty.cc/docs/pgsql/kernel/openhalo)
+- 在 EL 系统上增加了对 OLTP 增强 PostgreSQL 内核的支持：[orioledb](https://pigsty.cc/docs/pgsql/kernel/orioledb)
 - 优化了 pgAdmin 9.2 应用模板，具有自动服务器列表更新和 pgpass 密码填充功能
 - 将 PG 默认最大连接数增加到 250、500、1000
 - 从 EL8 中删除了有依赖错误的 `mysql_fdw` 扩展

@@ -138,7 +138,7 @@ The market is validating this direction: in 2025, Databricks acquired Neon, Snow
 
 A more radical, more interesting possibility: PostgreSQL doesn't just play storage—it becomes the **Runtime itself**. PostgreSQL's extreme extensibility and thriving extension ecosystem mean it already has nearly all the primitives a complete Runtime needs.
 
-[![ecosystem.jpg](ecosystem.jpg)](/db/pg-eat-db-world)
+[![ecosystem.jpg](ecosystem.jpg)](/pg/pg-eat-db-world)
 
 Theoretically, `psql` command-line functionality is a superset of bash. It might just have a shot at becoming Yet Another Runtime—at which point the database isn't an external store anymore, but the orchestration core. How far this path goes remains to be validated, but "Database as Runtime" is genuinely interesting—and it's the direction I'm currently exploring.
 
@@ -275,4 +275,3 @@ This is an era full of opportunity and possibility. At history's turning point, 
 In the 1980s, someone was writing DOS programs in a garage. In the 1990s, someone was writing the Linux kernel in a dorm room. On some late night in 202x, someone might be at a terminal right now, typing the first line of Agent OS code.
 
 Whoever builds this infrastructure is defining the next era.
-

@@ -14,7 +14,7 @@ In 2025, PostgreSQL has opened a clear lead over MySQL on features, correctness,
 
 ### Release cadence
 
-MySQL just dropped “Innovation” 9.3 ([release notes](https://dev.mysql.com/doc/refman/9.3/en/mysql-nutshell.html)), yet the changelog looks like more of the same patchwork. Search for “PostgreSQL 18” and you’ll find dozens of preview write-ups. Search “MySQL 9.3” and you get sighs. MySQL OG Ding Qi wrote “[MySQL’s innovation branch is losing its point](https://mp.weixin.qq.com/s/LLlOkGHIDhUCkJNLlmtXSQ).” Dege followed with “[MySQL Will Stay Mediocre](https://mp.weixin.qq.com/s/QnfCqVOsSxsnjfUZv9UPsg).” Percona CEO Peter Zaitsev penned “[Where Are You Going, MySQL?](/en/blog/db/sakila-where-are-you-going/),” “[Oracle Finally Killed MySQL](/en/blog/db/oracle-kill-mysql/),” and “[Can Oracle Save MySQL?](/en/blog/db/can-oracle-save-mysql/),” expressing open frustration.
+MySQL just dropped “Innovation” 9.3 ([release notes](https://dev.mysql.com/doc/refman/9.3/en/mysql-nutshell.html)), yet the changelog looks like more of the same patchwork. Search for “PostgreSQL 18” and you’ll find dozens of preview write-ups. Search “MySQL 9.3” and you get sighs. MySQL OG Ding Qi wrote “[MySQL’s innovation branch is losing its point](https://mp.weixin.qq.com/s/LLlOkGHIDhUCkJNLlmtXSQ).” Dege followed with “[MySQL Will Stay Mediocre](https://mp.weixin.qq.com/s/QnfCqVOsSxsnjfUZv9UPsg).” Percona CEO Peter Zaitsev penned “[Where Are You Going, MySQL?](/en/db/sakila-where-are-you-going/),” “[Oracle Finally Killed MySQL](/en/db/oracle-kill-mysql/),” and “[Can Oracle Save MySQL?](/en/db/can-oracle-save-mysql/),” expressing open frustration.
 
 ### New capabilities
 
@@ -28,7 +28,7 @@ MySQL’s response? A [vector type](https://dev.mysql.com/doc/refman/9.0/en/vect
 
 Abigale Kim (CMU) benchmarked [extensibility across major DBMSes](https://abigalekim.github.io/assets/pdf/Anarchy_in_the_Database_PGConfDev2024.pdf). PostgreSQL tops the chart with **375+ PGXN-listed extensions**—actual ecosystem numbers exceed 1,000. Pigsty alone ships 405 extension packages out of the box. The extension landscape spans GIS, time series, vectors, ML, OLAP, full-text, graph, etc., letting PG replace specialized components like MySQL, MongoDB, Kafka, Redis, ElasticSearch, Neo4j, and even warehouses/data lakes.
 
-[PostgreSQL Is Eating the Database World](/en/blog/pg/pg-eat-db-world/) and “[Just Use Postgres](/en/blog/pg/just-use-pg/)” aren’t fringe slogans anymore; they’re mainstream practice.
+[PostgreSQL Is Eating the Database World](/en/pg/pg-eat-db-world/) and “[Just Use Postgres](/en/pg/just-use-pg/)” aren’t fringe slogans anymore; they’re mainstream practice.
 
 MySQL’s “innovation releases” should usher in bold changes. Instead they ship timid tweaks, leaving glaring gaps.
 
@@ -52,7 +52,7 @@ This is where Postgres was always ahead—and the gap is now especially damaging
 
 JEPSEN’s [MySQL 8.0.34 analysis](https://jepsen.io/analyses/mysql-8.0.34) found that MySQL’s default **Repeatable Read (RR)** isn’t repeatable, atomic, or monotonic. It fails to meet **Monotonic Atomic View (MAV)**—the baseline most DBMSes provide at RC. MySQL’s RR is weaker than other vendors’ RC.
 
-![mysql-bad-case.png](/en/blog/db/bad-mysql/)
+[![mysql-bad-case.png](mysql-bad-case.png)](/en/db/bad-mysql/)
 
 To avoid anomalies you must go full Serializable. But MySQL’s serializable mode is slow and rarely used. You can sprinkle manual locks to paper over issues, but that kills performance and invites deadlocks.
 
@@ -96,7 +96,7 @@ Manufacturing, finance, non-internet orgs lean on PG’s correctness and feature
 
 ## What Happened to MySQL?
 
-Did PostgreSQL “kill” MySQL? Peter Zaitsev argues in “[Oracle Finally Killed MySQL](/en/blog/db/sakila-where-are-you-going/)” that Oracle’s neglect and mismanagement did. “[Can Oracle Save MySQL?](https://pigsty.cc/blog/db/can-oracle-save-mysql)” lays out the root cause: MySQL’s IP belongs to Oracle. It isn’t community-owned like PostgreSQL. Neither MySQL nor MariaDB has broad independent contributors. They’re company-controlled codebases.
+Did PostgreSQL “kill” MySQL? Peter Zaitsev argues in “[Oracle Finally Killed MySQL](/en/db/sakila-where-are-you-going/)” that Oracle’s neglect and mismanagement did. “[Can Oracle Save MySQL?](https://pigsty.cc/blog/db/can-oracle-save-mysql)” lays out the root cause: MySQL’s IP belongs to Oracle. It isn’t community-owned like PostgreSQL. Neither MySQL nor MariaDB has broad independent contributors. They’re company-controlled codebases.
 
 Cloud vendors (AWS et al.) built services atop MySQL without contributing back. Oracle saw no reason to invest in a product competitors monetized more than they did, so they focused on proprietary MySQL HeatWave. AWS cares about RDS/Aurora, not upstream. The community withered—and hyperscalers share the blame.
 
@@ -106,13 +106,13 @@ Cloud vendors (AWS et al.) built services atop MySQL without contributing back. 
 
 ## Summing Up
 
-I love PostgreSQL, but I agree with Peter: a world where PG is the only open-source RDBMS isn’t healthy. Competition keeps us sharp. MySQL’s decline should be a cautionary tale for PG: avoid dominance by any single vendor. “[The cloud is eating open source](/en/blog/cloud/paradigm/)” is real—vendors write the control planes, hire experts, and capture most value while offloading R&D costs to the community. The control/monitoring code rarely returns to open source. MongoDB, Elastic, Redis, MySQL have all reacted with restrictive licenses. PostgreSQL must stay vigilant.
+I love PostgreSQL, but I agree with Peter: a world where PG is the only open-source RDBMS isn’t healthy. Competition keeps us sharp. MySQL’s decline should be a cautionary tale for PG: avoid dominance by any single vendor. “[The cloud is eating open source](/en/cloud/paradigm/)” is real—vendors write the control planes, hire experts, and capture most value while offloading R&D costs to the community. The control/monitoring code rarely returns to open source. MongoDB, Elastic, Redis, MySQL have all reacted with restrictive licenses. PostgreSQL must stay vigilant.
 
-Thankfully PG still has stubborn contributors and companies fighting for balance. Pigsty is my attempt to offer an open, local-first alternative to managed RDS, and my “[Cloud Mudslide](/en/blog/cloud/)” series tries to expose cloud opacity.
+Thankfully PG still has stubborn contributors and companies fighting for balance. Pigsty is my attempt to offer an open, local-first alternative to managed RDS, and my “[Cloud Mudslide](/en/cloud/)” series tries to expose cloud opacity.
 
 MySQL had a great run; every show ends. It’s dying—stalled releases, lagging features, eroding performance, correctness wounds, shrinking ecosystem. That’s fate. PostgreSQL will carry the open-source database banner forward, walking the roads MySQL abandoned.
 
 - [PostgreSQL Achieves an Overwhelming Advantage Over MySQL](https://mp.weixin.qq.com/s/tuzmmkEIOsuq2-8rMbmVLw)
 
-- [← Previous](/en/blog/db/pg-kiss-duckdb/)
-- [Next →](/en/blog/db/ai-agent-era/)
+- [← Previous](/en/db/pg-kiss-duckdb/)
+- [Next →](/en/db/ai-agent-era/)

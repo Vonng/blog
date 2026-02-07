@@ -69,7 +69,7 @@ When virtue doesn't match position, disaster must follow. Only PostgreSQL occupi
 
 PG itself is grandfather-level open source software, a pearl in the open source world, a successful example of global developer collaboration. More importantly, it uses the selfless BSD license: except for fraudulently using PG's name, it's basically taboo-free: such as rebranding and transforming into domestic databases for sale. PG can be called the bread and butter of countless database vendors. With children and grandchildren filling the halls, saving countless lives, its merit is immeasurable.
 
-![](pg-is-great-3.jpg)
+![](pg-is-great-3.webp)
 
 > Database genealogy chart - if all PostgreSQL derivatives were listed, this chart would probably burst
 
@@ -152,7 +152,7 @@ PostgreSQL's so-called "strict constraints and syntax" might seem "inhuman" to n
 
 MySQL's popularity isn't far from PostgreSQL's, but its functionality compared to PostgreSQL and Oracle has quite a gap. Oracle and PostgreSQL were born around the same time, so even when fighting, with different stances and camps, there's a bit of mutual respect between old rivals: both are solid masters who've cultivated internal skills for half a century, accumulated deep foundations. MySQL is like an impetuous young man in his twenties wielding knives and guns, relying on brute force, riding the golden twenty years of Internet wild growth to rise and claim territory.
 
-![](pg-is-great-6.png)
+![](pg-is-great-6.webp)
 
 The dividends given by the times will also recede as times pass. In this era of change, without advanced functionality as foundation, "popularity" probably can't last long.
 

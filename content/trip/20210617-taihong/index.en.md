@@ -7,7 +7,7 @@ summary: From Xinxiang, Henan, crossing the Taihang Mountains to Shanxi
 
 ![01.jpg](01.jpg)
 
-![02.jpg](02.jpg)
+![02.webp](02.webp)
 
 ![03.jpg](03.jpg)
 

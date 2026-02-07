@@ -46,7 +46,7 @@ Epic Games 的 Fortnite、任天堂的 Pokémon GO、育碧的彩虹六号集体
 太平洋夏令时2025年10月19日晚11:49，us-east-1 区域的多个服务错误率突然攀升。
 直到22分钟后，AWS 才在健康仪表板发布第一条确认。截止到10月20日下午3:53分结束，整个故障持续了近 16 小时。
 
-[![health-status.jpg](health-status.jpg)](#故障公告)
+[![health-status.webp](health-status.webp)](#故障公告)
 
 根据 [AWS 发布的故障公告](https://health.aws.amazon.com/health/status?eventID=arn:aws:health:us-east-1::event/MULTIPLE_SERVICES/AWS_MULTIPLE_SERVICES_OPERATIONAL_ISSUE/AWS_MULTIPLE_SERVICES_OPERATIONAL_ISSUE_BA540_514A652BE1A)，根因看似简单：AWS 内部系统的一条 DNS 解析失败。但这个"小故障"却触发了惊人的级联效应。
 DynamoDB 无法访问，而它恰恰是 AWS 控制平面的基石 —— IAM、EC2、Lambda、CloudWatch 等关键服务全部依赖它。

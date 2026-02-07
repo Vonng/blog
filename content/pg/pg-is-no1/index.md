@@ -299,7 +299,7 @@ PostgreSQL 数据库内核在数据库领域的生态位，类似于 Linux 操�
 对于基于 PostgreSQL 内核的数据库发行版而言，竞争才刚刚开始。谁会成为PG的Debian，RedHat 与 Ubuntu ？
 这便是我们做 **[Pigsty](https://pigsty.cc)** 的初衷 —— 制作一个开箱即用的、开源免费、本地优先的 PostgreSQL 数据库发行版，让所有人都能用**好数据库**， **用好**数据库。
 
-![](pg-is-no1-18.png)
+![](pg-is-no1-18.webp)
 
 
 

@@ -28,7 +28,7 @@ tags: [PostgreSQL, PG管理, 性能]
 
 因此，一个合格的DBA必须知道如何及时定位并处理慢查询。
 
-![](slow-query-8.png)
+![](slow-query-8.webp)
 
 > 图：一个慢查询优化前后，系统的整体饱和度从40%降到了4%
 
@@ -225,7 +225,7 @@ CREATE UNIQUE INDEX ON pgbench_accounts (aid);
 
 这种故事，就可以通过监控系统，用很生动直观的形式表达出来，赚取KPI与Credit。
 
-![](slow-query-8.png)
+![](slow-query-8.webp)
 
 > 图：一个慢查询优化前后，系统的整体饱和度从40%降到了4%
 >

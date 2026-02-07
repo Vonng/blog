@@ -127,7 +127,7 @@ PostgreSQL 以无与伦比的开发速度持续发展：**PostgreSQL 提供成�
 
 [**Pigsty**](https://pigsty.cc/zh) 是开源免费，本地优先，开箱即用的 PostgreSQL RDS，允许用户在本地一键拉起生产级的 PG 云数据库服务，并带有开箱即用的 390 个PG扩展插件，故障自愈的高可用，顶级监控系统，PITR备份恢复，IaC命令行工具，SOP管理预案的完整解决方案。
 
-![pigsty-home.png](pigsty-home.png)
+![pigsty-home.webp](pigsty-home.webp)
 
 
 --------

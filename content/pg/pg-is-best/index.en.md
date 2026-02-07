@@ -195,7 +195,7 @@ At considerable scale, PostgreSQL can independently play multiple roles, one com
 
 Take Tantan for example - at 2.5M TPS and 200TB data scale, **single PostgreSQL selection** still stably and reliably supports the business. At considerable scale it achieves versatility - besides its main OLTP job, PG also served as cache, OLAP, batch processing, even message queue for quite some time. Of course, even immortal turtles have their end. Eventually these part-time functions must be **split off** to specialized components, but that's only at nearly ten million DAU.
 
-![](pg-is-great-13.jpg)
+![](pg-is-best-13.jpg)
 
 ### vs MySQL
 

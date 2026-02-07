@@ -16,7 +16,7 @@ tags: [PostgreSQL, PG生态, 扩展]
 最终体现在《[**PostgreSQL 17 发布注记！**](/pg/pg-17)》中。
 
 
-<a href="/zh/pg/pg-eat-deb-world"><img src="https://pigsty.io/img/ecosystem.jpg" style="max-width: 1000px; max-height: 1000px; width: 100%; height: auto;"></a>
+<a href="/pg/pg-eat-db-world"><img src="https://pigsty.io/img/ecosystem.jpg" style="max-width: 1000px; max-height: 1000px; width: 100%; height: auto;"></a>
 
 
 但真正重要的事情不是认识世界，而是改变世界。既然大家都已经认清了扩展很重要，**那么我们应该做什么，怎么做**，就成了真正关键的问题。 
@@ -199,7 +199,7 @@ pg-meta:
 
 PG 每个大版本都会引入一些变动，因此维护一百多个扩展插件并不是一件轻松的事情。特别是一些扩展的作者都好几年没动静了，那还真就只能自己上。我自己修复了十几个扩展插件，提供了最新的 PG 大版本支持。能联系上作者的，我也提交了一堆 PR 或者 Issue，推动解决。
 
-<a href="https://github.com/Vonng"><img src="github-contrib.png" style="max-width: 800px; width: 100%; height: auto;"></a>
+<a href="https://github.com/Vonng"><img src="github-contrib.webp" style="max-width: 800px; width: 100%; height: auto;"></a>
 
 在这个过程中，我和许多扩展作者都建立了联系。例如，我手把手帮助 ParadeDB 的老板与作者 [解决了](https://github.com/paradedb/paradedb/issues/1116) RPM / DEB 包打包与分发的问题。我说动了 duckdb_fdw 的作者使用一个单独的 libduckdb，并发布了 v1.0.0 ，我给一些PG扩展的作者发邮件/Issue，国产机器学习框架 PG4ML 的作者也找到了我希望能够通过这个渠道进行分发。
 

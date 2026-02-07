@@ -107,7 +107,7 @@ This time, the replacement from PG 16 to PG 17 saw significantly accelerated eco
 | v2.0.1 | 2023-03-21 | v2 bug fixes, security enhancements, Grafana version upgrade | [v2.0.1](https://github.com/Vonng/pigsty/releases/tag/v2.0.1) |
 | v2.0.0 | 2023-02-28 | Major architecture upgrade, significantly enhanced compatibility, security, maintainability | [v2.0.0](https://github.com/Vonng/pigsty/releases/tag/v2.0.0) |
 
-> [Pigsty Release Note](/zh/docs/releasenote)
+> [Pigsty Release Note](https://pigsty.cc/docs/releasenote)
 
 This time from PG 16 to PG 17, ecosystem adaptation speed significantly accelerated, completing in less than three months what previously took six months. In this regard, I'm proud to say I did considerable work.
 
@@ -149,9 +149,9 @@ PostgreSQL is undoubtedly about to become the Linux kernel of the database field
 
 Incidentally, we added PG kernel replacement capability in Pigsty v3, allowing you to use derivative PG kernels to obtain unique capabilities and features:
 
-- Microsoft SQL Server compatible [Babelfish](/zh/docs/kernel/babelfish) kernel support
-- Oracle compatible [IvorySQL](/zh/docs/kernel/ivorysql) 3.4 kernel support  
-- Alibaba-Cloud [PolarDB](/zh/docs/kernel/polardb) for PostgreSQL/Oracle domestic innovation kernel support
-- Allows users to more conveniently self-build [Supabase](/zh/docs/kernel/supabase) - open-source Firebase, one-stop backend platform
+- Microsoft SQL Server compatible [Babelfish](https://pigsty.cc/docs/kernel/babelfish) kernel support
+- Oracle compatible [IvorySQL](https://pigsty.cc/docs/kernel/ivorysql) 3.4 kernel support  
+- Alibaba-Cloud [PolarDB](https://pigsty.cc/docs/kernel/polardb) for PostgreSQL/Oracle domestic innovation kernel support
+- Allows users to more conveniently self-build [Supabase](https://pigsty.cc/docs/kernel/supabase) - open-source Firebase, one-stop backend platform
 
 If you want to use authentic PostgreSQL experience, welcome to use our distribution - open source and free, no vendor lock-in. We also provide commercial consulting support to solve your difficult problems and worries.

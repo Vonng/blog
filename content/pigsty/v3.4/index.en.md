@@ -314,8 +314,8 @@ curl https://repo.pigsty.cc/get | bash -s v3.4.1
 
 ### Highlights
 
-- Added support for MySQL protocol-compatible PostgreSQL kernel on EL: [openHalo](/docs/pgsql/kernel/openhalo)
-- Added support for OLTP-enhanced PostgreSQL kernel on EL: [orioledb](/docs/pgsql/kernel/orioledb)
+- Added support for MySQL protocol-compatible PostgreSQL kernel on EL: [openHalo](https://pigsty.cc/docs/pgsql/kernel/openhalo)
+- Added support for OLTP-enhanced PostgreSQL kernel on EL: [orioledb](https://pigsty.cc/docs/pgsql/kernel/orioledb)
 - Optimized pgAdmin 9.2 app template with auto server list update and pgpass password filling
 - Increased PG default max connections to 250, 500, 1000
 - Removed `mysql_fdw` extension with dependency errors from EL8

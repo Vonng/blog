@@ -58,7 +58,7 @@ Taking Chinese characters as an example, when we read the character "知" (know)
 
 ##### Figure: Concepts activated in the author's mind upon seeing the Chinese character "知" - guaranteed by Party loyalty that no search engines were used
 
-![Image](/Users/vonng/dev/www/vonng.com/content/cn/blog/misc/640-20231108093555197.jpeg)
+![Image](featured.jpg)
 
 
 

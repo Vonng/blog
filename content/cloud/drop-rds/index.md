@@ -27,9 +27,9 @@ tags: [下云, DBA, RDS]
 
 ## 故障现场 
 
-![case-1.png](drop-rds-case-1.png)
+![case-1.png](drop-rds-case-1.webp)
 
-![case-2.png](drop-rds-case-2.png)
+![case-2.png](drop-rds-case-2.webp)
 
 
 

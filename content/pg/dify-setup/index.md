@@ -37,7 +37,7 @@ Dify “支持” 了一堆花里胡哨的向量数据库，但你既然已经�
 
 ## Pigsty的准备工作
 
-我们用 [单机安装](/zh/docs/concept/arch/#单机安装) 的 Pigsty 为例，假设你有一台 IP 地址为 `10.10.10.10` 的机器，已经 [安装好了单机 Pigsty](https://doc.pgsty.com/install/start)。
+我们用 [单机安装](https://pigsty.cc/docs/concept/arch/#单机安装) 的 Pigsty 为例，假设你有一台 IP 地址为 `10.10.10.10` 的机器，已经 [安装好了单机 Pigsty](https://doc.pgsty.com/install/start)。
 
 当然，我们需要在 Pigsty 配置文件 `pigsty.yml` 中定义一下我们所需的数据库集群。
 这里定义了一个名为 `pg-meta` 的集群，其中有一个名为 `dbuser_dify` 的超级业务用户（它这个实现的有点挫，在 Migration 脚本里面执行了 `CREATE EXTENSION` ），一个安装了 `pgvector` 扩展插件的数据库 `dify`，以及一条特定的防火墙规则，允许用户通过密码从任何地方访问数据库（你也可以将其限制为docker的网段 `172.0.0.0/8` 之类更精确的范围）。
@@ -81,7 +81,7 @@ redis-cli -u redis://redis.dify@10.10.10.10:6379/0 ping
 
 当你确认这两个连接串可用后，大功告成，你可以开始部署 Dify 了。
 
-这里出于演示方便的原因，使用IP直连的土办法，如果是多节点的高可用 PG 集群，请参考 [接入](/zh/docs/concept/svc/) 一节。
+这里出于演示方便的原因，使用IP直连的土办法，如果是多节点的高可用 PG 集群，请参考 [接入](https://pigsty.cc/docs/concept/svc/) 一节。
 
 当然，上面的部分是假设你已经是 Pigsty 用户，了解如何部署 PostgreSQL 与 Redis 集群。你可以直接跳过下一节，查看 [Dify 如何配置](#dify的配置工作)。
 

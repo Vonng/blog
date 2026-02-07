@@ -236,7 +236,7 @@ Speaking of PostgreSQL, despite being open-source, most users rely on official p
 
 Devrim is a fascinating character — a Turkish native living in London, a part-time DJ, and the maintainer of the PGDG RPM repository, sporting a PostgreSQL logo tattoo. After an engaging chat about the PGDG repository, he shared insights on how extensions are added, highlighting the community-driven nature of PGXN and recent popular additions like `pgvector`, ([which I made the suggestion haha](https://github.com/pgvector/pgvector/issues/76)).
 
-Interestingly, with the latest Pigsty v2.7 release, four of my maintained (packaging) extensions (`pgsql-http`, `pgsql-gzip`, `pg_net`, `pg_bigm`) were adopted into the PGDG official repository. Devrim admitted to scouring Pigsty's [extension list](/docs/reference/extension) for good picks, though he humorously dismissed any hopes for my Rust pgrx extensions making the cut, reaffirming his commitment to not blending Go and Rust plugins into the official repository. Our conversation was so enriching that I've committed myself to becoming a "PG Extension Hunter," scouting and recommending new plugins for official inclusion.
+Interestingly, with the latest Pigsty v2.7 release, four of my maintained (packaging) extensions (`pgsql-http`, `pgsql-gzip`, `pg_net`, `pg_bigm`) were adopted into the PGDG official repository. Devrim admitted to scouring Pigsty's [extension list](https://pigsty.cc/docs/reference/extension) for good picks, though he humorously dismissed any hopes for my Rust pgrx extensions making the cut, reaffirming his commitment to not blending Go and Rust plugins into the official repository. Our conversation was so enriching that I've committed myself to becoming a "PG Extension Hunter," scouting and recommending new plugins for official inclusion.
 
 
 
@@ -250,7 +250,7 @@ One of the highlights of PGCon.Dev is the Unconference, a self-organized meeting
 
 The top-voted topics were Multithreading (42 votes), Observability (35 votes), and Enhanced Community Engagement (35 votes). Observability features were a major focus, reflecting the community's priority. I proposed integrating a contrib monitoring extension in PostgreSQL to directly expose metrics via HTTP endpoint, using `pg_exporter` as a blueprint but embedded to overcome the limitations of external components, especially during crash recovery scenarios.
 
-![unconference2.jpg](unconference2.jpg)
+![unconference2.jpg](unconference2.png)
 
 There's a clear focus on observability among the community. As the author of [pg_exporter](https://github.com/Vonng/pg_exporter), I proposed developing a first-party monitoring extension. This extension would integrate Prometheus monitoring endpoints directly into PostgreSQL, exposing metrics via HTTP without needing external components.
 
@@ -293,7 +293,7 @@ Inspired by the engagement at this conference, I'm considering presenting on Pig
 
 Notably, following the conference, Pigsty's international CDN traffic spiked significantly, highlighting the growing global reach of our PostgreSQL distribution, which really made my day.
 
-[![pigsty-traffic-en.jpg](pigsty-traffic-en.jpg)](https://pigsty.io/)
+[![pigsty-traffic-en.jpg](pigsty-traffic-en.png)](https://pigsty.io/)
 
 > Pigsty CDN Traffic Growth after PGCon.Dev 2024
 
@@ -317,6 +317,5 @@ Some slides are [available](https://www.pgevents.ca/events/pgconfdev2024/session
 - [PGCon.Dev Extension Summit Notes @ Vancouver](https://mp.weixin.qq.com/s/C0YyE52KbLLbnG1C2FqGRg)
 
 - [PGCon 2024 Opening](https://mp.weixin.qq.com/s/4t1thBCDVS8y9dHiOxPZaA)
-
 
 

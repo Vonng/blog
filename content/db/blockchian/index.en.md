@@ -14,7 +14,7 @@ tags: [Database,Distributed]
 
 To be precise, it's a **Byzantine Fault Tolerant (resistant to malicious node attacks) distributed (leaderless replication) database**.
 
-![](blockchain.jpg)
+![](featured.jpg)
 
 If this distributed database is used to store **transaction records** of various coins, the system is called "XX coin". For example, Ethereum is such a distributed database that records not only transaction records of various altcoins but also all kinds of other content. By spending some Ether, you can leave [a record (a message)](https://etherscan.io/tx/0x2d6a7b0f6adeff38423d4c62cd8b6ccb708ddad85da5d3d06756ad4d8a04a6a2) in this distributed database. And so-called **smart contracts** are **stored procedures** on this distributed database.
 

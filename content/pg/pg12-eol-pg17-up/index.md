@@ -117,7 +117,7 @@ PostgreSQL 12 是五年前发布的版本，我认为是继 PG 10 之后的一�
 | v2.0.1 | 2023-03-21 | v2 错误修复，安全增强，升级 Grafana 版本                              | [v2.0.1](https://github.com/Vonng/pigsty/releases/tag/v2.0.1) |
 | v2.0.0 | 2023-02-28 | 架构大升级，兼容性、安全性、可维护性显著增强                                  | [v2.0.0](https://github.com/Vonng/pigsty/releases/tag/v2.0.0) |
 
-> [Pigsty Release Note](/zh/docs/releasenote)
+> [Pigsty Release Note](https://pigsty.cc/docs/releasenote)
 
 
 
@@ -163,10 +163,10 @@ PostgreSQL 已经毫无疑问地即将成为数据库领域的 Linux 内核，�
 
 顺便一提，我们在 Pigsty v3 中增加了 PG 系内核替换能力，您可以使用衍生版 PG 内核，获取一些独特的能力与特性：
 
-- 微软 SQL Server 兼容的 [Babelfish](/zh/docs/kernel/babelfish) 内核支持
-- Oracle 兼容的 [IvorySQL](/zh/docs/kernel/ivorysql) 3.4 内核支持
-- 阿里云 [PolarDB](/zh/docs/kernel/polardb) for PostgreSQL / Oracle 国产化信创内核支持
-- 允许用户更方便地自建 [Supabase](/zh/docs/kernel/supabase) —— 开源 Firebase，一站式后端平台
+- 微软 SQL Server 兼容的 [Babelfish](https://pigsty.cc/docs/kernel/babelfish) 内核支持
+- Oracle 兼容的 [IvorySQL](https://pigsty.cc/docs/kernel/ivorysql) 3.4 内核支持
+- 阿里云 [PolarDB](https://pigsty.cc/docs/kernel/polardb) for PostgreSQL / Oracle 国产化信创内核支持
+- 允许用户更方便地自建 [Supabase](https://pigsty.cc/docs/kernel/supabase) —— 开源 Firebase，一站式后端平台
 
 
 如果您希望使用原汁原味的 PostgreSQL 体验，欢迎使用我们的发行版，开源免费，没有供应商锁定；同时我们也提供商业咨询支持，为您解决疑难杂症兜底的需求与烦恼。

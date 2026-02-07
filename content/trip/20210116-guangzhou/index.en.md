@@ -45,18 +45,18 @@ Sky slightly tipsy, night slightly cool. I played Hacken Lee's "Moon Half Serena
 
 Shamian has a delicate small church, unfortunately due to pandemic, religious activities stopped and the church was closed. Otherwise I really wanted to see what this beautiful church looked like inside. Streets had many couples, walking hand in hand, whispering intimately, making one envious.
 
-![](church.jpg)
+![](church.jpeg)
 > Shamian Church in the night
 
 Wandering Shamian awhile, this elegant European atmosphere was captivating, though after an hour I was somewhat tired. I'd booked 7:30 PM Pearl River night cruise tickets - now exactly 7 o'clock, I needed to quickly fill my stomach. Wanted to find a Burger King to make do, but only a French restaurant nearby - Orient Express. Though the atmosphere was nice, I could only order the quickest dish to catch the boat.
 
-![](dinner.jpg)
+![](dinner.jpeg)
 
-![](dinner2.jpg)
+![](dinner2.jpeg)
 
 7:30 PM, I boarded the cruise right on time. The Pearl River under night sky was illuminated golden by lights from both banks.
 
-![](river.jpg)
+![](river.jpeg)
 
 > See how bright the evening stars shine with golden light. Sea breeze blows, blue waves ripple.
 > 
@@ -70,7 +70,7 @@ Wandering Shamian awhile, this elegant European atmosphere was captivating, thou
 
 Passing Guangzhou Tower "Small Waist," couldn't avoid taking a tourist photo. Guangzhou Tower at night was flashy, with huge scrolling text including socialist core values - couldn't help but criticize this aesthetic. Finally caught a shot when text finished scrolling.
 
-![](guangzhou-tower.jpg)
+![](guangzhou-tower.jpeg)
 
 > Guangzhou Tower - actually quite spectacular viewed from below.
 
@@ -81,11 +81,11 @@ But later reconsidered - better return to Shamian to stay, experience concession
 
 Evening returned preparing to find food, so went to commercial area near Shamian. Ate at Cai Lan Hong Kong dim sum - taste was okay. The plaza had a DJI store, went in for a look and chatted quite well with the staff - also an outdoor enthusiast, Xinjiang guide. He mentioned DJI has a Mavic 2 enterprise advanced version with infrared camera, megaphone and flashlight, around 16k. Honestly at 15k I really wanted to get one on the spot, but discovered enterprise version was 36k - that's a bit pricey...
 
-![vagrant.jpg](vagrant.jpg)
+![vagrant.jpeg](vagrant.jpeg)
 
 On the plaza entrance bridge lay a homeless person, contrasting sharply with the elegant European-style district and magnificent commercial plaza nearby, reminding passersby how many people still live in miserable conditions. But such scenes unlikely in Beijing, because Beijing's cold waves hit -20°C - anyone daring to sleep rough on Beijing streets this season would freeze to death. I think Shenzhen becoming a startup capital isn't without reason - even if startup fails, worst case can be a Sanhe Great God sleeping under bridges. In the north, one might consider freezing to death.
 
-![](shamian-3.jpg)
+![](shamian-3.jpeg)
 
 For evening accommodation I chose Shamian Hotel. Though the rooms were quite rustic, internal facilities were lacking. Most unpleasant experience was Guangzhou's overly strict check-in - hearing I came from Beijing Chaoyang District, though theoretically no longer an epidemic zone, just hearing "Beijing" immediately triggered household registration mode. First all the codes routine, then several forms, then downloading police station mini-program declarations, finally reporting every day's itinerary for the past 14 days... Most excessive was 11 PM phone call waking me saying they'd reported my information up, discovered I'd been to Yunnan two weeks ago but didn't declare - I said that was exactly 15 days ago so I didn't fill it. I somewhat understood Hubei people's treatment and feelings back then.
 
@@ -93,55 +93,55 @@ For evening accommodation I chose Shamian Hotel. Though the rooms were quite rus
 
 Morning woke up, went to Qiaojia Cuisine at the entrance for morning tea - reportedly an old established famous restaurant. But traveling alone's biggest sadness is you can only eat two or three dishes. I ordered four and was nearly stuffed to death.
 
-![breakfast.jpg](breakfast.jpg)
+![breakfast.jpeg](breakfast.jpeg)
 
 Guangzhou morning was quite pleasant; morning Shamian compared to night scene showed different charm. Morning exercising elders, Sunday activity school children - all displayed vibrant scenes. I still envied locals living here.
 
-![cannon.jpg](cannon.jpg)
+![cannon.jpeg](cannon.jpeg)
 
 > Qing army cannon on Shamian Island (barrel sealed shut)
 
 ![](postal-museum.jpg)
 > Postal Museum - unfortunately closed.
 
-![custome-1.jpg](custome-1.jpg)
-![custome-2.jpg](custome-2.jpg)
+![custome-1.jpeg](custome-1.jpeg)
+![custome-2.jpeg](custome-2.jpeg)
 > Guangdong Customs, day and night
 
 Most atmosphere-destroying on Shamian Island were propaganda slogans everywhere - like psoriasis and dog skin plasters, completely ignoring context, scattered everywhere.
 
-![church-2.jpg](church-2.jpg)
+![church-2.jpeg](church-2.jpeg)
 > Yesterday's church - looks very different in daylight
 
 ## Museum Tour
 
 Morning's first stop was Thirteen Hongs Museum - the former monopoly trade institution with many Qing dynasty artifacts. Besides pots and pans, many Western treasures and interesting imported items - among museums I've visited, quite interesting.
 
-![shisanhang.jpg](shisanhang.jpg)
+![shisanhang.jpeg](shisanhang.jpeg)
 
 > Building looks unremarkable but quite interesting.
 
-![chinglish.jpg](chinglish.jpg)
+![chinglish.jpeg](chinglish.jpeg)
 
 > Of course, most amusing was Guangzhou English - rivaling pidgin English.
 
-![chess.jpg](chess.jpg)
+![chess.jpeg](chess.jpeg)
 
 Next was Guangzhou Museum. Guangzhou Museum requires reservations - somewhat troublesome, but exhibits were good. Last year reportedly Zhang Xianzhong's Jiangkou sunken silver special exhibition was here - missing it was regrettable.
 
-![](guangdong-museum.jpg)
+![](guangdong-museum.jpeg)
 
 Inside was a wood carving and silk exhibition, quite interesting.
 
 What made me happy was this museum shop actually sold beautiful minerals - never seen other places sell them. 1 yuan per gram, I picked a jin (500g) of various polished minerals. Though useless, beautiful shiny stones are just delightful to see - like dragons seeing treasure.
 
-![huacheng-plaza.jpg](huacheng-plaza.jpg)
+![huacheng-plaza.jpeg](huacheng-plaza.jpeg)
 
 Outside the museum is Huacheng Plaza, quite beautiful - after all Guangzhou is a first-tier city.
 
 Across from Huacheng Plaza is Guangzhou Tower, aka "Small Waist." Saw it yesterday by boat, heard you can go up - so let's ascend for a sky view.
 
-![](overlook.jpg)
+![](overlook.jpeg)
 
 > Bird's eye view of Guangzhou city - quite spectacular.
 

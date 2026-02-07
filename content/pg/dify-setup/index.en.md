@@ -69,14 +69,14 @@ redis-dify:
   vars: { redis_cluster: redis-dify ,redis_password: 'redis.dify' ,redis_max_memory: 64MB }
 ```
 
-For demonstration purposes, we use single-instance configurations. You can refer to the Pigsty documentation to deploy [high availability](/docs/concept/ha) PG and Redis clusters. After defining the clusters, use the following commands to create the PG and Redis clusters:
+For demonstration purposes, we use single-instance configurations. You can refer to the Pigsty documentation to deploy [high availability](https://pigsty.cc/docs/concept/ha) PG and Redis clusters. After defining the clusters, use the following commands to create the PG and Redis clusters:
 
 ```bash
 bin/pgsql-add  pg-meta                # create the dify database cluster
 bin/redis-add  redis-dify             # create redis cluster
 ```
 
-Alternatively, you can define a new [business user](/docs/pgsql/user) and [business database](/docs/pgsql/db) on an existing PostgreSQL cluster, such as `pg-meta`, and create them with the following commands:
+Alternatively, you can define a new [business user](https://pigsty.cc/docs/pgsql/user) and [business database](https://pigsty.cc/docs/pgsql/db) on an existing PostgreSQL cluster, such as `pg-meta`, and create them with the following commands:
 
 ```bash
 bin/pgsql-user pg-meta dbuser_dify    # create dify biz user
@@ -93,7 +93,7 @@ redis-cli -u redis://redis.dify@10.10.10.10:6379/0 ping
 
 Once you confirm these connection strings are working, you're all set to start deploying Dify.
 
-For demonstration purposes, we're using direct IP connections. For a multi-node high availability PG cluster, please refer to the [service access](/docs/concept/svc) section.
+For demonstration purposes, we're using direct IP connections. For a multi-node high availability PG cluster, please refer to the [service access](https://pigsty.cc/docs/concept/svc) section.
 
 The above assumes you are already a Pigsty user familiar with deploying PostgreSQL and Redis clusters. You can skip the next section and proceed to see [how to configure Dify](#dify-configuration).
 
@@ -128,7 +128,7 @@ You should insert the above PostgreSQL cluster and Redis cluster definitions int
 
 **Redis Deploy**
 
-Pigsty will not deploy redis in `install.yml`, so you have to run [`redis.yml`](/zh/docs/redis#redisyml) playbook to install Redis explicitly:
+Pigsty will not deploy redis in `install.yml`, so you have to run [`redis.yml`](https://pigsty.cc/docs/redis#redisyml) playbook to install Redis explicitly:
 
 ```bash
 ./redis.yml
@@ -136,7 +136,7 @@ Pigsty will not deploy redis in `install.yml`, so you have to run [`redis.yml`](
 
 **Docker Deploy**
 
-Pigsty will not deploy Docker by default, so you need to install Docker with the [`docker.yml`](/zh/docs/docker#dockeryml) playbook.
+Pigsty will not deploy Docker by default, so you need to install Docker with the [`docker.yml`](https://pigsty.cc/docs/docker#dockeryml) playbook.
 
 ```bash
 ./docker.yml

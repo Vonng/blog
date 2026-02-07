@@ -24,7 +24,7 @@ tags: [数据库, MySQL, PostgreSQL, 技术对比]
 
 昨天，MySQL 发布了 “创新版本” [9.3](https://dev.mysql.com/doc/refman/9.3/en/mysql-nutshell.html) 但是看上去和先前的 9.x 一样，都是些修修补补，看不到什么创新的东西。 搜索尚未发布的 PostgreSQL 18，你能看到无数特性预览的介绍文章；而搜索 MySQL 9.3，能看到的是社区对此的抱怨与失望。
 
-MySQL 老司机丁奇看完 ReleaseNote 之后表示，[《MySQL创新版正在逐渐失去它的意义》](https://mp.weixin.qq.com/s/LLlOkGHIDhUCkJNLlmtXSQ)，德哥看后写了 [《MySQL将保持平庸》](https://mp.weixin.qq.com/s/QnfCqVOsSxsnjfUZv9UPsg)。 对于 MySQL 的 “创新版本”，Percona CEO， Peter Zaitsev 也发三篇《[MySQL将何去何从](/blog/db/sakila-where-are-you-going/)》，《[Oracle最终还是杀死了MySQL](/blog/db/oracle-kill-mysql/)》，《[Oracle还能挽救MySQL吗](/blog/db/can-oracle-save-mysql/)》，公开表达了对 MySQL 的失望与沮丧。
+MySQL 老司机丁奇看完 ReleaseNote 之后表示，[《MySQL创新版正在逐渐失去它的意义》](https://mp.weixin.qq.com/s/LLlOkGHIDhUCkJNLlmtXSQ)，德哥看后写了 [《MySQL将保持平庸》](https://mp.weixin.qq.com/s/QnfCqVOsSxsnjfUZv9UPsg)。 对于 MySQL 的 “创新版本”，Percona CEO， Peter Zaitsev 也发三篇《[MySQL将何去何从](/db/sakila-where-are-you-going/)》，《[Oracle最终还是杀死了MySQL](/db/oracle-kill-mysql/)》，《[Oracle还能挽救MySQL吗](/db/can-oracle-save-mysql/)》，公开表达了对 MySQL 的失望与沮丧。
 
 在最近几年，MySQL 在新功能上乏善可陈，与突飞猛进的 PostgreSQL 形成了鲜明的对比。
 
@@ -52,7 +52,7 @@ PostgreSQL 有着一个繁荣的扩展生态 —— 地理空间，时间序列�
 
 ![pg-extensions.jpg](pg-extensions.jpg)
 
-[PostgreSQL正在吞噬数据库世界](/blog/pg/pg-eat-db-world/) —— 它正在通过插件的方式，将整个数据库世界内化其中。“[一切皆用 Postgres](/blog/pg/just-use-pg/)” 也已经不再是少数精英团队的前沿探索，而是成为了一种进入主流视野的最佳实践。
+[PostgreSQL正在吞噬数据库世界](/pg/pg-eat-db-world/) —— 它正在通过插件的方式，将整个数据库世界内化其中。“[一切皆用 Postgres](/pg/just-use-pg/)” 也已经不再是少数精英团队的前沿探索，而是成为了一种进入主流视野的最佳实践。
 
 而在新功能支持上，MySQL 却显得十分消极 —— 一个应该有大量 Breaking Change 的“创新大版本更新”，不是糊弄人的摆烂特性，就是企业级的特供鸡肋，一个大版本就连鸡零狗碎的小修小补都凑不够数。
 
@@ -88,7 +88,7 @@ PolarDB O | Oracle 语法特性兼容 | 内核分支 | 阿里云
 
 ### 性能劣化的MYSQL
 
-MySQL 曾引以为傲的核心特点便是 **性能** —— 至少对于互联网场景下的简单 OLTP CURD 来说，它的性能是非常不错的。然而不幸地是，这一点也正在遭受挑战：Percona 的博文《[Sakila：你将何去何从](/blog/db/sakila-where-are-you-going/)》中提出了一个令人震惊的结论：
+MySQL 曾引以为傲的核心特点便是 **性能** —— 至少对于互联网场景下的简单 OLTP CURD 来说，它的性能是非常不错的。然而不幸地是，这一点也正在遭受挑战：Percona 的博文《[Sakila：你将何去何从](/db/sakila-where-are-you-going/)》中提出了一个令人震惊的结论：
 
 **MySQL 的版本越新，性能反而越差。**
 
@@ -110,7 +110,7 @@ MySQL 曾引以为傲的核心特点便是 **性能** —— 至少对于互联�
 
 > ClickBench：MySQL 打这个榜确实有些不明智
 
-Peter Zaitsev 在博文《[Oracle最终还是杀死了MySQL](/blog/db/oracle-kill-mysql/)》中评论：“与 MySQL 5.6 相比，MySQL 8.x 单线程简单工作负载上的性能出现了大幅下滑。你可能会说增加功能难免会以牺牲性能为代价，但 MariaDB 的性能退化要轻微得多，而 PostgreSQL 甚至能在 [**新增功能的同时显著提升性能**](https://smalldatum.blogspot.com/2024/06/postgres-17beta1-vs-sysbench-on-large.html)”。
+Peter Zaitsev 在博文《[Oracle最终还是杀死了MySQL](/db/oracle-kill-mysql/)》中评论：“与 MySQL 5.6 相比，MySQL 8.x 单线程简单工作负载上的性能出现了大幅下滑。你可能会说增加功能难免会以牺牲性能为代价，但 MariaDB 的性能退化要轻微得多，而 PostgreSQL 甚至能在 [**新增功能的同时显著提升性能**](https://smalldatum.blogspot.com/2024/06/postgres-17beta1-vs-sysbench-on-large.html)”。
 
 -------
 
@@ -159,7 +159,7 @@ MySQL的性能随版本更新而逐步衰减，但在同样的性能回归测试
 
 权威的分布式事务测试组织 [JEPSEN](https://jepsen.io/analyses/mysql-8.0.34) 研究发现，MySQL 文档声称实现的 **可重复读/RR** 隔离等级，实际提供的正确性保证要弱得多 —— MySQL 8.0.34 默认使用的 RR 隔离等级实际上并不可重复读，甚至既不**原子** 也不**单调** ，连 **单调原子视图/MAV** 的基本水平都不满足。这意味着 MySQL 的 RR 隔离等级实际上还不如绝大多数 DBMS 的 RC 隔离等级（实际 MAV）。
 
-[![mysql-bad-case.png](mysql-bad-case.png)](/blog/db/bad-mysql/)
+[![mysql-bad-case.png](mysql-bad-case.png)](/db/bad-mysql/)
 
 **MySQL 的 ACID 存在缺陷，且与文档承诺不符** —— 而轻信这一虚假承诺可能会导致严重的正确性问题，例如数据错漏与对账不平。对于一些数据完整性很关键的场景 —— 例如金融，这一点是无法容忍的。
 
@@ -235,7 +235,7 @@ Cloudflare 与 Vercel 的内部系统大量使用了 PostgreSQL， Node.js 社�
 
 ## MYSQL 到底怎么了？
 
-究竟是谁杀死了 MySQL，难道是 PostgreSQL 吗？Peter Zaitsev 在《[Oracle最终还是杀死了MySQL](/blog/db/sakila-where-are-you-going/)》一文中控诉 —— **Oracle 的不作为与瞎指挥最终害死了 MySQL** ；并在后续《[Oracle还能挽救MySQL吗](https://pigsty.cc/blog/db/can-oracle-save-mysql)》一文中指出了真正的根因：
+究竟是谁杀死了 MySQL，难道是 PostgreSQL 吗？Peter Zaitsev 在《[Oracle最终还是杀死了MySQL](/db/sakila-where-are-you-going/)》一文中控诉 —— **Oracle 的不作为与瞎指挥最终害死了 MySQL** ；并在后续《[Oracle还能挽救MySQL吗](https://pigsty.cc/blog/db/can-oracle-save-mysql)》一文中指出了真正的根因：
 
 MySQL 的知识产权被 Oracle 所拥有，它不是像 PostgreSQL 那种 “由社区拥有和管理” 的数据库，也没有 PostgreSQL 那样广泛的独立公司贡献者。不论是 MySQL 还是其分叉 MariaDB，它们都不是真正意义上像 Linux，PostgreSQL，Kubernetes 这样由社区驱动的的原教旨纯血开源项目，而是由单一商业公司主导。
 
@@ -259,11 +259,11 @@ MySQL 曾经也辉煌过，也曾经是“开源软件”的一杆标杆，但�
 
 
 
-[MySQL 的创新版正在逐渐失去它的意义](https://mp.weixin.qq.com/s/LLlOkGHIDhUCkJNLlmtXSQ)，德哥看后写了 [MySQL将保持平庸](https://mp.weixin.qq.com/s/QnfCqVOsSxsnjfUZv9UPsg)。 对于 MySQL 的 “创新版本”，Percona 的老板 Peter Zaitsev 也发三篇《[MySQL将何去何从](/blog/db/sakila-where-are-you-going/)》，《[Oracle最终还是杀死了MySQL](/blog/db/oracle-kill-mysql/)》，《[Oracle还能挽救MySQL吗](/blog/db/can-oracle-save-mysql/)》，公开表达了对 MySQL 的失望与沮丧。沮丧；
+[MySQL 的创新版正在逐渐失去它的意义](https://mp.weixin.qq.com/s/LLlOkGHIDhUCkJNLlmtXSQ)，德哥看后写了 [MySQL将保持平庸](https://mp.weixin.qq.com/s/QnfCqVOsSxsnjfUZv9UPsg)。 对于 MySQL 的 “创新版本”，Percona 的老板 Peter Zaitsev 也发三篇《[MySQL将何去何从](/db/sakila-where-are-you-going/)》，《[Oracle最终还是杀死了MySQL](/db/oracle-kill-mysql/)》，《[Oracle还能挽救MySQL吗](/db/can-oracle-save-mysql/)》，公开表达了对 MySQL 的失望与沮丧。沮丧；
 
 与此同时，MySQL 的生态正在不断萎缩，由于 MYSQL 属于 Oracle，其他生态参与者越来越没有兴趣为 Oracle 做贡献，Oracle 也将心思放在 了 MySQL 企业版上，导致 MySQL 的开源社区越来越小，越来越没有活力。 例如，最近的 MySQL 9.x “创新版本” 被社区评价为毫无诚意的平庸之作。
 
-例如 MySQL 开源生态的关键参与者 Percona 老板 Peter Zaitsev 也Percona 的老板 Peter Zaitsev 也发三篇《[MySQL将何去何从](/blog/db/sakila-where-are-you-going/)》，《[Oracle最终还是杀死了MySQL](/blog/db/oracle-kill-mysql/)》，《[Oracle还能挽救MySQL吗](/blog/db/can-oracle-save-mysql/)》，公开表达了对 MySQL 的失望与沮丧。沮丧；
+例如 MySQL 开源生态的关键参与者 Percona 老板 Peter Zaitsev 也Percona 的老板 Peter Zaitsev 也发三篇《[MySQL将何去何从](/db/sakila-where-are-you-going/)》，《[Oracle最终还是杀死了MySQL](/db/oracle-kill-mysql/)》，《[Oracle还能挽救MySQL吗](/db/can-oracle-save-mysql/)》，公开表达了对 MySQL 的失望与沮丧。沮丧；
 
 其实从 AWS 的产品发布与技术投入路线来看，不难看出全球云计算一哥已经把重注都下在了 PostgreSQL 上，首先整个 RDS （MySQL + PGSQL）的产品经理就是 PostgreSQL 社区核心组成员 Jonathan Katz ，近两年 PG/PGVECTOR 在向量数据库领域嘎嘎乱杀，背后的主要推手和贡献者就是 AWS。
 
@@ -273,7 +273,7 @@ MySQL 曾经也辉煌过，也曾经是“开源软件”的一杆标杆，但�
 
 ![so-rank.jpg](so-rank.jpg)
 
-不幸地是在 2023 年，至少根据全世界最权威的开发者调研之一的 [StackOverflow Annual Developer Survey](/blog/pg/pg-is-no1/) 结果来看，MySQL 的使用率已经被 PostgreSQL 反超了 —— **最流行数据库的桂冠已经被 PostgreSQL 摘取** 。
+不幸地是在 2023 年，至少根据全世界最权威的开发者调研之一的 [StackOverflow Annual Developer Survey](/pg/pg-is-no1/) 结果来看，MySQL 的使用率已经被 PostgreSQL 反超了 —— **最流行数据库的桂冠已经被 PostgreSQL 摘取** 。
 
 特别是，如果将过去七年的调研数据放在一起，就可以得到这幅 PostgreSQL / MySQL 在专业开发者中使用率的变化趋势图（左上） —— 在横向可比的同一标准下，PostgreSQL 流行与 MySQL 过气的趋势显得一目了然。
 
@@ -293,29 +293,29 @@ MySQL 曾经也辉煌过，也曾经是“开源软件”的一杆标杆，但�
 
 昨天，MySQL 发布了 “创新版本” [9.3](https://dev.mysql.com/doc/refman/9.3/en/mysql-nutshell.html) 但是看上去和先前的 9.x 一样，都是些修修补补，看不到什么创新的东西。
 
-MySQL 老司机丁奇看完 ReleaseNote 之后表示，[MySQL 的创新版正在逐渐失去它的意义](https://mp.weixin.qq.com/s/LLlOkGHIDhUCkJNLlmtXSQ)，德哥看后写了 [MySQL将保持平庸](https://mp.weixin.qq.com/s/QnfCqVOsSxsnjfUZv9UPsg)。 对于 MySQL 的 “创新版本”，Percona 的老板 Peter Zaitsev 也发三篇《[MySQL将何去何从](/blog/db/sakila-where-are-you-going/)》，《[Oracle最终还是杀死了MySQL](/blog/db/oracle-kill-mysql/)》，《[Oracle还能挽救MySQL吗](/blog/db/can-oracle-save-mysql/)》，公开表达了对 MySQL 的失望与沮丧。沮丧；
+MySQL 老司机丁奇看完 ReleaseNote 之后表示，[MySQL 的创新版正在逐渐失去它的意义](https://mp.weixin.qq.com/s/LLlOkGHIDhUCkJNLlmtXSQ)，德哥看后写了 [MySQL将保持平庸](https://mp.weixin.qq.com/s/QnfCqVOsSxsnjfUZv9UPsg)。 对于 MySQL 的 “创新版本”，Percona 的老板 Peter Zaitsev 也发三篇《[MySQL将何去何从](/db/sakila-where-are-you-going/)》，《[Oracle最终还是杀死了MySQL](/db/oracle-kill-mysql/)》，《[Oracle还能挽救MySQL吗](/db/can-oracle-save-mysql/)》，公开表达了对 MySQL 的失望与沮丧。沮丧；
 
 然而和先前的几个版本一样，依然
 
-PostgreSQL 正在高歌猛进，而 MySQL 却日薄西山，作为 MySQL 生态主要扛旗者的 Percona 也不得不悲痛地承认这一现实，连发三篇《[MySQL将何去何从](/blog/db/sakila-where-are-you-going/)》，《[Oracle最终还是杀死了MySQL](/blog/db/oracle-kill-mysql/)》，《[Oracle还能挽救MySQL吗](/blog/db/can-oracle-save-mysql/)》，公开表达了对 MySQL 的失望与沮丧；
+PostgreSQL 正在高歌猛进，而 MySQL 却日薄西山，作为 MySQL 生态主要扛旗者的 Percona 也不得不悲痛地承认这一现实，连发三篇《[MySQL将何去何从](/db/sakila-where-are-you-going/)》，《[Oracle最终还是杀死了MySQL](/db/oracle-kill-mysql/)》，《[Oracle还能挽救MySQL吗](/db/can-oracle-save-mysql/)》，公开表达了对 MySQL 的失望与沮丧；
 
 Percona 的 CEO Peter Zaitsev 也表示：
 
 > **有了 PostgreSQL，谁还需要 MySQL 呢？** —— 但如果 MySQL 死了，PostgreSQL 就真的垄断数据库世界了，所以 MySQL 至少还可以作为 PostgreSQL 的磨刀石，让 PG 进入全盛状态。
 
-有的数据库正在[吞噬数据库世界](/blog/pg/pg-eat-db-world/)，而有的数据库正在[黯然地凋零死去](/blog/db/mysql-is-dead/)。
+有的数据库正在[吞噬数据库世界](/pg/pg-eat-db-world/)，而有的数据库正在[黯然地凋零死去](/db/mysql-is-dead/)。
 
 **MySQL is dead，Long live PostgreSQL！**
 
-  * [空洞无物的创新版本](/blog/db/mysql-vs-pgsql/#空洞无物的创新版本)
-  * [糊弄了事的向量类型](/blog/db/mysql-vs-pgsql/#糊弄了事的向量类型)
-  * [姗姗来迟的JS函数](/blog/db/mysql-vs-pgsql/#姗姗来迟的js函数)
-  * [日渐落后的功能特性](/blog/db/mysql-vs-pgsql/#日渐落后的功能特性)
-  * [越新越差的性能表现](/blog/db/mysql-vs-pgsql/#越新越差的性能表现)
-  * [无可救药的质量水平](/blog/db/mysql-vs-pgsql/#无可救药的质量水平)
-  * [枯萎收缩的生态规模](/blog/db/mysql-vs-pgsql/#枯萎收缩的生态规模)
-  * [究竟是谁杀死了MySQL](/blog/db/mysql-vs-pgsql/#究竟是谁杀死了mysql)
-  * [PG驶向云外，MySQL安魂九霄](/blog/db/mysql-vs-pgsql/#pg驶向云外mysql安魂九霄)
+  * [空洞无物的创新版本](/db/mysql-vs-pgsql/#空洞无物的创新版本)
+  * [糊弄了事的向量类型](/db/mysql-vs-pgsql/#糊弄了事的向量类型)
+  * [姗姗来迟的JS函数](/db/mysql-vs-pgsql/#姗姗来迟的js函数)
+  * [日渐落后的功能特性](/db/mysql-vs-pgsql/#日渐落后的功能特性)
+  * [越新越差的性能表现](/db/mysql-vs-pgsql/#越新越差的性能表现)
+  * [无可救药的质量水平](/db/mysql-vs-pgsql/#无可救药的质量水平)
+  * [枯萎收缩的生态规模](/db/mysql-vs-pgsql/#枯萎收缩的生态规模)
+  * [究竟是谁杀死了MySQL](/db/mysql-vs-pgsql/#究竟是谁杀死了mysql)
+  * [PG驶向云外，MySQL安魂九霄](/db/mysql-vs-pgsql/#pg驶向云外mysql安魂九霄)
 
 
 
@@ -329,7 +329,7 @@ MySQL 官网发布的 [“What’s New in MySQL 9.0”](https://dev.mysql.com/do
 
 **然后呢？就这些吗？这就没了！？**
 
-这确实是让人惊诧不已，因为 PostgreSQL 每年的大版本发布都有无数的新功能特性，例如计划今秋发布的 [PostgreSQL 17](/blog/pg/pg-17-beta1/) 还只是 beta1，就已然有着蔚为壮观的新增特性列表：
+这确实是让人惊诧不已，因为 PostgreSQL 每年的大版本发布都有无数的新功能特性，例如计划今秋发布的 [PostgreSQL 17](/pg/pg-17-beta1/) 还只是 beta1，就已然有着蔚为壮观的新增特性列表：
 
 ![pg17-feature.png](pg17-feature.png)
 
@@ -355,7 +355,7 @@ MySQL 9.0 的向量数据类型只是 `BLOB` 类型换皮 —— 只加了个数
 
 ![so-rank.jpg](so-rank.jpg)
 
-不幸地是在 2023 年，至少根据全世界最权威的开发者调研之一的 [StackOverflow Annual Developer Survey](/blog/pg/pg-is-no1/) 结果来看，MySQL 的使用率已经被 PostgreSQL 反超了 —— **最流行数据库的桂冠已经被 PostgreSQL 摘取** 。
+不幸地是在 2023 年，至少根据全世界最权威的开发者调研之一的 [StackOverflow Annual Developer Survey](/pg/pg-is-no1/) 结果来看，MySQL 的使用率已经被 PostgreSQL 反超了 —— **最流行数据库的桂冠已经被 PostgreSQL 摘取** 。
 
 特别是，如果将过去七年的调研数据放在一起，就可以得到这幅 PostgreSQL / MySQL 在专业开发者中使用率的变化趋势图（左上） —— 在横向可比的同一标准下，PostgreSQL 流行与 MySQL 过气的趋势显得一目了然。
 
@@ -375,7 +375,7 @@ MySQL 9.0 的向量数据类型只是 `BLOB` 类型换皮 —— 只加了个数
 
 ## 究竟是谁杀死了MySQL？
 
-究竟是谁杀死了 MySQL，难道是 PostgreSQL 吗？Peter Zaitsev 在《[Oracle最终还是杀死了MySQL](/blog/db/sakila-where-are-you-going/)》一文中控诉 —— **Oracle 的不作为与瞎指挥最终害死了 MySQL** ；并在后续《[Oracle还能挽救MySQL吗](https://pigsty.cc/blog/db/can-oracle-save-mysql)》一文中指出了真正的根因：
+究竟是谁杀死了 MySQL，难道是 PostgreSQL 吗？Peter Zaitsev 在《[Oracle最终还是杀死了MySQL](/db/sakila-where-are-you-going/)》一文中控诉 —— **Oracle 的不作为与瞎指挥最终害死了 MySQL** ；并在后续《[Oracle还能挽救MySQL吗](https://pigsty.cc/blog/db/can-oracle-save-mysql)》一文中指出了真正的根因：
 
 MySQL 的知识产权被 Oracle 所拥有，它不是像 PostgreSQL 那种 “由社区拥有和管理” 的数据库，也没有 PostgreSQL 那样广泛的独立公司贡献者。不论是 MySQL 还是其分叉 MariaDB，它们都不是真正意义上像 Linux，PostgreSQL，Kubernetes 这样由社区驱动的的原教旨纯血开源项目，而是由单一商业公司主导。
 
@@ -383,9 +383,9 @@ MySQL 的知识产权被 Oracle 所拥有，它不是像 PostgreSQL 那种 “�
 
 ![dbms-market.png](dbms-market.png)
 
-逝者不可追，来者犹可待。PostgreSQL 应该从 MySQL 的衰亡中吸取教训 —— 尽管 PostgreSQL 社区非常小心地避免出现一家独大的情况出现，但生态确实在朝着一家/几家巨头云厂商独大的不利方向在发展。[**云正在吞噬开源**](/blog/cloud/paradigm/) —— 云厂商编写了开源软件的管控软件，组建了专家池，通过提供维护攫取了软件生命周期中的绝大部分价值，但却通过搭便车的行为将最大的成本 —— **产研** 交由整个开源社区承担。而 [**真正有价值的管控/监控代码却从来不回馈开源社区**](/blog/cloud/dba-vs-rds/#云数据库的模式与新挑战) —— 在数据库领域，我们已经在 MongoDB，ElasticSearch，Redis，以及 MySQL 上看到了这一现象，而 PostgreSQL 社区确实应当引以为鉴。
+逝者不可追，来者犹可待。PostgreSQL 应该从 MySQL 的衰亡中吸取教训 —— 尽管 PostgreSQL 社区非常小心地避免出现一家独大的情况出现，但生态确实在朝着一家/几家巨头云厂商独大的不利方向在发展。[**云正在吞噬开源**](/cloud/paradigm/) —— 云厂商编写了开源软件的管控软件，组建了专家池，通过提供维护攫取了软件生命周期中的绝大部分价值，但却通过搭便车的行为将最大的成本 —— **产研** 交由整个开源社区承担。而 [**真正有价值的管控/监控代码却从来不回馈开源社区**](/cloud/dba-vs-rds/#云数据库的模式与新挑战) —— 在数据库领域，我们已经在 MongoDB，ElasticSearch，Redis，以及 MySQL 上看到了这一现象，而 PostgreSQL 社区确实应当引以为鉴。
 
-好在 PG 生态总是不缺足够头铁的人和公司，愿意站出来维护生态的平衡，反抗公有云厂商的霸权。例如，我自己开发的 PostgreSQL 发行版 [Pigsty](https://pigsty.cc)，旨在提供一个开箱即用、本地优先的开源云数据库 RDS 替代，将社区自建 PostgreSQL 数据库服务的底线，拔高到云厂商 RDS PG 的水平线。而我的《[云计算泥石流](/blog/cloud/)》系列专栏则旨在扒开云服务背后的信息不对称，从而帮助公有云厂商更加体面，亦称得上是成效斐然。
+好在 PG 生态总是不缺足够头铁的人和公司，愿意站出来维护生态的平衡，反抗公有云厂商的霸权。例如，我自己开发的 PostgreSQL 发行版 [Pigsty](https://pigsty.cc)，旨在提供一个开箱即用、本地优先的开源云数据库 RDS 替代，将社区自建 PostgreSQL 数据库服务的底线，拔高到云厂商 RDS PG 的水平线。而我的《[云计算泥石流](/cloud/)》系列专栏则旨在扒开云服务背后的信息不对称，从而帮助公有云厂商更加体面，亦称得上是成效斐然。
 
 尽管我是 PostgreSQL 的坚定支持者，但我也赞同 Peter Zaitsev 的观点： _“如果 MySQL 彻底死掉了，开源关系型数据库实际上就被 PostgreSQL 一家垄断了，而垄断并不是一件好事，因为它会导致发展停滞与创新减缓。PostgreSQL 要想进入全盛状态，有一个 MySQL 作为竞争对手并不是坏事”_
 
@@ -396,8 +396,8 @@ MySQL 曾经也辉煌过，也曾经是“开源软件”的一杆标杆，但�
   * [PostgreSQL取得对MySQL的压倒性优势](https://mp.weixin.qq.com/s/tuzmmkEIOsuq2-8rMbmVLw)
 
 
-  * [←上一页](/blog/db/pg-kiss-duckdb/)
-  * [下一页→](/blog/db/ai-agent-era/)
+  * [←上一页](/db/pg-kiss-duckdb/)
+  * [下一页→](/db/ai-agent-era/)
 
 
 

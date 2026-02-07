@@ -19,7 +19,7 @@ Generally speaking, if it's just a small-scale fire in the data center, the prob
 But once fire suppression sprinklers are triggered, the problem becomes serious: once servers experience a comprehensive power outage, recovery time is basically measured in days;
 If flooded, it's not just about availability anymore, but whether data can be recovered — a matter of **data integrity**.
 
-[![event.png](event.png)](https://status.aliyun.com/#/eventDetail?eventId=21)
+[![event.webp](event.webp)](https://status.aliyun.com/#/eventDetail?eventId=21)
 
 According to current announcements, a batch of servers were removed on the evening of the 14th and were being dried, still not completed by the 16th. From this "drying" description, there's a high probability of water damage.
 Although we cannot definitively state the facts before any official announcement, based on common sense, data consistency damage is highly probable — it's just a matter of how much is lost.
@@ -163,7 +163,7 @@ TBD
 
 I've heard of weather forecasts, but never failure forecasts. But Alibaba-Cloud's health dashboard provides us with this magical ability — you can select future dates, and future dates still have service health status data. For example, you can check service health status 20 years from now —
 
-![2044.png](2044.png)
+![2044.webp](2044.webp)
 
 The future "failure forecast" data appears to be populated with current status. So services currently in failure state remain abnormal in the future. If you select 20 years later, you can still see the current Singapore major failure's health status as "abnormal".
 

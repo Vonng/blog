@@ -349,7 +349,7 @@ Let's ignore this annoying problem for now and see if traditional relational dat
 
 |       Large Radius Poor Performance        |              Small Radius Can't Circle Enough               |
 | :-----------------------------------------: | :----------------------------------------------------------: |
-| ![](knn-badcase-1.png)  | ![mage-20180321221805](knn-badcase-2.png) |
+| ![](knn-badcase-1.png)  | ![mage-20180321221805](knn-badcase-2.webp) |
 | Prosperous Wudaokou, 10 shops in 1km easy. |     300km away for one shop, Xinjiang people cry in toilets     |
 
 

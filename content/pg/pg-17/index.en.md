@@ -128,7 +128,7 @@ Incidentally, Pigsty v3.0.3, which closely follows PostgreSQL 17's release, now 
 
 [**Pigsty**](https://pigsty.cc/en) is open-source, free, local-first, ready-to-use PostgreSQL RDS that allows users to locally deploy production-grade PostgreSQL cloud database services with one click, complete with 390 ready-to-use PostgreSQL extensions, self-healing high availability, top-tier monitoring systems, PITR backup and recovery, IaC command-line tools, and SOP management procedures.
 
-![pigsty-home.png](pigsty-home.png)
+![pigsty-home.webp](pigsty-home.webp)
 
 
 --------

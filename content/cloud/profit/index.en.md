@@ -20,7 +20,7 @@ tags: [Cloud-Exit, Business]
 
 [Where is the cloud computing industry heading](#where-is-the-cloud-computing-industry-heading)?
 
-[![](featured.png)](https://mp.weixin.qq.com/s/JU4lznF6-5Q4LaJTnG8SSQ)
+[![](featured.webp)](https://mp.weixin.qq.com/s/JU4lznF6-5Q4LaJTnG8SSQ)
 
 -------------------
 

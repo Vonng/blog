@@ -23,7 +23,7 @@ This release includes routine fixes, tracks Supabase's intense release week chan
 
 ## The pig CLI Tool
 
-Pigsty v3.2 ships with the [**pig**](/blog/pg/pig) command-line tool by default, further simplifying Pigsty's installation, deployment, and configuration process. But `pig` isn't just a Pigsty CLI — it's a full-featured standalone PostgreSQL package manager.
+Pigsty v3.2 ships with the [**pig**](/pg/pig) command-line tool by default, further simplifying Pigsty's installation, deployment, and configuration process. But `pig` isn't just a Pigsty CLI — it's a full-featured standalone PostgreSQL package manager.
 
 When installing PostgreSQL extensions, dealing with various distributions and chip architectures is always painful: endless time wasted digging through outdated READMEs, obscure config scripts, and random GitHub branches; or struggling with China's network environment — missing repos, blocked mirrors, frustrating download speeds.
 
@@ -39,7 +39,7 @@ Pig focuses on cross-distro harmony — whether on Debian, Ubuntu, or Red Hat de
 
 ![](pig-repo.jpg)
 
-If [**PostgreSQL's future is unstoppable extensibility**](/blog/pg/pg-eat-db-world), Pig is the tool that helps unlock that potential. After all, nobody complains about a PostgreSQL instance having too many extensions — unused ones have zero impact, and needed ones are right at your fingertips.
+If [**PostgreSQL's future is unstoppable extensibility**](/pg/pg-eat-db-world), Pig is the tool that helps unlock that potential. After all, nobody complains about a PostgreSQL instance having too many extensions — unused ones have zero impact, and needed ones are right at your fingertips.
 
 ![](pig-ext.jpg)
 
@@ -48,7 +48,7 @@ If [**PostgreSQL's future is unstoppable extensibility**](/blog/pg/pg-eat-db-wor
 
 ## ARM Extension Repository
 
-Behind Pig is a [**supplementary extension repository**](/blog/pg/pg-ext-repo) packed with rare and newly released extensions, so quality extensions are always easy to obtain — tested, curated, and ready to go.
+Behind Pig is a [**supplementary extension repository**](/pg/pg-ext-repo) packed with rare and newly released extensions, so quality extensions are always easy to obtain — tested, curated, and ready to go.
 
 Over the past month, Pigsty has completed full ARM64 architecture support. The five major Linux distributions (EL8, EL9, Debian12, Ubuntu 22/24) now have **complete** ARM support. By complete, we mean config files used on AMD64 work identically on ARM64 systems. Of course, there are scattered exceptions — a few extensions currently lack ARM support and will be addressed individually.
 

@@ -20,7 +20,7 @@ tags: [Pigsty]
 
 * Pigsty官方[文档站](http://pigsty.cc/)正式上线！
 * 添加了数据库模板的定制支持，用户可以通过配置文件定制所需的数据库内部对象。
-* 对默认[访问控制](/docs/setup/security)模型进行了改进
+* 对默认[访问控制](https://pigsty.cc/docs/setup/security)模型进行了改进
 * 重构了HBA管理的逻辑，现在将由Pigsty替代Patroni直接负责生成HBA
 * 将Grafana监控系统的供给方案从sqlite改为JSON文件静态Provision
 * 将`pg-cluster-replication`面板加入Pigsty开源免费套餐。

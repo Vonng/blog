@@ -30,7 +30,7 @@ tags: [Pigsty]
 
 ## 扩展尽入吾彀中
 
-在《[PostgreSQL正在吞噬数据库世界](/blog/pg/pg-eat-db-world)》一文中，我抛出了一个观点：PostgreSQL 并不是一个简单的关系型数据库，而是一个数据管理的抽象框架，具有囊括一切，吞噬整个数据库世界的力量。
+在《[PostgreSQL正在吞噬数据库世界](/pg/pg-eat-db-world)》一文中，我抛出了一个观点：PostgreSQL 并不是一个简单的关系型数据库，而是一个数据管理的抽象框架，具有囊括一切，吞噬整个数据库世界的力量。
 
 而 PG 之所以能做到这一点，除了**开源**、**先进**这两点外，真正的秘诀在于 **扩展** —— **极致可扩展性，与繁荣的扩展生态** 是 PostgreSQL 独一无二的特点，也是它从无数数据库中脱颖而出的法宝与秘诀。
 
@@ -237,7 +237,7 @@ SELECT COUNT(*) FROM trips;
 
 这些扩展之间，许多都可以相互组合使用，产生协同效应，产生 1+1 >> 2 的神奇效果。
 
-正如 TimescaleDB CEO Ajay 在 《[为什么PostgreSQL是未来数据的基石？](/blog/pg/pg-for-everything)》 一文中所述，**PostgreSQL 正在成为事实上的数据库标准**。
+正如 TimescaleDB CEO Ajay 在 《[为什么PostgreSQL是未来数据的基石？](/pg/pg-for-everything)》 一文中所述，**PostgreSQL 正在成为事实上的数据库标准**。
 
 通过极致可扩展性的魔法，PostgreSQL **集异璧之大成**，做到了守正出奇，实现了主干极致稳定性与功能敏捷性的统一**。**扎实的基本盘配上惊人的演进速度，让它成为了数据库世界中的一个异数，彻底改变了数据库世界的游戏规则。
 
@@ -321,7 +321,7 @@ Pigsty 已经提供了开箱即用的 PITR ，允许用户回滚到任意时间�
 
 ![pitr.png](pitr.jpg)
 
-后面，我们会专门出一期教程，介绍如何利用 Pigsty 的 [**PITR**](/docs/concept/pitr) 功能，实现企业级的数据备份与恢复。
+后面，我们会专门出一期教程，介绍如何利用 Pigsty 的 [**PITR**](https://pigsty.cc/docs/concept/pitr) 功能，实现企业级的数据备份与恢复。
 
 
 
@@ -329,7 +329,7 @@ Pigsty 已经提供了开箱即用的 PITR ，允许用户回滚到任意时间�
 
 ## 开源版与专业版
 
-在 《[Pigsty v2.6：PostgreSQL 踢馆 OLAP](https://mp.weixin.qq.com/s/NlNGwUXZPa058ZDk_tdtew)》 中，我已经提到过我们将区分 Pigsty 开源版与 [专业版](/docs/about/service/)。
+在 《[Pigsty v2.6：PostgreSQL 踢馆 OLAP](https://mp.weixin.qq.com/s/NlNGwUXZPa058ZDk_tdtew)》 中，我已经提到过我们将区分 Pigsty 开源版与 [专业版](https://pigsty.cc/docs/about/service/)。
 
 在 Pigsty v2.7 中，我们将开源版支持的操作系统发行版收敛到 Redhat, Debian, Ubuntu 这三个主干上来。我们提供 PostgreSQL 16 在 EL8, Debian12, Ubuntu22.04 的第一类支持，并提供可以无需互联网进行安装的开源版离线软件包。
 当然，EL7, EL9, Debian11, Ubuntu20.04 这些系统还是可以继续使用 Pigsty 的，但是不会有离线软件包，只能通过联网安装的模式进行首次部署。

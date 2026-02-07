@@ -25,7 +25,7 @@ This version focuses on three key areas: **extensions**, **website deployment**,
 
 PostgreSQL is renowned for its rich extension mechanism, fostering a vast database ecosystem. Pigsty takes PostgreSQL's extension capabilities to the extreme.
 
-A year ago when "[PostgreSQL is Eating the Database World](/blog/pg/pg-eat-db-world)" was published, Pigsty had about 150 available extensions, primarily from PG built-ins (70) and the official PGDG repository.
+A year ago when "[PostgreSQL is Eating the Database World](/pg/pg-eat-db-world)" was published, Pigsty had about 150 available extensions, primarily from PG built-ins (70) and the official PGDG repository.
 
 ![](ext-growth.jpg)
 
@@ -188,7 +188,7 @@ curl https://repo.pigsty.cc/get | bash -s v3.3.0
 
 ### Highlights
 
-- Available extensions increase to [**404**](/docs/pgsql/ext/)!
+- Available extensions increase to [**404**](https://pigsty.cc/docs/pgsql/ext/)!
 - PostgreSQL February minor updates: 17.4, 16.8, 15.12, 14.17, 13.20
 - New feature: `app.yml` script for auto-installing Odoo, Supabase, Dify, etc.
 - New feature: Further customize Nginx config in `infra_portal`

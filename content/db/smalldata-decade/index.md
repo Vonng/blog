@@ -54,7 +54,7 @@ tags: [数据库, DuckDB, OLAP, 分布式系统]
 
 我们将 22 个基准查询各跑了五遍，取中位数运行时间来降噪。（由于内存只有 16 GB，而数据库大小达到 256 GB，缓冲区几乎无法缓存多少输入数据，因此这些严格来说都算不上大家口中的 “热运行“。）
 
-![Laptop in the process of running queries](setup.jpg)
+![Laptop in the process of running queries](setup.webp)
 
 下面列出了每个查询的耗时（单位：秒）：
 
@@ -160,8 +160,8 @@ DuckDB 的这篇文章无疑撕开了整个数据分析，分布式数据库与�
 
 DuckDB 的例子进一步证明了在当代，分布式数据库已经成为了伪需求 —— 不仅仅是 OLTP，甚至是 OLAP。实际上如果我们关注 DB-Engine 上的热度就不难发现，分布式数据库作为一个 Niche（NewSQL），甚至都还没有像产生像 NoSQL 这样的影响力，就已经过气了。而我相信，重新融合 OLTP 和 OLAP 的新物种，将由 PostgreSQL 和 DuckDB 杂交而出。
 
-  * [←上一页](/blog/db/openai-pg/)
-  * [下一页→](/blog/db/guru/)
+  * [←上一页](/db/openai-pg/)
+  * [下一页→](/db/guru/)
 
 
 

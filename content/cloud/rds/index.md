@@ -17,7 +17,7 @@ tags: [下云, RDS, AWS, 阿里云]
 
 **所以，50 万美元可以买多少牛逼的服务器 ？**
 
-[![](featured.png)](https://mp.weixin.qq.com/s/YKqH324Qtg0mj6WfSMb66w)
+[![](featured.webp)](https://mp.weixin.qq.com/s/YKqH324Qtg0mj6WfSMb66w)
 
 
 

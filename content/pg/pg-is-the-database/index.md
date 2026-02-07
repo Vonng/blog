@@ -97,7 +97,7 @@ DuckDB 也许是 OLAP 实战性能最快的数据库了，和 Clickhouse 不相�
 
 然而 PostgreSQL 要替代的可不仅仅是 OLAP 数仓，它的野望是整个数据库世界！
 
-[![ecosystem.jpg](ecosystem.jpg)](/zh/docs/reference/extension)
+[![ecosystem.jpg](ecosystem.jpg)](https://pigsty.cc/docs/reference/extension/)
 
 我们不禁要问， PostgreSQL 有何德何能，可当此大任？
 诚然 PostgreSQL 先进，但 Oracle 也先进；PostgreSQL 开源，但 MySQL 也开源。
@@ -274,4 +274,3 @@ Pigsty 六点价值主张的首字母合起来，则为 Pigsty 提供了另外�
 
 开发者朋友们，你们的选择会塑造数据库世界的未来。
 希望我的这些工作，可以帮助你们更好的用好这世界上最先进的开源数据库内核 —— PostgreSQL。
-

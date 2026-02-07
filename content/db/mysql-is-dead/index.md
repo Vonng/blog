@@ -101,7 +101,7 @@ MySQL 9.0 的向量数据类型只是 `BLOB` 类型换皮 —— 只加了个数
 
 如果我们查看 DB-Engine 近十二年的 “[数据库热度趋势](https://demo.pigsty.cc/d/db-analysis/db-engine-analysis?orgId=1&var-year=2012&viewPanel=24)” ，不难发现只有 PostgreSQL 与 Mongo 两款 DBMS 在独领风骚 —— MongoDB (2009) 与 PostgreSQL 9.2 (2012) 都极为敏锐地把握住了互联网开发者的需求 —— 在 “JSON崛起” 的第一时间就添加 [JSON 特性支持](/pg/vector-json-pg/)（文档数据库），从而在过去十年间吃下了数据库领域最大的增长红利。
 
-![db-engine.png](db-engine.png)
+![db-engine.webp](db-engine.webp)
 
 当然，MySQL 的干爹 —— Oracle 也在2014年底的12.1中添加了 JSON 特性与 Javascript 存储过程的支持 —— 而 MySQL 自己则不幸地等到了 2024 年才补上这一课 —— **但已经太迟了！** 
 

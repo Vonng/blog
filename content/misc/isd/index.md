@@ -114,7 +114,7 @@ CREATE TABLE IF NOT EXISTS isd.daily
 
 除了辅助表，字典表这些，其他的数据需要从 NOAA 上下载。这里，我提供了一系列的包装脚本，您可以直接使用简单的命令完成配置，特别是：如果您在使用 Pigsty —— 开箱即用的 PostgreSQL 数据库发行版，单机安装时已经为您配置好了 PostgreSQL 与 Grafana ，只需要 make all ，就可以完成所有的配置工作。
 
-![intro.png](intro.png)
+![intro.png](isd-intro.png)
 
 在原始的 Daily 数据集中，有极少量的重复数据与脏数据，我已经进行了清洗处理，您可以选择我们已经解析清理好的 CSV 数据集直接导入。如果需要获取本年度最近几天的更新，您可以选择选择使用 Go Parser 直接从 NOAA 网站下载原始数据并解析。
 
@@ -143,7 +143,7 @@ CREATE TABLE IF NOT EXISTS isd.daily
 
 如果您对更精细粒度数据感兴趣，点击月份导航，会自动跳转到 ISD Detail 面板中，这里会提供日汇总级别的摘要数据，以及亚小时级别的原始观测记录。此外，在气象要素部分，也会展示一些额外的指标，包括分钟级别的温度，露点，气压，风速，风向，云量，可见度，降水，降雪，以及其他天气情况代码。
 
-![isd-detail.png](isd-detail.png)
+![isd-detail.webp](isd-detail.webp)
 
 
 
@@ -157,4 +157,4 @@ CREATE TABLE IF NOT EXISTS isd.daily
 
 当然，数据集怎么用，还是取决于用户。比如，你可以问问 GPT，基于这份数据，能不能得出全球气温在变暖的结论呢？
 
-![isd-question.png](isd-question.png)
+![isd-question.webp](isd-question.webp)

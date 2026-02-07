@@ -25,9 +25,9 @@ Well, I recently witnessed a live cloud database drop-and-run incident. This art
 
 ## Incident Scene 
 
-![case-1.png](drop-rds-case-1.png)
+![case-1.png](drop-rds-case-1.webp)
 
-![case-2.png](drop-rds-case-2.png)
+![case-2.png](drop-rds-case-2.webp)
 
 -------------
 
