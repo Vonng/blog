@@ -105,7 +105,7 @@ The driving force behind MinIO's decisions is the logic of venture capital. By 2
 The most significant was a $103 million Series B in January 2022 led by Intel Capital, SoftBank Vision Fund II, and General Catalyst, which crowned MinIO a unicorn (valued over $1 billion).
 
 In VC terms, a $1B valuation means the company must show a clear path to IPO — typically demanding $100M+ in Annual Recurring Revenue (ARR) and rapid growth. 
-In Feb 2025, MinIO announced its ARR had grown **149%** over the past two years[businesswire.com](https://www.businesswire.com/news/home/20251112590444/en/Ran-Kurup-Joins-MinIO-to-Accelerate-Corporate-Strategic-Growth#:~:text=Ran Kurup Joins MinIO to,the last two years). 
+In Feb 2025, MinIO announced its ARR had grown **149%** over the past two years [businesswire.com](https://www.businesswire.com/news/home/20251112590444/en/Ran-Kurup-Joins-MinIO-to-Accelerate-Corporate-Strategic-Growth). 
 Impressive growth, but to live up to a sky-high valuation, organic conversion alone wasn't enough.
 
 **Cutting off the free open-source offering is the most direct way to force a huge user base into paid customers.**
@@ -113,7 +113,7 @@ Impressive growth, but to live up to a sky-high valuation, organic conversion al
 In 2025, MinIO underwent a full rebrand and launched "MinIO **AIStor**," styling itself as "the data backbone for enterprise AI." 
 Management recognized that general-purpose object storage (for backups, file servers, etc.) was a red-ocean market with thin margins, 
 whereas generative AI's appetite for high-throughput data (the exascale AI era) promised the next big surge. 
-By tuning its product for AI workloads and focusing on Fortune 500 enterprises[linkedin.com](https://www.linkedin.com/posts/efrieberg_very-excited-to-share-that-minio-has-been-activity-7397305169798963200-mKCI#:~:text=Erik Frieberg's Post ,hundreds of global customers), 
+By tuning its product for AI workloads and focusing on Fortune 500 enterprises [linkedin.com](https://www.linkedin.com/posts/efrieberg_very-excited-to-share-that-minio-has-been-activity-7397305169798963200-mKCI), 
 **MinIO essentially decided to cut loose its low-value open-source user base**. 
 The move to maintenance mode signaled MinIO's official pivot from a broad open-source project into a vertical, high-end AI software vendor.
 
@@ -128,14 +128,17 @@ The ones training GPT models or running self-driving pipelines need **AIStor**, 
 
 So flipping the project into "maintenance mode" is essentially an **asset carve-out**. 
 MinIO is cutting away the "dead weight" (free users) and concentrating on the milkable "cash cows" (enterprise AI clients). 
-In business strategy this is called **focus**. To the investors, it's being **responsible**. But from the perspective of open source, it's simply **betrayal**.
+In business strategy this is called **focus**. To the investors, it's being **responsible**.
+But from the perspective of open source, it's simply **betrayal**.
 
 ------
 
 ## Personal Reflections
 
-I started using MinIO around 2018 (back when it was Apache-licensed). We built a few multi-petabyte object storage clusters for videos, images, backups — 
-probably one of the largest MinIO deployments in China at the time. I even wrote deployment/monitoring playbooks for MinIO and contributed some code (those are still open-sourced in the [Pigsty](https://doc.pgsty.com/minio) ).
+I started using MinIO around 2018 (back when it was Apache-licensed). 
+We built a few multi-petabyte object storage clusters for videos, images, backups — 
+probably one of the largest MinIO deployments in China at the time. 
+I wrote deployment/monitoring playbooks for MinIO (still open-sourced in [Pigsty](https://pigsty.io/docs/minio)).
 
 As an open-source startup founder, I *can* understand the motivation behind these moves. But as an open-source contributor and user — 
 I also know many folks right now have one phrase in their minds: **"I have never seen such shamelessness."**
@@ -144,13 +147,19 @@ An open-source license isn't a shackle, but it is a **social contract**. Develop
 together, they make a project successful. MinIO enjoyed a decade of community goodwill and parlayed the bragging rights of "#1 in global downloads" into venture funding. 
 Then it turned around and told the very users who propped it up: *"You free-riders, get lost."* This kind of move breaks the fundamental trust that open source is built on.
 
-This "raise-then-slaughter" tactic is even more nauseating than a crypto rug pull. A rug pull only takes your money — 
+This "bait and switch" tactic is even more nauseating than a crypto rug pull. A rug pull only takes your money — 
 MinIO is pulling the rug out from under the tech stacks of thousands of companies. 
 Adopting a technology isn't just picking up a binary; it's buying into an ecosystem and a design philosophy. 
 They got everyone onboard, let the switching costs pile up sky-high, and then suddenly kicked away the ladder. 
 In fact, as open-source expert Tison thoroughly discussed in his article [*The Bait-and-Switch Open-Source Strategy*](https://mp.weixin.qq.com/s/HsgoUoBzsyXSmDfV00DlgQ), the core issue with this model is **deception**. 
 
-MinIO betrayed the community, so the community will abandon MinIO. 
+MinIO betrayed the community, so the community may abandon it as well. 
 Alternatives like **Garage**, **SeaweedFS**, or the new **RustFS** are ready to step in.
 
-If I have to sum up my feelings, I'd borrow a line from *The Hitchhiker's Guide to the Galaxy*: **"So long, and thanks for all the fish."**
+If I have to sum up my feelings, I'd borrow a line from *The Hitchhiker's Guide to the Galaxy*: 
+
+—— **"So long, and thanks for all the fish."**
+
+> 2026-02-14 Update: [MinIO's official repo has been fully archived and is no longer maintained](/db/minio-resurrect).
+> Besides, I've personally maintained an oss fork of minio: [`pgsty/minio`](https://github.com/pgsty/minio) / Docs: [https://silo.pigsty.io](https://silo.pigsty.io).
+> Which based on the last upstream version 2025-12-03 with restored console capabilities.

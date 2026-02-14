@@ -66,3 +66,7 @@ In a locked-down intranet the risk is manageable, but you still want the fix, wh
 Security patches still need humans. MinIO claims they’ll fix critical issues, but if the community wants a maintained fork, now’s the moment. Start from 2025‑04‑22, cherry-pick critical bug/security fixes, and keep a community LTS alive.
 
 MinIO is “done” software. It doesn’t need the latest S3 gimmick (Vector/Table); it needs steady bugfixes. That’s perfect for a community branch. Plenty of storage vendors rely on MinIO; maintaining a fork beats writing a new object store from scratch.
+
+> 2026-02-14 Update: [MinIO's official repo has been fully archived and is no longer maintained](/db/minio-resurrect).
+> Besides, I've personally maintained an oss fork of minio: [`pgsty/minio`](https://github.com/pgsty/minio) / Docs: [https://silo.pigsty.io](https://silo.pigsty.io).
+> Which based on the last upstream version 2025-12-03 with restored console capabilities.

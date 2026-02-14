@@ -144,5 +144,12 @@ MinIO 享受了十年的社区红利，靠着“全球下载量第一”的虚�
 这种模式，开源专家 Tison 在《[诱导转向的伪开源战略](https://mp.weixin.qq.com/s/HsgoUoBzsyXSmDfV00DlgQ)》已经聊的很透聊。
 
 诱导转向的核心问题在于 **欺骗**，既然 MinIO 背叛了社区，社区也会抛弃它。**Garage**、**SeaweedFS** 甚至 **RustFS**，替代品有很多。江湖路远，后会无期。
-如果要说老冯的感想是什么，那么就借用《银河系漫游指南》里海豚临走时说的那句话吧： **“So long, and thanks for all the fish.” —— 再见，多谢你们的鱼了。**
+如果要说老冯的感想是什么，那么就借用《银河系漫游指南》里海豚临走时说的那句话吧： 
+
+—— **“So long, and thanks for all the fish.” —— 再见，多谢你们的鱼了。**
+
+
+> 题外话与更新（2026-02-14），[MinIO 官方仓库已经彻底归档并不再维护](/db/minio-resurrect)。
+> 我创建了一个 Fork：[`pgsty/minio`](https://github.com/pgsty/minio) / 文档 [https://silo.pigsty.io](https://silo.pigsty.io)。
+> 搭建了 CI/CD 提供 RPM/DEB 二进制包与 Docker 镜像，基于最后的上游版本 2025-12-03 构建，恢复了 2025-05 阉割的控制台能力。
 
