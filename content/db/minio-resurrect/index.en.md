@@ -1,5 +1,5 @@
 ---
-title: "MinIO's Death  Is Dead, Long Live MinIO"
+title: "MinIO Is Dead, Long Live MinIO"
 date: 2026-02-14
 author: Ruohang Feng
 summary: >
