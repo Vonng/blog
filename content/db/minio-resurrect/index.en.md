@@ -84,11 +84,11 @@ Nobody did. So I did it myself.
 
 Some background: I maintain [Pigsty](https://pigsty.io) — a batteries-included PostgreSQL distribution with [451 extensions](https://pgext.cloud), 
 cross-built for [14 Linux distros](https://pgext.cloud/os). I also maintain build pipelines for [270+](https://pgext.cloud/list/) PG extensions, several [PG forks](https://pigsty.io/docs/pgsql/kernel/), 
-and dozens of Go projects ([VictoriaMetrics](https://pigsty.io/docs/repo/infra/list/), Prometheus, etc.) across all major platforms. Adding one more Go project to the pipeline was manageable.
+and dozens of [Go projects](https://pigsty.io/docs/repo/infra/list/) (Victoria, Prometheus, etc.) across all major platforms. Adding one more to the pipeline was a piece of cake.
 
 I'm not new to MinIO either. Back in 2018, we ran an internal MinIO fork at Tantan (back when it was still Apache 2.0), managing ~25 PB of data — one of the earliest and largest MinIO deployments in China at the time.
 
-More importantly, [MinIO is a real (optional) module in Pigsty](https://pigsty.cc/docs/minio). 
+More importantly, [MinIO is a real (optional) module in Pigsty](https://pigsty.io/docs/minio). 
 Many users run it as the default backup repository for PostgreSQL in production.
 
 ![minio-docs-en.webp](minio-docs-en.webp)
@@ -111,14 +111,14 @@ As of today, three things.
 This was the change that frustrated the community the most.
 
 In May 2025, MinIO stripped the full admin console from the community edition, leaving behind a bare-bones object browser. 
-User management, bucket policies, access control, lifecycle management — all gone overnight. Want them back? Pay for the enterprise edition. (near ~ 100,000 $)
+User management, bucket policies, access control, lifecycle management — all gone overnight. Want them back? Pay for the enterprise edition. (~$100,000)
 
 **We brought it back.**
 
 ![gui.webp](gui.webp)
 
 The ironic part: this didn't even require reverse engineering. You just revert the `minio/console` submodule to the previous version.
-That's literally all MinIO did — they swapped a dependency version to replace the full console with a stripped-down one. The code was always there
+That's literally all MinIO did — they swapped a dependency version to replace the full console with a stripped-down one. The code was always there.
 
 [![console.webp](console.webp)](https://github.com/pgsty/minio/commit/8630937e7d1c3426ae28508e06f7091d7bde3a49#diff-3295df7234525439d778f1b282d146a4f1ff6b415248aaac074e8042d9f42d63L424)
 
@@ -146,14 +146,14 @@ You need a stable artifact you can put in a Dockerfile, an Ansible playbook, or 
 If you're using Docker, just swap `minio/minio` for `pgsty/minio`.
 
 For native Linux installs, grab RPM/DEB packages from the [GitHub Release](https://github.com/pgsty/minio/releases/tag/RELEASE.2026-02-14T12-00-00Z) page.
-You can also use [pig](https://github.com/pgsty/pig) (the PG extension package manager) for easy installation, or configure the [**pigsty-infra**](https://pigsty.cc/docs/repo/infra) APT/DNF repo:
+You can also use [pig](https://github.com/pgsty/pig) (the PG extension package manager) for easy installation, or configure the [**pigsty-infra**](https://pigsty.io/docs/repo/infra) APT/DNF repo:
 
 ```bash
 curl https://repo.pigsty.io/pig | bash; 
-pig repo set; pig install minio
+pig repo add infra -u; pig install minio
 ```
 
-just work as usual.
+Just works as usual.
 
 
 ### 3. Restored Community Edition Docs
@@ -179,7 +179,7 @@ Some things worth stating up front to set expectations.
 MinIO as an S3-compatible object store is already feature-complete. 
 It's **finished software**. It doesn't need more bells and whistles — it needs a stable, reliable, continuously available build.
 
-What we're doing: **making sure you can always get a working, complete MinIO binary with the admin console included and CVE fixed** RPM, DEB, Docker images — 
+What we're doing: **making sure you can always get a working, complete MinIO binary with the admin console included and CVE fixed.** RPM, DEB, Docker images —
 built automatically via CI/CD, drop-in compatible with your existing infra. No more worrying about `docker pull` returning nothing or `yum install` failing to find a package.
 
 ### This Is a build for Production, Not an Archive
@@ -189,8 +189,8 @@ We run our own builds — if something breaks, we find out first and fix it firs
 
 ### We Fix Bugs and Track CVEs
 
-If you run into issues, feel free to report them at [pgsty/minio](https://github.com/orgs/pgsty/discussions). 
- — but please don't treat this as a commercial SLA. We operate as an open-source community project, doing our best effort.
+If you run into issues, feel free to report them at [pgsty/minio](https://github.com/orgs/pgsty/discussions)
+— but please don't treat this as a commercial SLA. We operate as an open-source community project, doing our best effort.
 
 Given that AI coding tools have made bug fixing dramatically cheaper,
 and that we're explicitly not adding any new features, I believe the maintenance workload is manageable.
@@ -218,13 +218,14 @@ With tools like Claude Code, the cost of locating and fixing bugs in a complex G
 What used to require a dedicated team to maintain a complex infrastructure project can now be handled by one experienced engineer with an AI copilot.
 
 Consider: Elon cut X/Twitter's engineering team down to ~30 people and the system still runs. 
-Maintaining a MinIO fork is considerably less daunting — you mainly need the ability to test and validate.
+Maintaining a MinIO fork without new features is considerably less daunting — you mainly need the ability to test and validate.
 
 ------
 
 ## Just Fork It
 
-MinIO Inc. can archive a GitHub repo, but they can't archive the demand behind 60k stars, or the dependency graph behind a billion Docker pulls. That demand doesn't disappear — it just finds a new home.
+MinIO Inc. can archive a GitHub repo, but they can't archive the demand behind 60k stars, 
+or the dependency graph behind a billion Docker pulls. That demand doesn't disappear — it just finds its way out.
 
 HashiCorp's Terraform got forked into OpenTofu, and it's doing fine. MinIO's situation is actually more favorable — 
 AGPL is more permissive for forks than BSL, with no legal gray area for community forks. A company can abandon a project, but open-source licenses are specifically designed so the code can't die.
