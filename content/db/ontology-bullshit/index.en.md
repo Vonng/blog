@@ -1,9 +1,9 @@
 ---
-title: "Palantir's 'Ontology' Hustle"
+title: "Palantir's Ontology Narrative"
 date: 2026-02-21
 summary: >
-  Ontology is database modeling. The word's only function is to make people who don't understand databases
-  think they're looking at something new — and happily pay a thousand times more for something old.
+  Ontology is largely a data-modeling method. In enterprise practice, much of it overlaps with familiar
+  database concepts, while the framing can make it feel newer and more differentiated than it really is.
 tags: [ontology, databases, industry]
 ---
 
@@ -27,13 +27,13 @@ Enterprise executives hear it and feel that if they don't buy in, they'll be lef
 
 ![onto1.webp](onto1.webp)
 
-This is Palantir's most elegant trick: weaponizing a term backed by 2,300 years of philosophical gravitas
+This is Palantir's most effective framing: using a term backed by 2,300 years of philosophical gravitas
 to make non-technical decision-makers believe they're witnessing a breakthrough, while making the engineers
 in the room unable to object — because you can't exactly tell the VP,
 "Boss, they're selling us `CREATE TABLE`."
 
 Lately I've seen too many people mystifying this concept, so today I'm going to point out
-that the emperor has no clothes.
+what is core technology and what is branding.
 
 ------
 
@@ -54,23 +54,23 @@ Now look at this table:
 | —                    | Stored Procedure   | Method              | Action      |
 | Individual           | Row                | Object              | Object      |
 
-Four columns. Four terminology systems. The same thing. Not "analogous." Not "similar." **Fully overlapping. Strictly isomorphic.**
+Four columns. Four terminology systems. The same structure in different vocabularies. **Highly overlapping and close to isomorphic** in practical modeling terms.
 Palantir's docs also define Interface (polymorphism), Function (code logic), and Virtual Table — which translate to Views, UDFs, and Materialized Views.
 
 ![ontology-table.webp](ontology-table.webp)
 
-If you've taken a database modeling course, you already have complete mastery of Palantir's so-called "Ontology."
+If you've taken a database modeling course, you already have most of the mental model for Palantir's "Ontology."
 Nobody ever told you that what you learned in week two of your intro class could be wrapped in a philosophy term
 and sold for millions per year.
 
 Palantir's 2025 annual report discloses: the top 20 customers average **$93.9 million** each per year.
 Across all 954 customers, the average is roughly **$4.7 million/year**.
-That's the price tag on "tables and stored procedures."
+That gives a sense of the commercial scale attached to this model.
 
 
 ------
 
-## III. The Same Idea, Sold Five Times
+## III. The Same Idea, Reframed Five Times
 
 Palantir didn't invent any of this. The same core idea has been repackaged repeatedly over 2,300 years.
 Each time with a new name. Each time a new crop of people think it's a breakthrough.
@@ -99,12 +99,12 @@ Structurally identical to the ER model. This is when "Ontology" officially enter
 **Round 5: 2016–present — Palantir Foundry.**
 Object Type, Property, Link, Action.
 
-Notice the pattern: **every "reinvention" rides a wave of market mania.**
+Notice the pattern: **every "reinvention" rides a major market wave.**
 The ER model spawned the relational database market. OOP spawned the Java frenzy.
-The Semantic Web spawned an academic and startup bubble that subsequently popped.
+The Semantic Web spawned an academic and startup cycle that later cooled down.
 Now Palantir's Ontology rides the AI narrative, catapulting the company from under $20B to over $400B in two years.
 
-This isn't technological progress. It's conceptual reincarnation.
+This is less a brand-new invention and more conceptual reincarnation.
 What changes each cycle isn't the idea — it's the wrapping paper, and the people willing to pay for wrapping paper.
 
 ------
@@ -129,13 +129,13 @@ The VP's reaction becomes: "Isn't that what our IT department already does? Why 
 
 **Same thing. Different name. Three orders of magnitude in price.** That's the cognitive tax of a philosophy term.
 
-And here's the deeper irony: Palantir's use of "Ontology" is fundamentally **anti-philosophical**.
+And here's the deeper irony: Palantir's use of "Ontology" is mostly **operational**, not philosophical.
 Real ontology explores open questions: "Where are the boundaries of existence?"
 "Can categories ever be exhaustive?" These are fluid, uncertain inquiries.
 
-Palantir's Ontology does the opposite. It freezes business entities into rigid Object Types,
+Palantir's Ontology does the opposite. It tends to freeze business entities into rigid Object Types,
 cements relations into predefined Links, and locks operations into approval-driven Actions.
-This isn't exploring the nature of being — **it's pouring concrete over reality**.
+This isn't exploring the nature of being — it's building a controlled operational model.
 
 Data analyst Donald Farmer described a telling case on Substack:
 in the '90s, he built a complete metadata ontology for a U.S. auto lending company.
@@ -143,9 +143,9 @@ Within months, the business team switched analytics tools and changed their cred
 By the time the ontology team caught up, the business had moved again.
 His conclusion: **an incomplete ontology isn't just behind — it's wrong. And a wrong ontology is more dangerous than no ontology at all.**
 
-This is the fate of every rigid schema. But for Palantir, this isn't a problem — **it's the business model**.
+This is the fate of every rigid schema. For Palantir, it can also align with the commercial model.
 Model out of date? Pay a few million to update it. Business changed? Buy another round of consulting.
-The rigidity of Ontology isn't a flaw — it's a customer lock-in mechanism.
+The rigidity of Ontology may not be a flaw for the vendor, because it naturally increases switching costs.
 
 ------
 
@@ -168,21 +168,20 @@ It's in building GUIs for non-technical users. In spending months on-site unders
 In navigating Pentagon procurement. None of these have anything to do with "Ontology."
 They're product engineering, consulting services, and government relations.
 
-Wrapping grunt work in a philosophy term — that's Palantir's core competency, and its most impressive illusion.
+Packaging hard implementation work inside a philosophy term is part of Palantir's go-to-market strength.
 
 ------
 
-## VI. When the Money Flows, the Rationalizations Follow
+## VI. Where the Growth Comes From
 
-At this point we have to address the obvious question: if the technology is this unremarkable,
+At this point we have to address the obvious question: if the core modeling concept is this familiar,
 how did Palantir reach a $300B+ market cap, $4.48B in annual revenue, and 56% year-over-year growth?
 
-The answer isn't in the technology. **The answer is in Washington.**
+The answer is not only in technology.  **The answer is in Washington.**
 
-Palantir was co-founded by Peter Thiel in 2003. Thiel isn't your average Silicon Valley investor.
-He was one of Trump's earliest and most prominent tech-world backers, and a speaker at the
-2016 Republican National Convention. Palantir's first outside investment came from the CIA's venture arm, In-Q-Tel.
-From day one, this company's DNA has been **political relationships, not technology**.
+Palantir was co-founded by Peter Thiel in 2003. He has long had visible political ties in Washington, and
+Palantir's first outside investment came from the CIA's venture arm, In-Q-Tel.
+From early on, the company combined product work with unusually strong institutional relationships.
 
 Palantir's 2025 annual report states it plainly: **54% of revenue comes from government customers.**
 The U.S. Army awarded Palantir a $458M battlefield intelligence contract.
@@ -191,10 +190,10 @@ ICE has committed over $248M in cumulative funding since 2011.
 In 2025, under the Trump administration, Palantir landed a $30M contract to build ImmigrationOS for ICE —
 a cross-agency database for tracking undocumented immigrants.
 
-How were these contracts won? Through the technical superiority of "Ontology"?
-Or through Peter Thiel's proximity to the White House? — Palantir spends roughly $5 million a year on political lobbying.
+How much of these wins comes from pure technical differentiation versus procurement positioning and institutional trust?
+Palantir also spends roughly $5 million a year on political lobbying.
 
-But Palantir won't tell investors in a roadshow: "Our core competitive advantage is Peter Thiel's political network."
+But Palantir won't frame this in roadshows as "our advantage is market access and institutional relationships."
 Instead, they say: "Our core competitive advantage is **Ontology**."
 
 **That's the real function of "Ontology": it's not a technical architecture — it's a narrative architecture.**
@@ -205,13 +204,13 @@ Think of it as the American version of "data middle platform" plus staff augment
 
 ------
 
-## VII. A Consulting Firm in SaaS Clothing
+## VII. A Product with a Heavy Services Layer
 
 Palantir has a unique job title: **FDE** — Forward Deployed Engineer.
 After a customer signs, Palantir dispatches an engineering team to the client's site to map business processes,
 build data models, develop applications, and train users.
 
-This is consulting. Or to put it more bluntly — "staff augmentation."
+This is a services-heavy model, close to consulting plus staff augmentation.
 Palantir insists it's a software company, not a consulting firm.
 Because software companies trade at 70x revenue, while consulting firms are lucky to get 2–3x.
 
@@ -225,12 +224,12 @@ What do those FDEs actually do on-site? Write ETL pipelines to move data from SA
 Debug Kafka connectors. Handle schema incompatibilities between Oracle and Snowflake.
 Explain to business users why a Link definition needs to change.
 **The essence of this work is data integration and glue code** — the most labor-intensive,
-context-dependent drudgery in all of software engineering.
+context-dependent part of enterprise software engineering.
 
 Every engineer who's done an enterprise data warehouse project knows this kind of work:
-exhausting, tedious, no silver bullet. Thousands of system integrators worldwide do exactly the same thing.
+often tedious, and with no silver bullet. Thousands of system integrators worldwide do exactly the same thing.
 Accenture does it. Deloitte does it. Infosys does it.
-The difference? They don't wrap the grunt work in the word "Ontology" — so their valuation multiples
+The difference? They don't wrap this implementation work in the word "Ontology" — so their valuation multiples
 are a fraction of Palantir's.
 
 **The conceptual complexity of Ontology serves this business model perfectly.**
@@ -241,13 +240,13 @@ a proprietary GUI for half an hour — then the client can never leave your FDEs
 
 ![onto-ui.webp](onto-ui.webp)
 
-**The harder the system is to use, the more dependent the customer becomes. The more arcane the concepts, the more indispensable the FDEs. This isn't a bug — it's a feature.**
+**The harder the system is to use, the more dependent the customer becomes. The more arcane the concepts, the more indispensable the FDEs can become.**
 
 Palantir's own numbers confirm this: in 2025, customer count grew 34%,
 but average annual revenue from the top 20 customers grew 45%.
 CEO Alex Karp said something revealing on the earnings call:
 **"There will be unexplainable revenue growth in the future, but there will not be unexplainable customer count growth."**
-Translation: we're not planning to win more customers — we're planning to extract more money from the ones we have.
+Translation: the strategy appears focused on growing wallet share within existing accounts.
 
 That's a consulting firm's growth model, not a software platform's.
 
@@ -260,7 +259,7 @@ Who actually buys Palantir?
 Look at the customer list: U.S. Army, ICE, CDC, NHS, Airbus, BP.
 These organizations share a few key traits:
 
-**First, the decision-makers don't understand technology.**
+**First, the decision-makers are usually not hands-on with data engineering details.**
 A Pentagon procurement officer doesn't know what a foreign key is.
 NHS management doesn't care how your ETL pipeline works.
 What they need is a concept that sounds impressive enough
@@ -269,8 +268,8 @@ to justify a multi-million-dollar purchasing decision as "strategic."
 looks infinitely better on any briefing deck than
 "We hired a contractor to build us some tables."
 
-**Second, they're spending other people's money.**
-Government contracts are characterized by generous budgets and minimal technical auditing.
+**Second, they're operating under institutional budgets and procurement constraints.**
+Government contracts often have large budgets and process-heavy technical auditing.
 Nobody gets fired for spending $30 million on Palantir.
 But if you propose building it yourself with open-source tools and something breaks, that's on you.
 This is the modern version of "nobody ever got fired for buying IBM" —
@@ -298,12 +297,12 @@ The first three chapters of any database textbook cover all of it.
 Palantir invented nothing new.
 
 **What is Palantir's actual competitive advantage?**
-Not Ontology. It's Thiel's network, the labor-intensive FDE on-site delivery model,
+Not just Ontology. It's institutional market access, the labor-intensive FDE on-site delivery model,
 and the ability to create path dependency in government agencies and large enterprises.
-Political connections, consulting, lock-in — none of these have anything to do with "Ontology."
+Relationships, consulting, and lock-in dynamics — these matter as much as data modeling language.
 
 **What is the real function of "Ontology"?**
-It's a narrative device. It lets a company that is essentially a political-connections + consulting operation
+It's a narrative device. It lets a company with a relationship-driven, services-heavy delivery model
 enjoy top-tier SaaS valuation multiples in the capital markets.
 It makes non-technical decision-makers believe they're buying some unfathomable "core technology"
 rather than signing an overpriced systems integration contract.
@@ -316,7 +315,7 @@ It's like a Michelin-star restaurant listing on the menu:
 "Deconstructed carbohydrate lattice with organic protein emulsion."
 What arrives at your table is mac and cheese.
 Mac and cheese can be great. But you can't call "deconstruction" your technical moat —
-especially when the dish costs $90 million a year and Peter Thiel personally carries it to your table.
+especially when the dish costs $90 million a year.
 
 Next time you see a vendor drop "Ontology" into a pitch deck, be on your guard.
 
