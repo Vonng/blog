@@ -298,7 +298,7 @@ The first three chapters of any database textbook cover all of it.
 Palantir invented nothing new.
 
 **What is Palantir's actual competitive advantage?**
-Not Ontology. It's Peter Thiel's political network, the labor-intensive FDE on-site delivery model,
+Not Ontology. It's Thiel's network, the labor-intensive FDE on-site delivery model,
 and the ability to create path dependency in government agencies and large enterprises.
 Political connections, consulting, lock-in — none of these have anything to do with "Ontology."
 
@@ -319,7 +319,6 @@ Mac and cheese can be great. But you can't call "deconstruction" your technical 
 especially when the dish costs $90 million a year and Peter Thiel personally carries it to your table.
 
 Next time you see a vendor drop "Ontology" into a pitch deck, be on your guard.
-Nine times out of ten, it's smoke and mirrors.
 
 
 ------
