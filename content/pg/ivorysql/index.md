@@ -46,6 +46,8 @@ Time: 0.249 ms
 
 而且，你无法通过写扩展来解决这个问题。PostgreSQL 的可扩展性覆盖了绝大多数场景 —— 你可以自定义类型、操作符、索引方法、存储引擎、执行逻辑、甚至外部数据源。**但唯独语法，是不允许通过扩展来定制的。** 这是 PostgreSQL 可定制性上唯一的遗憾。
 
+![extensibility.webp](extensibility.webp)
+
 要让 PostgreSQL 认识 `SYSDATE` 这个 token，你必须去改 Parser 的语法规则文件，也就是要动内核源码。
 
 如果应用有源码，这事儿根本不叫事儿 —— 现在用 AI 做个全局替换，把 `SYSDATE` 改成 `clock_timestamp()::timestamp(0)`，分分钟搞定。但源码没了，JAR 包写死了，这条路堵死了。
@@ -97,9 +99,10 @@ vagrant@meta:~$ psql -p 1521 -c 'select version()'
 (1 row)
 ```
 
-这活儿老冯收了几万块一年。相比 EnterpriseDB 的订阅费，那简直不知道要便宜到哪里去了。当然老冯也不提供 IvorySQL 的质保。如果 IvorySQL 炸了，你找瀚高去。我只管 Pigsty RDS 不出问题，不过老冯自己觉得呢，IvorySQL 没有魔改太多，而是做的增量特性，这个还是相对可控的。我在实际安装使用测试的时候，也还没遇到过 crash 或者 dump 的情况。
+当然老冯也不提供 IvorySQL 的质保。如果 IvorySQL 炸了，你找瀚高去。我只管 Pigsty RDS 不出问题，不过老冯自己觉得呢，IvorySQL 没有魔改太多，而是做的增量特性，这个还是相对可控的。我在实际安装使用测试的时候，也还没遇到过 crash 或者 dump 的情况。
 
 总的来说，这套方案相当完美地解决了历史遗留的 Oracle 兼容应用的问题。这也让我发现，虽然是一个很冷门的生态位，但确实有用户有这个需求。反正对老冯来说，这就是很简单的事情，顺手做了也就做了。
+
 
 
 ## Pigsty：一个"元发行版"
@@ -116,19 +119,30 @@ vagrant@meta:~$ psql -p 1521 -c 'select version()'
 
 所以我也干脆自己上了，Codex 一把梭，把 EL 8-10，Debian 12/13 ，Ubuntu 22/24 x86_64/ARM64 总共 14 个 Linux 平台上的 RPM/DEB 包都打好了。这其实是个挺复杂的大活儿，但 Codex 在那儿"糊"了半天，跑了各种集成测试和单元测试，还弄了几个 Patch 才在 EL10/Debian13 上跑通，最后总算搞定了。
 
-除此之外，OrioleDB 更新到 Beta 14。Percona PGTDE 更新到 18.1。
+除此之外，OrioleDB 更新到 Beta 14。Percona PGTDE 更新到 18.1，完整可用内核的数量达到了 12+
 
+|                                内核                                 |       关键特性        | 描述                                 |
+|:-----------------------------------------------------------------:|:-----------------:|:-----------------------------------|
+|  [**PostgreSQL**](https://pigsty.cc//docs/pgsql/kernel/postgres)  |   **原生内核，扩展齐备**   | 原版 PostgreSQL，配备 461 扩展            |
+|   [**Supabase**](https://pigsty.cc/docs/pgsql/kernel/supabase)    |     **后端即服务**     | 基于 PostgreSQL 的 BaaS，Firebase 替代方案 |
+|      [**Citus**](https://pigsty.cc/docs/pgsql/kernel/citus)       |  **水平分布式扩展，多租户**  | 通过原生扩展实现分布式 PostgreSQL             |
+|  [**Babelfish**](https://pigsty.cc/docs/pgsql/kernel/babelfish)   | **SQL Server 兼容** | SQL Server 线协议兼容（PG17）             |
+|   [**IvorySQL**](https://pigsty.cc/docs/pgsql/kernel/ivorysql)    |   **Oracle 兼容**   | Oracle 语法和 PL/SQL 兼容               |
+|   [**OpenHalo**](https://pigsty.cc/docs/pgsql/kernel/openhalo)    |   **MySQL 兼容**    | MySQL 线协议兼容                        |
+|    [**Percona**](https://pigsty.cc/docs/pgsql/kernel/percona)     |    **透明数据加密**     | 带有 pg_tde 的 Percona 发行版            |
+|           [**FerretDB**](https://pigsty.cc/docs/ferret)           |  **MongoDB 迁移**   | MongoDB 线协议兼容                      |
+|   [**OrioleDB**](https://pigsty.cc/docs/pgsql/kernel/orioledb)    |    **OLTP 优化**    | Zheap，无膨胀，S3 存储                    |
+|    [**PolarDB**](https://pigsty.cc/docs/pgsql/kernel/polardb)     | **Aurora 风格 RAC** | RAC，中国国产合规                         |
+| [**Cloudberry**](https://pigsty.cc/docs/pgsql/kernel/cloudberry)  |  **MPP数仓与数据分析**   | 大规模并行处理数据仓库                        |
+| [**AgensGraph**](https://pigsty.cc/docs/pgsql/kernel/agensgraph)  |    **图数据库内核**     | 基于 PostgreSQL 的图数据库分支              |
+|     [**pgEdge**](https://pigsty.cc/docs/pgsql/kernel/pgedge)      |   **多主复制，地理分布**   | 面向边缘场景的分布式 PostgreSQL 发行版          |
+
+![pg-forks.webp](pg-forks.webp)
 
 所以你看，这就是 Pigsty 好玩的地方 —— 它不仅仅是一个 PostgreSQL 发行版，它是一个 **"元发行版"**。
 
 什么意思呢？就是你可以根据需求，爱用什么内核就用什么内核：
 
-- 想要 **Oracle 兼容** → IvorySQL 内核，还有 Polar-O 内核
-- 想要 **SQL Server 兼容** → Babelfish 内核
-- **想要 MongoDB 兼容** → DocumentDB 扩展 + FerretDB
-- 想要 **极致 OLTP 性能** → OrioleDB 内核
-- 想要 **透明数据加密** → PGTDE 内核
-- 想要 **分布式水平扩展** → Citus 内核
-- 想要 **数据仓库** → Cloudberry 内核
+![ext-banner.webp](ext-banner.webp)
 
 而无论你选哪个内核，Pigsty 提供的监控、高可用、备份恢复、IaC 能力都是一样的。**内核可以换，平台的能力不变。** 这才是发行版该干的事。
