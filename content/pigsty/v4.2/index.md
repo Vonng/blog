@@ -375,3 +375,92 @@ c98972fe9226657ac1faa7b72a22498b  pigsty-pkg-v4.2.0.u22.aarch64.tgz
 143e404f4681c7d0bbd78ef7982cd652  pigsty-pkg-v4.2.0.u24.aarch64.tgz
 00dfa86f477f3adff984906211ab3190  pigsty-pkg-v4.2.0.u24.x86_64.tgz
 ```
+
+
+
+
+------
+
+## v4.2.1
+
+这是一个维护版本，新增了 3 个扩展插件，
+
+**主要变更**
+
+- **新增扩展**：`pg_eviltransform` 加入 GIS 包组，`pg_pinyin` 加入 FTS 包组，`pg_qos` 加入 Admin 包组 —— 均支持 PG 14–18。
+- **移除 PG13**：所有平台变体（EL7/8/9/10、Debian 12/13、Ubuntu 22/24，x86_64 与 aarch64）中的 `pgdg13`、`pgdg13-nonfree` 仓库条目和 PG13 包别名（`pg13-*`）全部移除。
+- 配置模板（`fat.yml`、`pro.yml`、`dev.yml`、`el.yml`、`debian.yml`）不再引用 PG13 包或仓库。扩展版本注释更新为仅覆盖 PG 14–18。
+- **Percona 仓库**：Origin URL 从 `ppg-18.1` 更新为 `ppg-18.3`，跟踪最新 Percona PostgreSQL 发行版。
+- **Nginx 仓库**：Debian/Ubuntu 平台上 Nginx 上游 APT 仓库的模块标签从 `infra` 修正为 `nginx`。
+- **UV Venv 修复**：`roles/node/tasks/pkg.yml` 现在会先检查虚拟环境是否已存在，避免重复执行 `uv venv` 导致的冗余创建或重新置备报错。
+- **Docker 镜像**：Pigsty Docker 镜像基础包中新增 `less`。
+- **Demo 配置**：`el.yml` 和 `debian.yml` 示例配置的默认防火墙规则新增 `5432` 端口，支持直接访问 PostgreSQL。
+
+**兼容性说明**
+
+PostgreSQL 13 已于 2025-11-13 [到达生命周期终点](https://www.postgresql.org/support/versioning/)。
+PGDG YUM 仓库已经归档移除 [pg13](https://yum.postgresql.org/news/pg13-end-of-life/) / [pg12](https://yum.postgresql.org/news/pg12-end-of-life/) 目录。
+如果您在 EL 系统上安装 Pigsty （即使没有使用 PG 13 版本），也有可能因为仓库访问失败而导致安装或更新失败。
+
+您可以选择直接使用 Pigsty v4.2.1，或者手工修改 `roles/node_id/vars/` 您对应操作系统 `repo_upstream_default` 变量，移除仓库定义中的 pg13 一行即可。
+
+此外，EL8 仍然在 Pigsty 的兼容操作系统中，但从此版本开始将不再发布 el8 的离线软件包。
+
+本版本没有其他破坏性 API 或配置变更。
+
+**7 个提交**，84 文件变更，+4,925 / -5,351 行（`v4.2.0..v4.2.1`，2026-03-04 ~ 2026-03-06）
+
+**PostgreSQL 软件包更新**
+
+| 包名               | 旧版本     | 新版本     | 备注                 |
+|:-----------------|:--------|:--------|:-------------------|
+| timescaledb      | 2.25.1  | 2.25.2  |                    |
+| vchord           | 1.1.0   | 1.1.1   | 新增 clang 构建依赖，修复错误 |
+| vchord_bm25      | 0.3.0-1 | 0.3.0-2 | 修复版本注入问题           |
+| aggs_for_vecs    | 1.4.0   | 1.4.1   |                    |
+| pg_search        | 0.21.9  | 0.21.12 |                    |
+| pg_pinyin        | -       | 0.0.2   | 新增扩展               |
+| pg_eviltransform | -       | 0.0.2   | 新增扩展               |
+| pg_qos           | -       | 1.0.0   | 新增扩展，QoS 资源治理      |
+
+
+**基础设施软件包更新**
+
+| 名称                           | 旧版本            | 新版本            | 备注 |
+|:-----------------------------|:---------------|:---------------|:---|
+| `asciinema`                  | 3.1.0          | 3.2.0          |    |
+| `grafana-infinity-ds`        | 3.7.2          | 3.7.3          |    |
+| `victoria-metrics`           | 1.136.0        | 1.137.0        |    |
+| `victoria-metrics-cluster`   | 1.136.0        | 1.137.0        |    |
+| `vmutils`                    | 1.136.0        | 1.137.0        |    |
+| `hugo`                       | 0.155.3        | 0.157.0        |    |
+| `opencode`                   | 1.2.15         | 1.2.17         |    |
+| `rustfs`                     | 1.0.0-alpha.83 | 1.0.0-alpha.85 |    |
+| `seaweedfs`                  | 4.13           | 4.15           |    |
+| `tigerbeetle`                | 0.16.74        | 0.16.75        |    |
+| `uv`                         | 0.10.4         | 0.10.8         |    |
+| `codex`                      | 0.105.0        | 0.110.0        |    |
+| `claude`                     | 2.1.59         | 2.1.68         |    |
+| `xray`                       | -              | 26.2.6         | 新增 |
+| `gost`                       | -              | 2.12.0         | 新增 |
+| `sabiql`                     | -              | 1.6.2          | 新增 |
+| `agentsview`                 | -              | 0.10.0         | 新增 |
+
+
+**校验和**
+
+```bash
+262b7671424a38b208872582fe835ef8  pigsty-v4.2.1.tgz
+62edcca1d1e572a247be018e1c26eda8  pigsty-pkg-v4.2.1.d12.aarch64.tgz
+1d55367e2fd9106e6f18b7ee112be736  pigsty-pkg-v4.2.1.d12.x86_64.tgz
+f122b1e5ba8a7ae8e3dc6e6dd53eba65  pigsty-pkg-v4.2.1.d13.aarch64.tgz
+617a76bfc8df8766e78abf24339152eb  pigsty-pkg-v4.2.1.d13.x86_64.tgz
+908509b350403ad1a4a27a88795fee06  pigsty-pkg-v4.2.1.el10.aarch64.tgz
+70cb4afd90ed7aea6ab43a264f8eb4a8  pigsty-pkg-v4.2.1.el10.x86_64.tgz
+98fbd67334f5c674b12e6af81ef76923  pigsty-pkg-v4.2.1.el9.aarch64.tgz
+687fa741ccd9dcf611a2aa964bcf1de8  pigsty-pkg-v4.2.1.el9.x86_64.tgz
+a2a30f4b1146b3e79be91d5be57615b6  pigsty-pkg-v4.2.1.u22.aarch64.tgz
+7a1f571bd8526106775c175ba728eee1  pigsty-pkg-v4.2.1.u22.x86_64.tgz
+a5574071bac1955798265f71ad73c3d4  pigsty-pkg-v4.2.1.u24.aarch64.tgz
+59a7632c650a3c034f1fe6cd589d7ab5  pigsty-pkg-v4.2.1.u24.x86_64.tgz
+```
