@@ -15,4 +15,8 @@ sectionHero:
   headline: "冯若航 @Vonng / Pigsty"
   description: "关于数据库行业的文章：动态，新闻，调查，理念，最佳实践等等"
 ---
+按发布时间整理的数据库专栏索引，新的在前，旧文在后。
 
+## 时间索引
+
+{{< section_index section="db" exclude="guru" >}}

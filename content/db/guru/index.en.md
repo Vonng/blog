@@ -1,6 +1,5 @@
 ---
 title: "Column: Database Guru"
-weight: 2
 date: 2025-08-08
 author: vonng
 summary: The database world is full of hype and marketing fog. This column cuts through it with blunt commentary, case studies, and technical deep dives.

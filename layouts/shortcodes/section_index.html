@@ -1,0 +1,41 @@
+{{ $section := .Get "section" | default .Page.Section }}
+{{ $lang := .Page.Lang }}
+{{ $exclude := split (.Get "exclude" | default "") "," }}
+{{ $pages := where site.RegularPages "Section" $section }}
+{{ $pages = where $pages "Lang" $lang }}
+{{ $filtered := slice }}
+
+{{ range $pages.ByDate.Reverse }}
+  {{ $slug := path.Base (strings.TrimSuffix "/" .File.Dir) }}
+  {{ if not (in $exclude $slug) }}
+    {{ $filtered = $filtered | append . }}
+  {{ end }}
+{{ end }}
+
+<div class="not-prose">
+  {{ if gt (len $filtered) 0 }}
+    {{ $scratch := newScratch }}
+    {{ $scratch.Set "year" "" }}
+    <div class="space-y-6">
+      {{ range $filtered }}
+        {{ $year := .Date.Format "2006" }}
+        {{ if ne $year ($scratch.Get "year") }}
+          {{ if ne ($scratch.Get "year") "" }}</ul></section>{{ end }}
+          <section>
+            <h3 class="text-xl font-bold text-neutral-800 dark:text-neutral-100">{{ $year }}</h3>
+            <ul class="mt-3 space-y-2">
+          {{ $scratch.Set "year" $year }}
+        {{ end }}
+        <li class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-3">
+          <time class="shrink-0 text-sm text-neutral-500 dark:text-neutral-400">{{ .Date.Format "2006-01-02" }}</time>
+          <a class="text-base text-primary-700 hover:underline dark:text-primary-400" href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+      {{ end }}
+      </ul></section>
+    </div>
+  {{ else }}
+    <p class="text-sm text-neutral-500 dark:text-neutral-400">
+      {{ if strings.HasPrefix $lang "en" }}No articles yet.{{ else }}暂时还没有文章。{{ end }}
+    </p>
+  {{ end }}
+</div>

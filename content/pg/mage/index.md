@@ -1,6 +1,5 @@
 ---
 title: "专栏：Postgres 大法师"
-weight: 1
 date: 2025-08-08
 author: 冯若航
 summary: >

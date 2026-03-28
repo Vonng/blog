@@ -1,5 +1,5 @@
 ---
-title: "Drones Took Out Three AWS Availability Zones: Cloud Computing Enters the Age of War"
+title: "Drones Took Out Three AWS AZ: Into the Era of Bombable Data Centers"
 date: 2026-03-03
 author: vonng
 summary: >

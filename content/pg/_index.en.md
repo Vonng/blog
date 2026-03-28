@@ -10,3 +10,8 @@ sectionHero:
   headline: "Ruohang Feng @Vonng / Pigsty"
   description: "PostgreSQL ecosystem, dev & admin tricks, and internals"
 ---
+A chronological index of PostgreSQL essays, notes, and release coverage.
+
+## Timeline
+
+{{< section_index section="pg" exclude="mage" >}}

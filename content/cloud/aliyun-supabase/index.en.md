@@ -1,5 +1,5 @@
 ---
-title: Alicloud “Borrowed” Supabase. This Is What Happens When Giants Strip-Mine Open-Source.
+title: Alicloud “Borrowed” Supabase, the giant free loader
 date: 2025-11-06
 author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/))

@@ -6,7 +6,6 @@ summary: >
   数据库领域充满着太多胡言乱语与不实营销，数据库老司机带您拨云见日，穿透迷糊，直击行业核心与本质。
 tags: [数据库, 技术评论, 专栏]
 featured: true
-weight: 2
 ---
 
 > [微信公众号](https://mp.weixin.qq.com/s/Q0OtrpEhF24XN7gwMjbSRA)
@@ -311,4 +310,3 @@ weight: 2
 - 2022-05-16 [云RDS：从删库到跑路](https://mp.weixin.qq.com/s/AGEW1iHQkQy4NQyYC2GonQ)
 - 2022-05-10 [DBA还是一份好工作吗？](https://mp.weixin.qq.com/s/Py3o31w3db5E9FsviAZeCA)
 - 2021-05-08 [为什么说PostgreSQL前途无量？](https://mp.weixin.qq.com/s/KBypNeeM4puvzGiKFJ1FmQ)
-
