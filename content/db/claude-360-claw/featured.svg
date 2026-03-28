@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">360 Claw Key Leak</title>
+  <desc id="desc">Featured image for the blog post about 360 Claw shipping a wildcard private key inside its installer.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="55%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb923c"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M 36 0 L 0 0 0 36" fill="none" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <circle cx="189" cy="103" r="170" fill="#ef4444" opacity="0.12"/>
+  <circle cx="1094" cy="522" r="216" fill="#fb923c" opacity="0.1"/>
+  <circle cx="920" cy="112" r="112" fill="#38bdf8" opacity="0.08"/>
+
+  <g transform="translate(90 105)" filter="url(#shadow)">
+    <path d="M150 40 C86 52 44 92 28 154 C17 196 21 240 44 278 C70 321 115 352 174 370 C148 309 149 255 182 213 C216 169 270 150 338 159 C313 105 276 69 226 50 C203 42 177 38 150 40 Z" fill="url(#accent)"/>
+    <path d="M344 186 C386 199 422 226 444 260 C472 304 473 355 448 412 C514 388 562 351 590 300 C611 263 618 222 610 180 C598 111 552 63 479 43 C445 34 410 33 372 41 C420 77 442 119 438 169 C436 177 429 184 418 189 C396 198 372 197 344 186 Z" fill="url(#accent)"/>
+    <path d="M215 168 C188 190 173 219 170 252 C164 309 196 365 264 420 L322 468 C386 420 424 366 435 305 C444 255 431 210 397 174 C363 138 321 120 272 124 C251 126 232 141 215 168 Z" fill="#f8fafc"/>
+    <path d="M240 162 L240 138 C240 92 278 54 324 54 C370 54 408 92 408 138 L408 162" fill="none" stroke="#f8fafc" stroke-width="22" stroke-linecap="round"/>
+    <rect x="236" y="162" width="176" height="158" rx="26" fill="#f8fafc"/>
+    <circle cx="324" cy="232" r="24" fill="#111827"/>
+    <rect x="314" y="232" width="20" height="44" rx="10" fill="#111827"/>
+    <path d="M68 406 L204 406 L228 432 L350 432 L350 470 L228 470 L204 494 L68 494 Z" fill="url(#steel)"/>
+    <circle cx="124" cy="450" r="32" fill="none" stroke="#0f172a" stroke-width="18"/>
+    <rect x="350" y="440" width="112" height="22" rx="11" fill="url(#steel)"/>
+    <rect x="450" y="420" width="28" height="62" rx="10" fill="url(#steel)"/>
+    <rect x="500" y="420" width="28" height="62" rx="10" fill="url(#steel)"/>
+  </g>
+
+  <g transform="translate(560 134)">
+    <text x="0" y="0" fill="#f8fafc" font-size="84" font-weight="800" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" letter-spacing="1.5">360 CLAW</text>
+    <text x="0" y="92" fill="#fb923c" font-size="68" font-weight="800" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" letter-spacing="1.5">KEY LEAK</text>
+    <text x="0" y="156" fill="#cbd5e1" font-size="28" font-weight="600" font-family="Menlo, Monaco, Consolas, monospace">*.myclaw.360.cn</text>
+    <text x="0" y="202" fill="#94a3b8" font-size="24" font-weight="500" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif">WILDCARD PRIVATE KEY SHIPPED IN PUBLIC INSTALLER</text>
+
+    <g transform="translate(0 258)">
+      <rect width="228" height="54" rx="27" fill="#f8fafc"/>
+      <text x="28" y="35" fill="#111827" font-size="24" font-weight="800" font-family="Menlo, Monaco, Consolas, monospace">2026.03.16</text>
+    </g>
+
+    <g transform="translate(0 360)">
+      <rect width="480" height="122" rx="24" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+      <text x="28" y="40" fill="#ef4444" font-size="18" font-weight="700" font-family="Menlo, Monaco, Consolas, monospace">credentials/</text>
+      <text x="28" y="72" fill="#e2e8f0" font-size="18" font-family="Menlo, Monaco, Consolas, monospace">star.myclaw.360.cn.crt</text>
+      <text x="28" y="102" fill="#e2e8f0" font-size="18" font-family="Menlo, Monaco, Consolas, monospace">star.myclaw.360.cn.key</text>
+    </g>
+  </g>
+</svg>
