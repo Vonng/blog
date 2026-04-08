@@ -5,6 +5,8 @@ summary: |
   Your ability to ask questions—and your taste in what to ask—determines your position in the AI era. When answers become commodities, good questions become the new wealth. We are living in the moment this prophecy comes true.
 author: vonng
 tags: [AI]
+ai: true
+aliases: ["/en/ai/ai-question/"]
 ---
 
 **Answers are depreciating, and your ability to ask questions determines your position in the AI era.**

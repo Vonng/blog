@@ -6,6 +6,8 @@ summary: >
   OpenClaw v2026.3.22 发布到 npm 时漏掉了控制台前端和相关构建资源。
   这次翻车暴露出的，不只是一个打包事故，而是发布流程里缺少最基本的安装后验证。
 tags: [开源, AI, Agent]
+ai: true
+aliases: ["/ai/openclaw-drama/"]
 ---
 
 昨晚，OpenClaw 发布了新版本 `v2026.3.22`。结果 npm 包里把控制台前端漏掉了，全球用户升级完打开浏览器，直接 `503`。

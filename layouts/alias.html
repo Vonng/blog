@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ .Language.LanguageCode | default .Language.Lang }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ .Title }}</title>
+    <link rel="canonical" href="{{ .Permalink }}">
+    <meta name="robots" content="noindex,follow">
+    <meta http-equiv="refresh" content="0; url={{ .RelPermalink }}">
+    {{ range .AllTranslations }}
+      <link rel="alternate" hreflang="{{ .Language.LanguageCode | default .Language.Lang }}" href="{{ .Permalink }}">
+    {{ end }}
+    <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
+    <script>
+      window.location.replace('{{ .RelPermalink }}');
+    </script>
+  </head>
+  <body>
+    <main>
+      <p>
+        {{ if strings.HasPrefix .Lang "en" }}
+          Redirecting to <a href="{{ .RelPermalink }}">{{ .RelPermalink }}</a>.
+        {{ else }}
+          正在跳转到 <a href="{{ .RelPermalink }}">{{ .RelPermalink }}</a>。
+        {{ end }}
+      </p>
+    </main>
+  </body>
+</html>

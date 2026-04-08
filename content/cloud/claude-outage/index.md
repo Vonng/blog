@@ -5,6 +5,8 @@ author: 冯若航
 summary: >
   北京时间 3 月 2 日晚 19:49，Claude 崩了。不是数据中心被炸了，而是被用户挤爆了。
 tags: [AI, 云故障, Claude]
+ai: true
+aliases: ["/ai/claude-outage/"]
 ---
 
 北京时间 3 月 2 日晚 19:49，Claude 崩了。

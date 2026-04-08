@@ -36,6 +36,12 @@ pageRef = "cloud"
 weight = 8
 
 [[main]]
+identifier = "ai"
+name = "AI"
+pageRef = "ai"
+weight = 9
+
+[[main]]
 name = "Column"
 weight = 10
 
@@ -65,15 +71,22 @@ weight = 10
 
 [[main]]
   parent = "Column"
+  identifier = "ai-column"
+  name = "AI Explorer"
+  pageRef = "ai"
+  weight = 15
+
+[[main]]
+  parent = "Column"
   name = "Travel Notes"
   pageRef = "trip"
-  weight = 15
+  weight = 16
 
 [[main]]
   parent = "Column"
   name = "Miscellaneous"
   pageRef = "misc"
-  weight = 16
+  weight = 17
 
 [[main]]
 name = "Portfolio"

@@ -6,6 +6,8 @@ origin: "https://www.pgevents.ca/events/pgconfdev2025/schedule/session/433-scali
 summary: >
   在PGConf.Dev 2025大会上，来自OpenAI的Bohan Zhang分享了OpenAI在PostgreSQL上的最佳实践。在OpenAI，他们使用一写多读的未分片架构，证明了PostgreSQL在海量读负载下也可以伸缩自如。
 tags: [PostgreSQL, OpenAI, 性能优化, 架构设计, 翻译]
+ai: true
+aliases: ["/ai/openai-pg/"]
 ---
 
 

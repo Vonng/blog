@@ -8,6 +8,8 @@ summary: >
   一个里程碑版本，也是我心目中的"完工软件"。它的真正主题是 “为Agent而生” —— 敢让 AI 放手干活，也敢在它干错时一键回滚到昨天。
 series: [Pigsty]
 tags: [Pigsty]
+ai: true
+aliases: ["/ai/v4.0/"]
 ---
 
 

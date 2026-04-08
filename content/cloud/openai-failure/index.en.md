@@ -6,6 +6,8 @@ author: |
 summary: >
   Even trillion-dollar unicorns can be a house of cards when operating outside their core expertise.
 tags: [Cloud-Outage]
+ai: true
+aliases: ["/en/ai/openai-failure/"]
 ---
 
 On December 11th, OpenAI experienced a global service outage affecting ChatGPT, API, Sora, Playground, and Labs. The outage lasted from 3:16 PM to 7:38 PM PT, spanning over four hours with significant impact.

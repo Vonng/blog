@@ -5,6 +5,8 @@ author: 冯若航
 summary: >
   通义千问（Qwen）技术负责人林俊旸（Justin Lin）在 X 上发布了一条简短的推文宣布离开 Qwen。
 tags: [阿里云, AI, Qwen]
+ai: true
+aliases: ["/ai/qwen-leave/"]
 ---
 
 

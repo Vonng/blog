@@ -6,6 +6,8 @@ origin: "https://www.pgevents.ca/events/pgconfdev2025/schedule/session/433-scali
 summary: >
   PostgreSQL 的标杆案例，他们使用1主50从的经典主从PG，支撑了8亿ChatGPT用户。附上老冯的评论与看法。
 tags: [PostgreSQL, OpenAI]
+ai: true
+aliases: ["/ai/openai-postgres/"]
 ---
 
 OpenAI 官方博客昨天发了一篇文章，专门讲他们如何把 PostgreSQL 伸缩到今天这个量级：

@@ -93,7 +93,8 @@
   </section>
 
   {{/* Article Grid */}}
-  {{ if gt .Pages 0 }}
+  {{ $showSectionPages := .Params.showSectionPages | default true }}
+  {{ if and $showSectionPages (gt .Pages 0) }}
     {{ $showLayoutSwitch := .Params.showLayoutSwitch | default false }}
     {{ $orderByWeight := .Params.orderByWeight | default (site.Params.list.orderByWeight | default false) }}
     {{ $groupByYear := .Params.groupByYear | default (site.Params.list.groupByYear | default false) }}

@@ -8,6 +8,8 @@ summary: >
   Pigsty v4.0 is a milestone release — what I'd call "Finished Software." The real theme: Built for AI Agents and enabling the DBA Agent. 
 series: [Pigsty]
 tags: [Pigsty]
+ai: true
+aliases: ["/en/ai/v4.0/"]
 ---
 
 **Pigsty v4.0 is here!** This is a milestone release.

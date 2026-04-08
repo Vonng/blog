@@ -5,6 +5,8 @@ author: vonng
 summary: >
   Claude went down globally on March 2, 2026. The cinematic theory blamed drone strikes on AWS in the Middle East, but the failure pattern points much more strongly to a front-end and authentication crunch triggered by explosive user growth.
 tags: [AI, Cloud Outage, Claude]
+ai: true
+aliases: ["/en/ai/claude-outage/"]
 ---
 
 Claude went down globally on March 2, 2026.

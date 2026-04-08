@@ -5,6 +5,8 @@ author: 冯若航
 summary: >
   AI时代的数据库格局已经尘埃落定。Databricks收购Neon，Snowflake收购CrunchyData，OpenAI传闻收购Supabase——资本市场对PostgreSQL标的密集出手，PG已成为AI时代的默认数据库。
 tags: [数据库, AI, PostgreSQL, 收购]
+ai: true
+aliases: ["/ai/db-for-ai/"]
 ---
 
 

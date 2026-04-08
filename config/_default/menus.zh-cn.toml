@@ -26,15 +26,20 @@ pageRef = "pg"
 weight = 6
 
 [[main]]
-name = "云计算"
-pageRef = "cloud"
+name = "数据库"
+pageRef = "db"
 weight = 7
 
 [[main]]
-name = "数据库"
-pageRef = "db"
+name = "云计算"
+pageRef = "cloud"
 weight = 8
 
+[[main]]
+identifier = "ai"
+name = "AI"
+pageRef = "ai"
+weight = 9
 
 [[main]]
 name = "专栏"
@@ -65,16 +70,23 @@ weight = 10
   weight = 14
 
 [[main]]
+parent = "专栏"
+identifier = "ai-column"
+name = "AI 探路者"
+pageRef = "ai"
+weight = 15
+
+[[main]]
   parent = "专栏"
   name = "行万里路"
   pageRef = "trip"
-  weight = 15
+  weight = 16
 
 [[main]]
   parent = "专栏"
   name = "闲言随笔"
   pageRef = "misc"
-  weight = 16
+  weight = 17
 
 
 [[main]]

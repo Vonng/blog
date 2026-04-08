@@ -6,6 +6,8 @@ author: |
 summary: >
   OpenClaw v2026.3.22 was published to npm without its web console frontend and related build assets. The bigger problem is not the packaging accident itself, but the complete absence of post-install verification in the release process.
 tags: [Open Source, AI, Agent]
+ai: true
+aliases: ["/en/ai/openclaw-drama/"]
 ---
 
 Last night OpenClaw released `v2026.3.22`.

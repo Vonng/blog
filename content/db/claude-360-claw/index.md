@@ -7,6 +7,8 @@ summary: >
   *.myclaw.360.cn 泛域名证书私钥；进一步的公开验证与本地复现还暴露出
   该证书吊销链路在 OCSP 返回结果上的一致性问题。
 tags: [360, AI, Agent, 安全, OpenClaw, TLS, OCSP]
+ai: true
+aliases: ["/ai/claude-360-claw/"]
 ---
 
 近日，安全社区发现：360 刚发布的 AI Agent 产品 **“360安全龙虾”**（基于 OpenClaw 的一键部署客户端），在其公开安装包中，包含了 `*.myclaw.360.cn` 泛域名证书的 **SSL 私钥文件**。

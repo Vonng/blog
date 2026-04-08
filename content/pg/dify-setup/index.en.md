@@ -6,6 +6,8 @@ author: |
 summary: >
   Dify is an open-source LLM app development platform. This article explains how to self-host Dify using Pigsty.
 tags: [PostgreSQL,Docker,PigstyApp]
+ai: true
+aliases: ["/en/ai/dify-setup/"]
 ---
 
 

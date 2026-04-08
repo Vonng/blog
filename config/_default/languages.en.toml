@@ -9,7 +9,7 @@ isoCode = "en"
 rtl = false
 dateFormat = "2006-01-02"
 logo = "img/logo.png"
-description = "Ruohang Feng, Vonng's Blog Site, about PostgreSQL, Database, and Cloud Exit"
+description = "Ruohang Feng, Vonng's Blog Site, about PostgreSQL, Database, Cloud Exit, and AI"
 copyright = "© 2025 Ruohang Feng"
 
 [params.author]

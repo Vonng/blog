@@ -3,6 +3,8 @@ title: In the AI Era, Software Starts at the Database
 summary: "Future software = Agent + Database. No middle tiers, just agents issuing CRUD. Database skills age well, and PostgreSQL is poised to be the agent-era default."
 date: 2025-04-27
 tags: [Database, PostgreSQL, AI]
+ai: true
+aliases: ["/en/ai/ai-agent-era/"]
 ---
 
 > [WeChat](https://mp.weixin.qq.com/s/LykR-ewCx9aO9e09T45taw)

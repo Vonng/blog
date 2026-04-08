@@ -5,6 +5,8 @@ author: 冯若航
 summary: >
   Dify 是一个生成式 AI 应用创新引擎，开源的 LLM 应用开发平台，本文介绍了如何使用 Pigsty 自建 Dify。
 tags: [PostgreSQL, Docker, PigstyApp]
+ai: true
+aliases: ["/ai/dify-setup/"]
 ---
 
 
@@ -238,4 +240,3 @@ infra_portal:                     # domain names and upstream servers
 当然如果要通过域名访问，你要把自己的域名 `dify.pigsty` 添加到域名服务器，或者简单地写入：`/etc/hosts` 或 `C:\Windows\System32\drivers\etc\hosts` 之类的静态域名解析文件。
 
 然后，你就可以从浏览器中，通过 http://dify.pigsty 访问 Dify IDE 了。
-

@@ -6,6 +6,8 @@ origin: "https://status.openai.com/incidents/ctrsv3lwd797"
 summary: >
   即使是万亿级独角兽，在非专业领域上，也照样是个草台班子。
 tags: [云故障, OpenAI]
+ai: true
+aliases: ["/ai/openai-failure/"]
 ---
 
 

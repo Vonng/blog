@@ -6,6 +6,8 @@ origin: "https://jkatz05.com/post/postgres/vectors-json-postgresql/"
 summary: >
   以向量为代表的功能将成为构建应用时的关键要素，正如历史上的JSON一样。而PostgreSQL再一次站在时代风口浪尖引领数据库潮流，在向量扩展的加持下稳拿AI时代的高速增长。
 tags: [PostgreSQL, 向量数据库, 扩展, 翻译]
+ai: true
+aliases: ["/ai/vector-json-pg/"]
 ---
 
 “**向量是新的JSON**”，这本身就是一种很有趣的说法。因为**向量**（Vector）是一种已经被深入研究过的**数学结构**，而 **JSON** 是一种**数据交换格式**。然而，在数据存储和检索的世界中，这两种数据表示方式都已经成为了各自领域的通用语言，成为（或即将成为）现代应用开发中必不可少的要素。如果按当下的趋势发展，**向量将会像 JSON 一样，成为构建应用时的关键要素**。

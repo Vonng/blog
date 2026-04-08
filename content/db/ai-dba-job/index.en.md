@@ -5,6 +5,7 @@ summary: |
   Who will be revolutionized first - OLTP or OLAP? Integration vs specialization, how to choose? Where will DBAs go in the AI era? Feng's views from the HOW 2025 conference roundtable, organized and published.
 author: vonng
 tags: [Database,AI,DBA]
+ai: true
 ---
 
 

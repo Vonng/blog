@@ -5,6 +5,8 @@ summary: |
   The database for the AI era has been settled. Capital markets are making intensive moves on PostgreSQL targets, with PG having become the default database for the AI era.
 author: vonng
 tags: [Database, AI, PostgreSQL]
+ai: true
+aliases: ["/en/ai/db-for-ai/"]
 ---
 
 
