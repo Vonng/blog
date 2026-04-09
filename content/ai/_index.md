@@ -13,6 +13,4 @@ sectionHero:
   description: "关于 AI、Agent、LLM、AI 与数据库的文章。"
 ---
 
-已勾选确认的文章现在已经迁入 `ai/` 专栏，`AI` 成为它们的正式地址；其余 AI 相关文章仍保留在原栏目下，但已经兼容 `AI` 前缀访问。
-
 {{< column_index param="ai" >}}

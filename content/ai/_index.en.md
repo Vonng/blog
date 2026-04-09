@@ -12,6 +12,4 @@ sectionHero:
   description: "Everything about AI, agents, LLMs, Vibe coding, and AI4DB & DB4AI"
 ---
 
-The checked posts have now been moved into the `ai/` column and use AI-prefixed URLs as their canonical addresses. The rest remain in their original sections, but are also reachable through `AI`-prefixed paths.
-
 {{< column_index param="ai" >}}
