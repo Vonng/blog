@@ -7,7 +7,7 @@ summary: >
 tags: [PostgreSQL, Ecosystem, Extensions]
 ---
 
-One GitHub issue turned into an extension sprint. Thirty-two new additions say a lot about where PostgreSQL is headed. With 504 extensions in the catalog, how far can this ecosystem go?
+A GitHub issue turned into an extension sprint. 32 new additions say a lot about where PostgreSQL is headed.
 
 
 --------
@@ -41,14 +41,14 @@ Honestly, feedback like that is the best part of doing open source.
 
 Once I was warmed up, I went after a few other long-standing problem cases.
 
-**plv8**: PostgreSQL bindings for the V8 engine. It had refused to build on EL10 for a while. This time, after carrying a few patches, I finally got it building reliably.
+[**`plv8`**](https://pigsty.io/ext/e/plv8): PostgreSQL bindings for the V8 engine. It had refused to build on EL10 for a while. This time, after carrying a few patches, I finally got it building reliably.
 
-**duckdb_fdw**: lets PostgreSQL read and write external DuckDB files. Previously it clashed with DuckDB's official `pg_duckdb` extension because both wanted the same shared library name, so I had to hide it temporarily. This time I turned `duckdb_fdw` into a sub-extension of `pg_duckdb`, so they share the same `libduckdb`. The conflict is gone, and both can coexist cleanly again.
+[**`duckdb_fdw`**](https://pigsty.io/ext/e/duckdb_fdw): lets PostgreSQL read and write external DuckDB files. Previously it clashed with DuckDB's official `pg_duckdb` extension because both wanted the same shared library name, so I had to hide it temporarily. This time I turned `duckdb_fdw` into a sub-extension of `pg_duckdb`, so they share the same `libduckdb`. The conflict is gone, and both can coexist cleanly again.
 
 At that point I figured: if the toolchain is already hot, why not finish the rest of the worthwhile extensions in the PostgreSQL ecosystem that had been sitting on the backlog?
 That turned into this release: **32 new additions, 22 updates, and the Pigsty extension repo officially crossing 500, landing at 504 total extensions**.
 
-> [Extension Catalog: pigsty.cc/ext](https://pigsty.cc/ext)
+> [Extension Catalog: pigsty.io/ext](https://pigsty.io/ext)
 
 | **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:-------------|--------:|---------:|-----------:|------------:|---------:|---------:|---------:|---------:|---------:|---------:|
@@ -66,7 +66,7 @@ Take Supabase, for example. It looks like a long list, but after you subtract th
 
 ## The New Extensions
 
-This batch is pretty hardcore. Broadly, it falls into four groups:
+This batch is heavy. Broadly, four groups:
 
 **Data-domain extensions**: make chemical molecules, RDF triples, BSON, Protobuf, recurring schedules, and other complex objects first-class database citizens.
 
@@ -76,9 +76,7 @@ This batch is pretty hardcore. Broadly, it falls into four groups:
 
 **Developer-experience extensions**: session variables, pseudo-autonomous transaction logging, natural-language time parsing.
 
-Taken together, they point to a broader trend: PostgreSQL's extension layer is pushing the database toward the space between an application platform and a data platform. A lot of things that used to require separate services can now be handled inside a single SQL transaction boundary.
-
-That is what extreme extensibility looks like in practice.
+Together they point to a broader trend: the extension layer is pushing PostgreSQL into the space between an application platform and a data platform. Things that used to require separate services increasingly fit inside a single SQL transaction boundary.
 
 
 --------
@@ -92,9 +90,11 @@ This release adds 32 new extensions. The summaries below were compiled with help
 
 ## 1. rdkit: Cheminformatics Inside PostgreSQL
 
-RDKit is the de facto standard open-source library in cheminformatics. It was started by Greg Landrum, originally at Novartis and now at T5 Informatics. Its PostgreSQL cartridge brings molecular structure storage, substructure search, and similarity computation directly into a relational database. For pharmaceutical companies and chemistry labs, that means millions of compounds can be queried with standard SQL instead of a separate toolchain.
+> [**`rdkit`**](https://pigsty.io/ext/e/rdkit) | [**GitHub**](https://github.com/rdkit/rdkit)
 
-The cartridge adds two core data types, **`mol`** for molecules and **`qmol`** for query molecules expressed as SMARTS patterns, plus `bfp` and `sfp` for bit and sparse fingerprints. The main operators are `@>` for substructure matching, `%` for Tanimoto similarity, and `<%>` as a distance operator. All of them can be accelerated with **GiST indexes**. Internally the index uses fingerprint-based filtering for a fast first pass and then falls back to exact matching. Key functions include `mol_from_smiles()`, `morganbv_fp()` for Morgan fingerprints, and `tanimoto_sml()`. GUCs such as `rdkit.tanimoto_threshold` control match sensitivity.
+RDKit is the de facto standard open-source cheminformatics library, started by Greg Landrum (originally at Novartis, now T5 Informatics). Its PostgreSQL cartridge brings molecular storage, substructure search, and similarity computation into a relational database — millions of compounds queryable with plain SQL.
+
+The cartridge adds **`mol`** (molecules) and **`qmol`** (SMARTS query patterns), plus `bfp`/`sfp` fingerprint types. Operators: `@>` for substructure matching, `%` for Tanimoto similarity, `<%>` as a distance operator — all GiST-indexable via fingerprint pre-filtering. Key functions: `mol_from_smiles()`, `morganbv_fp()`, `tanimoto_sml()`. GUCs like `rdkit.tanimoto_threshold` control match sensitivity.
 
 Using the ChEMBL dataset with 1.87 million compounds as an example:
 
@@ -113,18 +113,20 @@ ORDER BY morganbv_fp(mol_from_smiles('c1ccccc1C(=O)NC'::cstring)) <%> mfp2;
 SELECT * FROM rdk.mols WHERE m @> 'c1[o,s]ncn1'::qmol LIMIT 500;
 ```
 
-The obvious use cases are drug discovery workflows: **lead scaffold search** across million-scale compound libraries, **SAR analysis** via similarity search, **compound registration systems** that use fingerprints for duplicate detection, and **commercial catalog search** over datasets such as eMolecules with 6 million-plus compounds.
+Use cases center on drug discovery: **lead scaffold search** across million-scale libraries, **SAR analysis** via similarity, **compound registration** with fingerprint dedup, and **catalog search** over datasets like eMolecules (6M+ compounds).
 
-In practice, the important question is not whether RDKit can compute the answer, but whether it can be indexed and whether the planner can use those indexes effectively. You want to settle index strategy and query templates early. Otherwise it is easy to write filters that are correct but slow. On a 1.87 million-compound dataset, substructure queries range from roughly 88 ms to 1.9 s. With tuning, it can handle datasets at **6 million-plus compounds**. BSD licensed. Docker images such as `mcs07/postgres-rdkit` and conda packages are already available.
+Settle your index strategy and query templates early — filters that are correct but bypass indexes will be slow. On 1.87M compounds, substructure queries range from ~88 ms to ~1.9 s; with tuning, the cartridge handles **6M+ compounds**. BSD licensed. Docker images (`mcs07/postgres-rdkit`) and conda packages available.
 
 
 -------
 
 ## 2. provsql: Semiring Provenance for Query Results
 
-ProvSQL was developed by Pierre Senellart at ENS Paris and the INRIA Valda team, and published at VLDB 2018. It adds **(m-)semiring provenance** and uncertainty management to PostgreSQL. In plain terms, it tracks which base tuples each query result was derived from and lets you evaluate that provenance under different algebraic structures such as booleans, security levels, counts, or probabilities.
+> [**`provsql`**](https://pigsty.io/ext/e/provsql) | [**GitHub**](https://github.com/PierreSenellart/provsql)
 
-Under the hood it uses PostgreSQL hooks to intercept query execution and automatically adds a hidden `provsql` column to each table. That column stores a UUID pointing to a provenance circuit. The supported SQL subset is surprisingly broad: SELECT-FROM-WHERE, JOIN, GROUP BY, DISTINCT, UNION/EXCEPT, aggregates, HAVING, and on PG 14+ even provenance for INSERT, DELETE, and UPDATE. Core functions include `add_provenance()` to enable tracking, `provenance_evaluate()` to evaluate provenance, `formula()` to render boolean formulas, and `probability_evaluate()` to compute result probabilities. Probability evaluation supports multiple algorithms, from naive evaluation to Monte Carlo sampling to d-DNNF compilation with external solvers such as `d4` and `c2d`.
+ProvSQL, from Pierre Senellart (ENS Paris / INRIA Valda, VLDB 2018), adds **(m-)semiring provenance** and uncertainty management to PostgreSQL. It tracks which base tuples each query result was derived from, and lets you evaluate that provenance under different algebraic structures: booleans, security levels, counts, or probabilities.
+
+It hooks into query execution and adds a hidden `provsql` UUID column to each table, pointing into a provenance circuit. Supported SQL is broad: SELECT-FROM-WHERE, JOIN, GROUP BY, DISTINCT, UNION/EXCEPT, aggregates, HAVING, and on PG 14+ also INSERT/DELETE/UPDATE. Core functions: `add_provenance()`, `provenance_evaluate()`, `formula()`, `probability_evaluate()`. Probability evaluation ranges from naive to Monte Carlo to d-DNNF compilation via external solvers (`d4`, `c2d`).
 
 ```sql
 -- Security-level propagation: results inherit the highest source classification
@@ -141,18 +143,20 @@ SELECT *, formula(provenance(), 'witness_mapping') FROM s;
 SELECT city, probability_evaluate(provenance()) FROM result;
 ```
 
-ProvSQL fits four common scenarios: **security-label propagation**, where query results inherit the highest classification from source data; **probabilistic databases**, where base tuples come with confidence scores; **data lineage and audit**, where each output row must be traced back precisely and optionally exported as PROV-XML; and **credibility scoring**, for example in investigative workflows where witness statements have different reliability.
+Four typical scenarios: **security-label propagation** (results inherit the highest source classification), **probabilistic databases** (base tuples carry confidence scores), **data lineage and audit** (trace each output row back to sources, optionally export as PROV-XML), and **credibility scoring** (e.g. weighting witness statements in investigative workflows).
 
-The main value here is composability. Provenance is not emitted as a dead log string, but as an object you can keep computing on. It makes sense on critical paths such as core reports, feature pipelines, or compliance calculations, not as something you switch on indiscriminately for the whole database. Implemented in C/C++ with Boost. Provenance circuits live in shared memory. Supports PG 10-18. MIT licensed.
+The key property is composability: provenance is not a dead log string but a live object you can keep computing on. Worth enabling on critical paths — core reports, feature pipelines, compliance calculations — not as a blanket switch for the whole database. C/C++ with Boost; provenance circuits live in shared memory. PG 10–18. MIT.
 
 
 -------
 
 ## 3. onesparse: Billion-Edge Graph Algorithms in SQL
 
-OneSparse brings high-performance sparse linear algebra into PostgreSQL by wrapping SuiteSparse:GraphBLAS. Its developer, Michel Pelletier, is a member of the GraphBLAS C API committee, and the advisory team includes SuiteSparse author Timothy A. Davis. The core idea is simple: **represent graphs as sparse matrices**, then use matrix operations to implement BFS, PageRank, triangle centrality, and related graph algorithms, all from SQL.
+> [**`one_sparse`**](https://pigsty.io/ext/e/onesparse) | [**GitHub**](https://github.com/OneSparse/OneSparse)
 
-The extension introduces data types such as `matrix`, `vector`, `scalar`, `semiring`, and `monoid`, plus operators like `@` for matrix multiplication under the `plus_times` semiring. It ships graph algorithms from LAGraph, including BFS in both level and parent modes, PageRank, triangle centrality, degree centrality, and single-source shortest path. Internally it wraps GraphBLAS opaque handles inside PostgreSQL's Expanded Object Header. Small graphs under 1 GB can live in TOAST; larger ones can be stored as Large Objects or on the filesystem. There is also a built-in JIT compiler with **NVIDIA CUDA GPU acceleration**.
+OneSparse wraps SuiteSparse:GraphBLAS to bring high-performance sparse linear algebra into PostgreSQL. Developer Michel Pelletier sits on the GraphBLAS C API committee; advisor Timothy A. Davis is the SuiteSparse author. The premise: **represent graphs as sparse matrices** and run BFS, PageRank, triangle centrality, and friends via matrix operations — all from SQL.
+
+Types: `matrix`, `vector`, `scalar`, `semiring`, `monoid`. Operator `@` for matrix multiplication under `plus_times` semiring. Ships LAGraph algorithms: BFS (level and parent modes), PageRank, triangle centrality, degree centrality, SSSP. Wraps GraphBLAS opaque handles in PostgreSQL's Expanded Object Header; small graphs (<1 GB) in TOAST, larger ones as Large Objects or files. Built-in JIT with **NVIDIA CUDA GPU acceleration**.
 
 ```sql
 -- Load a graph from a Matrix Market file
@@ -168,18 +172,23 @@ SELECT reduce_cols(cast_to(graph, 'int32')) AS degree FROM karate;
 SELECT pagerank(graph) FROM karate;
 ```
 
-On the GAP benchmark, BFS over a **4.3 billion-edge** graph reached **70+ billion traversed edges per second** on a 48-core AMD EPYC server. Natural targets include fraud detection on transaction graphs, social-network analysis, and Graph RAG workloads. The caveat is the usual one: whether it is actually usable depends on whether your load and serialization formats fit the rest of your pipeline, and whether the operators behave well with the SQL planner and parallel execution. Best approach: get a small end-to-end path working first.
+On the GAP benchmark, BFS over a **4.3 billion-edge** graph reached **70 billion+ traversed edges per second** (48-core AMD EPYC). Targets: fraud detection on transaction graphs, social-network analysis, Graph RAG. The usual caveat applies: real usability depends on whether your load/serialization formats and the SQL planner play nicely end-to-end. Start small.
 
-OneSparse currently requires **PG 18 Beta or newer** and is still in alpha. Apache 2.0 licensed.
+Requires **PG 18 Beta or newer**; still alpha. Apache 2.0.
 
 
 -------
 
 ## 4. pg_datasentinel: Deep Observability for PostgreSQL in the Container Era
 
-`pg_datasentinel` was developed by Christophe Reveillere at Datasentinel and hit 1.0 on April 10, 2026. It adds four observability capabilities that fill real gaps in PostgreSQL's native views, especially for containerized deployments and operational alerting.
+> [**`pg_datasentinel`**](https://pigsty.io/ext/e/pg_datasentinel) | [**GitHub**](https://github.com/datasentinel/pg_datasentinel)
 
-First, **extended activity monitoring**: it augments `pg_stat_activity` with per-backend memory usage, live temp-file bytes, and on PG 18+ the current plan ID. Second, **container resource visibility**: it reports CPU quotas, memory limits, current memory usage, and CPU pressure for Docker, Kubernetes, OpenShift, or any cgroup-managed environment. Third, **transaction wraparound forecasting**: it tracks XID and MXID burn rate and exposes live ETAs to aggressive vacuum and wraparound limits. Fourth, **log capture views**: it parses vacuum, analyze, temp-file, and checkpoint events into a structured shared-memory ring buffer that can be queried from SQL in real time.
+`pg_datasentinel` (Christophe Reveillere / Datasentinel, 1.0 released April 10 2026) fills four gaps in PostgreSQL's native monitoring, especially for containerized deployments:
+
+1. **Extended activity monitoring** — augments `pg_stat_activity` with per-backend memory usage, live temp-file bytes, and on PG 18+ the current plan ID.
+2. **Container resource visibility** — CPU quotas, memory limits/usage, and CPU pressure for Docker / Kubernetes / OpenShift / any cgroup environment.
+3. **Transaction wraparound forecasting** — tracks XID and MXID burn rate, exposes live ETAs to aggressive vacuum and wraparound limits.
+4. **Log capture views** — parses vacuum, analyze, temp-file, and checkpoint events into a shared-memory ring buffer queryable from SQL.
 
 ```sql
 -- Per-backend memory usage (extended pg_stat_activity)
@@ -195,18 +204,20 @@ SELECT xid_current, xid_limit, xid_eta_aggressive_vacuum, xid_eta_wraparound
 FROM pg_datasentinel_wraparound;
 ```
 
-If you run PostgreSQL on Kubernetes, this gives you container-level visibility without shipping a separate monitoring agent. The **XID wraparound warning** is especially useful operationally. Everyone knows wraparound can take a database down hard; `pg_datasentinel` turns that from a firefight into something you can see coming. 3-Clause BSD. Requires PG 15+.
+For PostgreSQL on Kubernetes, this gives container-level visibility without a separate monitoring agent. The **XID wraparound warning** is the standout — wraparound can force-shutdown a database, and having a burn-rate ETA turns firefighting into forecasting. 3-Clause BSD. PG 15+.
 
 
 -------
 
 ## 5. datasketches: Approximate Analytics at Hundred-Million-Row Scale
 
-Apache DataSketches is an Apache Foundation project that started at Yahoo and Verizon Media. Its PostgreSQL extension brings a family of **approximate query data structures, or sketches**, into SQL. The problem it solves is straightforward: exact `COUNT(DISTINCT)`, quantiles, and heavy-hitter analysis get expensive fast on large datasets.
+> [**`datasketches`**](https://pigsty.io/ext/e/datasketches) | [**GitHub**](https://github.com/apache/datasketches-postgresql)
 
-The extension exposes seven sketch types: **`cpc_sketch`** for compressed probabilistic counting, **`hll_sketch`** for HyperLogLog, **`theta_sketch`** for distinct counting with set algebra, `aod_sketch` for tuple sketches, **`kll_float_sketch`** and **`kll_double_sketch`** for quantiles, `req_float_sketch` for high-accuracy tail quantiles, and `frequent_strings_sketch` for frequent items. Each comes with the usual build, union, and estimate API shape, such as `*_sketch_build()`, `*_sketch_union()`, and `*_sketch_get_estimate()`.
+Apache DataSketches (Apache Foundation, originally Yahoo/Verizon Media) brings **approximate query data structures** into SQL. When exact `COUNT(DISTINCT)`, quantiles, or heavy-hitter analysis gets too expensive on large datasets, sketches trade a few percent of accuracy for orders of magnitude in speed and memory.
 
-The important point is not that a function returns an estimate. It is that sketches are **serializable objects that can be merged**, which makes them perfect for cube-like approximate metrics. You can pre-aggregate sketches by dimension slice and then union them at query time for arbitrary distinct counts. In-memory footprint is **sublinear**, and the binary format is compatible across Java, C++, Python, Rust, and Go.
+Seven sketch types: **`cpc_sketch`** (compressed probabilistic counting), **`hll_sketch`** (HyperLogLog), **`theta_sketch`** (distinct counting with set algebra), `aod_sketch` (tuples), **`kll_float_sketch`**/**`kll_double_sketch`** (quantiles), `req_float_sketch` (tail quantiles), `frequent_strings_sketch` (frequent items). Standard API: `*_sketch_build()`, `*_sketch_union()`, `*_sketch_get_estimate()`.
+
+What makes sketches powerful is **mergeability**: pre-aggregate by dimension slice, union at query time for arbitrary distinct counts. Sublinear memory. Binary format compatible across Java, C++, Python, Rust, and Go.
 
 ```sql
 -- Approximate distinct count: about 6x faster than exact COUNT(DISTINCT)
@@ -231,16 +242,18 @@ FROM (
 ) bar GROUP BY flavor;
 ```
 
-Typical use cases: **real-time UV counting** without storing raw user IDs, **distribution analysis** such as p50/p95/p99 latency over billions of events, and **audience overlap** with Theta Sketch intersections like "saw ad A and visited site B". On a 100 million-row dataset, CPC distinct counting finishes in about 20 seconds versus about 2 minutes for exact `COUNT(DISTINCT)`, with single-digit percentage relative error.
+Use cases: **real-time UV counting** without storing user IDs, **latency distribution** (p50/p95/p99 over billions of events), **audience overlap** via Theta Sketch intersections ("saw ad A and visited site B"). On 100M rows, CPC distinct counting takes ~20 s vs ~2 min for exact `COUNT(DISTINCT)`, with single-digit percent relative error.
 
 
 -------
 
 ## 6. pghydro: Drainage-Network Analysis from Brazil's National Water Agency
 
-PgHydro was developed by Alexandre de Amorim Teixeira, a GIS specialist at Brazil's National Water and Sanitation Agency (ANA). Built on top of PostGIS, it is used as ANA's official tool for hydrology workflows across the country and was also presented at FOSS4G 2022.
+> [**`pghydro`**](https://pigsty.io/ext/e/pghydro) | [**GitHub**](https://github.com/pghydro/pghydro)
 
-Its capabilities cover the full hydrological network workflow: importing raw GIS data, validating topological consistency, computing flow direction, assigning **Otto Pfafstetter basin codes**, running upstream and downstream analysis, calculating catchment area, and computing Strahler stream order. The architecture is modular, with five sub-extensions: `pghydro` as the core, `pgh_raster` for DEM raster work, `pgh_hgm` for hydrogeomorphology, `pgh_consistency` for topological validation, and `pgh_output` for exports.
+PgHydro, by Alexandre de Amorim Teixeira (Brazil's National Water and Sanitation Agency, ANA), is ANA's official tool for hydrology workflows nationwide. Built on PostGIS, presented at FOSS4G 2022.
+
+It covers the full hydrological network workflow: GIS data import, topological consistency checks, flow direction, **Otto Pfafstetter basin coding**, upstream/downstream analysis, catchment area, and Strahler stream order. Five sub-extensions: `pghydro` (core), `pgh_raster` (DEM), `pgh_hgm` (hydrogeomorphology), `pgh_consistency` (validation), `pgh_output` (export).
 
 ```sql
 -- Import drainage-line data
@@ -261,16 +274,18 @@ SELECT pghydro.pghfn_CalculateDistanceToSea(0);
 SELECT pghydro.pghfn_calculatestrahlernumber();
 ```
 
-It fits national-scale hydrology databases, basin planning and coding, upstream/downstream pollution impact analysis, and drainage-network topology validation. The right mental model is not "one extension with some GIS functions" but "a domain-specific ETL and analysis pipeline inside the database." Raw terrain and river-network data live in PostGIS, the processing chain is automated in SQL, and recomputing after source updates is much more reliable than ad hoc scripts. There is also a QGIS plugin, PgHydroTools, for visual interaction. Written entirely in PL/pgSQL. GPLv2.
+Fits national-scale hydrology databases, basin planning, upstream/downstream pollution analysis, and drainage-network validation. Think of it less as "an extension with GIS functions" and more as a domain-specific ETL pipeline living inside the database — raw terrain and river data in PostGIS, processing automated in SQL, recomputation after source updates far more reliable than ad hoc scripts. QGIS plugin PgHydroTools available for visual interaction. Pure PL/pgSQL. GPLv2.
 
 
 -------
 
 ## 7. pg_stat_ch: PostgreSQL Query Telemetry, Exported to ClickHouse
 
-`pg_stat_ch` is an open-source extension from ClickHouse, released during its February 2025 "Postgres Week at ClickHouse" event. The author is Kaushik Iska. Unlike `pg_stat_statements`, which aggregates statistics inside PostgreSQL, `pg_stat_ch` streams **every raw query execution event** out to ClickHouse. Each event has 45 fields and a fixed size of 4.6 KB. The idea is to let ClickHouse handle p50/p95/p99, top-query analysis, and error analytics on the raw stream.
+> [**`pg_stat_ch`**](https://pigsty.io/ext/e/pg_stat_ch) | [**GitHub**](https://github.com/ClickHouse/pg_stat_ch)
 
-The pipeline looks like this: **PostgreSQL hooks in foreground backends -> shared-memory ring buffer -> background worker -> ClickHouse**. The 45 fields cover query timing, row counts, buffer usage, WAL usage, CPU time, JIT metrics on PG 15+, parallel-worker stats on PG 18+, client context such as app name and IP, and error capture including SQLSTATE. It uses ClickHouse's native binary protocol with **LZ4 compression** and statically links `clickhouse-cpp`. To avoid backpressure on PostgreSQL, it drops events when the queue overflows and increments a drop counter instead of slowing the database down, very much in the spirit of StatsD.
+`pg_stat_ch` comes from ClickHouse itself (February 2025 "Postgres Week at ClickHouse", author Kaushik Iska). Where `pg_stat_statements` aggregates inside PostgreSQL, `pg_stat_ch` streams **every raw query execution event** (45 fields, fixed 4.6 KB each) out to ClickHouse for p50/p95/p99 analysis, top-query ranking, and error analytics.
+
+Pipeline: **PG hooks → shared-memory ring buffer → background worker → ClickHouse** via native binary protocol with **LZ4 compression** (statically linked `clickhouse-cpp`). The 45 fields cover timing, row counts, buffers, WAL, CPU, JIT (PG 15+), parallel workers (PG 18+), client context, and SQLSTATE errors. On queue overflow it drops events and bumps a counter rather than applying backpressure — StatsD philosophy.
 
 ```sql
 -- PostgreSQL side: monitor extension health
@@ -288,14 +303,16 @@ GROUP BY query_id ORDER BY p99_ms DESC LIMIT 10;
 
 On the ClickHouse side it ships four materialized views: `events_recent_1h` for a rolling one-hour copy, `query_stats_5m` for five-minute buckets with TDigest quantiles, `db_app_user_1m` for database/app/user load attribution, and `errors_recent` for a rolling seven-day error window.
 
-The performance numbers are impressive: **about 5 microseconds p99 overhead per query**. In a pgbench run at 36.6K TPS with 32 clients, it captured 7.7 million events in 30 seconds with zero drops and **less than 1% TPS impact** versus baseline. The design minimizes lock contention in three layers: atomic overflow checks, non-blocking `LWLock` attempts, and per-backend local buffers flushed per transaction, cutting lock acquisitions by about 5x. This is a good division of labor: PostgreSQL as the transaction system, ClickHouse as the telemetry warehouse. Much more robust than trying to reconstruct the same thing from log files. Supports PG 16-18. Apache 2.0.
+Performance: **~5 μs p99 overhead per query**. pgbench at 36.6K TPS / 32 clients captured 7.7M events in 30 s with zero drops and **<1% TPS impact**. Lock contention minimized in three layers: atomic overflow checks → non-blocking LWLock → per-backend local buffers flushed per transaction (~5x fewer lock acquisitions). A clean division of labor: PostgreSQL for transactions, ClickHouse for telemetry. Far more robust than reconstructing the same picture from log files. PG 16–18. Apache 2.0.
 
 
 -------
 
 ## 8. pg_rrf: Rank Fusion for Hybrid Search in One Function
 
-`pg_rrf` was developed by the Japanese developer yuiseki and released in January 2026. It is written in Rust with `pgrx`. What it does is package **Reciprocal Rank Fusion (RRF)** as a native PostgreSQL function, which neatly solves the annoying engineering problem in hybrid retrieval where different retrievers output scores on incomparable scales. RRF avoids that by using rank only:
+> [**`pg_rrf`**](https://pigsty.io/ext/e/pg_rrf) | [**GitHub**](https://github.com/yuiseki/pg_rrf)
+
+`pg_rrf` (yuiseki, January 2026, Rust/pgrx) packages **Reciprocal Rank Fusion (RRF)** as a native PostgreSQL function. In hybrid retrieval, different retrievers produce scores on incomparable scales. RRF sidesteps that by using rank positions only:
 
 `score(d) = Σ 1 / (k + rank_i(d))`
 
@@ -317,16 +334,18 @@ FROM fused JOIN docs d USING (id)
 ORDER BY fused.score DESC LIMIT 20;
 ```
 
-That replaces 20-plus lines of `FULL OUTER JOIN`, `COALESCE`, and hand-rolled score math with a single function call. Good fit for **RAG hybrid retrieval**, product search, and any document-ranking pipeline that combines multiple signals. Keeping the fusion step in the database also helps when the fused result still needs to join business tables. Current version is `v0.0.3`. MIT licensed.
+Replaces 20+ lines of `FULL OUTER JOIN` / `COALESCE` / hand-rolled score math with one function call. Good fit for **RAG hybrid retrieval**, product search, and multi-signal document ranking. Keeping fusion in the database helps when the fused result still needs to join business tables. `v0.0.3`. MIT.
 
 
 -------
 
 ## 9. pg_kazsearch: Kazakh Full-Text Search, from Zero to One
 
-`pg_kazsearch` is the first PostgreSQL full-text-search extension for Kazakh. Kazakh is a highly agglutinative language. A single word such as `мектептерімізде` can encode plurality, possession, and locative suffixes, and you have to strip all of that to get back to the root `мектеп`. Existing PostgreSQL and Elasticsearch analyzers do not handle this well.
+> [**`pg_kazsearch`**](https://pigsty.io/ext/e/pg_kazsearch) | [**GitHub**](https://github.com/darkhanakh/pg-kazsearch)
 
-The extension is written in Rust with `pgrx`. It provides a `kazakh_cfg` text-search configuration and a `pg_kazsearch_dict` dictionary. Stemming uses **BFS suffix stripping**, combined with vowel-harmony checks and a **21,863-root POS-tagged lexicon** derived from Apertium-kaz to avoid over-stemming. Runtime behavior can be tuned with `ALTER TEXT SEARCH DICTIONARY`.
+`pg_kazsearch` is the first PostgreSQL full-text-search extension for Kazakh. Kazakh is highly agglutinative — a single word like `мектептерімізде` stacks plurality, possession, and locative suffixes atop the root `мектеп`. Existing PG and Elasticsearch analyzers cannot handle this.
+
+Written in Rust/pgrx. Provides `kazakh_cfg` text-search config and `pg_kazsearch_dict`. Stemming uses **BFS suffix stripping** with vowel-harmony validation and a **21,863-root POS-tagged lexicon** (Apertium-kaz) to prevent over-stemming. Tunable via `ALTER TEXT SEARCH DICTIONARY`.
 
 ```sql
 -- Stemming
@@ -340,14 +359,16 @@ ORDER BY ts_rank_cd(fts, websearch_to_tsquery('kazakh_cfg', 'президент�
 LIMIT 10;
 ```
 
-Benchmarks on 2,999 articles show **0.5 ms** query latency, about 2.8x faster than `pg_trgm`, with a 25% gain in nDCG@10 and a 23% gain in Recall@10. That makes it useful for Kazakh-language news and government-document search, e-commerce search, and multilingual systems that want a real search stack for low-resource languages instead of falling back to crude trigram matching.
+Benchmarks on 2,999 articles: **0.5 ms** query latency (2.8x faster than `pg_trgm`), +25% nDCG@10, +23% Recall@10. Useful for Kazakh news/government-document search, e-commerce, and multilingual systems that need proper search for low-resource languages instead of crude trigram fallback.
 
 
 -------
 
 ## 10. pg_liquid: Datalog-Style Graph Queries
 
-`pg_liquid` was developed by Michael Golfi. It brings Liquid/Datalog-style declarative graph queries into PostgreSQL. With `liquid.query(...)`, you can declare facts, define rules, and execute a terminal query in one call instead of standing up a separate graph database. Rules are local to a single `liquid.query` invocation. It supports fact assertions, **recursive transitive closure**, compound queries, and row normalizers.
+> [**`pg_liquid`**](https://pigsty.io/ext/e/pg_liquid) | [**GitHub**](https://github.com/michael-golfi/pg_liquid)
+
+`pg_liquid` (Michael Golfi) brings Liquid/Datalog-style declarative graph queries into PostgreSQL. `liquid.query(...)` lets you declare facts, define rules, and run a terminal query in one call — no separate graph database needed. Rules are scoped to a single invocation. Supports fact assertions, **recursive transitive closure**, compound queries, and row normalizers.
 
 ```sql
 SELECT target
@@ -364,15 +385,17 @@ $$) AS t(target text)
 ORDER BY 1;
 ```
 
-It can also combine ontology predicate definitions such as `DefPred` with compounds like `OntologyClaim@(...)`, letting compounds carry provenance or confidence while rules implement subclass closure and similar inference. Good fit for knowledge-graph queries, hierarchical traversal such as org charts and taxonomy trees, and rule-based business logic when you do not want a separate graph engine. Implemented entirely in PL/pgSQL with no external dependencies. Still early-stage.
+Also supports ontology predicates (`DefPred`) and typed compounds (`OntologyClaim@(...)`), where compounds carry provenance or confidence while rules handle subclass closure. Good fit for knowledge-graph queries, hierarchy traversal (org charts, taxonomy trees), and rule-based business logic. Pure PL/pgSQL, no external dependencies. Early-stage.
 
 -------
 
 ## 11. logical_ddl: Logical Replication, but for DDL Too
 
-PostgreSQL logical replication handles DML only. It does not replicate DDL such as `ALTER TABLE`, which is a real operational pain point because schema drift can break replication outright. `logical_ddl`, developed by Samed Yildirim, uses **event triggers** to intercept DDL, deparse it, store it in a table, and let logical replication carry it to subscribers, where equivalent SQL is generated and executed.
+> [**`logical_ddl`**](https://pigsty.io/ext/e/logical_ddl) | [**GitHub**](https://github.com/samedyildirim/logical_ddl)
 
-Supported DDL includes `ALTER TABLE RENAME TO`, `RENAME COLUMN`, `ADD COLUMN`, `ALTER COLUMN TYPE`, and `DROP COLUMN`. On the type side, built-in types, arrays, composite types, domains, and enums are usable, but replication of the **type definitions themselves** such as `CREATE TYPE` is out of scope. The `logical_ddl.publish_tablelist` table lets you control capture at per-table and per-command granularity.
+PostgreSQL logical replication handles DML only — no DDL. Schema drift breaks replication. `logical_ddl` (Samed Yildirim) fills that gap with **event triggers** that intercept DDL, deparse it into a replicated table, and generate equivalent SQL on the subscriber side.
+
+Supported: `ALTER TABLE RENAME TO`, `RENAME COLUMN`, `ADD COLUMN`, `ALTER COLUMN TYPE`, `DROP COLUMN`. Built-in types, arrays, composites, domains, and enums work; `CREATE TYPE` itself is out of scope. `logical_ddl.publish_tablelist` controls capture per table and per command type.
 
 ```sql
 -- Publisher-side config
@@ -387,14 +410,16 @@ INSERT INTO logical_ddl.publish_tablelist (relid, cmd_list)
 VALUES ('my_table'::regclass, ARRAY['ADD COLUMN', 'DROP COLUMN']);
 ```
 
-This is useful for automated DDL sync in logical-replication setups, zero-downtime migrations, and multi-datacenter PostgreSQL topologies. The nice thing about the design is that DDL propagation becomes an auditable data flow instead of a side process people have to remember to run. MIT licensed. Available on PGXN. Constraints, indexes, and defaults are not implemented yet.
+Useful for automated DDL sync in logical-replication setups, zero-downtime migrations, and multi-datacenter topologies. DDL propagation becomes an auditable data flow rather than a manual side process. MIT. PGXN available. Constraints, indexes, and defaults not yet supported.
 
 
 -------
 
 ## 12. rdf_fdw: Query the Semantic Web with SQL
 
-`rdf_fdw`, developed by Jim Jones, is a foreign data wrapper for RDF triple stores behind SPARQL endpoints. It is basically a bridge between the relational SQL world and the semantic-web / linked-data world. The extension adds an `rdfnode` type for RDF terms such as IRIs, language tags, and typed literals. It supports **SQL-to-SPARQL pushdown** for `WHERE`, `LIMIT`, `ORDER BY`, and `DISTINCT`, and can also send `INSERT`, `UPDATE`, and `DELETE` through SPARQL UPDATE endpoints.
+> [**`rdf_fdw`**](https://pigsty.io/ext/e/rdf_fdw) | [**GitHub**](https://github.com/jimjonesbr/rdf_fdw)
+
+`rdf_fdw` (Jim Jones) is a foreign data wrapper that bridges SQL and the semantic web by querying RDF triple stores via SPARQL endpoints. Adds an `rdfnode` type for IRIs, language tags, and typed literals. Supports **SQL-to-SPARQL pushdown** for WHERE/LIMIT/ORDER BY/DISTINCT, plus INSERT/UPDATE/DELETE via SPARQL UPDATE endpoints.
 
 ```sql
 -- Create a foreign server backed by DBpedia
@@ -414,16 +439,18 @@ CREATE FOREIGN TABLE dbpedia_query (
 SELECT * FROM dbpedia_query WHERE o = 'some_value' LIMIT 10;
 ```
 
-The `rdf_fdw_clone_table()` stored procedure can clone foreign-table data into local tables in batches. One implementation detail to watch: fetched data is loaded into memory before conversion, so large result sets need a careful look at pushdown effectiveness and memory usage. Good fit for linked-data integration with DBpedia or Wikidata and for using standard SQL and BI tooling on top of SPARQL endpoints. MIT licensed. Supports PG 9.5-18.
+`rdf_fdw_clone_table()` can batch-clone foreign data into local tables. Watch memory: fetched data is loaded before conversion, so large result sets need effective pushdown. Good for linked-data integration (DBpedia, Wikidata) and using SQL/BI tooling on SPARQL endpoints. MIT. PG 9.5–18.
 
 
 -------
 
 ## 13. pgbson: A More Exact Binary Document Type than JSONB
 
-`pgbson`, also known as `postgresbson`, was developed by buzzm. It adds a native **BSON** type to PostgreSQL. Compared with JSON, BSON has first-class `datetime`, `decimal128`, `int32`, `int64`, `binary`, and related types, which matters when data moves across distributed systems and you care about exact round-tripping. The promise here is **binary-perfect BSON in, BSON out**.
+> [**`pgbson`**](https://pigsty.io/ext/e/pgbson) | [**GitHub**](https://github.com/buzzm/postgresbson)
 
-The API has two access styles. The first is the fast one: **dotpath functions** such as `bson_get_string(bson, 'd.recordId')`, `bson_get_datetime()`, and `bson_get_decimal128()`, which walk the binary structure directly and allocate memory only at the leaf. The second is the JSON-like operator style using `->` and `->>`, but that constructs intermediate subdocuments at each step and gets expensive on deep paths. Combined with B-tree and HASH indexes, expression indexes on the function API can yield **10,000x** speedups over sequential scan in the right cases. Input also accepts EJSON.
+`pgbson` (buzzm, a.k.a. `postgresbson`) adds a native **BSON** type to PostgreSQL. BSON provides first-class `datetime`, `decimal128`, `int32`/`int64`, `binary`, etc. — types that matter for exact round-tripping across distributed systems. **Binary-perfect BSON in, BSON out.**
+
+Two access styles. Fast path: **dotpath functions** like `bson_get_string(bson, 'd.recordId')`, `bson_get_datetime()`, `bson_get_decimal128()` — walk the binary directly, allocate only at the leaf. Slow path: `->` / `->>` operators that construct intermediate subdocuments at each level. Expression indexes on the function API can yield **10,000x** speedups over sequential scan. Also accepts EJSON input.
 
 ```sql
 -- Insert an EJSON document with rich types
@@ -440,14 +467,16 @@ FROM data_collection WHERE bson_get_string(data, 'd.recordId') = 'R1';
 SELECT (data->'d'->'amt'->>'$numberDecimal')::numeric FROM data_collection;
 ```
 
-Typical use cases include cross-language event and document pipelines that need exact type preservation, financial data where `decimal128` matters, and digital-signature workflows that rely on BSON's deterministic binary representation. MIT licensed. Supports PG 14-18.
+Use cases: cross-language event pipelines needing exact type preservation, financial data (`decimal128`), and digital-signature workflows relying on deterministic binary representation. MIT. PG 14–18.
 
 
 -------
 
 ## 14. pg_when: Describe Time in Natural Language
 
-`pg_when`, developed by frectonz, parses natural-language time expressions into PostgreSQL `timestamptz` values or Unix epochs. The main function, `when_is(text)`, returns a normalized timestamp. The grammar is built around date + `at` + time + `in` + time zone. If no time zone is specified, it defaults to UTC.
+> [**`pg_when`**](https://pigsty.io/ext/e/pg_when) | [**GitHub**](https://github.com/frectonz/pg-when)
+
+`pg_when` (frectonz) parses natural-language time expressions into `timestamptz` or Unix epochs. `when_is(text)` returns a normalized timestamp; grammar: date + `at` + time + `in` + timezone, defaulting to UTC.
 
 ```sql
 SELECT when_is('5 days ago at this hour in Asia/Tokyo');
@@ -456,14 +485,16 @@ SELECT when_is('in 2 months at midnight in UTC-8');
 SELECT when_is('December 31, 2026 at evening');
 ```
 
-There are also `seconds_at()`, `millis_at()`, `micros_at()`, and `nanos_at()` for Unix timestamps at different precisions. This is a parser, not a scheduler. It fits operator- or support-facing tools that accept human time input, data backfill and repair scripts where natural language is easier than date math, and general time-zone normalization. MIT licensed.
+Also: `seconds_at()`, `millis_at()`, `micros_at()`, `nanos_at()` for Unix epochs at varying precision. A parser, not a scheduler. Fits operator-facing tools that accept human time input, backfill scripts where natural language beats date math, and timezone normalization. MIT.
 
 
 -------
 
 ## 15. pgmqtt: Push Database Changes Straight to MQTT
 
-`pgmqtt`, developed by RayElg in Rust, turns PostgreSQL row changes into MQTT messages and can also map inbound MQTT messages back into tables. This is not a general MQTT client. It is a way to wire **database CDC and a message broker** directly at the database layer, using SQL to define topic mappings and payload templates.
+> [**`pgmqtt`**](https://pigsty.io/ext/e/pgmqtt) | [**GitHub**](https://github.com/RayElg/pgmqtt)
+
+`pgmqtt` (RayElg, Rust) turns PostgreSQL row changes into MQTT messages and maps inbound MQTT messages back into tables. Not a general MQTT client — it wires **database CDC to a message broker** at the database layer, with SQL-defined topic mappings and payload templates.
 
 ```sql
 -- Outbound: table changes -> MQTT topic
@@ -478,14 +509,16 @@ SELECT pgmqtt_add_inbound_mapping(
 );
 ```
 
-This is an especially natural fit for IoT systems. You can push database state changes out to edge devices without an extra middleware layer, or ingest sensor readings from MQTT directly into tables. It also works for lightweight event-driven systems that want less application glue code. Elastic License 2.0.
+Natural fit for IoT: push database state changes to edge devices without middleware, or ingest sensor readings from MQTT directly into tables. Also works for lightweight event-driven systems that want less glue code. Elastic License 2.0.
 
 
 -------
 
 ## 16. pg_query_rewrite: Transparent SQL Substitution
 
-`pg_query_rewrite`, developed by Pierre Forstmann, uses the `ProcessUtility` hook to transparently replace SQL statements at runtime. Rules are stored in shared memory and matched by **exact string equality**, which means whitespace and case both matter.
+> [**`pg_query_rewrite`**](https://pigsty.io/ext/e/pg_query_rewrite) | [**GitHub**](https://github.com/pierreforstmann/pg_query_rewrite)
+
+`pg_query_rewrite` (Pierre Forstmann) uses the `ProcessUtility` hook to transparently replace SQL statements at runtime. Rules live in shared memory, matched by **exact string equality** — whitespace and case both matter.
 
 ```sql
 -- Add a rewrite rule
@@ -498,16 +531,18 @@ SELECT 10;  -- returns 11
 SELECT pgqr_rules();
 ```
 
-This is a sharp tool. It does not support parameterized statements, the maximum statement length is about 32 KB, matching is whitespace-, semicolon-, and case-sensitive, and rules are not persistent across restarts unless you reload them through startup SQL. Still, it is useful for transparently redirecting fixed SQL emitted by legacy systems during migrations, temporarily intercepting dangerous queries, and doing simple query A/B experiments. Default maximum is 10 rules. Supports PG 9.5-18.
+A sharp tool with sharp edges: no parameterized statements, max ~32 KB per statement, matching is whitespace/case/semicolon-sensitive, rules do not survive restarts unless reloaded via startup SQL. Still useful for redirecting fixed SQL from legacy systems during migrations, intercepting dangerous queries, and simple query A/B tests. Default max 10 rules. PG 9.5–18.
 
 
 -------
 
 ## 17. pgclone: Clone Database Objects with One Function Call
 
-`pgclone`, developed by valehdba and published as version 2.0.0 on PGXN, is refreshingly literal in its scope: instead of `pg_dump` and `pg_restore`, or shell scripts, it lets you call SQL functions to clone tables, schemas, databases, functions, and even roles and privileges from a source instance into a target environment.
+> [**`pgclone`**](https://pigsty.io/ext/e/pgclone) | [**GitHub**](https://github.com/valehdba/pgclone)
 
-It uses the COPY protocol for fast data movement, supports asynchronous operation and progress tracking, selective cloning with row and column filters, and DDL coverage for indexes, constraints, triggers, views, materialized views, sequences, and more. It also includes masking support and automatic discovery of sensitive columns.
+`pgclone` (valehdba, v2.0.0 on PGXN) lets you clone tables, schemas, databases, functions, roles, and privileges from a source instance via SQL functions — no `pg_dump`/`pg_restore` or shell scripts needed.
+
+Uses the COPY protocol for fast data movement. Supports async operation with progress tracking, row/column filters, DDL coverage (indexes, constraints, triggers, views, materialized views, sequences), masking, and automatic sensitive-column discovery.
 
 ```sql
 -- Clone a remote table into the local database, including data
@@ -522,14 +557,16 @@ SELECT pgclone_database(
 );
 ```
 
-Good fit for fast dev/test environment provisioning, sanitized production-to-staging clones, and cross-database migration and verification. Compared with `pg_dump`/`pg_restore`, the whole workflow stays inside the database boundary.
+Good for fast dev/test provisioning, sanitized prod-to-staging clones, and cross-database migration — the whole workflow stays inside the database.
 
 
 -------
 
 ## 18. pgproto: Native Protobuf Support
 
-`pgproto`, developed by Apaezmx, adds native Protocol Buffers (`proto3`) storage, query, mutation, and indexing support to PostgreSQL. The core mechanism is **runtime schema registration plus binary traversal**: once a `FileDescriptorSet` is registered in `pb_schemas`, columns of type `protobuf` can expose nested fields through path arrays. It adds `->` field navigation, `#>` nested-path access, `||` message merge, and functions such as `pb_set()`, `pb_insert()`, `pb_delete()`, and `pb_to_json()`.
+> [**`pgproto`**](https://pigsty.io/ext/e/pgproto) | [**GitHub**](https://github.com/Apaezmx/pgproto)
+
+`pgproto` (Apaezmx) adds native Protocol Buffers (`proto3`) storage, query, mutation, and indexing. Register a `FileDescriptorSet` in `pb_schemas`, then `protobuf` columns expose nested fields via path arrays. Operators: `->` field navigation, `#>` nested path, `||` message merge. Functions: `pb_set()`, `pb_insert()`, `pb_delete()`, `pb_to_json()`.
 
 ```sql
 -- Extract a nested field
@@ -542,14 +579,16 @@ UPDATE items SET data = pb_set(data, ARRAY['Outer', 'a'], '42');
 CREATE INDEX idx_pb ON items ((data #> '{Outer, inner, id}'::text[]));
 ```
 
-In a 100,000-row benchmark, `pgproto` used only **16 MB** of storage, versus 46 MB for JSONB and 25 MB for the native relational layout, while full-document retrieval took **5.9 ms** versus 33.1 ms for the relational model that needed multi-table joins. If you want to keep the Protobuf ecosystem for RPC and messaging while still making the data indexable and filterable inside the database, this is compelling. Strong fit for IoT data, microservice event stores, and gRPC-backed data layers. PostgreSQL License.
+100K-row benchmark: **16 MB** storage (vs 46 MB JSONB, 25 MB relational), **5.9 ms** full-document retrieval (vs 33.1 ms relational with multi-table joins). If you want to keep Protobuf for RPC/messaging while making the data indexable inside the database, this delivers. Fits IoT data, microservice event stores, gRPC data layers. PostgreSQL License.
 
 
 -------
 
 ## 19. pg_fsql: A Recursive SQL Template Engine Driven by JSONB
 
-`pg_fsql`, developed by yurc, turns "SQL template rendering + safe parameterized execution + recursive composition of template trees" into an extension. Templates are organized as dot-path trees. Child templates emit fragments or JSON, which are then injected into parent templates. It supports placeholder syntax such as `{d[key]}` with multiple escaping modes like `!r`, `!j`, and `!i`, optional SPI plan caching per template, and command types including `exec`, `ref`, `if`, `exec_tpl`, `map`, and `NULL`. Public APIs include `fsql.run` for execution, `fsql.render` for dry runs, plus `fsql.tree` and `fsql.explain`. No superuser required.
+> [**`pg_fsql`**](https://pigsty.io/ext/e/pg_fsql) | [**GitHub**](https://github.com/yurc/pg_fsql)
+
+`pg_fsql` (yurc) is a recursive SQL template engine driven by JSONB. Templates are organized as dot-path trees; child templates emit fragments or JSON injected into parents. Placeholder syntax: `{d[key]}` with escaping modes (`!r`, `!j`, `!i`). Command types: `exec`, `ref`, `if`, `exec_tpl`, `map`, `NULL`. Optional SPI plan caching per template. APIs: `fsql.run` (execute), `fsql.render` (dry run), `fsql.tree`, `fsql.explain`. No superuser needed.
 
 ```sql
 -- Define a template
@@ -564,30 +603,34 @@ SELECT fsql.run('user_count', '{"status":"active"}');
 SELECT fsql.render('user_count', '{"status":"active"}');
 ```
 
-This is not "functional SQL" so much as a hierarchical template system for generating SQL from JSON request bodies. It reduces conditional branching in the application layer and fits dynamic report generation, ETL orchestration, multi-tenant query generation, and centralized, permission-controlled SQL templates stored in tables.
+Not "functional SQL" — more a hierarchical template system for generating SQL from JSON request bodies. Reduces conditional branching in the application layer. Fits dynamic reports, ETL orchestration, multi-tenant query generation, and centralized SQL templates stored in tables.
 
 
 -------
 
 ## 20. pg_dispatch: Async SQL Dispatch on Top of pg_cron
 
-`pg_dispatch`, developed by Snehil Shah, is an asynchronous task dispatcher and a TLE-compatible alternative to `pg_later`, built on top of `pg_cron`. The main functions are `pgdispatch.fire(command)` for immediate asynchronous execution and `pgdispatch.snooze(command, delay)` for delayed execution. The core use case is to get heavy work out of the foreground transaction. If an `AFTER INSERT` trigger wants to do something expensive, push it into the background instead.
+> [**`pg_dispatch`**](https://pigsty.io/ext/e/pg_dispatch) | [**GitHub**](https://github.com/Snehil-Shah/pg_dispatch)
+
+`pg_dispatch` (Snehil Shah) is an async SQL dispatcher built on `pg_cron`, TLE-compatible alternative to `pg_later`. `pgdispatch.fire(command)` for immediate async execution, `pgdispatch.snooze(command, delay)` for delayed. The point: get heavy work out of the foreground transaction — if an AFTER INSERT trigger needs something expensive, push it to the background.
 
 ```sql
 SELECT pgdispatch.fire('SELECT pg_sleep(40);');
 SELECT pgdispatch.snooze('SELECT pg_sleep(20);', '20 seconds');
 ```
 
-Because it is pure PL/pgSQL and TLE-compatible, it can run in sandboxed environments like Supabase and AWS RDS. Requires `pg_cron >= 1.5`. Good fit for asynchronous side effects inside triggers and functions such as notifications, background rollups, or audit writes that should not hold up the main transaction.
+Pure PL/pgSQL, runs in sandboxed environments (Supabase, AWS RDS). Requires `pg_cron >= 1.5`. Good for async side effects in triggers/functions — notifications, background rollups, audit writes that should not block the main transaction.
 
 
 -------
 
 ## 21. block_copy_command: Security Hardening by Intercepting COPY
 
-`block_copy_command`, developed by rustwizard in Rust with `pgrx`, intercepts the `COPY` command cluster-wide via the `ProcessUtility` hook. The goal is simple: in compliance-sensitive environments such as PCI-DSS or HIPAA, block data exfiltration through `COPY TO` and block unauthorized bulk imports through `COPY FROM`.
+> [**`block_copy_command`**](https://pigsty.io/ext/e/block_copy_command) | [**GitHub**](https://github.com/rustwizard/block_copy_command)
 
-It supports role-based blocklists, directional control via `block_to` and `block_from`, and always blocks `COPY ... TO PROGRAM` for all users by default. The `blocked_roles` list can even include superusers. Audit logging is built in.
+`block_copy_command` (rustwizard, Rust/pgrx) intercepts `COPY` cluster-wide via `ProcessUtility` hook. In PCI-DSS or HIPAA environments: block exfiltration via `COPY TO`, block unauthorized imports via `COPY FROM`.
+
+Role-based blocklists, directional control (`block_to` / `block_from`), `COPY ... TO PROGRAM` blocked for everyone by default. Blocklist can include superusers. Built-in audit logging.
 
 ```sql
 COPY my_table TO STDOUT;     -- non-superuser: ERROR
@@ -600,14 +643,16 @@ WHERE ts > now() - interval '1 hour'
 ORDER BY ts DESC;
 ```
 
-This is useful in hosted or multi-tenant environments where you do not want tenants exporting data with `COPY`, in enterprise compliance setups where centralized interception and audit matter, and in ETL environments where import and export privileges need to be tightly separated. The same author also maintains a broader command-firewall extension called `pg_command_fw`.
+Useful in multi-tenant or hosted environments, enterprise compliance setups needing centralized audit, and ETL environments where import/export privileges must be tightly separated. The author also maintains a broader command-firewall extension, `pg_command_fw`.
 
 
 -------
 
 ## 22. pg_isok: Soft Alerts for Data Quality
 
-`pg_isok`, or Isok, was developed by Karl O. Pinc and has been used in production for more than a decade. It is not a traditional constraint or trigger. Think of it as **soft-trigger data integrity management**: you write a SQL query that finds suspicious data patterns, and Isok records, classifies, and defers those findings, reporting only newly introduced problems or changes to previously accepted data. That way you are not forced to re-review the same historical anomalies forever.
+> [**`pg_isok`**](https://pigsty.io/ext/e/pg_isok) | [**Repo**](https://codeberg.org/kop/pg_isok)
+
+`pg_isok` (Karl O. Pinc, in production for 10+ years) is **soft-trigger data integrity management**. You write SQL queries that find suspicious data patterns; Isok records, classifies, and defers findings, surfacing only newly introduced problems or changes to previously accepted data — no re-reviewing the same historical anomalies.
 
 ```sql
 -- A typical Isok rule: customers with no orders
@@ -622,13 +667,15 @@ INSERT INTO isok.isok_queries (query) VALUES (
 );
 ```
 
-Unlike hard constraints that reject writes, Isok allows questionable data to exist while keeping it under ongoing review. The workflow is organized around tables like `isok_queries` and `isok_results`, plus the `run_isok_queries` function to execute checks. Results can be accepted row by row or deferred. This fits messy-data cleanup pipelines, or business rules that are too fuzzy to encode as hard constraints and still need human judgment. If you can write SQL, you can stand up a workable "alerts + dedupe + deferral" system.
+Unlike hard constraints, Isok lets questionable data exist while keeping it under review. Workflow: `isok_queries` and `isok_results` tables, `run_isok_queries` to execute checks; results accepted or deferred row by row. Fits messy-data cleanup and business rules too fuzzy for hard constraints that still need human judgment.
 
 -------
 
 ## 23. external_file: Oracle BFILE Semantics for PostgreSQL
 
-`external_file`, maintained by Gilles Darold of HexaCluster Corp, provides the equivalent of Oracle's BFILE feature. It introduces an `EFILE` type that references server-side external files through a directory alias plus file name, and supports reading with `readEfile()`, writing with `writeEfile()`, and copying with `copyEfile()`. Internally it leans on the `lo_*` large-object machinery and uses directory-alias and privilege tables to control the accessible paths.
+> [**`external_file`**](https://pigsty.io/ext/e/external_file) | [**GitHub**](https://github.com/darold/external_file)
+
+`external_file` (Gilles Darold, HexaCluster Corp) provides Oracle BFILE equivalence. `EFILE` type references server-side files via directory alias + filename; `readEfile()`, `writeEfile()`, `copyEfile()` for I/O. Built on `lo_*` large-object machinery with directory-alias and privilege tables controlling access.
 
 ```sql
 -- Register a directory
@@ -641,14 +688,16 @@ SELECT readEfile(efilename('MY_DIR', 'document.pdf'));
 SELECT writeEfile(my_bytea_column, efilename('MY_DIR', 'output.bin')) FROM my_table;
 ```
 
-This was built with Ora2Pg migrations in mind, but it is also useful for legacy systems that keep files outside the database and metadata inside it, or for database-driven batch import and export of external large objects.
+Built for Ora2Pg migrations, but also useful for legacy systems with files outside the database and metadata inside, or database-driven batch import/export of external large objects.
 
 
 -------
 
 ## 24. byteamagic: Detect File Types in `bytea`
 
-`byteamagic`, developed by Nico Mandery, wraps `libmagic`, the same library behind the Unix `file` command. It exposes two functions: `byteamagic_mime(bytea)` returns the MIME type, and `byteamagic_text(bytea)` returns a human-readable description.
+> [**`pg_byteamagic`**](https://pigsty.io/ext/e/byteamagic) | [**GitHub**](https://github.com/nmandery/pg_byteamagic)
+
+`byteamagic` (Nico Mandery) wraps `libmagic` (the library behind Unix `file`). Two functions: `byteamagic_mime(bytea)` returns MIME type, `byteamagic_text(bytea)` returns human-readable description.
 
 ```sql
 SELECT byteamagic_mime(file_data) FROM file_storage WHERE id = 1;
@@ -658,14 +707,16 @@ SELECT byteamagic_mime(data) AS mime_type, count(*)
 FROM uploads GROUP BY 1 ORDER BY 2 DESC;
 ```
 
-If you have to store BLOBs in tables, this gives you a way to identify what they actually are from SQL: PDF, PNG, or something else. Good fit for upload governance, real-content-type detection, and cleanup of historical BLOB data.
+If you store BLOBs in tables, this identifies what they actually are from SQL. Good for upload governance, real content-type detection, and historical BLOB cleanup.
 
 
 -------
 
 ## 25. pg_text_semver: Native Semantic Versioning
 
-`pg_text_semver`, developed by Rowan Rodrik van der Molen, implements a Semantic Versioning 2.0.0-compliant version type as a `text` domain. Unlike the C-based `semver` extension, it does **not** inherit a 32-bit integer limit for version components.
+> [**`pg_text_semver`**](https://pigsty.io/ext/e/pg_text_semver) | [**GitHub**](https://github.com/bigsmoke/pg_text_semver)
+
+`pg_text_semver` (Rowan Rodrik van der Molen) implements SemVer 2.0.0 as a `text` domain. Unlike the C-based `semver` extension, version components have **no 32-bit integer limit**.
 
 ```sql
 SELECT '0.9.3'::semver < '0.11.2'::semver;  -- true (semantic, not lexical, comparison)
@@ -675,14 +726,16 @@ SELECT semver_parsed('1.0.0-a.1+commit-y');
 -- (1, 0, 0, 'a.1', 'commit-y')
 ```
 
-It is pure SQL, supports min/max aggregation, and can validate PGXN version ranges. Useful for extension and package version management, dependency checks, and version-distribution analytics.
+Pure SQL. Supports min/max aggregation and PGXN version-range validation. Useful for extension/package version management, dependency checks, and version analytics.
 
 
 -------
 
 ## 26. parray_gin: Substring Matching Indexes for `text[]`
 
-`parray_gin`, developed by Eugene Seliverstov, adds **partial-match** operators for `text[]` columns backed by GIN indexes. Native PostgreSQL array GIN operators only support exact element matching. `parray_gin` adds `@@>` for substring containment, using trigram decomposition under the hood by reusing `pg_trgm`, with recheck for false positives.
+> [**`parray_gin`**](https://pigsty.io/ext/e/parray_gin) | [**GitHub**](https://github.com/theirix/parray_gin)
+
+`parray_gin` (Eugene Seliverstov) adds **partial-match** operators for `text[]` columns backed by GIN indexes. Native GIN array operators only do exact element matching; `parray_gin` adds `@@>` for substring containment, using `pg_trgm` trigram decomposition with recheck for false positives.
 
 ```sql
 CREATE INDEX ON test_table USING gin (val parray_gin_ops);
@@ -694,14 +747,16 @@ SELECT * FROM test_table WHERE val @@> array['post'];
 SELECT * FROM test_table WHERE val @@> array['%ar%'];
 ```
 
-Useful for tag autocomplete and fuzzy tag search, or any case where you want array partial matching to hit an index instead of scanning in application code. Supports PG 9.1-18.
+Useful for tag autocomplete, fuzzy tag search, or any case where array partial matching should hit an index. PG 9.1–18.
 
 
 -------
 
 ## 27. pg_slug_gen: Cryptographically Secure Timestamp Slugs
 
-`pg_slug_gen`, developed by Fernando Olle, generates short unique identifiers that combine timestamp information with cryptographically secure randomness. It uses `pg_strong_random()` to choose characters. Length determines timestamp precision: 10 characters for seconds, 13 for milliseconds, 16 for microseconds by default, and 19 for nanoseconds.
+> [**`pg_slug_gen`**](https://pigsty.io/ext/e/pg_slug_gen) | [**PGXN**](https://pgxn.org/dist/pg_slug_gen/)
+
+`pg_slug_gen` (Fernando Olle) generates short unique identifiers combining timestamp info with cryptographically secure randomness (`pg_strong_random()`). Length sets precision: 10 chars (seconds), 13 (milliseconds), 16 (microseconds, default), 19 (nanoseconds).
 
 ```sql
 SELECT gen_random_slug();      -- microsecond precision
@@ -709,14 +764,16 @@ SELECT gen_random_slug(10);    -- second precision
 SELECT gen_random_slug(19);    -- nanosecond precision
 ```
 
-This is not a "slugify the title" URL helper. It is a short, hard-to-guess public identifier. Good fit for invite codes, short links, and public resource IDs where exposing auto-increment sequences is a bad idea, or for distributed writes where timestamp-based uniqueness windows are desirable. Much less predictable than `base62(sequence)`.
+Not a "slugify the title" URL helper — a short, hard-to-guess public identifier. Good for invite codes, short links, and public resource IDs where exposing auto-increment sequences is undesirable. Much less predictable than `base62(sequence)`.
 
 
 -------
 
 ## 28. pglock: Lightweight Distributed Locks Inside PostgreSQL
 
-`pglock`, developed by fraruiz, implements a lightweight distributed-lock service on top of PostgreSQL itself. It is built around a lock table and functions such as `pglock.lock`, `pglock.unlock`, `pglock.ttl`, and `pglock.set_serializable`. Locks have TTL expiration, defaulting to 5 minutes, and can optionally be cleaned up on a schedule with `pg_cron` calling `pglock.ttl()`. The recommended isolation level is `SERIALIZABLE` to preserve correct concurrency semantics.
+> [**`pglock`**](https://pigsty.io/ext/e/pglock) | [**GitHub**](https://github.com/fraruiz/pglock)
+
+`pglock` (fraruiz) implements lightweight distributed locks on top of PostgreSQL. Lock table + functions: `pglock.lock`, `pglock.unlock`, `pglock.ttl`, `pglock.set_serializable`. TTL expiration (default 5 min), optionally reaped by `pg_cron`. Recommended isolation: `SERIALIZABLE`.
 
 ```sql
 -- Acquire a lock
@@ -729,32 +786,39 @@ SELECT pglock.unlock('b3d8a762-3a0e-495b-b6a1-dc8609839f7b', 'users');
 SELECT pglock.ttl();
 ```
 
-No Redis, ZooKeeper, or other external system required. This fits multi-instance apps competing for jobs or resources, leader election, idempotent consumers, and duplicate-work prevention. The nice part is that lock behavior and business writes stay inside the same database ecosystem. Pure SQL implementation.
+No Redis or ZooKeeper needed. Fits multi-instance job competition, leader election, idempotent consumers, duplicate-work prevention — lock behavior and business writes stay in the same database. Pure SQL.
 
 
 -------
 
-## 29. regresql: Language-Agnostic SQL Regression Testing
+## 29. pg_regresql: Portable Planner Statistics for EXPLAIN Costing
 
-`regresql`, from boringSQL's Radim Marek, is a **standalone CLI tool**, written in Go, not a PostgreSQL extension. It scans `*.sql` files in a project, executes them, stores output snapshots and `EXPLAIN` plan baselines, and compares future runs against those baselines. It can emit JUnit, GitHub Actions, and pgTAP-style output.
+> [**`pg_regresql`**](https://pigsty.io/ext/e/pg_regresql) | [**GitHub**](https://github.com/boringsql/regresql)
+
+`pg_regresql` (Radim Marek / boringSQL) solves a specific plan-regression-testing problem: the planner reads real file sizes from disk and scales row counts accordingly, so injected production-sized statistics in `pg_class` get overridden by your tiny CI dataset's physical size.
+
+The extension hooks `get_relation_info_hook` to force the planner to trust `pg_class` values (`relpages`, `reltuples`, `relallvisible`) instead of physical file sizes. This makes cost estimates portable — compare `EXPLAIN` output across schema versions, reproduce production plans on a laptop, keep plan baselines stable in CI.
 
 ```sql
--- Mark query names with comments in .sql files
--- name: get-user-by-id
-SELECT * FROM users WHERE id = :id;
+-- Load it for the current session
+LOAD 'pg_regresql';
 
--- name: list-active-users
-SELECT * FROM users WHERE active = true;
+-- Or enable it for a test database
+ALTER DATABASE test_db SET session_preload_libraries = 'pg_regresql';
+
+-- EXPLAIN now uses catalog statistics instead of physical file size
+EXPLAIN SELECT * FROM orders WHERE status = 'pending';
 ```
 
-The workflow is built around commands like `discover`, `add`, `update`, `test`, `baseline`, and `snapshot`. This is useful for SQL snapshot testing, catching result drift after migrations or refactors, and recording `EXPLAIN` baselines in CI so you notice plan flips and performance regressions early.
-
+Only affects planner costing, not execution or `EXPLAIN ANALYZE` actuals. For test/CI only, not production. BSD 2-Clause.
 
 -------
 
 ## 30. pgcalendar: Infinite Projection for Recurring Schedules
 
-`pgcalendar`, developed by h4kbas, implements a full recurring-event calendar system. Events are logical entities, schedules define recurrence rules such as daily, weekly, monthly, or yearly patterns, projections generate concrete occurrences, and exceptions let you cancel or reschedule individual instances.
+> [**`pgcalendar`**](https://pigsty.io/ext/e/pgcalendar) | [**GitHub**](https://github.com/h4kbas/pgcalendar)
+
+`pgcalendar` (h4kbas) implements a full recurring-event calendar. Events are logical entities; schedules define recurrence (daily/weekly/monthly/yearly); projections generate concrete occurrences; exceptions cancel or reschedule individual instances.
 
 ```sql
 -- Create an event and a schedule
@@ -780,14 +844,16 @@ SELECT pgcalendar.transition_event_schedule(
 );
 ```
 
-The interesting pieces here, infinite projection, schedule transitions over time, and exception handling, show up constantly in rostering, meetings, and billing cycles, but become a mess when every application reimplements them badly. Putting the logic into the database makes permissions, audit, and consistency much easier to centralize.
+Infinite projection, schedule transitions, and exception handling show up everywhere — rostering, meetings, billing — and become a mess when every application reimplements them. Putting this in the database centralizes permissions, audit, and consistency.
 
 
 -------
 
 ## 31. pg_variables: Session Variables Faster than Temp Tables
 
-`pg_variables`, developed by Postgres Professional, adds session-level variables for scalars, arrays, and records. Variables are grouped into named packages. Transaction semantics are configurable: by default they do **not** roll back with `BEGIN` / `ROLLBACK`, but when `is_transactional = true` they do honor rollback and savepoints.
+> [**`pg_variables`**](https://pigsty.io/ext/e/pg_variables) | [**GitHub**](https://github.com/postgrespro/pg_variables)
+
+`pg_variables` (Postgres Professional) adds session-level variables — scalars, arrays, and records — grouped into named packages. By default variables do **not** roll back; with `is_transactional = true` they honor ROLLBACK and SAVEPOINTs.
 
 ```sql
 SELECT pgv_set('vars', 'int1', 101);
@@ -807,14 +873,16 @@ SELECT pgv_insert('pack', 'employees', row(1, 'Alice'::text));
 SELECT * FROM pgv_select('pack', 'employees');
 ```
 
-This is a high-performance alternative to temp tables that avoids catalog bloat. Useful for storing intermediate state in complex stored procedures and batch jobs, for connection-level caching, and as infrastructure for other extensions. `pgelog`, for example, uses it to cache `dblink` connections.
+A high-performance temp-table alternative that avoids catalog bloat. Useful for intermediate state in stored procedures/batch jobs, connection-level caching, and as infrastructure for other extensions (`pgelog` uses it to cache `dblink` connections).
 
 
 -------
 
 ## 32. pgelog: Logs That Survive Rollback
 
-`pgelog`, developed by anfiau, uses `dblink` to simulate **pseudo-autonomous transactions**, so log records survive even when the calling transaction rolls back. That solves a classic problem in PL/pgSQL exception handling: if you write logs inside an `EXCEPTION` block and the outer transaction aborts, the logs normally disappear with it. `pg_variables` is used to cache `dblink` connections per session.
+> [**`pgelog`**](https://pigsty.io/ext/e/pgelog) | [**GitHub**](https://github.com/anfiau/pgelog)
+
+`pgelog` (anfiau) uses `dblink` to simulate **pseudo-autonomous transactions** — log records survive even when the calling transaction rolls back. Solves a classic PL/pgSQL problem: logs written inside an EXCEPTION block disappear when the outer transaction aborts. Uses `pg_variables` to cache `dblink` connections per session.
 
 ```sql
 -- The log survives even if the outer transaction rolls back
@@ -833,21 +901,21 @@ SELECT log_stamp, log_info FROM pgelog_logs ORDER BY log_stamp DESC LIMIT 5;
 SELECT pgelog_set_param('pgelog_ttl_minutes', '2880');
 ```
 
-If you care about audit trails on critical paths, losing the diagnostic trail because the business transaction rolled back is exactly what you do not want. It also makes staged batch or migration scripts easier to introspect than relying on `RAISE NOTICE`. Depends on both `dblink` and `pg_variables`. Because each session may open an extra connection, `max_connections` still deserves a look.
+On critical paths, losing the diagnostic trail because the business transaction rolled back is exactly the wrong outcome. Also makes staged batch/migration scripts easier to introspect than `RAISE NOTICE`. Depends on `dblink` and `pg_variables`; each session may open an extra connection, so mind `max_connections`.
 
 
 -------
 
 ## Conclusion
 
-Taken together, these 32 additions trace out a few clear lines.
+These 32 additions trace a few clear lines.
 
-**First, PostgreSQL is internalizing more and more "professional objects."** BSON, Protobuf, RDF, recurring schedules, molecules, graph and ontology relationships: these extensions push the database beyond plain structured tables and toward a queryable store for complex domain objects. You still get the usual database infrastructure: permissions, audit, backup, and transaction semantics, with less data movement and fewer sidecar services.
+**More "professional objects" inside the database.** BSON, Protobuf, RDF, recurring schedules, molecules, graphs — the database becomes a queryable store for complex domain objects, with permissions, audit, backup, and transactions already built in. Less data movement, fewer sidecar services.
 
-**Second, query capabilities are turning into composable APIs.** RRF fusion, recursive SQL template trees, query rewriting, sparse algebra, sketch-based approximations: the shared goal is to express more complicated logic with fewer, more stable SQL building blocks, while keeping it auditable, reproducible, and optimizable.
+**Query capabilities as composable APIs.** RRF fusion, recursive SQL templates, query rewriting, sparse algebra, sketch approximations — more logic expressed in fewer, more stable SQL building blocks, auditable and optimizable.
 
-**Third, the extension layer is taking on more platform and operations work.** From real-time telemetry export in `pg_stat_ch`, to container resource visibility in `pg_datasentinel`, to security hooks like `block_copy_command`, to soft-alert governance in `pg_isok`, more and more capabilities that used to live outside the database are being pulled inward.
+**The extension layer absorbing platform and ops work.** Telemetry export (`pg_stat_ch`), container visibility (`pg_datasentinel`), security hooks (`block_copy_command`), soft-alert governance (`pg_isok`) — capabilities that used to live outside the database are being pulled in.
 
-**Fourth, PostgreSQL is going deeper into vertical domains.** From cheminformatics with `rdkit`, to hydrology with `pghydro`, to Kazakh-language NLP with `pg_kazsearch`, PostgreSQL keeps turning into the computational substrate for more specialized fields.
+**Deeper vertical penetration.** Cheminformatics (`rdkit`), hydrology (`pghydro`), Kazakh NLP (`pg_kazsearch`) — PostgreSQL keeps becoming the computational substrate for more specialized fields.
 
-That is how the PostgreSQL extension ecosystem works. There are cathedrals, like Apache Foundation projects, and there are bazaars, like personal weekend builds. Together they are building the most advanced open-source database ecosystem in the world.
+Cathedrals (Apache Foundation projects) and bazaars (weekend builds) side by side, building the most advanced open-source database ecosystem in the world.
