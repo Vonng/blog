@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>504 个扩展，PostgreSQL 生态的天花板在哪？</title>
+<style>
+  /* Reset & Base */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #1a1a1a;
+    background: #f5f5f5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .wrapper {
+    max-width: 420px;
+    margin: 0 auto;
+    background: #fff;
+    min-height: 100vh;
+  }
+
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, #336791 0%, #1a3a5c 50%, #0d1f33 100%);
+    padding: 48px 24px 40px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60%;
+    right: -30%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    left: -20%;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(100,180,255,0.06) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    color: rgba(255,255,255,0.9);
+  }
+
+  .hero h1 {
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: -0.5px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero h1 .num {
+    font-size: 52px;
+    font-weight: 900;
+    display: block;
+    background: linear-gradient(to right, #88c0ff, #e0f0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+
+  .hero-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    margin-top: 16px;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-meta {
+    margin-top: 20px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Content Area */
+  .content {
+    padding: 28px 20px 48px;
+  }
+
+  /* Paragraphs */
+  .content p {
+    margin-bottom: 18px;
+    font-size: 15px;
+    line-height: 1.85;
+    color: #333;
+    text-align: justify;
+  }
+
+  /* Headings */
+  .content h2 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 40px 0 18px;
+    padding-left: 14px;
+    border-left: 4px solid #336791;
+    line-height: 1.4;
+  }
+
+  .content h2:first-child {
+    margin-top: 0;
+  }
+
+  .content h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #222;
+    margin: 28px 0 12px;
+    line-height: 1.4;
+  }
+
+  /* Extension Title Styling */
+  .ext-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 44px 0 16px;
+    padding: 16px 18px;
+    background: linear-gradient(135deg, #f0f7ff 0%, #f8fbff 100%);
+    border-radius: 10px;
+    border-left: 4px solid #336791;
+    line-height: 1.4;
+  }
+
+  .ext-title .ext-num {
+    display: inline-block;
+    background: #336791;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+  }
+
+  .ext-title .ext-name {
+    color: #336791;
+    font-weight: 800;
+  }
+
+  /* Inline code */
+  .content code {
+    background: #f3f4f6;
+    color: #d63384;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+    word-break: break-all;
+  }
+
+  /* Code Blocks */
+  .code-block {
+    margin: 16px -20px;
+    background: #1e1e2e;
+    border-radius: 0;
+    position: relative;
+  }
+
+  .code-block-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    background: #181825;
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .code-block-label .dots {
+    display: flex;
+    gap: 5px;
+  }
+
+  .code-block-label .dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  .code-block-label .dots span:nth-child(1) { background: #f38ba8; }
+  .code-block-label .dots span:nth-child(2) { background: #f9e2af; }
+  .code-block-label .dots span:nth-child(3) { background: #a6e3a1; }
+
+  .code-block pre {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 14px 16px 16px;
+    margin: 0;
+    scrollbar-width: none;
+  }
+
+  .code-block pre::-webkit-scrollbar {
+    display: none;
+  }
+
+  .code-block pre code {
+    background: none;
+    color: #cdd6f4;
+    padding: 0;
+    border-radius: 0;
+    font-size: 12.5px;
+    line-height: 1.65;
+    font-family: "SF Mono", "Fira Code", Menlo, Consolas, monospace;
+    white-space: pre;
+    word-break: normal;
+  }
+
+  /* Syntax highlighting (Catppuccin Mocha) */
+  .code-block .kw { color: #cba6f7; }  /* keywords */
+  .code-block .fn { color: #89b4fa; }  /* functions */
+  .code-block .str { color: #a6e3a1; } /* strings */
+  .code-block .cm { color: #6c7086; font-style: italic; } /* comments */
+  .code-block .num { color: #fab387; } /* numbers */
+  .code-block .op { color: #89dceb; }  /* operators */
+  .code-block .type { color: #f9e2af; } /* types */
+
+  /* Swipe hint */
+  .swipe-hint {
+    font-size: 10px;
+    color: rgba(255,255,255,0.25);
+    padding: 0 16px 8px;
+    text-align: right;
+  }
+
+  /* Strong/Bold */
+  .content strong {
+    color: #1a1a1a;
+    font-weight: 700;
+  }
+
+  /* Emphasis */
+  .content em {
+    font-style: italic;
+    color: #555;
+  }
+
+  /* Links */
+  .content a {
+    color: #336791;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(51,103,145,0.25);
+    transition: border-color 0.2s;
+  }
+
+  /* Dividers */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #e0e0e0 20%, #e0e0e0 80%, transparent);
+    margin: 36px 0;
+  }
+
+  /* Blockquote / Highlight Box */
+  .highlight-box {
+    background: linear-gradient(135deg, #fef9f0 0%, #fefcf8 100%);
+    border-left: 3px solid #f0b429;
+    border-radius: 0 8px 8px 0;
+    padding: 14px 16px;
+    margin: 16px 0;
+    font-size: 14px;
+    line-height: 1.75;
+    color: #5a4a2a;
+  }
+
+  /* Info Box */
+  .info-box {
+    background: linear-gradient(135deg, #f0f7ff 0%, #f8fbff 100%);
+    border-left: 3px solid #336791;
+    border-radius: 0 8px 8px 0;
+    padding: 14px 16px;
+    margin: 16px 0;
+    font-size: 14px;
+    line-height: 1.75;
+    color: #2a4a6a;
+  }
+
+  /* Table */
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 16px -20px;
+    padding: 0 20px;
+  }
+
+  .table-wrap table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .table-wrap th {
+    background: #336791;
+    color: #fff;
+    font-weight: 600;
+    padding: 8px 10px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .table-wrap th:first-child {
+    text-align: left;
+  }
+
+  .table-wrap td {
+    padding: 7px 10px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .table-wrap td:first-child {
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .table-wrap tr:nth-child(even) {
+    background: #f9fafb;
+  }
+
+  /* Category tags */
+  .cat-group {
+    margin: 18px 0;
+  }
+
+  .cat-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 14px;
+    gap: 10px;
+  }
+
+  .cat-tag {
+    flex-shrink: 0;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 12px;
+    color: #fff;
+    margin-top: 2px;
+  }
+
+  .cat-tag.domain { background: #7c3aed; }
+  .cat-tag.query { background: #0891b2; }
+  .cat-tag.prod { background: #059669; }
+  .cat-tag.dx { background: #d97706; }
+
+  .cat-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+  }
+
+  /* Metric highlight */
+  .metric {
+    display: inline-block;
+    background: linear-gradient(135deg, #336791, #4a8abf);
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin: 0 1px;
+  }
+
+  /* Summary Section */
+  .summary-section {
+    background: linear-gradient(135deg, #f0f7ff 0%, #e8f0fe 100%);
+    border-radius: 12px;
+    padding: 22px 18px;
+    margin: 24px 0;
+  }
+
+  .summary-section h3 {
+    font-size: 16px;
+    color: #1a3a5c;
+    margin-bottom: 14px;
+  }
+
+  .trend-item {
+    margin-bottom: 14px;
+    padding-left: 20px;
+    position: relative;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #444;
+  }
+
+  .trend-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    background: #336791;
+  }
+
+  .trend-item strong {
+    color: #1a3a5c;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 28px 20px 40px;
+    text-align: center;
+    background: #f8f9fa;
+    border-top: 1px solid #eee;
+  }
+
+  .footer-logo {
+    font-size: 22px;
+    font-weight: 800;
+    color: #336791;
+    margin-bottom: 6px;
+  }
+
+  .footer-text {
+    font-size: 12px;
+    color: #999;
+    line-height: 1.6;
+  }
+
+  /* Image placeholder */
+  .img-placeholder {
+    margin: 16px 0;
+    background: #f5f5f5;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    color: #999;
+    font-size: 13px;
+  }
+
+  /* Utility */
+  .text-sm { font-size: 14px; }
+  .text-muted { color: #888; }
+  .mt-0 { margin-top: 0; }
+  .mb-0 { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-badge">PostgreSQL Extensions</div>
+  <h1>
+    <span class="num">504</span>
+    个扩展，PostgreSQL 生态的天花板在哪？
+  </h1>
+  <div class="hero-sub">一个 Issue，引发扩展马拉松；33 个新扩展告诉你，PostgreSQL 正在变成什么</div>
+  <div class="hero-meta">冯若航 &nbsp;|&nbsp; 2026-04-13</div>
+</div>
+
+<!-- Content -->
+<div class="content">
+
+<!-- 从一个化学扩展说起 -->
+<h2>从一个化学扩展说起</h2>
+
+<p>两天前，一位用户在 GitHub 上给我提了个 <a href="https://github.com/pgsty/pigsty/issues/738">Issue</a>：他在用 RDKit —— 化学信息学领域的事实标准库，能在 PostgreSQL 里做分子结构存储、子结构检索和相似性计算。但他发现 PGDG 官方打包的版本缺了 InChI 功能，折腾了半天，加上编译参数后总算跑通了，但还是希望 Pigsty 能原生支持。</p>
+
+<p>但 RDKit 确实是个硬骨头。大约两年前我就试过一次，想把它收进 Pigsty 的扩展仓库，从 Debian 移植到 EL。结果依赖太多了：Boost、Eigen、RapidJSON、Cairo，外加 InChI、Avalon 等可选模块，每个都有自己的编译开关和版本兼容问题。折腾了一会没跑通，就先搁置了。</p>
+
+<p>但这次不一样。<strong>有 Coding Agent 了。</strong></p>
+
+<p>用 Codex / Claude Code 处理这类"构建系统考古"任务简直是降维打击 —— 以前需要反复试错的东西，现在基本一轮对话就能理清。这次发布，把 PGDG 打包到 InChI 支持的问题也一并解决了，本质上就是编译时多开一个标志位再带上 InChI 源码。一把过，用户也很满意。</p>
+
+<p>说实话，看到这种反馈挺开心的。做开源最爽的就是这个时候。</p>
+
+<div class="divider"></div>
+
+<!-- 趁热打铁 -->
+<h2>趁热打铁</h2>
+
+<p>既然手热了，我就顺便把积压已久的几个"历史疑难杂症"也一起清了。<strong>plv8</strong> —— V8 引擎的 PostgreSQL 绑定，之前在 EL10 上死活编译不过，这次打了好几个补丁终于搞定了稳定构建。<strong>duckdb_fdw</strong> —— 允许从 PG 内部读写外部 DuckDB 文件，但之前会和 DuckDB 官方的 pg_duckdb 扩展争抢共享库，我只能忍痛临时隐藏。这次把 duckdb_fdw 挂成了 pg_duckdb 的子扩展，共享同一份 libduckdb，冲突问题优雅解决，俩扩展又能并存了。</p>
+
+<p>然后我就想：既然工具链都热好了，不如把 PostgreSQL 生态里剩下那些值得收录但一直没啃的扩展也一并搞进来吧。于是就有了这次的大更新 —— 新增 32 个扩展，更新 22 个，<strong>Pigsty 扩展仓库总数正式突破 500，达到 504 个</strong>。</p>
+
+<p>基本上，Pigsty 在这个赛道上已经做到了前无古人，后无来者了。</p>
+
+<!-- Table -->
+<div class="table-wrap">
+<table>
+<tr><th>Category</th><th>All</th><th>PGDG</th><th>PIGSTY</th><th>CONTRIB</th><th>MISS</th><th>PG18</th><th>PG17</th><th>PG16</th><th>PG15</th><th>PG14</th></tr>
+<tr><td><strong>ALL</strong></td><td>504</td><td>155</td><td>332</td><td>71</td><td>0</td><td>481</td><td>488</td><td>479</td><td>473</td><td>457</td></tr>
+<tr><td><strong>EL</strong></td><td>499</td><td>150</td><td>332</td><td>71</td><td>5</td><td>472</td><td>482</td><td>474</td><td>468</td><td>452</td></tr>
+<tr><td><strong>Debian</strong></td><td>489</td><td>107</td><td>311</td><td>71</td><td>15</td><td>466</td><td>474</td><td>464</td><td>458</td><td>442</td></tr>
+</table>
+</div>
+
+<p class="text-sm text-muted">这是啥概念？一般 RDS PG 上也就是几十个扩展。比如最近火爆的 Supabase 上，去掉 PG 自带的 35 个 Contrib 扩展，实际上也就提供了 30 个不到的第三方 PG 扩展。</p>
+
+<div class="divider"></div>
+
+<!-- 新扩展 -->
+<h2>新扩展</h2>
+
+<p>这批新增扩展的画风相当硬核。按大类可以分四组：</p>
+
+<div class="cat-group">
+  <div class="cat-item">
+    <span class="cat-tag domain">数据域</span>
+    <span class="cat-desc">把化学分子、RDF 三元组、BSON、Protobuf、循环日程这些"复杂对象"变成数据库一等公民</span>
+  </div>
+  <div class="cat-item">
+    <span class="cat-tag query">查询力</span>
+    <span class="cat-desc">稀疏线代与图算法、Datalog 图查询、全文检索、混合排序融合、递归 SQL 模板引擎</span>
+  </div>
+  <div class="cat-item">
+    <span class="cat-tag prod">生产线</span>
+    <span class="cat-desc">深度可观测性、查询遥测导出、CDC 到 MQTT、COPY 命令拦截、DDL 逻辑复制补全、轻量分布式锁</span>
+  </div>
+  <div class="cat-item">
+    <span class="cat-tag dx">开发者</span>
+    <span class="cat-desc">会话变量、伪自治事务日志、自然语言时间解析，以及压轴的 —— 在数据库里跑 TypeScript</span>
+  </div>
+</div>
+
+<p>这些扩展共同指向一个趋势：PostgreSQL 的扩展层正在把数据库推向应用与数据平台的中间地带。很多原本需要独立服务才能解决的问题，现在可以在一条 SQL 事务边界内搞定。</p>
+
+<p class="text-sm text-muted">以下逐一介绍这 33 个新成员。（以下为 Claude/Codex/Gemini 三剑客研究报告汇总）</p>
+
+<div class="divider"></div>
+
+<!-- 1. rdkit -->
+<div class="ext-title"><span class="ext-num">1</span> <span class="ext-name">rdkit</span> —— 把化学信息学搬进 PostgreSQL</div>
+
+<p>RDKit 是开源化学信息学领域的事实标准库，由 Greg Landrum 发起（最初在 Novartis，现属 T5 Informatics），其 PostgreSQL cartridge 模块将分子结构存储、子结构检索和相似性计算直接带入关系数据库。对于制药公司和化学研究机构而言，这意味着可以用标准 SQL 查询数百万化合物，无需借助外部工具链。</p>
+
+<p>RDKit cartridge 引入了两组核心数据类型：<strong><code>mol</code></strong>（分子）和 <strong><code>qmol</code></strong>（查询分子，即 SMARTS 模式），以及 <code>bfp</code>/<code>sfp</code>（位指纹/稀疏指纹）。操作符方面，<code>@&gt;</code> 用于子结构匹配，<code>%</code> 用于 Tanimoto 相似性判断，<code>&lt;%&gt;</code> 作为距离运算符。所有这些操作都可以通过 <strong>GiST 索引</strong>加速——索引内部基于指纹筛选进行快速预过滤，再做精确匹配。</p>
+
+<p>以 ChEMBL 数据库（187 万化合物）为例：</p>
+
+<div class="code-block">
+  <div class="code-block-label">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <span>SQL</span>
+  </div>
+  <pre><code><span class="cm">-- 子结构检索：查找含有特定骨架的分子</span>
+<span class="kw">SELECT</span> <span class="fn">count</span>(*) <span class="kw">FROM</span> rdk.mols <span class="kw">WHERE</span> m <span class="op">@&gt;</span> <span class="str">'c1cccc2c1nncc2'</span>;
+<span class="cm">-- 结果：461 个匹配，耗时约 108ms</span>
+
+<span class="cm">-- Tanimoto 相似性搜索：基于 Morgan 指纹</span>
+<span class="kw">SELECT</span> molregno,
+  <span class="fn">tanimoto_sml</span>(<span class="fn">morganbv_fp</span>(
+    <span class="fn">mol_from_smiles</span>(<span class="str">'c1ccccc1C(=O)NC'</span>::cstring)), mfp2
+  ) <span class="kw">AS</span> similarity
+<span class="kw">FROM</span> rdk.fps <span class="kw">JOIN</span> rdk.mols <span class="kw">USING</span> (molregno)
+<span class="kw">WHERE</span> <span class="fn">morganbv_fp</span>(<span class="fn">mol_from_smiles</span>(
+  <span class="str">'c1ccccc1C(=O)NC'</span>::cstring)) <span class="op">%</span> mfp2
+<span class="kw">ORDER BY</span> <span class="fn">morganbv_fp</span>(<span class="fn">mol_from_smiles</span>(
+  <span class="str">'c1ccccc1C(=O)NC'</span>::cstring)) <span class="op">&lt;%&gt;</span> mfp2;
+
+<span class="cm">-- SMARTS 模式匹配</span>
+<span class="kw">SELECT</span> * <span class="kw">FROM</span> rdk.mols
+<span class="kw">WHERE</span> m <span class="op">@&gt;</span> <span class="str">'c1[o,s]ncn1'</span>::qmol <span class="kw">LIMIT</span> <span class="num">500</span>;</code></pre>
+  <div class="swipe-hint">&larr; 左右滑动查看 &rarr;</div>
+</div>
+
+<p>应用场景集中在药物研发的几个关键环节：<strong>先导化合物骨架搜索</strong>（在百万级化合物库中做子结构匹配）、<strong>SAR 分析</strong>（通过相似性检索寻找活性类似物）、<strong>化合物注册系统</strong>（利用结构指纹做重复性检查）、以及<strong>商业化合物目录检索</strong>（如 eMolecules 的 600 万+化合物数据集）。</p>
+
+<div class="info-box">工程落地时需要注意：cartridge 的重点不在"能不能算"，而在"能不能被索引、能不能被 planner 正确利用"。在 187 万化合物上子结构检索耗时在 88ms 至 1900ms 之间，经过优化可处理 <strong>600 万+化合物</strong>规模的数据集。BSD 许可证。</div>
+
+<div class="divider"></div>
+
+<!-- 2. provsql -->
+<div class="ext-title"><span class="ext-num">2</span> <span class="ext-name">provsql</span> —— 半环溯源让查询结果"可追溯"</div>
+
+<p>ProvSQL 由巴黎高等师范学校教授 Pierre Senellart 和 INRIA Valda 团队开发，发表于 VLDB 2018。它为 PostgreSQL 添加 <strong>(m-)半环溯源（semiring provenance）</strong>和不确定性管理——能自动追踪每个查询结果是由哪些基础元组"推导"出来的，并支持在不同代数结构（布尔、安全等级、计数、概率）下对溯源信息进行求值。</p>
+
+<div class="code-block">
+  <div class="code-block-label">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <span>SQL</span>
+  </div>
+  <pre><code><span class="cm">-- 安全等级传播：结果自动继承最高安全级别</span>
+<span class="kw">SELECT</span> <span class="fn">create_provenance_mapping</span>(
+  <span class="str">'personnel_level'</span>, <span class="str">'personnel'</span>, <span class="str">'classification'</span>);
+
+<span class="kw">SELECT</span> p1.city,
+  <span class="fn">security</span>(<span class="fn">provenance</span>(), <span class="str">'personnel_level'</span>)
+<span class="kw">FROM</span> personnel p1, personnel p2
+<span class="kw">WHERE</span> p1.city = p2.city <span class="kw">AND</span> p1.id &lt; p2.id
+<span class="kw">GROUP BY</span> p1.city <span class="kw">ORDER BY</span> p1.city;
+
+<span class="cm">-- 布尔公式溯源</span>
+<span class="kw">SELECT</span> *, <span class="fn">formula</span>(<span class="fn">provenance</span>(), <span class="str">'witness_mapping'</span>) <span class="kw">FROM</span> s;
+
+<span class="cm">-- 概率查询</span>
+<span class="kw">SELECT</span> city, <span class="fn">probability_evaluate</span>(<span class="fn">provenance</span>())
+<span class="kw">FROM</span> result;</code></pre>
+  <div class="swipe-hint">&larr; 左右滑动查看 &rarr;</div>
+</div>
+
+<p>适合四类场景：<strong>安全分级传播</strong>——查询结果自动继承源数据中最高的安全等级；<strong>概率数据库</strong>——计算查询结果的正确概率；<strong>数据血缘审计</strong>——精确追踪每个结果行的来源；<strong>可信度评估</strong>——例如在刑事调查中通过溯源加权评估可靠性。</p>
+
+<div class="info-box">ProvSQL 的价值体现在"可组合性"：溯源结果不是字符串日志，而是可以继续被函数处理的对象。建议用于关键链路，而非全库无差别开启。C/C++ 实现，支持 PG 10–18，MIT 许可证。</div>
+
+<div class="divider"></div>
+
+<!-- 3. onesparse -->
+<div class="ext-title"><span class="ext-num">3</span> <span class="ext-name">onesparse</span> —— 在 SQL 里跑十亿边级图算法</div>
+
+<p>OneSparse 将高性能稀疏线性代数带入 PostgreSQL，封装了 SuiteSparse:GraphBLAS 库。核心理念是<strong>将图表示为稀疏矩阵</strong>，用矩阵乘法实现 BFS、PageRank、三角中心性等图算法——而这一切都在 SQL 中完成。</p>
+
+<div class="code-block">
+  <div class="code-block-label">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <span>SQL</span>
+  </div>
+  <pre><code><span class="cm">-- 从 Matrix Market 文件加载图</span>
+<span class="kw">SELECT</span> <span class="fn">mmread</span>(<span class="str">'/home/postgres/onesparse/demo/karate.mtx'</span>) <span class="kw">AS</span> graph;
+
+<span class="cm">-- BFS 遍历</span>
+<span class="kw">SELECT</span> (<span class="fn">bfs</span>(graph, <span class="num">1</span>)).level <span class="kw">FROM</span> karate;
+
+<span class="cm">-- 度中心性（矩阵列归约）</span>
+<span class="kw">SELECT</span> <span class="fn">reduce_cols</span>(<span class="fn">cast_to</span>(graph, <span class="str">'int32'</span>)) <span class="kw">AS</span> degree <span class="kw">FROM</span> karate;
+
+<span class="cm">-- PageRank</span>
+<span class="kw">SELECT</span> <span class="fn">pagerank</span>(graph) <span class="kw">FROM</span> karate;</code></pre>
+  <div class="swipe-hint">&larr; 左右滑动查看 &rarr;</div>
+</div>
+
+<p>在 GAP benchmark 上，对 <span class="metric">43 亿边</span> 的图执行 BFS 时达到 <span class="metric">70 亿+边/秒</span> 的吞吐量（48 核 AMD EPYC 服务器）。应用场景包括金融反欺诈（交易网络环检测）、社交网络分析、Graph RAG 等。</p>
+
+<div class="highlight-box">OneSparse 要求 <strong>PG 18 Beta 或更新版本</strong>，当前处于 Alpha 阶段。Apache 2.0 许可证。</div>
+
+<div class="divider"></div>
+
+<!-- 4. pg_datasentinel -->
+<div class="ext-title"><span class="ext-num">4</span> <span class="ext-name">pg_datasentinel</span> —— 容器时代的深度可观测性</div>
+
+<p>pg_datasentinel 于 2026 年 4 月 10 日发布 1.0 版本，为 PostgreSQL 添加了四大可观测性能力：<strong>扩展活动监控</strong>（每个后端进程的内存使用量和临时文件）、<strong>容器资源可见性</strong>（CPU/内存配额与压力）、<strong>事务回卷风险预估</strong>（XID/MXID 实时 ETA）、<strong>日志捕获视图</strong>（vacuum/checkpoint 结构化查询）。</p>
+
+<div class="code-block">
+  <div class="code-block-label">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <span>SQL</span>
+  </div>
+  <pre><code><span class="cm">-- 查看每个后端的内存使用</span>
+<span class="kw">SELECT</span> pid, usename, query,
+  backend_memory_bytes, temp_file_bytes
+<span class="kw">FROM</span> pg_datasentinel_activity;
+
+<span class="cm">-- 容器资源监控</span>
+<span class="kw">SELECT</span> cpu_quota, memory_limit,
+  memory_usage, cpu_pressure
+<span class="kw">FROM</span> pg_datasentinel_container_resources;
+
+<span class="cm">-- 事务回卷风险预估</span>
+<span class="kw">SELECT</span> xid_current, xid_limit,
+  xid_eta_aggressive_vacuum, xid_eta_wraparound
+<span class="kw">FROM</span> pg_datasentinel_wraparound;</code></pre>
+  <div class="swipe-hint">&larr; 左右滑动查看 &rarr;</div>
+</div>
+
+<p><strong>XID 回卷预警</strong>功能对运维尤为关键——XID 回卷会导致数据库强制关闭，而 pg_datasentinel 通过追踪消耗速率提供预测性告警，将"救火"变为"防火"。3-Clause BSD 许可证，要求 PG 15+。</p>
+
+<div class="divider"></div>
+
+<!-- 5. datasketches -->
+<div class="ext-title"><span class="ext-num">5</span> <span class="ext-name">datasketches</span> —— Apache 出品的亿级近似分析利器</div>
+
+<p>Apache DataSketches 将多种<strong>近似分析数据结构（Sketch）</strong>引入 SQL 世界。核心问题很明确：在海量数据上做精确的 COUNT(DISTINCT)、分位数计算和频繁项统计太慢或太耗内存。</p>
+
+<p>提供七种 Sketch 类型：<strong><code>cpc_sketch</code></strong>（去重计数）、<strong><code>hll_sketch</code></strong>（HyperLogLog）、<strong><code>theta_sketch</code></strong>（支持集合交并差）、<strong><code>kll_float_sketch</code></strong>（分位数估算）等。关键点不是"有个函数返回估计值"，而是 Sketch 作为<strong>可序列化对象可以被聚合合并</strong>。</p>
+
+<div class="code-block">
+  <div class="code-block-label">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <span>SQL</span>
+  </div>
+  <pre><code><span class="cm">-- 近似去重计数：比 COUNT(DISTINCT) 快约 6 倍</span>
+<span class="kw">SELECT</span> <span class="fn">cpc_sketch_distinct</span>(id) <span class="kw">FROM</span> random_ints_100m;
+<span class="cm">-- 结果：63423695（精确值：63208457），~20s vs ~2min</span>
+
+<span class="cm">-- Theta Sketch 集合运算：两个用户群体的交集</span>
+<span class="kw">SELECT</span> <span class="fn">theta_sketch_get_estimate</span>(
+  <span class="fn">theta_sketch_intersection</span>(sketch1, sketch2)
+) <span class="kw">FROM</span> theta_set_op_test;
+
+<span class="cm">-- KLL 分位数估算：获取中位数</span>
+<span class="kw">SELECT</span> <span class="fn">kll_float_sketch_get_quantile</span>(sketch, <span class="num">0.5</span>)
+<span class="kw">FROM</span> kll_float_sketch_test;</code></pre>
+  <div class="swipe-hint">&larr; 左右滑动查看 &rarr;</div>
+</div>
+
+<p>在 1 亿行数据上，CPC Sketch 去重计数约 20 秒完成（精确 COUNT(DISTINCT) 约 2 分钟）——<span class="metric">速度提升 6 倍</span>，相对误差在个位数百分比范围内。</p>
+
+<div class="divider"></div>
+
+<!-- 6. pghydro -->
+<div class="ext-title"><span class="ext-num">6</span> <span class="ext-name">pghydro</span> —— 巴西国家水务局的排水网络分析引擎</div>
+
+<p>PgHydro 由巴西国家水务卫生局（ANA）的 GIS 专家开发，构建在 PostGIS 之上，被 ANA 作为水资源管理的官方工具在全国范围内使用。核心能力围绕水文网络的完整工作流：从流向计算、<strong>Otto Pfafstetter 流域编码</strong>、上下游分析到 Strahler 河流分级。</p>
+
+<div class="code-block">
+  <div class="code-block-label">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <span>SQL</span>
+  </div>
+  <pre><code><span class="cm">-- 导入排水线数据</span>
+<span class="kw">SELECT</span> pghydro.<span class="fn">pghfn_input_data_drainage_line</span>(
+  <span class="str">'public'</span>, <span class="str">'input_drainage_line'</span>, <span class="str">'geom'</span>, <span class="str">'nome'</span>);
+
+<span class="cm">-- 计算流向并反转不一致的河段</span>
+<span class="kw">SELECT</span> pghydro.<span class="fn">pghfn_CalculateFlowDirection</span>();
+<span class="kw">SELECT</span> pghydro.<span class="fn">pghfn_ReverseDrainageLine</span>();
+
+<span class="cm">-- 计算 Pfafstetter 流域编码</span>
+<span class="kw">SELECT</span> pghydro.<span class="fn">pghfn_Calculate_Pfafstetter_Codification</span>();
+
+<span class="cm">-- Strahler 河流分级</span>
+<span class="kw">SELECT</span> pghydro.<span class="fn">pghfn_calculatestrahlernumber</span>();</code></pre>
+  <div class="swipe-hint">&larr; 左右滑动查看 &rarr;</div>
+</div>
+
+<p>适用于国家级水文数据库管理、流域规划与编码、上下游污染影响分析。完全用 PL/pgSQL 编写，GPLv2 许可证。</p>
+
+<div class="divider"></div>
+
+<!-- 7. pg_stat_ch -->
+<div class="ext-title"><span class="ext-num">7</span> <span class="ext-name">pg_stat_ch</span> —— ClickHouse 官方出品的查询遥测</div>
+
+<p>pg_stat_ch 由 ClickHouse 公司开发并开源。与 pg_stat_statements 在 PostgreSQL 内部做聚合统计不同，pg_stat_ch 将<strong>每条查询的原始执行事件</strong>（45 个字段、固定 4.6KB）实时流式导出到 ClickHouse，让所有聚合分析在 ClickHouse 的分析引擎中完成。</p>
+
+<p>数据管道架构：<strong>PostgreSQL Hooks → 共享内存环形缓冲区 → 后台 Worker → ClickHouse</strong>。使用 ClickHouse 原生二进制协议加 <strong>LZ4 压缩</strong>。</p>
+
+<div class="code-block">
+  <div class="code-block-label">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <span>SQL</span>
+  </div>
+  <pre><code><span class="cm">-- PostgreSQL 侧：监控扩展健康状态</span>
+<span class="kw">SELECT</span> * <span class="kw">FROM</span> <span class="fn">pg_stat_ch_stats</span>();
+<span class="cm">-- 返回：enqueued, exported, dropped 计数</span>
+
+<span class="cm">-- ClickHouse 侧：过去 1 小时按应用统计 p95/p99</span>
+<span class="kw">SELECT</span> query_id, <span class="fn">count</span>() <span class="kw">AS</span> calls,
+  <span class="fn">quantile</span>(<span class="num">0.95</span>)(duration_us) / <span class="num">1000</span> <span class="kw">AS</span> p95_ms,
+  <span class="fn">quantile</span>(<span class="num">0.99</span>)(duration_us) / <span class="num">1000</span> <span class="kw">AS</span> p99_ms
+<span class="kw">FROM</span> pg_stat_ch.events_raw
+<span class="kw">WHERE</span> app = <span class="str">'myapp'</span>
+  <span class="kw">AND</span> ts_start &gt; <span class="fn">now</span>() - <span class="kw">INTERVAL</span> <span class="num">1</span> HOUR
+<span class="kw">GROUP BY</span> query_id
+<span class="kw">ORDER BY</span> p99_ms <span class="kw">DESC LIMIT</span> <span class="num">10</span>;</code></pre>
+  <div class="swipe-hint">&larr; 左右滑动查看 &rarr;</div>
+</div>
+
+<p>性能令人印象深刻：<span class="metric">p99 开销 ~5&mu;s/条</span>，在 pgbench 32 客户端 36.6K TPS 下，30 秒内捕获 770 万事件且零丢弃，对 TPS 影响 <span class="metric">&lt;1%</span>。支持 PG 16–18，Apache 2.0 许可证。</p>
+
+<div class="divider"></div>
+
+<!-- 8. pg_rrf -->
+<div class="ext-title"><span class="ext-num">8</span> <span class="ext-name">pg_rrf</span> —— 一个函数搞定混合检索的排序融合</div>
+
+<p>pg_rrf 将 <strong>Reciprocal Rank Fusion（RRF）</strong>封装为原生 PostgreSQL 函数，解决混合检索场景中"分数不可比"的工程痛点。公式为 <code>score(d) = &Sigma; 1/(k + rank_i(d))</code>，k 默认 60。</p>
+
+<div class="code-block">
+  <div class="code-block-label">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <span>SQL</span>
+  </div>
+  <pre><code><span class="cm">-- 使用 pg_rrf 的混合检索：pgvector + BM25</span>
+<span class="kw">WITH</span> fused <span class="kw">AS</span> (
+  <span class="kw">SELECT</span> * <span class="kw">FROM</span> <span class="fn">rrf_fuse</span>(
+    <span class="kw">ARRAY</span>(<span class="kw">SELECT</span> id <span class="kw">FROM</span> docs
+      <span class="kw">ORDER BY</span> bm25_score <span class="kw">DESC LIMIT</span> <span class="num">100</span>),
+    <span class="kw">ARRAY</span>(<span class="kw">SELECT</span> id <span class="kw">FROM</span> docs
+      <span class="kw">ORDER BY</span> embedding <span class="op">&lt;=&gt;</span> :qvec <span class="kw">LIMIT</span> <span class="num">100</span>),
+    <span class="num">60</span>
+  )
+)
+<span class="kw">SELECT</span> d.*, fused.score
+<span class="kw">FROM</span> fused <span class="kw">JOIN</span> docs d <span class="kw">USING</span> (id)
+<span class="kw">ORDER BY</span> fused.score <span class="kw">DESC LIMIT</span> <span class="num">20</span>;</code></pre>
+  <div class="swipe-hint">&larr; 左右滑动查看 &rarr;</div>
+</div>
+
+<p>这将原本需要 FULL OUTER JOIN + COALESCE 链 + 手动评分公式的 20+ 行 CTE 压缩为一个函数调用。把融合逻辑移到数据库侧，减少了应用层拼接的开销。MIT 许可证。</p>
+
+<div class="divider"></div>
+
+<!-- 9. pg_kazsearch -->
+<div class="ext-title"><span class="ext-num">9</span> <span class="ext-name">pg_kazsearch</span> —— 哈萨克语全文检索的"从无到有"</div>
+
+<p>首个 PostgreSQL 哈萨克语全文检索扩展。哈萨克语是高度黏着语，一个词如 <code>мектептерімізде</code> 承载了复数、领属、位格等多层后缀。词干提取算法采用 <strong>BFS 后缀剥离</strong>，配合元音和谐验证和 <strong>21,863 个词性标注词根词典</strong>。</p>
+
+<div class="code-block">
+  <div class="code-block-label">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <span>SQL</span>
+  </div>
+  <pre><code><span class="cm">-- 词干提取</span>
+<span class="kw">SELECT</span> <span class="fn">ts_lexize</span>(<span class="str">'pg_kazsearch_dict'</span>, <span class="str">'алмаларымыздағы'</span>);
+<span class="cm">-- {алма}</span>
+
+<span class="cm">-- 带权重检索</span>
+<span class="kw">SELECT</span> title <span class="kw">FROM</span> articles
+<span class="kw">WHERE</span> fts <span class="op">@@</span> <span class="fn">websearch_to_tsquery</span>(
+  <span class="str">'kazakh_cfg'</span>, <span class="str">'президенттің жарлығы'</span>)
+<span class="kw">ORDER BY</span> <span class="fn">ts_rank_cd</span>(fts, <span class="fn">websearch_to_tsquery</span>(
+  <span class="str">'kazakh_cfg'</span>, <span class="str">'президенттің жарлығы'</span>)) <span class="kw">DESC</span>
+<span class="kw">LIMIT</span> <span class="num">10</span>;</code></pre>
+  <div class="swipe-hint">&larr; 左右滑动查看 &rarr;</div>
+</div>
+
+<p>查询延迟 <span class="metric">0.5ms</span>（比 pg_trgm 快 2.8 倍），nDCG@10 提升 25%，Recall@10 提升 23%。</p>
+
+<div class="divider"></div>
+
+<!-- 10. pg_liquid -->
+<div class="ext-title"><span class="ext-num">10</span> <span class="ext-name">pg_liquid</span> —— Datalog 风格的图查询</div>
+
+<p>pg_liquid 把 Liquid/Datalog 风格的声明式图查询带进 PostgreSQL。支持事实断言、<strong>递归传递闭包</strong>、复合查询和行规范化器。</p>
+
+<div class="code-block">
+  <div class="code-block-label">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <span>SQL</span>
+  </div>
+  <pre><code><span class="kw">SELECT</span> target
+<span class="kw">FROM</span> liquid.<span class="fn">query</span>(<span class="str">$$
+  Edge("a", "path", "b").
+  Edge("b", "path", "c").
+  Edge("c", "path", "d").
+
+  Reach(x, y) :- Edge(x, "path", y).
+  Reach(x, z) :- Reach(x, y), Reach(y, z).
+
+  Reach("a", target)?
+$$</span>) <span class="kw">AS</span> t(target text)
+<span class="kw">ORDER BY</span> <span class="num">1</span>;</code></pre>
+  <div class="swipe-hint">&larr; 左右滑动查看 &rarr;</div>
+</div>
+
+<p>适合知识图谱查询、层级数据遍历、基于规则的业务逻辑系统。完全用 PL/pgSQL 实现，无外部依赖。</p>
+
+<div class="divider"></div>
+
+<!-- 11. logical_ddl -->
+<div class="ext-title"><span class="ext-num">11</span> <span class="ext-name">logical_ddl</span> —— 让逻辑复制也能同步 DDL</div>
+
+<p>PostgreSQL 的逻辑复制只处理 DML，不处理 DDL，表结构不同步会直接中断复制。logical_ddl 通过<strong>事件触发器</strong>拦截 DDL 命令，将其解析并保存到复制表中，订阅端接收后生成等效 SQL 并执行。</p>
+
+<div class="code-block">
+  <div class="code-block-label">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <span>SQL</span>
+  </div>
+  <pre><code><span class="cm">-- 发布端配置</span>
+<span class="kw">INSERT INTO</span> logical_ddl.settings (publish, source)
+<span class="kw">VALUES</span> (<span class="num">true</span>, <span class="str">'publisher1'</span>);
+
+<span class="cm">-- 将逻辑复制中的所有表加入 DDL 追踪</span>
+<span class="kw">INSERT INTO</span> logical_ddl.publish_tablelist (relid)
+<span class="kw">SELECT</span> prrelid <span class="kw">FROM</span> pg_catalog.pg_publication_rel;
+
+<span class="cm">-- 按表指定捕获的 DDL 类型</span>
+<span class="kw">INSERT INTO</span> logical_ddl.publish_tablelist (relid, cmd_list)
+<span class="kw">VALUES</span> (<span class="str">'my_table'</span>::regclass,
+  <span class="kw">ARRAY</span>[<span class="str">'ADD COLUMN'</span>, <span class="str">'DROP COLUMN'</span>]);</code></pre>
+  <div class="swipe-hint">&larr; 左右滑动查看 &rarr;</div>
+</div>
+
+<p>MIT 许可证，PGXN 可用。约束、索引、默认值等尚未实现。</p>
+
+<div class="divider"></div>
+
+<!-- 12. rdf_fdw -->
+<div class="ext-title"><span class="ext-num">12</span> <span class="ext-name">rdf_fdw</span> —— 用 SQL 查询语义网</div>
+
+<p>通过 SPARQL 端点访问 RDF 三元组存储的 Foreign Data Wrapper。引入 <code>rdfnode</code> 数据类型，支持 <strong>SQL-to-SPARQL 下推</strong>。</p>
+
+<div class="code-block">
+  <div class="code-block-label">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <span>SQL</span>
+  </div>
+  <pre><code><span class="cm">-- 创建指向 DBpedia 的外部服务器</span>
+<span class="kw">CREATE SERVER</span> dbpedia
+  <span class="kw">FOREIGN DATA WRAPPER</span> rdf_fdw
+  <span class="kw">OPTIONS</span> (endpoint <span class="str">'https://dbpedia.org/sparql'</span>);
+
+<span class="cm">-- 创建外部表映射 SPARQL 查询</span>
+<span class="kw">CREATE FOREIGN TABLE</span> dbpedia_query (
+  p rdfnode <span class="kw">OPTIONS</span> (variable <span class="str">'?p'</span>),
+  o rdfnode <span class="kw">OPTIONS</span> (variable <span class="str">'?o'</span>)
+) <span class="kw">SERVER</span> dbpedia <span class="kw">OPTIONS</span> (
+  sparql <span class="str">'SELECT ?p ?o WHERE {
+    &lt;http://dbpedia.org/resource/Berlin&gt; ?p ?o}'</span>
+);</code></pre>
+  <div class="swipe-hint">&larr; 左右滑动查看 &rarr;</div>
+</div>
+
+<p>适合关联数据集成（DBpedia、Wikidata）、BI 工具访问 RDF 数据。MIT 许可证，支持 PG 9.5–18。</p>
+
+<div class="divider"></div>
+
+<!-- 13. pgbson -->
+<div class="ext-title"><span class="ext-num">13</span> <span class="ext-name">pgbson</span> —— 比 JSONB 更精确的二进制文档类型</div>
+
+<p>为 PostgreSQL 引入原生 <strong>BSON 数据类型</strong>。BSON 提供一等公民的 datetime、decimal128、int32/int64、binary 等类型，保证<strong>二进制完美往返</strong>。配合函数索引可实现 <span class="metric">10,000 倍</span> 的查询加速。</p>
+
+<div class="code-block">
+  <div class="code-block-label">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <span>SQL</span>
+  </div>
+  <pre><code><span class="cm">-- 插入带丰富类型的 EJSON 文档</span>
+<span class="kw">INSERT INTO</span> data_collection (data) <span class="kw">VALUES</span> (
+  <span class="str">'{"d":{"recordId":"R1",
+    "amt":{"$numberDecimal":"77777809838.97"},
+    "ts":{"$date":"2022-03-03T12:13:14.789Z"}}}'</span>);
+
+<span class="cm">-- 函数索引 + dotpath 查询（推荐方式）</span>
+<span class="kw">CREATE INDEX ON</span> data_collection(
+  <span class="fn">bson_get_string</span>(data, <span class="str">'d.recordId'</span>));
+
+<span class="kw">SELECT</span> <span class="fn">bson_get_decimal128</span>(data, <span class="str">'d.amt'</span>)
+<span class="kw">FROM</span> data_collection
+<span class="kw">WHERE</span> <span class="fn">bson_get_string</span>(data, <span class="str">'d.recordId'</span>) = <span class="str">'R1'</span>;</code></pre>
+  <div class="swipe-hint">&larr; 左右滑动查看 &rarr;</div>
+</div>
+
+<p>适合跨语言事件/文档管道的精确类型保持、金融数据等。MIT 许可证，支持 PG 14–18。</p>
+
+<div class="divider"></div>
+
+<!-- 14. pg_when -->
+<div class="ext-title"><span class="ext-num">14</span> <span class="ext-name">pg_when</span> —— 用自然语言描述时间</div>
+
+<p>允许用自然语言表达式创建时间值。核心函数 <code>when_is(text)</code> 返回标准 timestamp。</p>
+
+<div class="code-block">
+  <div class="code-block-label">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <span>SQL</span>
+  </div>
+  <pre><code><span class="kw">SELECT</span> <span class="fn">when_is</span>(<span class="str">'5 days ago at this hour in Asia/Tokyo'</span>);
+<span class="kw">SELECT</span> <span class="fn">when_is</span>(<span class="str">'next friday at 8:00 pm in America/New_York'</span>);
+<span class="kw">SELECT</span> <span class="fn">when_is</span>(<span class="str">'in 2 months at midnight in UTC-8'</span>);
+<span class="kw">SELECT</span> <span class="fn">when_is</span>(<span class="str">'December 31, 2026 at evening'</span>);</code></pre>
+  <div class="swipe-hint">&larr; 左右滑动查看 &rarr;</div>
+</div>
+
+<p>适用于"人类时间输入"落库、数据修复脚本中用自然语言代替拼日期函数。MIT 许可证。</p>
+
+<div class="divider"></div>
+
+<!-- 15. pgmqtt -->
+<div class="ext-title"><span class="ext-num">15</span> <span class="ext-name">pgmqtt</span> —— 数据库变更直推 MQTT</div>
+
+<p>把 PostgreSQL 的变更（INSERT/UPDATE/DELETE）通过 CDC 直接变成 MQTT 消息推给订阅者，同时支持入站消息按映射写回表。IoT 场景尤其合适——无需外部中间件即可将数据库状态变化推送到边缘设备。</p>
+
+<div class="code-block">
+  <div class="code-block-label">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <span>SQL</span>
+  </div>
+  <pre><code><span class="cm">-- 出站：表变更 → MQTT topic</span>
+<span class="kw">SELECT</span> <span class="fn">pgmqtt_add_outbound_mapping</span>(
+  <span class="str">'public'</span>, <span class="str">'my_table'</span>,
+  <span class="str">'topics/{{ op | lower }}'</span>,
+  <span class="str">'{{ columns | tojson }}'</span>
+);
+
+<span class="cm">-- 入站：MQTT topic → 表</span>
+<span class="kw">SELECT</span> <span class="fn">pgmqtt_add_inbound_mapping</span>(
+  <span class="str">'sensor/{site_id}/temperature'</span>,
+  <span class="str">'sensor_readings'</span>,
+  <span class="str">'{"site_id": "{site_id}",
+    "value": "$.temperature"}'</span>::jsonb
+);</code></pre>
+  <div class="swipe-hint">&larr; 左右滑动查看 &rarr;</div>
+</div>
+
+<p>Elastic License 2.0，Rust 实现。</p>
+
+<div class="divider"></div>
+
+<!-- 16-21: Shorter entries -->
+<div class="ext-title"><span class="ext-num">16</span> <span class="ext-name">pg_query_rewrite</span> —— 透明地偷梁换柱</div>
+
+<p>利用 ProcessUtility hook 实现 SQL 语句的运行时透明替换。规则基于<strong>精确字符串匹配</strong>。适用于数据库迁移期间的透明查询重定向、危险查询拦截。支持 PG 9.5–18。</p>
+
+<div class="divider"></div>
+
+<div class="ext-title"><span class="ext-num">17</span> <span class="ext-name">pgclone</span> —— 一键克隆数据库对象</div>
+
+<p>不用 pg_dump/pg_restore，直接从 SQL 调用函数把表、schema、数据库从源实例克隆到目标环境。支持 COPY 协议快速传输、异步操作与进度跟踪、数据脱敏与敏感列自动发现。</p>
+
+<div class="divider"></div>
+
+<!-- 18. pgproto -->
+<div class="ext-title"><span class="ext-num">18</span> <span class="ext-name">pgproto</span> —— 原生 Protobuf 支持</div>
+
+<p>原生 Protocol Buffers（proto3）存储、查询、修改和索引支持。引入 <code>protobuf</code> 数据类型和 Schema 注册表。</p>
+
+<div class="code-block">
+  <div class="code-block-label">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <span>SQL</span>
+  </div>
+  <pre><code><span class="cm">-- 嵌套字段提取</span>
+<span class="kw">SELECT</span> data <span class="op">#&gt;</span> <span class="str">'{Outer, inner, id}'</span>::text[] <span class="kw">FROM</span> items;
+
+<span class="cm">-- 局部更新</span>
+<span class="kw">UPDATE</span> items <span class="kw">SET</span> data = <span class="fn">pb_set</span>(
+  data, <span class="kw">ARRAY</span>[<span class="str">'Outer'</span>, <span class="str">'a'</span>], <span class="str">'42'</span>);
+
+<span class="cm">-- B-Tree 表达式索引</span>
+<span class="kw">CREATE INDEX</span> idx_pb <span class="kw">ON</span> items (
+  (data <span class="op">#&gt;</span> <span class="str">'{Outer, inner, id}'</span>::text[]));</code></pre>
+  <div class="swipe-hint">&larr; 左右滑动查看 &rarr;</div>
+</div>
+
+<p>存储仅 <span class="metric">16 MB</span>（JSONB 46 MB），全文档检索 <span class="metric">5.9ms</span>（关系模型 33.1ms）。PostgreSQL License。</p>
+
+<div class="divider"></div>
+
+<div class="ext-title"><span class="ext-num">19</span> <span class="ext-name">pg_fsql</span> —— JSONB 驱动的递归 SQL 模板引擎</div>
+
+<p>把"SQL 模板渲染 + 安全参数化执行 + 模板树递归组合"做成扩展。目标是让你用 JSON 请求体驱动 SQL 生成，减少应用层代码分支。适用于动态报表生成、ETL 管道编排。</p>
+
+<div class="divider"></div>
+
+<div class="ext-title"><span class="ext-num">20</span> <span class="ext-name">pg_dispatch</span> —— 基于 pg_cron 的异步 SQL 分发</div>
+
+<p>核心函数 <code>pgdispatch.fire(command)</code> 立即异步执行 SQL，<code>pgdispatch.snooze(command, delay)</code> 延迟执行。TLE 兼容（纯 PL/pgSQL），可在 Supabase 和 AWS RDS 上使用。</p>
+
+<div class="divider"></div>
+
+<div class="ext-title"><span class="ext-num">21</span> <span class="ext-name">block_copy_command</span> —— 安全加固：阻止 COPY 命令</div>
+
+<p>通过 ProcessUtility hook 集群范围内拦截 COPY 命令。提供基于角色的 blocklist、方向控制，以及对 <code>COPY ... TO PROGRAM</code> 的强制阻断。在安全敏感环境（PCI-DSS、HIPAA）中防止数据外泄。Rust/pgrx 实现。</p>
+
+<div class="divider"></div>
+
+<!-- 22. pg_isok -->
+<div class="ext-title"><span class="ext-num">22</span> <span class="ext-name">pg_isok</span> —— 数据质量的"软告警"系统</div>
+
+<p>不是传统约束/触发器，而是"软触发器"式的数据完整性管理：你写一条能找出可疑数据模式的 SQL，Isok 负责记录/分类/延后这些发现。已在生产环境使用超过十年。</p>
+
+<div class="divider"></div>
+
+<div class="ext-title"><span class="ext-num">23</span> <span class="ext-name">external_file</span> —— PostgreSQL 版的 Oracle BFILE</div>
+
+<p>通过目录别名 + 文件名的 <code>EFILE</code> 类型引用服务器端外部文件，支持 <code>readEfile()</code>、<code>writeEfile()</code>、<code>copyEfile()</code>。为 Ora2Pg 迁移场景量身定制。</p>
+
+<div class="divider"></div>
+
+<div class="ext-title"><span class="ext-num">24</span> <span class="ext-name">byteamagic</span> —— 检测 bytea 的文件类型</div>
+
+<p>封装 libmagic，提供 <code>byteamagic_mime(bytea)</code> 返回 MIME 类型，<code>byteamagic_text(bytea)</code> 返回可读描述。适合附件/上传内容治理、Content-Type 自动识别。</p>
+
+<div class="divider"></div>
+
+<div class="ext-title"><span class="ext-num">25</span> <span class="ext-name">pg_text_semver</span> —— 语义版本号的原生支持</div>
+
+<p>基于 <code>text</code> DOMAIN 实现完全符合 Semantic Versioning 2.0.0 规范的版本类型，对版本号各部分<strong>没有 32 位整数的大小限制</strong>。</p>
+
+<div class="code-block">
+  <div class="code-block-label">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <span>SQL</span>
+  </div>
+  <pre><code><span class="kw">SELECT</span> <span class="str">'0.9.3'</span>::semver <span class="op">&lt;</span> <span class="str">'0.11.2'</span>::semver;
+<span class="cm">-- true（语义比较，非字典序）</span>
+
+<span class="kw">SELECT</span> <span class="str">'1.0.0-alpha'</span>::semver <span class="op">&lt;</span> <span class="str">'1.0.0'</span>::semver;
+<span class="cm">-- true（预发布 &lt; 正式版）</span>
+
+<span class="kw">SELECT</span> <span class="str">'8.8.8+bla'</span>::semver <span class="op">=</span> <span class="str">'8.8.8'</span>::semver;
+<span class="cm">-- true（构建元数据忽略）</span></code></pre>
+  <div class="swipe-hint">&larr; 左右滑动查看 &rarr;</div>
+</div>
+
+<div class="divider"></div>
+
+<div class="ext-title"><span class="ext-num">26</span> <span class="ext-name">parray_gin</span> —— text[] 的子串匹配索引</div>
+
+<p>为 <code>text[]</code> 数组列提供基于 GIN 索引的<strong>部分匹配</strong>操作符 <code>@@&gt;</code>，让数组模糊匹配进入索引路径。适合标签系统自动补全。支持 PG 9.1–18。</p>
+
+<div class="divider"></div>
+
+<div class="ext-title"><span class="ext-num">27</span> <span class="ext-name">pg_slug_gen</span> —— 加密安全的时间戳短标识</div>
+
+<p>生成基于时间戳的加密安全唯一短标识。使用 <code>pg_strong_random()</code> 选择字符。适合邀请码/短链接/公开资源 ID。</p>
+
+<div class="divider"></div>
+
+<div class="ext-title"><span class="ext-num">28</span> <span class="ext-name">pglock</span> —— PostgreSQL 内的轻量级分布式锁</div>
+
+<p>基于锁表和函数实现，支持 TTL 过期机制。无需 Redis 或 ZooKeeper。适用于 Leader 选举、防止重复任务执行。纯 SQL 实现。</p>
+
+<div class="divider"></div>
+
+<!-- 29. regresql -->
+<div class="ext-title"><span class="ext-num">29</span> <span class="ext-name">regresql</span> —— 与语言无关的 SQL 回归测试工具</div>
+
+<p>一个<strong>独立的 CLI 工具</strong>（Go 编写），不是 PostgreSQL 扩展。它扫描项目中的 <code>*.sql</code> 文件，运行它们并保存输出快照与 EXPLAIN 计划基线，后续运行时对比差异，在 CI 中捕获查询结果变化与性能回退。</p>
+
+<div class="divider"></div>
+
+<!-- 30. pgcalendar -->
+<div class="ext-title"><span class="ext-num">30</span> <span class="ext-name">pgcalendar</span> —— 循环日程的无限投影</div>
+
+<p>完整的循环事件日历系统：事件（events）→ 日程（schedules）→ 投影（projections）→ 例外（exceptions）。支持每日/每周/每月/每年循环、例外修改和多段配置切换。</p>
+
+<div class="code-block">
+  <div class="code-block-label">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <span>SQL</span>
+  </div>
+  <pre><code><span class="kw">INSERT INTO</span> pgcalendar.events (name, description, category)
+<span class="kw">VALUES</span> (<span class="str">'Daily Standup'</span>, <span class="str">'Team standup meeting'</span>, <span class="str">'meeting'</span>);
+
+<span class="kw">INSERT INTO</span> pgcalendar.schedules
+  (event_id, start_date, end_date,
+   recurrence_type, recurrence_interval)
+<span class="kw">VALUES</span> (<span class="num">1</span>, <span class="str">'2024-01-01 09:00:00'</span>,
+  <span class="str">'2024-12-31 23:59:59'</span>, <span class="str">'daily'</span>, <span class="num">1</span>);
+
+<span class="cm">-- 投影：生成一周的实际发生时间</span>
+<span class="kw">SELECT</span> * <span class="kw">FROM</span> pgcalendar.<span class="fn">get_event_projections</span>(
+  <span class="num">1</span>, <span class="str">'2024-01-01'</span>, <span class="str">'2024-01-07'</span>);</code></pre>
+  <div class="swipe-hint">&larr; 左右滑动查看 &rarr;</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- 31. pg_variables -->
+<div class="ext-title"><span class="ext-num">31</span> <span class="ext-name">pg_variables</span> —— 比临时表更快的会话变量</div>
+
+<p>由 Postgres Professional 开发，提供会话级变量支持（标量、数组、记录集合），按命名包组织。支持事务性模式（<code>is_transactional = true</code> 时遵守 ROLLBACK/SAVEPOINT）。</p>
+
+<div class="code-block">
+  <div class="code-block-label">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <span>SQL</span>
+  </div>
+  <pre><code><span class="kw">SELECT</span> <span class="fn">pgv_set</span>(<span class="str">'vars'</span>, <span class="str">'int1'</span>, <span class="num">101</span>);
+<span class="kw">SELECT</span> <span class="fn">pgv_get</span>(<span class="str">'vars'</span>, <span class="str">'int1'</span>, <span class="kw">NULL</span>::int);
+<span class="cm">-- 返回 101</span>
+
+<span class="cm">-- 事务性变量：跟随 SAVEPOINT 回滚</span>
+<span class="kw">BEGIN</span>;
+<span class="kw">SELECT</span> <span class="fn">pgv_set</span>(<span class="str">'vars'</span>, <span class="str">'tx_val'</span>, <span class="num">101</span>, <span class="num">true</span>);
+<span class="kw">SAVEPOINT</span> sp1;
+<span class="kw">SELECT</span> <span class="fn">pgv_set</span>(<span class="str">'vars'</span>, <span class="str">'tx_val'</span>, <span class="num">102</span>, <span class="num">true</span>);
+<span class="kw">ROLLBACK TO</span> sp1;
+<span class="kw">COMMIT</span>;
+<span class="kw">SELECT</span> <span class="fn">pgv_get</span>(<span class="str">'vars'</span>, <span class="str">'tx_val'</span>, <span class="kw">NULL</span>::int);
+<span class="cm">-- 返回 101</span></code></pre>
+  <div class="swipe-hint">&larr; 左右滑动查看 &rarr;</div>
+</div>
+
+<p>作为临时表的高性能替代，避免了目录膨胀（catalog bloat）。</p>
+
+<div class="divider"></div>
+
+<!-- 32. pgelog -->
+<div class="ext-title"><span class="ext-num">32</span> <span class="ext-name">pgelog</span> —— 回滚也丢不掉的日志</div>
+
+<p>通过 dblink 实现<strong>伪自治事务</strong>，使日志记录在调用事务回滚时依然存活。解决了 PL/pgSQL EXCEPTION 块中的日志在 ROLLBACK 后丢失的经典问题。</p>
+
+<div class="code-block">
+  <div class="code-block-label">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <span>SQL</span>
+  </div>
+  <pre><code><span class="cm">-- 即使外层事务回滚，日志依然保留</span>
+<span class="kw">DO</span> $$
+<span class="kw">BEGIN</span>
+  <span class="kw">PERFORM</span> <span class="num">1</span>/<span class="num">0</span>;  <span class="cm">-- 触发除零错误</span>
+<span class="kw">EXCEPTION WHEN OTHERS THEN</span>
+  <span class="kw">PERFORM</span> <span class="fn">pgelog_to_log</span>(
+    <span class="str">'FAIL'</span>, <span class="str">'my_func'</span>, <span class="str">'division by zero'</span>,
+    <span class="str">'1'</span>, SQLERRM, SQLSTATE);
+  <span class="kw">RAISE</span>;
+<span class="kw">END</span> $$;</code></pre>
+  <div class="swipe-hint">&larr; 左右滑动查看 &rarr;</div>
+</div>
+
+<p>依赖 dblink 和 pg_variables 扩展。</p>
+
+<div class="divider"></div>
+
+<!-- 33. pg_typescript -->
+<div class="ext-title" style="background: linear-gradient(135deg, #fff7ed 0%, #fffbf5 100%); border-left-color: #d97706;">
+  <span class="ext-num" style="background: #d97706;">33</span>
+  <span class="ext-name" style="color: #d97706;">pg_typescript</span> —— 在 PostgreSQL 里写 TypeScript
+</div>
+
+<p>本次盘点的<strong>压轴亮点</strong>：为 PostgreSQL 添加 TypeScript 作为一等过程语言（<code>LANGUAGE typescript</code>），底层由 <strong>Deno 的 API 和 V8 运行时</strong>驱动。支持完整的 TypeScript 类型标注、原生 <strong>async/await</strong>、npm 包导入、以及 Deno 的细粒度权限模型。</p>
+
+<h3>架构设计</h3>
+
+<p>每个 PostgreSQL 后端进程维护一个独立的 Deno 运行时和 Tokio 异步运行时。<strong>导入的 npm 模块在 CREATE FUNCTION 时预取并存储在 PostgreSQL 表中</strong>，而非运行时动态加载。编译后的函数句柄在后端内做缓存。</p>
+
+<h3>权限系统</h3>
+
+<p>继承 Deno 的"默认拒绝"安全模型：网络、文件系统、环境变量、子进程等能力全部默认关闭，通过 GUC 参数逐项授权。超级用户可设置 <code>typescript.max_allow_*</code> 作为上限。</p>
+
+<div class="code-block">
+  <div class="code-block-label">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <span>SQL + TypeScript</span>
+  </div>
+  <pre><code><span class="cm">-- 导入 npm 包生成 URL slug</span>
+<span class="kw">CREATE FUNCTION</span> <span class="fn">slugify</span>(title text) <span class="kw">RETURNS</span> text
+<span class="kw">LANGUAGE</span> typescript
+<span class="kw">SET</span> <span class="str">"typescript.import_map"</span> =
+  <span class="str">'{"imports":{"lodash":"https://esm.sh/lodash@4"}}'</span>
+<span class="kw">AS</span> $$
+  <span class="kw">return</span> lodash.<span class="fn">kebabCase</span>(title);
+$$;
+<span class="kw">SELECT</span> <span class="fn">slugify</span>(<span class="str">'Hello World'</span>);  <span class="cm">-- 'hello-world'</span>
+
+<span class="cm">-- 在 TypeScript 中执行 SQL</span>
+<span class="kw">CREATE FUNCTION</span> <span class="fn">active_user_emails</span>() <span class="kw">RETURNS</span> jsonb
+<span class="kw">LANGUAGE</span> typescript
+<span class="kw">SET</span> <span class="str">"typescript.allow_pg_execute"</span> = <span class="str">'on'</span>
+<span class="kw">AS</span> $$
+  <span class="kw">const</span> result = <span class="kw">await</span> _pg.<span class="fn">execute</span>(
+    <span class="str">"SELECT email FROM users WHERE active = $1"</span>,
+    [<span class="num">true</span>]
+  );
+  <span class="kw">return</span> result.rows.<span class="fn">map</span>(r => r.email);
+$$;
+
+<span class="cm">-- 网络访问：调用外部 API（域名白名单）</span>
+<span class="kw">CREATE FUNCTION</span> <span class="fn">call_api</span>(url text) <span class="kw">RETURNS</span> jsonb
+<span class="kw">LANGUAGE</span> typescript
+<span class="kw">SET</span> <span class="str">"typescript.allow_net"</span> = <span class="str">'api.example.com'</span>
+<span class="kw">AS</span> $$
+  <span class="kw">const</span> res = <span class="kw">await</span> <span class="fn">fetch</span>(url);
+  <span class="kw">return await</span> res.<span class="fn">json</span>();
+$$;</code></pre>
+  <div class="swipe-hint">&larr; 左右滑动查看 &rarr;</div>
+</div>
+
+<h3>与 plv8 的对比</h3>
+
+<p>pg_typescript 在几个关键维度上超越 plv8：<strong>语言</strong>——直接支持 TypeScript 而非仅 JavaScript；<strong>异步</strong>——原生 async/await；<strong>模块</strong>——通过 import map 导入 npm 包；<strong>安全</strong>——完整的 Deno 权限体系；<strong>API</strong>——<code>fetch()</code> + <code>_pg.execute()</code>。</p>
+
+<div class="highlight-box">pg_typescript 当前处于 <strong>Alpha 阶段</strong>。V8 冷启动存在延迟，建议加入 <code>shared_preload_libraries</code> 预热。支持 PG 16–18，Rust（pgrx）+ rusty_v8 构建，MIT 许可证。</div>
+
+<div class="divider"></div>
+
+<!-- 总结 -->
+<div class="summary-section">
+  <h3>趋势总结</h3>
+  <div class="trend-item"><strong>专业对象内建化</strong> —— BSON、Protobuf、RDF、化学分子……PostgreSQL 从"结构化表"推向"可查询的复杂对象存储"</div>
+  <div class="trend-item"><strong>查询能力组合化</strong> —— RRF 融合、SQL 模板树、查询重写、近似摘要结构，让复杂逻辑以更少、更稳定的 SQL 表达</div>
+  <div class="trend-item"><strong>生产工程平台化</strong> —— 实时遥测外送、容器资源可见性、安全钩子、软告警治理，扩展层承接越来越多"原本靠外部系统"的能力</div>
+  <div class="trend-item"><strong>垂直领域持续渗透</strong> —— 化学信息学、水文分析、哈萨克语 NLP，PostgreSQL 正成为越来越多专业领域的计算底座</div>
+  <div class="trend-item" style="margin-bottom: 0;"><strong>新语言运行时探索</strong> —— pg_typescript 将 Deno/V8 嵌入 PostgreSQL，可能预示存储过程开发体验的下一次变革</div>
+</div>
+
+<p>PostgreSQL 的扩展生态就是这样：既有大教堂（Apache 基金会项目），也有集市（个人开发者的周末项目），共同构建着世界上最先进的开源数据库。</p>
+
+</div><!-- .content -->
+
+<!-- Footer -->
+<div class="footer">
+  <div class="footer-logo">PostgreSQL</div>
+  <div class="footer-text">The World's Most Advanced Open Source Database<br>504 Extensions and Growing</div>
+</div>
+
+</div><!-- .wrapper -->
+
+</body>
+</html>
