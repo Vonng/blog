@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Language.LanguageCode | default .Language.Lang }}">
+<html lang="{{ with .Language }}{{ .LanguageCode | default .Lang }}{{ else }}{{ .Lang | default "en" }}{{ end }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +8,7 @@
     <meta name="robots" content="noindex,follow">
     <meta http-equiv="refresh" content="0; url={{ .RelPermalink }}">
     {{ range .AllTranslations }}
-      <link rel="alternate" hreflang="{{ .Language.LanguageCode | default .Language.Lang }}" href="{{ .Permalink }}">
+      <link rel="alternate" hreflang="{{ with .Language }}{{ .LanguageCode | default .Lang }}{{ else }}{{ .Lang | default "en" }}{{ end }}" href="{{ .Permalink }}">
     {{ end }}
     <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
     <script>
