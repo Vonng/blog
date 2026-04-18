@@ -1,5 +1,5 @@
 ---
-title: "504 个扩展，PostgreSQL 生态的天花板在哪？"
+title: "504 个扩展，PG 生态的天花板在哪？"
 date: 2026-04-13
 author: 冯若航
 summary: >
