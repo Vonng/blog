@@ -270,5 +270,6 @@ Fork is the most powerful spell in open source. When a company decides to shut t
 - [**MinIO Is Dead**](/db/minio-is-dead)
 - [**MinIO Is Dead, Are There Alternatives?**](/db/minio-alternative)
 - [**From AGPL to Apache: Reflections on Pigsty's License Change**](/pg/pigsty-relicense/)
+- [**MinIO: Promise made, Promise kept**](/db/minio-promise-kept)
 
-> Disclaimer: This article is polished and [**translated from zh-cn**](/db/minio-resurrect) by Claude.
+> [**Originally published in Chinese]**](https://vonng.com/db/minio-resurrect/db/minio-promise-kept)
