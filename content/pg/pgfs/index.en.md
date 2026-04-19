@@ -5,6 +5,7 @@ date: 2025-03-21
 author: vonng 
 summary: Leverage JuiceFS to turn PostgreSQL into a filesystem with PITR capabilities!
 tags: [PostgreSQL,JuiceFS]
+aliases: ["/ai/pgfs/", "/db/pgfs/"]
 ---
 
 A few days ago, I received a request from the Odoo community asking: "Databases support PITR (Point-in-Time Recovery), but is there a way to roll back the filesystem as well?"

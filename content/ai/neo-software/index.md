@@ -4,6 +4,7 @@ date: 2026-01-31
 summary: >
   SaaS 与流程软件已死，从 APP 与 GUI 到 Agent，Database，CLI。
 tags: [AI, OS, Agent, PostgreSQL]
+aliases: ["/db/neo-software/"]
 ---
 
 ## 一、软件世界大熔断

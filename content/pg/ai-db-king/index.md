@@ -6,7 +6,7 @@ summary: >
   上下文窗口经济学，多元持久化的问题，以及零胶水架构的胜利，让 PG 成为 AI 时代的数据库之王。
 tags: [PostgreSQL, AI, 数据库]
 ai: true
-aliases: ["/ai/ai-db-king/"]
+aliases: ["/ai/ai-db-king/", "/db/ai-db-king/"]
 ---
 
 Agent 时代，软件架构的底层逻辑变了。

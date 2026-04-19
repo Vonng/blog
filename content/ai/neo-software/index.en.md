@@ -4,6 +4,7 @@ date: 2026-01-31
 summary: >
   SaaS and workflow software are dead. From APPs & GUIs to Agents, Databases, and CLI.
 tags: [AI, OS, Agent, PostgreSQL]
+aliases: ["/db/neo-software/"]
 ---
 
 ## I. The Great Software Meltdown

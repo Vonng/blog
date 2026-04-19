@@ -6,6 +6,7 @@ summary: |
 author: vonng
 tags: [Database,AI,DBA]
 ai: true
+aliases: ["/ai/ai-dba-job/"]
 ---
 
 

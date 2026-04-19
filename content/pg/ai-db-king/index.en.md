@@ -8,7 +8,7 @@ summary: >
   Context window economics, the polyglot persistence problem, and the triumph of zero-glue architecture make PostgreSQL the database king of the AI era.
 tags: [PostgreSQL, AI, Database]
 ai: true
-aliases: ["/en/ai/ai-db-king/"]
+aliases: ["/ai/ai-db-king/", "/db/ai-db-king/"]
 ---
 
 In the Agent era, the underlying logic of software architecture has changed.

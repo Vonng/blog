@@ -4,7 +4,7 @@ summary: "Future software = Agent + Database. No middle tiers, just agents issui
 date: 2025-04-27
 tags: [Database, PostgreSQL, AI]
 ai: true
-aliases: ["/en/ai/ai-agent-era/"]
+aliases: ["/db/ai-agent-era/"]
 ---
 
 > [WeChat](https://mp.weixin.qq.com/s/LykR-ewCx9aO9e09T45taw)

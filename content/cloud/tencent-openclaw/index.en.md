@@ -5,6 +5,7 @@ author: vonng
 summary: >
   Tencent Cloud mirrored OpenClaw's official skill marketplace into its own SkillHub and then claimed it was helping the upstream project. The incident turned into a case study in open-source manners, mirror ethics, and platform power.
 tags: [Tencent Cloud, Open Source, AI, Agent]
+aliases: ["/ai/tencent-openclaw/"]
 ---
 
 > Dedicated to the open-source projects that Tencent kindly "helps."

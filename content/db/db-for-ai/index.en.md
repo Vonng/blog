@@ -6,7 +6,7 @@ summary: |
 author: vonng
 tags: [Database, AI, PostgreSQL]
 ai: true
-aliases: ["/en/ai/db-for-ai/"]
+aliases: ["/ai/db-for-ai/"]
 ---
 
 

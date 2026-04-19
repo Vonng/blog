@@ -5,6 +5,7 @@ author: 冯若航
 summary: >
   腾讯云把 OpenClaw 官方技能市集 ClawHub 大规模镜像到自家 SkillHub，引发了关于开源体面、镜像边界与大厂生态伦理的争议。
 tags: [腾讯云, 开源, AI, Agent]
+aliases: ["/ai/tencent-openclaw/"]
 ---
 
 > 谨以此文致敬被腾讯云 “帮助” 的开源项目。

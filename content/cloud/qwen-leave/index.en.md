@@ -6,7 +6,7 @@ summary: >
   Qwen lead Justin Lin publicly announced his departure, followed by more core-team exits and a wave of speculation about compute allocation, KPI pressure, and organizational power shifts inside Alibaba.
 tags: [Alibaba Cloud, AI, Qwen]
 ai: true
-aliases: ["/en/ai/qwen-leave/"]
+aliases: ["/ai/qwen-leave/"]
 ---
 
 I had become more optimistic about Alibaba over the last year, largely because the Qwen team seemed to be doing real work: shipping strong models, contributing to open source, and earning genuine international attention.

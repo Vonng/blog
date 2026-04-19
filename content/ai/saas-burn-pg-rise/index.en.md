@@ -5,6 +5,7 @@ author: Feng Ruohang
 summary: >
   Software stocks are melting down. Who survives? Who rises? AI stripped away software's skin, exposing the database skeleton underneath. The market isn't panic-selling — it's repricing.
 tags: [AI, Industry]
+aliases: ["/db/saas-burn-pg-rise/"]
 ---
 
 AI stripped away software's skin, exposing the database skeleton underneath. The market isn't panic-selling — it's repricing.
