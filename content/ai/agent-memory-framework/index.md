@@ -31,6 +31,8 @@ tags: [AI, Agent, Memory, PostgreSQL, 数据库]
 
 老冯对 AI Agent 的终局判断很简单 —— **三分天下** 。一个成熟的 Agent，在终局状态下，大体就是这样一副架子：
 
+![divide.png](divide.png)
+
 ```bash
 MODEL_URL=https://api.anthropic.com/v1
 DB_URL=postgres://user:pass@host:5432/memory
