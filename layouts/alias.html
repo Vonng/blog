@@ -1,27 +1,35 @@
 <!DOCTYPE html>
-<html lang="{{ with .Language }}{{ .LanguageCode | default .Lang }}{{ else }}{{ .Lang | default "en" }}{{ end }}">
+{{- $siteLang := site.Language.LanguageCode | default site.Language.Lang | default "en" -}}
+{{- $permalink := .Permalink -}}
+{{- $title := $permalink -}}
+{{- with .Page -}}
+  {{- $title = .Title | default $title -}}
+{{- end -}}
+<html lang="{{ $siteLang }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ .Title }}</title>
-    <link rel="canonical" href="{{ .Permalink }}">
+    <title>{{ $title }}</title>
+    <link rel="canonical" href="{{ $permalink }}">
     <meta name="robots" content="noindex,follow">
-    <meta http-equiv="refresh" content="0; url={{ .RelPermalink }}">
-    {{ range .AllTranslations }}
-      <link rel="alternate" hreflang="{{ with .Language }}{{ .LanguageCode | default .Lang }}{{ else }}{{ .Lang | default "en" }}{{ end }}" href="{{ .Permalink }}">
+    <meta http-equiv="refresh" content="0; url={{ $permalink }}">
+    {{ with .Page }}
+      {{ range .AllTranslations }}
+        <link rel="alternate" hreflang="{{ with .Language }}{{ .LanguageCode | default .Lang }}{{ else }}{{ .Lang | default "en" }}{{ end }}" href="{{ .Permalink }}">
+      {{ end }}
     {{ end }}
-    <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
+    <link rel="alternate" hreflang="x-default" href="{{ $permalink }}">
     <script>
-      window.location.replace('{{ .RelPermalink }}');
+      window.location.replace('{{ $permalink }}');
     </script>
   </head>
   <body>
     <main>
       <p>
-        {{ if strings.HasPrefix .Lang "en" }}
-          Redirecting to <a href="{{ .RelPermalink }}">{{ .RelPermalink }}</a>.
+        {{ if strings.HasPrefix $siteLang "en" }}
+          Redirecting to <a href="{{ $permalink }}">{{ $permalink }}</a>.
         {{ else }}
-          正在跳转到 <a href="{{ .RelPermalink }}">{{ .RelPermalink }}</a>。
+          正在跳转到 <a href="{{ $permalink }}">{{ $permalink }}</a>。
         {{ end }}
       </p>
     </main>
