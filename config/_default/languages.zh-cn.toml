@@ -1,5 +1,5 @@
-languageCode = "zh-cn"
-languageName = "CN"
+locale = "zh-cn"
+label = "CN"
 weight = 1
 title = "老冯云数"
 

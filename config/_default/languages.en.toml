@@ -1,5 +1,5 @@
-languageCode = "en"
-languageName = "EN"
+locale = "en"
+label = "EN"
 weight = 1
 title = "Vonng"
 

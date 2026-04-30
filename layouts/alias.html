@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{{- $siteLang := site.Language.LanguageCode | default site.Language.Lang | default "en" -}}
+{{- $siteLang := site.Language.Locale | default site.Language.Lang | default "en" -}}
 {{- $permalink := .Permalink -}}
 {{- $title := $permalink -}}
 {{- with .Page -}}
@@ -15,7 +15,7 @@
     <meta http-equiv="refresh" content="0; url={{ $permalink }}">
     {{ with .Page }}
       {{ range .AllTranslations }}
-        <link rel="alternate" hreflang="{{ with .Language }}{{ .LanguageCode | default .Lang }}{{ else }}{{ .Lang | default "en" }}{{ end }}" href="{{ .Permalink }}">
+        <link rel="alternate" hreflang="{{ with .Language }}{{ .Locale | default .Lang }}{{ else }}{{ .Lang | default "en" }}{{ end }}" href="{{ .Permalink }}">
       {{ end }}
     {{ end }}
     <link rel="alternate" hreflang="x-default" href="{{ $permalink }}">
