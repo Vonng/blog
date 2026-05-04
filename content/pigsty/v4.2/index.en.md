@@ -5,7 +5,7 @@ date: 2026-02-28
 author: |
   [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v4.2.0))
 summary: >
-  Harness the superpower of 12 PostgreSQL kernels in one stack: Babelfish, AgensGraph, pgEdge, OriolePG, OpenHalo, Cloudberry, and more.
+  Pigsty v4.2 turns one stack into 12 enterprise-grade PostgreSQL flavors: multi-master pgEdge, graph-native AgensGraph, MPP Cloudberry, rebuilt compatibility kernels, 461 extensions, infrastructure upgrades
 series: [Pigsty]
 tags: [Pigsty]
 ---
@@ -437,4 +437,3 @@ a2a30f4b1146b3e79be91d5be57615b6  pigsty-pkg-v4.2.1.u22.aarch64.tgz
 a5574071bac1955798265f71ad73c3d4  pigsty-pkg-v4.2.1.u24.aarch64.tgz
 59a7632c650a3c034f1fe6cd589d7ab5  pigsty-pkg-v4.2.1.u24.x86_64.tgz
 ```
-

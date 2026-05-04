@@ -5,7 +5,7 @@ date: 2026-02-28
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/pgsty/pigsty/releases/tag/v4.2.0)）
 summary: >
-  这是 Pigsty v4.2 中文博客占位稿，当前内容暂用 v4.2.0 发布注记填充，后续将替换为正式文章。
+  Pigsty v4.2 把一套配置变成 12 种企业级 PostgreSQL 风味：图数据库、多主复制、MPP 数仓与多种兼容内核统一纳入 Pigsty
 series: [Pigsty]
 tags: [Pigsty]
 ---
