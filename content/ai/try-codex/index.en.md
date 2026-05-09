@@ -5,7 +5,7 @@ summary: >
   Codex 5.3 xHigh pushed my workflow past a tipping point: writing code is no longer the scarce resource. The real leverage is design quality and engineering acceptance. This is the practical loop I use to ship reliable software with AI agents.
 tags: [AI, Agent, Codex, Claude, Software Engineering]
 ai: true
-aliases: ["/en/db/try-codex/"]
+aliases: ["/db/try-codex/"]
 ---
 
 I did not publish much last week because I was busy stress-testing OpenAI Codex 3 xHigh.
@@ -191,7 +191,7 @@ At the extreme, a top expert can orchestrate a swarm of agents and ship outsized
 "One Person Company" will become common.
 Pigsty at this scale would have been impossible for me without AI.
 
-![One Person Company](one-person-company.webp)
+![One Person Company](featured.webp)
 
 ------
 

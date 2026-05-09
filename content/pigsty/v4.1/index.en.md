@@ -13,7 +13,7 @@ tags: [Pigsty]
 
 > [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v4.1.0) | [**Release Note**](https://pigsty.io/docs/about/release/#v410)
 
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v4.1.0)
+[![](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v4.1.0)
 
 
 If there is one takeaway from this release, it is that **speed matters**. 

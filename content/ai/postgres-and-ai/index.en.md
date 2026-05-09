@@ -88,7 +88,7 @@ What is even more interesting is that `pgvector` has now developed its own sub-e
 
 At the two ends of the spectrum, there are still niches. If you only need a small lightweight vector store, you can look at options like Qdrant. If you are doing trillion-scale image search, like Taobao-style photo lookup, Milvus is still worth evaluating. But across the huge middle, for new AI projects and new AI applications, the default stack is now PG + `pgvector`. That point is basically not in dispute.
 
-[Are Dedicated Vector Databases Dead?](/pg/vector-db-is-dead/)
+[Are Dedicated Vector Databases Dead?](/en/db/svdb-is-dead/)
 
 [LLMs and PGVector](/pg/llm-and-pgvector/)
 

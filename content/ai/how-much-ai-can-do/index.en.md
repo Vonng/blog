@@ -6,7 +6,7 @@ summary: >
   Over roughly ten days during Spring Festival, I used Claude Code, Codex, and a pile of workflows to translate books, ship releases, package software, refresh websites, and keep publishing daily. This is what solo output looks like when agent leverage really lands.
 tags: [AI, Claude Code, Codex]
 ai: true
-aliases: ["/en/misc/how-much-ai-can-do/"]
+aliases: ["/misc/how-much-ai-can-do/"]
 ---
 
 Once the public holiday ended and work officially resumed, I realized I had effectively been working through most of Spring Festival anyway.

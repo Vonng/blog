@@ -114,7 +114,7 @@ create table adcode_fences
 );
 ```
 
-![geohash](../img/adcode-data-sample.png)
+![geohash](/pg/img/adcode-data-sample.png)
 
 #### 索引
 
@@ -308,7 +308,6 @@ tps = 9143.947723 (excluding connections establishing)
 当然拿到`code`之后还是需要去行政区划表里查一次，但一次索引扫描的开销是很小的。
 
 总的来说，与优化之前的实现相比，性能提升了60倍。落实在生产环境中，可能就意味着省了百来万的成本。
-
 
 
 

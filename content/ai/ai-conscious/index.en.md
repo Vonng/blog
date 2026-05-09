@@ -7,7 +7,7 @@ author: |
 summary: >
   Large models can feel “aware,” but self-awareness is another matter. We explore the term from Buddhism, cognitive psychology, and neural nets, then riff on a possible AI religion after bingeing *Pantheon*.
 ai: true
-aliases: ["/en/misc/ai-conscious/"]
+aliases: ["/misc/ai-conscious/"]
 menu:
   sidebar:
     parent: misc

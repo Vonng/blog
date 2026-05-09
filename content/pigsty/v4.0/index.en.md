@@ -9,7 +9,7 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ai: true
-aliases: ["/en/ai/v4.0/"]
+aliases: ["/ai/v4.0/"]
 ---
 
 **Pigsty v4.0 is here!** This is a milestone release.

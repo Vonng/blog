@@ -8,7 +8,7 @@ summary: >
   change how we think about AI.
 tags: [AI, Anthropic, Claude, Emotion, Philosophy]
 ai: true
-aliases: ["/en/misc/ai-emotion/"]
+aliases: ["/misc/ai-emotion/"]
 ---
 
 A couple of days ago Anthropic published a blog post with a very calm title: ["Emotion concepts and their function in a large language model"](https://www.anthropic.com/research/emotion-concepts-function).

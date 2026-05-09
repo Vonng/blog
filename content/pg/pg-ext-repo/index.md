@@ -15,10 +15,6 @@ tags: [PostgreSQL, PG生态, 扩展]
 自从我在 《[**PostgreSQL正在吞噬数据库世界**](/pg/pg-eat-db-world)》 一文中指出 **可扩展性** 对于 PostgreSQL 的重要性以来，PG 社区对此进行了[**热烈的讨论**](/pg/pgcondev-2024)，并且达成了共识。
 最终体现在《[**PostgreSQL 17 发布注记！**](/pg/pg-17)》中。
 
-
-<a href="/pg/pg-eat-db-world"><img src="https://pigsty.io/img/ecosystem.jpg" style="max-width: 1000px; max-height: 1000px; width: 100%; height: auto;"></a>
-
-
 但真正重要的事情不是认识世界，而是改变世界。既然大家都已经认清了扩展很重要，**那么我们应该做什么，怎么做**，就成了真正关键的问题。 
 
 那么什么是 PostgreSQL 扩展最关键的问题？在我看来，扩展用得上用不上，是 PG 扩展生态的首要问题。

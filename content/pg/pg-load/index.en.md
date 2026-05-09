@@ -89,7 +89,7 @@ Let's first consider PG load in single-process scenarios. Suppose we need an ind
 
 As shown in Figure 1, within a one-second statistical period, PG is in active state (executing queries or transactions) for 0.6 seconds, so the PG load for this second is 60%. If this unique PG process is busy throughout the entire statistical period and has 0.4 seconds of tasks queuing, then PG load can be considered 140%.
 
-![](../img/pg-load-fig.png)
+![](/pg/img/pg-load-fig.png)
 
 For parallel scenarios, the calculation method is similar to multi-core CPU utilization. First, sum up the active time of all PG processes within the statistical period (1s), then divide by "**available PG processes/connections**", or "**available parallelism**", to get PG's own utilization indicator, as shown in Figure 3. Two PG backend processes have active durations of 200ms+400ms and 800ms respectively, so overall load level is: `(0.2s + 0.4s + 0.8s) / 1s / 2 = 70%`
 

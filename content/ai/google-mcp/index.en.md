@@ -6,7 +6,7 @@ summary: |
 author: vonng
 tags: [MCP,Database,PostgreSQL]
 ai: true
-aliases: ["/en/db/google-mcp/"]
+aliases: ["/db/google-mcp/"]
 ---
 
 In "[SaaS is Dead? In the AI Era, Software Starts with Databases](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489605&idx=1&sn=22aa5f6f18b871b2a216bc46dbaea42c&scene=21#wechat_redirect)", Microsoft CEO Nadella once stated that in the Agent era, **SaaS is Dead**, and the future form of software will be Agent + Database. That is, Agents directly performing CRUD operations on databases. Of course, this article was quite controversial — many seasoned developers said that having Agents directly access databases is like asking for security problems and begging for a quick death.

@@ -6,7 +6,7 @@ summary: >
   OpenClaw looks exciting because it turns agents into a chat-style experience. But the real productivity gains come from high-capability subscription agents and disciplined workflows, not from lobster-flavored wrappers.
 tags: [AI, Agent, Security, Cost, Claude Code, Codex]
 ai: true
-aliases: ["/en/db/openclaw-hype/"]
+aliases: ["/db/openclaw-hype/"]
 ---
 
 OpenClaw became popular because it gives people a very attractive illusion: that chatting with an agent from a phone is already the same thing as agentic productivity.

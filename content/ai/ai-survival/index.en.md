@@ -5,7 +5,7 @@ summary: >
   Should we still hire fresh grads? Squeezed between AI and senior devs, what's the play for new programmers? Master the right tools, take initiative, find the right mentor.
 tags: [AI, Industry, Database]
 ai: true
-aliases: ["/en/db/ai-survival/"]
+aliases: ["/db/ai-survival/"]
 ---
 
 

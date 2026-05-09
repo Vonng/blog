@@ -6,7 +6,7 @@ summary: >
   How to install and use Claude Code? How to achieve similar results at 1/10 of Claude's cost with alternative models? A one-liner to get CC up and running!
 tags: [AI, Agent]
 ai: true
-aliases: ["/en/db/claude-code-intro/"]
+aliases: ["/db/claude-code-intro/"]
 ---
 
 

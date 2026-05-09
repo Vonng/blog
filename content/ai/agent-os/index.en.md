@@ -6,7 +6,7 @@ summary: >
   And if OS history is any guide, we may know what comes next — and what's still missing.
 tags: [AI, OS, Agent, PostgreSQL]
 ai: true
-aliases: ["/en/db/agent-os/"]
+aliases: ["/db/agent-os/"]
 ---
 
 

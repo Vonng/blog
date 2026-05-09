@@ -218,9 +218,8 @@ menu:
 
 
 <video width="320" height="240" controls>
-  <source src="slide.mp4" type="video/mp4">
+  <source src="/trip/20201228-yubeng/slide.mp4" type="video/mp4">
 </video>
-
 
 
 

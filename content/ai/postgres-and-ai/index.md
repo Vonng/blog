@@ -87,7 +87,7 @@ pgvector 在 ChatGPT 火起来之前就出现了——2021 年刚出来时是个
 
 光谱两端可能还有一点细分生态位：如果你只需要一个嵌入式小向量库，可以看看 Qdrant 这类轻量方案；如果搞万亿规模以图搜图、淘宝拍图识物之类的场景，也可以评估 Milvus。但在光谱广阔的中间地带，现在 AI 新项目新应用的默认标配就是 PG + pgvector，这一点基本没有争议了。
 
-《[专用向量数据库凉了吗？](/pg/vector-db-is-dead/)》
+《[专用向量数据库凉了吗？](/db/svdb-is-dead/)》
 
 《[AI大模型与向量库 PGVector](/pg/llm-and-pgvector/)》
 

@@ -6,7 +6,7 @@ math: true
 summary: |
   Connecting all concepts in linear algebra through one main thread
 ai: true
-aliases: ["/en/misc/linear-algebra/"]
+aliases: ["/misc/linear-algebra/"]
 ---
 
 {{< katex >}}

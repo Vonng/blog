@@ -153,5 +153,5 @@ Sacred Lake is very difficult, mostly local Tibetans go there.
 ![](d5-1.jpg)
 
 <video width="320" height="240" controls>
-  <source src="slide.mp4" type="video/mp4">
+  <source src="/trip/20201228-yubeng/slide.mp4" type="video/mp4">
 </video>

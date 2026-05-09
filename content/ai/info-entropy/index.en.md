@@ -5,7 +5,7 @@ author: "vonng"
 math: true
 summary: "Reading notes on 'Elements of Information Theory': What is **entropy**? Entropy is a measure of the uncertainty of random variables, and also a measure of the information needed to describe random variables on average."
 ai: true
-aliases: ["/en/misc/info-entropy/"]
+aliases: ["/misc/info-entropy/"]
 ---
 
 {{< katex >}}

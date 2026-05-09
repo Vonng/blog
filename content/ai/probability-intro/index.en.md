@@ -6,7 +6,7 @@ math: true
 summary: |
   Basic knowledge notes on probability theory: axiomatic foundations, probability calculus, counting, conditional probability, random variables and distribution functions
 ai: true
-aliases: ["/en/misc/probability-intro/"]
+aliases: ["/misc/probability-intro/"]
 ---
 
 {{< katex >}}

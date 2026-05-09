@@ -12,7 +12,7 @@ tags: [Pigsty]
 
 > [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v4.1.0) | [**发布注记**](https://pigsty.cc/docs/about/release/#v410)
 
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v4.1.0)
+[![](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v4.1.0)
 
 先说结论：**天下武功，唯快不破**。2026年2月12日，PostgreSQL 社区例行发布了 [18.2 / 17.8 / 16.12 / 15.16 / 14.21](https://www.postgresql.org/about/news/postgresql-182-178-1612-1516-and-1421-released-3235/) 五个小版本。
 同一天，据我所见全球范围内给出生产级支持的只有三家：**AWS RDS**，**EDB**，**Pigsty**。

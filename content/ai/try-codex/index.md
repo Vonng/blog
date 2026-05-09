@@ -132,7 +132,7 @@ Codex Review 完成之后，就进入来回打铁的环节。让 **Claude** 来 
 
 如果是顶尖专家，一个人也能通过指挥一堆 Agent 干出了不起的项目，“One Person Company” 会大量涌现。我自己一个人搞出了 Pigsty 这么大的项目，没有 AI 是不可能的。
 
-![One Person Company](one-person-company.webp)
+![One Person Company](featured.webp)
 
 ------
 

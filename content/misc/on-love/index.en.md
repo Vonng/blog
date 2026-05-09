@@ -32,7 +32,7 @@ In the romance stage, the most important factor determining whether two people c
 
 ## 1. Worldview, Life View, Values
 
-![img](file:/Users/vonng/Library/Group%20Containers/UBF8T346G9.Office/msoclip1/01/3A4652D4-FA0D-224D-9F5D-D80F65C8284B.png)
+![Three factors of love](love-factors.svg)
 
 A person's worldview, values, and life view are the most important markers of an individual, encompassing almost all guiding principles for your behavior. Is the world a material entity or spiritual reflection? What is the purpose of life? What are ideals? What is good? What is evil? What is beautiful? What is ugly? What is justice? What is evil? What should be done and what shouldn't? Types of people you like? The value weight of various things in your heart? The answers to all these questions constitute a person's three views. Perhaps you don't have clear answers to many questions yourself, but when making any decisions, these things will subtly influence your choices. Therefore, in love, the decisive role is played by the three views. High compatibility of three views means both parties are very in sync, the so-called "telepathic connection," or having common life ideals. If three views have low compatibility, then there's no chemistry, no feeling, unable to connect in conversation.
 

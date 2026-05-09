@@ -6,7 +6,7 @@ summary: |
   Statistical analysis is divided into two fields: descriptive statistics and inferential statistics. Descriptive Statistics is the technology for describing or characterizing existing data and is the most fundamental part of statistics.
 math: true
 ai: true
-aliases: ["/en/misc/descriptive-stats/"]
+aliases: ["/misc/descriptive-stats/"]
 ---
 
 {{< katex >}}

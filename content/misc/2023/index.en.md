@@ -51,7 +51,7 @@ Projects with ecological niches similar to Pigsty include EDB's CloudNative-PG f
 
 In PostgreSQL distribution ecological competition, we chose the most reliable/performant/simple bare metal/bare OS deployment, rejecting the trendy [K8S](https://mp.weixin.qq.com/s/4a8Qy4O80xqsnytC4l9lRg) and even [Docker](https://mp.weixin.qq.com/s/kFftay1IokBDqyMuArqOpg) containerization. This indeed created much grunt work adapting different operating systems, but it was the right thing to do, and these efforts became moats: while a bunch of PG Operators compete fiercely, users who crashed out of K8S all benefited Pigsty instead.
 
-![stackgres-pigsty.webp](stackgres-pigsty.webp)
+![stackgres-pigsty.png](stackgres-pigsty.png)
 
 Another overlapping competitor is **cloud databases/RDS** - many Pigsty subscription customers self-built because cloud RDS was too expensive. Although public cloud RDS teams might have dozens of people, I'm not intimidated at all. I'm always the one poaching RDS corners, ideologically dominating and writing articles about it. This became recreational entertainment during entrepreneurship - accumulating over twenty high-quality related articles this year, compiled into a "Cloud Computing Mudslide" Cloud-Exit handbook.
 

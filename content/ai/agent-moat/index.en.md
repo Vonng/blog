@@ -5,7 +5,7 @@ summary: >
   A mediocre local who knows the terrain beats a genius parachuted into unknown territory. Intelligence without context is idle. An agent without a runtime is vapor.
 tags: [AI, Agent, PostgreSQL, Pigsty]
 ai: true
-aliases: ["/en/db/agent-moat/"]
+aliases: ["/db/agent-moat/"]
 ---
 
 3 AM. Database alerts are blowing up.

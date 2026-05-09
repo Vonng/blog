@@ -6,7 +6,7 @@ math: true
 summary: |
   Neural networks are inspired by how the brain works and can be used to solve general learning problems. This article introduces the basic principles and practice of neural networks.
 ai: true
-aliases: ["/en/misc/neuron-network/"]
+aliases: ["/misc/neuron-network/"]
 ---
 
 {{< katex >}}

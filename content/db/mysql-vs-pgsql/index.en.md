@@ -14,7 +14,7 @@ In 2025, PostgreSQL has opened a clear lead over MySQL on features, correctness,
 
 ### Release cadence
 
-MySQL just dropped “Innovation” 9.3 ([release notes](https://dev.mysql.com/doc/refman/9.3/en/mysql-nutshell.html)), yet the changelog looks like more of the same patchwork. Search for “PostgreSQL 18” and you’ll find dozens of preview write-ups. Search “MySQL 9.3” and you get sighs. MySQL OG Ding Qi wrote “[MySQL’s innovation branch is losing its point](https://mp.weixin.qq.com/s/LLlOkGHIDhUCkJNLlmtXSQ).” Dege followed with “[MySQL Will Stay Mediocre](https://mp.weixin.qq.com/s/QnfCqVOsSxsnjfUZv9UPsg).” Percona CEO Peter Zaitsev penned “[Where Are You Going, MySQL?](/en/db/sakila-where-are-you-going/),” “[Oracle Finally Killed MySQL](/en/db/oracle-kill-mysql/),” and “[Can Oracle Save MySQL?](/en/db/can-oracle-save-mysql/),” expressing open frustration.
+MySQL just dropped “Innovation” 9.3 ([release notes](https://dev.mysql.com/doc/refman/9.3/en/mysql-nutshell.html)), yet the changelog looks like more of the same patchwork. Search for “PostgreSQL 18” and you’ll find dozens of preview write-ups. Search “MySQL 9.3” and you get sighs. MySQL OG Ding Qi wrote “[MySQL’s innovation branch is losing its point](https://mp.weixin.qq.com/s/LLlOkGHIDhUCkJNLlmtXSQ).” Dege followed with “[MySQL Will Stay Mediocre](https://mp.weixin.qq.com/s/QnfCqVOsSxsnjfUZv9UPsg).” Percona CEO Peter Zaitsev penned “[Where Are You Going, MySQL?](/db/sakila-where-are-you-going/),” “[Oracle Finally Killed MySQL](/db/oracle-kill-mysql/),” and “[Can Oracle Save MySQL?](/db/can-oracle-save-mysql/),” expressing open frustration.
 
 ### New capabilities
 
@@ -96,7 +96,7 @@ Manufacturing, finance, non-internet orgs lean on PG’s correctness and feature
 
 ## What Happened to MySQL?
 
-Did PostgreSQL “kill” MySQL? Peter Zaitsev argues in “[Oracle Finally Killed MySQL](/en/db/sakila-where-are-you-going/)” that Oracle’s neglect and mismanagement did. “[Can Oracle Save MySQL?](https://pigsty.cc/blog/db/can-oracle-save-mysql)” lays out the root cause: MySQL’s IP belongs to Oracle. It isn’t community-owned like PostgreSQL. Neither MySQL nor MariaDB has broad independent contributors. They’re company-controlled codebases.
+Did PostgreSQL “kill” MySQL? Peter Zaitsev argues in “[Oracle Finally Killed MySQL](/db/oracle-kill-mysql/)” that Oracle’s neglect and mismanagement did. “[Can Oracle Save MySQL?](https://pigsty.cc/blog/db/can-oracle-save-mysql)” lays out the root cause: MySQL’s IP belongs to Oracle. It isn’t community-owned like PostgreSQL. Neither MySQL nor MariaDB has broad independent contributors. They’re company-controlled codebases.
 
 Cloud vendors (AWS et al.) built services atop MySQL without contributing back. Oracle saw no reason to invest in a product competitors monetized more than they did, so they focused on proprietary MySQL HeatWave. AWS cares about RDS/Aurora, not upstream. The community withered—and hyperscalers share the blame.
 

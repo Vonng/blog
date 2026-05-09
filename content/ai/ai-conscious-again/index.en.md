@@ -6,7 +6,7 @@ summary: >
   A Socratic dialogue between a human and an AI about consciousness, memory, embodiment, and the difference between being smart and actually living through time.
 tags: [AI, Consciousness, Philosophy]
 ai: true
-aliases: ["/en/misc/ai-conscious-again/"]
+aliases: ["/misc/ai-conscious-again/"]
 ---
 
 > Adapted from a real conversation between Vonng and Claude.

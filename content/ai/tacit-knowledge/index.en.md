@@ -6,7 +6,7 @@ summary: >
   Polanyi's tacit knowledge explains the 70% ceiling of AI agents: real intuition, feel, and judgment do not serialize cleanly. They grow, if at all, through practice.
 tags: [AI]
 ai: true
-aliases: ["/en/misc/tacit-knowledge/"]
+aliases: ["/misc/tacit-knowledge/"]
 ---
 
 > Polanyi's tacit knowledge explains the 70% ceiling of AI agents: real intuition, feel, and judgment do not serialize cleanly. They grow, if at all, through practice.

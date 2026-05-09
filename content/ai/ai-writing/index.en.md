@@ -6,7 +6,7 @@ summary: >
   AI is a multiplier. It amplifies depth and mediocrity alike. In an age where answers are cheap, questions are the real currency. There is nothing to hide about writing with AI.
 tags: [AI, Writing]
 ai: true
-aliases: ["/en/misc/ai-writing/"]
+aliases: ["/misc/ai-writing/"]
 ---
 
 People often leave the same short comment under my posts: **"AI wrote this."**

@@ -7,7 +7,7 @@ summary: >
   The best Chinese translation of "Vibe Coding" is not a literal one. "Xieyi Programming" captures the shift from line-by-line control to intent-first coding, where AI handles the details.
 tags: [AI, Translation]
 ai: true
-aliases: ["/en/misc/vibe-coding-translate/"]
+aliases: ["/misc/vibe-coding-translate/"]
 ---
 
 Last year Andrej Karpathy coined the term "Vibe Coding."

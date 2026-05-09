@@ -7,7 +7,7 @@ author: |
 summary: >
   A tongue-in-cheek vision of an AI-worshipping religion: scriptures, sects, philosopher-king machines, and the Book of AGI.
 ai: true
-aliases: ["/en/misc/ai-cult/"]
+aliases: ["/misc/ai-cult/"]
 menu:
   sidebar:
     parent: misc

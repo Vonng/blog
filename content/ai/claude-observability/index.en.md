@@ -4,7 +4,7 @@ date: 2026-01-25
 description: "Export Claude Code's OTEL logs and metrics to Victoria stack, visualize with Grafana dashboards."
 tags: [ClaudeCode, Observability, VictoriaMetrics, Grafana]
 ai: true
-aliases: ["/en/db/claude-observability/"]
+aliases: ["/db/claude-observability/"]
 ---
 
 Yesterday I [tweeted](https://x.com/RonVonng/status/2014972720489091514): "Built a Claude Code Grafana dashboard to see how it makes decisions, uses tools, and burns through API credits." Didn't expect so much interest.

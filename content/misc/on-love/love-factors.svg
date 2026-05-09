@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
+  <title id="title">Three factors of love</title>
+  <desc id="desc">A simple hierarchy showing values first, method second, and material base third.</desc>
+  <defs>
+    <linearGradient id="top" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f97316"/>
+      <stop offset="1" stop-color="#ef4444"/>
+    </linearGradient>
+    <linearGradient id="mid" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0ea5e9"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="base" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#22c55e"/>
+      <stop offset="1" stop-color="#15803d"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-20%" width="120%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#0f172a" flood-opacity=".18"/>
+    </filter>
+  </defs>
+  <rect width="900" height="420" rx="28" fill="#f8fafc"/>
+  <g filter="url(#shadow)">
+    <path d="M450 54 720 166H180Z" fill="url(#top)"/>
+    <path d="M180 178H720L805 280H95Z" fill="url(#mid)"/>
+    <path d="M95 292H805L860 366H40Z" fill="url(#base)"/>
+  </g>
+  <g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" text-anchor="middle">
+    <text x="450" y="137" font-size="34" font-weight="700" fill="white">Values</text>
+    <text x="450" y="154" font-size="15" fill="white" opacity=".88">worldview, life view, value system</text>
+    <text x="450" y="235" font-size="31" font-weight="700" fill="white">Method</text>
+    <text x="450" y="253" font-size="15" fill="white" opacity=".88">how two people understand and adjust the relationship</text>
+    <text x="450" y="342" font-size="29" font-weight="700" fill="white">Material Base</text>
+  </g>
+</svg>

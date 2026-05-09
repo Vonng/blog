@@ -5,7 +5,7 @@ author: vonng
 summary: |
   Neural networks emerged inspired by the human brain, so the operational mechanisms of human society also have various similarities and connections with neural network training. Some thoughts on reading Wiener's "The Human Use of Human Beings - Cybernetics and Society."
 ai: true
-aliases: ["/en/misc/nn-and-society/"]
+aliases: ["/misc/nn-and-society/"]
 ---
 
 > Neural networks emerged inspired by the human brain, so the operational mechanisms of human society also have various similarities and connections with neural network training.

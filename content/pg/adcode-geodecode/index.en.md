@@ -105,7 +105,7 @@ create table adcode_fences
 );
 ```
 
-![geohash](../img/adcode-data-sample.png)
+![geohash](/pg/img/adcode-data-sample.png)
 
 #### Indexing
 

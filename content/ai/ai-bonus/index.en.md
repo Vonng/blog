@@ -6,7 +6,7 @@ summary: >
   The biggest AI arbitrage available to ordinary users is not some obscure token play. It is the heavily subsidized max-tier subscription plans from frontier model vendors, provided you can convert that quota into real output.
 tags: [AI, Claude, Codex]
 ai: true
-aliases: ["/en/db/ai-bonus/"]
+aliases: ["/db/ai-bonus/"]
 ---
 
 It is not every day that you pay one dollar and receive fifty dollars' worth of compute in return. But that is more or less what frontier AI subscriptions look like right now.

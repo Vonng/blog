@@ -34,14 +34,7 @@ Chatting with taxi drivers, I already had a rough idea of Guangzhou's worth-visi
 
 Arriving at 6 PM, walking into the district, an elegant graceful atmosphere hit me. Every building here is exquisite, possibly with 100-200 years of history. Lush plane trees beside buildings cast brilliant golden light under street lamps - quite beautiful.
 
-![](shamian-1.jpg)
-> Golden plane trees
-
 Sky slightly tipsy, night slightly cool. I played Hacken Lee's "Moon Half Serenade," strolling Shamian's streets. Breeze on face, spirits soaring. Walking along, my earphones seemed to have some bass - removing them revealed a roadside café playing the same song, creating a wonderful feeling in my heart.
-
-![](shamian-2.jpg)
-
-> Carefully maintained flower beds
 
 Shamian has a delicate small church, unfortunately due to pandemic, religious activities stopped and the church was closed. Otherwise I really wanted to see what this beautiful church looked like inside. Streets had many couples, walking hand in hand, whispering intimately, making one envious.
 
@@ -101,9 +94,6 @@ Guangzhou morning was quite pleasant; morning Shamian compared to night scene sh
 
 > Qing army cannon on Shamian Island (barrel sealed shut)
 
-![](postal-museum.jpg)
-> Postal Museum - unfortunately closed.
-
 ![custome-1.jpeg](custome-1.jpeg)
 ![custome-2.jpeg](custome-2.jpeg)
 > Guangdong Customs, day and night
@@ -144,8 +134,6 @@ Across from Huacheng Plaza is Guangzhou Tower, aka "Small Waist." Saw it yesterd
 ![](overlook.jpeg)
 
 > Bird's eye view of Guangzhou city - quite spectacular.
-
-![](overlook2.jpg)
 
 Coming down from Small Waist was already 3 PM. Originally wanted to visit Western Han Mawangdui Han Tomb Museum too, but ran out of time.
 

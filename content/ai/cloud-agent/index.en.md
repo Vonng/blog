@@ -6,7 +6,7 @@ description: >
 categories: ["CLOUD"]
 tags: ["AI", "Data", "Privacy", "Cloud"]
 ai: true
-aliases: ["/en/cloud/cloud-agent/"]
+aliases: ["/cloud/cloud-agent/"]
 ---
 
 Before you hit "one-click deploy" on that cloud AI assistant, ask yourself: what exactly are you giving up?

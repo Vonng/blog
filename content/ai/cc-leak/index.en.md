@@ -6,7 +6,7 @@ summary: >
   SOTA coding agent Claude Code leaked its source again, after falling into the same hole twice. The whole codebase is out in public. Performance art at its finest.
 tags: [Open Source, AI, Agent, Claude Code]
 ai: true
-aliases: ["/en/cloud/cc-leak/"]
+aliases: ["/cloud/cc-leak/"]
 ---
 
 

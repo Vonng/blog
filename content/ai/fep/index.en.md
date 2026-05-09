@@ -8,7 +8,7 @@ summary: >
   The free energy principle tries to explain life, perception, learning, action, and intelligence within one mathematical framework. It also offers a deeper lens for understanding LLMs, agents, and the next generation of AI systems.
 tags: [AI, Agent, Philosophy]
 ai: true
-aliases: ["/en/misc/fep/"]
+aliases: ["/misc/fep/"]
 ---
 
 {{< katex >}}
