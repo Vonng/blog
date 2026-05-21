@@ -1,0 +1,208 @@
+{
+  "generated_by": "scripts/build_ppt.py",
+  "slides": [
+    {
+      "index": 0,
+      "title": "Extensions for Everyone",
+      "file": "00-extensions-for-everyone.html",
+      "source": "Static PNG extracted from data/01-pg-extension-wordcloud.html; GitHub stars map to size and category maps to color."
+    },
+    {
+      "index": 1,
+      "title": "Who am I",
+      "file": "01-who-am-i.html",
+      "source": "Speaker background; Pigsty homepage hero at https://pigsty.io/ observed on 2026-05-20; speaker photo from data/vonng.png converted to WebP; motherboard visual from local Pigsty asset converted to a static PNG frame."
+    },
+    {
+      "index": 2,
+      "title": "Extensibility Matters",
+      "file": "02-extensibility-matters.html",
+      "source": "PGXN About page (https://www.pgxn.org/about/) observed on 2026-05-20 lists 471 extensions; 2024 and 2025 counts are local historical snapshots. Ecosystem image copied from /Users/vonng/pgsty/pigsty.cc/static/img/pigsty/ecosystem.png and converted to WebP."
+    },
+    {
+      "index": 3,
+      "title": "Two Years Later",
+      "file": "03-two-years-later.html",
+      "source": "/Users/vonng/pgsty/pgext/content/list/_index.md Extension Stat table; local snapshot read on 2026-05-20."
+    },
+    {
+      "index": 4,
+      "title": "Who Benefits?",
+      "file": "04-who-benefits.html",
+      "source": "Talk framing based on AGENTS.md audience and thesis."
+    },
+    {
+      "index": 5,
+      "title": "Galaxy",
+      "file": "05-galaxy.html",
+      "source": "data/universe.csv for all 1,617 extension rows; data/1000github.png linked to Joel Jacobson's PostgreSQL EXTENSIONs gist."
+    },
+    {
+      "index": 6,
+      "title": "GitHub Stars",
+      "file": "06-github-stars.html",
+      "source": "ppt-src/assets/data/github-star/pgext-universe-lead-packages.snapshot.json; PostgreSQL database `data`, pgext.universe where lead=true; grouped by pkg; star_cnt; ext link uses universe.name."
+    },
+    {
+      "index": 7,
+      "title": "Star Tiering",
+      "file": "07-star-tiering.html",
+      "source": "ppt-src/assets/data/github-star/pgext-universe-lead-packages.snapshot.json; PostgreSQL database `data`, pgext.universe where lead=true; grouped by pkg; star_cnt; PostGIS forced into T0."
+    },
+    {
+      "index": 8,
+      "title": "The Extension Funnel",
+      "file": "08-the-extension-funnel.html",
+      "source": "data/pgext-matrix/pgext-global-matrix.json; data/pgext-matrix/index.html; data/pgext-universe/data/pgext-universe-data.json and ppt-src/assets/data/charts/pgext-catalog/01_extension_census_funnel.csv for the spoken funnel counts."
+    },
+    {
+      "index": 9,
+      "title": "Dimension Analysis",
+      "file": "09-dimension-analysis.html",
+      "source": "data/pgext-universe/; embedded flat page pgext-galaxy.html with resources under src/pgext-galaxy/; data source pgext.universe."
+    },
+    {
+      "index": 10,
+      "title": "The Status Quo",
+      "file": "10-the-status-quo.html",
+      "source": "ppt-src/assets/data/charts/pgext-catalog/06_catalog_repo_distribution.csv; ppt-src/assets/data/charts/pgext-delivery/01_pgext_summary_matrix.csv; ppt-src/assets/data/charts/pgext-delivery/09_pkg_matrix_overview.csv"
+    },
+    {
+      "index": 11,
+      "title": "The Trade-Off",
+      "file": "11-the-trade-off.html",
+      "source": "data/extension.csv; average package size estimated from local pgext RPM/DEB package files under /Users/vonng/pgsty/repo/yum/pgsql and /Users/vonng/pgsty/repo/apt/pgsql."
+    },
+    {
+      "index": 12,
+      "title": "Why Linux Native?",
+      "file": "12-why-linux-native.html",
+      "source": "https://pgext.cloud/os/ Platform table observed on 2026-05-20; ppt-src/assets/data/charts/pgext-delivery/09_pkg_matrix_overview.csv; Talk framing for native package manager and Docker-image rationale."
+    },
+    {
+      "index": 13,
+      "title": "PGEXT.CLOUD",
+      "file": "13-pgext-cloud.html",
+      "source": "Talk framing for PGEXT.CLOUD/PIG architecture; matrix dimensions from ppt-src/assets/data/charts/pgext-delivery/01_pgext_summary_matrix.csv and ppt-src/assets/data/charts/pgext-delivery/09_pkg_matrix_overview.csv."
+    },
+    {
+      "index": 14,
+      "title": "Extension Catalog",
+      "file": "14-extension-catalog.html",
+      "source": "https://pgext.cloud/extensions/timescaledb; https://pigsty.io/ext/e/timescaledb; data/timescaledb.png; data/pgext-universe/data/pgext-universe.csv"
+    },
+    {
+      "index": 15,
+      "title": "Catalog Details",
+      "file": "15-catalog-details.html",
+      "source": "data/extension.csv, exported from pgext.extension and rendered as an interactive static table."
+    },
+    {
+      "index": 16,
+      "title": "Catalog Page Views",
+      "file": "16-catalog-page-views.html",
+      "source": "data/pgext-pv/20260509-pigsty-cc-ext-popularity.html."
+    },
+    {
+      "index": 17,
+      "title": "Repository",
+      "file": "17-repository.html",
+      "source": "https://pigsty.io/docs/repo/pgsql/#quick-start"
+    },
+    {
+      "index": 18,
+      "title": "Repo Download Stats",
+      "file": "18-repo-download-stats.html",
+      "source": "data/repo-download.html; embedded flat page repository-download-stats.html; local download and traffic snapshots are embedded in that report page."
+    },
+    {
+      "index": 19,
+      "title": "What We Can Still Infer",
+      "file": "19-what-we-can-still-infer.html",
+      "source": "data/20260520-repo-system-distribution.html, tables 2, 4, and 5."
+    },
+    {
+      "index": 20,
+      "title": "The CLI - PIG",
+      "file": "20-the-cli-pig.html",
+      "source": "PIG documentation under /Users/vonng/pgsty/pigsty.io/content/docs/pig/, especially ext.md, repo.md, and build.md; local recording data/pig-build.cast."
+    },
+    {
+      "index": 21,
+      "title": "Dimension Explosion!",
+      "file": "21-dimension-explosion.html",
+      "source": "Talk framing from the package matrix; package-count callouts use the current non-contrib extension and RPM/DEB package totals."
+    },
+    {
+      "index": 22,
+      "title": "PG Minor ABI Break",
+      "file": "22-pg-minor-abi-break.html",
+      "source": "PostgreSQL versioning policy; PostgreSQL 17.2 release notes; TigerData TimescaleDB PostgreSQL upgrade documentation; local notes in data/pgext-break."
+    },
+    {
+      "index": 23,
+      "title": "OS Minor Break",
+      "file": "23-os-minor-break.html",
+      "source": "speech.md section 23; PostgreSQL/YUM news: https://yum.postgresql.org/news/postgresql-rpms-multiple-rhel-minor-versions/; PostgreSQL news mirror: https://www.postgresql.org/about/news/postgresql-rpm-repository-now-supports-multiple-rhel-minor-versions-3202/"
+    },
+    {
+      "index": 24,
+      "title": "Rust Problems",
+      "file": "24-rust-problems.html",
+      "source": "data/extension.csv export of pgext.extension and data/universe.csv export of pgext.universe, filtered where lang = Rust; pgrx version read from extra.pgrx."
+    },
+    {
+      "index": 25,
+      "title": "Bulky Extensions",
+      "file": "25-bulky-extensions.html",
+      "source": "Local file sizes from /Users/vonng/pgsty/repo/ext/src, sorted by byte size with stat on 2026-05-20; matches the ncdu top view provided for slide 25."
+    },
+    {
+      "index": 26,
+      "title": "Naming Conflicts",
+      "file": "26-naming-conflicts.html",
+      "source": "speech.md section 26; data/name-conflict.png; data/pgext-universe/data/pgext-universe.csv rows for pg_search, pg_textsearch, and vchord_bm25; data/pgext-matrix/pgext-global-matrix.csv package availability rows."
+    },
+    {
+      "index": 27,
+      "title": "Library Conflicts",
+      "file": "27-library-conflicts.html",
+      "source": "speech.md section 27; data/libduckdb.png"
+    },
+    {
+      "index": 28,
+      "title": "API Break",
+      "file": "28-api-break.html",
+      "source": "data/pgext-break/deep-research-report.md; data/pgext-break/compass_artifact_wf-d9d85f58-92a5-4dde-b2d4-ff7a2871fc06_text_markdown.md"
+    },
+    {
+      "index": 29,
+      "title": "PG 19 Compatibility",
+      "file": "29-pg-19-compatibility.html",
+      "source": "data/pg19-break/pg19-breakpoints.md; data/pg19-break/pg19-followup.md; A-group PGXS build on PostgreSQL 19 alpha snapshot 2026-05-18."
+    },
+    {
+      "index": 30,
+      "title": "Keeping It Maintainable",
+      "file": "30-keeping-it-maintainable.html",
+      "source": "speech.md section 30; ppt-src/assets/data/charts/pgext-delivery/09_pkg_matrix_overview.csv reports 363 packages across 16 OS targets and 5 PostgreSQL majors; ppt-src/assets/data/charts/pgext-delivery/01_pgext_summary_matrix.csv reports 511 total extensions in the current generated matrix."
+    },
+    {
+      "index": 31,
+      "title": "Three Questions",
+      "file": "31-three-questions.html",
+      "source": "Closing questions adapted from final script."
+    },
+    {
+      "index": 32,
+      "title": "Thank You",
+      "file": "32-thank-you.html",
+      "source": "Final thanks and contact details."
+    }
+  ],
+  "export_name": "extensions-for-everyone",
+  "entrypoint": "index.html",
+  "asset_root": "src/",
+  "layout": "flat-html-pages-with-src-assets",
+  "slide_count": 33
+}

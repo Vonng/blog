@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>16. Catalog Page Views · Extensions for Everyone</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2016%2016%27%3E%3Crect%20width%3D%2716%27%20height%3D%2716%27%20rx%3D%272%27%20fill%3D%27%230f172a%27/%3E%3Cpath%20d%3D%27M4%204h8v2H7v2h4v2H7v2H4z%27%20fill%3D%27%23f8fafc%27/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body data-prev="./15-catalog-details.html" data-next="./17-repository.html" data-first="./00-extensions-for-everyone.html" data-last="./32-thank-you.html">
+  <div class="slide-page catalog-pv-slide">
+    <header class="notes-strip">
+      <div class="notes-text"><span class="note-content">The catalog website also gives us pageview data. Not the same as production usage — but it tells us what users are looking at. That can be useful. It tells us which extensions deserve packaging effort first, and which categories are becoming active.    Here&#x27;s the extension pageview data from the last month.</span></div>
+      <nav class="nav"><a href="./15-catalog-details.html" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M15 18l-6-6 6-6"/><path d="M21 12H9"/></svg></a><span class="progress-mini">16/32</span><a href="./17-repository.html" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M9 18l6-6-6-6"/><path d="M3 12h12"/></svg></a><a href="index.html" aria-label="Home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-6h4v6"/></svg></a></nav>
+    </header>
+    <main class="slide-canvas">
+      <div class="slide-head">
+        <div class="slide-title">
+          <p class="part-label">Part III : The Delivery Layer</p>
+          <h1>Catalog Page Views</h1>
+        </div>
+        <div class="slide-brand" aria-label="Pigsty">
+          <img src="src/images/pigsty-logo.svg" alt="" aria-hidden="true">
+          <span>PIGSTY</span>
+        </div>
+      </div>
+      <section class="slide-body"><style>
+.catalog-pv-slide .slide-body {
+  height: 100%;
+  min-height: 0;
+  display: block;
+}
+.pv-only-chart {
+  height: 100%;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0 10px 18px 0;
+  scrollbar-gutter: stable;
+  background:
+    repeating-linear-gradient(90deg, transparent 0, transparent calc(20% - 1px), rgba(100, 116, 139, .16) calc(20% - 1px), rgba(100, 116, 139, .16) 20%),
+    linear-gradient(180deg, rgba(255,255,255,.74), rgba(255,255,255,.44));
+}
+.pv-only-chart:focus { outline: none; }
+.pv-only-chart::-webkit-scrollbar { width: 10px; }
+.pv-only-chart::-webkit-scrollbar-track { background: #edf2f7; }
+.pv-only-chart::-webkit-scrollbar-thumb {
+  background: #a9bad0;
+  border: 2px solid #edf2f7;
+}
+.pv-bars {
+  display: grid;
+  gap: 4px;
+}
+.pv-chart-caption {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  padding: 0 0 8px 48px;
+  background: linear-gradient(180deg, rgba(247, 249, 252, .98), rgba(247, 249, 252, .72));
+  color: #64748b;
+  font: 760 12px/1 var(--mono);
+  letter-spacing: 0;
+}
+.pv-row {
+  display: grid;
+  grid-template-columns: 52px minmax(200px, 320px) minmax(240px, 1fr);
+  align-items: center;
+  gap: 14px;
+  min-height: 29px;
+  padding: 3px 8px 3px 0;
+  border-bottom: 1px solid rgba(217, 226, 239, .82);
+  font-variant-numeric: tabular-nums;
+}
+.pv-rank {
+  color: #8a99ad;
+  font: 820 12px/1 var(--mono);
+  text-align: right;
+}
+.pv-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #172033;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 760;
+}
+.pv-track {
+  height: 19px;
+  position: relative;
+  overflow: hidden;
+  background: rgba(226, 232, 240, .94);
+  border: 1px solid #d4deeb;
+}
+.pv-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--w);
+  min-width: 2px;
+  background: linear-gradient(90deg, #2865b1, #5d96d6);
+}
+.pv-track-value {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  color: #172033;
+  font: 850 13px/1 var(--mono);
+  text-align: right;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .78);
+}
+@media (max-width: 900px) {
+  .pv-row {
+    grid-template-columns: 42px minmax(122px, 180px) minmax(110px, 1fr);
+    gap: 9px;
+  }
+  .pv-name { font-size: 14px; }
+  .pv-track-value { font-size: 11px; }
+}
+</style>
+
+<div class="pv-only-chart" tabindex="0" aria-label="Human page views by extension, sorted descending">
+  <div class="pv-chart-caption">Extension catalog page views in last month</div>
+  <div class="pv-bars" id="pv-bars"></div>
+</div>
+<script>
+const pvRows = [[1,"vector",602],[2,"timescaledb",579],[3,"pg_duckdb",578],[4,"pg_cron",555],[5,"vchord",544],[6,"pg_search",527],[7,"plv8",517],[8,"pgml",497],[9,"pg_curl",442],[10,"pgmq",441],[11,"pg_parquet",437],[12,"pgroonga",433],[13,"meta",427],[14,"zhparser",426],[15,"postgis",423],[16,"age",422],[17,"duckdb_fdw",421],[18,"pg_repack",420],[19,"columnar",417],[20,"documentdb",404],[21,"zstd",402],[22,"omni",394],[23,"pg_bigm",389],[24,"pg_mooncake",389],[25,"pg_trgm",387],[26,"pljava",387],[27,"timescaledb_toolkit",387],[28,"pgpdf",385],[29,"http",385],[30,"pg_graphql",382],[31,"supabase_vault",379],[32,"pgrouting",376],[33,"pglogical",375],[34,"h3",373],[35,"pg_task",373],[36,"pg_later",372],[37,"pg_strom",368],[38,"dict_xsyn",368],[39,"pg_partman",367],[40,"pg_analytics",367],[41,"q3c",367],[42,"pg_tde",366],[43,"geoip",366],[44,"citus",365],[45,"gzip",364],[46,"sepgsql",363],[47,"pg_math",360],[48,"pgqr",359],[49,"plprql",359],[50,"pg_smtp_client",358],[51,"emaj",358],[52,"pointcloud",358],[53,"wal2json",355],[54,"pg_net",354],[55,"pldbgapi",354],[56,"rdkit",353],[57,"pgmeminfo",352],[58,"pg_idkit",352],[59,"tzf",352],[60,"aws_s3",351],[61,"plpgsql",351],[62,"table_version",351],[63,"vectorscale",349],[64,"hunspell_ru_ru_aot",348],[65,"ogr_fdw",347],[66,"pglite_fusion",346],[67,"pg_tle",346],[68,"mysql_fdw",344],[69,"floatfile",344],[70,"pgpcre",344],[71,"pg_stat_monitor",343],[72,"intarray",341],[73,"plr",341],[74,"pg_background",341],[75,"autoinc",340],[76,"hdfs_fdw",340],[77,"pgaudit",340],[78,"toastinfo",339],[79,"multicorn",339],[80,"periods",339],[81,"pgtap",339],[82,"pgnodemx",338],[83,"seg",338],[84,"plsh",337],[85,"anon",337],[86,"quantile",336],[87,"pg_ivm",336],[88,"supautils",336],[89,"credcheck",335],[90,"db2_fdw",335],[91,"orafce",334],[92,"shacrypt",334],[93,"envvar",334],[94,"plpython3u",334],[95,"odbc_fdw",333],[96,"system_stats",333],[97,"logerrors",332],[98,"pguecc",332],[99,"hstore",332],[100,"vchord_bm25",331],[101,"pgoutput",331],[102,"bzip",330],[103,"set_user",330],[104,"uri",330],[105,"pg_crash",330],[106,"vectorize",329],[107,"floatvec",328],[108,"acl",328],[109,"pgq",328],[110,"temporal_tables",328],[111,"pgtt",327],[112,"unit",327],[113,"semver",327],[114,"tcn",326],[115,"jsquery",326],[116,"wrappers",326],[117,"pltcl",326],[118,"ddlx",325],[119,"ltree",325],[120,"rum",325],[121,"plperl",325],[122,"citext",324],[123,"xml2",324],[124,"mimeo",324],[125,"pg_bestmatch",324],[126,"jdbc_fdw",323],[127,"kafka_fdw",323],[128,"babelfishpg_common",323],[129,"table_log",322],[130,"pg_fkpart",322],[131,"xxhash",322],[132,"topn",321],[133,"pgjq",321],[134,"pg_rrule",321],[135,"hll",321],[136,"financial",321],[137,"pg_readme",320],[138,"pagevis",320],[139,"pgmp",320],[140,"pg_failover_slots",320],[141,"chkpass",319],[142,"pg_savior",319],[143,"numeral",319],[144,"aggs_for_vecs",319],[145,"pgjwt",318],[146,"pg4ml",318],[147,"uint",318],[148,"pg_extra_time",318],[149,"pgcrypto",317],[150,"fio",316],[151,"tablefunc",316],[152,"dbt2",316],[153,"pg_sqlog",315],[154,"plpgsql_check",315],[155,"refint",314],[156,"file_fdw",314],[157,"pg_uuidv7",314],[158,"pgfincore",314],[159,"xicor",313],[160,"icu_ext",313],[161,"smlar",313],[162,"cryptint",312],[163,"pllua",312],[164,"bloom",312],[165,"plan_filter",312],[166,"pg_sphere",311],[167,"pgcozy",311],[168,"sparql",311],[169,"tds_fdw",311],[170,"plproxy",310],[171,"currency",310],[172,"hypopg",310],[173,"pg_stat_statements",309],[174,"base62",309],[175,"ddsketch",309],[176,"dict_int",308],[177,"pg_permissions",308],[178,"cube",308],[179,"pgsodium",308],[180,"timeseries",308],[181,"pgx_ulid",307],[182,"isn",307],[183,"earthdistance",307],[184,"hunspell_pt_pt",305],[185,"mongo_fdw",304],[186,"pgl_ddl_deploy",304],[187,"redis_fdw",304],[188,"btree_gin",304],[189,"sqlite_fdw",304],[190,"asn1oid",303],[191,"pg_geohash",303],[192,"wal2mongo",302],[193,"emailaddr",302],[194,"passwordcheck",301],[195,"tdigest",301],[196,"plprofiler",301],[197,"md5hash",300],[198,"pg_statement_rollback",300],[199,"ip4r",300],[200,"first_last_agg",300],[201,"vasco",299],[202,"random",299],[203,"repmgr",299],[204,"data_historization",299],[205,"sslinfo",298],[206,"pg_overexplain",298],[207,"pg_jsonschema",298],[208,"aux_mysql",298],[209,"hashtypes",298],[210,"base36",298],[211,"lo",297],[212,"powa",297],[213,"basebackup_to_shell",297],[214,"pgagent",297],[215,"pg_checksums",297],[216,"uuid-ossp",296],[217,"sequential_uuids",296],[218,"dblink",295],[219,"amcheck",295],[220,"noset",295],[221,"pgbouncer_fdw",294],[222,"ddl_historization",294],[223,"pg_dbms_lock",294],[224,"pg_base58",294],[225,"hunspell_en_us",294],[226,"pg_squeeze",293],[227,"pg_session_jwt",293],[228,"permuteseq",293],[229,"pglogical_ticker",293],[230,"sslutils",292],[231,"adminpack",292],[232,"prefix",292],[233,"pg_qualstats",292],[234,"pg_polyline",292],[235,"basic_archive",291],[236,"pg_protobuf",291],[237,"intagg",290],[238,"plperlu",290],[239,"decoderbufs",290],[240,"etcd_fdw",289],[241,"redis",289],[242,"pg_buffercache",288],[243,"moddatetime",288],[244,"unaccent",288],[245,"oracle_fdw",288],[246,"url_encode",288],[247,"session_variable",287],[248,"pg_jobmon",287],[249,"schedoc",287],[250,"hunspell_de_de",287],[251,"bgw_replstatus",286],[252,"pgsql_tweaks",286],[253,"mobilitydb",286],[254,"pgspider_ext",285],[255,"auto_explain",285],[256,"pg_dbms_metadata",285],[257,"pg_incremental",285],[258,"fuzzystrmatch",285],[259,"pg_render",284],[260,"pg_surgery",284],[261,"index_advisor",284],[262,"pg_rational",284],[263,"db_migrator",283],[264,"hunspell_cs_cz",283],[265,"pg_cooldown",283],[266,"pgmemcache",283],[267,"pgautofailover",282],[268,"pgpool_adm",282],[269,"pg_upless",282],[270,"pgsmcrypto",282],[271,"pg_drop_events",282],[272,"pg_readonly",282],[273,"arraymath",281],[274,"pg_tokenizer",281],[275,"pg_visibility",280],[276,"pg_similarity",280],[277,"pg_freespacemap",278],[278,"pageinspect",278],[279,"hashlib",278],[280,"decoder_raw",278],[281,"hunspell_nn_no",278],[282,"debversion",277],[283,"pg_stat_kcache",277],[284,"pgdd",276],[285,"imgsmlr",276],[286,"firebird_fdw",276],[287,"pg_html5_email_address",276],[288,"uint128",276],[289,"pg_track_settings",276],[290,"tsm_system_rows",276],[291,"pg_walinspect",275],[292,"pg_summarize",275],[293,"explain_ui",274],[294,"roaringbitmap",273],[295,"test_decoding",273],[296,"pg_profile",273],[297,"pg_hint_plan",273],[298,"count_distinct",272],[299,"omnisketch",272],[300,"log_fdw",271],[301,"hunspell_nl_nl",271],[302,"old_snapshot",270],[303,"pgstattuple",269],[304,"pg_show_plans",269],[305,"btree_gist",269],[306,"faker",269],[307,"pg_fact_loader",269],[308,"insert_username",269],[309,"postgres_fdw",268],[310,"pg_auth_mon",268],[311,"hunspell_ru_ru",268],[312,"pg_dbms_job",268],[313,"hunspell_fr",268],[314,"pg_prewarm",267],[315,"prioritize",267],[316,"login_hook",266],[317,"orioledb",266],[318,"spat",266],[319,"pg_xenophile",266],[320,"pg_hashids",266],[321,"pg_bulkload",266],[322,"pgmb",265],[323,"timestamp9",265],[324,"lower_quantile",265],[325,"tsm_system_time",265],[326,"pg_cheat_funcs",264],[327,"pgauditlogtofile",264],[328,"pg_wait_sampling",264],[329,"pgextwlist",264],[330,"hunspell_ne_np",264],[331,"extra_window_functions",264],[332,"collection",263],[333,"safeupdate",263],[334,"pglinter",262],[335,"pg_dirtyread",261],[336,"pgrowlocks",260],[337,"pre_prepare",260],[338,"pg_pinyin",260],[339,"convert",259],[340,"pgfaceting",259],[341,"pgcryptokey",259],[342,"pg_tracing",258],[343,"pg_orphaned",258],[344,"passwordcheck_cracklib",258],[345,"pg_duration",258],[346,"spock",258],[347,"babelfishpg_tds",257],[348,"pg_relusage",257],[349,"country",256],[350,"pg_store_plans",256],[351,"plxslt",255],[352,"pg_cardano",255],[353,"aggs_for_arrays",252],[354,"pg_retry",249],[355,"pgactive",248],[356,"pg_tiktoken",248],[357,"auth_delay",247],[358,"pg_auditor",246],[359,"pljs",246],[360,"pg_csv",246],[361,"pg_catcheck",243],[362,"snowflake",243],[363,"pg_snakeoil",242],[364,"lolor",242],[365,"ivorysql_ora",241],[366,"typeid",241],[367,"pgsentinel",239],[368,"pg_clickhouse",239],[369,"weighted_statistics",236],[370,"pg_logicalinspect",225],[371,"pg_pwhash",225],[372,"pg_strict",222],[373,"pg_textsearch",221],[374,"qos",220],[375,"pg_eviltransform",217],[376,"biscuit",217],[377,"omni_mimetypes",216],[378,"documentdb_core",215],[379,"pg_enigma",213],[380,"omni_httpc",213],[381,"omni_containers",212],[382,"citus_columnar",210],[383,"pg_ai_query",210],[384,"jsonb_plpython3u",209],[385,"h3_postgis",208],[386,"pglogical_origin",206],[387,"omni_kube",205],[388,"bool_plperl",205],[389,"pg_ttl_index",205],[390,"hstore_plperl",204],[391,"postgis_tiger_geocoder",203],[392,"omni_json",203],[393,"omni_ledger",202],[394,"postgis_sfcgal",201],[395,"pg_track_optimizer",201],[396,"documentdb_distributed",200],[397,"omni_manifest",200],[398,"omni_python",200],[399,"ltree_plpython3u",200],[400,"omni_polyfill",199],[401,"omni_schema",199],[402,"pg_utl_smtp",199],[403,"hstore_plperlu",197],[404,"omni_txn",196],[405,"omni_aws",196],[406,"address_standardizer_data_us",195],[407,"informix_fdw",195],[408,"omni_types",194],[409,"hstore_plpython3u",194],[410,"omni_seq",193],[411,"omni_credentials",193],[412,"omni_session",191],[413,"pg_proctab",190],[414,"address_standardizer",190],[415,"omni_vfs",190],[416,"l10n_table_dependent_extension",190],[417,"omni_id",190],[418,"omni_service",189],[419,"omni_vfs_types_v1",189],[420,"hstore_plluau",189],[421,"pg_dbms_errlog",187],[422,"pltclu",186],[423,"babelfishpg_money",185],[424,"pointcloud_postgis",185],[425,"postgis_raster",185],[426,"omni_os",185],[427,"omni_test",184],[428,"jsonb_plperlu",184],[429,"pg_rewrite",184],[430,"postgis_topology",183],[431,"omni_yaml",183],[432,"omni_rest",182],[433,"omni_auth",182],[434,"omni_http",181],[435,"babelfishpg_tsql",180],[436,"omni_sqlite",180],[437,"pg_readme_test_extension",180],[438,"omni_cloudevents",178],[439,"omni_web",178],[440,"nominatim_fdw",178],[441,"pgpool_recovery",177],[442,"omni_sql",176],[443,"jsonb_plperl",175],[444,"pgroonga_database",175],[445,"hstore_pllua",174],[446,"plluau",172],[447,"omni_var",168],[448,"bool_plperlu",168],[449,"omni_regex",166],[450,"omni_httpd",166],[451,"omni_email",162],[452,"pgpool_regclass",162],[453,"omni_xml",159],[454,"omni_worker",144],[455,"plisql",125],[456,"omni_csv",124],[457,"documentdb_extended_rum",122],[458,"omni_datasets",118],[459,"ora_btree_gist",116],[460,"omni_shmem",115],[461,"mobilitydb_datagen",114],[462,"gb18030_2022",113],[463,"ora_btree_gin",108],[464,"pg_get_functiondef",97],[465,"pgcalendar",90],[466,"pg_dispatch",85],[467,"storage_engine",83],[468,"pg_regresql",76],[469,"pg_stat_ch",76],[470,"pg_text_semver",76],[471,"logical_ddl",76],[472,"pgelog",72],[473,"pgbson",72],[474,"pglock",71],[475,"pg_trickle",70],[476,"pg_isok",69],[477,"pgh_output",69],[478,"pgmqtt",68],[479,"pgproto",68],[480,"pgh_output_en_au",68],[481,"external_file",67],[482,"pg_slug_gen",67],[483,"pghydro",66],[484,"datasketches",65],[485,"pg_datasentinel",65],[486,"pg_query_rewrite",64],[487,"pgclone",64],[488,"pg_liquid",64],[489,"rdf_fdw",64],[490,"byteamagic",63],[491,"onesparse",62],[492,"pg_kazsearch",61],[493,"provsql",61],[494,"block_copy_command",61],[495,"parray_gin",59],[496,"column_encrypt",58],[497,"pg_fsql",58],[498,"pgh_hgm",56],[499,"pg_when",56],[500,"pg_command_fw",55],[501,"pgh_consistency",55],[502,"pgh_output_pt_br",52],[503,"ulak",52],[504,"pgh_raster",52],[505,"pg_rrf",50],[506,"re2",47],[507,"pg_variables",47],[508,"pg_pathcheck",32],[509,"pg_bikram_sambat",26],[510,"pg_accumulator",24]];
+const maxPv = 602;
+const fmtPv = new Intl.NumberFormat("en-US");
+const bars = document.getElementById("pv-bars");
+const fragment = document.createDocumentFragment();
+for (const [rank, extension, pv] of pvRows) {
+  const row = document.createElement("div");
+  row.className = "pv-row";
+  row.style.setProperty("--w", `${(pv / maxPv * 100).toFixed(3)}%`);
+  row.setAttribute("aria-label", `${rank}. ${extension}, ${fmtPv.format(pv)} human page views`);
+
+  const rankEl = document.createElement("span");
+  rankEl.className = "pv-rank";
+  rankEl.textContent = String(rank).padStart(3, "0");
+
+  const nameEl = document.createElement("span");
+  nameEl.className = "pv-name";
+  nameEl.textContent = extension;
+  nameEl.title = extension;
+
+  const trackEl = document.createElement("span");
+  trackEl.className = "pv-track";
+  const fillEl = document.createElement("span");
+  fillEl.className = "pv-fill";
+  const valueEl = document.createElement("span");
+  valueEl.className = "pv-track-value";
+  valueEl.textContent = fmtPv.format(pv);
+  trackEl.appendChild(fillEl);
+  trackEl.appendChild(valueEl);
+
+  row.append(rankEl, nameEl, trackEl);
+  fragment.appendChild(row);
+}
+bars.appendChild(fragment);
+</script></section>
+    </main>
+  </div>
+  <script src="src/deck.js"></script>
+</body>
+</html>

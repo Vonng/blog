@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>21. Dimension Explosion! · Extensions for Everyone</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2016%2016%27%3E%3Crect%20width%3D%2716%27%20height%3D%2716%27%20rx%3D%272%27%20fill%3D%27%230f172a%27/%3E%3Cpath%20d%3D%27M4%204h8v2H7v2h4v2H7v2H4z%27%20fill%3D%27%23f8fafc%27/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body data-prev="./20-the-cli-pig.html" data-next="./22-pg-minor-abi-break.html" data-first="./00-extensions-for-everyone.html" data-last="./32-thank-you.html">
+  <div class="slide-page dimension-explosion-slide">
+    <header class="notes-strip">
+      <div class="notes-text"><span class="note-content">In the previous chapter, we talked about the matrix. 80 slots per extension.    But 5 PG times 16 Linux is an oversimplified model. The real picture is messier. There are more factors than rows and columns.    On the OS side: distribution family, architecture, major version, and sometimes minor version.    On the PG side: major version, and sometimes minor version.    On the extension side: extension version, and pgrx version for Rust extensions.    When you multiply all of these together, the combination explodes very fast.    The rest of this part is about what we learn when the explosion meets reality.</span></div>
+      <nav class="nav"><a href="./20-the-cli-pig.html" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M15 18l-6-6 6-6"/><path d="M21 12H9"/></svg></a><span class="progress-mini">21/32</span><a href="./22-pg-minor-abi-break.html" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M9 18l6-6-6-6"/><path d="M3 12h12"/></svg></a><a href="index.html" aria-label="Home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-6h4v6"/></svg></a></nav>
+    </header>
+    <main class="slide-canvas">
+      <div class="slide-head">
+        <div class="slide-title">
+          <p class="part-label">Part IV Maintenance in the Wild</p>
+          <h1>Dimension Explosion!</h1>
+        </div>
+        <div class="slide-brand" aria-label="Pigsty">
+          <img src="src/images/pigsty-logo.svg" alt="" aria-hidden="true">
+          <span>PIGSTY</span>
+        </div>
+      </div>
+      <section class="slide-body"><style>
+  .dimension-explosion-slide .slide-canvas {
+    padding: 22px 46px 26px;
+    gap: 10px;
+  }
+
+  .dimension-explosion-slide .part-label {
+    display: none;
+  }
+
+  .dimension-explosion-slide .slide-head {
+    align-items: end;
+  }
+
+  .dimension-explosion-slide .slide-title h1 {
+    max-width: 1240px;
+    color: #020617;
+    font-size: clamp(64px, 5.2vw, 96px);
+    line-height: .92;
+    font-weight: 930;
+    letter-spacing: 0;
+  }
+
+  .dimension-explosion {
+    position: relative;
+    height: 100%;
+    min-height: 0;
+    color: #376d9c;
+    overflow: hidden;
+  }
+
+  .dimension-factors {
+    height: 100%;
+    min-height: 0;
+    display: grid;
+    align-content: space-between;
+    gap: 8px;
+    padding-top: clamp(52px, 7vh, 82px);
+    padding-bottom: 4px;
+  }
+
+  .dimension-row {
+    min-width: 0;
+    display: flex;
+    align-items: baseline;
+    gap: clamp(15px, 1.4vw, 28px);
+    color: #376d9c;
+    font-weight: 900;
+    letter-spacing: 0;
+  }
+
+  .dimension-row .label {
+    flex: 0 0 clamp(282px, 18.8vw, 390px);
+    white-space: nowrap;
+    font-size: clamp(38px, 3.25vw, 61px);
+    line-height: .98;
+  }
+
+  .dimension-row .value {
+    min-width: 0;
+    font-size: clamp(38px, 3.25vw, 61px);
+    line-height: .98;
+    overflow-wrap: normal;
+  }
+
+  .dimension-row .value.tight {
+    font-size: clamp(34px, 2.95vw, 55px);
+  }
+
+  .dimension-row .value.full {
+    font-size: clamp(39px, 3.35vw, 64px);
+  }
+
+  .dimension-row .value b {
+    color: #376d9c;
+    font-weight: 930;
+  }
+
+  .dimension-row .green {
+    color: #56963c;
+  }
+
+  .dimension-row .pg-new {
+    color: #c22d52;
+  }
+
+  .dimension-row .pg-supported {
+    color: #55ad78;
+  }
+
+  .dimension-row .pg-old {
+    color: #bf1f08;
+  }
+
+  .dimension-row .pg-eol {
+    color: #c22d52;
+  }
+
+  .dimension-row.tail {
+    display: block;
+  }
+
+  .dimension-row.tail .value {
+    display: block;
+    font-size: clamp(38px, 3.4vw, 66px);
+    line-height: 1;
+  }
+
+  @media (max-height: 820px) {
+    .dimension-explosion-slide .slide-canvas {
+      padding-top: 18px;
+      gap: 8px;
+    }
+
+    .dimension-explosion-slide .slide-title h1 {
+      font-size: clamp(56px, 5vw, 78px);
+    }
+
+    .dimension-factors {
+      padding-top: 50px;
+      gap: 6px;
+    }
+
+    .dimension-row .label {
+      flex-basis: clamp(238px, 18vw, 320px);
+      font-size: clamp(34px, 3vw, 49px);
+    }
+
+    .dimension-row .value {
+      font-size: clamp(34px, 3vw, 49px);
+    }
+
+    .dimension-row .value.tight {
+      font-size: clamp(30px, 2.7vw, 45px);
+    }
+
+    .dimension-row.tail .value {
+      font-size: clamp(34px, 3.05vw, 52px);
+    }
+  }
+</style>
+
+<div class="dimension-explosion" aria-label="Packaging dimension factors">
+  <div class="dimension-factors">
+    <div class="dimension-row">
+      <span class="label">OS Distro :</span>
+      <span class="value">EL <b>/</b> DEBIAN <b>/</b> UBUNTU</span>
+    </div>
+
+    <div class="dimension-row">
+      <span class="label">OS Major :</span>
+      <span class="value green">el8, el9, el10, d12, d13, u22, u24, u26</span>
+    </div>
+
+    <div class="dimension-row">
+      <span class="label">OS Arch :</span>
+      <span class="value">amd64, arm64, ...</span>
+    </div>
+
+    <div class="dimension-row">
+      <span class="label">PG Major :</span>
+      <span class="value">
+        <span class="pg-new">19</span>
+        <span class="pg-supported">18 17 16 15 14</span>
+        <span class="pg-old">13</span>
+        <span class="pg-eol">12</span>
+      </span>
+    </div>
+
+    <div class="dimension-row">
+      <span class="label">PG Minor :</span>
+      <span class="value">ABI break ...... (<span class="pg-new">17.1</span>)</span>
+    </div>
+
+    <div class="dimension-row">
+      <span class="label">OS Minor :</span>
+      <span class="value tight">OpenSSL upgrade (<span class="pg-new">EL 9.7, 10.1</span>)</span>
+    </div>
+
+    <div class="dimension-row">
+      <span class="label">PG Branch :</span>
+      <span class="value tight">Main, LLVMJIT, DEBUGINFO, DBGSYM...</span>
+    </div>
+
+    <div class="dimension-row tail">
+      <span class="value full">Extension Versioning &amp; PGRX Versioning...</span>
+    </div>
+  </div>
+</div></section>
+    </main>
+  </div>
+  <script src="src/deck.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>22. PG Minor ABI Break · Extensions for Everyone</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2016%2016%27%3E%3Crect%20width%3D%2716%27%20height%3D%2716%27%20rx%3D%272%27%20fill%3D%27%230f172a%27/%3E%3Cpath%20d%3D%27M4%204h8v2H7v2h4v2H7v2H4z%27%20fill%3D%27%23f8fafc%27/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body data-prev="./21-dimension-explosion.html" data-next="./23-os-minor-break.html" data-first="./00-extensions-for-everyone.html" data-last="./32-thank-you.html">
+  <div class="slide-page pg-minor-abi-slide">
+    <header class="notes-strip">
+      <div class="notes-text"><span class="note-content">Last year we hit a case. PG 17.1 broke the ABI during a minor upgrade. That broke certain extensions, including TimescaleDB.    In response, some maintainers switched to building for every PG minor version. But that creates new problems. If you build for every single minor version, in-place upgrades become much harder.    It&#x27;s better to treat this as an exceptional case. But we have to be ready for it when it happens.</span></div>
+      <nav class="nav"><a href="./21-dimension-explosion.html" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M15 18l-6-6 6-6"/><path d="M21 12H9"/></svg></a><span class="progress-mini">22/32</span><a href="./23-os-minor-break.html" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M9 18l6-6-6-6"/><path d="M3 12h12"/></svg></a><a href="index.html" aria-label="Home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-6h4v6"/></svg></a></nav>
+    </header>
+    <main class="slide-canvas">
+      <div class="slide-head">
+        <div class="slide-title">
+          <p class="part-label">Part IV Maintenance in the Wild</p>
+          <h1>PG Minor ABI Break</h1>
+        </div>
+        <div class="slide-brand" aria-label="Pigsty">
+          <img src="src/images/pigsty-logo.svg" alt="" aria-hidden="true">
+          <span>PIGSTY</span>
+        </div>
+      </div>
+      <section class="slide-body"><style>
+  .pg-minor-abi-case {
+    height: 100%;
+    display: grid;
+    align-content: start;
+    justify-content: flex-start;
+    gap: 22px;
+  }
+
+  .pg-minor-abi-case .exception-panel {
+    min-width: 0;
+    width: 100%;
+    max-width: 1120px;
+    border-radius: 8px;
+    background: #f7f8fa;
+    padding: 14px 40px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .pg-minor-abi-case .panel-title {
+    color: #0f172a;
+    font-size: 41px;
+    line-height: 1.08;
+    font-weight: 900;
+    letter-spacing: 0;
+  }
+
+  .pg-minor-abi-case .version-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .pg-minor-abi-case .version-strip span {
+    border: 1px solid rgba(180, 83, 9, 0.26);
+    border-radius: 8px;
+    background: #fffbeb;
+    color: #92400e;
+    padding: 6px 13px;
+    font: 820 20px/1 var(--mono);
+  }
+
+  .pg-minor-abi-case .fact-stack {
+    display: grid;
+    gap: 0;
+  }
+
+  .pg-minor-abi-case .fact {
+    border-left: 6px solid #2563eb;
+    background: #ffffff;
+    padding: 12px 30px;
+    color: #1e293b;
+    font-size: 27px;
+    line-height: 1.12;
+    font-weight: 850;
+  }
+
+  .pg-minor-abi-case .fact + .fact {
+    border-top: 8px solid #f7f8fa;
+  }
+
+  .pg-minor-abi-case .fact strong {
+    color: #0f172a;
+    font-weight: 900;
+  }
+
+  .pg-minor-abi-case .fact.warn {
+    border-left-color: #d97706;
+  }
+
+  .pg-minor-abi-case code {
+    font-size: 0.88em;
+  }
+
+  .pg-minor-abi-case .minor-question {
+    max-width: 1180px;
+    color: #0f172a;
+    font-size: 43px;
+    line-height: 1.02;
+    font-weight: 950;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .pg-minor-abi-case .minor-question .minor-word {
+    color: #dc2626;
+    font-size: 1.28em;
+    font-weight: 1000;
+  }
+
+  .pg-minor-abi-case .minor-answer {
+    margin-top: -8px;
+    color: #2563eb;
+    font-size: 35px;
+    line-height: 1.05;
+    font-weight: 900;
+    letter-spacing: 0;
+  }
+</style>
+
+<div class="pg-minor-abi-case">
+  <aside class="exception-panel" aria-label="ResultRelInfo exception evidence">
+    <div class="panel-title">The <code>ResultRelInfo</code> exception</div>
+    <div class="version-strip" aria-label="Affected PostgreSQL minor versions">
+      <span>17.1</span>
+      <span>16.5</span>
+      <span>15.9</span>
+      <span>14.14</span>
+      <span>13.17</span>
+      <span>12.21</span>
+    </div>
+    <div class="fact-stack">
+      <div class="fact warn"><strong>Break:</strong> binary interface around <code>ResultRelInfo</code>.</div>
+      <div class="fact"><strong>Affected:</strong> TimescaleDB and several other extensions.</div>
+      <div class="fact"><strong>Reverted:</strong> ABI restored in the next minor releases.</div>
+    </div>
+  </aside>
+  <div class="minor-question" aria-label="SHOULD WE BUILD THE EXTENSION FOR EACH MINOR POSTGRESQL VERSION?">
+    SHOULD WE BUILD THE EXTENSION FOR EACH<br>
+    <span class="minor-word">MINOR</span> POSTGRESQL VERSION?
+  </div>
+  <div class="minor-answer">Or, is it just an exception?</div>
+</div></section>
+    </main>
+  </div>
+  <script src="src/deck.js"></script>
+</body>
+</html>

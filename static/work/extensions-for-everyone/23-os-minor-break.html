@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>23. OS Minor Break · Extensions for Everyone</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2016%2016%27%3E%3Crect%20width%3D%2716%27%20height%3D%2716%27%20rx%3D%272%27%20fill%3D%27%230f172a%27/%3E%3Cpath%20d%3D%27M4%204h8v2H7v2h4v2H7v2H4z%27%20fill%3D%27%23f8fafc%27/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body data-prev="./22-pg-minor-abi-break.html" data-next="./24-rust-problems.html" data-first="./00-extensions-for-everyone.html" data-last="./32-thank-you.html">
+  <div class="slide-page ">
+    <header class="notes-strip">
+      <div class="notes-text"><span class="note-content">Sometimes even an OS minor version will break your build.    For example, EL changed the OpenSSL version from 3.2 to 3.5, and some extensions break at link time.    In response, the PGDG YUM repo recently changed its packaging policy — building per minor version instead of per major version. So now we have separate builds for EL 10.0, 10.1, 9.6, and 9.7, instead of just EL 10 and EL 9. That&#x27;s yet another sub-dimension on the matrix.</span></div>
+      <nav class="nav"><a href="./22-pg-minor-abi-break.html" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M15 18l-6-6 6-6"/><path d="M21 12H9"/></svg></a><span class="progress-mini">23/32</span><a href="./24-rust-problems.html" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M9 18l6-6-6-6"/><path d="M3 12h12"/></svg></a><a href="index.html" aria-label="Home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-6h4v6"/></svg></a></nav>
+    </header>
+    <main class="slide-canvas">
+      <div class="slide-head">
+        <div class="slide-title">
+          <p class="part-label">Part IV Maintenance in the Wild</p>
+          <h1>OS Minor Break</h1>
+        </div>
+        <div class="slide-brand" aria-label="Pigsty">
+          <img src="src/images/pigsty-logo.svg" alt="" aria-hidden="true">
+          <span>PIGSTY</span>
+        </div>
+      </div>
+      <section class="slide-body"><style>
+  .os-minor-case {
+    --accent-red: #be2d2d;
+    --accent-red-soft: #fee2e2;
+    --accent-blue: #2865b1;
+    display: grid;
+    grid-template-columns: minmax(0, 520px) 64px minmax(0, 1fr);
+    gap: 24px;
+    align-items: center;
+    height: 100%;
+  }
+
+  .os-minor-case .cause-board {
+    min-width: 0;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 22px;
+  }
+
+  .os-minor-case .os-pairs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .os-minor-case .os-pair,
+  .os-minor-case .openssl-jump,
+  .os-minor-case .break-label {
+    border: 1px solid rgba(15, 23, 42, 0.13);
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 18px 46px rgba(31, 42, 68, 0.09);
+  }
+
+  .os-minor-case .os-pair {
+    min-height: 154px;
+    padding: 22px;
+    display: grid;
+    align-content: center;
+    gap: 14px;
+  }
+
+  .os-minor-case .pair-label,
+  .os-minor-case .jump-label {
+    color: #64748b;
+    font: 820 15px/1 var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0;
+  }
+
+  .os-minor-case .pair-values {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: #0f172a;
+    font: 900 36px/1 var(--mono);
+    letter-spacing: 0;
+  }
+
+  .os-minor-case .pair-values b,
+  .os-minor-case .openssl-values b {
+    color: #0f172a;
+  }
+
+  .os-minor-case .pair-values i,
+  .os-minor-case .openssl-values i {
+    color: #94a3b8;
+    font-style: normal;
+    font-weight: 900;
+  }
+
+  .os-minor-case .openssl-jump {
+    min-height: 172px;
+    padding: 26px 30px;
+    border-color: rgba(190, 45, 45, 0.24);
+    background: linear-gradient(180deg, #ffffff, #fff7f7);
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    gap: 16px;
+  }
+
+  .os-minor-case .jump-label {
+    color: var(--accent-red);
+  }
+
+  .os-minor-case .openssl-values {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+    color: #0f172a;
+    font: 900 58px/1 var(--mono);
+    letter-spacing: 0;
+  }
+
+  .os-minor-case .openssl-values .to {
+    color: var(--accent-red);
+    font-size: 46px;
+  }
+
+  .os-minor-case .break-label {
+    min-height: 86px;
+    border-color: rgba(190, 45, 45, 0.28);
+    background: var(--accent-red-soft);
+    color: var(--accent-red);
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 14px 20px;
+    font-size: 33px;
+    line-height: 1.06;
+    font-weight: 900;
+    letter-spacing: 0;
+  }
+
+  .os-minor-case .flow-arrow {
+    width: 64px;
+    height: 64px;
+    border: 1px solid rgba(40, 101, 177, 0.16);
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 18px 46px rgba(31, 42, 68, 0.09);
+    color: var(--accent-blue);
+    display: grid;
+    place-items: center;
+    font-size: 45px;
+    line-height: 1;
+    font-weight: 900;
+  }
+
+  .os-minor-case .response {
+    min-height: 410px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .os-minor-case .response-line {
+    margin: 0;
+    color: #0f172a;
+    font-size: 58px;
+    line-height: 0.96;
+    font-weight: 940;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .os-minor-case .minor-word {
+    color: var(--accent-red);
+    font-size: 1.18em;
+    font-weight: 1000;
+    font-style: normal;
+  }
+</style>
+
+<div class="os-minor-case">
+  <section class="cause-board" aria-label="OS minor changes and the OpenSSL trigger">
+    <div class="os-pairs">
+      <div class="os-pair">
+        <div class="pair-label">Enterprise Linux</div>
+        <div class="pair-values"><b>10.0</b><i>&rarr;</i><b>10.1</b></div>
+      </div>
+      <div class="os-pair">
+        <div class="pair-label">Enterprise Linux</div>
+        <div class="pair-values"><b>9.0</b><i>&rarr;</i><b>9.7</b></div>
+      </div>
+    </div>
+    <div class="openssl-jump">
+      <div class="jump-label">OpenSSL</div>
+      <div class="openssl-values"><b>3.2</b><i class="to">&rarr;</i><b>3.5</b></div>
+    </div>
+    <div class="break-label">breaking change</div>
+  </section>
+
+  <div class="flow-arrow" aria-hidden="true">&rarr;</div>
+
+  <aside class="response" aria-label="Repository response">
+    <p class="response-line">NOW WE HAVE TO</p>
+    <p class="response-line">BUILD FOR EACH</p>
+    <p class="response-line"><span class="minor-word">MINOR</span> EL VERSION</p>
+  </aside>
+</div></section>
+    </main>
+  </div>
+  <script src="src/deck.js"></script>
+</body>
+</html>

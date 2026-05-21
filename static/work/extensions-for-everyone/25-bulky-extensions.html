@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>25. Bulky Extensions · Extensions for Everyone</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2016%2016%27%3E%3Crect%20width%3D%2716%27%20height%3D%2716%27%20rx%3D%272%27%20fill%3D%27%230f172a%27/%3E%3Cpath%20d%3D%27M4%204h8v2H7v2h4v2H7v2H4z%27%20fill%3D%27%23f8fafc%27/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body data-prev="./24-rust-problems.html" data-next="./26-naming-conflicts.html" data-first="./00-extensions-for-everyone.html" data-last="./32-thank-you.html">
+  <div class="slide-page ">
+    <header class="notes-strip">
+      <div class="notes-text"><span class="note-content">Extensions used to be small — typically a few hundred kilobytes. That&#x27;s no longer always true.    Some newer extensions like pg_search and pg_duckdb are tens of megabytes. Source archives and build outputs both add up fast. Across the full matrix, this turns into real storage and bandwidth cost.</span></div>
+      <nav class="nav"><a href="./24-rust-problems.html" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M15 18l-6-6 6-6"/><path d="M21 12H9"/></svg></a><span class="progress-mini">25/32</span><a href="./26-naming-conflicts.html" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M9 18l6-6-6-6"/><path d="M3 12h12"/></svg></a><a href="index.html" aria-label="Home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-6h4v6"/></svg></a></nav>
+    </header>
+    <main class="slide-canvas">
+      <div class="slide-head">
+        <div class="slide-title">
+          <p class="part-label">Part IV Maintenance in the Wild</p>
+          <h1>Bulky Extensions</h1>
+        </div>
+        <div class="slide-brand" aria-label="Pigsty">
+          <img src="src/images/pigsty-logo.svg" alt="" aria-hidden="true">
+          <span>PIGSTY</span>
+        </div>
+      </div>
+      <section class="slide-body"><style>
+  .bulky-slide {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 14px;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .bulky-lede {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 28px;
+  }
+
+  .bulky-lede h2 {
+    margin: 0;
+    max-width: 860px;
+    font-size: 38px;
+    line-height: 1.03;
+    font-weight: 840;
+    letter-spacing: 0;
+    color: #111827;
+  }
+
+  .bulky-lede h2 span {
+    color: #b91c1c;
+  }
+
+  .bulky-total {
+    display: grid;
+    justify-items: end;
+    gap: 4px;
+    white-space: nowrap;
+  }
+
+  .bulky-total strong {
+    font-size: 48px;
+    line-height: 0.92;
+    font-weight: 900;
+    letter-spacing: 0;
+    color: #0f172a;
+  }
+
+  .bulky-total span {
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 760;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #64748b;
+  }
+
+  .bulky-table-wrap {
+    align-self: stretch;
+    min-height: 0;
+    border: 1px solid rgba(17, 24, 39, 0.18);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 24px 58px rgba(17, 24, 39, 0.10);
+    overflow: hidden;
+    display: grid;
+  }
+
+  .bulky-table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  .bulky-table col:nth-child(1) { width: 96px; }
+  .bulky-table col:nth-child(2) { width: auto; }
+  .bulky-table col:nth-child(3) { width: 224px; }
+
+  .bulky-table thead th {
+    padding: 11px 20px 10px;
+    background: #0f172a;
+    color: #e2e8f0;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 850;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    text-align: left;
+  }
+
+  .bulky-table thead th:last-child,
+  .bulky-rank,
+  .bulky-size {
+    text-align: right;
+  }
+
+  .bulky-table tbody tr {
+    border-bottom: 1px solid rgba(15, 23, 42, 0.10);
+  }
+
+  .bulky-table tbody tr:first-child {
+    background: #fff1f2;
+  }
+
+  .bulky-table tbody tr:last-child {
+    border-bottom: 0;
+  }
+
+  .bulky-table td {
+    padding: 6px 20px;
+    vertical-align: middle;
+  }
+
+  .bulky-rank {
+    font-size: 22px;
+    line-height: 1;
+    font-weight: 760;
+    color: #64748b;
+  }
+
+  .bulky-name {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bulky-name::before {
+    content: "";
+    position: absolute;
+    inset: 8px 14px 8px 0;
+    width: var(--bar);
+    max-width: calc(100% - 16px);
+    border-radius: 5px;
+    background: linear-gradient(90deg, rgba(239, 68, 68, 0.18), rgba(248, 113, 113, 0.04));
+  }
+
+  .bulky-name span {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: var(--mono);
+    font-size: 23px;
+    line-height: 1.05;
+    font-weight: 740;
+    letter-spacing: 0;
+    color: #1f2937;
+  }
+
+  .bulky-size {
+    font-family: var(--mono);
+    font-size: 26px;
+    line-height: 1;
+    font-weight: 860;
+    letter-spacing: 0;
+    color: #0f172a;
+  }
+
+  .bulky-table tbody tr:first-child .bulky-rank,
+  .bulky-table tbody tr:first-child .bulky-name span,
+  .bulky-table tbody tr:first-child .bulky-size {
+    color: #991b1b;
+  }
+
+  .bulky-table tbody tr:first-child .bulky-name span,
+  .bulky-table tbody tr:first-child .bulky-size {
+    font-weight: 900;
+  }
+
+</style>
+
+<div class="bulky-slide">
+  <div class="bulky-lede">
+    <h2>Source packages are no longer tiny side inputs. <span>Some are already hundreds of MiB.</span></h2>
+    <div class="bulky-total"><strong>1.35 GiB</strong><span>top 10 local cache</span></div>
+  </div>
+
+  <div class="bulky-table-wrap">
+    <table class="bulky-table" aria-label="Largest local extension source archives">
+      <colgroup><col><col><col></colgroup>
+      <thead>
+        <tr><th>Rank</th><th>Source archive</th><th>Size</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="bulky-rank">1</td><td class="bulky-name" style="--bar:100.0%"><span>pg_duckdb-1.1.1.tar.gz</span></td><td class="bulky-size">496.3 MiB</td></tr>
+        <tr><td class="bulky-rank">2</td><td class="bulky-name" style="--bar:30.5%"><span>omnigres-20251108.tar.gz</span></td><td class="bulky-size">151.5 MiB</td></tr>
+        <tr><td class="bulky-rank">3</td><td class="bulky-name" style="--bar:25.5%"><span>gradle-8.5-bin.zip</span></td><td class="bulky-size">126.4 MiB</td></tr>
+        <tr><td class="bulky-rank">4</td><td class="bulky-name" style="--bar:21.5%"><span>pg_ai_query-0.1.1.tar.gz</span></td><td class="bulky-size">106.5 MiB</td></tr>
+        <tr><td class="bulky-rank">5</td><td class="bulky-name" style="--bar:21.2%"><span>plv8-3.2.4.tar.gz</span></td><td class="bulky-size">105.3 MiB</td></tr>
+        <tr><td class="bulky-rank">6</td><td class="bulky-name" style="--bar:20.7%"><span>gradle-6.8.2-bin.zip</span></td><td class="bulky-size">102.8 MiB</td></tr>
+        <tr><td class="bulky-rank">7</td><td class="bulky-name" style="--bar:19.0%"><span>pg_mooncake-0.2.0.tar.gz</span></td><td class="bulky-size">94.1 MiB</td></tr>
+        <tr><td class="bulky-rank">8</td><td class="bulky-name" style="--bar:15.0%"><span>apache-cloudberry-2.1.0-incubating-src.tar.gz</span></td><td class="bulky-size">74.3 MiB</td></tr>
+        <tr><td class="bulky-rank">9</td><td class="bulky-name" style="--bar:12.3%"><span>rdkit_202503.6.orig.tar.xz</span></td><td class="bulky-size">61.2 MiB</td></tr>
+        <tr><td class="bulky-rank">10</td><td class="bulky-name" style="--bar:12.2%"><span>openhalodb-1.0.tar.gz</span></td><td class="bulky-size">60.4 MiB</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div></section>
+    </main>
+  </div>
+  <script src="src/deck.js"></script>
+</body>
+</html>

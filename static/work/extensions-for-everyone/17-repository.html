@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>17. Repository · Extensions for Everyone</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2016%2016%27%3E%3Crect%20width%3D%2716%27%20height%3D%2716%27%20rx%3D%272%27%20fill%3D%27%230f172a%27/%3E%3Cpath%20d%3D%27M4%204h8v2H7v2h4v2H7v2H4z%27%20fill%3D%27%23f8fafc%27/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body data-prev="./16-catalog-page-views.html" data-next="./18-repo-download-stats.html" data-first="./00-extensions-for-everyone.html" data-last="./32-thank-you.html">
+  <div class="slide-page repo-quickstart-slide">
+    <header class="notes-strip">
+      <div class="notes-text"><span class="note-content">To deliver these extensions to users, the catalog itself is not sufficient. You also need a repository.    Technically, the repository is an APT and YUM repository with signed Linux-native packages, hosted on Cloudflare with a regional mirror.    This repository aims to enhance the PGDG YUM and APT repos. It&#x27;s fully compatible, built under the same conventions, with the package layout users already understand and use.</span></div>
+      <nav class="nav"><a href="./16-catalog-page-views.html" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M15 18l-6-6 6-6"/><path d="M21 12H9"/></svg></a><span class="progress-mini">17/32</span><a href="./18-repo-download-stats.html" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M9 18l6-6-6-6"/><path d="M3 12h12"/></svg></a><a href="index.html" aria-label="Home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-6h4v6"/></svg></a></nav>
+    </header>
+    <main class="slide-canvas">
+      <div class="slide-head">
+        <div class="slide-title">
+          <p class="part-label">Part III : The Delivery Layer</p>
+          <h1>Repository</h1>
+        </div>
+        <div class="slide-brand" aria-label="Pigsty">
+          <img src="src/images/pigsty-logo.svg" alt="" aria-hidden="true">
+          <span>PIGSTY</span>
+        </div>
+      </div>
+      <section class="slide-body"><style>
+.repo-quickstart-slide {
+  grid-template-rows: 48px minmax(0, 1fr);
+}
+.repo-quickstart-slide .notes-strip {
+  padding: 2px 20px 2px 28px;
+}
+.repo-quickstart-slide .notes-text {
+  --notes-font-size: 9px;
+  --notes-line-height: 11px;
+}
+.repo-quickstart-slide .slide-canvas {
+  padding: 2px 24px 6px;
+  gap: 2px;
+}
+.repo-quickstart-slide .slide-title h1 {
+  font-size: 26px;
+}
+.repo-quickstart-slide .part-label {
+  margin-bottom: 2px;
+  font-size: 9.5px;
+}
+.repo-quickstart-slide .slide-head {
+  align-items: center;
+}
+.repo-quickstart-slide .slide-brand {
+  height: 24px;
+}
+.repo-quickstart-slide .slide-brand img {
+  width: 20px;
+  height: 20px;
+}
+.repo-quickstart-slide .slide-brand span {
+  font-size: 14px;
+}
+.repo-quickstart {
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(360px, .94fr) minmax(0, 2.06fr);
+  gap: 12px;
+}
+.repo-panel {
+  min-width: 0;
+  min-height: 0;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, .96);
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  overflow: hidden;
+}
+.repo-panel.pig-panel {
+  border-top: 7px solid var(--blue);
+}
+.repo-panel.apt-panel {
+  border-top: 6px solid var(--green);
+}
+.repo-panel.dnf-panel {
+  border-top: 6px solid var(--amber);
+}
+.repo-panel-head {
+  min-width: 0;
+  padding: 4px 12px 4px;
+  border-bottom: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(248, 251, 255, .98), rgba(255, 255, 255, .92));
+}
+.repo-panel-head p {
+  margin: 0 0 2px;
+  color: #64748b;
+  font: 760 7.8px/1 var(--mono);
+  text-transform: uppercase;
+  letter-spacing: .02em;
+}
+.repo-panel-head h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 17px;
+  line-height: 1;
+  letter-spacing: 0;
+}
+.repo-code {
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 3px 13px;
+  background: #f8fafc;
+  color: #172033;
+  border: 0;
+  font-family: var(--mono);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  overflow: hidden;
+  tab-size: 2;
+}
+.repo-code code {
+  font: inherit;
+  color: inherit;
+}
+.repo-code.pig-code {
+  font: 760 19.2px/1.12 var(--mono);
+}
+.repo-code.apt-code {
+  font: 720 13.6px/1.26 var(--mono);
+}
+.repo-code.dnf-code {
+  font: 720 12.2px/1.16 var(--mono);
+}
+.repo-native-grid {
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: .415fr .585fr;
+  gap: 6px;
+}
+.repo-code .tok-comment {
+  color: #9a5b00;
+  font-style: italic;
+  font-weight: 780;
+}
+.repo-code .tok-cmd {
+  color: #075985;
+  font-weight: 850;
+}
+.repo-code .tok-opt {
+  color: #7c3aed;
+  font-weight: 760;
+}
+.repo-code .tok-url {
+  color: #15803d;
+  font-weight: 760;
+}
+.repo-code .tok-path {
+  color: #a16207;
+  font-weight: 760;
+}
+.repo-code .tok-var {
+  color: #1d4ed8;
+  font-weight: 820;
+}
+.repo-code .tok-key {
+  color: #075985;
+  font-weight: 820;
+}
+.repo-code .tok-value,
+.repo-code .tok-heredoc,
+.repo-code .tok-section {
+  color: #16803a;
+  font-weight: 820;
+}
+.repo-code .tok-pkg {
+  color: #be123c;
+  font-weight: 820;
+}
+.repo-code .tok-redirect {
+  color: #64748b;
+  font-weight: 760;
+}
+</style>
+
+<div class="repo-quickstart">
+  <section class="repo-panel pig-panel">
+    <div class="repo-panel-head">
+      <p>Recommended path</p>
+      <h2>Setup Repo with pig</h2>
+    </div>
+    <pre class="repo-code pig-code"><code><span class="tok-comment"># add pigsty-pgsql repo</span>
+<span class="tok-cmd">pig</span> <span class="tok-key">repo</span> <span class="tok-key">add</span> <span class="tok-pkg">pigsty</span>
+
+<span class="tok-comment"># add pigsty-pgsql repo, and update cache</span>
+<span class="tok-cmd">pig</span> <span class="tok-key">repo</span> <span class="tok-key">add</span> <span class="tok-pkg">pigsty</span> <span class="tok-opt">-u</span>
+
+<span class="tok-comment"># add pigsty-pgsql repo and enforce default region (pigsty.io)</span>
+<span class="tok-cmd">pig</span> <span class="tok-key">repo</span> <span class="tok-key">add</span> <span class="tok-pkg">pigsty</span> <span class="tok-opt">-u</span> <span class="tok-opt">--region=default</span>
+
+<span class="tok-comment"># add pigsty-pgsql repo with China region (pigsty.cc)</span>
+<span class="tok-cmd">pig</span> <span class="tok-key">repo</span> <span class="tok-key">add</span> <span class="tok-pkg">pigsty</span> <span class="tok-opt">-u</span> <span class="tok-opt">--region=china</span>
+
+<span class="tok-comment"># pgsql = pgdg + pigsty-pgsql</span>
+<span class="tok-cmd">pig</span> <span class="tok-key">repo</span> <span class="tok-key">add</span> <span class="tok-pkg">pgsql</span> <span class="tok-opt">-u</span>
+
+<span class="tok-comment"># all = node + pgsql + infra</span>
+<span class="tok-cmd">pig</span> <span class="tok-key">repo</span> <span class="tok-key">add</span> <span class="tok-opt">-u</span></code></pre>
+  </section>
+
+  <div class="repo-native-grid">
+    <section class="repo-panel apt-panel">
+      <div class="repo-panel-head">
+        <p>Debian / Ubuntu</p>
+        <h2>Setup APT Repo</h2>
+      </div>
+      <pre class="repo-code apt-code"><code><span class="tok-comment"># add GPG key</span>
+<span class="tok-cmd">curl</span> <span class="tok-opt">-fsSL</span> <span class="tok-url">https://repo.pigsty.io/key</span> | <span class="tok-cmd">sudo</span> <span class="tok-cmd">gpg</span> <span class="tok-opt">--dearmor</span> <span class="tok-opt">-o</span> <span class="tok-path">/etc/apt/keyrings/pigsty.gpg</span>
+
+<span class="tok-comment"># write APT source list</span>
+<span class="tok-var">distro_codename</span>=$(<span class="tok-cmd">lsb_release</span> <span class="tok-opt">-cs</span>)
+<span class="tok-cmd">sudo</span> <span class="tok-cmd">tee</span> <span class="tok-path">/etc/apt/sources.list.d/pigsty-io.list</span> <span class="tok-redirect">&gt;</span> <span class="tok-path">/dev/null</span> <span class="tok-redirect">&lt;&lt;</span><span class="tok-heredoc">EOF</span>
+<span class="tok-key">deb</span> [signed-by=<span class="tok-path">/etc/apt/keyrings/pigsty.gpg</span>] <span class="tok-url">https://repo.pigsty.io/apt/pgsql/${distro_codename}</span> <span class="tok-var">${distro_codename}</span> main
+<span class="tok-heredoc">EOF</span>
+
+<span class="tok-comment"># refresh APT cache</span>
+<span class="tok-cmd">sudo</span> <span class="tok-cmd">apt</span> <span class="tok-key">update</span></code></pre>
+    </section>
+
+    <section class="repo-panel dnf-panel">
+      <div class="repo-panel-head">
+        <p>EL-compatible systems</p>
+        <h2>Setup DNF Repo</h2>
+      </div>
+      <pre class="repo-code dnf-code"><code><span class="tok-comment"># add GPG key</span>
+<span class="tok-cmd">curl</span> <span class="tok-opt">-fsSL</span> <span class="tok-url">https://repo.pigsty.io/key</span> | <span class="tok-cmd">sudo</span> <span class="tok-cmd">tee</span> <span class="tok-path">/etc/pki/rpm-gpg/RPM-GPG-KEY-pigsty</span> <span class="tok-redirect">&gt;</span><span class="tok-path">/dev/null</span>
+
+<span class="tok-comment"># write DNF repo file</span>
+<span class="tok-cmd">sudo</span> <span class="tok-cmd">tee</span> <span class="tok-path">/etc/yum.repos.d/pigsty-pgsql.repo</span> <span class="tok-redirect">&gt;</span> <span class="tok-path">/dev/null</span> <span class="tok-redirect">&lt;&lt;-'</span><span class="tok-heredoc">EOF</span><span class="tok-redirect">'</span>
+<span class="tok-section">[pigsty-pgsql]</span>
+<span class="tok-key">name</span>=<span class="tok-value">Pigsty PGSQL For el$releasever.$basearch</span>
+<span class="tok-key">baseurl</span>=<span class="tok-url">https://repo.pigsty.io/yum/pgsql/el$releasever.$basearch</span>
+<span class="tok-key">skip_if_unavailable</span> = <span class="tok-value">1</span>
+<span class="tok-key">enabled</span> = <span class="tok-value">1</span>
+<span class="tok-key">priority</span> = <span class="tok-value">1</span>
+<span class="tok-key">gpgcheck</span> = <span class="tok-value">1</span>
+<span class="tok-key">gpgkey</span>=<span class="tok-url">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-pigsty</span>
+<span class="tok-key">module_hotfixes</span>=<span class="tok-value">1</span>
+<span class="tok-heredoc">EOF</span>
+
+<span class="tok-comment"># refresh DNF cache</span>
+<span class="tok-cmd">sudo</span> <span class="tok-cmd">dnf</span> <span class="tok-key">makecache</span>;</code></pre>
+    </section>
+  </div>
+</div></section>
+    </main>
+  </div>
+  <script src="src/deck.js"></script>
+</body>
+</html>

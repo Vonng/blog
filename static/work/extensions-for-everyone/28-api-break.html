@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>28. API Break · Extensions for Everyone</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2016%2016%27%3E%3Crect%20width%3D%2716%27%20height%3D%2716%27%20rx%3D%272%27%20fill%3D%27%230f172a%27/%3E%3Cpath%20d%3D%27M4%204h8v2H7v2h4v2H7v2H4z%27%20fill%3D%27%23f8fafc%27/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body data-prev="./27-library-conflicts.html" data-next="./29-pg-19-compatibility.html" data-first="./00-extensions-for-everyone.html" data-last="./32-thank-you.html">
+  <div class="slide-page api-break-slide">
+    <header class="notes-strip">
+      <div class="notes-text"><span class="note-content">We also fix many extensions that lack active maintenance. The last release date for some of them was years ago. But PostgreSQL major version changes still affect them.    Usually the original author writes version branches to handle different PG majors. If the extension is no longer maintained, a packager has to step in.    We&#x27;ve talked about how this work helps the first three groups — users, authors, vendors. Can it also be useful to Postgres hackers?    I think build coverage is a useful signal. When a patch breaks N extensions, that number is information. It shows ecosystem impact. This is where delivery infrastructure starts to look like feedback infrastructure.</span></div>
+      <nav class="nav"><a href="./27-library-conflicts.html" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M15 18l-6-6 6-6"/><path d="M21 12H9"/></svg></a><span class="progress-mini">28/32</span><a href="./29-pg-19-compatibility.html" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M9 18l6-6-6-6"/><path d="M3 12h12"/></svg></a><a href="index.html" aria-label="Home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-6h4v6"/></svg></a></nav>
+    </header>
+    <main class="slide-canvas">
+      <div class="slide-head">
+        <div class="slide-title">
+          <p class="part-label">Part IV Maintenance in the Wild</p>
+          <h1>API Break</h1>
+        </div>
+        <div class="slide-brand" aria-label="Pigsty">
+          <img src="src/images/pigsty-logo.svg" alt="" aria-hidden="true">
+          <span>PIGSTY</span>
+        </div>
+      </div>
+      <section class="slide-body"><div class="api-break-focus">
+  <section class="api-break-thesis" aria-label="Core finding">
+    <strong>Build failures cluster by moving PostgreSQL internals.</strong>
+    <span>When several extensions fail on the same surface, that is ecosystem impact data.</span>
+  </section>
+
+  <section class="api-break-surface-grid" aria-label="ABI break surfaces">
+    <article class="api-surface teal">
+      <div class="api-surface-head">
+        <span>PG16 / PG17</span>
+        <h2>Header and Datum internals</h2>
+      </div>
+      <p><code>varatt.h</code>, varlena macros, UUID Datum assumptions</p>
+      <div class="api-surface-impact">
+        <strong>Affected</strong>
+        <span>age</span>
+        <span>pg_zstd</span>
+        <span>pg_emailaddr</span>
+        <span>acl</span>
+      </div>
+    </article>
+
+    <article class="api-surface blue">
+      <div class="api-surface-head">
+        <span>PG17</span>
+        <h2>Executor and SRF helpers</h2>
+      </div>
+      <p><code>tuplestore_donestoring</code> and old materialized SRF paths</p>
+      <div class="api-surface-impact">
+        <strong>Affected</strong>
+        <span>pg_savior</span>
+        <span>pgnodemx</span>
+        <span>plprofiler</span>
+        <span>system_stats</span>
+      </div>
+    </article>
+
+    <article class="api-surface purple">
+      <div class="api-surface-head">
+        <span>PG17</span>
+        <h2>Planner and FDW contracts</h2>
+      </div>
+      <p>FDW/custom scan pushdown and planner path API changes</p>
+      <div class="api-surface-impact">
+        <strong>Affected</strong>
+        <span>kafka_fdw</span>
+        <span>citus</span>
+        <span>postgres_fdw</span>
+      </div>
+    </article>
+
+    <article class="api-surface red">
+      <div class="api-surface-head">
+        <span>PG18</span>
+        <h2>Struct, annotation, and catalog details</h2>
+      </div>
+      <p><code>TupleDesc</code>, <code>pg_noreturn</code>, and system view dependencies</p>
+      <div class="api-surface-impact">
+        <strong>Affected</strong>
+        <span>pg_fsql</span>
+        <span>pg_variables</span>
+        <span>pllua</span>
+        <span>pg_statsinfo</span>
+      </div>
+    </article>
+  </section>
+
+  <section class="api-break-signal" aria-label="Signal">
+    <strong>One red build is maintenance. N red builds on the same symbol is signal.</strong>
+  </section>
+</div></section>
+    </main>
+  </div>
+  <script src="src/deck.js"></script>
+</body>
+</html>

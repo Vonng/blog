@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>11. The Trade-Off · Extensions for Everyone</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2016%2016%27%3E%3Crect%20width%3D%2716%27%20height%3D%2716%27%20rx%3D%272%27%20fill%3D%27%230f172a%27/%3E%3Cpath%20d%3D%27M4%204h8v2H7v2h4v2H7v2H4z%27%20fill%3D%27%23f8fafc%27/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body data-prev="./10-the-status-quo.html" data-next="./12-why-linux-native.html" data-first="./00-extensions-for-everyone.html" data-last="./32-thank-you.html">
+  <div class="slide-page rust-package-slide">
+    <header class="notes-strip">
+      <div class="notes-text"><span class="note-content">There&#x27;s a real trade-off behind that. C extensions build quickly. Rust extensions don&#x27;t. One Rust build can take longer than all the C builds combined.    But users still need them. A self-hosted Supabase stack, for example, needs about a dozen extensions, three of them Rust. So the question is not whether the work is necessary. It&#x27;s where the work should live.</span></div>
+      <nav class="nav"><a href="./10-the-status-quo.html" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M15 18l-6-6 6-6"/><path d="M21 12H9"/></svg></a><span class="progress-mini">11/32</span><a href="./12-why-linux-native.html" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M9 18l6-6-6-6"/><path d="M3 12h12"/></svg></a><a href="index.html" aria-label="Home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-6h4v6"/></svg></a></nav>
+    </header>
+    <main class="slide-canvas">
+      <div class="slide-head">
+        <div class="slide-title">
+          <p class="part-label">Part III : The Delivery Layer</p>
+          <h1>The Trade-Off</h1>
+        </div>
+        <div class="slide-brand" aria-label="Pigsty">
+          <img src="src/images/pigsty-logo.svg" alt="" aria-hidden="true">
+          <span>PIGSTY</span>
+        </div>
+      </div>
+      <section class="slide-body"><style>
+.rust-package-slide .slide-canvas {
+  padding: 16px 26px 16px;
+  gap: 8px;
+}
+.rust-package-slide .slide-title h1 {
+  font-size: 40px;
+}
+.rust-package-slide .part-label {
+  margin-bottom: 5px;
+}
+.rust-package-layout {
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: 54px minmax(0, 1fr);
+  gap: 8px;
+}
+.rust-contrast {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.rust-card {
+  min-height: 54px;
+  border: 1px solid var(--line);
+  background: white;
+  box-shadow: var(--shadow);
+  padding: 9px 14px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.rust-card.green { border-top: 5px solid var(--green); background: linear-gradient(180deg, #fff, var(--green-soft)); }
+.rust-card.amber { border-top: 5px solid var(--amber); background: linear-gradient(180deg, #fff, var(--amber-soft)); }
+.rust-card strong {
+  font-size: 26px;
+  line-height: 1;
+  font-weight: 850;
+}
+.rust-card span {
+  color: #334155;
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 760;
+}
+.rust-table-frame {
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  border: 1px solid var(--line);
+  background: white;
+  box-shadow: var(--shadow);
+}
+.rust-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+  color: #263449;
+  font-size: 12.5px;
+  line-height: 1.2;
+}
+.rust-table col.name { width: 13%; }
+.rust-table col.star { width: 5.5%; }
+.rust-table col.pkg { width: 35.5%; }
+.rust-table col.size { width: 7%; }
+.rust-table col.desc { width: 39%; }
+.rust-table th,
+.rust-table td {
+  padding: 6px 7px;
+  border-bottom: 1px solid #edf2f8;
+  text-align: left;
+  vertical-align: top;
+}
+.rust-table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #eef4fb;
+  color: #475569;
+  font: 820 11px/1 var(--mono);
+  text-transform: uppercase;
+}
+.rust-name {
+  color: var(--blue);
+  font-weight: 830;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.rust-name:hover,
+.rust-name:focus-visible {
+  text-decoration: underline;
+}
+.rust-table .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-family: var(--mono);
+  white-space: nowrap;
+}
+.rust-table .size {
+  font-weight: 760;
+  color: #172033;
+}
+.rust-table .pkg code {
+  display: block;
+  overflow: visible;
+  color: #334155;
+  font: 650 11px/1.15 var(--mono);
+  overflow-wrap: anywhere;
+  text-overflow: clip;
+  white-space: normal;
+}
+.rust-table .desc {
+  overflow: visible;
+  color: #334155;
+  text-overflow: clip;
+  white-space: normal;
+}
+</style>
+
+<div class="rust-package-layout">
+  <div class="rust-contrast">
+    <div class="rust-card green"><strong>C Extension:</strong><span>Fast and Small</span></div>
+    <div class="rust-card amber"><strong>Rust Extension:</strong><span>Slow and Bulky</span></div>
+  </div>
+  <div class="rust-table-frame">
+    <table class="rust-table" aria-label="Rust extension packages">
+      <colgroup>
+        <col class="name">
+        <col class="star">
+        <col class="pkg">
+        <col class="size">
+        <col class="desc">
+      </colgroup>
+      <thead>
+        <tr><th>Name</th><th>Star</th><th>RPM / DEB Package</th><th>Avg Size</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><a class="rust-name" href="https://github.com/paradedb/paradedb/tree/dev/pg_search" target="_blank" rel="noopener">pg_search</a></td><td class="num">8,783</td><td class="pkg"><code>pg_search_$v / postgresql-$v-pg-search</code></td><td class="num size">56.8 MB</td><td class="desc">Full text search for PostgreSQL using BM25</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/tensorchord/pg_tokenizer.rs" target="_blank" rel="noopener">pg_tokenizer</a></td><td class="num">43</td><td class="pkg"><code>pg_tokenizer_$v / postgresql-$v-pg-tokenizer</code></td><td class="num size">10.7 MB</td><td class="desc">Tokenizers for full-text search</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/paradedb/pg_analytics" target="_blank" rel="noopener">pg_analytics</a></td><td class="num">537</td><td class="pkg"><code>pg_analytics_$v / postgresql-$v-pg-analytics</code></td><td class="num size">9.92 MB</td><td class="desc">Postgres for analytics, powered by DuckDB</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/Mooncake-Labs/pg_mooncake" target="_blank" rel="noopener">pg_mooncake</a></td><td class="num">1,965</td><td class="pkg"><code>pg_mooncake_$v / postgresql-$v-pg-mooncake</code></td><td class="num size">9.47 MB</td><td class="desc">Columnstore Table in Postgres</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/tensorchord/pg_bestmatch.rs" target="_blank" rel="noopener">pg_bestmatch</a></td><td class="num">96</td><td class="pkg"><code>pg_bestmatch_$v / postgresql-$v-pg-bestmatch</code></td><td class="num size">6.59 MB</td><td class="desc">Generate BM25 sparse vector inside PostgreSQL</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/ChuckHend/pg_vectorize" target="_blank" rel="noopener">vectorize</a></td><td class="num">831</td><td class="pkg"><code>pg_vectorize_$v / postgresql-$v-pg-vectorize</code></td><td class="num size">6.51 MB</td><td class="desc">The simplest way to do vector search on Postgres</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/CrunchyData/pg_parquet/" target="_blank" rel="noopener">pg_parquet</a></td><td class="num">670</td><td class="pkg"><code>pg_parquet_$v / postgresql-$v-pg-parquet</code></td><td class="num size">6.39 MB</td><td class="desc">copy data between Postgres and Parquet</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/postgresml/postgresml" target="_blank" rel="noopener">pgml</a></td><td class="num">6,789</td><td class="pkg"><code>pgml_$v / postgresql-$v-pgml</code></td><td class="num size">4.97 MB</td><td class="desc">Run AL/ML workloads with SQL interface</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/grove/pg-trickle" target="_blank" rel="noopener">pg_trickle</a></td><td class="num">107</td><td class="pkg"><code>pg_trickle_$v / postgresql-$v-pg-trickle</code></td><td class="num size">3.70 MB</td><td class="desc">Streaming tables and differential view maintenance for PostgreSQL 18</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/ringsaturn/pg-tzf" target="_blank" rel="noopener">tzf</a></td><td class="num">8</td><td class="pkg"><code>pg_tzf_$v / postgresql-$v-tzf</code></td><td class="num size">3.48 MB</td><td class="desc">Fast lookup timezone name by GPS coordinates</td></tr>
+        <tr><td><a class="rust-name" href="https://gitlab.com/dalibo/postgresql_anonymizer/" target="_blank" rel="noopener">anon</a></td><td class="num">0</td><td class="pkg"><code>pg_anon_$v / postgresql-$v-pg-anon</code></td><td class="num size">2.89 MB</td><td class="desc">PostgreSQL Anonymizer (anon) extension</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/timescale/timescaledb-toolkit" target="_blank" rel="noopener">timescaledb_toolkit</a></td><td class="num">470</td><td class="pkg"><code>timescaledb-toolkit_$v / postgresql-$v-timescaledb-toolkit</code></td><td class="num size">2.84 MB</td><td class="desc">Library of analytical hyperfunctions, time-series pipelining, and other SQL utilities</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/kaspermarstal/plprql" target="_blank" rel="noopener">plprql</a></td><td class="num">473</td><td class="pkg"><code>plprql_$v / postgresql-$v-plprql</code></td><td class="num size">2.38 MB</td><td class="desc">Use PRQL in PostgreSQL - Pipelined Relational Query Language</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/tensorchord/VectorChord" target="_blank" rel="noopener">vchord</a></td><td class="num">1,680</td><td class="pkg"><code>vchord_$v / postgresql-$v-vchord</code></td><td class="num size">2.05 MB</td><td class="desc">Vector database plugin for Postgres, written in Rust</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/cybertec-postgresql/etcd_fdw" target="_blank" rel="noopener">etcd_fdw</a></td><td class="num">4</td><td class="pkg"><code>etcd_fdw_$v / postgresql-$v-etcd-fdw</code></td><td class="num size">1.49 MB</td><td class="desc">Foreign data wrapper for etcd</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/kelvich/pg_tiktoken" target="_blank" rel="noopener">pg_tiktoken</a></td><td class="num">52</td><td class="pkg"><code>pg_tiktoken_$v / postgresql-$v-pg-tiktoken</code></td><td class="num size">1.49 MB</td><td class="desc">tiktoken tokenizer for use with OpenAI models in postgres</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/RayElg/pgmqtt" target="_blank" rel="noopener">pgmqtt</a></td><td class="num">3</td><td class="pkg"><code>pgmqtt_$v / postgresql-$v-pgmqtt</code></td><td class="num size">1.44 MB</td><td class="desc">CDC-to-MQTT broker for PostgreSQL</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/aiyou178/pg_pinyin" target="_blank" rel="noopener">pg_pinyin</a></td><td class="num">10</td><td class="pkg"><code>pg_pinyin_$v / postgresql-$v-pinyin</code></td><td class="num size">1.36 MB</td><td class="desc">Pinyin romanization and search helpers for PostgreSQL</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/ChuckHend/pg_later" target="_blank" rel="noopener">pg_later</a></td><td class="num">373</td><td class="pkg"><code>pg_later_$v / postgresql-$v-pg-later</code></td><td class="num size">1.26 MB</td><td class="desc">Run queries now and get results later</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/supabase/pg_jsonschema" target="_blank" rel="noopener">pg_jsonschema</a></td><td class="num">1,188</td><td class="pkg"><code>pg_jsonschema_$v / postgresql-$v-pg-jsonschema</code></td><td class="num size">1.19 MB</td><td class="desc">PostgreSQL extension providing JSON Schema validation</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/frectonz/pglite-fusion" target="_blank" rel="noopener">pglite_fusion</a></td><td class="num">826</td><td class="pkg"><code>pglite_fusion_$v / postgresql-$v-pglite-fusion</code></td><td class="num size">1.11 MB</td><td class="desc">Embed an SQLite database in your PostgreSQL table</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/mkaski/pg_render" target="_blank" rel="noopener">pg_render</a></td><td class="num">65</td><td class="pkg"><code>pg_render_$v / postgresql-$v-pg-render</code></td><td class="num size">0.92 MB</td><td class="desc">Render HTML in SQL</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/HexaCluster/pg_summarize" target="_blank" rel="noopener">pg_summarize</a></td><td class="num">6</td><td class="pkg"><code>pg_summarize_$v / postgresql-$v-pg-summarize</code></td><td class="num size">0.91 MB</td><td class="desc">Text Summarization using LLMs. Built using pgrx</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/davidgomes/pg-explain-ui" target="_blank" rel="noopener">explain_ui</a></td><td class="num">5</td><td class="pkg"><code>pg_explain_ui_$v / postgresql-$v-pg-explain-ui</code></td><td class="num size">0.91 MB</td><td class="desc">easily jump into a visual plan UI for any SQL query</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/supabase/pg_graphql" target="_blank" rel="noopener">pg_graphql</a></td><td class="num">3,326</td><td class="pkg"><code>pg_graphql_$v / postgresql-$v-pg-graphql</code></td><td class="num size">0.72 MB</td><td class="desc">Add in-database GraphQL support</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/zhuobie/pgsmcrypto" target="_blank" rel="noopener">pgsmcrypto</a></td><td class="num">15</td><td class="pkg"><code>pgsmcrypto_$v / postgresql-$v-pgsmcrypto</code></td><td class="num size">0.70 MB</td><td class="desc">PostgreSQL SM Algorithm Extension</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/SoftwareLibreMx/pg_enigma" target="_blank" rel="noopener">pg_enigma</a></td><td class="num">11</td><td class="pkg"><code>pg_enigma_$v / postgresql-$v-enigma</code></td><td class="num size">0.63 MB</td><td class="desc">Encrypted postgres data type</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/pmpetit/pglinter" target="_blank" rel="noopener">pglinter</a></td><td class="num">167</td><td class="pkg"><code>pglinter_$v / postgresql-$v-pglinter</code></td><td class="num size">0.47 MB</td><td class="desc">PostgreSQL Linting and Analysis Extension</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/brianpursley/pg_smtp_client" target="_blank" rel="noopener">pg_smtp_client</a></td><td class="num">10</td><td class="pkg"><code>pg_smtp_client_$v / postgresql-$v-pg-smtp-client</code></td><td class="num size">0.43 MB</td><td class="desc">PostgreSQL extension to send email using SMTP</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/tensorchord/VectorChord-bm25" target="_blank" rel="noopener">vchord_bm25</a></td><td class="num">368</td><td class="pkg"><code>vchord_bm25_$v / postgresql-$v-vchord-bm25</code></td><td class="num size">0.42 MB</td><td class="desc">A postgresql extension for bm25 ranking algorithm</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/timescale/pgvectorscale" target="_blank" rel="noopener">vectorscale</a></td><td class="num">3,017</td><td class="pkg"><code>pgvectorscale_$v / postgresql-$v-pgvectorscale</code></td><td class="num size">0.41 MB</td><td class="desc">Advanced indexing for vector data with DiskANN</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/Fell-x27/pg_cardano" target="_blank" rel="noopener">pg_cardano</a></td><td class="num">2</td><td class="pkg"><code>pg_cardano_$v / postgresql-$v-pg-cardano</code></td><td class="num size">0.41 MB</td><td class="desc">A suite of Cardano-related tools</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/VADOSWARE/pg_idkit" target="_blank" rel="noopener">pg_idkit</a></td><td class="num">424</td><td class="pkg"><code>pg_idkit_$v / postgresql-$v-pg-idkit</code></td><td class="num size">0.37 MB</td><td class="desc">multi-tool for generating new/niche universally unique identifiers (ex. UUIDv6, ULID, KSUID)</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/frectonz/pg-when" target="_blank" rel="noopener">pg_when</a></td><td class="num">44</td><td class="pkg"><code>pg_when_$v / postgresql-$v-pg-when</code></td><td class="num size">0.35 MB</td><td class="desc">Natural language time parsing for PostgreSQL</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/neondatabase/pg_session_jwt" target="_blank" rel="noopener">pg_session_jwt</a></td><td class="num">65</td><td class="pkg"><code>pg_session_jwt_$v / postgresql-$v-pg-session-jwt</code></td><td class="num size">0.34 MB</td><td class="desc">Manage authentication sessions using JWTs</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/darkhanakh/pg-kazsearch" target="_blank" rel="noopener">pg_kazsearch</a></td><td class="num">22</td><td class="pkg"><code>pg_kazsearch_$v / postgresql-$v-pg-kazsearch</code></td><td class="num size">0.34 MB</td><td class="desc">Kazakh full-text search extension for PostgreSQL</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/blitss/typeid-postgres" target="_blank" rel="noopener">typeid</a></td><td class="num">22</td><td class="pkg"><code>pg_typeid_$v / postgresql-$v-typeid</code></td><td class="num size">0.31 MB</td><td class="desc">Allows to use TypeIDs in Postgres natively</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/pksunkara/pgx_ulid" target="_blank" rel="noopener">pgx_ulid</a></td><td class="num">499</td><td class="pkg"><code>pgx_ulid_$v / postgresql-$v-pgx-ulid</code></td><td class="num size">0.30 MB</td><td class="desc">ulid type and methods</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/spa5k/pg_strict" target="_blank" rel="noopener">pg_strict</a></td><td class="num">18</td><td class="pkg"><code>pg_strict_$v / postgresql-$v-pg-strict</code></td><td class="num size">0.25 MB</td><td class="desc">Prevent dangerous UPDATE and DELETE without WHERE clause</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/yihong0618/pg_polyline" target="_blank" rel="noopener">pg_polyline</a></td><td class="num">4</td><td class="pkg"><code>pg_polyline_$v / postgresql-$v-pg-polyline</code></td><td class="num size">0.24 MB</td><td class="desc">Fast Google Encoded Polyline encoding &amp; decoding for postgres</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/yuiseki/pg_rrf" target="_blank" rel="noopener">pg_rrf</a></td><td class="num">3</td><td class="pkg"><code>pg_rrf_$v / postgresql-$v-pg-rrf</code></td><td class="num size">0.23 MB</td><td class="desc">Reciprocal rank fusion functions for hybrid search</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/rustwizard/pg_command_fw" target="_blank" rel="noopener">pg_command_fw</a></td><td class="num">1</td><td class="pkg"><code>pg_command_fw_$v / postgresql-$v-pg-command-fw</code></td><td class="num size">0.23 MB</td><td class="desc">DDL and utility command firewall for PostgreSQL</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/aiyou178/pg_eviltransform" target="_blank" rel="noopener">pg_eviltransform</a></td><td class="num">8</td><td class="pkg"><code>pg_eviltransform_$v / postgresql-$v-eviltransform</code></td><td class="num size">0.23 MB</td><td class="desc">Coordinate transforms for BD09/GCJ02 via PostGIS ST_Transform</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/rustwizard/block_copy_command" target="_blank" rel="noopener">block_copy_command</a></td><td class="num">3</td><td class="pkg"><code>block_copy_command_$v / postgresql-$v-block-copy-command</code></td><td class="num size">0.22 MB</td><td class="desc">Block COPY commands via a configurable ProcessUtility hook</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/Fell-x27/pg_base58" target="_blank" rel="noopener">pg_base58</a></td><td class="num">2</td><td class="pkg"><code>pg_base58_$v / postgresql-$v-pg-base58</code></td><td class="num size">0.22 MB</td><td class="desc">Base58 Encoder/Decoder Extension for PostgreSQL</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/rustprooflabs/convert" target="_blank" rel="noopener">convert</a></td><td class="num">3</td><td class="pkg"><code>pg_convert_$v / postgresql-$v-convert</code></td><td class="num size">0.20 MB</td><td class="desc">conversion functions for spatial, routing and other specialized uses</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/rustprooflabs/pgdd" target="_blank" rel="noopener">pgdd</a></td><td class="num">55</td><td class="pkg"><code>pgdd_$v / postgresql-$v-pgdd</code></td><td class="num size">0.20 MB</td><td class="desc">Introspect pg data dictionary via standard SQL</td></tr>
+        <tr><td><a class="rust-name" href="https://github.com/supabase/wrappers" target="_blank" rel="noopener">wrappers</a></td><td class="num">845</td><td class="pkg"><code>wrappers_$v / postgresql-$v-wrappers</code></td><td class="num size">0.18 MB</td><td class="desc">Foreign data wrappers developed by Supabase</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div></section>
+    </main>
+  </div>
+  <script src="src/deck.js"></script>
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>19. What We Can Still Infer · Extensions for Everyone</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2016%2016%27%3E%3Crect%20width%3D%2716%27%20height%3D%2716%27%20rx%3D%272%27%20fill%3D%27%230f172a%27/%3E%3Cpath%20d%3D%27M4%204h8v2H7v2h4v2H7v2H4z%27%20fill%3D%27%23f8fafc%27/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body data-prev="./18-repo-download-stats.html" data-next="./20-the-cli-pig.html" data-first="./00-extensions-for-everyone.html" data-last="./32-thank-you.html">
+  <div class="slide-page repo-system-slide">
+    <header class="notes-strip">
+      <div class="notes-text"><span class="note-content">Even partial, biased download data is still useful. It can show which PG major versions are active. It can show which OS targets matter. It can show whether a package cell is used enough to justify maintenance.    But be careful. A package with few downloads may still be important. Maybe we need a combined signal — stars, pageviews, availability, build failures, and downloads — something like a DB-Engines-style score for Postgres extensions.</span></div>
+      <nav class="nav"><a href="./18-repo-download-stats.html" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M15 18l-6-6 6-6"/><path d="M21 12H9"/></svg></a><span class="progress-mini">19/32</span><a href="./20-the-cli-pig.html" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M9 18l6-6-6-6"/><path d="M3 12h12"/></svg></a><a href="index.html" aria-label="Home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-6h4v6"/></svg></a></nav>
+    </header>
+    <main class="slide-canvas">
+      <div class="slide-head">
+        <div class="slide-title">
+          <p class="part-label">Part III : The Delivery Layer</p>
+          <h1>What We Can Still Infer</h1>
+        </div>
+        <div class="slide-brand" aria-label="Pigsty">
+          <img src="src/images/pigsty-logo.svg" alt="" aria-hidden="true">
+          <span>PIGSTY</span>
+        </div>
+      </div>
+      <section class="slide-body"><style>
+.repo-system-slide .slide-body {
+  height: 100%;
+  min-height: 0;
+  display: block;
+}
+.repo-system-grid {
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: .88fr 1fr 1.14fr;
+  gap: 16px;
+  align-items: stretch;
+}
+.repo-system-panel {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 14px;
+  padding: 17px 18px 15px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, .94);
+  box-shadow: var(--shadow);
+}
+.repo-system-head {
+  display: grid;
+  gap: 5px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.repo-system-kicker {
+  color: var(--blue);
+  font: 820 11px/1 var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+.repo-system-head h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 25px;
+  line-height: 1.02;
+  font-weight: 820;
+  letter-spacing: 0;
+}
+.repo-system-head p {
+  margin: 0;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.25;
+  font-weight: 620;
+}
+.repo-system-body {
+  min-height: 0;
+  display: grid;
+  align-content: center;
+  gap: 10px;
+}
+.repo-system-family {
+  align-content: stretch;
+}
+.repo-family-split {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: end;
+  gap: 10px;
+  padding: 4px 0 10px;
+  border-bottom: 1px solid var(--line);
+}
+.repo-family-metric strong {
+  display: block;
+  color: #172033;
+  font: 860 45px/0.95 var(--sans);
+  letter-spacing: 0;
+}
+.repo-family-metric span {
+  display: block;
+  margin-top: 7px;
+  color: #475569;
+  font: 780 12px/1.1 var(--mono);
+  text-transform: uppercase;
+}
+.repo-family-metric.rpm strong {
+  color: var(--amber);
+}
+.repo-family-divider {
+  align-self: center;
+  color: #94a3b8;
+  font: 820 10px/1 var(--mono);
+  text-transform: uppercase;
+}
+.repo-rows {
+  display: grid;
+  gap: 9px;
+}
+.repo-row {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr) 92px;
+  align-items: center;
+  gap: 10px;
+  min-height: 24px;
+  font-variant-numeric: tabular-nums;
+}
+.repo-pg-panel .repo-row {
+  grid-template-columns: 56px minmax(0, 1fr) 96px;
+}
+.repo-os-panel .repo-row {
+  grid-template-columns: 106px minmax(0, 1fr) 98px;
+}
+.repo-label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #334155;
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 760;
+}
+.repo-track {
+  height: 19px;
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
+  background: #e8eef7;
+  border: 1px solid #d9e2ef;
+}
+.repo-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--w);
+  min-width: 2px;
+  background: var(--bar-color, var(--blue));
+}
+.repo-fill.deb { --bar-color: var(--teal); }
+.repo-fill.rpm { --bar-color: var(--amber); }
+.repo-fill.other { --bar-color: #94a3b8; }
+.repo-fill.pg { --bar-color: var(--blue); }
+.repo-fill.os { --bar-color: var(--green); }
+.repo-value {
+  min-width: 0;
+  display: grid;
+  justify-items: end;
+  gap: 2px;
+  color: #172033;
+  font: 800 12px/1 var(--mono);
+}
+.repo-value em {
+  color: #64748b;
+  font: 760 10px/1 var(--mono);
+  font-style: normal;
+}
+.repo-footnote {
+  margin: 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  color: #64748b;
+  font-size: 11px;
+  line-height: 1.28;
+  font-weight: 620;
+}
+.repo-footnote strong {
+  color: #334155;
+  font-weight: 800;
+}
+@media (max-width: 980px) {
+  .repo-system-grid {
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+    padding-right: 8px;
+  }
+  .repo-system-panel {
+    min-height: 360px;
+  }
+}
+</style>
+
+<div class="repo-system-grid" aria-label="Repository access distribution by distro family, PostgreSQL major version, and OS version">
+  <section class="repo-system-panel repo-family-panel" aria-label="Distro family distribution">
+    <div class="repo-system-head">
+      <div class="repo-system-kicker">Table 2</div>
+      <h2>Distro Family</h2>
+      <p>Combined path-only requests from repo.pigsty.io and repo.pigsty.cc.</p>
+    </div>
+    <div class="repo-system-body repo-system-family">
+      <div class="repo-family-split" aria-label="DEB/APT has 56.1 percent, EL/RPM has 39.7 percent">
+        <div class="repo-family-metric">
+          <strong>56.1%</strong>
+          <span>DEB/APT</span>
+        </div>
+        <div class="repo-family-divider">vs</div>
+        <div class="repo-family-metric rpm">
+          <strong>39.7%</strong>
+          <span>EL/RPM</span>
+        </div>
+      </div>
+      <div class="repo-rows">
+        <div class="repo-row">
+          <div class="repo-label">DEB/APT</div>
+          <div class="repo-track"><span class="repo-fill deb" style="--w:100.00%"></span></div>
+          <div class="repo-value"><span>362,613</span><em>56.1%</em></div>
+        </div>
+        <div class="repo-row">
+          <div class="repo-label">EL/RPM</div>
+          <div class="repo-track"><span class="repo-fill rpm" style="--w:70.77%"></span></div>
+          <div class="repo-value"><span>256,637</span><em>39.7%</em></div>
+        </div>
+        <div class="repo-row">
+          <div class="repo-label">Other</div>
+          <div class="repo-track"><span class="repo-fill other" style="--w:7.35%"></span></div>
+          <div class="repo-value"><span>26,666</span><em>4.1%</em></div>
+        </div>
+      </div>
+    </div>
+    <p class="repo-footnote"><strong>Signal:</strong> DEB/APT leads the request mix, while RPM remains large enough to justify first-class repo work.</p>
+  </section>
+
+  <section class="repo-system-panel repo-pg-panel" aria-label="PostgreSQL major version distribution">
+    <div class="repo-system-head">
+      <div class="repo-system-kicker">Table 4</div>
+      <h2>PostgreSQL Major</h2>
+      <p>Only requests where the path or package name identifies the PG major.</p>
+    </div>
+    <div class="repo-system-body">
+      <div class="repo-rows">
+        <div class="repo-row">
+          <div class="repo-label">PG 17</div>
+          <div class="repo-track"><span class="repo-fill pg" style="--w:100.00%"></span></div>
+          <div class="repo-value"><span>738</span><em>19.2%</em></div>
+        </div>
+        <div class="repo-row">
+          <div class="repo-label">PG 16</div>
+          <div class="repo-track"><span class="repo-fill pg" style="--w:96.88%"></span></div>
+          <div class="repo-value"><span>715</span><em>18.6%</em></div>
+        </div>
+        <div class="repo-row">
+          <div class="repo-label">PG 14</div>
+          <div class="repo-track"><span class="repo-fill pg" style="--w:94.44%"></span></div>
+          <div class="repo-value"><span>697</span><em>18.1%</em></div>
+        </div>
+        <div class="repo-row">
+          <div class="repo-label">PG 15</div>
+          <div class="repo-track"><span class="repo-fill pg" style="--w:91.33%"></span></div>
+          <div class="repo-value"><span>674</span><em>17.5%</em></div>
+        </div>
+        <div class="repo-row">
+          <div class="repo-label">PG 13</div>
+          <div class="repo-track"><span class="repo-fill pg" style="--w:91.06%"></span></div>
+          <div class="repo-value"><span>672</span><em>17.4%</em></div>
+        </div>
+        <div class="repo-row">
+          <div class="repo-label">PG 18</div>
+          <div class="repo-track"><span class="repo-fill pg" style="--w:48.37%"></span></div>
+          <div class="repo-value"><span>357</span><em>9.3%</em></div>
+        </div>
+      </div>
+    </div>
+    <p class="repo-footnote"><strong>Signal:</strong> PG 17 is first, but active demand is spread across five older majors plus PG 18.</p>
+  </section>
+
+  <section class="repo-system-panel repo-os-panel" aria-label="Selected OS version distribution">
+    <div class="repo-system-head">
+      <div class="repo-system-kicker">Table 5</div>
+      <h2>Supported OS Versions</h2>
+      <p>Selected path-only OS targets; unsupported zero-count rows are omitted.</p>
+    </div>
+    <div class="repo-system-body">
+      <div class="repo-rows">
+        <div class="repo-row">
+          <div class="repo-label">EL 8</div>
+          <div class="repo-track"><span class="repo-fill os" style="--w:36.68%"></span></div>
+          <div class="repo-value"><span>48,586</span><em>10.5%</em></div>
+        </div>
+        <div class="repo-row">
+          <div class="repo-label">EL 9</div>
+          <div class="repo-track"><span class="repo-fill os" style="--w:100.00%"></span></div>
+          <div class="repo-value"><span>132,462</span><em>28.5%</em></div>
+        </div>
+        <div class="repo-row">
+          <div class="repo-label">EL 10</div>
+          <div class="repo-track"><span class="repo-fill os" style="--w:31.02%"></span></div>
+          <div class="repo-value"><span>41,086</span><em>8.9%</em></div>
+        </div>
+        <div class="repo-row">
+          <div class="repo-label">Debian 12</div>
+          <div class="repo-track"><span class="repo-fill os" style="--w:35.74%"></span></div>
+          <div class="repo-value"><span>47,339</span><em>10.2%</em></div>
+        </div>
+        <div class="repo-row">
+          <div class="repo-label">Debian 13</div>
+          <div class="repo-track"><span class="repo-fill os" style="--w:40.33%"></span></div>
+          <div class="repo-value"><span>53,421</span><em>11.5%</em></div>
+        </div>
+        <div class="repo-row">
+          <div class="repo-label">Ubuntu 22.04</div>
+          <div class="repo-track"><span class="repo-fill os" style="--w:37.11%"></span></div>
+          <div class="repo-value"><span>49,159</span><em>10.6%</em></div>
+        </div>
+        <div class="repo-row">
+          <div class="repo-label">Ubuntu 24.04</div>
+          <div class="repo-track"><span class="repo-fill os" style="--w:69.38%"></span></div>
+          <div class="repo-value"><span>91,912</span><em>19.8%</em></div>
+        </div>
+      </div>
+    </div>
+    <p class="repo-footnote"><strong>Signal:</strong> EL 9 and Ubuntu 24.04 carry the strongest visible demand in the selected OS set.</p>
+  </section>
+</div></section>
+    </main>
+  </div>
+  <script src="src/deck.js"></script>
+</body>
+</html>

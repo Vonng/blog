@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>01. Who am I · Extensions for Everyone</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2016%2016%27%3E%3Crect%20width%3D%2716%27%20height%3D%2716%27%20rx%3D%272%27%20fill%3D%27%230f172a%27/%3E%3Cpath%20d%3D%27M4%204h8v2H7v2h4v2H7v2H4z%27%20fill%3D%27%23f8fafc%27/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body data-prev="./00-extensions-for-everyone.html" data-next="./02-extensibility-matters.html" data-first="./00-extensions-for-everyone.html" data-last="./32-thank-you.html">
+  <div class="slide-page who-am-i-slide">
+    <header class="notes-strip">
+      <div class="notes-text"><span class="note-content">I&#x27;m Ruohang Feng, Author and maintainer of Pigsty, an open-source PostgreSQL distribution.    Builder of pgext.cloud, an open-source delivery layer for PostgreSQL extensions.    Over the past two years, I have been cataloging, building, packaging, and testing hundreds of extensions across PostgreSQL versions and Linux platforms. So this talk is not a theory. It is a field report.</span></div>
+      <nav class="nav"><a href="./00-extensions-for-everyone.html" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M15 18l-6-6 6-6"/><path d="M21 12H9"/></svg></a><span class="progress-mini">01/32</span><a href="./02-extensibility-matters.html" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M9 18l6-6-6-6"/><path d="M3 12h12"/></svg></a><a href="index.html" aria-label="Home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-6h4v6"/></svg></a></nav>
+    </header>
+    <main class="slide-canvas">
+      <div class="slide-head">
+        <div class="slide-title">
+          <p class="part-label">Part I. Introduction</p>
+          <h1>Who am I</h1>
+        </div>
+        <div class="slide-brand" aria-label="Pigsty">
+          <img src="src/images/pigsty-logo.svg" alt="" aria-hidden="true">
+          <span>PIGSTY</span>
+        </div>
+      </div>
+      <section class="slide-body"><style>
+.who-am-i-slide .slide-canvas {
+  padding: 22px 42px 30px;
+  gap: 18px;
+}
+
+.who-am-i-slide .slide-title h1 {
+  font-size: 54px;
+}
+
+.who-am-i-slide .claim {
+  display: none;
+}
+
+.who-am-i-slide .slide-body {
+  overflow: hidden;
+}
+
+.who-page {
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, .96fr) minmax(0, 1.04fr);
+  gap: 42px;
+  align-items: stretch;
+}
+
+.who-copy {
+  min-width: 0;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto auto auto minmax(0, 1fr);
+  gap: 16px;
+  align-content: stretch;
+  padding-top: 4px;
+}
+
+.who-kicker {
+  margin: 0;
+  color: #2865b1;
+  font-size: 24px;
+  line-height: 1.12;
+  font-weight: 850;
+  letter-spacing: 0;
+}
+
+.who-name {
+  margin: 0;
+  color: #172033;
+  font-size: 46px;
+  line-height: 1.02;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.who-name span {
+  color: #43546d;
+  font-weight: 850;
+}
+
+.who-profile {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 176px minmax(0, 1fr);
+  gap: 22px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.speaker-photo {
+  min-height: 0;
+  margin: 0;
+  width: 176px;
+}
+
+.speaker-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: 50% 46%;
+  border-radius: 8px;
+  box-shadow: 0 18px 42px rgba(23, 32, 51, .16);
+}
+
+.who-credentials {
+  min-width: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.who-credential {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  color: #253247;
+  font-size: 20px;
+  line-height: 1.18;
+  font-weight: 780;
+  letter-spacing: 0;
+}
+
+.who-credential::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  margin-top: .48em;
+  border-radius: 999px;
+  background: #2865b1;
+}
+
+.who-credential:nth-child(2)::before { background: #1e8a4c; }
+.who-credential:nth-child(3)::before { background: #0f766e; }
+.who-credential:nth-child(4)::before { background: #b7791f; }
+
+.who-credential strong {
+  color: #172033;
+  font-weight: 900;
+}
+
+.hunter-title {
+  align-self: end;
+  margin: 0;
+  color: #2865b1;
+  font-size: 45px;
+  line-height: .98;
+  font-weight: 900;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.pigsty-side {
+  min-width: 0;
+  min-height: 0;
+  align-self: stretch;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+}
+
+.pigsty-copy {
+  width: min(100%, 660px);
+  justify-self: center;
+  display: grid;
+  gap: 7px;
+}
+
+.pigsty-kicker {
+  margin: 0;
+  color: #2865b1;
+  font-size: 25px;
+  line-height: 1.02;
+  font-weight: 850;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.pigsty-wordmark {
+  margin: 0;
+  color: #18365f;
+  font-size: 46px;
+  line-height: .96;
+  font-weight: 900;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.pigsty-wordmark .hl-i { color: #2999d6; }
+.pigsty-wordmark .hl-g { color: #ff9c5b; }
+.pigsty-wordmark .hl-s { color: #7a838e; }
+.pigsty-wordmark .hl-t { color: #ef2f2a; }
+.pigsty-wordmark .hl-y { color: #60b87c; }
+
+.pigsty-tagline {
+  display: grid;
+  gap: 4px;
+  margin: 2px 0 0;
+  color: #4c6587;
+  font-size: 16px;
+  line-height: 1.18;
+  font-weight: 680;
+}
+
+.pigsty-tagline span {
+  white-space: nowrap;
+}
+
+.pigsty-media {
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  overflow: visible;
+}
+
+.pigsty-media img {
+  display: block;
+  width: min(100%, 760px);
+  max-width: none;
+  max-height: 380px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 24px 34px rgba(23, 32, 51, .18));
+}
+
+@media (max-height: 760px) {
+  .who-am-i-slide .slide-canvas {
+    padding: 18px 38px 24px;
+    gap: 14px;
+  }
+
+  .who-am-i-slide .slide-title h1 { font-size: 48px; }
+  .who-page { gap: 34px; }
+  .who-copy { gap: 13px; }
+  .who-kicker { font-size: 21px; }
+  .who-name { font-size: 40px; }
+  .who-profile {
+    grid-template-columns: 148px minmax(0, 1fr);
+    gap: 18px;
+  }
+  .speaker-photo { width: 148px; }
+  .who-credentials { gap: 9px; }
+  .who-credential {
+    font-size: 17px;
+    line-height: 1.16;
+  }
+  .hunter-title { font-size: 38px; }
+  .pigsty-kicker { font-size: 22px; }
+  .pigsty-wordmark { font-size: 39px; }
+  .pigsty-tagline { font-size: 13.5px; }
+  .pigsty-side { gap: 12px; }
+  .pigsty-media img { max-height: 286px; }
+}
+</style>
+
+<div class="who-page">
+  <section class="who-copy" aria-label="Speaker background">
+    <p class="who-kicker">Why I care about extension delivery</p>
+    <h2 class="who-name">Ruohang Feng <span>(@Vonng)</span></h2>
+    <div class="who-profile">
+      <figure class="speaker-photo">
+        <img src="src/images/vonng.webp" alt="Ruohang Feng">
+      </figure>
+      <div class="who-credentials">
+        <div class="who-credential"><span>Work with <strong>PostgreSQL</strong> for 10+ years</span></div>
+        <div class="who-credential"><span>Author of <strong>Pigsty</strong>, the OSS PG Distribution</span></div>
+        <div class="who-credential"><span>Maintainer of <strong>PGEXT.CLOUD</strong>, the Catalog</span></div>
+        <div class="who-credential"><span>Packaging <strong>330+</strong> Extensions for 16 Linux Platforms</span></div>
+      </div>
+    </div>
+    <p class="hunter-title">PG Extension Hunter!</p>
+  </section>
+
+  <aside class="pigsty-side" aria-label="Pigsty background">
+    <div class="pigsty-copy">
+      <p class="pigsty-kicker">Pigsty: the PG Distribution</p>
+      <h2 class="pigsty-wordmark">
+        PostgreSQL <span class="hl-i">In</span> <span class="hl-g">G</span>reat <span class="hl-s">S</span><span class="hl-t">T</span><span class="hl-y">Y</span>le
+      </h2>
+      <p class="pigsty-tagline">
+        <span>Enterprise-Grade Open-Source PG Distribution</span>
+        <span>HA, PITR, IaC, Monitor, and 511 PG extensions</span>
+      </p>
+    </div>
+    <figure class="pigsty-media">
+      <img src="src/images/pigsty-motherboard.png" alt="Pigsty architecture motherboard illustration">
+    </figure>
+  </aside>
+</div></section>
+    </main>
+  </div>
+  <script src="src/deck.js"></script>
+</body>
+</html>

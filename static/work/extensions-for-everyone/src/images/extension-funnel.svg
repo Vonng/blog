@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1834" height="848" viewBox="0 0 1834 848" role="img" aria-labelledby="title desc">
+  <title id="title">Extension delivery funnel</title>
+  <desc id="desc">A simplified funnel from discovered extensions to delivered extensions, PGDG second-party extensions, and PostgreSQL contrib first-party extensions, with Pigsty marked as third-party delivery.</desc>
+  <defs>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#16a34a"/>
+    </marker>
+    <marker id="arrowPurple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#7c3aed"/>
+    </marker>
+    <linearGradient id="blueFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fbff"/>
+      <stop offset="1" stop-color="#eef6ff"/>
+    </linearGradient>
+    <linearGradient id="greenFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7fff9"/>
+      <stop offset="1" stop-color="#eefaf1"/>
+    </linearGradient>
+    <linearGradient id="purpleFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fcfbff"/>
+      <stop offset="1" stop-color="#f4f0ff"/>
+    </linearGradient>
+    <linearGradient id="goldFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffdf4"/>
+      <stop offset="1" stop-color="#fff7dc"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1834" height="848" fill="#ffffff"/>
+
+  <g transform="translate(80 34) scale(.91)">
+  <g font-family="Inter, Avenir Next, Helvetica Neue, Arial, sans-serif" fill="#111827">
+    <g transform="translate(105 70)">
+      <rect width="330" height="208" rx="18" fill="url(#blueFill)" stroke="#2563eb" stroke-width="2"/>
+      <text x="165" y="70" text-anchor="middle" font-size="54" font-weight="800" fill="#2563eb">1,617</text>
+      <text x="165" y="112" text-anchor="middle" font-size="28" font-weight="760">All Extensions</text>
+      <text x="165" y="154" text-anchor="middle" font-size="22" font-weight="520">Discovered candidates</text>
+      <text x="165" y="184" text-anchor="middle" font-size="20" font-weight="450" fill="#4b5563">from the wider ecosystem</text>
+    </g>
+
+    <path d="M455 174 H560" fill="none" stroke="#2563eb" stroke-width="3" stroke-dasharray="12 10" marker-end="url(#arrowBlue)"/>
+
+    <g transform="translate(580 70)">
+      <rect width="330" height="208" rx="18" fill="url(#greenFill)" stroke="#16a34a" stroke-width="2"/>
+      <text x="165" y="70" text-anchor="middle" font-size="54" font-weight="800" fill="#16a34a">511</text>
+      <text x="165" y="112" text-anchor="middle" font-size="27" font-weight="760">Delivered Extensions</text>
+      <text x="165" y="154" text-anchor="middle" font-size="22" font-weight="520">Cataloged, packaged,</text>
+      <text x="165" y="184" text-anchor="middle" font-size="22" font-weight="520">and delivered</text>
+    </g>
+
+    <path d="M930 174 H1035" fill="none" stroke="#16a34a" stroke-width="3" stroke-dasharray="12 10" marker-end="url(#arrowGreen)"/>
+
+    <g transform="translate(1055 70)">
+      <rect width="330" height="208" rx="18" fill="url(#purpleFill)" stroke="#7c3aed" stroke-width="2"/>
+      <text x="165" y="70" text-anchor="middle" font-size="54" font-weight="800" fill="#7c3aed">162</text>
+      <text x="165" y="112" text-anchor="middle" font-size="28" font-weight="760">PGDG Extensions</text>
+      <text x="165" y="154" text-anchor="middle" font-size="24" font-weight="680">2nd Party Extension</text>
+      <text x="165" y="184" text-anchor="middle" font-size="20" font-weight="450" fill="#4b5563">delivered by PGDG</text>
+    </g>
+
+    <path d="M1405 174 H1510" fill="none" stroke="#7c3aed" stroke-width="3" stroke-dasharray="12 10" marker-end="url(#arrowPurple)"/>
+
+    <g transform="translate(1530 70)">
+      <rect width="300" height="208" rx="18" fill="url(#goldFill)" stroke="#d99a00" stroke-width="2"/>
+      <text x="150" y="70" text-anchor="middle" font-size="54" font-weight="800" fill="#c58a00">71</text>
+      <text x="150" y="112" text-anchor="middle" font-size="27" font-weight="760">Contrib Extensions</text>
+      <text x="150" y="154" text-anchor="middle" font-size="24" font-weight="680">1st Party Extension</text>
+      <text x="150" y="184" text-anchor="middle" font-size="20" font-weight="450" fill="#4b5563">ships with PostgreSQL</text>
+    </g>
+
+    <path d="M745 278 V358" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="10 10"/>
+
+    <g transform="translate(500 360)">
+      <rect width="835" height="320" rx="24" fill="#ffffff" stroke="#94a3b8" stroke-width="2" stroke-dasharray="10 10"/>
+      <text x="417.5" y="58" text-anchor="middle" font-size="25" font-weight="720">Breakdown by Source</text>
+      <text x="417.5" y="92" text-anchor="middle" font-size="20" font-weight="450" fill="#64748b">Pigsty and PGDG overlap in delivered packages</text>
+
+      <g transform="translate(55 125)">
+        <rect width="350" height="145" rx="18" fill="url(#greenFill)" stroke="#86cfa0" stroke-width="2"/>
+        <text x="175" y="44" text-anchor="middle" font-size="26" font-weight="720">Pigsty Repository</text>
+        <text x="175" y="90" text-anchor="middle" font-size="40" font-weight="800" fill="#16a34a">331</text>
+        <text x="175" y="124" text-anchor="middle" font-size="23" font-weight="650">3rd Party Extension</text>
+      </g>
+
+      <g transform="translate(430 125)">
+        <rect width="350" height="145" rx="18" fill="url(#purpleFill)" stroke="#a78bfa" stroke-width="2"/>
+        <text x="175" y="44" text-anchor="middle" font-size="26" font-weight="720">PGDG Repository</text>
+        <text x="175" y="90" text-anchor="middle" font-size="40" font-weight="800" fill="#7c3aed">162</text>
+        <text x="175" y="124" text-anchor="middle" font-size="23" font-weight="650">2nd Party Extension</text>
+      </g>
+    </g>
+  </g>
+  </g>
+</svg>

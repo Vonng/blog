@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>12. Why Linux Native? · Extensions for Everyone</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2016%2016%27%3E%3Crect%20width%3D%2716%27%20height%3D%2716%27%20rx%3D%272%27%20fill%3D%27%230f172a%27/%3E%3Cpath%20d%3D%27M4%204h8v2H7v2h4v2H7v2H4z%27%20fill%3D%27%23f8fafc%27/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body data-prev="./11-the-trade-off.html" data-next="./13-pgext-cloud.html" data-first="./00-extensions-for-everyone.html" data-last="./32-thank-you.html">
+  <div class="slide-page linux-platform-slide">
+    <header class="notes-strip">
+      <div class="notes-text"><span class="note-content">Container images reduce part of the matrix. That&#x27;s something I really admire. With containers, you only build for 5 PG majors times 2 architectures — that&#x27;s 10 slots per extension, an 8x reduction.    But Linux-native packages are still important. Many users still install Postgres through the native package manager — APT or YUM. And most Postgres Docker images themselves install extensions as Debian packages from the PGDG APT repo.    So the packaging has to be done somewhere.</span></div>
+      <nav class="nav"><a href="./11-the-trade-off.html" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M15 18l-6-6 6-6"/><path d="M21 12H9"/></svg></a><span class="progress-mini">12/32</span><a href="./13-pgext-cloud.html" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M9 18l6-6-6-6"/><path d="M3 12h12"/></svg></a><a href="index.html" aria-label="Home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-6h4v6"/></svg></a></nav>
+    </header>
+    <main class="slide-canvas">
+      <div class="slide-head">
+        <div class="slide-title">
+          <p class="part-label">Part III : The Delivery Layer</p>
+          <h1>Why Linux Native?</h1>
+        </div>
+        <div class="slide-brand" aria-label="Pigsty">
+          <img src="src/images/pigsty-logo.svg" alt="" aria-hidden="true">
+          <span>PIGSTY</span>
+        </div>
+      </div>
+      <section class="slide-body"><div class="linux-platform-board">
+  <div class="linux-platform-table-wrap">
+    <table class="linux-platform-table" aria-label="PGEXT.CLOUD Linux platform table">
+      <colgroup>
+        <col class="linux-col-os">
+        <col class="linux-col-vendor">
+        <col class="linux-col-major">
+        <col class="linux-col-minor">
+        <col class="linux-col-name">
+        <col class="linux-col-pg">
+        <col class="linux-col-comment">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>OS</th>
+          <th>Vendor</th>
+          <th>Major</th>
+          <th>Minor</th>
+          <th>Fullname</th>
+          <th>PG Major Version</th>
+          <th>Comment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="is-eol">
+          <td><span class="os-token">el7.x86_64</span></td>
+          <td>EL</td>
+          <td>7</td>
+          <td>7.9</td>
+          <td>CentOS 7 x86</td>
+          <td><div class="pg-version-set"><span>18</span><span>17</span><span>16</span><span>15</span><span>14</span></div></td>
+          <td><span class="status-token">EOL</span></td>
+        </tr>
+        <tr class="is-near">
+          <td><span class="os-token">el8.x86_64</span></td>
+          <td>EL</td>
+          <td>8</td>
+          <td>8.10</td>
+          <td>RockyLinux 8 x86</td>
+          <td><div class="pg-version-set"><span>18</span><span>17</span><span>16</span><span>15</span><span>14</span></div></td>
+          <td><span class="status-token">Near EOL</span></td>
+        </tr>
+        <tr class="is-near">
+          <td><span class="os-token">el8.aarch64</span></td>
+          <td>EL</td>
+          <td>8</td>
+          <td>8.10</td>
+          <td>RockyLinux 8 ARM</td>
+          <td><div class="pg-version-set"><span>18</span><span>17</span><span>16</span><span>15</span><span>14</span></div></td>
+          <td><span class="status-token">Near EOL</span></td>
+        </tr>
+        <tr class="is-ok">
+          <td><span class="os-token">el9.x86_64</span></td>
+          <td>EL</td>
+          <td>9</td>
+          <td>9.7</td>
+          <td>RockyLinux 9 x86</td>
+          <td><div class="pg-version-set"><span>18</span><span>17</span><span>16</span><span>15</span><span>14</span></div></td>
+          <td><span class="status-token">OK</span></td>
+        </tr>
+        <tr class="is-ok">
+          <td><span class="os-token">el9.aarch64</span></td>
+          <td>EL</td>
+          <td>9</td>
+          <td>9.7</td>
+          <td>RockyLinux 9 ARM</td>
+          <td><div class="pg-version-set"><span>18</span><span>17</span><span>16</span><span>15</span><span>14</span></div></td>
+          <td><span class="status-token">OK</span></td>
+        </tr>
+        <tr class="is-ok">
+          <td><span class="os-token">el10.x86_64</span></td>
+          <td>EL</td>
+          <td>10</td>
+          <td>10.1</td>
+          <td>RockyLinux 10 x86</td>
+          <td><div class="pg-version-set"><span>18</span><span>17</span><span>16</span><span>15</span><span>14</span></div></td>
+          <td><span class="status-token">OK</span></td>
+        </tr>
+        <tr class="is-ok">
+          <td><span class="os-token">el10.aarch64</span></td>
+          <td>EL</td>
+          <td>10</td>
+          <td>10.1</td>
+          <td>RockyLinux 10 ARM</td>
+          <td><div class="pg-version-set"><span>18</span><span>17</span><span>16</span><span>15</span><span>14</span></div></td>
+          <td><span class="status-token">OK</span></td>
+        </tr>
+        <tr class="is-eol">
+          <td><span class="os-token">d11.x86_64</span></td>
+          <td>Debian</td>
+          <td>11</td>
+          <td>11.11</td>
+          <td>Debian 11 x86</td>
+          <td><div class="pg-version-set"><span>18</span><span>17</span><span>16</span><span>15</span><span>14</span></div></td>
+          <td><span class="status-token">EOL</span></td>
+        </tr>
+        <tr class="is-eol">
+          <td><span class="os-token">d11.aarch64</span></td>
+          <td>Debian</td>
+          <td>11</td>
+          <td>11.11</td>
+          <td>Debian 11 ARM</td>
+          <td><div class="pg-version-set"><span>18</span><span>17</span><span>16</span><span>15</span><span>14</span></div></td>
+          <td><span class="status-token">EOL</span></td>
+        </tr>
+        <tr class="is-ok">
+          <td><span class="os-token">d12.x86_64</span></td>
+          <td>Debian</td>
+          <td>12</td>
+          <td>12.3</td>
+          <td>Debian 12 x86</td>
+          <td><div class="pg-version-set"><span>18</span><span>17</span><span>16</span><span>15</span><span>14</span></div></td>
+          <td><span class="status-token">OK</span></td>
+        </tr>
+        <tr class="is-ok">
+          <td><span class="os-token">d12.aarch64</span></td>
+          <td>Debian</td>
+          <td>12</td>
+          <td>12.3</td>
+          <td>Debian 12 ARM</td>
+          <td><div class="pg-version-set"><span>18</span><span>17</span><span>16</span><span>15</span><span>14</span></div></td>
+          <td><span class="status-token">OK</span></td>
+        </tr>
+        <tr class="is-ok">
+          <td><span class="os-token">d13.x86_64</span></td>
+          <td>Debian</td>
+          <td>13</td>
+          <td>13.3</td>
+          <td>Debian 13 x86</td>
+          <td><div class="pg-version-set"><span>18</span><span>17</span><span>16</span><span>15</span><span>14</span></div></td>
+          <td><span class="status-token">OK</span></td>
+        </tr>
+        <tr class="is-ok">
+          <td><span class="os-token">d13.aarch64</span></td>
+          <td>Debian</td>
+          <td>13</td>
+          <td>13.3</td>
+          <td>Debian 13 ARM</td>
+          <td><div class="pg-version-set"><span>18</span><span>17</span><span>16</span><span>15</span><span>14</span></div></td>
+          <td><span class="status-token">OK</span></td>
+        </tr>
+        <tr class="is-eol">
+          <td><span class="os-token">u20.x86_64</span></td>
+          <td>Ubuntu</td>
+          <td>20</td>
+          <td>20.04.6</td>
+          <td>Ubuntu 20.04 x86</td>
+          <td><div class="pg-version-set"><span>18</span><span>17</span><span>16</span><span>15</span><span>14</span></div></td>
+          <td><span class="status-token">EOL</span></td>
+        </tr>
+        <tr class="is-eol">
+          <td><span class="os-token">u20.aarch64</span></td>
+          <td>Ubuntu</td>
+          <td>20</td>
+          <td>20.04.6</td>
+          <td>Ubuntu 20.04 ARM</td>
+          <td><div class="pg-version-set"><span>18</span><span>17</span><span>16</span><span>15</span><span>14</span></div></td>
+          <td><span class="status-token">EOL</span></td>
+        </tr>
+        <tr class="is-ok">
+          <td><span class="os-token">u22.x86_64</span></td>
+          <td>Ubuntu</td>
+          <td>22</td>
+          <td>22.04.5</td>
+          <td>Ubuntu 22.04 x86</td>
+          <td><div class="pg-version-set"><span>18</span><span>17</span><span>16</span><span>15</span><span>14</span></div></td>
+          <td><span class="status-token">OK</span></td>
+        </tr>
+        <tr class="is-ok">
+          <td><span class="os-token">u22.aarch64</span></td>
+          <td>Ubuntu</td>
+          <td>22</td>
+          <td>22.04.5</td>
+          <td>Ubuntu 22.04 ARM</td>
+          <td><div class="pg-version-set"><span>18</span><span>17</span><span>16</span><span>15</span><span>14</span></div></td>
+          <td><span class="status-token">OK</span></td>
+        </tr>
+        <tr class="is-ok">
+          <td><span class="os-token">u24.x86_64</span></td>
+          <td>Ubuntu</td>
+          <td>24</td>
+          <td>24.04.4</td>
+          <td>Ubuntu 24.04 x86</td>
+          <td><div class="pg-version-set"><span>18</span><span>17</span><span>16</span><span>15</span><span>14</span></div></td>
+          <td><span class="status-token">OK</span></td>
+        </tr>
+        <tr class="is-ok">
+          <td><span class="os-token">u24.aarch64</span></td>
+          <td>Ubuntu</td>
+          <td>24</td>
+          <td>24.04.4</td>
+          <td>Ubuntu 24.04 ARM</td>
+          <td><div class="pg-version-set"><span>18</span><span>17</span><span>16</span><span>15</span><span>14</span></div></td>
+          <td><span class="status-token">OK</span></td>
+        </tr>
+        <tr class="is-ok">
+          <td><span class="os-token">u26.x86_64</span></td>
+          <td>Ubuntu</td>
+          <td>26</td>
+          <td>26.04.0</td>
+          <td>Ubuntu 26.04 x86</td>
+          <td><div class="pg-version-set"><span>18</span><span>17</span><span>16</span><span>15</span><span>14</span></div></td>
+          <td><span class="status-token">OK</span></td>
+        </tr>
+        <tr class="is-ok">
+          <td><span class="os-token">u26.aarch64</span></td>
+          <td>Ubuntu</td>
+          <td>26</td>
+          <td>26.04.0</td>
+          <td>Ubuntu 26.04 ARM</td>
+          <td><div class="pg-version-set"><span>18</span><span>17</span><span>16</span><span>15</span><span>14</span></div></td>
+          <td><span class="status-token">OK</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div></section>
+    </main>
+  </div>
+  <script src="src/deck.js"></script>
+</body>
+</html>

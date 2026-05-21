@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>07. Star Tiering · Extensions for Everyone</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2016%2016%27%3E%3Crect%20width%3D%2716%27%20height%3D%2716%27%20rx%3D%272%27%20fill%3D%27%230f172a%27/%3E%3Cpath%20d%3D%27M4%204h8v2H7v2h4v2H7v2H4z%27%20fill%3D%27%23f8fafc%27/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body data-prev="./06-github-stars.html" data-next="./08-the-extension-funnel.html" data-first="./00-extensions-for-everyone.html" data-last="./32-thank-you.html">
+  <div class="slide-page ">
+    <header class="notes-strip">
+      <div class="notes-text"><span class="note-content">Group extensions by order of magnitude, and we get a simple tier model.    Tier zero — the magnificent four. PostGIS, TimescaleDB, pgvector, Citus. More than ten thousand stars each.    Tier one — 44 extensions, between one thousand and ten thousand.    Tier two — about 152 extensions, above one hundred.    Tier three — about 373 extensions, above ten.    And a long tail of around 748 extensions below ten stars.    This is not a quality ranking. Some popular projects are no longer active, like pgml or zombodb. Some low-star extensions are quite useful.    But the tiers tell us something. The visible ecosystem is much smaller than the discovered one. Adding tiers zero through three gives about 570 extensions with more than ten stars — close to what is actually deliverable.</span></div>
+      <nav class="nav"><a href="./06-github-stars.html" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M15 18l-6-6 6-6"/><path d="M21 12H9"/></svg></a><span class="progress-mini">07/32</span><a href="./08-the-extension-funnel.html" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M9 18l6-6-6-6"/><path d="M3 12h12"/></svg></a><a href="index.html" aria-label="Home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-6h4v6"/></svg></a></nav>
+    </header>
+    <main class="slide-canvas">
+      <div class="slide-head">
+        <div class="slide-title">
+          <p class="part-label">Part II : The Ecosystem Landscape</p>
+          <h1>Star Tiering</h1>
+        </div>
+        <div class="slide-brand" aria-label="Pigsty">
+          <img src="src/images/pigsty-logo.svg" alt="" aria-hidden="true">
+          <span>PIGSTY</span>
+        </div>
+      </div>
+      <section class="slide-body"><div class="star-tiering-slide">
+  <div class="tiering-board">
+    <section class="tiering-scale" aria-label="Star tier summary">
+      <div class="tiering-scale-list">
+        <div class="tiering-scale-item tier-T0">
+          <div class="tiering-scale-text">
+            <div class="tiering-tier tier-T0">T0</div>
+            <div class="tiering-title"><span class="tiering-range">10K+</span><strong class="tiering-label">Flagship</strong></div>
+            <div class="tiering-count"><strong>4</strong><span>packages</span></div>
+          </div>
+          <div class="tiering-bar"><span class="tier-T0" style="width:2.000%"></span></div>
+        </div>
+        <div class="tiering-scale-item tier-T1">
+          <div class="tiering-scale-text">
+            <div class="tiering-tier tier-T1">T1</div>
+            <div class="tiering-title"><span class="tiering-range">1K+</span><strong class="tiering-label">Popular</strong></div>
+            <div class="tiering-count"><strong>44</strong><span>packages</span></div>
+          </div>
+          <div class="tiering-bar"><span class="tier-T1" style="width:5.882%"></span></div>
+        </div>
+        <div class="tiering-scale-item tier-T2">
+          <div class="tiering-scale-text">
+            <div class="tiering-tier tier-T2">T2</div>
+            <div class="tiering-title"><span class="tiering-range">100+</span><strong class="tiering-label">Recognized</strong></div>
+            <div class="tiering-count"><strong>152</strong><span>packages</span></div>
+          </div>
+          <div class="tiering-bar"><span class="tier-T2" style="width:20.321%"></span></div>
+        </div>
+        <div class="tiering-scale-item tier-T3">
+          <div class="tiering-scale-text">
+            <div class="tiering-tier tier-T3">T3</div>
+            <div class="tiering-title"><span class="tiering-range">10+</span><strong class="tiering-label">Visible</strong></div>
+            <div class="tiering-count"><strong>373</strong><span>packages</span></div>
+          </div>
+          <div class="tiering-bar"><span class="tier-T3" style="width:49.866%"></span></div>
+        </div>
+        <div class="tiering-scale-item tier-T4">
+          <div class="tiering-scale-text">
+            <div class="tiering-tier tier-T4">T4</div>
+            <div class="tiering-title"><span class="tiering-range">&lt;10</span><strong class="tiering-label">Long Tail</strong></div>
+            <div class="tiering-count"><strong>748</strong><span>packages</span></div>
+          </div>
+          <div class="tiering-bar"><span class="tier-T4" style="width:100.000%"></span></div>
+        </div>
+      </div>
+      <div class="tiering-caption"><strong>Not quality scores.</strong><span>T0-T3 add up to roughly 570 packages with more than ten stars.</span></div>
+    </section>
+    <section class="tiering-examples" aria-label="Representative extension packages">
+      <div class="tiering-examples-head">Extension list</div>
+      <div class="tiering-member-row tier-T0"><div class="rating-member-tier tier-T0">T0</div><div class="tiering-members"><a href="https://pigsty.io/ext/e/postgis">postgis</a><a href="https://pigsty.io/ext/e/timescaledb">timescaledb</a><a href="https://pigsty.io/ext/e/vector">pgvector</a><a href="https://pigsty.io/ext/e/citus">citus</a></div></div>
+      <div class="tiering-member-row tier-T1"><div class="rating-member-tier tier-T1">T1</div><div class="tiering-members"><a href="https://pigsty.io/ext/e/pg_search">pg_search</a><a href="https://pigsty.io/ext/e/pgml">pgml</a><a href="https://pigsty.io/ext/e/ai">pgai</a><a href="https://pigsty.io/ext/e/pgmq">pgmq</a><a href="https://pigsty.io/ext/e/zombodb">zombodb</a><a href="https://pigsty.io/ext/e/age">age</a><a href="https://pigsty.io/ext/e/ruvector">ruvector-postgres</a><a href="https://pigsty.io/ext/e/orioledb">orioledb</a><a href="https://pigsty.io/ext/e/pg_cron">pg_cron</a><a href="https://pigsty.io/ext/e/pg_textsearch">pg_textsearch</a><a href="https://pigsty.io/ext/e/rdkit">rdkit</a><a href="https://pigsty.io/ext/e/documentdb">documentdb</a><a href="https://pigsty.io/ext/e/pg_graphql">pg_graphql</a><a href="https://pigsty.io/ext/e/pg_duckdb">pg_duckdb</a><a href="https://pigsty.io/ext/e/columnar">hydra</a><a href="https://pigsty.io/ext/e/vectorscale">pgvectorscale</a><a href="https://pigsty.io/ext/e/pg_partman">pg_partman</a><a href="https://pigsty.io/ext/e/pipelinedb">pipelinedb</a><a href="https://pigsty.io/ext/e/pg_repack">pg_repack</a><a href="https://pigsty.io/ext/e/vectors">vectors</a><a href="https://pigsty.io/ext/e/plv8">plv8</a><a href="https://pigsty.io/ext/e/pg_mooncake">pg_mooncake</a><a href="https://pigsty.io/ext/e/cstore_fdw">cstore_fdw</a><a href="https://pigsty.io/ext/e/index_advisor">index_advisor</a><a href="https://pigsty.io/ext/e/repmgr">repmgr</a><a href="https://pigsty.io/ext/e/vchord">vchord</a><a href="https://pigsty.io/ext/e/hypopg">hypopg</a><a href="https://pigsty.io/ext/e/pgaudit">pgaudit</a><a href="https://pigsty.io/ext/e/omni">omnigres</a><a href="https://pigsty.io/ext/e/http">pg_http</a><a href="https://pigsty.io/ext/e/pg_lake">pg_lake</a><a href="https://pigsty.io/ext/e/wal2json">wal2json</a><a href="https://pigsty.io/ext/e/pg_ivm">pg_ivm</a><a href="https://pigsty.io/ext/e/pg_strom">pg_strom</a><a href="https://pigsty.io/ext/e/pgrouting">pgrouting</a><a href="https://pigsty.io/ext/e/plrust">plrust</a><a href="https://pigsty.io/ext/e/pgautofailover">pgautofailover</a><a href="https://pigsty.io/ext/e/pglogical">pglogical</a><a href="https://pigsty.io/ext/e/hll">hll</a><a href="https://pigsty.io/ext/e/pg_jsonschema">pg_jsonschema</a><a href="https://pigsty.io/ext/e/pgtap">pgtap</a><a href="https://pigsty.io/ext/e/pgactive">pgactive</a><a href="https://pigsty.io/ext/e/pg_shard">pg_shard</a><a href="https://pigsty.io/ext/e/ivorysql_ora">ivorysql</a></div></div>
+      <div class="tiering-member-row tier-T2"><div class="rating-member-tier tier-T2">T2</div><div class="tiering-members"><a href="https://pigsty.io/ext/e/pg_hint_plan">pg_hint_plan</a><a href="https://pigsty.io/ext/e/lantern_extras">lantern_extras</a><a href="https://pigsty.io/ext/e/zhparser">zhparser</a><a href="https://pigsty.io/ext/e/wrappers">wrappers</a><a href="https://pigsty.io/ext/e/vectorize">pg_vectorize</a><a href="https://pigsty.io/ext/e/rum">rum</a><a href="https://pigsty.io/ext/e/pglite_fusion">pglite_fusion</a><a href="https://pigsty.io/ext/e/powa">powa</a><a href="https://pigsty.io/ext/e/plpgsql_check">plpgsql_check</a><a href="https://pigsty.io/ext/e/uuid47">uuid47</a><a href="https://pigsty.io/ext/e/pgroonga">pgroonga</a><a href="https://pigsty.io/ext/e/spock">spock</a><a href="https://pigsty.io/ext/e/jsquery">jsquery</a><a href="https://pigsty.io/ext/e/pg_parquet">pg_parquet</a><a href="https://pigsty.io/ext/e/pg_squeeze">pg_squeeze</a><a href="https://pigsty.io/ext/e/mobilitydb">mobilitydb</a><a href="https://pigsty.io/ext/e/pgsodium">pgsodium</a><a href="https://pigsty.io/ext/e/mysql_fdw">mysql_fdw</a><a href="https://pigsty.io/ext/e/pg_pathman">pg_pathman</a><a href="https://pigsty.io/ext/e/embedding">embedding</a><a href="https://pigsty.io/ext/e/pg_stat_monitor">pg_stat_monitor</a><a href="https://pigsty.io/ext/e/zson">zson</a><a href="https://pigsty.io/ext/e/oracle_fdw">oracle_fdw</a><a href="https://pigsty.io/ext/e/pg_analytics">pg_analytics</a><a href="https://pigsty.io/ext/e/orafce">orafce</a><a href="https://pigsty.io/ext/e/redis_fdw">redis_fdw</a><a href="https://pigsty.io/ext/e/postgres-json-schema">postgres-json-schema</a><a href="https://pigsty.io/ext/e/pgx_ulid">pgx_ulid</a><a href="https://pigsty.io/ext/e/aqo">aqo</a><a href="https://pigsty.io/ext/e/pg_bulkload">pg_bulkload</a><a href="https://pigsty.io/ext/e/plprql">plprql</a><a href="https://pigsty.io/ext/e/timescaledb_toolkit">timescaledb_toolkit</a><a href="https://pigsty.io/ext/e/pgjwt">pgjwt</a><a href="https://pigsty.io/ext/e/aux_mysql">openhalo</a><span class="rating-more">...</span></div></div>
+      <div class="tiering-member-row tier-T3"><div class="rating-member-tier tier-T3">T3</div><div class="tiering-members"><a href="https://pigsty.io/ext/e/pgl_ddl_deploy">pgl_ddl_deploy</a><a href="https://pigsty.io/ext/e/uuidv7-sql">postgres-uuidv7-sql</a><a href="https://pigsty.io/ext/e/pg_sqids">pg_sqids</a><a href="https://pigsty.io/ext/e/pgtt">pgtt</a><a href="https://pigsty.io/ext/e/tdigest">tdigest</a><a href="https://pigsty.io/ext/e/pg_bestmatch">pg_bestmatch</a><a href="https://pigsty.io/ext/e/pg_libphonenumber">pg_libphonenumber</a><a href="https://pigsty.io/ext/e/pg_statviz">pg_statviz</a><a href="https://pigsty.io/ext/e/plan_filter">pg_plan_filter</a><a href="https://pigsty.io/ext/e/pgmonitor">pgmonitor</a><a href="https://pigsty.io/ext/e/datasketches">datasketches</a><a href="https://pigsty.io/ext/e/pg_ducklake">pg_ducklake</a><a href="https://pigsty.io/ext/e/snowflake">snowflake</a><a href="https://pigsty.io/ext/e/pldbgapi">pldebugger</a><a href="https://pigsty.io/ext/e/emaj">emaj</a><a href="https://pigsty.io/ext/e/jsoncdc">jsoncdc</a><a href="https://pigsty.io/ext/e/q3c">q3c</a><a href="https://pigsty.io/ext/e/acl">pg_acl</a><a href="https://pigsty.io/ext/e/gzip">pg_gzip</a><a href="https://pigsty.io/ext/e/pg_catcheck">pg_catcheck</a><a href="https://pigsty.io/ext/e/pg_column_tetris">pg_column_tetris</a><a href="https://pigsty.io/ext/e/pgh3">pgh3</a><a href="https://pigsty.io/ext/e/supautils">supautils</a><a href="https://pigsty.io/ext/e/count_distinct">count_distinct</a><a href="https://pigsty.io/ext/e/credcheck">credcheck</a><a href="https://pigsty.io/ext/e/gitgres">gitgres</a><a href="https://pigsty.io/ext/e/mimeo">mimeo</a><a href="https://pigsty.io/ext/e/pg_enquo">pg_enquo</a><a href="https://pigsty.io/ext/e/jdbc_fdw">jdbc_fdw</a><a href="https://pigsty.io/ext/e/set_user">set_user</a><a href="https://pigsty.io/ext/e/uids">uids-postgres</a><a href="https://pigsty.io/ext/e/bg_mon">bg_mon</a><a href="https://pigsty.io/ext/e/twitter_fdw">twitter_fdw</a><a href="https://pigsty.io/ext/e/odbc_fdw">odbc_fdw</a><span class="rating-more">...</span></div></div>
+      <div class="tiering-member-row tier-T4"><div class="rating-member-tier tier-T4">T4</div><div class="tiering-members"><a href="https://pigsty.io/ext/e/colnames">colnames</a><a href="https://pigsty.io/ext/e/config_log">config_log</a><a href="https://pigsty.io/ext/e/cryptint">cryptint</a><a href="https://pigsty.io/ext/e/datalink">datalink</a><a href="https://pigsty.io/ext/e/md5hash">md5hash</a><a href="https://pigsty.io/ext/e/meta_triggers">meta_triggers</a><a href="https://pigsty.io/ext/e/pg_auditor">pg_auditor</a><a href="https://pigsty.io/ext/e/country">pg_country</a><a href="https://pigsty.io/ext/e/grants_manager">pg_grants_manager</a><a href="https://pigsty.io/ext/e/hash64">pg_hash64</a><a href="https://pigsty.io/ext/e/json_query">pg_json_query</a><a href="https://pigsty.io/ext/e/pg_octopus">pg_octopus</a><a href="https://pigsty.io/ext/e/pgaut">pgaut</a><a href="https://pigsty.io/ext/e/query_recorder">query_recorder</a><a href="https://pigsty.io/ext/e/redis_link">redis_link</a><a href="https://pigsty.io/ext/e/replisome">replisome</a><a href="https://pigsty.io/ext/e/shacrypt">shacrypt</a><a href="https://pigsty.io/ext/e/trimmed_aggregates">trimmed_aggregates</a><span class="rating-more">...</span></div></div>
+    </section>
+  </div>
+</div></section>
+    </main>
+  </div>
+  <script src="src/deck.js"></script>
+</body>
+</html>

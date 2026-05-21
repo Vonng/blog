@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>04. Who Benefits? · Extensions for Everyone</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2016%2016%27%3E%3Crect%20width%3D%2716%27%20height%3D%2716%27%20rx%3D%272%27%20fill%3D%27%230f172a%27/%3E%3Cpath%20d%3D%27M4%204h8v2H7v2h4v2H7v2H4z%27%20fill%3D%27%23f8fafc%27/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body data-prev="./03-two-years-later.html" data-next="./05-galaxy.html" data-first="./00-extensions-for-everyone.html" data-last="./32-thank-you.html">
+  <div class="slide-page benefits-slide">
+    <header class="notes-strip">
+      <div class="notes-text"><span class="note-content">When I say “extensions for everyone,” I mean four group of people    First, users and DBAs. They want packages. They do not want to compile code on production servers.    Second, extension authors. They need reach. And they also don&#x27;t want the trouble of building and delivering them.    Third, vendors. They need reusable components. Rebuilding the same packages over and over again is a waste of engineering time.    And fourth, PostgreSQL hackers. They need signals. When compatibility breaks, extensions are often where we see it first.    So this is about a shared delivery layer. Not just for convenience, but also for visibility. Before we talk about delivery, let’s look at the ecosystem. We need to understand what we are trying to deliver.</span></div>
+      <nav class="nav"><a href="./03-two-years-later.html" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M15 18l-6-6 6-6"/><path d="M21 12H9"/></svg></a><span class="progress-mini">04/32</span><a href="./05-galaxy.html" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M9 18l6-6-6-6"/><path d="M3 12h12"/></svg></a><a href="index.html" aria-label="Home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-6h4v6"/></svg></a></nav>
+    </header>
+    <main class="slide-canvas">
+      <div class="slide-head">
+        <div class="slide-title">
+          <p class="part-label">Part I. Introduction</p>
+          <h1>Who Benefits?</h1>
+        </div>
+        <div class="slide-brand" aria-label="Pigsty">
+          <img src="src/images/pigsty-logo.svg" alt="" aria-hidden="true">
+          <span>PIGSTY</span>
+        </div>
+      </div>
+      <section class="slide-body"><div class="benefit-board" aria-label="Beneficiary groups">
+  <article class="benefit-card benefit-blue">
+    <div class="benefit-copy">
+      <div class="benefit-icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64">
+          <circle cx="32" cy="24" r="7"></circle>
+          <path d="M20 48c0-8 5-13 12-13s12 5 12 13"></path>
+          <circle cx="17" cy="29" r="5"></circle>
+          <path d="M7 49c0-6 4-10 10-10"></path>
+          <circle cx="47" cy="29" r="5"></circle>
+          <path d="M57 49c0-6-4-10-10-10"></path>
+        </svg>
+      </div>
+      <h2>Users / DBAs</h2>
+      <p>Simple installs</p>
+    </div>
+    <svg class="benefit-art" viewBox="0 0 420 230" aria-hidden="true">
+      <path class="benefit-dash" d="M74 166 202 102 342 150 214 212Z"></path>
+      <path d="M172 34 326 77 326 184 172 141Z"></path>
+      <path d="M172 34 183 27 337 70 326 77"></path>
+      <path d="M326 77 337 70 337 177 326 184"></path>
+      <path d="M172 56 326 99"></path>
+      <circle cx="190" cy="50" r="3"></circle>
+      <circle cx="205" cy="54" r="3"></circle>
+      <circle cx="220" cy="58" r="3"></circle>
+      <circle class="benefit-fill" cx="253" cy="107" r="31"></circle>
+      <path class="benefit-check" d="M237 104 250 118 273 94"></path>
+      <path d="M99 159 154 132 210 153 154 183Z"></path>
+      <path d="M99 159v47l55 23v-46"></path>
+      <path d="M210 153v48l-56 28"></path>
+      <path class="benefit-dash" d="M154 132v-36h54"></path>
+      <path class="benefit-dash" d="M154 183v-34"></path>
+      <circle class="benefit-dot" cx="154" cy="96" r="4"></circle>
+      <circle class="benefit-dot" cx="208" cy="96" r="4"></circle>
+    </svg>
+  </article>
+
+  <article class="benefit-card benefit-green">
+    <div class="benefit-copy">
+      <div class="benefit-icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64">
+          <path d="M25 20 13 32l12 12"></path>
+          <path d="M39 20 51 32 39 44"></path>
+          <path d="M35 17 29 47"></path>
+        </svg>
+      </div>
+      <h2>Extension authors</h2>
+      <p>Reach users</p>
+    </div>
+    <svg class="benefit-art" viewBox="0 0 420 230" aria-hidden="true">
+      <circle cx="268" cy="88" r="64"></circle>
+      <ellipse cx="268" cy="88" rx="36" ry="64"></ellipse>
+      <path d="M207 88h122"></path>
+      <path d="M219 54c30 13 66 13 97 0"></path>
+      <path d="M219 122c30-13 66-13 97 0"></path>
+      <path class="benefit-dash" d="M222 40c-20 16-32 35-36 58"></path>
+      <path class="benefit-dash" d="M313 36c23 18 35 43 34 72"></path>
+      <circle cx="151" cy="72" r="25"></circle>
+      <circle cx="354" cy="58" r="25"></circle>
+      <circle cx="359" cy="148" r="25"></circle>
+      <circle cx="270" cy="121" r="24"></circle>
+      <path d="M151 97c38 21 75 29 119 24"></path>
+      <path d="M329 71c-23 16-42 31-59 50"></path>
+      <path d="M344 127c-19 0-43-2-74-6"></path>
+      <path class="benefit-user" d="M151 63a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm-11 25c0-8 5-12 11-12s11 4 11 12"></path>
+      <path class="benefit-user" d="M354 49a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm-11 25c0-8 5-12 11-12s11 4 11 12"></path>
+      <path class="benefit-user" d="M359 139a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm-11 25c0-8 5-12 11-12s11 4 11 12"></path>
+      <path class="benefit-user" d="M270 112a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm-11 25c0-8 5-12 11-12s11 4 11 12"></path>
+      <path d="M142 130 242 159v61l-100-29Z"></path>
+      <path d="M142 130 153 123 253 152 242 159"></path>
+      <path d="M242 159 253 152v61l-11 7"></path>
+      <path class="benefit-code-line" d="M159 152h18"></path>
+      <path class="benefit-code-line" d="M187 160h33"></path>
+      <path class="benefit-code-line" d="M160 173h48"></path>
+      <path class="benefit-code-line" d="M160 187h22"></path>
+      <path class="benefit-code-line" d="M193 196h29"></path>
+    </svg>
+  </article>
+
+  <article class="benefit-card benefit-purple">
+    <div class="benefit-copy">
+      <div class="benefit-icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64">
+          <path d="M14 30v22h36V30"></path>
+          <path d="M12 30h40l-5-15H17Z"></path>
+          <path d="M18 15v15c0 4 3 7 7 7s7-3 7-7V15"></path>
+          <path d="M32 15v15c0 4 3 7 7 7s7-3 7-7V15"></path>
+          <path d="M28 52V40h8v12"></path>
+        </svg>
+      </div>
+      <h2>Vendors</h2>
+      <p>Reuse and extend</p>
+    </div>
+    <svg class="benefit-art" viewBox="0 0 420 230" aria-hidden="true">
+      <path class="benefit-dash" d="M83 165 211 97 343 151 214 218Z"></path>
+      <path d="M198 39 265 72 200 106 134 72Z"></path>
+      <path d="M134 72v58l66 34v-58"></path>
+      <path d="M265 72v58l-65 34"></path>
+      <path d="M91 126 156 94 222 127 157 161Z"></path>
+      <path d="M91 126v58l66 34v-57"></path>
+      <path d="M222 127v57l-65 34"></path>
+      <path d="M199 127 264 94 330 127 265 161Z"></path>
+      <path d="M199 127v58l66 33v-57"></path>
+      <path d="M330 127v57l-65 34"></path>
+      <path d="M157 161c10-13 24-12 32-1"></path>
+      <path d="M200 106c9 12 9 25 0 37"></path>
+      <path d="M265 161c10-13 24-12 32-1"></path>
+      <path class="benefit-accent" d="M308 122c-9 12-9 25 0 37"></path>
+    </svg>
+  </article>
+
+  <article class="benefit-card benefit-amber">
+    <div class="benefit-copy">
+      <div class="benefit-icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64">
+          <path d="M32 8 50 16v14c0 12-7 22-18 27C21 52 14 42 14 30V16Z"></path>
+          <path d="M28 25 22 32l6 7"></path>
+          <path d="M36 25 42 32l-6 7"></path>
+          <path d="M34 23 30 41"></path>
+        </svg>
+      </div>
+      <h2>PG hackers</h2>
+      <p>Compatibility signals</p>
+    </div>
+    <svg class="benefit-art" viewBox="0 0 420 230" aria-hidden="true">
+      <ellipse cx="238" cy="111" rx="139" ry="69"></ellipse>
+      <ellipse cx="238" cy="111" rx="103" ry="51"></ellipse>
+      <ellipse cx="238" cy="111" rx="67" ry="33"></ellipse>
+      <path class="benefit-accent" d="M238 111 321 30"></path>
+      <path class="benefit-accent" d="M238 111 324 156"></path>
+      <path d="M103 128c34 30 86 47 145 47 49 0 94-12 128-33"></path>
+      <circle class="benefit-fill" cx="238" cy="111" r="6"></circle>
+      <circle class="benefit-dot" cx="143" cy="79" r="6"></circle>
+      <circle class="benefit-dot" cx="334" cy="84" r="6"></circle>
+      <circle class="benefit-dot" cx="112" cy="152" r="7"></circle>
+      <circle class="benefit-dot" cx="260" cy="183" r="7"></circle>
+      <circle class="benefit-dot" cx="362" cy="138" r="4"></circle>
+      <path d="M349 155c0-12 18-22 40-22s40 10 40 22-18 22-40 22-40-10-40-22Z"></path>
+      <path d="M349 155v37c0 12 18 22 40 22s40-10 40-22v-37"></path>
+      <path d="M349 174c0 12 18 22 40 22s40-10 40-22"></path>
+      <path d="M349 192c0 12 18 22 40 22s40-10 40-22"></path>
+    </svg>
+  </article>
+</div></section>
+    </main>
+  </div>
+  <script src="src/deck.js"></script>
+</body>
+</html>

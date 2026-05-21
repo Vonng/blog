@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>24. Rust Problems · Extensions for Everyone</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2016%2016%27%3E%3Crect%20width%3D%2716%27%20height%3D%2716%27%20rx%3D%272%27%20fill%3D%27%230f172a%27/%3E%3Cpath%20d%3D%27M4%204h8v2H7v2h4v2H7v2H4z%27%20fill%3D%27%23f8fafc%27/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body data-prev="./23-os-minor-break.html" data-next="./25-bulky-extensions.html" data-first="./00-extensions-for-everyone.html" data-last="./32-thank-you.html">
+  <div class="slide-page rust-problems-slide">
+    <header class="notes-strip">
+      <div class="notes-text"><span class="note-content">Here is the practical maintenance problem with Rust.    In pgext.extension, I have 48 curated Rust extensions, and they already span five pgrx baselines.    But pgext.universe has 194 more Rust extensions outside that curated table.    So Rust is not just another source language. It is a growing compatibility surface, and most of that surface is still wild.</span></div>
+      <nav class="nav"><a href="./23-os-minor-break.html" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M15 18l-6-6 6-6"/><path d="M21 12H9"/></svg></a><span class="progress-mini">24/32</span><a href="./25-bulky-extensions.html" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M9 18l6-6-6-6"/><path d="M3 12h12"/></svg></a><a href="index.html" aria-label="Home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-6h4v6"/></svg></a></nav>
+    </header>
+    <main class="slide-canvas">
+      <div class="slide-head">
+        <div class="slide-title">
+          <p class="part-label">Part IV Maintenance in the Wild</p>
+          <h1>Rust Problems</h1>
+        </div>
+        <div class="slide-brand" aria-label="Pigsty">
+          <img src="src/images/pigsty-logo.svg" alt="" aria-hidden="true">
+          <span>PIGSTY</span>
+        </div>
+      </div>
+      <section class="slide-body"><div class="rust-problems-board">
+<div class="pgrx-version-board curated-pgrx-board">
+  <div class="pgrx-version-row small">
+    <div class="pgrx-version-cell">
+      <em>pgrx</em>
+      <strong>0.12.9</strong>
+      <span>1 extension</span>
+    </div>
+    <div class="pgrx-name-cloud">
+      <span>pgml</span>
+    </div>
+  </div>
+  <div class="pgrx-version-row small">
+    <div class="pgrx-version-cell">
+      <em>pgrx</em>
+      <strong>0.13.0</strong>
+      <span>1 extension</span>
+    </div>
+    <div class="pgrx-name-cloud">
+      <span>pg_analytics</span>
+    </div>
+  </div>
+  <div class="pgrx-version-row dominant">
+    <div class="pgrx-version-cell">
+      <em>pgrx</em>
+      <strong>0.16.1</strong>
+      <span>27 extensions</span>
+    </div>
+    <div class="pgrx-name-cloud dense">
+      <span>convert</span><span>etcd_fdw</span><span>explain_ui</span><span>pg_base58</span><span>pg_bestmatch</span><span>pg_enigma</span><span>pg_graphql</span><span>pg_idkit</span><span>pg_jsonschema</span><span>pg_later</span><span>pg_mooncake</span><span>pg_parquet</span><span>pg_polyline</span><span>pg_render</span><span>pg_session_jwt</span><span>pg_smtp_client</span><span>pg_summarize</span><span>pg_tiktoken</span><span>pg_tokenizer</span><span>pgdd</span><span>pglite_fusion</span><span>pgsmcrypto</span><span>plprql</span><span>timescaledb_toolkit</span><span>typeid</span><span>vchord_bm25</span><span>vectorscale</span>
+    </div>
+  </div>
+  <div class="pgrx-version-row active">
+    <div class="pgrx-version-cell">
+      <em>pgrx</em>
+      <strong>0.17.0</strong>
+      <span>17 extensions</span>
+    </div>
+    <div class="pgrx-name-cloud">
+      <span>anon</span><span>block_copy_command</span><span>pg_cardano</span><span>pg_command_fw</span><span>pg_eviltransform</span><span>pg_kazsearch</span><span>pg_pinyin</span><span>pg_rrf</span><span>pg_strict</span><span>pg_when</span><span>pglinter</span><span>pgmqtt</span><span>pgx_ulid</span><span>tzf</span><span>vchord</span><span>vectorize</span><span>wrappers</span>
+    </div>
+  </div>
+  <div class="pgrx-version-row fresh">
+    <div class="pgrx-version-cell">
+      <em>pgrx</em>
+      <strong>0.18.0</strong>
+      <span>2 extensions</span>
+    </div>
+    <div class="pgrx-name-cloud">
+      <span>pg_search</span><span>pg_trickle</span>
+    </div>
+  </div>
+</div>
+<div class="wild-rust-panel">
+  <div class="wild-rust-head">
+    <strong>Wild Rust Extensions</strong>
+    <span>194 more in pgext.universe, outside pgext.extension</span>
+  </div>
+  <div class="wild-rust-cloud">
+      <span>zombodb</span><span>ruvector</span><span>vectors</span><span>plrust</span><span>lantern_extras</span><span>wasm</span><span>pg_branch</span><span>pgfdb</span><span>pgclaw</span><span>pgprolog</span><span>pg_turret</span><span>eva_pg</span>
+      <span>rag</span><span>rag_bge_small_en_v15</span><span>rag_jina_reranker_v1_tiny_en</span><span>pg_sqids</span><span>jsoncdc</span><span>pg_enquo</span><span>uids</span><span>upid_pg</span><span>pg_primal</span><span>prometheus_fdw</span><span>pg_duckpipe</span><span>goldenmatch_pg</span>
+      <span>pg_ferroid</span><span>bigtable</span><span>graph_accel</span><span>clerk_fdw</span><span>pgnats</span><span>pgpu</span><span>pg_pgbouncer</span><span>jsonschema</span><span>lance</span><span>pg_kalam</span><span>pg_ibc_0_1</span><span>pgsloth</span>
+      <span>mumak</span><span>pgzan</span><span>pg_stat_sysinfo</span><span>kilobase</span><span>pgextmgr</span><span>pgx_show_hooks</span><span>pgx_trace_hooks</span><span>postgres_ical</span><span>orb_fdw</span><span>avocado</span><span>cas_codes</span><span>elements</span>
+      <span>iso_codes</span><span>media_types</span><span>molecular_formulas</span><span>pg_opendal</span><span>pgrx_validation</span><span>postgreChain</span><span>pg_chainsync</span><span>pg_no_seqscan</span><span>pg_typescript</span><span>pgjwt_rs</span><span>plid</span><span>pg_bigmr</span>
+      <span>pg_debug_scan</span><span>pg_fusion</span><span>pgtera</span><span>quria</span><span>pg_pii_vault</span><span>rule_engine_postgre_extensions</span><span>a5pg</span><span>accumulo_access_pg</span><span>natord_pg</span><span>oidc_validator</span><span>pgfaker</span><span>pgmer2</span>
+      <span>postile</span><span>fmodel_rust_postgres</span><span>pg_ethopic</span><span>pg_ripple</span><span>rppd</span><span>pg_bedtools_rs</span><span>pg_chainutils</span><span>pg_extension</span><span>pg_idna</span><span>pg_multitenant</span><span>postgreth</span><span>redis_fdw_rs</span>
+      <span>rostgis</span><span>symbiotic_python</span><span>b64enc</span><span>flame</span><span>pg_knowledge_graph</span><span>pg_str</span><span>pg_substrait</span><span>pg_tamperlog_rust</span><span>pgfga</span><span>postllm</span><span>postr</span><span>supamonitor</span>
+      <span>wrapper_deltalake</span><span>bfn</span><span>cologne_pg</span><span>db721_fdw</span><span>eidos_oauth</span><span>fsm_core</span><span>hamming</span><span>kq_cx</span><span>kq_fx</span><span>malwaredb_pg</span><span>pg_bech32</span><span>pg_bm25</span>
+      <span>pg_data_retention</span><span>pg_flashback</span><span>pg_lakehouse</span><span>pg_ledger</span><span>pg_lexo</span><span>pg_logfmt</span><span>pg_open_meteo</span><span>pg_ortools</span><span>pg_prob</span><span>pg_recyclebin</span><span>pg_registry</span><span>pg_splade</span>
+      <span>pg_streaming</span><span>pg_sweep</span><span>pg_tpch</span><span>pgauthz</span><span>pgfirestore</span><span>pgx_uuidv7</span><span>pgzstd_rs</span><span>postgres_redis</span><span>redis_backed_storage</span><span>vmagentfdw</span><span>all_in_one_lib</span><span>bench_pg_unwind</span>
+      <span>bgworker_segfault</span><span>bloom_fulon</span><span>conda_pgsql_rust_ext</span><span>date_string_converter</span><span>ebs_fdw</span><span>hessra_authz</span><span>hypostats</span><span>json_validator_ext</span><span>kham_pg</span><span>mogipix</span><span>morpheme_funcs</span><span>optim</span>
+      <span>ped25519</span><span>pg_conda</span><span>pg_dagdb</span><span>pg_debyte_ext</span><span>pg_ecdsa_verify</span><span>pg_elephantduck</span><span>pg_emd</span><span>pg_ffmpeg</span><span>pg_graphql_server</span><span>pg_ivfflat</span><span>pg_jalali_calendar</span><span>pg_nanoid</span>
+      <span>pg_row_hashes</span><span>pg_s2</span><span>pg_smolid</span><span>pg_snowflake_id</span><span>pg_snowid</span><span>pg_sysload</span><span>pg_temporal</span><span>pg_tviews</span><span>pg_viewctl</span><span>pg_walrus</span><span>pg_zen_engine</span><span>pgautograph</span>
+      <span>pgcuid2</span><span>pgduck_rs</span><span>pgfs</span><span>pghex</span><span>pglas</span><span>pgmer1</span><span>pgmolji</span><span>pgnice</span><span>pgrand</span><span>pgrx_jsonb</span><span>phone_number</span><span>pksuid</span>
+      <span>postgrids</span><span>prometheusfdw</span><span>replace_string</span><span>rpg_base36</span><span>rtiles</span><span>s3_io</span><span>sixql</span><span>sql_saga_native</span><span>stopgap</span><span>tce</span><span>tree_similarity_extension</span><span>ulid</span>
+      <span>varlena_alignment</span><span>visualizing_aggregates</span>
+  </div>
+</div>
+</div></section>
+    </main>
+  </div>
+  <script src="src/deck.js"></script>
+</body>
+</html>

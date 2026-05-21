@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>20. The CLI - PIG · Extensions for Everyone</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2016%2016%27%3E%3Crect%20width%3D%2716%27%20height%3D%2716%27%20rx%3D%272%27%20fill%3D%27%230f172a%27/%3E%3Cpath%20d%3D%27M4%204h8v2H7v2h4v2H7v2H4z%27%20fill%3D%27%23f8fafc%27/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body data-prev="./19-what-we-can-still-infer.html" data-next="./21-dimension-explosion.html" data-first="./00-extensions-for-everyone.html" data-last="./32-thank-you.html">
+  <div class="slide-page pig-cli-slide">
+    <header class="notes-strip">
+      <div class="notes-text"><span class="note-content">Once we have the catalog and repository, extension delivery is almost solved. You can use the OS package manager — `dnf` or `apt` — to install directly from the PGDG and PGEXT repos.    We also have a dedicated but purely optional command-line tool — called PIG, written in Go, 4 megabytes. The name means &quot;piggyback on the OS package manager.&quot; It hides all the complexity and just does the installation for users.    The interesting part is that it doesn&#x27;t just install — it can also build and deliver binary packages. If you want pg_search or pg_duckdb, just run `pig build pkg pg_search`, and it builds the package for you.    This matters for supply-chain trust. Users can rebuild everything themselves if they want to.    So that&#x27;s the delivery layer — catalog, repository, CLI, and the build matrix behind them. On paper, it looks clean. In practice, the matrix is where things get hard.</span></div>
+      <nav class="nav"><a href="./19-what-we-can-still-infer.html" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M15 18l-6-6 6-6"/><path d="M21 12H9"/></svg></a><span class="progress-mini">20/32</span><a href="./21-dimension-explosion.html" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M9 18l6-6-6-6"/><path d="M3 12h12"/></svg></a><a href="index.html" aria-label="Home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-6h4v6"/></svg></a></nav>
+    </header>
+    <main class="slide-canvas">
+      <div class="slide-head">
+        <div class="slide-title">
+          <p class="part-label">Part III : The Delivery Layer</p>
+          <h1>The CLI - PIG</h1>
+        </div>
+        <div class="slide-brand" aria-label="Pigsty">
+          <img src="src/images/pigsty-logo.svg" alt="" aria-hidden="true">
+          <span>PIGSTY</span>
+        </div>
+      </div>
+      <section class="slide-body"><link rel="stylesheet" href="src/vendor/asciinema-player.css">
+
+<div class="pig-cli-layout">
+  <section class="pig-build-help-panel" aria-label="PIG build command help">
+    <div class="pig-help-hero">
+      <span>$</span>
+      <code>pig build</code>
+      <strong>Build Postgres Extension</strong>
+    </div>
+    <div class="pig-help-summary">
+      <div><b>Usage</b><code>pig build [command]</code></div>
+      <div><b>Aliases</b><code>build, b</code></div>
+      <div><b>Example</b><code>pig build - Build Postgres Extension</code></div>
+    </div>
+    <div class="pig-help-grid">
+      <div class="pig-help-section setup">
+        <h2>Environment Setup</h2>
+        <div class="pig-help-item"><span># init build spec and directory (~ext)</span><code>pig build spec</code></div>
+        <div class="pig-help-item"><span># init build repo (=repo set -ru)</span><code>pig build repo</code></div>
+        <div class="pig-help-item"><span># init build toolset</span><code>pig build tool [mini|full|...]</code></div>
+        <div class="pig-help-item"><span># install Rust toolchain</span><code>pig build rust [-y]</code></div>
+        <div class="pig-help-item"><span># install and init pgrx (0.18.0)</span><code>pig build pgrx [-v &lt;ver&gt;]</code></div>
+        <div class="pig-help-item"><span># init build proxy (optional)</span><code>pig build proxy [id@host:port]</code></div>
+      </div>
+      <div class="pig-help-section package">
+        <h2>Package Building</h2>
+        <div class="pig-help-item"><span># complete pipeline: get + dep + ext</span><code>pig build pkg [ext|pkg...]</code></div>
+        <div class="pig-help-item"><span># download extension source tarball</span><code>pig build get [ext|pkg...]</code></div>
+        <div class="pig-help-item"><span># install extension build dependencies</span><code>pig build dep [ext|pkg...]</code></div>
+        <div class="pig-help-item"><span># build extension package</span><code>pig build ext [ext|pkg...]</code></div>
+      </div>
+      <div class="pig-help-section quick">
+        <h2>Quick Start</h2>
+        <div class="pig-help-item"><span># setup build spec and directory</span><code>pig build spec</code></div>
+        <div class="pig-help-item"><span># build citus extension</span><code>pig build pkg citus</code></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pig-cast-panel" aria-label="PIG build asciinema recording">
+    <div id="pig-build-player" class="pig-build-player"></div>
+  </section>
+</div>
+
+<script src="src/vendor/asciinema-player.min.js"></script>
+<script src="src/data/pig-build-cast.js"></script>
+<script>
+(function () {
+  var target = document.getElementById("pig-build-player");
+  if (!target || !window.AsciinemaPlayer) return;
+  var castUrl = "src/data/pig-build.cast";
+  if (window.PIG_BUILD_CAST) {
+    castUrl = URL.createObjectURL(new Blob([window.PIG_BUILD_CAST], { type: "application/json" }));
+  }
+  window.AsciinemaPlayer.create(castUrl, target, {
+    autoPlay: true,
+    loop: true,
+    preload: true,
+    speed: 1.2,
+    idleTimeLimit: 0.5,
+    fit: "width",
+    cols: 120,
+    rows: 29,
+    terminalFontSize: "small",
+    controls: false,
+    theme: "solarized-light"
+  });
+  target.addEventListener("keydown", function (event) {
+    event.stopPropagation();
+  }, true);
+})();
+</script></section>
+    </main>
+  </div>
+  <script src="src/deck.js"></script>
+</body>
+</html>
