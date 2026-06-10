@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>冯若航 / Ruohang Feng / Vonng</title>
+  <meta name="description" content="冯若航 / Ruohang Feng / Vonng 的标准名片">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #0f172a;
+      --body: #111827;
+      --muted: #64748b;
+      --hairline: #d8e3ec;
+      --brand: #0a4e83;
+      --brand-hover: #0b63a8;
+      --paper: #fbfcfe;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #e8eef3;
+      color: var(--body);
+      font-family:
+        Inter, "SF Pro Text", "Noto Sans SC", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+    }
+
+    .preview-stage {
+      display: grid;
+      place-items: center;
+      width: 100%;
+      min-height: 100vh;
+      padding: 40px;
+    }
+
+    .business-card {
+      position: relative;
+      width: 90mm;
+      height: 54mm;
+      padding: 4.4mm 5.8mm 4mm 6.4mm;
+      overflow: visible;
+      background: var(--paper);
+      color: var(--ink);
+      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.12);
+      border-radius: 8px;
+      isolation: isolate;
+    }
+
+    .business-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 1.1mm;
+      background: var(--brand);
+    }
+
+    .head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 17mm;
+      column-gap: 4.6mm;
+      align-items: start;
+    }
+
+    .name-cn {
+      margin: 0;
+      color: #0d1724;
+      font-family:
+        "Noto Serif SC", "Source Han Serif SC", "Songti SC",
+        "STSong", serif;
+      font-size: 7.9mm;
+      font-weight: 800;
+      line-height: 0.92;
+      letter-spacing: 0;
+    }
+
+    .name-en {
+      display: block;
+      margin-top: 0.72mm;
+      color: var(--brand);
+      font-size: 2.92mm;
+      font-weight: 750;
+      line-height: 1.08;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .role {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35mm 1.45mm;
+      max-width: 57mm;
+      margin-top: 0.78mm;
+      color: #334155;
+      font-size: 1.62mm;
+      font-weight: 650;
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+    }
+
+    .role span {
+      white-space: nowrap;
+    }
+
+    .role span + span::before {
+      content: "";
+      display: inline-block;
+      width: 0.5mm;
+      height: 0.5mm;
+      margin-right: 1.2mm;
+      border-radius: 50%;
+      background: rgba(10, 78, 131, 0.82);
+      vertical-align: 0.24mm;
+    }
+
+    .qr {
+      display: block;
+      width: 17mm;
+      height: 17mm;
+      padding: 0.9mm;
+      border: 0.25mm solid #d8e3ec;
+      border-radius: 1.2mm;
+      background: #fff;
+      object-fit: cover;
+    }
+
+    .divider {
+      position: relative;
+      height: 1px;
+      margin-top: 1.8mm;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(10, 78, 131, 0.72) 0,
+          rgba(10, 78, 131, 0.72) 18mm,
+          rgba(216, 227, 236, 1) 18mm,
+          rgba(216, 227, 236, 1) 78%,
+          rgba(216, 227, 236, 0) 100%
+        );
+    }
+
+    .contacts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 8.5mm;
+      margin-top: 2.25mm;
+      margin-bottom: 1.75mm;
+    }
+
+    .contact-col {
+      display: grid;
+      row-gap: 1.15mm;
+      min-width: 0;
+    }
+
+    .contact-row {
+      display: grid;
+      grid-template-columns: 10.5mm minmax(0, 1fr);
+      column-gap: 2.4mm;
+      align-items: baseline;
+      min-width: 0;
+    }
+
+    .contact-col.right .contact-row {
+      grid-template-columns: 12.4mm minmax(0, 1fr);
+    }
+
+    .label {
+      color: var(--muted);
+      font-size: 1.94mm;
+      font-weight: 750;
+      line-height: 1.28;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .value {
+      min-width: 0;
+      color: var(--body);
+      font-size: 2.22mm;
+      font-weight: 700;
+      line-height: 1.28;
+      font-variant-numeric: tabular-nums;
+      font-feature-settings: "tnum";
+      letter-spacing: 0;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    a.value:hover,
+    .account:hover .value,
+    .account:focus-within .value,
+    .account.show-qr .value {
+      color: var(--brand-hover);
+    }
+
+    .account {
+      position: relative;
+    }
+
+    .account-trigger {
+      appearance: none;
+      border: 0;
+      padding: 0;
+      background: transparent;
+      color: inherit;
+      font-family: inherit;
+      font-size: 2.22mm;
+      font-weight: 700;
+      line-height: 1.28;
+      font-variant-numeric: tabular-nums;
+      font-feature-settings: "tnum";
+      text-align: left;
+      cursor: default;
+    }
+
+    .qr-popover {
+      position: absolute;
+      z-index: 20;
+      right: -2.2mm;
+      bottom: 3.8mm;
+      width: 30mm;
+      padding: 1.8mm;
+      border: 0.22mm solid #dfe7ef;
+      border-radius: 1.4mm;
+      background: #fff;
+      box-shadow: 0 5mm 15mm rgba(15, 23, 42, 0.24);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(1.3mm);
+      transition:
+        opacity 180ms ease 1s,
+        transform 180ms ease 1s,
+        visibility 0ms linear 1.18s;
+      pointer-events: none;
+    }
+
+    .qr-popover img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+
+    .account:hover .qr-popover,
+    .account:focus-within .qr-popover,
+    .account.show-qr .qr-popover {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      transition-delay: 1s, 1s, 1s;
+    }
+
+    .account:focus-within .qr-popover,
+    .account.show-qr .qr-popover {
+      transition-delay: 0s;
+    }
+
+    .footer-divider {
+      margin-top: 0;
+    }
+
+    .footer {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 3.4mm;
+      margin-top: 1.35mm;
+      white-space: nowrap;
+    }
+
+    .brand-block {
+      display: flex;
+      align-items: baseline;
+      gap: 2.45mm;
+      min-width: 0;
+    }
+
+    .brand {
+      color: var(--brand);
+      font-size: 3.05mm;
+      font-weight: 850;
+      line-height: 1;
+      letter-spacing: 0.16em;
+    }
+
+    .tagline {
+      color: #1f2937;
+      font-size: 1.72mm;
+      font-weight: 650;
+      line-height: 1.2;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .links {
+      display: flex;
+      align-items: baseline;
+      gap: 1.8mm;
+      color: var(--brand);
+      font-size: 1.76mm;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .links a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .links a + a::before {
+      content: "|";
+      margin-right: 1.8mm;
+      color: #94a3b8;
+      font-weight: 600;
+    }
+
+    .links a:hover {
+      color: var(--brand-hover);
+    }
+
+    @media print {
+      @page {
+        size: 90mm 54mm;
+        margin: 0;
+      }
+
+      html,
+      body,
+      .preview-stage {
+        width: 90mm;
+        height: 54mm;
+        min-height: 54mm;
+      }
+
+      body,
+      .preview-stage {
+        display: block;
+        padding: 0;
+        background: #fff;
+      }
+
+      .business-card {
+        box-shadow: none;
+        border-radius: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="preview-stage">
+    <article class="business-card" aria-label="冯若航的标准名片">
+      <header class="head">
+        <div>
+          <h1 class="name-cn">冯若航</h1>
+          <span class="name-en">Ruohang Feng / Vonng</span>
+          <div class="role" aria-label="身份">
+            <span>PGSTY 创始人</span>
+            <span>Pigsty 作者</span>
+            <span>PostgreSQL 专家</span>
+            <span>专栏作者</span>
+          </div>
+        </div>
+        <img class="qr" src="wechat-qr.jpg" alt="冯若航个人微信二维码">
+      </header>
+
+      <div class="divider" aria-hidden="true"></div>
+
+      <section class="contacts" aria-label="联系方式">
+        <div class="contact-col">
+          <div class="contact-row">
+            <span class="label">电话</span>
+            <a class="value" href="tel:+8618801100571">+86 188 0110 0571</a>
+          </div>
+          <div class="contact-row">
+            <span class="label">微信</span>
+            <span class="value">RuohangFeng</span>
+          </div>
+          <div class="contact-row">
+            <span class="label">邮箱</span>
+            <a class="value" href="mailto:rh@vonng.com">rh@vonng.com</a>
+          </div>
+          <div class="contact-row">
+            <span class="label">网站</span>
+            <a class="value" href="https://vonng.com">vonng.com</a>
+          </div>
+        </div>
+
+        <div class="contact-col right">
+          <div class="contact-row">
+            <span class="label">海外</span>
+            <a class="value" href="tel:+15106507902">+1 510 650 7902</a>
+          </div>
+          <div class="contact-row account">
+            <span class="label">公众号</span>
+            <button class="value account-trigger" type="button" aria-describedby="official-account-qr">老冯云数</button>
+            <div class="qr-popover" id="official-account-qr" role="tooltip">
+              <img src="laofengyunshu-qr.jpg" alt="老冯云数公众号二维码">
+            </div>
+          </div>
+          <div class="contact-row">
+            <span class="label">领英</span>
+            <a class="value" href="https://linkedin.com/in/vonng/">vonng</a>
+          </div>
+          <div class="contact-row">
+            <span class="label">GitHub</span>
+            <a class="value" href="https://github.com/Vonng">github.com/Vonng</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider footer-divider" aria-hidden="true"></div>
+
+      <footer class="footer">
+        <div class="brand-block">
+          <strong class="brand">PIGSTY</strong>
+          <span class="tagline">开源企业级 PostgreSQL RDS</span>
+        </div>
+        <nav class="links" aria-label="Pigsty 网站">
+          <a href="https://pigsty.cc">pigsty.cc</a>
+          <a href="https://pigsty.io">pigsty.io</a>
+        </nav>
+      </footer>
+    </article>
+  </main>
+
+  <script>
+    (() => {
+      const account = document.querySelector(".account");
+      if (!account) return;
+
+      let timer = 0;
+      const showSoon = () => {
+        window.clearTimeout(timer);
+        timer = window.setTimeout(() => account.classList.add("show-qr"), 1000);
+      };
+      const hide = () => {
+        window.clearTimeout(timer);
+        account.classList.remove("show-qr");
+      };
+
+      account.addEventListener("mouseenter", showSoon);
+      account.addEventListener("mouseover", showSoon);
+      account.addEventListener("pointerenter", showSoon);
+      account.addEventListener("mouseleave", hide);
+      account.addEventListener("pointerleave", hide);
+      account.addEventListener("focusin", () => account.classList.add("show-qr"));
+      account.addEventListener("focusout", hide);
+    })();
+  </script>
+</body>
+</html>
