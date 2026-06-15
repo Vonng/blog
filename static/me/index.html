@@ -1,466 +1,224 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>冯若航 / Ruohang Feng / Vonng</title>
-  <meta name="description" content="冯若航 / Ruohang Feng / Vonng 的标准名片">
-  <style>
-    :root {
-      color-scheme: light;
-      --ink: #0f172a;
-      --body: #111827;
-      --muted: #64748b;
-      --hairline: #d8e3ec;
-      --brand: #0a4e83;
-      --brand-hover: #0b63a8;
-      --paper: #fbfcfe;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      min-height: 100%;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      background: #e8eef3;
-      color: var(--body);
-      font-family:
-        Inter, "SF Pro Text", "Noto Sans SC", "PingFang SC",
-        "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
-    }
-
-    .preview-stage {
-      display: grid;
-      place-items: center;
-      width: 100%;
-      min-height: 100vh;
-      padding: 40px;
-    }
-
-    .business-card {
-      position: relative;
-      width: 90mm;
-      height: 54mm;
-      padding: 4.4mm 5.8mm 4mm 6.4mm;
-      overflow: visible;
-      background: var(--paper);
-      color: var(--ink);
-      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.12);
-      border-radius: 8px;
-      isolation: isolate;
-    }
-
-    .business-card::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 1.1mm;
-      background: var(--brand);
-    }
-
-    .head {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 17mm;
-      column-gap: 4.6mm;
-      align-items: start;
-    }
-
-    .name-cn {
-      margin: 0;
-      color: #0d1724;
-      font-family:
-        "Noto Serif SC", "Source Han Serif SC", "Songti SC",
-        "STSong", serif;
-      font-size: 7.9mm;
-      font-weight: 800;
-      line-height: 0.92;
-      letter-spacing: 0;
-    }
-
-    .name-en {
-      display: block;
-      margin-top: 0.72mm;
-      color: var(--brand);
-      font-size: 2.92mm;
-      font-weight: 750;
-      line-height: 1.08;
-      letter-spacing: 0;
-      white-space: nowrap;
-    }
-
-    .role {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35mm 1.45mm;
-      max-width: 57mm;
-      margin-top: 0.78mm;
-      color: #334155;
-      font-size: 1.62mm;
-      font-weight: 650;
-      line-height: 1.15;
-      letter-spacing: 0.02em;
-    }
-
-    .role span {
-      white-space: nowrap;
-    }
-
-    .role span + span::before {
-      content: "";
-      display: inline-block;
-      width: 0.5mm;
-      height: 0.5mm;
-      margin-right: 1.2mm;
-      border-radius: 50%;
-      background: rgba(10, 78, 131, 0.82);
-      vertical-align: 0.24mm;
-    }
-
-    .qr {
-      display: block;
-      width: 17mm;
-      height: 17mm;
-      padding: 0.9mm;
-      border: 0.25mm solid #d8e3ec;
-      border-radius: 1.2mm;
-      background: #fff;
-      object-fit: cover;
-    }
-
-    .divider {
-      position: relative;
-      height: 1px;
-      margin-top: 1.8mm;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(10, 78, 131, 0.72) 0,
-          rgba(10, 78, 131, 0.72) 18mm,
-          rgba(216, 227, 236, 1) 18mm,
-          rgba(216, 227, 236, 1) 78%,
-          rgba(216, 227, 236, 0) 100%
-        );
-    }
-
-    .contacts {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      column-gap: 8.5mm;
-      margin-top: 2.25mm;
-      margin-bottom: 1.75mm;
-    }
-
-    .contact-col {
-      display: grid;
-      row-gap: 1.15mm;
-      min-width: 0;
-    }
-
-    .contact-row {
-      display: grid;
-      grid-template-columns: 10.5mm minmax(0, 1fr);
-      column-gap: 2.4mm;
-      align-items: baseline;
-      min-width: 0;
-    }
-
-    .contact-col.right .contact-row {
-      grid-template-columns: 12.4mm minmax(0, 1fr);
-    }
-
-    .label {
-      color: var(--muted);
-      font-size: 1.94mm;
-      font-weight: 750;
-      line-height: 1.28;
-      letter-spacing: 0.04em;
-      white-space: nowrap;
-    }
-
-    .value {
-      min-width: 0;
-      color: var(--body);
-      font-size: 2.22mm;
-      font-weight: 700;
-      line-height: 1.28;
-      font-variant-numeric: tabular-nums;
-      font-feature-settings: "tnum";
-      letter-spacing: 0;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    a.value:hover,
-    .account:hover .value,
-    .account:focus-within .value,
-    .account.show-qr .value {
-      color: var(--brand-hover);
-    }
-
-    .account {
-      position: relative;
-    }
-
-    .account-trigger {
-      appearance: none;
-      border: 0;
-      padding: 0;
-      background: transparent;
-      color: inherit;
-      font-family: inherit;
-      font-size: 2.22mm;
-      font-weight: 700;
-      line-height: 1.28;
-      font-variant-numeric: tabular-nums;
-      font-feature-settings: "tnum";
-      text-align: left;
-      cursor: default;
-    }
-
-    .qr-popover {
-      position: absolute;
-      z-index: 20;
-      right: -2.2mm;
-      bottom: 3.8mm;
-      width: 30mm;
-      padding: 1.8mm;
-      border: 0.22mm solid #dfe7ef;
-      border-radius: 1.4mm;
-      background: #fff;
-      box-shadow: 0 5mm 15mm rgba(15, 23, 42, 0.24);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(1.3mm);
-      transition:
-        opacity 180ms ease 1s,
-        transform 180ms ease 1s,
-        visibility 0ms linear 1.18s;
-      pointer-events: none;
-    }
-
-    .qr-popover img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 1;
-      object-fit: cover;
-    }
-
-    .account:hover .qr-popover,
-    .account:focus-within .qr-popover,
-    .account.show-qr .qr-popover {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-      transition-delay: 1s, 1s, 1s;
-    }
-
-    .account:focus-within .qr-popover,
-    .account.show-qr .qr-popover {
-      transition-delay: 0s;
-    }
-
-    .footer-divider {
-      margin-top: 0;
-    }
-
-    .footer {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 3.4mm;
-      margin-top: 1.35mm;
-      white-space: nowrap;
-    }
-
-    .brand-block {
-      display: flex;
-      align-items: baseline;
-      gap: 2.45mm;
-      min-width: 0;
-    }
-
-    .brand {
-      color: var(--brand);
-      font-size: 3.05mm;
-      font-weight: 850;
-      line-height: 1;
-      letter-spacing: 0.16em;
-    }
-
-    .tagline {
-      color: #1f2937;
-      font-size: 1.72mm;
-      font-weight: 650;
-      line-height: 1.2;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .links {
-      display: flex;
-      align-items: baseline;
-      gap: 1.8mm;
-      color: var(--brand);
-      font-size: 1.76mm;
-      font-weight: 800;
-      line-height: 1.2;
-    }
-
-    .links a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .links a + a::before {
-      content: "|";
-      margin-right: 1.8mm;
-      color: #94a3b8;
-      font-weight: 600;
-    }
-
-    .links a:hover {
-      color: var(--brand-hover);
-    }
-
-    @media print {
-      @page {
-        size: 90mm 54mm;
-        margin: 0;
-      }
-
-      html,
-      body,
-      .preview-stage {
-        width: 90mm;
-        height: 54mm;
-        min-height: 54mm;
-      }
-
-      body,
-      .preview-stage {
-        display: block;
-        padding: 0;
-        background: #fff;
-      }
-
-      .business-card {
-        box-shadow: none;
-        border-radius: 0;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>冯若航 / Ruohang Feng</title>
+<meta name="description" content="冯若航 / Ruohang Feng 的名片">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pg: #336791;
+    --deep: #234a6b;
+    --navy: #16334c;
+    --sky: #a8c8de;
+    --ice: #ddeaf4;
+    --pale: #f0f6fa;
+    --paper: #fafcfe;
+    --body: #25394c;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh;
+    display: grid; place-items: center;
+    background: #cfdde8;
+    font-family: "Archivo", "Noto Sans SC", "PingFang SC", sans-serif;
+  }
+  .stage { padding: 40px; display: grid; place-items: center; min-height: 100vh; width: 100%; }
+  .card {
+    position: relative;
+    width: 90mm; height: 54mm;
+    background: var(--paper);
+    color: var(--body);
+    box-shadow: 0 18px 50px rgba(22,51,76,.28);
+    overflow: hidden;
+  }
+  /* ── 结构线 ── */
+  .axis-v { position: absolute; left: 56mm; top: 0; bottom: 0; width: 0.55mm; background: var(--navy); }
+  .axis-h { position: absolute; left: 0; right: 0; top: 26mm; height: 0.55mm; background: var(--navy); }
+  /* ── 右上象限：淡蓝底 + 几何 + 内嵌矢量二维码 ── */
+  .qzone {
+    position: absolute; left: 56.55mm; right: 0; top: 0; height: 26mm;
+    background: var(--pale);
+    overflow: hidden;
+  }
+  .qzone::before {
+    content: "";
+    position: absolute; right: -13mm; top: -13mm;
+    width: 30mm; height: 30mm;
+    border-radius: 50%;
+    background: var(--ice);
+  }
+  .qzone::after {
+    content: "";
+    position: absolute; left: 3.4mm; top: 0;
+    width: 5.2mm; height: 2.6mm;
+    border-radius: 0 0 5.2mm 5.2mm;
+    background: var(--pg);
+  }
+  .qr-svg {
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 18mm; height: 18mm;
+    color: var(--pg);
+  }
+  /* ── 左上 · 姓名 ── */
+  .name-zone { position: absolute; left: 5mm; top: 6mm; width: 48mm; }
+  .name-cn {
+    margin: 0;
+    font-family: "Noto Sans SC", sans-serif;
+    font-size: 10.4mm; font-weight: 900;
+    line-height: 1; letter-spacing: 0.07em;
+    color: var(--navy);
+  }
+  .name-en {
+    display: inline-block; margin-top: 1.8mm;
+    font-size: 2.7mm; font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--paper);
+    background: var(--pg);
+    padding: 0.6mm 2mm;
+  }
+  /* ── 左下 · 联系方式（图标 4×2） ── */
+  .contacts {
+    position: absolute; left: 5mm; top: 29.6mm; bottom: 4.8mm; width: 48.5mm;
+    display: grid;
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr);
+    column-gap: 2.8mm;
+    align-content: space-between;
+    font-size: 2.0mm;
+  }
+  .cell {
+    display: flex; align-items: center; gap: 1.5mm;
+    height: 2.8mm;
+    min-width: 0;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    color: var(--body);
+  }
+  .cell a { color: inherit; text-decoration: none; }
+  .cell a:hover { color: var(--pg); }
+  .ic { width: 2.6mm; height: 2.6mm; flex: none; color: var(--pg); }
+  /* ── 右下 · 深蓝块 · 身份标签 ── */
+  .tags {
+    position: absolute; left: 56.55mm; right: 0; top: 26.55mm; bottom: 0;
+    background: var(--deep);
+    background-image:
+      radial-gradient(circle at 90% 115%, rgba(168,200,222,.26) 0 6.5mm, transparent 6.7mm),
+      radial-gradient(circle at 90% 115%, rgba(168,200,222,.16) 0 10mm, transparent 10.2mm);
+    color: #eaf2f8;
+    /* 内容区与左栏完全同高：29.6mm → 49.2mm，四行逐行对齐 */
+    padding: 3.05mm 3.2mm 4.8mm;
+    display: flex; flex-direction: column;
+    justify-content: space-between;
+  }
+  .tag {
+    display: flex; align-items: center; gap: 1.7mm;
+    height: 2.8mm;
+    font-size: 2.12mm; font-weight: 800;
+    letter-spacing: 0.04em;
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .tag::before {
+    content: "";
+    width: 1.3mm; height: 1.3mm; flex: none;
+    background: var(--sky);
+  }
+  .tag:nth-child(even)::before { background: var(--pg); }
+  a.tag:hover { color: var(--sky); }
+  @media print {
+    @page { size: 90mm 54mm; margin: 0; }
+    body, .stage { display: block; padding: 0; background: #fff; width: 90mm; }
+    .card { box-shadow: none; }
+  }
+</style>
 </head>
 <body>
-  <main class="preview-stage">
-    <article class="business-card" aria-label="冯若航的标准名片">
-      <header class="head">
-        <div>
-          <h1 class="name-cn">冯若航</h1>
-          <span class="name-en">Ruohang Feng / Vonng</span>
-          <div class="role" aria-label="身份">
-            <span>PGSTY 创始人</span>
-            <span>Pigsty 作者</span>
-            <span>PostgreSQL 专家</span>
-            <span>专栏作者</span>
-          </div>
-        </div>
-        <img class="qr" src="wechat-qr.jpg" alt="冯若航个人微信二维码">
-      </header>
+<svg style="display:none" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9.6"/>
+        <path d="M2.4 12h19.2"/>
+        <path d="M12 2.4c2.7 2.7 4.1 6 4.1 9.6s-1.4 6.9-4.1 9.6c-2.7-2.7-4.1-6-4.1-9.6S9.3 5.1 12 2.4z"/>
+      </g>
+    </symbol>
+    <symbol id="i-wechat" viewBox="0 0 24 24">
+      <g fill="currentColor" fill-rule="evenodd">
+        <path d="M9.3 2.4C5 2.4 1.5 5.3 1.5 8.9c0 2 1.1 3.8 2.8 5l-.7 2.4 2.7-1.4c.8.2 1.6.4 2.5.4h.6a5.5 5.5 0 0 1-.3-1.8c0-3.4 3.2-6.1 7-6.1h.6C16 4.6 12.9 2.4 9.3 2.4zM6.7 7.8a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1zm5.2 0a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1z"/>
+        <path d="M16.5 8.6c-3.4 0-6.1 2.4-6.1 5.3s2.7 5.3 6.1 5.3c.7 0 1.4-.1 2-.3l2.3 1.2-.6-2c1.5-1 2.4-2.5 2.4-4.2 0-2.9-2.7-5.3-6.1-5.3zm-2.1 4.5a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9zm4.2 0a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9z"/>
+      </g>
+    </symbol>
+    <symbol id="i-mp" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M11 5L6 9H2.5v6H6l5 4V5z"/>
+        <path d="M15.5 9a4.5 4.5 0 0 1 0 6"/>
+        <path d="M18.5 6a9 9 0 0 1 0 12"/>
+      </g>
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2.4" y="4.4" width="19.2" height="15.2" rx="2.2"/>
+        <path d="M3.2 6.4l8.8 6.8 8.8-6.8"/>
+      </g>
+    </symbol>
+    <symbol id="i-link" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+      </g>
+    </symbol>
+    <symbol id="i-github" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12z"/>
+    </symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+    </symbol>
+  </defs>
+</svg>
 
-      <div class="divider" aria-hidden="true"></div>
+<main class="stage">
+  <article class="card" aria-label="冯若航的名片">
+    <div class="qzone">
+      <!-- 微信二维码：内嵌矢量 SVG（内容 https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2） -->
+      <svg class="qr-svg" viewBox="0 0 33 33" shape-rendering="crispEdges" role="img" aria-label="微信二维码"><path fill="currentColor" d="M0 0h7v1h-7zM8 0h1v1h-1zM10 0h1v1h-1zM13 0h1v1h-1zM15 0h1v1h-1zM17 0h2v1h-2zM21 0h1v1h-1zM23 0h1v1h-1zM28 0h3v1h-3zM0 1h1v1h-1zM6 1h1v1h-1zM11 1h1v1h-1zM13 1h7v1h-7zM23 1h1v1h-1zM25 1h5v1h-5zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h3v1h-3zM6 2h1v1h-1zM8 2h2v1h-2zM11 2h4v1h-4zM19 2h1v1h-1zM22 2h2v1h-2zM26 2h2v1h-2zM0 3h1v1h-1zM2 3h3v1h-3zM6 3h1v1h-1zM8 3h1v1h-1zM10 3h3v1h-3zM17 3h6v1h-6zM24 3h2v1h-2zM27 3h1v1h-1zM29 3h1v1h-1zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h3v1h-3zM6 4h1v1h-1zM9 4h2v1h-2zM12 4h4v1h-4zM17 4h1v1h-1zM20 4h1v1h-1zM23 4h6v1h-6zM30 4h2v1h-2zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM10 5h6v1h-6zM19 5h1v1h-1zM21 5h1v1h-1zM23 5h2v1h-2zM28 5h3v1h-3zM32 5h1v1h-1zM0 6h7v1h-7zM8 6h2v1h-2zM11 6h1v1h-1zM13 6h2v1h-2zM16 6h1v1h-1zM19 6h6v1h-6zM26 6h1v1h-1zM28 6h1v1h-1zM8 7h1v1h-1zM10 7h4v1h-4zM16 7h2v1h-2zM19 7h1v1h-1zM24 7h1v1h-1zM28 7h2v1h-2zM32 7h1v1h-1zM0 8h1v1h-1zM4 8h3v1h-3zM10 8h1v1h-1zM12 8h1v1h-1zM15 8h1v1h-1zM24 8h5v1h-5zM30 8h1v1h-1zM1 9h1v1h-1zM4 9h1v1h-1zM7 9h1v1h-1zM9 9h2v1h-2zM12 9h1v1h-1zM14 9h1v1h-1zM16 9h1v1h-1zM18 9h2v1h-2zM22 9h1v1h-1zM24 9h1v1h-1zM27 9h3v1h-3zM31 9h1v1h-1zM2 10h3v1h-3zM6 10h1v1h-1zM8 10h1v1h-1zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM22 10h5v1h-5zM28 10h1v1h-1zM31 10h2v1h-2zM0 11h5v1h-5zM9 11h2v1h-2zM12 11h1v1h-1zM14 11h2v1h-2zM18 11h1v1h-1zM21 11h2v1h-2zM26 11h1v1h-1zM29 11h1v1h-1zM32 11h1v1h-1zM3 12h6v1h-6zM10 12h1v1h-1zM15 12h1v1h-1zM18 12h1v1h-1zM20 12h3v1h-3zM27 12h1v1h-1zM29 12h3v1h-3zM2 13h4v1h-4zM7 13h1v1h-1zM11 13h1v1h-1zM19 13h1v1h-1zM22 13h1v1h-1zM24 13h2v1h-2zM28 13h1v1h-1zM31 13h1v1h-1zM0 14h3v1h-3zM4 14h7v1h-7zM12 14h6v1h-6zM20 14h3v1h-3zM25 14h4v1h-4zM30 14h2v1h-2zM1 15h1v1h-1zM3 15h1v1h-1zM7 15h4v1h-4zM15 15h1v1h-1zM17 15h2v1h-2zM20 15h2v1h-2zM23 15h2v1h-2zM26 15h1v1h-1zM28 15h2v1h-2zM31 15h1v1h-1zM0 16h2v1h-2zM3 16h2v1h-2zM6 16h1v1h-1zM8 16h1v1h-1zM10 16h1v1h-1zM14 16h2v1h-2zM17 16h7v1h-7zM25 16h2v1h-2zM28 16h3v1h-3zM3 17h1v1h-1zM5 17h1v1h-1zM7 17h1v1h-1zM11 17h1v1h-1zM13 17h1v1h-1zM16 17h1v1h-1zM19 17h4v1h-4zM24 17h3v1h-3zM29 17h2v1h-2zM0 18h1v1h-1zM2 18h1v1h-1zM4 18h1v1h-1zM6 18h1v1h-1zM9 18h1v1h-1zM12 18h6v1h-6zM22 18h1v1h-1zM24 18h1v1h-1zM26 18h2v1h-2zM29 18h2v1h-2zM1 19h1v1h-1zM4 19h2v1h-2zM7 19h1v1h-1zM13 19h1v1h-1zM16 19h3v1h-3zM22 19h3v1h-3zM27 19h1v1h-1zM31 19h1v1h-1zM0 20h1v1h-1zM2 20h1v1h-1zM4 20h3v1h-3zM8 20h2v1h-2zM18 20h2v1h-2zM24 20h2v1h-2zM27 20h3v1h-3zM2 21h4v1h-4zM7 21h2v1h-2zM10 21h2v1h-2zM13 21h3v1h-3zM18 21h3v1h-3zM24 21h2v1h-2zM27 21h1v1h-1zM29 21h1v1h-1zM31 21h2v1h-2zM1 22h1v1h-1zM3 22h1v1h-1zM6 22h3v1h-3zM12 22h1v1h-1zM14 22h1v1h-1zM16 22h2v1h-2zM21 22h1v1h-1zM23 22h3v1h-3zM27 22h3v1h-3zM31 22h2v1h-2zM0 23h4v1h-4zM7 23h1v1h-1zM18 23h2v1h-2zM21 23h1v1h-1zM23 23h1v1h-1zM26 23h2v1h-2zM29 23h2v1h-2zM32 23h1v1h-1zM0 24h1v1h-1zM2 24h2v1h-2zM5 24h3v1h-3zM10 24h1v1h-1zM12 24h3v1h-3zM18 24h2v1h-2zM21 24h1v1h-1zM26 24h1v1h-1zM29 24h1v1h-1zM31 24h2v1h-2zM8 25h1v1h-1zM11 25h1v1h-1zM17 25h2v1h-2zM20 25h1v1h-1zM23 25h2v1h-2zM0 26h7v1h-7zM8 26h1v1h-1zM10 26h1v1h-1zM12 26h1v1h-1zM14 26h1v1h-1zM16 26h1v1h-1zM18 26h1v1h-1zM20 26h1v1h-1zM22 26h1v1h-1zM24 26h1v1h-1zM26 26h7v1h-7zM0 27h1v1h-1zM6 27h1v1h-1zM13 27h2v1h-2zM18 27h3v1h-3zM22 27h1v1h-1zM24 27h1v1h-1zM26 27h1v1h-1zM32 27h1v1h-1zM0 28h1v1h-1zM2 28h3v1h-3zM6 28h1v1h-1zM9 28h1v1h-1zM12 28h1v1h-1zM14 28h1v1h-1zM20 28h3v1h-3zM26 28h1v1h-1zM28 28h3v1h-3zM32 28h1v1h-1zM0 29h1v1h-1zM2 29h3v1h-3zM6 29h1v1h-1zM8 29h1v1h-1zM10 29h1v1h-1zM14 29h3v1h-3zM19 29h2v1h-2zM22 29h1v1h-1zM26 29h1v1h-1zM28 29h3v1h-3zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h3v1h-3zM6 30h1v1h-1zM12 30h1v1h-1zM17 30h1v1h-1zM20 30h1v1h-1zM23 30h1v1h-1zM26 30h1v1h-1zM28 30h3v1h-3zM32 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM8 31h2v1h-2zM11 31h3v1h-3zM18 31h1v1h-1zM21 31h4v1h-4zM26 31h1v1h-1zM32 31h1v1h-1zM0 32h7v1h-7zM8 32h2v1h-2zM13 32h1v1h-1zM16 32h3v1h-3zM20 32h1v1h-1zM23 32h1v1h-1zM26 32h7v1h-7z"/><rect x="13" y="13" width="7" height="7" fill="#f0f6fa"/><g transform="translate(14.1,14.1) scale(0.2)" fill="currentColor" fill-rule="evenodd"><path d="M9.3 2.4C5 2.4 1.5 5.3 1.5 8.9c0 2 1.1 3.8 2.8 5l-.7 2.4 2.7-1.4c.8.2 1.6.4 2.5.4h.6a5.5 5.5 0 0 1-.3-1.8c0-3.4 3.2-6.1 7-6.1h.6C16 4.6 12.9 2.4 9.3 2.4zM6.7 7.8a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1zm5.2 0a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1z"/><path d="M16.5 8.6c-3.4 0-6.1 2.4-6.1 5.3s2.7 5.3 6.1 5.3c.7 0 1.4-.1 2-.3l2.3 1.2-.6-2c1.5-1 2.4-2.5 2.4-4.2 0-2.9-2.7-5.3-6.1-5.3zm-2.1 4.5a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9zm4.2 0a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9z"/></g></svg>
+    </div>
+    <i class="axis-v" aria-hidden="true"></i>
+    <i class="axis-h" aria-hidden="true"></i>
 
-      <section class="contacts" aria-label="联系方式">
-        <div class="contact-col">
-          <div class="contact-row">
-            <span class="label">电话</span>
-            <a class="value" href="tel:+8618801100571">+86 188 0110 0571</a>
-          </div>
-          <div class="contact-row">
-            <span class="label">微信</span>
-            <span class="value">RuohangFeng</span>
-          </div>
-          <div class="contact-row">
-            <span class="label">邮箱</span>
-            <a class="value" href="mailto:rh@vonng.com">rh@vonng.com</a>
-          </div>
-          <div class="contact-row">
-            <span class="label">网站</span>
-            <a class="value" href="https://vonng.com">vonng.com</a>
-          </div>
-        </div>
+    <header class="name-zone">
+      <h1 class="name-cn">冯若航</h1>
+      <span class="name-en">RUOHANG FENG</span>
+    </header>
 
-        <div class="contact-col right">
-          <div class="contact-row">
-            <span class="label">海外</span>
-            <a class="value" href="tel:+15106507902">+1 510 650 7902</a>
-          </div>
-          <div class="contact-row account">
-            <span class="label">公众号</span>
-            <button class="value account-trigger" type="button" aria-describedby="official-account-qr">老冯云数</button>
-            <div class="qr-popover" id="official-account-qr" role="tooltip">
-              <img src="laofengyunshu-qr.jpg" alt="老冯云数公众号二维码">
-            </div>
-          </div>
-          <div class="contact-row">
-            <span class="label">领英</span>
-            <a class="value" href="https://linkedin.com/in/vonng/">vonng</a>
-          </div>
-          <div class="contact-row">
-            <span class="label">GitHub</span>
-            <a class="value" href="https://github.com/Vonng">github.com/Vonng</a>
-          </div>
-        </div>
-      </section>
+    <section class="contacts" aria-label="联系方式">
+      <span class="cell"><svg class="ic"><use href="#i-phone"/></svg><a href="tel:+8618801100571">+86 188 0110 0571</a></span>
+      <span class="cell"><svg class="ic"><use href="#i-globe"/></svg><a href="tel:+15106507902">+1 510 650 7902</a></span>
+      <span class="cell"><svg class="ic"><use href="#i-wechat"/></svg>RuohangFeng</span>
+      <span class="cell"><svg class="ic"><use href="#i-mp"/></svg>公众号：老冯云数</span>
+      <span class="cell"><svg class="ic"><use href="#i-mail"/></svg><a href="mailto:rh@vonng.com">rh@vonng.com</a></span>
+      <span class="cell"><svg class="ic"><use href="#i-link"/></svg><a href="https://vonng.com">vonng.com</a></span>
+      <span class="cell"><svg class="ic"><use href="#i-github"/></svg><a href="https://github.com/Vonng">github.com/Vonng</a></span>
+      <span class="cell"><svg class="ic"><use href="#i-linkedin"/></svg><a href="https://linkedin.com/in/vonng/">in/vonng</a></span>
+    </section>
 
-      <div class="divider footer-divider" aria-hidden="true"></div>
-
-      <footer class="footer">
-        <div class="brand-block">
-          <strong class="brand">PIGSTY</strong>
-          <span class="tagline">开源企业级 PostgreSQL RDS</span>
-        </div>
-        <nav class="links" aria-label="Pigsty 网站">
-          <a href="https://pigsty.cc">pigsty.cc</a>
-          <a href="https://pigsty.io">pigsty.io</a>
-        </nav>
-      </footer>
-    </article>
-  </main>
-
-  <script>
-    (() => {
-      const account = document.querySelector(".account");
-      if (!account) return;
-
-      let timer = 0;
-      const showSoon = () => {
-        window.clearTimeout(timer);
-        timer = window.setTimeout(() => account.classList.add("show-qr"), 1000);
-      };
-      const hide = () => {
-        window.clearTimeout(timer);
-        account.classList.remove("show-qr");
-      };
-
-      account.addEventListener("mouseenter", showSoon);
-      account.addEventListener("mouseover", showSoon);
-      account.addEventListener("pointerenter", showSoon);
-      account.addEventListener("mouseleave", hide);
-      account.addEventListener("pointerleave", hide);
-      account.addEventListener("focusin", () => account.classList.add("show-qr"));
-      account.addEventListener("focusout", hide);
-    })();
-  </script>
+    <nav class="tags" aria-label="身份">
+      <a class="tag" href="https://pigsty.io">PGSTY 创始人</a>
+      <a class="tag" href="https://pigsty.cc">Pigsty 作者</a>
+      <span class="tag">PostgreSQL 专家</span>
+      <span class="tag">技术影响力专栏作者</span>
+    </nav>
+  </article>
+</main>
 </body>
 </html>

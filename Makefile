@@ -10,6 +10,6 @@ build:
 
 s: sync
 sync:
-	rsync -avz public/ cc:/www/vonng.com/
+	rsync -avz public/ jp:/data/web/vonng.com/
 
 .PHONY: default d dev b build s sync
