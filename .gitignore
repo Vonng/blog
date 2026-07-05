@@ -6,6 +6,7 @@
 .DS_Store
 public/
 tmp/
+invest/
 
 node_modules/
 themes/blowfish/
