@@ -5,7 +5,7 @@ author: |
   [Ruohang Feng](https://vonng.com)
 summary: >
   360's newly released AI Agent product shipped a public installer containing the private key for its `*.myclaw.360.cn` wildcard certificate. Public verification and local reproduction also exposed inconsistencies in the OCSP revocation path.
-tags: [360, AI, Agent, Security, OpenClaw, TLS, OCSP]
+tags: [AI, Agent, Security, OpenClaw ]
 ai: true
 aliases: ["/ai/claude-360-claw/"]
 ---
