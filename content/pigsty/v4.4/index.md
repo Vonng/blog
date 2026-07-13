@@ -1,156 +1,164 @@
 ---
-title: "Pigsty v4.4：克隆、分叉、回到过去"
-linkTitle: "克隆、分叉、回到过去"
+title: "Pigsty v4.4：从集成到发行"
+linkTitle: "Pigsty v4.4 从集成到发行"
 date: 2026-07-11
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/pgsty/pigsty/releases/tag/v4.4.0)）
 summary: >
-  Pigsty v4.4 随 Pig 1.5.1 把数据库克隆、实例分叉与时间点恢复收进一套可预览、可确认、可验证的命令行接口；同时交付 PostgreSQL 18.4、531 个扩展和 14 组离线平台。
+  Pigsty v4.4 新增 Immich 与 JumpServer 应用模板，更新 Supabase 与 VIP 使用体验，并开始统一发行 PolarDB、IvorySQL 等 PostgreSQL 分支内核的软件包与文件系统布局。
 series: [Pigsty]
 tags: [Pigsty]
 ---
 
-Pigsty v4.4 正式发布。
-
-如果说 v4.2 的主题是“十二内核”，v4.3 的主题是“扩展密度”，那么 v4.4 要讲的是另一件事：**一把 PIG，怎样管住数据库运维。**
-
-PostgreSQL 18.4、531 个扩展、PG19 beta 模板与十四组离线制品构成了这一版的发行底座；真正的新东西来自 Pig 1.5。
-1.5.0 完成了 PostgreSQL 日常运维命令面的重构，1.5.1 又补齐 PG19 beta 的显式构建开关、内核分支与仓库支持。
-克隆数据库、分叉实例、执行时间点恢复，这些原来散落在 Ansible、Shell、Patroni 与 pgBackRest 里的动作，现在有了一套统一的命令行接口。
-
 > [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v4.4.0) | [**发布注记**](https://pigsty.cc/docs/about/release/#v440)
 
+Pigsty v4.4 正式发布。
 
-------
+表面上看，这是一个常规维护版本：PostgreSQL 18.4、531 个扩展、PG19 beta，以及十四组通过验收的离线安装制品。
+但在我看来，这一版真正重要的变化，是 Pigsty 开始从“集成上游软件包” 走向 “自己做发行”。
 
-## Pig 1.5：先把职责分清楚
+以前我们把十二种 PostgreSQL 内核装进同一套部署、监控、高可用与备份体系，称之为“Meta PG 发行版”。
+做深以后就会发现，最后一公里的问题往往不在 Ansible，而在软件包本身：目录各不相同，构建选项参差不齐，依赖没有包，新的操作系统没人管。
 
-`pig` 最早只是 PostgreSQL 扩展包管理器，后来逐步承担 Pigsty 安装、软件仓库与 PostgreSQL 管理工作。到了 1.5，它已经不只是“能执行很多命令”，而是开始形成一套清晰的 PostgreSQL 操作界面。
-
-这一轮最重要的变化不是命令数量，而是**职责边界**：
-
-| 命令         | 边界               | 典型用途                                       |
-|:-----------|:-----------------|:-------------------------------------------|
-| `pig pg`   | 本地 PostgreSQL 原语 | 启停、状态、连接、维护、数据库克隆与本地 PGDATA 分叉             |
-| `pig pt`   | Patroni 集群操作     | 重启、重建副本、切主、故障转移、配置与日志                      |
-| `pig pb`   | pgBackRest 低层原语  | 备份、仓库、备份集、清理与底层 restore                    |
-| `pig pitr` | 恢复编排             | 协调 Patroni、PostgreSQL 与 pgBackRest 完成 PITR |
-
-这张表的意义很实在：以前靠 DBA 背下来的 SOP——什么时候停 Patroni、什么时候调用 pgBackRest、恢复后能不能启动——现在写进命令本身。高风险操作都沿着同一条链路推进：
-
-> `state → plan → precheck → execute → verify → result → next_actions`
-
-人、脚本和 Agent 因此共用一套入口。Agent-Native 的关键不在 JSON，而在危险动作先有计划，执行后有验证，失败时知道下一步。
+所以 v4.4 往下多走了一层。我们开始自己构建这些分支内核，统一包名、依赖和文件系统布局，再把它们放进 Pigsty 软件仓库。
+应用层也新增了两个很有代表性的模板：Immich 与 JumpServer。
 
 
 ------
 
-## 克隆：给单个数据库开一个分支
+## 应用更新：Immich，JumpServer，Maybe，与 Supabase
 
-PostgreSQL 18 带来的 `file_copy_method=clone`，配合 XFS 等支持 CoW 的文件系统，可以在极低成本下克隆一个大数据库。Pigsty v4.0 已经通过 IaC 提供数据库克隆，并以 `/pg/bin/pg-fork` 提供实例分叉；v4.4 的变化，是把数据库克隆做成真正适合日常使用的命令：`pig pg clone`。
+这一版新增了 [Immich](https://pigsty.cc/docs/app/immich/)、Maybe 与 [JumpServer](https://pigsty.cc/docs/app/jumpserver/) 三个应用模板
 
-```bash
-pig pg clone meta meta_dev --plan   # 先查看计划
-pig pg clone meta meta_dev -y       # 创建数据库副本
-```
+### Immich：把照片库交给真正的 PostgreSQL
 
-当 PostgreSQL 版本、`file_copy_method` 与底层文件系统满足条件时，数据库文件可以通过 CoW 快速克隆；否则仍然可以退化为普通模板复制。Pig 会在计划里告诉你源库、目标库、连接方式、文件系统条件和风险。
+Immich 是一套开源的自托管照片与视频管理服务，可以把它理解成自己家里的 Google Photos 或 iCloud Photos。它有移动端自动备份、相册、地图、人脸识别和语义搜索，背后正好需要 PostgreSQL、向量检索、缓存和机器学习服务。
 
-这里有一个经常被忽略的边界：`CREATE DATABASE ... TEMPLATE` 会终止源库现有会话。换句话说，数据库克隆虽然快，却不是毫无影响。`--plan` 的意义，就是在真正动手前把这些副作用摊开给你看。
+上游的 Docker Compose 自带一套 PostgreSQL；Pigsty 的模板没有沿用这套一次性数据库，而是直接接入 Pigsty 管理的 PostgreSQL，并启用 VectorChord 与 `earthdistance`。照片原件留在 `/data/immich/library`，元数据与向量索引进入数据库，机器学习与应用服务继续由容器承载。
 
-对于开发测试、数据分析、模型实验和 Agent 反事实推演来说，这种廉价分支非常实用。生产库保持不动，实验在副本里进行；做坏了直接删除，再开一个新的分支即可。详细用法可以参考《[瞬间克隆 PostgreSQL 数据库，无需黑魔法](/pg/pg-pig-clone/)》。
+我不太愿意把一个 `docker-compose.yml` 扔给用户就叫“应用模板”。数据库既然已经是 Pigsty 最擅长的部分，就应该顺手接上监控、备份、时间点恢复和高可用，而不是再藏一套无人维护的 PostgreSQL 容器。
+当然，pgBackRest 只保护数据库，照片原件仍然要单独做文件备份。Pigsty 提供的 MinIO 和 JuiceFS 模块则可以解决这个部分的问题。
 
+### JumpServer：把堡垒机也接进来
 
-------
+JumpServer 是另一类典型应用：组件多，启动顺序复杂，而且数据库一旦丢失，账号、资产与审计记录也会一起消失。
 
-## 分叉：给整个实例做一个沙箱
+Pigsty v4.4 的模板会准备 PostgreSQL 用户、数据库与访问规则，再部署 JumpServer 服务和门户入口。
+我们还把数据库迁移、会话连接池、固定容器网段、域名校验这些容易踩坑的地方实际跑了一遍。最后用户看到的仍然是一份配置和一次部署，但模板背后已经替你处理掉了应用与数据库之间的接缝。
 
-数据库 Clone 解决的是单库副本，而 `pig pg fork` 处理的是整个 PostgreSQL 实例，也就是 PGDATA 级别的物理分叉。
-
-```bash
-pig pg fork init dev --start        # 分叉为 /pg/data-dev 并启动
-pig pg fork list                    # 查看本地分叉实例
-pig pg fork stop dev                # 停止分叉实例
-```
-
-Pig 会为受管分叉写入元数据，并提供 list、start、stop、rm 等生命周期命令。它特别适合两类场景：一类是从当前实例快速创建隔离沙箱；另一类是事故恢复前先分叉一份数据，在旁路实例上验证恢复目标和数据状态。
-
-Fork 只管理本地 PGDATA，不自动接入 Patroni、systemd、VIP 与业务流量，也不处理外部表空间、远程 WAL 和备份保留。需要跨节点、归档与完整 HA 语义时，仍然回到 pgBackRest、Patroni 和 Pigsty 的集群工作流。
+Maybe 也在这一版加入应用目录，它是一套个人财务与资产管理工具。三个模板方向不同，但思路一致：应用可以跑在容器里，数据不必跟着容器一起漂。
 
 
 ------
 
-## 回到过去：恢复首先是一份计划
+## Supabase：更新不只是换镜像
 
-数据库恢复最危险的地方，从来不是缺一条命令，而是步骤太多、边界太模糊，而且人在事故压力下最容易犯错。
+Supabase 更新很快，也是 Pigsty 应用模板里组件最多、兼容性最容易出问题的一套。v4.4 把 Studio、Auth、PostgREST、Realtime、Storage、Analytics、Edge Runtime 等组件跟进到 2026 年 7 月的上游版本，并做了一轮配套调整。
 
-Pig 1.5 把低层恢复与高层编排明确拆开：
+这次我们把 Analytics 放进独立的 `_supabase` 数据库与 `_analytics` 模式，避免日志分析表和业务对象混在一起；为 Studio 补齐 `pg_stat_statements` 兼容视图，让查询性能页面能够正常工作；同时适配新的 Publishable Key 与 Secret Key，调整 Kong 路由、Realtime 敏感接口、S3 兼容接口和服务健康检查。
 
-- `pig pb restore` 是 pgBackRest 的低层 restore 原语，只负责文件与恢复目标。
-- `pig pitr` 是面向 Pigsty / Patroni 环境的恢复编排入口，负责协调 Patroni、PostgreSQL 与 pgBackRest。
-
-```bash
-pig pitr -t "2026-07-10 12:00:00+08" --plan
-pig pitr -t "2026-07-10 12:00:00+08" -y
-```
-
-恢复命令现在必须显式指定一个目标：最新状态、备份一致点、时间、LSN、事务 ID 或命名恢复点，不能把“没写目标”解释成某个危险默认值。结构化输出也不再充当确认；自动化执行破坏性操作时，必须明确传入 `-y/--yes`。
-
-对于托管数据目录，`pig pitr` 会检查环境、停止 Patroni 与 PostgreSQL、执行 pgBackRest restore、按策略启动 PostgreSQL 并验证恢复状态，最后给出后续动作。它不会擅自把节点重新接回 Patroni，也不会替你完成 failover、VIP 或流量切换——恢复后的数据必须先由人或上层自动化确认。
-
-它并不承诺“无脑一键恢复”，只是把事故现场最容易出错的 SOP 固化下来：DBA 可以先看计划，Agent 也不至于越权。
+Supabase 这种应用，单个容器能启动没有意义，十几个组件能一起升级、一起工作才算完成。v4.4 修的就是这些不起眼、但会直接决定模板能不能用的问题。
 
 
 ------
 
-## PostgreSQL 18.4、19 beta 与 531 个扩展
+## VIP 网卡终于不用猜了
 
-运维接口是这一版的主线，但发行版的基本盘也没有停下。
+另一个我很喜欢的改动，是 VIP 网卡自动识别。
 
-Pigsty v4.4 将 **PostgreSQL 18.4** 设为生产默认版本，同时增加一个精简的 **PostgreSQL 19 beta** 评估模板。两者的定位刻意分开：PG18.4 是完整生产路径；PG19 模板接入 PGDG 测试仓库，只安装最小运行时，不安装扩展，也暂时禁用尚未理解 PG19 beta1 控制文件格式的内置 pgBackRest 2.58。
+过去 `vip_interface` 与 `pg_vip_interface` 默认写成 `eth0`。
+这个名字在老机器上很常见，在云主机、KVM、Vagrant 和新版 Linux 上却可能是 `ens18`、`enp0s8`，或者别的可预测网卡名。
+用户照着样例部署高可用，最容易在这个地方莫名其妙地失败。
 
-这意味着你可以提前观察 PG19，但不会误把 beta 试用能力当成生产支持。发行版既要追得快，也要清楚地告诉用户哪里可以放心用，哪里只是尝鲜。
+v4.4 把默认值改成了 `auto`：Pigsty 会根据清单里的节点 IP，反查它实际所在的网卡，再把结果交给 Keepalived 或 VIP Manager。
+当然，仍然可以手工指定，但大多数用户再也不用先登录机器跑一遍 `ip addr` 然后再来填参数。
 
-扩展目录则从 v4.3 的 **510** 增加到 **531**。21 个新增扩展里，挑三个方向来说：`pg_ducklake` 把 DuckDB、Parquet 与湖仓能力带进 PostgreSQL；`pg_stat_plans` 与 `pg_stat_backtrace` 补强查询计划和进程调用栈观测；`pgmnemo` 与 `psql_bm25s` 分别面向 Agent 记忆和 BM25 全文检索。其他扩展和完整版本表放在文末提交注记里。
-
-与此同时，OrioleDB 扩展到 PG16/17/18 并将 PG18 作为默认，pgEdge 覆盖 PG15-18，Babelfish 覆盖 PG17/18，IvorySQL 进入 5.x，AgensGraph 更新到 PG17，Cloudberry 与 PolarDB 也完成了路径和软件包重整。
-
-这些细节看起来杂，但这就是发行版的工作：把 PostgreSQL 主线、扩展生态与内核分支同时拉到一个可用、可安装、可升级的状态。
-
-
-------
-
-## 发行版的价值：把十四组矩阵跑通
-
-一个包能编译出来，不等于一个发行版可以交付。真正困难的是把操作系统、架构、仓库、依赖、安装流程和运行状态一起跑通。
-
-v4.4 的离线矩阵覆盖七个操作系统基线：EL 9.7 / 10.1、Debian 12.14 / 13.5，以及 Ubuntu 22.04.5 / 24.04.4 / 26.04.0；每个版本同时覆盖 `x86_64` 与 `aarch64`，总计 14 组组合。所有 14 次离线部署测试最终都以 `failed=0`、`unreachable=0` 完成。
-
-这轮测试顺手抓出了 EL10 provider 冲突、Debian / Ubuntu 装包意外启动服务、VirtualBox 新镜像网卡等一批“只会在真机上出现”的问题。VIP 网卡现在可以根据节点主 IP 自动发现，应用敏感配置不再出现在 Ansible 输出里，`.env` 文件权限也收紧到 `0600`。
-
-pgBackRest、Patroni、dnsmasq、HAProxy、etcd 与 Supabase 的升级注意事项，统一放在文末兼容性清单中。EL8 仍然支持在线安装，但不再提供 v4.4 离线包。这里必须区分“在线兼容”与“离线制品已经验收”——后者在 v4.4 中就是明确的十四组。
+这个功能只有几行配置，却能直接避免一类部署失败。发行版的体验，往往就是由这种小事决定的。
 
 
 ------
 
-## 其他值得一提的改动
+## 我们开始自己发行 PG 内核
 
-**应用模板**：新增 Immich、Maybe、JumpServer，并集中更新 Supabase、Dify、InsForge、Registry、Jupyter、Kong、Odoo、Teable、Mattermost 等应用栈和启动脚本。
+如果说应用模板和 VIP 是看得见的改进，那么这一版真正重的工作，都藏在软件仓库里。
 
-**Supabase**：Analytics 迁移到独立的 `_supabase` 数据库与 `_analytics` 模式；旧版独立 FerretDB Compose 模板被移除，但 Pigsty 的 FERRET 模块仍然保留。
+v4.4 为 PolarDB、IvorySQL、Babelfish、AgensGraph、OrioleDB、pgEdge 与 Cloudberry 等 PostgreSQL 分支内核建立或刷新了自己的 RPM、DEB 构建链
+，OpenHalo 的成品包也完成了更新。PolarDB 升到 17.10，AgensGraph 升到 PG17，IvorySQL 升到 PG18；
+Babelfish 同时提供 PG17 与 PG18，OrioleDB 覆盖 PG16～18，pgEdge 覆盖 PG15～18。
 
-**基础设施门户**：重新设计响应式导航、暗色模式、服务入口与部署拓扑信息。它仍然只负责观测与访问，管理继续通过 IaC 与 CLI 完成。
+版本号不是重点。重点是这些软件开始经过同一条发行链路：
+从源码归档、构建配方、编译选项和运行依赖，到包名、安装目录、仓库元数据，
+再到不同操作系统和 CPU 架构上的安装验证，都由 Pigsty 来 负责。
 
-**VIBE**：实验性模块支持按需安装 Codex CLI，并将 `AGENTS.md` 作为规范化的 Agent 指南。Codex 是可选支持，Claude Code 仍然是默认管理的编码 Agent。
+例如，PolarDB 上游的包名是 `polardb-for-postgresql`，默认装到 `/u01/polardb_pg_17`；
+Pigsty 的包叫 `polardb-17`，安装在 `/usr/polar-17`。我们还把默认端口、运行时搜索路径、开发头文件与扩展构建工具一并整理好，
+让它表现得像一个正常的、可以被自动化管理的 PostgreSQL 内核。
+
+IvorySQL 也做了同样的重打包，新包按 `/usr/ivory-18` 布局。v4.4 仍然兼容上游现有软件包，但后续会逐步统一到 Pigsty 自己发行的内核包上。
+只有这样，一份配置才能在不同内核、不同系统上得到可预测的结果。
+
+这就是我理解的 Distribution：不只是把别人的仓库地址抄进来，而是愿意为软件包最终呈现给用户的样子负责。
+
+当然，这么做的契机是因为上游包确实没有达到我们想要的状态。
+
+
+------
+
+## 给上游提 Issue，也为自己兜底
+
+自己打包，不等于关起门来另起炉灶。构建过程中发现的问题，我们照样会提交给上游。
+
+PolarDB 当时没有 Ubuntu 26.04 的 DEB 包，我们提交了 [Issue #650](https://github.com/polardb/PolarDB-for-PostgreSQL/issues/650)。
+上游随后合入了 Ubuntu 26.04 的构建支持并关闭问题。
+
+IvorySQL 的官方包没有打开 LZ4、Zstd 等常用构建选项，我们也提交了 [Issue #1377](https://github.com/IvorySQL/IvorySQL/issues/1377)，维护者已经确认会在下一版补齐。
+
+上游愿意跟进当然是好事，但我的判断没有变：Pigsty 最终仍然会统一使用自己发行的内核包。
+原因并不复杂。每个上游只需要照顾自己的产品习惯，而 Pigsty 要让十几种内核共享同一套安装、监控、备份与高可用体系。
+目录放在哪里、包叫什么、依赖如何声明、能不能装开发扩展，这些看似琐碎的目录规范（FHS）与打包约定，恰恰是自动化能否成立的基础。
+
+而且，如果我们下一步要为这些内核分支也提供完整的扩展支持，那么自己打包内核也是必由之路。
+
+
+------
+
+## PolarFS 也得有一个包
+
+PolarDB 是这轮重打包里最典型的例子。它的完整构建需要 PFSD 开发库，也就是 PolarStore／PolarFS 这一层依赖，但常见 Linux 仓库里并没有一个可以直接安装的开发包。
+
+于是我们把它单独做成了 `polarstore` 软件包，提供 PFSD 的头文件与静态库，并补齐 `zlog` 等构建依赖。
+现在 PolarDB 的 RPM 与 DEB 都可以显式声明这项依赖，构建机不需要再手工复制一套开发库，也不用依赖某台机器里提前塞好的文件。
+
+这件事听上去一点也不酷，但它很能说明发行版的价值：把源码树里的偶然条件，变成仓库里可追踪、可复现的依赖关系。
+
+这一版也做了一次减法：正式从开源支持清单中移除 PolarDB Oracle 兼容版，以及随附的专用监控采集配置。
+社区版本今后聚焦开放的 PolarDB-PG 内核；需要 Oracle 语法兼容时，Pigsty 里仍然有 IvorySQL 这条更清晰的路线。
+
+
+------
+
+## PostgreSQL 18.4、531 个扩展，以及其他修复
+
+v4.4 将 PostgreSQL 18.4 作为新的生产默认版本，并提供精简的 PostgreSQL 19 beta 配置用于评估。
+扩展总数从 510 增加到 531，新加入 `pg_ducklake`、`psql_bm25s`、`pg_orca`、`pg_sorted_heap`、`pg_stat_plans`、`pg_mockable` 等二十一个扩展。
+
+Pig 1.5.1 新增了数据库克隆、实例分叉与时间点恢复接口；pgBackRest 默认改用 Zstandard 压缩；
+Patroni 日志落盘并单独采集。Redis Sentinel 鉴权、EL10 仓库、VirtualBox 路由、既有 `/www` 目录复用，以及敏感配置文件权限等问题也在这一版完成修复。
+
+七个操作系统基线在 `x86_64` 与 `aarch64` 上的十四组离线部署测试全部通过。
+EL8 仍然支持在线安装，但不再提供 v4.4 离线包。完整的软件包与兼容性变化，我放在文末的提交注记中。
 
 
 ------
 
 ## 写在最后
 
-从 v4.0 的“为 Agent 而生”到 v4.4，Pigsty 一直在做同一件事：让 Agent 能动手，但不能乱来。克隆、分叉与 PITR 把这件事落到了数据库最危险的操作上——先给计划，条件不对就拒绝，做完还要验证。
+做发行版，大部分工作都不适合拿来做漂亮的演示：改包名、理目录、补依赖、修构建脚本，再把十四组安装矩阵全部跑一遍。可一旦这些事情没人做，“开箱即用”就只是一句广告。
 
-**把复杂留给发行版，把确定性交给用户。** 这就是 v4.4。
+从 v3.6 开始，我们把 Pigsty 称为 Meta PG 发行版；到了 v4.4，这个说法又多了一层实际含义。
+上面可以一键部署 Immich、JumpServer 和 Supabase，下面有 PostgreSQL 18.4、531 个扩展与十几种分支内核，而最底下的软件包、FHS、依赖和验证链路，也开始由我们自己掌握。
+
+**把上游的多样性收进同一套工程约定，把最后一公里的麻烦留给发行版。** 这就是 Pigsty v4.4。
 
 下面附完整的 v4.4.0 提交注记与软件包变更，方便按需查阅。
 
