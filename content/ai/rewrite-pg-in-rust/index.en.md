@@ -85,15 +85,15 @@ In its [migration retrospective](https://bun.com/blog/bun-in-rust), Bun says the
 
 The two projects are strikingly similar:
 
-| | Bun: Zig to Rust | pgrust: C to Rust |
-|:--|:--|:--|
-| Method | Mechanical port, then cleanup | c2rust, then crate-by-crate cleanup |
-| Model | Claude Fable 5 prerelease | Claude Fable 5; 832 credited commits |
-| Time | 11 days | 13 days |
-| Scale | 1.01M lines added; 6,778 commits | 2.4M lines; 7,103 commits |
+|             | Bun: Zig to Rust                        | pgrust: C to Rust                                |
+|:------------|:----------------------------------------|:-------------------------------------------------|
+| Method      | Mechanical port, then cleanup           | c2rust, then crate-by-crate cleanup              |
+| Model       | Claude Fable 5 prerelease               | Claude Fable 5; 832 credited commits             |
+| Time        | 11 days                                 | 13 days                                          |
+| Scale       | 1.01M lines added; 6,778 commits        | 2.4M lines; 7,103 commits                        |
 | Test oracle | Bun's language-neutral TypeScript suite | PostgreSQL's SQL regression and isolation suites |
-| Ownership | Its own production system | A new implementation of upstream code |
-| Status | Shipping; publicly validated by Prisma | Not production-ready; no public deployments |
+| Ownership   | Its own production system               | A new implementation of upstream code            |
+| Status      | Shipping; publicly validated by Prisma  | Not production-ready; no public deployments      |
 
 The decisive difference is ownership.
 

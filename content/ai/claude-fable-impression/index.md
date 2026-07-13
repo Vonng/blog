@@ -12,7 +12,7 @@ ai: true
 
 先说结论，确实强，新 SOTA。但是贵，吃相也难看。
 
-![Claude Fable 发布公告](featured.webp)
+![Claude Fable 发布公告](claude-x.webp)
 
 两个月前 Mythos Preview 刚放出风声时，我写过一篇《[AGI已经来了，但你有船票吗？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247491844&idx=1&sn=0237bd818c234299a31d3bbfe91ee8f6&scene=21#wechat_redirect)》，聊的就是顶级 AI 能力正在被圈禁起来这件事。现在看来一语成谶 —— 这次连命名都懒得掩饰：**Mythos（神话）供奉给通过审查的「领主」，Fable（寓言）讲给平民听。** 同一个底层模型，Fable 是阉割加锁版。
 
