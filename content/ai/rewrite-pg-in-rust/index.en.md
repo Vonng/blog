@@ -132,6 +132,8 @@ The extension ecosystem is a more immediate barrier.
 
 PostgreSQL's C extension surface includes the fmgr calling convention, hooks, shared memory, server headers, PGXS, and many effectively public symbols. PostgreSQL does not promise a stable ABI across major versions, but hundreds of C extensions depend on these interfaces. Every major release requires compatibility testing; many require patches.
 
+![pgrust-ext.webp](pgrust-ext.webp)
+
 A Rust implementation has two choices:
 
 - Build a C compatibility layer and accept `unsafe` boundaries plus permanent compatibility work.
