@@ -5,7 +5,7 @@ author: "vonng"
 summary: "The future may not necessarily be bright, but the path will certainly be tortuous."
 ---
 
-In [Understanding the Internet](https://vonng.com/cn/blog/misc/understand-internet/), I discussed my views on the internet. Today, let's talk about the part I deliberately omitted: the setbacks the internet will face.
+In [Understanding the Internet](/en/misc/internet-understand/), I discussed my views on the internet. Today, let's talk about the part I deliberately omitted: the setbacks the internet will face.
 
 <!--more-->
 

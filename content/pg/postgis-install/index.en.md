@@ -184,7 +184,7 @@ make install
 
 Currently used for importing GML and KML format data. Functions `ST_GeomFromGML` and `ST_GeomFromKML` depend on this library.
 
-Currently available on this [FTP](ftp://xmlsoft.org/libxml2/) server. Current version used is `2.9.7`.
+Currently available from this [download server](https://download.gnome.org/sources/libxml2/). Current version used is `2.9.7`.
 
 ```bash
 tar -zxf libxml2-sources-2.9.7.tar.gz

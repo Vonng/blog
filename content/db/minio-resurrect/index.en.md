@@ -272,4 +272,4 @@ Fork is the most powerful spell in open source. When a company decides to shut t
 - [**From AGPL to Apache: Reflections on Pigsty's License Change**](/pg/pigsty-relicense/)
 - [**MinIO: Promise made, Promise kept**](/db/minio-promise-kept)
 
-> [**Originally published in Chinese]**](https://vonng.com/db/minio-resurrect/db/minio-promise-kept)
+> [**Originally published in Chinese**](/db/minio-promise-kept/)

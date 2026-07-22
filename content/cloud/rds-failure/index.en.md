@@ -19,7 +19,7 @@ I have a client L who recently vented to me about an outrageous cascade of failu
 - [WAL Accumulation: Missing Expertise](#wal-accumulation-missing-expertise)
 - [Disk Expansion: Revenue Generation Tactics](#disk-expansion-revenue-generation-tactics)
 - [Compensation Agreement: Hush Money Pills](#compensation-agreement-hush-money-pills)
-- [Solution: Cloud-Exit and Self-Building](#solution-Cloud-Exit-and-self-building)
+- [Solution: Cloud-Exit and Self-Building](#solution-cloud-exit-and-self-building)
 - [Advertisement Time: Expert Consulting](#advertisement-time-expert-consulting)
 
 
@@ -78,7 +78,7 @@ So, for what might not even be a real problem (false alarm?), the RDS after-sale
 
 Logically, cloud databases advertise their ultimate elasticity and flexible scaling, managed with Docker. Shouldn't this be as simple as changing MemLimit and PG SharedBuffer parameters in place and restarting? A few seconds would make sense. Instead, this expansion took three full hours and triggered a series of cascading failures.
 
-For memory shortage, upgrading two 32G servers to 64G, according to the pricing model we calculated in "[Analyzing Alibaba-Cloud Server Computing Cost](/cloud/ecs/#实例族对价格的影响)", this memory expansion operation alone could bring in tens of thousands in additional annual revenue. If it could solve the problem, that would be one thing, but in fact this memory expansion not only failed to solve the problem but also triggered bigger problems.
+For memory shortage, upgrading two 32G servers to 64G, according to the pricing model we calculated in "[Analyzing Alibaba-Cloud Server Computing Cost](/en/cloud/ecs/#instance-family-impact-on-pricing)", this memory expansion operation alone could bring in tens of thousands in additional annual revenue. If it could solve the problem, that would be one thing, but in fact this memory expansion not only failed to solve the problem but also triggered bigger problems.
 
 
 
@@ -152,7 +152,7 @@ After resolving the cascade of issues including "memory alerts," "replica failur
 
 In the post-incident review, the engineer mentioned the cause of WAL archive failures was "**RDS upload component BUG**". Looking back, if the client had really followed the recommendation to upgrade cloud disks, it would have been wasted money.
 
-In "[Are Cloud Disks Pig-Slaughtering Scams](/cloud/ebs)" we analyzed that the most ruthlessly overpriced basic resource in cloud is ESSD cloud disks. According to numbers in "[Alibaba-Cloud Storage and Computing Cost Analysis](/cloud/ebs/#pig-slaughtering-scam-pricing)": client's 5TB ESSD PL1 cloud disk monthly price is **1 ¥/GB**, so annual cloud disk costs alone would be **120,000**.
+In "[Are Cloud Disks Pig-Slaughtering Scams](/cloud/ebs)" we analyzed that the most ruthlessly overpriced basic resource in cloud is ESSD cloud disks. According to numbers in "[Alibaba-Cloud Storage and Computing Cost Analysis](/en/cloud/ebs/#what-a-scam)": client's 5TB ESSD PL1 cloud disk monthly price is **1 ¥/GB**, so annual cloud disk costs alone would be **120,000**.
 
 | Unit Price: ¥/GiB·month | IOPS | Bandwidth    | Capacity  | On-Demand Price | Monthly Price | Annual Price | 3-Year Prepaid+ |
 |:-----------------------:|:----:|-------------|:---------:|:---------------:|:------------:|:------------:|:---------------:|
@@ -223,7 +223,7 @@ For client L, the benefits of cloud exit are immediate: just a **one-time invest
 
 ## Advertisement Time: Expert Consulting
 
-In cloud exit matters, I'm happy to provide help and support for client L. [Pigsty](https://pigsty.cc/zh/) distills my domain knowledge and experience as a top PG DBA into an open-source RDS [self-building tool](/cloud/rds/#dba的工作与自动化管控), having helped countless users worldwide build their own enterprise-grade PostgreSQL database services. Although it has solved operational issues like out-of-box usability, scaling integration, monitoring systems, backup recovery, security compliance, and IaC quite well, to fully unleash the complete power of PostgreSQL and Pigsty still requires expert help for implementation.
+In cloud exit matters, I'm happy to provide help and support for client L. [Pigsty](https://pigsty.cc/zh/) distills my domain knowledge and experience as a top PG DBA into an open-source RDS [self-building tool](/en/cloud/dba-vs-rds/#dba-work-and-automated-management), having helped countless users worldwide build their own enterprise-grade PostgreSQL database services. Although it has solved operational issues like out-of-box usability, scaling integration, monitoring systems, backup recovery, security compliance, and IaC quite well, to fully unleash the complete power of PostgreSQL and Pigsty still requires expert help for implementation.
 
 So I provide clearly priced [**expert consulting services**](https://pigsty.cc/docs/about/service) — for clients like L with mature technical teams who just lack domain knowledge, I only charge a fixed **5K ¥/month** consulting fee, equivalent to half a junior operations engineer's salary. But sufficient to let clients confidently use hardware resource costs an order of magnitude lower than cloud, self-building better local PG RDS services — and even when continuing to run RDS on cloud, avoid being fooled and harvested by "experts".
 

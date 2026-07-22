@@ -55,7 +55,7 @@ Like many "specialized databases," the strength of dedicated OLAP systems often 
 
 However, as the saying goes, "What goes around comes around". With [hardware improving over thirty years following Moore's Law](/cloud/bonus/), performance has increased exponentially while costs have plummeted. In 2024, a single x86 machine can have hundreds of cores (512 vCPU [EPYC 9754](https://www.amd.com/zh-hans/products/cpu/amd-epyc-9754)x2), several TBs of RAM, a single NVMe SSD can hold up to 64TB, and a single all-flash rack can reach 2PB; object storage like S3 offers virtually unlimited storage.
 
-[![io-bandwidth.png](io-bandwidth.png)](/cloud//bonus)
+[![io-bandwidth.png](io-bandwidth.png)](/en/cloud/bonus/)
 
 Hardware advancements have solved the data volume and performance issue, while database software developments (PostgreSQL, ParadeDB, DuckDB) have addressed access method challenges. This puts the fundamental assumptions of the analytics sector — the so-called “big data” industry — under scrutiny.
 

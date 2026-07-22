@@ -308,14 +308,14 @@ Percona 的 CEO Peter Zaitsev 也表示：
 **MySQL is dead，Long live PostgreSQL！**
 
   * [空洞无物的创新版本](/db/mysql-vs-pgsql/#空洞无物的创新版本)
-  * [糊弄了事的向量类型](/db/mysql-vs-pgsql/#糊弄了事的向量类型)
-  * [姗姗来迟的JS函数](/db/mysql-vs-pgsql/#姗姗来迟的js函数)
-  * [日渐落后的功能特性](/db/mysql-vs-pgsql/#日渐落后的功能特性)
-  * [越新越差的性能表现](/db/mysql-vs-pgsql/#越新越差的性能表现)
-  * [无可救药的质量水平](/db/mysql-vs-pgsql/#无可救药的质量水平)
+  * [糊弄了事的向量类型](/db/mysql-vs-pgsql/#新功能)
+  * [姗姗来迟的JS函数](/db/mysql-vs-pgsql/#新功能)
+  * [日渐落后的功能特性](/db/mysql-vs-pgsql/#功能)
+  * [越新越差的性能表现](/db/mysql-vs-pgsql/#性能)
+  * [无可救药的质量水平](/db/mysql-vs-pgsql/#质量)
   * [枯萎收缩的生态规模](/db/mysql-vs-pgsql/#枯萎收缩的生态规模)
   * [究竟是谁杀死了MySQL](/db/mysql-vs-pgsql/#究竟是谁杀死了mysql)
-  * [PG驶向云外，MySQL安魂九霄](/db/mysql-vs-pgsql/#pg驶向云外mysql安魂九霄)
+  * [PG驶向云外，MySQL安魂九霄](/db/mysql-vs-pgsql/#总结)
 
 
 

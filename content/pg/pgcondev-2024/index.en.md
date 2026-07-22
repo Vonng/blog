@@ -107,7 +107,7 @@ The second-afternoon session by [Bruce Momjian](https://postgresql.life/post/bru
 
 > Haha, some ArgParser code. I see it
 
-During the lunch, Bruce explained that Jonathan Katz needed a topic to introduce the vector database extension PGVector in the PostgreSQL ecosystem, so Bruce was roped in to "fill the gap." [Check out Bruce’s presentation]().
+During the lunch, Bruce explained that Jonathan Katz needed a topic to introduce the vector database extension PGVector in the PostgreSQL ecosystem, so Bruce was roped in to "fill the gap."
 
 ### PB-Level PostgreSQL Deployments
 
@@ -317,5 +317,4 @@ Some slides are [available](https://www.pgevents.ca/events/pgconfdev2024/session
 - [PGCon.Dev Extension Summit Notes @ Vancouver](https://mp.weixin.qq.com/s/C0YyE52KbLLbnG1C2FqGRg)
 
 - [PGCon 2024 Opening](https://mp.weixin.qq.com/s/4t1thBCDVS8y9dHiOxPZaA)
-
 

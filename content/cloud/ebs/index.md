@@ -102,7 +102,7 @@ Aliyun ESSD PL3 和我们 IDC 自建采购 PCI-E NVMe SSD 【1】是同一家供
 
 当然要想客户买单，也需要一些云计算 KOL 来鼓吹配套 “公有云云原生” 哲学理念：“EC2 不适合放状态哟，请把状态放到 S3 或者 RDS 以及其他托管服务，这才是使用我们公有云的‘**最佳实践**’ ”。
 
-[![](ebs-7.png)]()
+![](ebs-7.png)
 
 这四条总结的很到位，但公有云绝对不会告诉你“最佳实践”的代价是什么。用白话解释一下[这四条](https://github.com/lipingtababa/cloud/-native-best-practices/blob/main/%E4%BA%91%E5%8E%9F%E7%94%9F%E7%8E%8B%E5%9B%9B%E6%9D%A1.md)的意思，这是一个为客户**精心设计的连环杀猪套**：
 

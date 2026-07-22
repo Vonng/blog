@@ -41,7 +41,7 @@ After installation, visit port `8000` in your browser to access Supa Studio, use
 ## Table of Contents
 
 - [What is Supabase?](#what-is-supabase)
-- [Why Self-Host?](#why-self-host-supabase)
+- [Why Self-Host?](#why-self-host)
 - [Single Node Quick Start](#single-node-quick-start)
 - [Advanced Topic: Security Hardening](#advanced-topic-security-hardening)
 - [Advanced Topic: Domain Integration](#advanced-topic-domain-integration)

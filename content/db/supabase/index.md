@@ -40,7 +40,7 @@ vi pigsty.yml              # 编辑域名、密码、密钥...
 ## 目录
 
 - [Supabase是什么？](#supabase是什么)
-- [为什么要自建它？](#为什么要自建supabase)
+- [为什么要自建它？](#为什么要自建)
 - [单机自建快速上手](#单节点自建快速上手)
 - [进阶主题：安全加固](#进阶主题安全加固)
 - [进阶主题：域名接入](#进阶主题域名接入)
@@ -382,5 +382,4 @@ all:
 在这种情况下，您还需要修改 PostgreSQL 与 MinIO 的接入点，使用 DNS / L2 VIP / HAProxy 等 [高可用接入点](https://doc.pgsty.com/zh/pgsql/service#access)
 关于这些部分，您只需参考 Pigsty 中各个模块的文档进行配置部署即可。
 建议您参考 [`conf/ha/trio.yml`](https://github.com/pgsty/pigsty/blob/main/conf/ha/trio.yml) 与 [`conf/ha/safe.yml`](https://github.com/pgsty/pigsty/blob/main/conf/ha/trio.yml) 中的配置，将集群规模升级到三节点或以上。
-
 

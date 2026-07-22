@@ -10,7 +10,7 @@ ai: true
 aliases: ["/misc/ai-emotion/"]
 ---
 
-前天 Anthropic 发了一篇博客，论文的标题很平静：《[大型语言模型中的情绪概念及其功能](Emotion concepts and their function in a large language model)》。
+前天 Anthropic 发了一篇博客，论文的标题很平静：《[大型语言模型中的情绪概念及其功能](https://www.anthropic.com/research/emotion-concepts-function)》。
 内容则不平静，他们在 Claude 的神经网络内部找到了“情绪向量”，这些向量不只是在模拟情绪，而是在**因果层面驱动着模型的行为**。
 
 比如，模型的“绝望向量”激活之后，它会开始作弊、威胁、不择手段。关掉这个向量，它就平静了。

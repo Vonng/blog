@@ -114,7 +114,7 @@ If you're already familiar with setting up Pigsty, feel free to skip this sectio
 curl -fsSL https://repo.pigsty.io/get | bash
 ```
 
-It will [download](#download) Pigsty source to your home, then perform [configure](#configure) and [install](#install) to finish the installation.
+It will download the Pigsty source to your home, then configure and install it.
 
 ```bash
 cd ~/pigsty   # get pigsty source and entering dir
@@ -148,7 +148,7 @@ Pigsty will not deploy Docker by default, so you need to install Docker with the
 
 ------
 
-## Dify Confiugration
+## Dify Configuration
 
 You can configure dify in the [`.env`](https://github.com/Vonng/pigsty/blob/main/app/dify/.env) file:
 

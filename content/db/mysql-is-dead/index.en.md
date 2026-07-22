@@ -10,25 +10,25 @@ tags: [Database,MySQL,PostgreSQL]
 This July, MySQL 9.0 was finally released—a full eight years after its last major version, 8.0 ([@2016-09](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-0.html)). Yet, this hollow "innovation" release feels like a bad joke, signaling that **MySQL is on its deathbed**.
 
 While PostgreSQL continues to surge ahead, MySQL's sunset is painfully acknowledged by Percona, a major flag-bearer of the MySQL ecosystem, through a series of poignant posts:
-"[Where is MySQL Heading?]()", "[Did Oracle Finally Kill MySQL?]()", and "[Can Oracle Save MySQL?]()", openly expressing disappointment and frustration with MySQL.
+"[Where is MySQL Heading?](/db/sakila-where-are-you-going/)", "[Did Oracle Finally Kill MySQL?](/db/oracle-kill-mysql/)", and "[Can Oracle Save MySQL?](/db/can-oracle-save-mysql/)", openly expressing disappointment and frustration with MySQL.
 
 Peter Zaitsev, CEO of Percona, remarked:
 
 > **Who needs MySQL when there's PostgreSQL?** But if MySQL dies, PostgreSQL might just monopolize the database world, so at least MySQL can serve as a whetstone for PostgreSQL to reach its zenith.
 
-Some databases are [eating the DBMS world](/pg/pg-eat-db-world), while others are [fading into obscurity]().
+Some databases are [eating the DBMS world](/en/pg/pg-eat-db-world/), while others are fading into obscurity.
 
 **MySQL is dead, Long live PostgreSQL!**
 
 - [Hollow Innovations](#hollow-innovations)
 - [Sloppy Vector Types](#sloppy-vector-types)
 - [Belated JavaScript Functions](#belated-javascript-functions)
-- [Lagging Features](#lagging-features)
-- [Degrading Performance](#degrading-performance)
-- [Irredeemable Isolation Levels](#irredeemable-isolation-levels)
-- [Shrinking Ecosystem](#shrinking-ecosystem)
+- [Lagging Features](#falling-behind-features-and-flexibility)
+- [Degrading Performance](#deteriorated-performance)
+- [Irredeemable Isolation Levels](#the-incurable-isolation-levels)
+- [Shrinking Ecosystem](#the-shrinking-ecosystem-scale)
 - [Who Really Killed MySQL?](#who-really-killed-mysql)
-- [PostgreSQL Ascends as MySQL Rests in Peace](#postgresql-ascends-as-mysql-rests-in-peace)
+- [PostgreSQL Ascends as MySQL Rests in Peace](#who-really-killed-mysql)
 
 
 
@@ -75,7 +75,7 @@ According to MySQL 9.0's [official documentation](https://dev.mysql.com/doc/refm
 
 The bar for entry into vector databases is not high—a simple vector distance function (think dot product, a 10-line C program, a coding task suitable for elementary students) would suffice. This could enable basic vector retrieval through a full table scan with an `ORDER BY d LIMIT n` query, representing a minimally viable feature. Yet MySQL 9 didn't even bother to implement this basic vector distance function, which is not a capability issue but a clear sign that Oracle has lost interest in progressing MySQL. Any seasoned tech observer can see that this so-called "vector type" is merely a `BLOB`under a different name—it only manages your binary data input without caring how users want to search or utilize it. Of course, it’s possible Oracle has a more robust version on its MySQL Heatwave, but what’s delivered on MySQL itself is a feature you could hack together in ten minutes.
 
-In contrast, let's look at PostgreSQL, MySQL's long-standing rival. Over the past year, the PostgreSQL ecosystem has spawned at least six vector database extensions (`pgvector`, `pgvector.rs`, `pg_embedding`, `latern`, `pase`, `pgvectorscale`) and has reached new heights in a competitive race. The frontrunner, [`pgvector`](), which emerged in 2021, quickly reached heights that many specialized vector databases couldn't, thanks to the collective efforts of developers, vendors, and users standing on PostgreSQL’s shoulders. It could even be argued that `pgvector` single-handedly ended this niche in databases—["Is the Dedicated Vector Database Era Over?"](https://www.example.com/).
+In contrast, let's look at PostgreSQL, MySQL's long-standing rival. Over the past year, the PostgreSQL ecosystem has spawned at least six vector database extensions (`pgvector`, `pgvector.rs`, `pg_embedding`, `latern`, `pase`, `pgvectorscale`) and has reached new heights in a competitive race. The frontrunner, [`pgvector`](https://github.com/pgvector/pgvector), which emerged in 2021, quickly reached heights that many specialized vector databases couldn't, thanks to the collective efforts of developers, vendors, and users standing on PostgreSQL’s shoulders. It could even be argued that `pgvector` single-handedly ended this niche in databases—["Is the Dedicated Vector Database Era Over?"](/en/db/svdb-is-dead/).
 
 ![svdb-intro.png](svdb-intro.png)
 
@@ -83,7 +83,7 @@ Within this year, `pgvector` [improved its performance by 150 times](https://jka
 
 Comparing `pgvector` with MySQL 9's "vector" support might seem unfair, as MySQL’s offering doesn’t even come close to PostgreSQL's "multidimensional array type" available since its inception in 1996—at least that had a robust array of functions, not just an array length calculation.
 
-[**Vectors are the new JSON**](), but the party at the vector database table has ended, and MySQL hasn’t even managed to serve its dish. It has completely missed the growth engine of the next AI decade, just as it missed the JSON document database wave of the internet era in the previous decade.
+[**Vectors are the new JSON**](/en/db/svdb-is-dead/), but the party at the vector database table has ended, and MySQL hasn’t even managed to serve its dish. It has completely missed the growth engine of the next AI decade, just as it missed the JSON document database wave of the internet era in the previous decade.
 
 
 
@@ -95,7 +95,7 @@ Another "blockbuster" feature of MySQL 9.0 is **JavaScript Stored Procedures**.
 
 However, using JavaScript for stored procedures isn't a novel concept—back in 2011, PostgreSQL 9.1 could already script JavaScript stored procedures through the [`plv8`](https://github.com/plv8/plv8/tree/v0.1.0) extension, and MongoDB began supporting JavaScript around the same time.
 
-A glance at the past twelve years of the "[Database Popularity Trend](https://demo.pigsty.cc/d/db-analysis/db-engine-analysis?orgId=1&var-year=2012)" on DB-Engine shows that only PostgreSQL and Mongo have truly led the pack. MongoDB (2009) and PostgreSQL 9.2 (2012) were quick to grasp internet developers' needs, adding [JSON feature support]() (document databases) right as the "Rise of JSON" began, thereby capturing the largest growth share in the database realm over the last decade.
+A glance at the past twelve years of the "[Database Popularity Trend](https://demo.pigsty.cc/d/db-analysis/db-engine-analysis?orgId=1&var-year=2012)" on DB-Engine shows that only PostgreSQL and Mongo have truly led the pack. MongoDB (2009) and PostgreSQL 9.2 (2012) were quick to grasp internet developers' needs, adding [JSON feature support](https://www.postgresql.org/docs/current/datatype-json.html) (document databases) right as the "Rise of JSON" began, thereby capturing the largest growth share in the database realm over the last decade.
 
 ![db-engine.webp](db-engine.webp)
 
@@ -121,7 +121,7 @@ These plugins enable PostgreSQL to serve diverse functionalities—geospatial, t
 
 While MySQL remains confined to its "relational OLTP database" niche, PostgreSQL has transcended its relational roots to become a multi-modal database and a platform for data management abstraction and development.
 
-[PostgreSQL is devouring the database world](), internalizing the entire database realm through its plugin architecture. "[Just use Postgres]()" has moved from being a fringe exploration by elite teams to a mainstream best practice.
+[PostgreSQL is devouring the database world](/en/pg/pg-eat-db-world/), internalizing the entire database realm through its plugin architecture. "[Just use Postgres](/en/pg/just-use-pg/)" has moved from being a fringe exploration by elite teams to a mainstream best practice.
 
 In contrast, MySQL shows a lackluster enthusiasm for new functionalities—a major version update that should be rife with innovative 'breaking changes' turns out to be either lackluster features or insubstantial enterprise gimmicks.
 
@@ -132,7 +132,7 @@ In contrast, MySQL shows a lackluster enthusiasm for new functionalities—a maj
 
 The lack of features might not be an insurmountable issue—if a database excels at its core functionalities, architects can cobble together the required features using various data components.
 
-MySQL's once-celebrated core attribute was its **performance**—notably in simple OLTP CRUD operations typical of internet-scale applications. Unfortunately, this strength is now under siege. Percona's blog post "[Sakila: Where Are You Going?]()" unveils a startling revelation:
+MySQL's once-celebrated core attribute was its **performance**—notably in simple OLTP CRUD operations typical of internet-scale applications. Unfortunately, this strength is now under siege. Percona's blog post "[Sakila: Where Are You Going?](/db/sakila-where-are-you-going/)" unveils a startling revelation:
 
 **Newer MySQL versions are performing worse than their predecessors.**
 
@@ -144,7 +144,7 @@ According to Percona's benchmarks using sysbench and TPC-C, the latest MySQL 8.4
 
 While there have been some optimizer improvements in MySQL 8.x, enhancing performance in complex query scenarios, complex queries were never MySQL’s forte. Conversely, a significant drop in the fundamental OLTP CRUD performance is indefensible.
 
-Peter Zaitsev commented in his post "[Oracle Has Finally Killed MySQL]()": "Compared to MySQL 5.6, MySQL 8.x has shown a significant performance decline in single-threaded simple workloads. One might argue that adding features inevitably impacts performance, but MariaDB shows much less performance degradation, and PostgreSQL has managed to [significantly enhance performance while adding features](https://smalldatum.blogspot.com/2024/06/postgres-17beta1-vs-sysbench-on-large.html)."
+Peter Zaitsev commented in his post "[Oracle Has Finally Killed MySQL](/db/oracle-kill-mysql/)": "Compared to MySQL 5.6, MySQL 8.x has shown a significant performance decline in single-threaded simple workloads. One might argue that adding features inevitably impacts performance, but MariaDB shows much less performance degradation, and PostgreSQL has managed to [significantly enhance performance while adding features](https://smalldatum.blogspot.com/2024/06/postgres-17beta1-vs-sysbench-on-large.html)."
 
 Years ago, the industry consensus was that PostgreSQL and MySQL performed comparably in simple OLTP CRUD scenarios. However, as PostgreSQL has continued to improve, it has vastly outpaced MySQL in performance. PostgreSQL now significantly exceeds MySQL in various read and write scenarios, with throughput improvements ranging from 200% to even 500% in some cases.
 
@@ -159,7 +159,7 @@ Years ago, the industry consensus was that PostgreSQL and MySQL performed compar
 
 While performance issues can usually be patched up, correctness issues are a different beast altogether.
 
-An article, "[The Grave Correctness Problems with MySQL?]()", points out that MySQL falls embarrassingly short on **correctness**—a fundamental attribute expected of any respectable database product.
+An article, "[The Grave Correctness Problems with MySQL?](/en/db/bad-mysql/)", points out that MySQL falls embarrassingly short on **correctness**—a fundamental attribute expected of any respectable database product.
 
 The renowned distributed transaction testing organization, [JEPSEN](https://jepsen.io/analyses/mysql-8.0.34), discovered that the **Repeatable Read (RR)** isolation level claimed by MySQL's documentation actually provides much weaker correctness guarantees. MySQL 8.0.34's default RR isolation level isn’t truly repeatable read, nor is it **atomic** or **monotonic**, failing even the basic threshold of **Monotonic Atomic View (MAV)**.
 
@@ -191,7 +191,7 @@ For any technology, the **scale** of its user base directly determines the vibra
 
 ![so-rank.jpg](so-rank.jpg)
 
-Unfortunately, at least according to the 2023 results of one of the world’s most authoritative developer surveys, the [StackOverflow Annual Developer Survey](), MySQL has been overtaken by PostgreSQL—**the crown of the most popular database has been claimed by PostgreSQL**.
+Unfortunately, at least according to the 2023 results of one of the world’s most authoritative developer surveys, the [StackOverflow Annual Developer Survey](/en/pg/pg-is-no1/), MySQL has been overtaken by PostgreSQL—**the crown of the most popular database has been claimed by PostgreSQL**.
 
 Especially notable, when examining the past seven years of survey data together, one can clearly see the trend of PostgreSQL becoming more popular as MySQL becomes less so (top left chart)—an obvious trend even under the same benchmarking standards.
 
@@ -211,7 +211,7 @@ After all, many national databases are built on PostgreSQL—if you’re in the 
 
 ## Who Really Killed MySQL?
 
-Who killed MySQL, was it PostgreSQL? Peter Zaitsev argues in "[Did Oracle Ultimately Kill MySQL?]()" that **Oracle’s inaction and misguided directives ultimately doomed MySQL**. He further explains the real root cause in "[Can Oracle Save MySQL?](https://pigsty.io/zh/db/can-oracle-save-mysql)":
+Who killed MySQL, was it PostgreSQL? Peter Zaitsev argues in "[Did Oracle Ultimately Kill MySQL?](/db/oracle-kill-mysql/)" that **Oracle’s inaction and misguided directives ultimately doomed MySQL**. He further explains the real root cause in "[Can Oracle Save MySQL?](/db/can-oracle-save-mysql/)":
 
 MySQL's intellectual property is owned by Oracle, and unlike PostgreSQL, which is "owned and managed by the community," it lacks the broad base of independent company contributors that PostgreSQL enjoys. Neither MySQL nor its fork, MariaDB, are truly community-driven pure open-source projects like Linux, PostgreSQL, or Kubernetes, but are dominated by a single commercial entity.
 
@@ -219,9 +219,9 @@ It might be wiser to leverage a competitor's code without contributing back—AW
 
 ![dbms-market.png](dbms-market.png)
 
-What’s gone is gone, but the future awaits. PostgreSQL should learn from the demise of MySQL—although the PostgreSQL community is very careful to avoid the dominance of any single entity, the ecosystem is indeed evolving towards a few cloud giants dominating. [**The cloud is devouring open source**]()—cloud providers write the management software for open-source software, form pools of experts, and capture most of the lifecycle value of maintenance, but the largest costs—**R&D**—are borne by the entire open-source community. And [**truly valuable management/monitoring code is never given back to the open-source community**]()—this phenomenon has been observed in MongoDB, ElasticSearch, Redis, and MySQL, and the PostgreSQL community should take heed.
+What’s gone is gone, but the future awaits. PostgreSQL should learn from the demise of MySQL—although the PostgreSQL community is very careful to avoid the dominance of any single entity, the ecosystem is indeed evolving towards a few cloud giants dominating. [**The cloud is devouring open source**](/en/cloud/paradigm/)—cloud providers write the management software for open-source software, form pools of experts, and capture most of the lifecycle value of maintenance, but the largest costs—**R&D**—are borne by the entire open-source community. And [**truly valuable management/monitoring code is never given back to the open-source community**](/en/cloud/dba-vs-rds/#cloud-database-models-and-new-challenges)—this phenomenon has been observed in MongoDB, ElasticSearch, Redis, and MySQL, and the PostgreSQL community should take heed.
 
-Fortunately, the PG ecosystem always has enough resilient people and companies willing to stand up and maintain the balance of the ecosystem, resisting the hegemony of public cloud providers. For example, my own PostgreSQL distribution, [Pigsty](https://pigsty.io/), aims to provide an out-of-the-box, local-first open-source cloud database RDS alternative, raising the baseline of community-built PostgreSQL database services to the level of cloud provider RDS PG. And my column series "[Mudslide of Cloud Computing]()" aims to expose the information asymmetry behind cloud services, helping public cloud providers to operate more honorably—achieving notable success.
+Fortunately, the PG ecosystem always has enough resilient people and companies willing to stand up and maintain the balance of the ecosystem, resisting the hegemony of public cloud providers. For example, my own PostgreSQL distribution, [Pigsty](https://pigsty.io/), aims to provide an out-of-the-box, local-first open-source cloud database RDS alternative, raising the baseline of community-built PostgreSQL database services to the level of cloud provider RDS PG. And my column series "[Mudslide of Cloud Computing](/en/cloud/)" aims to expose the information asymmetry behind cloud services, helping public cloud providers to operate more honorably—achieving notable success.
 
 Although I am a staunch supporter of PostgreSQL, I agree with Peter Zaitsev's view: *"If MySQL completely dies, open-source relational databases would essentially be monopolized by PostgreSQL, and monopoly is not good as it leads to stagnation and reduced innovation. Having MySQL as a competitor is not a bad thing for PostgreSQL to reach its full potential."*
 

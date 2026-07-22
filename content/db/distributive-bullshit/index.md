@@ -16,7 +16,7 @@ tags: [数据库, 分布式系统, 技术评论]
 - [新硬件的冲击](#新硬件的冲击)
 - [伪需求的困境](#伪需求的困境)
 - [迷茫下的挣扎](#迷茫下的挣扎)
-- [Reference](#reference)
+- [Reference](#references)
 
 [![](featured.jpg)](https://mp.weixin.qq.com/s/-eaCoZR9Z5srQ-1YZm1QJA)
 

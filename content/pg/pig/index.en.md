@@ -26,7 +26,7 @@ Ready to give your Postgres superpowers without the usual hassle? Check out **[G
 
 ## Get Started
 
-[Install](#installation) the `pig` package itself with scripts or the traditional yum/apt way.
+[Install](#get-started) the `pig` package itself with scripts or the traditional yum/apt way.
 
 ```bash
 curl -fsSL https://repo.pigsty.io/pig | bash
@@ -72,5 +72,4 @@ pig repo create                  # create repo on current system   (root)
 pig repo boot                    # boot repo from offline package  (root)
 pig repo cache                   # cache repo as offline package   (root)
 ```
-
 

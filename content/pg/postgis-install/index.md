@@ -198,7 +198,7 @@ make install
 
 目前用于导入GML与KML格式的数据，函数`ST_GeomFromGML`和`ST_GeomFromKML`依赖这个库。
 
-目前可以在这个[FTP](ftp://xmlsoft.org/libxml2/)服务器上搞到，目前使用的版本是`2.9.7`
+目前可以在这个[下载服务器](https://download.gnome.org/sources/libxml2/)上获取，目前使用的版本是`2.9.7`
 
 ```bash
 tar -zxf libxml2-sources-2.9.7.tar.gz
@@ -242,5 +242,4 @@ cd boost_1_65_1
 ./bootstrap.sh
 ./b2
 ```
-
 

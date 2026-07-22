@@ -24,7 +24,7 @@ wget https://ftp.postgresql.org/pub/pgadmin3/pgadmin4/v1.1/source/pgadmin4-1.1.t
 tar -xf pgadmin4-1.1.tar.gz && cd pgadmin4-1.1/
 ```
 
-也可以从官方[Git Repo](git://git.postgresql.org/git/pgadmin4.git)下载：
+也可以从官方 [Git Repo](https://github.com/pgadmin-org/pgadmin4) 下载：
 
 ```bash
 git clone git://git.postgresql.org/git/pgadmin4.git
@@ -68,7 +68,6 @@ DEFAULT_SERVER_PORT = 5050
 ```
 修改监听地址为`0.0.0.0`以便从任意IP访问。
 按需修改端口。
-
 
 
 

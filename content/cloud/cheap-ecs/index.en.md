@@ -31,7 +31,7 @@ Pigsty provides out-of-the-box host/database monitoring systems, ready-to-use Ng
 
 We'll also introduce a series of interesting topics:
 
-* [Sample Application: ISD, analyzing and visualizing global weather data](https://vonng.com/cn/blog/note/isd/)
+* [Sample Application: ISD, analyzing and visualizing global weather data](/en/misc/isd/)
 * Database 101: Quick start with the database all-rounder: PostgreSQL
 * Quick visualization start, using Grafana for data analysis charting
 * Static websites: Using hugo to build your own static personal website

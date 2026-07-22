@@ -21,7 +21,7 @@ wget https://ftp.postgresql.org/pub/pgadmin3/pgadmin4/v1.1/source/pgadmin4-1.1.t
 tar -xf pgadmin4-1.1.tar.gz && cd pgadmin4-1.1/
 ```
 
-You can also download from the official [Git Repo](git://git.postgresql.org/git/pgadmin4.git):
+You can also download from the official [Git Repo](https://github.com/pgadmin-org/pgadmin4):
 
 ```bash
 git clone git://git.postgresql.org/git/pgadmin4.git

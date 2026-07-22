@@ -47,7 +47,7 @@ UniSuper currently manages approximately **$125 billion** in funds.
 
 If [**Alibaba-Cloud's global service unavailability**](/cloud/aliyun/) major outage could be called "**epic**," then this Google Cloud outage deserves to be called "**peerless**." The former mainly involved service **availability**, while this outage struck at the core of many enterprises - **data integrity**.
 
-To my knowledge, this should be a new record in cloud computing history - the first such large-scale database deletion. The last similar data integrity incident was [**Tencent Cloud and the "Qianyan CNC" case**](/cloud/sla/#消失的可靠性).
+To my knowledge, this should be a new record in cloud computing history - the first such large-scale database deletion. The last similar data integrity incident was [**Tencent Cloud and the "Qianyan CNC" case**](/en/cloud/sla/#vanished-reliability).
 
 But a small startup company and a major fund managing hundreds of billions are completely incomparable; the scope and scale of impact are completely incomparable - **everything under the entire cloud account was gone!**
 

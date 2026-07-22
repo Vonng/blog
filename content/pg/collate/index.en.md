@@ -164,7 +164,7 @@ INSERT INTO some_chinese VALUES
 SELECT * FROM some_chinese ORDER BY name;
 ```
 
-Execute the following SQL to sort table records according to the default `C` collation rule. You can see that it's actually sorting by the `ascii|unicode` [**code point**](/db/character-encoding#编码字符集-ccs) of characters.
+Execute the following SQL to sort table records according to the default `C` collation rule. You can see that it's actually sorting by the `ascii|unicode` [**code point**](/en/db/character-encoding/#coded-character-set-ccs) of characters.
 
 ```bash
 vonng=# SELECT name, ascii(name) FROM some_chinese ORDER BY name COLLATE "C";
