@@ -1,7 +1,6 @@
 ---
 title: "微信读相册这点事"
 date: 2021-10-09
-hero: /hero/wechat-spyware.jpg
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
 summary: >

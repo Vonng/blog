@@ -18,7 +18,7 @@ tags: [PostgreSQL, 性能, 翻译]
 
 现在他们承载着 20% 的互联网流量，每秒 5500 万个 HTTP 请求。 而他们仅仅使用 15 个 PostgreSQL 集群就做到了这一点。
 
-Cloudflare 使用 PostgreSQL 来存储服务元数据，并处理 OLTP 工作负载。然而在同一个集群支持有着多种不同负载类型的租户是一个难题。一个**集群（Cluster）**是一组数据库服务器，一个**租户（tenant）**是特定用户或用户组专用的隔离数据空间。
+Cloudflare 使用 PostgreSQL 来存储服务元数据，并处理 OLTP 工作负载。然而在同一个集群支持有着多种不同负载类型的租户是一个难题。一个**集群（Cluster）** 是一组数据库服务器，一个**租户（tenant）** 是特定用户或用户组专用的隔离数据空间。
 
 
 
@@ -51,7 +51,7 @@ Cloudflare 使用 PostgreSQL 来存储服务元数据，并处理 OLTP 工作负
 
 ### 2. 惊群
 
-当许多客户端同时查询服务器时就会出现**惊群（Thundering Herd）**的问题，这会导致数据库性能降级。
+当许多客户端同时查询服务器时就会出现**惊群（Thundering Herd）** 的问题，这会导致数据库性能降级。
 
 ![Thundering Herd Problem](scalability-3.jpg)
 

@@ -1,7 +1,6 @@
 ---
 title: Blockchain and Distributed Databases
 date: 2018-06-09
-hero: /hero/blockchain.jpg
 author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [Original Zhihu Article](https://www.zhihu.com/question/275845393/answer/386816571)
 summary: >

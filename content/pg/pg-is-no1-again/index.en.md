@@ -2,7 +2,6 @@
 title: "StackOverflow 2024 Survey: PostgreSQL Has Gone Completely Berserk"
 linkTitle: "SO 2024: PostgreSQL Has Gone Berserk"
 date: 2024-07-25
-hero: /hero/pg-is-no1.jpg
 author: |
   [Feng Ruohang (Vonng)](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [Original Chinese Post](https://mp.weixin.qq.com/s/VD_o1HIUVQHmHGcAS4UNwA)
 summary: |

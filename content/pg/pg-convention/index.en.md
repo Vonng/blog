@@ -1,7 +1,6 @@
 ---
 title: PostgreSQL Convention 2024
 date: 2023-11-27
-hero: /hero/pg-convention.jpg
 author: |
   [Ruohang Feng](https://vonng.com/en/) ([@Vonng](https://vonng.com/en/)) | [Wechat Column](https://mp.weixin.qq.com/s/W1hwbl3qmjC4Dcmadc8uSg)
 summary: >

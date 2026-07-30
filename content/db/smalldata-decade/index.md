@@ -8,7 +8,7 @@ summary: >
 tags: [数据库, DuckDB, OLAP, 分布式系统]
 ---
 
-> [英文原文](https://duckdb.org/2025/05/19/the-lost-decade-of-small-data.html) | [微信原文](https://mp.weixin.qq.com/s/rfv_oSRD4LS-W9xFd_WB9g)** | 2025年05月23日
+> [英文原文](https://duckdb.org/2025/05/19/the-lost-decade-of-small-data.html) | [微信原文](https://mp.weixin.qq.com/s/rfv_oSRD4LS-W9xFd_WB9g) | 2025年05月23日
 
 如果 2012 年 DuckDB 问世，也许那场数据分析向分布式架构的大迁移根本就不会发生。通过在2012年的Macbook笔记本上运行 TPC-H 评测，我们发现数据分析确实在分布式架构上走了十年弯路。
 
@@ -138,7 +138,7 @@ tags: [数据库, DuckDB, OLAP, 分布式系统]
 
 更有意思的是，早在 2012 年，像 DuckDB 这样单机 SQL 引擎完全有能力在可接受的时间内跑完对一个包含 60 亿行数据的数据库的复杂分析查询——而这一次我们甚至**不需要** [把机器泡在干冰](https://www.youtube.com/watch?v=H1N2Jr34jwU&t=1763s)里。
 
-历史不乏各种 **“假如当初……” **的假设。如果 2012 年就出现了 DuckDB，会发生什么呢？主要的条件那时其实都已具备—— [矢量化查询处理技术早在2005年就已经问世](https://www.cidrdb.org/cidr2005/papers/P19.pdf)。如今回头再看那场数据分析向分布式架构的大迁移显得有些傻气，如果那时候就有 DuckDB，也许那场运动根本不会发生。
+历史不乏各种 **“假如当初……”** 的假设。如果 2012 年就出现了 DuckDB，会发生什么呢？主要的条件那时其实都已具备—— [矢量化查询处理技术早在2005年就已经问世](https://www.cidrdb.org/cidr2005/papers/P19.pdf)。如今回头再看那场数据分析向分布式架构的大迁移显得有些傻气，如果那时候就有 DuckDB，也许那场运动根本不会发生。
 
 我们这次使用的基准数据集规模，非常接近 2024 年分析查询输入数据量的 99.9 百分位点。而 Retina MacBook Pro 虽然在 2012 年属于高端机型，但到了 2014 年，许多厂商提供的笔记本电脑也都配备了内置 SSD，且更大容量的内存逐渐变得司空见惯。
 

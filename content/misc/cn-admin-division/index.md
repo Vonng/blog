@@ -1,7 +1,6 @@
 ---
 title: "中国行政区划相关知识"
 date: 2018-12-09
-hero: /hero/china-county.jpg
 summary: |
   有关行政区划的等级、数量，行政区划代码的意义，城乡划分等。
 menu:

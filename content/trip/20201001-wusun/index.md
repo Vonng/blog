@@ -1,7 +1,6 @@
 ---
 title: "Paradise Found：乌孙古道"
 date: 2020-10-11
-hero: /hero/2020_wusu.jpg
 summary: 今年十一走了乌孙古道，翻过了天山，越过那伊犁。虽一周有余，仍回味不已，撰文以记之。
 menu:
   sidebar:

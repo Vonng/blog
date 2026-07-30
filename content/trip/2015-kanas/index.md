@@ -1,7 +1,6 @@
 ---
 title: "北疆瑞士：喀纳斯徒步"
 date: 2016-10-01
-hero: /hero/2016_kanas.jpg
 summary: |
   没有想到，第一次户外徒步的体验竟然是在喀纳斯。
 menu:

@@ -18,7 +18,7 @@ tags: [PostgreSQL, 工具]
 
 当然，安装 PG 这种事算不上有什么技术挑战，真正有难度的是 PostgreSQL 生态中的扩展插件。PostgreSQL 有着数据库世界中独一无二的繁荣扩展生态，提供各种强大而惊人的能力。而 pig 则能够在（Debian / Ubuntu / EL ）三大 Linux 主流发行版（五个大版本 x AMD/ARM 两大架构）上，提供 **340** 个 PG 插件开箱即用的能力。
 
-![](https://pigsty.io/img/ecosystem.jpg)
+![](https://pigsty.io/img/pigsty/ecosystem.jpg)
 
 为什么插件对 PG 至关重要？请参阅《[PostgreSQL正在吞噬数据库世界](/pg/pg-eat-db-world)》
 
@@ -210,7 +210,7 @@ pig 只是一个小工具，真正重要的是这个工具背后的 Pigsty 扩�
 
 ## 谁还用包管理器，Docker不香吗？
 
-我在 《**把 PostgreSQL 放入 Docker 是一个好主意****吗**》这篇文章中深入聊过这个问题，其中特别提到过扩展的问题。总的来说，会遇到：扩展持久化的问题，安装扩展需要重新构建镜像，推送并重启的问题，难以同时组合使用扩展的问题。
+我在 《**把 PostgreSQL 放入 Docker 是一个好主意吗**》这篇文章中深入聊过这个问题，其中特别提到过扩展的问题。总的来说，会遇到：扩展持久化的问题，安装扩展需要重新构建镜像，推送并重启的问题，难以同时组合使用扩展的问题。
 
 > 一个简单的例子是插件与包管理，PostgreSQL提供了很多实用的插件，譬如PostGIS。假如想为数据库安装该插件，在裸机上只要`yum install`然后`create extension postgis`两条命令就可以。但如果是在Docker里，按照Docker的实践原则，用户需要在镜像层次进行这个变更，否则下次容器重启时这个扩展就没了。因而需要修改Dockerfile，重新构建新镜像并推送到服务器上，最后**重启数据库容器**，毫无疑问，要麻烦的多。
 >

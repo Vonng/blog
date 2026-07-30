@@ -1,6 +1,5 @@
 ---
 title: "Cloud-Exit High Availability Secret: Rejecting Complexity Masturbation"
-hero: /hero/uptime.jpg
 date: 2024-01-10
 authors: ["dhh"]
 summary: |

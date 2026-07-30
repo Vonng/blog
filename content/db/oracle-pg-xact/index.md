@@ -8,7 +8,7 @@ summary: >
 tags: [数据库, PostgreSQL, Oracle, 事务系统, 迁移]
 ---
 
-> 原文：**[Laurenz Albe](https://www.cybertec-postgresql.com/en/comparison-of-the-transaction-systems-of-oracle-and-postgresql/)
+> 原文：**[Laurenz Albe](https://www.cybertec-postgresql.com/en/comparison-of-the-transaction-systems-of-oracle-and-postgresql/)**
 
 事务系统是关系型数据库的核心组成部分，在应用开发中，为确保 **数据完整性** 提供了重要支持。 SQL 标准规范了数据库事务的一些功能，但并未明确规定许多细节。因此，关系型数据库的事务系统可能存在显著差异。
 

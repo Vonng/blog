@@ -140,7 +140,7 @@ tags: [下云]
 因此我做了开源版的 RDS for PostgreSQL：Pigsty，让你不依赖 DBA 专家，也能在物理机/虚拟机上一键拉起比 RDS 更强劲的 PostgreSQL，
 并充分利用新硬件的高性能、低成本。解决下云的关键卡点。
 
-![](https://pigsty.io/img/ecosystem.png)
+![](https://pigsty.io/img/pigsty/ecosystem.png)
 
 Pigsty 包含 PG 生态里独一无二的 [440 个扩展插件](https://pgext.cloud/zh)，[远胜云上那些可怜的几十个阉割版插件](https://mp.weixin.qq.com/s/EH7RPB6ImfMHXhOMU7P5Qg)，还提供免配置开箱即用的 [高可用架构](https://pigsty.cc/docs/concept/arch) 与业内领先的监控系统。
 它已在互联网、金融、新能源、军工、制造业等行业广泛应用，目前在 [OSSRANK](https://ossrank.com/cat/368-postgresql-extension-ecosystem?page=2) 全球 PostgreSQL 生态开源榜单里排第 22 名。
@@ -148,4 +148,3 @@ Pigsty 包含 PG 生态里独一无二的 [440 个扩展插件](https://pgext.cl
 Pigsty 采用 AGPLv3 开源协议，开源免费。如果有人觉得“还是希望付费买个安心”，我们也提供明码标价的商业咨询服务兜底。—— 用公道的价格解决实际问题，不玩那些花里胡哨的“杀猪盘”套路。
 
 真正的“弹性”从来都不是“把钱丢给云厂商，自己却一脸懵逼”，而是知道什么时候该花钱、怎么花钱。愿所有数据库用户都能别做大冤种，让自己的时间与金钱花费的更有意义。
-

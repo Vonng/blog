@@ -1,7 +1,6 @@
 ---
 title: "New PostgreSQL Ecosystem Player: ParadeDB"
 date: 2024-02-18
-hero: /hero/paradedb.jpg
 author: |
   [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: >

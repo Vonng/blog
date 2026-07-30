@@ -37,7 +37,7 @@ We build the out-of-the-box PostgreSQL database distribution [Pigsty](https://pi
 
 Pigsty's scenario is very representative — running [the world's most advanced and popular open-source relational database PostgreSQL](/pg/pg-is-no1) on bare operating systems, along with complete software components needed for enterprise-grade database services. This includes 5 major versions of PostgreSQL (12-16) and over a hundred extension plugins. There are also dozens of commonly used host node packages, the complete Prometheus/Grafana observability stack, and auxiliary components like ETCD/MinIO/Redis.
 
-![pigsty-banner.png](https://pigsty.io/img/banner.zh.jpg)
+![pigsty-banner.png](https://pigsty.io/img/pigsty/banner.png)
 
 The testing method is simple: can these EL-native RPM packages run on these other "compatible" systems — at least installation and operation shouldn't fail? During each CI run, we spin up thirty virtual machines with different operating systems for complete installation. The involved software packages are shown below:
 

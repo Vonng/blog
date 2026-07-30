@@ -1,7 +1,6 @@
 ---
 title: "是时候和GPL说再见了【译】"
 date: 2021-09-16
-hero: /hero/goodbye-gpl.jpg
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
 summary: >

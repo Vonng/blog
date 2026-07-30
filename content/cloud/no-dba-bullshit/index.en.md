@@ -1,7 +1,6 @@
 ---
 title: Refuting "Why You Still Shouldn't Hire a DBA"
 date: 2023-03-01
-hero: /hero/no-dba-bullshit.jpg
 author: |
   [Feng Ruohang](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [WeChat Official Account](https://mp.weixin.qq.com/s/CMRrqI2yBWlNbACHpNgL1g)
 summary: >

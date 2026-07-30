@@ -1,7 +1,6 @@
 ---
 title: "论计算思维"
 date: 2014-05-11
-hero: /hero/mind.jpg
 summary: |
   《保密史与保密制度》课后论文，论计算思维及其在本科教育中的意义，以及培养本科生计算思维的方法。
 math: true

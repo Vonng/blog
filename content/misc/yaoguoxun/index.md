@@ -1,7 +1,6 @@
 ---
 title: "与外公的告别"
 date: 2021-01-02
-hero: /hero/grandpa.jpeg
 summary: 外公去世了，实在是出离了悲痛，还是应当写点什么纪念一下。
 menu:
   sidebar:
@@ -64,4 +63,3 @@ menu:
 10.29 守灵，大殓
 
 11.30 火化，下葬，念经，超度
-

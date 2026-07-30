@@ -18,7 +18,7 @@ tags: [Pigsty]
 
 现在 **PIGSTY** 是 "**P**ostgreSQL **I**n **G**reat **STY**le"的首字母缩写，即"**全盛状态的 PostgreSQL**"。而 Pigsty 的定位也不再是 “**开箱即用的PostgreSQL数据库发行版**”，变成了 “**Me Better** **开源 RDS PG 替代**”。
 
-明人不说暗话，这是一个很有野心的目标：**推翻云数据库垄断，砸烂****RDS的饭碗！****详见：《****[云数据库是不是智商税？](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485269&idx=1&sn=a46b8b218331ece956c336b5c2a8df79&chksm=fe4b328ec93cbb98434b258ed1bfa6c63aecd0f3675002db75520edd21456eb39e97455fe995&scene=21#wechat_redirect)》**
+明人不说暗话，这是一个很有野心的目标：**推翻云数据库垄断，砸烂 RDS 的饭碗！详见：《[云数据库是不是智商税？](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485269&idx=1&sn=a46b8b218331ece956c336b5c2a8df79&chksm=fe4b328ec93cbb98434b258ed1bfa6c63aecd0f3675002db75520edd21456eb39e97455fe995&scene=21#wechat_redirect)》**
 
 
 
@@ -32,7 +32,7 @@ tags: [Pigsty]
 
 # 2.0 新特性
 
-Pigsty 是一个**更好的、****本地优先**的，**开源** **RDS for PostgreSQL** **替代。**
+Pigsty 是一个**更好的、本地优先**的，**开源** **RDS for PostgreSQL** **替代。**
 
 ![features](features.webp)
 
@@ -44,7 +44,7 @@ PostgreSQL 是一个足够完美的数据库内核，但它需要更多工具与
 
 Pigsty 深度整合了 PostgreSQL 生态的三大核心扩展插件 **PostGIS**，**TimescaleDB**，**Citus**，并确保它们可以协同工作，提供分布式的时序地理空间数据库能力。Pigsty 还提供了运行企业级 RDS 服务的所需软件，打包所有依赖为离线软件包，所有组件均可在无需互联网访问的情况下一键完成安装部署，进入生产可用状态。
 
-在 Pigsty 中功能组件被抽象 **模块**，可以自由组合以应对多变的需求场景。**`INFRA`** 模块带有完整的现代监控技术栈，而 `NODE` 模块则将节点调谐至指定状态并纳入监控。在多个节点上安装 **`PGSQL`** 模块会自动组建出一个基于主从复制的高可用数据库集群，而同样的 **`ETCD`** 模块则为数据库高可用提供共识与元数据存储。可选的 **`MINIO`**模块可以用作图像视频等大文件存储并可选用为数据库备份仓库。与 PG 有着极佳相性的 **`REDIS`** 亦为 Pigsty 所支持，更多的模块（如**`GPSQL`**, **`MYSQL`**, **`KAFKA`**）将会在后续加入，你也可以开发自己的模块并自行扩展 Pigsty 的能力。
+在 Pigsty 中功能组件被抽象 **模块**，可以自由组合以应对多变的需求场景。**`INFRA`** 模块带有完整的现代监控技术栈，而 `NODE` 模块则将节点调谐至指定状态并纳入监控。在多个节点上安装 **`PGSQL`** 模块会自动组建出一个基于主从复制的高可用数据库集群，而同样的 **`ETCD`** 模块则为数据库高可用提供共识与元数据存储。可选的 **`MINIO`** 模块可以用作图像视频等大文件存储并可选用为数据库备份仓库。与 PG 有着极佳相性的 **`REDIS`** 亦为 Pigsty 所支持，更多的模块（如 **`GPSQL`**, **`MYSQL`**, **`KAFKA`**）将会在后续加入，你也可以开发自己的模块并自行扩展 Pigsty 的能力。
 
 ![modules](modules.webp)
 

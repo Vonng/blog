@@ -1,7 +1,6 @@
 ---
 title: Understanding Character Encoding
 date: 2018-07-01
-hero: /hero/character-encoding.jpg
 author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: >

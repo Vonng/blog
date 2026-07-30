@@ -76,7 +76,7 @@ A case in point is the PostGIS extension, which sets the de facto standard in ge
 
 This isn’t the first time; we’re witnessing it again in the oldest and largest subdomain: OLAP analytics. But PostgreSQL’s ambition doesn’t stop at OLAP; it’s eyeing the entire database world!
 
-![ecosystem.jpg](https://pgsty.com/img/ecosystem.jpg)
+![ecosystem.jpg](https://pigsty.io/img/pigsty/ecosystem.jpg)
 
 What makes PostgreSQL so capable? Sure, it's advanced, but so is Oracle; it's open-source, as is MySQL. PostgreSQL's edge comes from being **both advanced and open-source**, allowing it to compete with Oracle/MySQL. But its true uniqueness lies in its **extreme extensibility and thriving extension ecosystem**.
 
@@ -96,7 +96,7 @@ Why? Because pgvector's creators didn't need to worry about the database's gener
 
 For example, ElasticSearch was developed on the Lucene search library, while the Rust ecosystem has an improved next-gen full-text search library, [Tantivy](https://github.com/quickwit-oss/tantivy), as a Lucene alternative. ParadeDB only needs to wrap and connect it to PostgreSQL's interface to offer search services comparable to ElasticSearch. More importantly, it can stand on the shoulders of PostgreSQL, leveraging the entire PG ecosystem's united strength (e.g., mixed searches with PG Vector) to "unfairly" compete with another dedicated database.
 
-[![img](https://pigsty.io/img/extension.png)](https://pigsty.cc/docs/reference/extension/)
+[![img](https://pigsty.io/img/pigsty/ecosystem.jpg)](https://pigsty.cc/docs/reference/extension/)
 
 > Pigsty has 255 [**extensions**](https://pigsty.cc/docs/reference/extension/) available. And there are [**1000+**](https://gist.github.com/joelonsql/e5aa27f8cc9bd22b8999b7de8aee9d47) more in the ecosystem
 
@@ -155,7 +155,7 @@ Accordingly, the main conflict is no longer the database kernel itself but two d
 
 Kernel remains lukewarm, with MariaDB, the fork of MySQL’s parent, nearing delisting, while AWS, profiting from offering services and extensions on top of the free kernel, thrives. Investment has flowed into numerous PG ecosystem extensions and service distributions: Citus, TimescaleDB, Hydra, PostgresML, ParadeDB, FerretDB, StackGres, Aiven, Neon, Supabase, Tembo, PostgresAI, and our own PG distro — — [Pigsty](https://pigsty.io/).
 
-![](https://pigsty.io/img/players.png)
+![](https://pigsty.io/img/pigsty/players.png)
 
 
 ------
@@ -205,7 +205,7 @@ However, I believe this capability should be as accessible as free software, lik
 
 Thus, I created [**Pigsty**](https://pigsty.io/), a battery-included, local-first PostgreSQL distribution as an open-source [RDS](/cloud/rds) Alternative, which aims to harness the collective power of PostgreSQL ecosystem extensions and democratize access to production-grade database services.
 
-[![img](https://pigsty.io/img/homepage.en.png)](https://pigsty.io)
+[![img](https://pigsty.io/img/pigsty/homepage.png)](https://pigsty.io)
 
 > Pigsty stands for **P**ostgreSQL **i**n **G**reat **STY**le, representing the zenith of PostgreSQL.
 
@@ -236,7 +236,7 @@ Our aim is to integrate the strengths within the PostgreSQL ecosystem, creating 
 - [**FerretDB**](https://github.com/Vonng/pigsty/tree/master/app/ferretdb): An open-source MongoDB alternative based on PostgreSQL, compatible with MongoDB APIs/drivers.
 - [**PostgresML**](https://github.com/Vonng/pigsty/tree/master/app/pgml): Facilitates classic machine learning algorithms, calling, deploying, and training AI models with SQL.
 
-[![img](https://pigsty.io/img/desc.png)](https://pigsty.io)
+[![img](https://pigsty.io/img/pigsty/desc.png)](https://pigsty.io)
 
 Developers, your choices will shape the future of the database world. I hope my work helps you better utilize the world’s most advanced open-source database kernel: **PostgreSQL**.
 

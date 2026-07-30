@@ -1,7 +1,6 @@
 ---
 title: Will DBAs Be Eliminated by Cloud?
 date: 2024-02-02
-hero: /hero/dba-vs-rds.jpg
 author: |
   [Feng Ruohang](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [WeChat](https://mp.weixin.qq.com/s/W1hwbl3qmjC4Dcmadc8uSg)
 summary: >

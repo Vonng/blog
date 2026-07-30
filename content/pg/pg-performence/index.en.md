@@ -2,7 +2,6 @@
 title: How Powerful is PostgreSQL Really?
 linkTitle: How Powerful is PostgreSQL Really?
 date: 2022-08-22
-hero: /hero/pg-performence.jpg
 author: |
   [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: |

@@ -142,8 +142,8 @@ Claude Code 用 TypeScript 编写，通过 `npm install -g` 全局安装分发�
 
 而说到 NPM 生态的风险，Source Map 泄露其实只是最温和的那种。**就在今天（3 月 31 日），NPM 生态爆出了一起严重得多的事件：Axios 供应链投毒攻击。**
 
-**一个 `npm install`，两秒钟，木马就已经开始向攻击者的服务器回传数据了——`npm` 甚至还没解析完依赖树。
-** StepSecurity 的安全研究者称这是“有记录以来针对 Top-10 NPM 包最精密的供应链攻击之一”。Anthropic 的 Source Map 泄露简直是“小巫见大巫”。
+**一个 `npm install`，两秒钟，木马就已经开始向攻击者的服务器回传数据了——`npm` 甚至还没解析完依赖树。**
+StepSecurity 的安全研究者称这是“有记录以来针对 Top-10 NPM 包最精密的供应链攻击之一”。Anthropic 的 Source Map 泄露简直是“小巫见大巫”。
 
 老实说，前端圈 JS、TS 圈的这些花活，真是让人瞠目结舌。
 

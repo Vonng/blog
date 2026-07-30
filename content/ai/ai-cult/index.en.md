@@ -1,7 +1,6 @@
 ---
 title: AI Cult Rhapsody
 date: 2023-04-10
-hero: /hero/ai-cult.jpg
 author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: >

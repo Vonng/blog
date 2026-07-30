@@ -32,7 +32,7 @@ tags: [PostgreSQL, PG生态, 翻译]
 >
 > —— 《[PostgreSQL正在吞噬数据库世界](https://pigsty.io/zh/pg/pg-eat-db-world/)》，冯若航（me！）
 
-> 在初创公司中简化技术栈、减少组件、加快开发速度、降低风险并提供更多功能特性的方法之一就是**“一切皆用 Postgres”**。Postgres 能够取代许多后端技术，包括 Kafka、RabbitMQ、ElasticSearch，Mongo和 Redis ，至少到数百万用户时都毫无问题。
+> 在初创公司中简化技术栈、减少组件、加快开发速度、降低风险并提供更多功能特性的方法之一就是 **“一切皆用 Postgres”**。Postgres 能够取代许多后端技术，包括 Kafka、RabbitMQ、ElasticSearch，Mongo和 Redis ，至少到数百万用户时都毫无问题。
 >
 > ——《[技术极简主义：一切皆用Postgres](https://pigsty.io/zh/pg/just-use-pg/)》， Stephan Schmidt
 
@@ -225,7 +225,7 @@ PostgreSQL 是答案。PostgreSQL 是我们解放自我，并构建未来的方�
 
 而且 PostgreSQL 还在不断进步中。PostgreSQL 社区在不断改进内核。而现在有更多的公司参与到 PostgreSQL 的开发中，包括那些巨无霸供应商。
 
-![pigsty-ecosystem.png](https://pigsty.io/img/ecosystem.jpg)
+![pigsty-ecosystem.png](https://pigsty.io/img/pigsty/ecosystem.jpg)
 
 > 今天的 PostgreSQL 生态 —— 《[PostgreSQL正在吞噬数据库世界](https://pigsty.io/zh/pg/pg-eat-db-world/)》
 

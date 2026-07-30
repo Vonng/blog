@@ -1,7 +1,6 @@
 ---
 title: Understanding Time - Leap Years, Leap Seconds, Time and Time Zones
 date: 2018-12-11
-hero: /hero/reason-about-time.jpg
 author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat](https://mp.weixin.qq.com/s/JNLMAzpLnk6y9lCSpClPlQ)
 summary: >

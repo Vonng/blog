@@ -200,7 +200,7 @@ AWS 这些云厂商每年从托管 Postgres 与相关数据库服务里，赚取
 但 Postgres 核心团队不会从中分到一个铜板。
 同样的逻辑反复在 Redis、Elasticsearch、MongoDB 上演过，剧情大同小异。
 
-PG 生态里像 pgBackRest 这种不算内核、但实质上撑起整个生态的支柱性项目** 还有很多：
+PG 生态里像 pgBackRest 这种不算内核、但实质上撑起整个生态的支柱性项目还有很多：
 
 - **Patroni**：PG 高可用的事实标准之一，在大量自建集群和一部分 K8s Operator 后面都是它
 - **PgBouncer**：PG 连接池的事实标准，在稍大规模的 Postgres 部署里极其常见

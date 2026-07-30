@@ -1,7 +1,6 @@
 ---
 title: "Why Does PostgreSQL Have a Bright Future?"
 date: 2021-05-08
-hero: /hero/pg-is-great.jpg
 author: |
   [Feng Ruohang (Vonng)](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [Original Chinese Post](https://mp.weixin.qq.com/s/KBypNeeM4puvzGiKFJ1FmQ)
 summary: >

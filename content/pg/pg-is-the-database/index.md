@@ -43,7 +43,7 @@ PostgreSQL 并不是一个简单的关系型数据库，而是一个数据管理
 但这种第三梯队的性能表现，也绝对说不上足够好，与专注于 OLAP 的第一梯队组件：ClickHouse，DuckDB 相比，
 在分析性能上仍然有十几倍的性能差距。鸡肋鸡肋，食之无味，弃之可惜。
 
-**然而，[**DuckDB**](https://duckdb.org/) ** 的出现改变了这一切！**
+**然而，[DuckDB](https://duckdb.org/) 的出现改变了这一切！**
 
 DuckDB 也许是 OLAP 实战性能最快的数据库了，和 Clickhouse 不相上下，同为版本 T0。
 然而与 CK 不同的是，DuckDB 是一个嵌入式文件数据库，
@@ -126,7 +126,7 @@ PostgreSQL 允许用户开发功能模块，复用数据库公共基础设施，
 
 再比如，ElasticSearch 基于 Lucene 搜索库开发，而 Rust 生态有一个改进版的下一代 Tantivy 全文搜索库作为 Lucene 的替代；而 ParadeDB 只需要将其封装对接到 PostgreSQL 的接口上，即可提供比肩 ElasticSearch 的搜索服务。更重要的是，它可以站在 PostgreSQL 巨人的肩膀上，借用 PG 生态的全部合力（例如，与 PG Vector 做混合检索），不讲武德地用数据库全能王的力量，去与一个专用数据库单品来对比。
 
-[![img](https://pigsty.io/img/extension.png)](https://pgext.cloud/zh/list)
+[![img](https://pigsty.io/img/pigsty/ecosystem.jpg)](https://pgext.cloud/zh/list)
 
 > Pigsty 中提供了 [**255**](https://pgext.cloud/zh/list) 个可用扩展插件，在生态中还有 1000+ 扩展
 
@@ -144,8 +144,8 @@ PostgreSQL 允许用户开发功能模块，复用数据库公共基础设施，
 因此可以 Scale  —— PG 的可扩展性允许无数个团队并行探索数据库前研发展方向，而扩展全部都是的可选的，不会影响主干核心能力的稳定性。
 那些非常强大成熟的特性，则有机会以稳定的形态进入主干中。
 
-通过极致可扩展性的魔法，PostgreSQL 做到了**守正出奇，实现了主干极致稳定性与功能敏捷性的统一。
-**扎实的基本盘配上惊人的演进速度，让它成为了数据库世界中的一个异数，改变了数据库世界的游戏规则。
+通过极致可扩展性的魔法，PostgreSQL 做到了**守正出奇，实现了主干极致稳定性与功能敏捷性的统一。**
+扎实的基本盘配上惊人的演进速度，让它成为了数据库世界中的一个异数，改变了数据库世界的游戏规则。
 
 
 
@@ -210,7 +210,7 @@ PostgreSQL 对于绝大多数场景都已经是一个足够完美的数据库内
 做内核的厂商不温不火，MariaDB 作为 MySQL 的亲爹 Fork 甚至都已经濒临退市，Oracle 开掉了 MySQL 的研发团队只留下一些 Heatweave 的人；而白嫖内核自己做服务与扩展卖 RDS 的 AWS 可以赚的钵满盆翻。
 投资机构已经出手了许多 PG 生态的扩展插件与服务发行版：Citus，TimescaleDB，Hydra，PostgresML，ParadeDB，FerretDB，StackGres，Aiven，Neon，Supabase，Tembo，PostgresAI，以及我们正在做的 Pigsty 。
 
-![](https://pigsty.io/img/players.png)
+![](https://pigsty.io/img/pigsty/players.png)
 
 
 
@@ -247,7 +247,7 @@ PostgreSQL 生态中的一个困境就是，许多扩展插件，生态工具都
 所以我打造了 **[Pigsty](https://pigsty.cc)** —— 一个开箱即用的开源 PostgreSQL 数据库发行版，
 旨在凝聚 PostgreSQL 生态扩展的合力，并把提供优质数据库服务的能力普及到每个用户手中。
 
-![](https://pigsty.io/img/banner.en.jpg)
+![](https://pigsty.io/img/pigsty/banner.png)
 
 > Pigsty 是 **P**ostgreSQL **i**n **G**reat **STY**le 的缩写，意为 **PostgreSQL 的全盛状态**。
 
@@ -260,7 +260,7 @@ Pigsty 六点价值主张的首字母合起来，则为 Pigsty 提供了另外�
 >
 > 属于你的图形化 Postgres 基础设施服务工具箱。
 
-![](https://pigsty.io/img/homepage.zh.png)
+![](https://pigsty.io/img/pigsty/homepage.png)
 
 **可扩展的 PostgreSQL** 是这个发行版中最重要的价值主张。在即将发布的 [**Pigsty 4.0**](https://pigsty.cc) 中，我们整合了上面提到的所有这些扩展，
 整整四百四十个开箱即用的扩展，为六个PG大版本与14种Linux平台而构建，开箱即用。真正做到让 PG 进入全盛状态。并确保每个用户都能轻松用得上这样的能力。

@@ -1,7 +1,6 @@
 ---
 title: "互联网之殇"
 date: 2018-12-12
-hero: /hero/winter-mao.jpg
 summary: |
   前途是不一定是光明的，道路肯定是曲折的。
 menu:

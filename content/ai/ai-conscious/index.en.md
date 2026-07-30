@@ -1,7 +1,6 @@
 ---
 title: Will AI Have Self-Awareness?
 date: 2023-04-10
-hero: /hero/ai-conscious.jpg
 author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: >

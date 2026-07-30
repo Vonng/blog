@@ -79,7 +79,7 @@ Our recently released open-source RDS PostgreSQL solution - Pigsty - recently su
 
 Besides MSSQL, PostgreSQL's ecosystem also has Oracle replacements: PolarDB O and IvorySQL; MongoDB replacements: FerretDB and PongoDB; [plus over 300 extension plugins providing various functionalities](https://pgext.cloud/zh/list).
 
-![](https://pigsty.io/img/ecosystemjpg)
+![](https://pigsty.io/img/pigsty/ecosystem.jpg)
 
 In fact, almost the entire database world is being impacted by PostgreSQL - except those carving out different ecological niches (SQLite, DuckDB, MinIO) or simply PostgreSQL shells (Supabase, RDS, Aurora/Polar).
 
@@ -87,6 +87,6 @@ In fact, almost the entire database world is being impacted by PostgreSQL - exce
 
 Our recently released open-source RDS PostgreSQL solution - Pigsty - recently supports these PG replacement kernels, allowing users to provide MSSQL, Oracle, MongoDB, Firebase compatibility replacement capabilities in one PostgreSQL deployment.
 
-![](https://pigsty.io/img/kernels.jpg)
+![](https://pigsty.io/img/pigsty/kernels.jpg)
 
 But given space constraints, that's content for the next few articles.

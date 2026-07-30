@@ -1,7 +1,6 @@
 ---
 title: "爱情观"
 date: 2012-08-12
-hero: /hero/on-love.jpg
 summary: 决定恋爱与婚姻的到底是什么？
 menu:
   sidebar:

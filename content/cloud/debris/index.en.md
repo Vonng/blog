@@ -1,6 +1,5 @@
 ---
 title: "Cloud Computing Mudslide: Deconstructing Public Cloud with Data"
-hero: /hero/debris.jpg
 date: 2023-07-08
 author: |
   [Feng Ruohang](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [WeChat](https://mp.weixin.qq.com/s/eag0CqfUTeNPbIB6TZqFVg) 

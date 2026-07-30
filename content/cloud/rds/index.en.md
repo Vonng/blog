@@ -1,7 +1,6 @@
 ---
 title: Are Cloud Databases an IQ Tax?
 date: 2023-01-30
-hero: /hero/rds.jpg
 author: |
   [Feng Ruohang](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [WeChat Original](https://mp.weixin.qq.com/s/LefEAXTcBH-KBJNhXNoc7A) | [Vonng Blog](/en/cloud/rds/)
 summary: >
@@ -199,7 +198,7 @@ Indeed, sometimes cloud vendors provide good-performance local NVMe SSDs, but th
 
 ![](rds-6.png)
 
-![](https://pigsty.io/img/dashboard.jpg)
+![](https://pigsty.io/img/pigsty/dashboard.jpg)
 
 > Public [Demo](https://demo.pigsty.cc): https://demo.pigsty.cc
 

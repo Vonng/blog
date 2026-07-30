@@ -1,7 +1,6 @@
 ---
 title: "ISD数据集：分析全球120年气候变化"
 date: 2023-06-27
-hero: /hero/isd.jpg
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
 summary: >

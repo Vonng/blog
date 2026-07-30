@@ -1,7 +1,6 @@
 ---
 title: "AI神教狂想曲"
 date: 2023-04-10
-hero: /hero/ai-cult.jpg
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
 summary: >

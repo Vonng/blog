@@ -1,7 +1,6 @@
 ---
 title: "What Are PostgreSQL's Advantages?"
 date: 2018-06-10
-hero: /hero/pg-is-good.jpg
 author: |
   [Feng Ruohang (Vonng)](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [Original Chinese Post](https://mp.weixin.qq.com/s/W_FbtZXqaa-rlZyDc4xB-A)
 summary: >

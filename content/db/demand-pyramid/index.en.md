@@ -1,7 +1,6 @@
 ---
 title: Database Demand Hierarchy Pyramid
 date: 2023-05-10
-hero: /hero/demand-pyramid.jpg
 author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat](https://mp.weixin.qq.com/s/1xR92Z67kvvj2_NpUMie1Q)
 summary: >

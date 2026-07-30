@@ -1,7 +1,6 @@
 ---
 title: "Database in K8S: Pros & Cons"
 date: 2023-12-06
-hero: /hero/db-in-k8s.jpg
 author: vonng
   [Ruohang Feng](https://vonng.com/en/) ([@Vonng](https://vonng.com/en/)) | 
 summary: >

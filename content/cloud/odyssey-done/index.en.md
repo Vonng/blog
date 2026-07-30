@@ -1,7 +1,6 @@
 ---
 title: "DHH: Cloud-Exit Saves Over Ten Million, More Than Expected!"
 date: 2023-07-07
-hero: /hero/odyssey.jpg
 author: |
   [DHH](https://world.hey.com/dhh) | Trans: [Feng Ruohang](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [WeChat Official Account](https://mp.weixin.qq.com/s/mknFXO5DSfxw7st8hhxjBQ)
 summary: >
@@ -72,4 +71,3 @@ Here's DHH's complete cloud exit journey with Q&A:
 - [Optimize Carbon-Based Bio Cores First, Then Silicon CPU Cores](https://mp.weixin.qq.com/s/Yxyir8kjRDUZwkkE_dscZQ)
 - [Single-Tenant Era: SaaS Paradigm Shift](https://mp.weixin.qq.com/s/jKv9l_ro6rWei4QnXck-zw)
 - [Refuse Complexity Masturbation, Maintain Stability Post-Cloud-Exit](https://mp.weixin.qq.com/s/yIVal-9U6_TXX-dZpVtjBg)
-

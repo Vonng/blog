@@ -1,7 +1,6 @@
 ---
 title: PostgreSQL Wins 2024 Database of the Year Award! (Fifth Time)
 date: 2024-01-05
-hero: /hero/pg-in-2024.jpg
 author: |
   [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat](https://mp.weixin.qq.com/s/nm7wQ8U13YqO7SP2tI9PHw)
 summary: >

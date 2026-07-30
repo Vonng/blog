@@ -650,7 +650,7 @@ The final nail in the coffin, which convinced me that MongoDB was planning on sh
 
 Worded very cautiously, and omitting any incriminating information, the video nonetheless ended with this summary:
 
-> The BI Connector receives connections and can speak the **same wire protocol that the Postgres database****does**, so if your reporting tool can connect via ODBC, we will have an ODBC driver that you will be able to use from your tool to the BI Connector.
+> The BI Connector receives connections and can speak the **same wire protocol that the Postgres database does**, so if your reporting tool can connect via ODBC, we will have an ODBC driver that you will be able to use from your tool to the BI Connector.
 
 At that point, I had zero doubt: the production version of the BI connector, to be shipped with MongoDB 3.2, was, in fact, the PostgreSQL database in disguise!
 

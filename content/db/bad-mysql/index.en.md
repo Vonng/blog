@@ -1,7 +1,6 @@
 ---
 title: "MySQL's ACID is a real mess"
 date: 2023-12-28
-hero: /hero/bad-mysql.jpg
 author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat Official Account](https://mp.weixin.qq.com/s/gQZ3Q5JKV8gaBNhc1puPcA)
 summary: >

@@ -1,7 +1,6 @@
 ---
 title: "尘世闲游：广州见闻"
 date: 2021-01-17
-hero: /hero/2021-guangzhou.jpg
 summary: |
   借着参加2020PostgreSQL中国大会的机会，顺便在广州逛了一天。还是很有趣的地方。
 menu:

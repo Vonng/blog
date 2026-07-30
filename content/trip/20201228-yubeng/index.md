@@ -1,7 +1,6 @@
 ---
 title: "跨年祈福：雨崩转山"
 date: 2021-01-05
-hero: /hero/2020_yubeng.jpg
 summary: |
   多灾多难的2020年，需要好好祈福。3天走完梅里内转，神瀑神湖冰湖。
 menu:
@@ -220,7 +219,6 @@ menu:
 <video width="320" height="240" controls>
   <source src="/trip/20201228-yubeng/slide.mp4" type="video/mp4">
 </video>
-
 
 
 

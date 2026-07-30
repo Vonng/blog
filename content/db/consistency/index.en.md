@@ -1,7 +1,6 @@
 ---
 title: "Consistency: An Overloaded Term"
 date: 2018-05-08
-hero: /hero/consistency.jpg
 author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [Zhihu Original](https://www.zhihu.com/question/275845393/answer/386816571)
 summary: >

@@ -1,7 +1,6 @@
 ---
 title: "Garbage QCloud CDN: From Getting Started to Giving Up?"
 date: 2023-03-08
-hero: /hero/cdn.jpg
 author: |
   [Vonng](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [WeChat](https://mp.weixin.qq.com/s/ANFnbDXwuhKI99fgYRZ9ug)
 summary: >

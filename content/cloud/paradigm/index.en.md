@@ -1,7 +1,6 @@
 ---
 title: "Paradigm Shift: From Cloud to Local-First"
 date: 2023-02-03
-hero: /hero/paradigm.jpg
 author: |
   [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: >

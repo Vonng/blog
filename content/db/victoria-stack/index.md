@@ -15,7 +15,7 @@ tags: [可观测性, VictoriaMetrics, Prometheus, 监控]
 
 你可能没听说过 VictoriaMetrics，但肯定听说过 Prometheus —— 监控领域的事实标准。VictoriaMetrics 就是 Prometheus 的上位替代品。由白俄罗斯大神程序员 Aliaksandr Valialkin 单枪匹马搞出来，吊打业界的神器。
 
-老冯还记得五年前在探探的时候，那时候我们的监控系统里有五千万左右的时间序列，用了十二台物理机（64C 256G）跑 Prometheus 集群。后来我把 Prometheus 换成了三节点的分布式 VictoriaMetrics，结果轻松扛下来了。后来我还试过，**一台顶配物理机也能扛住，这实在是太惊人了！**那时候我测试下来，VM 的内存/磁盘使用量是 Prometheus 的 1/4 ，查询性能则是 4x 左右，着实让我印象深刻。
+老冯还记得五年前在探探的时候，那时候我们的监控系统里有五千万左右的时间序列，用了十二台物理机（64C 256G）跑 Prometheus 集群。后来我把 Prometheus 换成了三节点的分布式 VictoriaMetrics，结果轻松扛下来了。后来我还试过，**一台顶配物理机也能扛住，这实在是太惊人了！** 那时候我测试下来，VM 的内存/磁盘使用量是 Prometheus 的 1/4 ，查询性能则是 4x 左右，着实让我印象深刻。
 
 业界有很多性能对比（Benchmark），VM 基本都吊打 InfluxDB 、Prometheus、TimescaleDB 的。不管是写入吞吐量还是高基数查询（High Cardinality），VM 都是碾压级的存在。
 

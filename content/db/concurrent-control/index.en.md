@@ -1,7 +1,6 @@
 ---
 title: "Concurrency Anomalies Explained"
 date: 2018-06-19
-hero: /hero/acid-anomaly.jpg
 author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat Public Account](https://mp.weixin.qq.com/s/xw_rwxXgIuCL-pcRZHF03w) | [Zhihu Original](https://zhuanlan.zhihu.com/p/38217080)
 summary: >

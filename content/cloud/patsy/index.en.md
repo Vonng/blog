@@ -142,7 +142,7 @@ I've always advocated cloud database capabilities should be democratized to all 
 Therefore I made open source RDS for PostgreSQL: Pigsty, letting you spin up PostgreSQL stronger than RDS with one click on physical/virtual machines without depending on DBA experts,
 fully utilizing new hardware's high performance and low costs. Solving the key cloud exit bottleneck.
 
-![](https://pigsty.io/img/ecosystem.png)
+![](https://pigsty.io/img/pigsty/ecosystem.png)
 
 Pigsty contains PostgreSQL ecosystem's unique [351 extension plugins](https://pgext.cloud/zh), [far superior to cloud's pitiful dozens of castrated plugins](https://mp.weixin.qq.com/s/EH7RPB6ImfMHXhOMU7P5Qg), plus provides zero-configuration out-of-box [high availability architecture](https://pgext.cloud/zh/pgsql/arch) and industry-leading monitoring systems.
 

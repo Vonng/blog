@@ -1,7 +1,6 @@
 ---
 title: "RDS: The Idiot Tax"
 date: 2023-01-30
-hero: /hero/rds.jpg
 author: |
   [Ruohang Feng](https://vonng.com/en/) ([@Vonng](https://vonng.com/en/)) | [WeChat](https://mp.weixin.qq.com/s/LefEAXTcBH-KBJNhXNoc7A)
 summary: >
@@ -193,7 +192,7 @@ Indeed, sometimes cloud providers do offer sufficiently good local NVMe SSDs, bu
 
 ![](rds-6.png)
 
-![](https://pigsty.io/img/dashboard.jpg)
+![](https://pigsty.io/img/pigsty/dashboard.jpg)
 
 > Public [Demo](https://demo.pigsty.cc): https://demo.pigsty.cc
 
@@ -326,4 +325,3 @@ Pigsty allows you to practice the ultimate FinOps principle — running producti
 【4】[AWS Pricing Calculator](https://calculator.aws/#/addService/RDSPostgreSQL)
 
 【5】 [AWS Pricing Calculator](https://calculator.amazonaws.cn/#/?trk=pricing-ban) (China NingXia)
-

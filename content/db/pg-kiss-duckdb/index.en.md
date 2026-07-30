@@ -92,7 +92,7 @@ OLTP vs. OLAP has historically been a massive fault line in databases. We’ve s
 
 That scenario suggests huge **cost savings** and simpler engineering. No more data migration migraines or maintaining two different data stacks. Anyone who nails that seamless integration might detonate a deep-sea bomb in the big-data market.
 
-![img](https://pigsty.iohttps://pigsty.io/img/ecosystem.jpg)
+![img](https://pigsty.io/img/pigsty/ecosystem.jpg)
 
 People call Postgres the “Linux kernel of databases” — open source, infinitely extensible, morphable into anything: even mimic [MySQL](https://pigsty.io/docs/kernel/openhalo/), [Oracle](https://pigsty.io/docs/kernel/ivorysql/), [MsSQL](https://pigsty.io/docs/kernel/babelfish/) and [Mongo](https://pigsty.io/pg/ferretdb/). We’ve already watched PG conquer geospatial, time series, NoSQL, and vector search through its extension hooks. **OLAP** might just be its biggest conquest yet.
 

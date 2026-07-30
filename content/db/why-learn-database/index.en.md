@@ -1,7 +1,6 @@
 ---
 title: Why Study Database Principles
 date: 2018-04-20
-hero: /hero/why-learn-database.jpg
 author: |
   [Feng Ruohang](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [WeChat](https://mp.weixin.qq.com/s/PePSPDfyJt-ZkKjH8sUa6w) | [Zhihu](https://www.zhihu.com/question/273489729/answer/377084748)
 summary: >

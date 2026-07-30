@@ -1,7 +1,6 @@
 ---
 title: "简明实用密码学"
 date: 2020-03-12
-hero: /hero/handy-cryptography.jpg
 author: |
   [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
 summary: >

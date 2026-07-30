@@ -92,7 +92,7 @@ tags: [PostgreSQL, PG生态, 翻译]
 
 我认为 "**开发者特性** "（developer features）是一个相当宽泛的类目，核心在于如何让用户围绕 PostgreSQL 来架构 & 构建应用。这里包括：SQL语法、函数、[存储过程语言支持](https://wiki.postgresql.org/wiki/PL_Matrix)，以及帮助用户从其他数据库系统迁移到 PostgreSQL 的功能。一个具体的创新例子是在 PostgreSQL 14 中引入的 [`multirange`](https://www.postgresql.org/docs/current/rangetypes.html) 数据类型，它允许用户将一些不连续的 **范围（Range）** 聚合在一起，这个特性非常实用，我个人在实现一个调度功能时，用它[将数百行PL/pgSQL代码减少到三行](https://www.crunchydata.com/blog/better-range-types-in-postgres-14-turning-100-lines-of-sql-into-3)。开发者特性也关乎 PostgreSQL 如何支持新出现的工作负载：例如[JSON 或向量](https://jkatz05.com/post/postgres/vectors-json-postgresql/)。
 
-值得一提的是，许多开发者特性创新主要出现在**扩展（Extension）**上，而这正是 PostgreSQL 可扩展模型的优势所在。然而就数据库服务器本身而言，PostgreSQL 在某些开发者特性上的发布速度相比过去有所落后。例如，尽管PostgreSQL是[第一个将JSON作为可查询数据类型](https://jkatz05.com/post/postgres/vectors-json-postgresql/)的关系数据库，但它在实现 SQL/JSON 标准锁定义的语法与特性上已经开始变得迟缓。PostreSQL 16 发布了 SQL/JSON 中的一些语法特性，2024 年也会有更多的努力用在实现 SQL/JSON 标准上。
+值得一提的是，许多开发者特性创新主要出现在**扩展（Extension）** 上，而这正是 PostgreSQL 可扩展模型的优势所在。然而就数据库服务器本身而言，PostgreSQL 在某些开发者特性上的发布速度相比过去有所落后。例如，尽管PostgreSQL是[第一个将JSON作为可查询数据类型](https://jkatz05.com/post/postgres/vectors-json-postgresql/)的关系数据库，但它在实现 SQL/JSON 标准锁定义的语法与特性上已经开始变得迟缓。PostreSQL 16 发布了 SQL/JSON 中的一些语法特性，2024 年也会有更多的努力用在实现 SQL/JSON 标准上。
 
 话既然说到这儿了，我们应当着力于 PostgreSQL 中那些**无法通过扩展插件实现的开发者特性**，比如 SQL标准特性。我的建议是集中精力关注那些其他数据库已经具备的功能，比如进一步实现 SQL/JSON 标准（例如： `JSON_TABLE`）、系统层面的版本化表（对于审计、闪回，与在特定时间点进行的时态查询非常有用），以及对模块的支持（对于“打包”存储过程来说尤其重要）。
 

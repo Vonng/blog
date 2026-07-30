@@ -210,7 +210,7 @@ FROM pg_datasentinel_wraparound;
 
 > [**`datasketches`**](https://pigsty.cc/ext/e/datasketches) | [**GitHub**](https://github.com/apache/datasketches-postgresql)
 
-Apache DataSketches 是 Apache 基金会项目（源自 Yahoo/Verizon Media），其 PostgreSQL 扩展将多种**近似分析数据结构（Sketch）**引入 SQL 世界。核心问题很明确：在海量数据上做精确的 COUNT(DISTINCT)、分位数计算和频繁项统计太慢或太耗内存。
+Apache DataSketches 是 Apache 基金会项目（源自 Yahoo/Verizon Media），其 PostgreSQL 扩展将多种**近似分析数据结构（Sketch）** 引入 SQL 世界。核心问题很明确：在海量数据上做精确的 COUNT(DISTINCT)、分位数计算和频繁项统计太慢或太耗内存。
 
 扩展提供七种 Sketch 类型：**`cpc_sketch`**（Compressed Probabilistic Counting）、**`hll_sketch`**（HyperLogLog）、**`theta_sketch`**（支持集合交并差运算的去重计数）、`aod_sketch`（Tuple sketch）、**`kll_float_sketch`/`kll_double_sketch`**（分位数估算）、`req_float_sketch`（尾部高精度分位数）、`frequent_strings_sketch`（频繁项）。每种 Sketch 都提供 `*_sketch_build()`、`*_sketch_union()`、`*_sketch_get_estimate()` 等标准接口。
 

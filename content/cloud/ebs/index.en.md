@@ -158,7 +158,7 @@ Comparing the costs of self-hosting versus using a cloud database:
 
 > **RDS** pricing compared to self-hosting, see "[Is Cloud Database an idiot Tax?](/cloud/rds/)"
 
-Any rational business user can see the logic here: **If the purchase of such a service is not for short-term, temporary needs, then it is definitely considered a **major financial misstep**.
+Any rational business user can see the logic here: **If the purchase of such a service is not for short-term, temporary needs, then it is definitely considered a major financial misstep.**
 
 This is not just the case with Relational Database Services / RDS, but with all sorts of cloud databases. MongoDB, ClickHouse, Cassandra, if it uses EC2 / EBS, they are all doing the same. Take the popular NoSQL document database MongoDB as an example:
 

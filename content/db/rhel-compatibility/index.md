@@ -35,7 +35,7 @@ tags: [操作系统, Linux, 信创, 运维]
 
 Pigsty 的场景非常具有代表性 —— 在裸操作系统上[运行世界上最先进且最流行的开源关系型数据库 PostgreSQL](/pg/pg-is-no1)，以及企业级数据库服务所需要的完整软件组件。包括了 PostgreSQL 生命周期中的5个大版本（12 - 16）以及一百多个扩展插件。还有几十个常用的主机节点软件包，Prometheus / Grafana 可观测性全家桶，以及 ETCD / MinIO / Redis 等辅助组件。
 
-![pigsty-banner.png](https://pigsty.io/img/banner.zh.jpg)
+![pigsty-banner.png](https://pigsty.io/img/pigsty/banner.png)
 
 测试方法很简单，这些 EL原生的RPM包，能不能在其他这些“兼容”系统上跑起来 —— 至少安装运行不能出错吧？每次 CI 的时候，我们会拉起三十台安装有不同操作系统的虚拟机进行完整安装，涉及到的软件包如下所示：
 

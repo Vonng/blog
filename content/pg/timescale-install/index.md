@@ -408,7 +408,7 @@ SELECT drop_chunks(interval '7 days', 'conditions');
 - **操作简单**：使用TimescaleDB，您只需要为关系数据和时间序列数据管理一个数据库。否则，用户通常需要将数据存储到两个数据库中：“正常”关系数据库和第二个时间序列数据库。
 - **JOIN**可以通过关系数据和时间序列数据执行。
 - 对于不同的查询集，查询**性能**更快。在NoSQL数据库中，更复杂的查询通常是缓慢或全表扫描，而有些数据库甚至无法支持许多自然查询。
-- **像PostgreSQL一样管理，**并继承对不同数据类型和索引（B树，哈希，范围，BRIN，GiST，GIN）的支持。
+- **像PostgreSQL一样管理，** 并继承对不同数据类型和索引（B树，哈希，范围，BRIN，GiST，GIN）的支持。
 - **对地理空间数据的本地支持**：存储在TimescaleDB中的数据可以利用PostGIS的几何数据类型，索引和查询。
 - **第三方工具**：TimescaleDB支持任何可以说SQL的东西，包括像Tableau这样的BI工具。
 
@@ -494,7 +494,7 @@ HINT:  You might need to increase max_locks_per_transaction.
 max_locks_per_transaction = 2 * num_chunks
 ```
 
-`num_chunks`是在**超级表（HyperTable)**中可能存在的**块（chunk）**数量上限。
+`num_chunks`是在**超级表（HyperTable)** 中可能存在的**块（chunk）** 数量上限。
 
 这种配置是考虑到对超级表查询可能申请锁的数量粗略等于超级表中的块数量，如果使用索引的话还要翻倍。
 

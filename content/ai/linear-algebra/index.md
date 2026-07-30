@@ -1,7 +1,6 @@
 ---
 title: "线性代数基本概念"
 date: 2012-11-04
-hero: /hero/statistic.jpg
 math: true
 summary: |
   用一条主线将线性代数中的所有概念串联起来

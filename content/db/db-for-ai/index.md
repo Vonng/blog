@@ -47,7 +47,7 @@ aliases: ["/ai/db-for-ai/"]
 
 很多人问，为什么是 PostgreSQL？ 这个问题，老冯已经在《[PostgreSQL 正在吞噬数据库世界](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487055&idx=1&sn=9d7bd8b6d9b07478dba7f87d0a663535&scene=21#wechat_redirect)》 一文中解释过了。PostgreSQL 是唯一具有吞噬整个数据库世界能力的 **框架**。
 
-开源与先进是 PG 的 BackBone，而它的 Edge 是 “可扩展性”。**越来越多的数据库细分领域开始以“插件”的形式被整合到 PostgreSQL 生态中，**强大的可扩展性不仅让 PostgreSQL 已经成为了 [OLTP 世界的事实标准](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489822&idx=1&sn=64d32013b4197f9803ad4cf6688925db&scene=21#wechat_redirect) ，更是让它在 [整合 OLAP 大数据生态](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488131&idx=1&sn=9dc6a377d0b24fb7b92cac840b229433&scene=21#wechat_redirect) 占尽先机。
+开源与先进是 PG 的 BackBone，而它的 Edge 是 “可扩展性”。**越来越多的数据库细分领域开始以“插件”的形式被整合到 PostgreSQL 生态中，** 强大的可扩展性不仅让 PostgreSQL 已经成为了 [OLTP 世界的事实标准](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489822&idx=1&sn=64d32013b4197f9803ad4cf6688925db&scene=21#wechat_redirect) ，更是让它在 [整合 OLAP 大数据生态](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488131&idx=1&sn=9dc6a377d0b24fb7b92cac840b229433&scene=21#wechat_redirect) 占尽先机。
 
 ![ecosystem.gif](ecosystem.gif)
 
@@ -120,7 +120,7 @@ Databricks，Snowflake，以及（OpenAI） 毫无疑问的拉起了数据库市
 
 背后的逻辑是，一个在野的顶级人才能毁坏达成行业垄断联盟的尝试 —— 以现在开源 Pigsty 使用的部署规模来看，给 RDS 每年造成过亿损失算是非常保守估计了 —— 而且还在不断增长，毕竟价格战谁打的过用爱发电的零元购呢？
 
-何况现在这股 “开源癌” 已经从中国溢出来卷全球了（40+% 用户来自海外）。老实说 —— **这种改变世界的掀桌子乐趣是赚多少钱都比不了的。**老冯也努努力，看看能不能把 Pigsty 做成数据库领域的 DeepSeek，哈哈。
+何况现在这股 “开源癌” 已经从中国溢出来卷全球了（40+% 用户来自海外）。老实说 —— **这种改变世界的掀桌子乐趣是赚多少钱都比不了的。** 老冯也努努力，看看能不能把 Pigsty 做成数据库领域的 DeepSeek，哈哈。
 
 
 

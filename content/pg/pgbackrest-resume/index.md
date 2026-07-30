@@ -85,7 +85,7 @@ Linux 基金会当年响应 Redis 改协议、发起 [Valkey](https://github.com
 Percona 已经公开承诺会继续支持 pgBackRest，而且 Percona Distribution for PostgreSQL 也长期把 pgBackRest 作为推荐备份工具。他们的客户 SLA 挂在这上面，不可能只在旁边看热闹。
 但它是否出资、出多少，要等正式公告。它目前更像这次协调里的组织者之一。
 
-**Cybertec、Timescale、Resonate 都有可能参与。**Cybertec 的容器化 PG 产品里用到了 pgBackRest；Lætitia 文章里也专门点名 Cybertec 和 Data Egret 有专家可以临时处理 pgBackRest 问题。
+**Cybertec、Timescale、Resonate 都有可能参与。** Cybertec 的容器化 PG 产品里用到了 pgBackRest；Lætitia 文章里也专门点名 Cybertec 和 Data Egret 有专家可以临时处理 pgBackRest 问题。
 Timescale 有[公开 fork](https://github.com/timescale/pgbackrest-public)，这是一个依赖或评估信号，但不足以单独证明 Timescale Cloud 的备份链路深度绑定 pgBackRest。它有能力出钱，但历史上对上游开源基础设施的投入不算特别主动，所以也不能打包票。
 
 Resonate 是历史赞助方，也有 David Steele 过往工作痕迹，回归小额赞助很合理。
