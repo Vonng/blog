@@ -172,7 +172,7 @@ A large proportion of users install Pigsty on single-node Linux and "don't need"
 
 ## New Documentation Site
 
-The new documentation site is now live: [https://doc.pgsty.com](https://doc.pgsty.com)
+The new documentation site is now live: [https://pigsty.io/docs/](https://pigsty.io/docs/)
 
 ![](doc-site.jpg)
 
@@ -220,7 +220,7 @@ curl https://repo.pigsty.cc/get | bash -s v3.6.0
 
 ### Highlights
 
-- New documentation site: https://doc.pgsty.com
+- New documentation site: https://pigsty.io/docs/
 - Added `pgsql-pitr` playbook and backup/recovery tutorials, improved PITR experience
 - New kernel support: Percona PG TDE (PG17)
 - Optimized Supabase self-hosting experience, updated to latest version, resolved series of official template issues
@@ -352,7 +352,7 @@ curl https://repo.pigsty.cc/get | bash -s v3.6.1
 
 - PostgreSQL 17.6, 16.10, 15.14, 14.19, 13.22, and 18 Beta 3 support
 - Using Pigsty-provided PGDG APT/YUM mirrors in mainland China to resolve update supply issues
-- New website homepage: https://pgsty.com
+- New website homepage: https://pigsty.io
 - Added el10, debian 13 implementation stubs, and el10 Terraform images
 
 

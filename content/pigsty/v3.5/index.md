@@ -73,7 +73,7 @@ OrioleDB 已被 Supabase 收购，近日发布了第 11 个 Beta 版本。虽然
 
 可用扩展数量达到 **421 个**，并对大量扩展进行了版本更新。值得关注的新扩展：
 
-**pgsentinel**：可观测性扩展，提供类似 Oracle Active Session History 的功能，可记录每个会话的统计信息及等待事件。详见：https://pgsty.com/ext/pgsentinel
+**pgsentinel**：可观测性扩展，提供类似 Oracle Active Session History 的功能，可记录每个会话的统计信息及等待事件。详见：https://pigsty.cc/ext/e/pgsentinel/
 
 **spat**：一个有趣的实验性扩展，在 PG 中提供类似 Redis 的接口，使用共享内存实现类似 Redis 的性能表现。目前处于 Alpha 阶段，切勿用于生产。
 
@@ -86,7 +86,7 @@ OrioleDB 已被 Supabase 收购，近日发布了第 11 个 Beta 版本。虽然
 
 ## 全新文档站点
 
-Pigsty 文档站基于 Next.js 进行了重制，从静态页面渲染迈入现代前端时代。新站点地址：[https://pgsty.com](https://pgsty.com)
+Pigsty 文档站基于 Next.js 进行了重制，从静态页面渲染迈入现代前端时代。新站点地址：[https://pigsty.cc](https://pigsty.cc)
 
 ![](doc-site.jpg)
 

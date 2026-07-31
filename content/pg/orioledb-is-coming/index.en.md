@@ -113,9 +113,9 @@ But obviously, OrioleDB isn't "production ready" yet. I've been watching it sinc
 
 So when OrioleDB released its latest beta10 on April 1st, I decided to include it. Having just finished OpenHalo's RPM packages and already packaged a MySQL-compatible PG kernel, why not add another pair of chopsticks? So I created patched PG kernel oriolepg_17 and extension plugin orioledb_17 RPM packages, available on EL8/EL9, x86/ARM64.
 
-More importantly, I've added [native support for OrioleDB](https://doc.pgsty.com/pgsql/kernel/orioledb/) in Pigsty, which means OrioleDB can also enjoy the complete synergy of PG ecosystem components — you can use Patroni for HA, pgBackRest for backups, pg_exporter for monitoring, pgbouncer for connection pooling, while Pigsty strings all these together into a production-grade RDS service that can be launched with one click:
+More importantly, I've added [native support for OrioleDB](https://pigsty.io/docs/pgsql/kernel/orioledb/) in Pigsty, which means OrioleDB can also enjoy the complete synergy of PG ecosystem components — you can use Patroni for HA, pgBackRest for backups, pg_exporter for monitoring, pgbouncer for connection pooling, while Pigsty strings all these together into a production-grade RDS service that can be launched with one click:
 
-During Qingming Festival, I just released Pigsty [**v3.4.1**](https://doc.pgsty.com/releases/note#v340), which has built-in support for [OrioleDB](https://doc.pgsty.com/pgsql/kernel/orioledb/) and [**OpenHalo**](https://doc.pgsty.com/pgsql/kernel/openhalo/) kernels. Setting up an OrioleDB kernel isn't much different from setting up a regular PostgreSQL database cluster:
+During Qingming Festival, I just released Pigsty [**v3.4.1**](https://pigsty.io/docs/about/release/#v340), which has built-in support for [OrioleDB](https://pigsty.io/docs/pgsql/kernel/orioledb/) and [**OpenHalo**](https://pigsty.io/docs/pgsql/kernel/openhalo/) kernels. Setting up an OrioleDB kernel isn't much different from setting up a regular PostgreSQL database cluster:
 
 ```yaml
 all:

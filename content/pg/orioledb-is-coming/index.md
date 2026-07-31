@@ -116,9 +116,9 @@ OrioleDB 最近把自己的 Slogan 从 “高性能 OLTP 存储引擎” 修改�
 
 所以呢，在 4月1 号 OrioleDB 发布最新的 beta10 的时候，我准备把它收录进来。正好刚做完 OpenHalo 的 RPM 包，都已经打包一个 MySQL 兼容的 PG 内核了，也不差再加双筷子，我就制作了补丁版 PG 内核 oriolepg_17 ，以及扩展插件 orioledb_17 的 RPM 包，在 EL8 / EL9 ，x86 / ARM64 上可用。
 
-更重要的是，我在 Pigsty 中添加了 [对 OrioleDB 的原生支持](https://doc.pgsty.com/pgsql/kernel/orioledb/)，这意味着 OrioleDB 也可以享受到 PG 生态组件的完整合力 —— 你可以使用 Patroni 做 HA，使用 pgBackRest 做备份，pg_exporter 做监控，pgbouncer 做链接池，而 Pigsty 替你将所有这些串成可以一键拉起的生产级 RDS 服务：
+更重要的是，我在 Pigsty 中添加了 [对 OrioleDB 的原生支持](https://pigsty.cc/docs/pgsql/kernel/orioledb/)，这意味着 OrioleDB 也可以享受到 PG 生态组件的完整合力 —— 你可以使用 Patroni 做 HA，使用 pgBackRest 做备份，pg_exporter 做监控，pgbouncer 做链接池，而 Pigsty 替你将所有这些串成可以一键拉起的生产级 RDS 服务：
 
-在清明节，我刚发布了 Pigsty [**v3.4.1**](https://doc.pgsty.com/releases/note#v340) ，已经内置了对 [OrioleDB](https://doc.pgsty.com/pgsql/kernel/orioledb/) 和 [**OpenHalo**](https://doc.pgsty.com/pgsql/kernel/openhalo/) 内核的支持，想要拉 OrioleDB 内核，和拉起普通 PostgreSQL 数据库集群也并没有多少区别：
+在清明节，我刚发布了 Pigsty [**v3.4.1**](https://pigsty.cc/docs/about/release/#v340) ，已经内置了对 [OrioleDB](https://pigsty.cc/docs/pgsql/kernel/orioledb/) 和 [**OpenHalo**](https://pigsty.cc/docs/pgsql/kernel/openhalo/) 内核的支持，想要拉 OrioleDB 内核，和拉起普通 PostgreSQL 数据库集群也并没有多少区别：
 
 ```yaml
 all:

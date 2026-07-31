@@ -217,9 +217,9 @@ PGEXT.CLOUD 其实并不算是 “新项目”，这套仓库基础设施已经�
 这一举措也已经初见成效。例如，业内同行 [Omnigres](https://docs.omnigres.org/quick_start/) 和 [AutoBase](https://autobase.tech/docs/extensions/install) 在他们的 PostgreSQL 发行版中引入了这个扩展仓库，不费吹灰之力就让他们的发行版与用户获得了 431 个 PG 扩展的强大能力。
 再比如，一些扩展开发厂商（ParadeDB、TensorChord、MooncakeLab 等）也能够借助 Pigsty 仓库，轻松将自己的扩展作品分发给全球用户。
 
-[![kernel.jpg](kernel.jpg)](https://doc.pgsty.com/pgsql/kernel)
+[![kernel.jpg](kernel.jpg)](https://pigsty.cc/docs/pgsql/kernel)
 
-不仅如此，我们的仓库还收录并分发了多款不同风味的 [PostgreSQL 内核分支](https://doc.pgsty.com/pgsql/kernel/) ——
+不仅如此，我们的仓库还收录并分发了多款不同风味的 [PostgreSQL 内核分支](https://pigsty.cc/docs/pgsql/kernel/) ——
 Supabase 的 OrioleDB、Percona 的 TDE 内核，瀚高的 IvorySQL、阿里云的 PolarDB、易景的 openHalo 等，
 都可以通过这个仓库一键安装启用。PGEXT.CLOUD 不仅服务于扩展作者和使用者，同样助力各路 PG 厂商为用户创造价值。
 

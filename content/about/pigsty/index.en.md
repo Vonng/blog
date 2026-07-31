@@ -1,7 +1,7 @@
 ---
 title: "Pigsty, the FOSS PG RDS"
 weight: 1
-externalUrl: "https://pgsty.com"
+externalUrl: "https://pigsty.io"
 summary: "PostgreSQL in Great STYle!"
 showDate: false
 showReadingTime: false

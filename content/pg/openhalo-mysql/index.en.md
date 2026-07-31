@@ -30,9 +30,9 @@ By the way, all of the above kernel capabilities are now available out-of-the-bo
 
 ## So, I Want to Try It, How Do I Set It Up?
 
-Currently, Pigsty provides support for [OpenHalo](https://doc.pgsty.com/zh/pgsql/kernel/openhalo/) on EL systems. You can install it with the following commands:
+Currently, Pigsty provides support for [OpenHalo](https://pigsty.io/docs/pgsql/kernel/openhalo/) on EL systems. You can install it with the following commands:
 
-Use Pigsty's [**standard installation process**](https://pigsty.cchttps://pigsty.io/docs/setup/install/) and use the [`mysql`](https://pigsty.cc/docs/conf/mysql/) configuration template.
+Use Pigsty's [**standard installation process**](https://pigsty.io/docs/setup/install/) and use the [`mysql`](https://pigsty.io/docs/conf/mysql/) configuration template.
 
 ```bash
 curl -fsSL https://repo.pigsty.cc/get | bash; cd ~/pigsty

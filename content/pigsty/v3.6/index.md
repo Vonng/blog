@@ -172,7 +172,7 @@ curl -fsSL https://repo.pigsty.io/get | bash; cd ~/pigsty; ./configure; ./instal
 
 ## 全新文档站
 
-全新文档站点已上线：[https://doc.pgsty.com](https://doc.pgsty.com)
+全新文档站点已上线：[https://pigsty.cc/docs/](https://pigsty.cc/docs/)
 
 ![](doc-site.jpg)
 
@@ -220,7 +220,7 @@ curl https://repo.pigsty.cc/get | bash -s v3.6.0
 
 ### 亮点特性
 
-- 全新文档站：https://doc.pgsty.com
+- 全新文档站：https://pigsty.cc/docs/
 - 新增 `pgsql-pitr` 剧本与备份/恢复教程，改善 PITR 体验
 - 新增内核支持：Percona PG TDE (PG17)
 - 优化 Supabase 自建体验，更新至最新版本，并解决了一系列官方模板的问题
@@ -352,7 +352,7 @@ curl https://repo.pigsty.cc/get | bash -s v3.6.1
 
 - PostgreSQL 17.6, 16.10, 15.14, 14.19, 13.22, 以及 18 Beta 3 支持
 - 在中国大陆地区使用 Pigsty 提供的 PGDG APT/YUM 镜像解决更新断供问题
-- 新的网站首页：https://pgsty.com
+- 新的网站首页：https://pigsty.cc
 - 增加了 el10, debian 13 的实现存根，以及 el10 的 Terraform 镜像
 
 

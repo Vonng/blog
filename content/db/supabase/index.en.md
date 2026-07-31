@@ -21,7 +21,7 @@ Pigsty helps you build enterprise-grade Supabase on your own servers (physical/v
 
 ## Quick Start [#short-version]
 
-[Prepare](https://doc.pgsty.com/prepare) a [Linux](https://doc.pgsty.com/prepare/linux) server, follow the Pigsty [standard installation](https://doc.pgsty.com/install/) process, select the `supabase` configuration template, and execute the following commands:
+[Prepare](https://pigsty.io/docs/deploy/prepare/) a [Linux](https://pigsty.io/docs/ref/linux/) server, follow the Pigsty [standard installation](https://pigsty.io/docs/setup/install/) process, select the `supabase` configuration template, and execute the following commands:
 
 ```bash
 curl -fsSL https://repo.pigsty.io/get | bash; cd ~/pigsty
@@ -34,7 +34,7 @@ vi pigsty.yml              # Edit domain, passwords, keys...
 
 After installation, visit port `8000` in your browser to access Supa Studio, username `supabase`, password `pigsty`.
 
-![](https://doc.pgsty.com/img/docs/supabase-login.png)
+![](https://pigsty.io/img/pigsty/supabase.webp)
 
 ------
 
@@ -77,10 +77,10 @@ Therefore, although [extensions are PostgreSQL's core feature](https://vonng.com
 Self-built Supabase with Pigsty provides up to [**440**](https://pgext.cloud/list) ready-to-use PostgreSQL extensions.
 
 Additionally, autonomy and avoiding vendor lock-in are important reasons for self-hosting — although Supabase aims to provide an open-source alternative to Google Firebase without vendor lock-in, the threshold for self-building enterprise-grade Supabase to high standards is actually quite high.
-Supabase includes a series of PostgreSQL extension plugins developed and maintained by them, and plans to replace the native PostgreSQL kernel with the acquired [OrioleDB](https://doc.pgsty.com/pgsql/kernel/orioledb), but these kernels and extensions are not provided in the official PGDG repository.
+Supabase includes a series of PostgreSQL extension plugins developed and maintained by them, and plans to replace the native PostgreSQL kernel with the acquired [OrioleDB](https://pigsty.io/docs/pgsql/kernel/orioledb), but these kernels and extensions are not provided in the official PGDG repository.
 
 This is actually a form of implicit vendor lock-in, preventing users from self-building using methods other than the supabase/postgres Docker image. Pigsty provides an open-source, transparent, and universal solution to solve this problem.
-We package all 10 missing extensions developed and used by Supabase into ready-to-use RPM/DEB packages, ensuring they are available on all [mainstream Linux operating system distributions](https://doc.pgsty.com/prepare/linux):
+We package all 10 missing extensions developed and used by Supabase into ready-to-use RPM/DEB packages, ensuring they are available on all [mainstream Linux operating system distributions](https://pigsty.io/docs/ref/linux/):
 
 | Extension                                                 | Description                                                                                                      |
 |-----------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
@@ -95,9 +95,9 @@ We package all 10 missing extensions developed and used by Supabase into ready-t
 | [`supautils`](https://pgext.cloud/e/supautils/)         | Used to ensure database cluster security in cloud environments, C extension, provided by PIGSTY                  |
 | [`pg_plan_filter`](https://pgext.cloud/e/plan_filter/)  | Filter and block specific query statements using execution plan costs, C extension, provided by PIGSTY           |
 
-Meanwhile, we [install](https://doc.pgsty.com/pgsql/extension/install) most extensions by default in Supabase self-hosting deployment. You can refer to the available extension list to [enable](https://doc.pgsty.com/pgsql/extension/create) them as needed.
+Meanwhile, we [install](https://pigsty.io/docs/pgsql/ext/install/) most extensions by default in Supabase self-hosting deployment. You can refer to the available extension list to [enable](https://pigsty.io/docs/pgsql/ext/create/) them as needed.
 
-Additionally, Pigsty handles the automatic setup of underlying [high availability](https://doc.pgsty.com/feat/ha/) [PostgreSQL](https://doc.pgsty.com/pgsql/) database clusters, high availability [MinIO](https://doc.pgsty.com/minio/) object storage clusters, and even [Docker](https://doc.pgsty.com/docker/) container infrastructure deployment and [Nginx](https://doc.pgsty.com/admin/portal) reverse proxy, [domain configuration](https://doc.pgsty.com/admin/domain) and [HTTPS certificate issuance](https://doc.pgsty.com/admin/cert). You can deploy any number of stateless Supabase container clusters using Docker Compose and store state in external Pigsty self-hosted database services.
+Additionally, Pigsty handles the automatic setup of underlying [high availability](https://pigsty.io/docs/concept/ha/) [PostgreSQL](https://pigsty.io/docs/pgsql/) database clusters, high availability [MinIO](https://pigsty.io/docs/minio/) object storage clusters, and even [Docker](https://pigsty.io/docs/docker/) container infrastructure deployment and [Nginx](https://pigsty.io/docs/infra/admin/portal/) reverse proxy, [domain configuration](https://pigsty.io/docs/infra/admin/domain/) and [HTTPS certificate issuance](https://pigsty.io/docs/infra/admin/cert/). You can deploy any number of stateless Supabase container clusters using Docker Compose and store state in external Pigsty self-hosted database services.
 
 In this self-hosting deployment architecture, you gain the freedom to use different kernels (PostgreSQL 15-17, OrioleDB), the freedom to install [**440**](https://pgext.cloud/list/) extensions, the freedom to scale Supabase/Postgres/MinIO,
 the freedom from database operational chores, and the freedom from vendor lock-in to run locally indefinitely. Compared to the cost of using cloud services, the price is just preparing servers and typing a few more commands.
@@ -109,8 +109,8 @@ the freedom from database operational chores, and the freedom from vendor lock-i
 
 Let's start with single-node Supabase deployment. We'll introduce multi-node high availability deployment methods later.
 
-[Prepare](https://doc.pgsty.com/prepare) a fresh [Linux server](https://doc.pgsty.com/prepare/linux), use the [`supabase`](https://github.com/pgsty/pigsty/blob/main/conf/supabase.yml) configuration template provided by Pigsty to execute the [standard installation](https://doc.pgsty.com/install/start) process,
-then additionally run [`docker.yml`](https://doc.pgsty.com/docker/playbook#dockeryml) and [`app.yml`](https://doc.pgsty.com/app/playbook) to deploy the stateless Supabase containers (default ports `8000`/`8433`).
+[Prepare](https://pigsty.io/docs/deploy/prepare/) a fresh [Linux server](https://pigsty.io/docs/ref/linux/), use the [`supabase`](https://github.com/pgsty/pigsty/blob/main/conf/supabase.yml) configuration template provided by Pigsty to execute the [standard installation](https://pigsty.io/docs/setup/install/) process,
+then additionally run [`docker.yml`](https://pigsty.io/docs/docker/playbook#dockeryml) and [`app.yml`](https://pigsty.io/docs/app/) to deploy the stateless Supabase containers (default ports `8000`/`8433`).
 
 ```bash
 curl -fsSL https://repo.pigsty.io/get | bash; cd ~/pigsty
@@ -124,18 +124,18 @@ vi pigsty.yml              # Edit domain, passwords, keys...
 Before deploying Supabase, please modify the parameters (domain and passwords) in the automatically generated `pigsty.yml` configuration file according to your actual situation.
 If it's just local development testing, you can skip this for now. We'll introduce how to further customize through configuration file modifications later.
 
-[![asciicast](https://doc.pgsty.com/img/asciinema/supabase.svg)](https://asciinema.org/a/731206)
+[![asciicast](https://asciinema.org/a/731206.svg)](https://asciinema.org/a/731206)
 
 If configured correctly, after about ten minutes, you can access the Supabase Studio graphical management interface locally via `http://<your_ip_address>:8000`.
 The default username and password are: `supabase` and `pigsty`.
 
-![](https://doc.pgsty.com/img/docs/supabase-home.png)
+![](https://pigsty.io/img/pigsty/supabase.webp)
 
 <Callout title="DockerHub blocked in mainland China" type="warning">
 
     In mainland China, Pigsty uses DockerHub mirror sites provided by 1Panel and 1ms to download Supabase-related images by default, which may be slow.
-    You can also configure [proxy](https://doc.pgsty.com/docker/config#proxy) and [mirror sites](https://doc.pgsty.com/docker/config#registry) yourself, or manually pull images with `cd /opt/supabase; docker compose pull`.
-    We also provide [Supabase self-hosting expert consulting services](https://doc.pgsty.com/service) including complete offline installation solutions.
+    You can also configure [proxy](https://pigsty.io/docs/docker/usage/#proxy) and [mirror sites](https://pigsty.io/docs/docker/usage/#registry-mirrors) yourself, or manually pull images with `cd /opt/supabase; docker compose pull`.
+    We also provide [Supabase self-hosting expert consulting services](https://pigsty.io/price/) including complete offline installation solutions.
 
 </Callout>
 
@@ -171,7 +171,7 @@ In serious production deployments, Pigsty recommends using at least 3-4 node dep
 
 Some Supabase functionality requires sending emails, so SMTP services are needed. Unless purely for internal networks, for serious production deployments, using SMTP cloud services is recommended. Self-built email servers easily have their emails marked as spam and rejected.
 
-If your service is directly exposed to the public network, we strongly recommend using real domains and HTTPS certificates and accessing through [Nginx Portal](https://doc.pgsty.com/admin/portal).
+If your service is directly exposed to the public network, we strongly recommend using real domains and HTTPS certificates and accessing through [Nginx Portal](https://pigsty.io/docs/infra/admin/portal/).
 
 Next, we'll discuss some advanced topics in sequence: how to further improve Supabase security, availability, and performance based on single-node deployment.
 
@@ -182,16 +182,16 @@ Next, we'll discuss some advanced topics in sequence: how to further improve Sup
 
 **Pigsty Base Components**
 
-For serious production deployments, we strongly recommend changing [Pigsty default passwords](https://doc.pgsty.com/config/security#passwords).
+For serious production deployments, we strongly recommend changing [Pigsty default passwords](https://pigsty.io/docs/setup/security/#passwords).
 Because these default values are public and well-known, going to production without changing passwords is like streaking:
 
-- [`grafana_admin_password`](https://doc.pgsty.com/infra/param/#grafana_admin_password): `pigsty`, Grafana admin password
-- [`pg_admin_password`](https://doc.pgsty.com/pgsql/param/#pg_admin_password): `DBUser.DBA`, PostgreSQL superuser password
-- [`pg_monitor_password`](https://doc.pgsty.com/pgsql/param/#pg_monitor_password): `DBUser.Monitor`, PostgreSQL monitoring user password
-- [`pg_replication_password`](https://doc.pgsty.com/pgsql/param/#pg_replication_password): `DBUser.Replicator`, PostgreSQL replication user password
-- [`patroni_password`](https://doc.pgsty.com/pgsql/param/#patroni_password): `Patroni.API`, Patroni high availability component password
-- [`haproxy_admin_password`](https://doc.pgsty.com/node/param/#haproxy_admin_password): `pigsty`, load balancer management password
-- [`minio_secret_key`](https://doc.pgsty.com/minio/param/#minio_secret_key): `minioadmin`, MinIO root user key
+- [`grafana_admin_password`](https://pigsty.io/docs/infra/param/#grafana_admin_password): `pigsty`, Grafana admin password
+- [`pg_admin_password`](https://pigsty.io/docs/pgsql/param/#pg_admin_password): `DBUser.DBA`, PostgreSQL superuser password
+- [`pg_monitor_password`](https://pigsty.io/docs/pgsql/param/#pg_monitor_password): `DBUser.Monitor`, PostgreSQL monitoring user password
+- [`pg_replication_password`](https://pigsty.io/docs/pgsql/param/#pg_replication_password): `DBUser.Replicator`, PostgreSQL replication user password
+- [`patroni_password`](https://pigsty.io/docs/pgsql/param/#patroni_password): `Patroni.API`, Patroni high availability component password
+- [`haproxy_admin_password`](https://pigsty.io/docs/node/param/#haproxy_admin_password): `pigsty`, load balancer management password
+- [`minio_secret_key`](https://pigsty.io/docs/minio/param/#minio_secret_key): `minioadmin`, MinIO root user key
 - Additionally, we strongly recommend changing the [PostgreSQL business user](https://github.com/pgsty/pigsty/blob/main/conf/supabase.yml#L68) password used by Supabase, default is `DBUser.Supa`
 
 The above passwords are for Pigsty component modules and are strongly recommended to be set before installation and deployment.
@@ -269,9 +269,9 @@ all:
               SUPABASE_PUBLIC_URL: https://supa.pigsty     # <------- DO NOT FORGET TO PUT IT IN infra_portal!
 ```
 
-Complete domain/HTTPS configuration can refer to the [Certificate Management](https://doc.pgsty.com/admin/cert) tutorial. You can also use Pigsty's built-in local static resolution and self-signed HTTPS certificates as fallback.
+Complete domain/HTTPS configuration can refer to the [Certificate Management](https://pigsty.io/docs/infra/admin/cert/) tutorial. You can also use Pigsty's built-in local static resolution and self-signed HTTPS certificates as fallback.
 
-[![asciicast](https://doc.pgsty.com/img/asciinema/supa-domain.svg)](https://asciinema.org/a/731211)
+[![asciicast](https://asciinema.org/a/731211.svg)](https://asciinema.org/a/731211)
 
 
 
@@ -334,7 +334,7 @@ Then specify using the `aliyun` backup repository in `all.vars.pgbackrest_method
 ./pgsql.yml -t pgbackrest
 ```
 
-Pigsty will switch the backup repository to external object storage. More backup configurations can refer to [PostgreSQL Backup](https://doc.pgsty.com/pgsql/backup) documentation.
+Pigsty will switch the backup repository to external object storage. More backup configurations can refer to [PostgreSQL Backup](https://pigsty.io/docs/pgsql/backup) documentation.
 
 
 
@@ -372,15 +372,15 @@ After these configurations, you have an enterprise-grade Supabase (basic single-
 For high availability configuration, please refer to other parts of Pigsty documentation. If you're too lazy to read and learn, we provide hands-on Supabase self-hosting expert consulting services — ¥2000 to save you from the hassle of tinkering and downloading.
 
 Single-node RTO/RPO relies on external object storage services for fallback. If your node fails, backups are retained in external S3 storage, and you can redeploy Supabase on a new node and restore from backup.
-Such deployment can provide a minimum standard RTO (hour-level recovery time)/RPO (MB-level data loss) [fallback disaster recovery level](https://doc.pgsty.com/pgsql/backup) during failures.
+Such deployment can provide a minimum standard RTO (hour-level recovery time)/RPO (MB-level data loss) [fallback disaster recovery level](https://pigsty.io/docs/pgsql/backup) during failures.
 
-To achieve RTO < 30s with zero data loss failover, you need to use [multi-node](https://doc.pgsty.com/install/multinode) high availability deployment, which involves:
+To achieve RTO < 30s with zero data loss failover, you need to use [multi-node](https://pigsty.io/docs/deploy/install/) high availability deployment, which involves:
 
-- [ETCD](https://doc.pgsty.com/etcd/): DCS needs three or more nodes to tolerate one node failure.
-- [PGSQL](https://doc.pgsty.com/pgsql/): PostgreSQL synchronous commit mode without data loss, recommend using at least three nodes.
-- [INFRA](https://doc.pgsty.com/infra/): Monitoring infrastructure failure has less impact, recommend using dual replicas in production
+- [ETCD](https://pigsty.io/docs/etcd/): DCS needs three or more nodes to tolerate one node failure.
+- [PGSQL](https://pigsty.io/docs/pgsql/): PostgreSQL synchronous commit mode without data loss, recommend using at least three nodes.
+- [INFRA](https://pigsty.io/docs/infra/): Monitoring infrastructure failure has less impact, recommend using dual replicas in production
 - Supabase stateless containers themselves can also be multi-node replicas to achieve high availability.
 
-In this case, you also need to modify PostgreSQL and MinIO access points to use DNS/L2 VIP/HAProxy and other [high availability access points](https://doc.pgsty.com/pgsql/service#access)
+In this case, you also need to modify PostgreSQL and MinIO access points to use DNS/L2 VIP/HAProxy and other [high availability access points](https://pigsty.io/docs/pgsql/service/#access-service)
 For these parts, you only need to refer to the documentation of each module in Pigsty for configuration and deployment.
 We recommend referring to the configurations in [`conf/ha/trio.yml`](https://github.com/pgsty/pigsty/blob/main/conf/ha/trio.yml) and [`conf/ha/safe.yml`](https://github.com/pgsty/pigsty/blob/main/conf/ha/trio.yml) to upgrade cluster scale to three nodes or more.

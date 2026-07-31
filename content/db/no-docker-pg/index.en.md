@@ -161,7 +161,7 @@ The ideal state is **running bare on Linux — simple, direct, stable, reliable,
 
 Many think this is complicated — dealing with YUM/APT repos, official mirrors being slow or blocked,
 then being clueless about configuration and tuning after installation.
-That's all ancient history. My [open-source PG distribution Pigsty](https://doc.pgsty.com/) 
+That's all ancient history. My [open-source PG distribution Pigsty](https://pigsty.io/docs/)
 is designed specifically for running enterprise PostgreSQL services directly on Linux.
 
 ```bash

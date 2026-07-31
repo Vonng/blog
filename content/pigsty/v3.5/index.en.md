@@ -73,7 +73,7 @@ OrioleDB has been acquired by Supabase and recently released its 11th Beta versi
 
 Available extensions have reached **421**, with numerous extensions receiving version updates. Notable new extensions:
 
-**pgsentinel**: An observability extension providing Oracle Active Session History-like functionality, recording statistics and wait events for each session. Details: https://pgsty.com/ext/pgsentinel
+**pgsentinel**: An observability extension providing Oracle Active Session History-like functionality, recording statistics and wait events for each session. Details: https://pigsty.io/ext/e/pgsentinel/
 
 **spat**: An experimental extension providing a Redis-like interface in PG, achieving Redis-like performance using shared memory. Currently in Alpha stage — not for production use.
 
@@ -86,7 +86,7 @@ The new extension encyclopedia website is now live, more beautiful and comprehen
 
 ## New Documentation Site
 
-The Pigsty documentation site has been rebuilt with Next.js, stepping from static page rendering into the modern frontend era. New site address: [https://pgsty.com](https://pgsty.com)
+The Pigsty documentation site has been rebuilt with Next.js, stepping from static page rendering into the modern frontend era. New site address: [https://pigsty.io](https://pigsty.io)
 
 ![](doc-site.jpg)
 

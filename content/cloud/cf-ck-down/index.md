@@ -240,7 +240,7 @@ Cloudflare 仪表盘（Dashboard）也受到了影响，因为仪表盘内部使
 ## 老冯评论
 
 昨天在群里看到 Cloudflare 大故障的消息，老冯一看，自己托管在 Cloudflare 上的 [pigsty.io](https://pigsty.io) 站点也趴窝了，
-还好老冯还有 Vercel 上的备用站点 [pgsty.com](https://pgsty.com)，和意一个中国区域的并行仓库站点 pigsty.cc 能用。
+还好老冯还有 Vercel 上的备用站点 [pgsty.com](https://pigsty.cc)，和意一个中国区域的并行仓库站点 pigsty.cc 能用。
 就在上周，老冯才刚刚把 Cloudflare Free 计划升级成 240 美元一年的计划，成为 “付费客户” ，就遇上这种戏剧效果，着实让我感到遗憾。
 
 老冯是比较激进的下云派，但是对于 CDN 这样的服务，我还是依然心安理得的使用云 —— 主要是 Cloudflare，因为这玩意自建确实比较麻烦。

@@ -36,7 +36,7 @@ tags: [PostgreSQL, PG生态]
 
 ![sf-used-trend.jpg](sf-used-trend.jpg)
 
-> [专业开发者使用率趋势图](https://g.pgsty.com/d/sf-survey/stackoverflow-survey?orgId=1&from=2016-12-31T00:00:00.000Z&to=2025-01-31T00:00:00.000Z&timezone=browser&viewPanel=panel-10)
+> [专业开发者使用率趋势图](https://demo.pigsty.cc/ui/d/sf-survey/stackoverflow-survey?orgId=1&from=2016-12-31T00:00:00.000Z&to=2025-01-31T00:00:00.000Z&timezone=browser&viewPanel=panel-10)
 
 此外，值得一提的是 Supabase 与 DuckDB 成为这一榜单上的 “黑马”。
 嵌入式分析新秀 DuckDB 则在最近三年实现了 0.59%, 1.3%, 3.3% 的狂暴指数增长。YoY 增长率高达 146%。
@@ -146,7 +146,7 @@ PostgreSQL 已经成为数据库世界的 Linux 内核，与数据库世界的�
 
 老规矩，写文章不打广告，约等于没写。
 
-老冯的 [Pigsty](https://pgsty.com/zh) 是一个开源且开箱即用的 PostgreSQL 发行版，提供了 PG 世界中最好的监控系统（3000+类指标）与最全面的扩展支持（423个扩展开箱即用）。
+老冯的 [Pigsty](https://pigsty.cc) 是一个开源且开箱即用的 PostgreSQL 发行版，提供了 PG 世界中最好的监控系统（3000+类指标）与最全面的扩展支持（423个扩展开箱即用）。
 自带高可用，PITR 备份恢复，IaC 自动化一键部署，而且支持使用 10 种不同风味的 PG 内核：PG, Citus, IvorySQL, PolarDB, Babelfish, FerretDB, OpenHalo, OrioleDB, Percona TDE。
 
 Pigsty 能够让用户在缺少数据库专家的情况下，自建企业级的 PostgreSQL 数据库服务。同时，Pigsty 还是唯二两个提供自建生产级 Supabase 的开源项目。

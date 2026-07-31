@@ -20,7 +20,7 @@ Pigsty 可以帮助您在自己的服务器上（物理机/虚拟机/云服务�
 
 ## 简短版本
 
-[准备](https://doc.pgsty.com/zh/prepare) [Linux](https://doc.pgsty.com/zh/prepare/linux)，执行 Pigsty [标准安装](https://doc.pgsty.com/zh/install/) 流程，选择 `supabase` 配置模板，依次执行：
+[准备](https://pigsty.cc/docs/deploy/prepare/) [Linux](https://pigsty.cc/docs/ref/linux/)，执行 Pigsty [标准安装](https://pigsty.cc/docs/setup/install/) 流程，选择 `supabase` 配置模板，依次执行：
 
 ```bash
 curl -fsSL https://repo.pigsty.io/get | bash; cd ~/pigsty
@@ -33,7 +33,7 @@ vi pigsty.yml              # 编辑域名、密码、密钥...
 
 安装完毕后，使用浏览器访问 `8000` 端口造访 Supa Studio，用户名 `supabase`，密码 `pigsty`。
 
-![](https://doc.pgsty.com/img/docs/supabase-login.png)
+![](https://pigsty.cc/img/pigsty/supabase.webp)
 
 ------
 
@@ -76,10 +76,10 @@ Supabase 还为小微创业者提供了“慷慨”的免费云服务额度 —�
 而通过 Pigsty 自建的 Supabase 则提供了多达 [**440**](https://pgext.cloud/zh/list) 个开箱即用的 PG 扩展。
 
 此外，自主可控与规避供应商锁定也是自建的重要原因 —— 尽管 Supabase 虽然旨在提供一个无供应商锁定的 Google Firebase 开源替代，但实际上自建高标准企业级的 Supabase 门槛并不低。
-Supabase 内置了一系列由他们自己开发维护的 PG 扩展插件，并计划将原生的 PostgreSQL 内核替换为收购的 [OrioleDB](https://doc.pgsty.com/zh/pgsql/kernel/orioledb)，而这些内核与扩展在 PGDG 官方仓库中并没有提供。
+Supabase 内置了一系列由他们自己开发维护的 PG 扩展插件，并计划将原生的 PostgreSQL 内核替换为收购的 [OrioleDB](https://pigsty.cc/docs/pgsql/kernel/orioledb)，而这些内核与扩展在 PGDG 官方仓库中并没有提供。
 
 这实际上是某种隐性的供应商锁定，阻止了用户使用除了 supabase/postgres Docker 镜像之外的方式自建，Pigsty 则提供开源，透明，通用的方案解决这个问题。
-我们将所有 Supabase 自研与用到的 10 个缺失的扩展打成开箱即用的 RPM/DEB 包，确保它们在所有 [主流Linux操作系统发行版](https://doc.pgsty.com/zh/prepare/linux) 上都可用：
+我们将所有 Supabase 自研与用到的 10 个缺失的扩展打成开箱即用的 RPM/DEB 包，确保它们在所有 [主流Linux操作系统发行版](https://pigsty.cc/docs/ref/linux/) 上都可用：
 
 | 扩展                                                        | 说明                                                     |
 |-----------------------------------------------------------|--------------------------------------------------------|
@@ -94,9 +94,9 @@ Supabase 内置了一系列由他们自己开发维护的 PG 扩展插件，并�
 | [`supautils`](https://pgext.cloud/e/supautils/)         | 用于在云环境中确保数据库集群的安全，C扩展，由PIGSTY提供                        |
 | [`pg_plan_filter`](https://pgext.cloud/e/plan_filter/)  | 使用执行计划代价过滤阻止特定查询语句，C扩展，由PIGSTY提供                       |
 
-同时，我们在 Supabase 自建部署中默认 [安装](https://doc.pgsty.com/zh/pgsql/extension/install)绝大多数扩展，您可以参考可用扩展列表按需 [启用](https://doc.pgsty.com/zh/pgsql/extension/create)。
+同时，我们在 Supabase 自建部署中默认 [安装](https://pigsty.cc/docs/pgsql/ext/install/)绝大多数扩展，您可以参考可用扩展列表按需 [启用](https://pigsty.cc/docs/pgsql/ext/create/)。
 
-同时，Pigsty 还会负责好底层 [高可用](https://doc.pgsty.com/feat/ha/) [PostgreSQL](https://doc.pgsty.com/zh/pgsql/) 数据库集群，高可用 [MinIO](https://doc.pgsty.com/zh/minio/) 对象存储集群的自动搭建，甚至是 [Docker](https://doc.pgsty.com/zh/docker/) 容器底座的部署与 [Nginx](https://doc.pgsty.com/admin/portal) 反向代理，[域名配置](https://doc.pgsty.com/zh/admin/domain) 与 [HTTPS证书签发](https://doc.pgsty.com/zh/admin/cert)。 您可以使用 Docker Compose 拉起任意数量的无状态 Supabase 容器集群，并将状态存储在外部 Pigsty 自托管数据库服务中。
+同时，Pigsty 还会负责好底层 [高可用](https://pigsty.cc/docs/concept/ha/) [PostgreSQL](https://pigsty.cc/docs/pgsql/) 数据库集群，高可用 [MinIO](https://pigsty.cc/docs/minio/) 对象存储集群的自动搭建，甚至是 [Docker](https://pigsty.cc/docs/docker/) 容器底座的部署与 [Nginx](https://pigsty.cc/docs/infra/admin/portal/) 反向代理，[域名配置](https://pigsty.cc/docs/infra/admin/domain/) 与 [HTTPS证书签发](https://pigsty.cc/docs/infra/admin/cert/)。 您可以使用 Docker Compose 拉起任意数量的无状态 Supabase 容器集群，并将状态存储在外部 Pigsty 自托管数据库服务中。
 
 在这一自建部署架构中，您获得了使用不同内核的自由（PG 15-17，OrioleDB），加装 [**440**](https://pgext.cloud/list/) 个扩展的自由，扩容与伸缩 Supabase / Postgres / MinIO 的自由，
 免于数据库运维杂务的自由，以及免于供应商锁定，本地运行到地老天荒的自由。 而相比于使用云服务需要付出的代价，不过是准备服务器和多敲几行命令而已。
@@ -108,8 +108,8 @@ Supabase 内置了一系列由他们自己开发维护的 PG 扩展插件，并�
 
 让我们先从单节点 Supabase 部署开始，我们会在后面进一步介绍多节点高可用部署的方法。
 
-[准备](https://doc.pgsty.com/zh/prepare) 一台全新 [Linux 服务器](https://doc.pgsty.com/zh/prepare/linux)，使用 Pigsty 提供的 [`supabase`](https://github.com/pgsty/pigsty/blob/main/conf/supabase.yml) 配置模板执行 [标准安装](https://doc.pgsty.com/zh/install/start)，
-然后额外运行 [`docker.yml`](https://doc.pgsty.com/zh/docker/playbook#dockeryml) 与 [`app.yml`](https://doc.pgsty.com/zh/app/playbook) 拉起无状态部分的 Supabase 容器即可（默认端口 `8000`/`8433`）。
+[准备](https://pigsty.cc/docs/deploy/prepare/) 一台全新 [Linux 服务器](https://pigsty.cc/docs/ref/linux/)，使用 Pigsty 提供的 [`supabase`](https://github.com/pgsty/pigsty/blob/main/conf/supabase.yml) 配置模板执行 [标准安装](https://pigsty.cc/docs/setup/install/)，
+然后额外运行 [`docker.yml`](https://pigsty.cc/docs/docker/playbook#dockeryml) 与 [`app.yml`](https://pigsty.cc/docs/app/) 拉起无状态部分的 Supabase 容器即可（默认端口 `8000`/`8433`）。
 
 ```bash
 curl -fsSL https://repo.pigsty.io/get | bash; cd ~/pigsty
@@ -123,18 +123,18 @@ vi pigsty.yml              # 编辑域名、密码、密钥...
 在部署 Supabase 前请根据实际情况修改自动生成的 `pigsty.yml` 配置文件中的参数（域名与密码）
 如果只是本地开发测试，可以先跳过，我们将在后面介绍如何通过修改配置文件来进一步定制。
 
-[![asciicast](https://doc.pgsty.com/img/asciinema/supabase.svg)](https://asciinema.org/a/731206)
+[![asciicast](https://asciinema.org/a/731206.svg)](https://asciinema.org/a/731206)
 
 如果配置无误，大约十分钟后，就可以在本地网络通过 `http://<your_ip_address>:8000` 访问到 Supabase Studio 图形管理界面了。
 默认的用户名与密码分别是： `supabase` 与 `pigsty`。
 
-![](https://doc.pgsty.com/img/docs/supabase-home.png)
+![](https://pigsty.cc/img/pigsty/supabase.webp)
 
 <Callout title="中国大陆地区 DockerHub 被墙" type="warning">
 
     在中国大陆地区，Pigsty 默认使用 1Panel 与 1ms 提供的 DockerHub 镜像站点下载 Supabase 相关镜像，可能会较慢。
-    你也可以自行配置 [代理](https://doc.pgsty.com/zh/docker/config#proxy) 与 [镜像站](https://doc.pgsty.com/zh/docker/config#registry) ，`cd /opt/supabase; docker compose pull` 手动拉取镜像。
-    我们亦提供包含完整离线安装方案的 [Supabase 自建专家咨询服务](https://doc.pgsty.com/zh/service)。
+    你也可以自行配置 [代理](https://pigsty.cc/docs/docker/usage/#代理) 与 [镜像站](https://pigsty.cc/docs/docker/usage/#镜像站) ，`cd /opt/supabase; docker compose pull` 手动拉取镜像。
+    我们亦提供包含完整离线安装方案的 [Supabase 自建专家咨询服务](https://pigsty.cc/price/)。
 
 </Callout>
 
@@ -170,7 +170,7 @@ vi pigsty.yml              # 编辑域名、密码、密钥...
 
 Supabase 的部分功能需要发送邮件，所以要用到 SMTP 服务。除非单纯用于内网，否则对于严肃的生产部署，建议使用 SMTP 云服务。自建的邮件服务器发送的邮件容易被标记为垃圾邮件导致拒收。
 
-如果您的服务直接向公网暴露，我们强烈建议您使用真正的域名与 HTTPS 证书，并通过 [Nginx 门户](https://doc.pgsty.com/zh/admin/portal) 访问。
+如果您的服务直接向公网暴露，我们强烈建议您使用真正的域名与 HTTPS 证书，并通过 [Nginx 门户](https://pigsty.cc/docs/infra/admin/portal/) 访问。
 
 接下来，我们会依次讨论一些进阶主题。如何在单节点部署的基础上，进一步提升 Supabase 的安全性、可用性与性能。
 
@@ -181,15 +181,15 @@ Supabase 的部分功能需要发送邮件，所以要用到 SMTP 服务。除�
 
 **Pigsty基础组件**
 
-对于严肃的生产部署，我们强烈建议您修改 [Pigsty 基础组件的密码](https://doc.pgsty.com/zh/config/security#passwords)。因为这些默认值是公开且众所周知的，不改密码上生产无异于裸奔：
+对于严肃的生产部署，我们强烈建议您修改 [Pigsty 基础组件的密码](https://pigsty.cc/docs/setup/security/#密码)。因为这些默认值是公开且众所周知的，不改密码上生产无异于裸奔：
 
-- [`grafana_admin_password`](https://doc.pgsty.com/infra/param/#grafana_admin_password): `pigsty`，Grafana管理员密码
-- [`pg_admin_password`](https://doc.pgsty.com/pgsql/param/#pg_admin_password): `DBUser.DBA`，PG超级用户密码
-- [`pg_monitor_password`](https://doc.pgsty.com/pgsql/param/#pg_monitor_password): `DBUser.Monitor`，PG监控用户密码
-- [`pg_replication_password`](https://doc.pgsty.com/pgsql/param/#pg_replication_password): `DBUser.Replicator`，PG复制用户密码
-- [`patroni_password`](https://doc.pgsty.com/pgsql/param/#patroni_password): `Patroni.API`，Patroni 高可用组件密码
-- [`haproxy_admin_password`](https://doc.pgsty.com/node/param/#haproxy_admin_password): `pigsty`，负载均衡器管控密码
-- [`minio_secret_key`](https://doc.pgsty.com/minio/param/#minio_secret_key): `minioadmin`，MinIO 根用户密钥
+- [`grafana_admin_password`](https://pigsty.cc/docs/infra/param/#grafana_admin_password): `pigsty`，Grafana管理员密码
+- [`pg_admin_password`](https://pigsty.cc/docs/pgsql/param/#pg_admin_password): `DBUser.DBA`，PG超级用户密码
+- [`pg_monitor_password`](https://pigsty.cc/docs/pgsql/param/#pg_monitor_password): `DBUser.Monitor`，PG监控用户密码
+- [`pg_replication_password`](https://pigsty.cc/docs/pgsql/param/#pg_replication_password): `DBUser.Replicator`，PG复制用户密码
+- [`patroni_password`](https://pigsty.cc/docs/pgsql/param/#patroni_password): `Patroni.API`，Patroni 高可用组件密码
+- [`haproxy_admin_password`](https://pigsty.cc/docs/node/param/#haproxy_admin_password): `pigsty`，负载均衡器管控密码
+- [`minio_secret_key`](https://pigsty.cc/docs/minio/param/#minio_secret_key): `minioadmin`，MinIO 根用户密钥
 - 此外，强烈建议您修改 Supabase 使用的 [PostgreSQL 业务用户](https://github.com/pgsty/pigsty/blob/main/conf/supabase.yml#L68) 密码，默认为 `DBUser.Supa`
 
 以上密码为 Pigsty 组件模块的密码，强烈建议在安装部署前就设置完毕。
@@ -267,9 +267,9 @@ all:
               SUPABASE_PUBLIC_URL: https://supa.pigsty     # <------- DO NOT FORGET TO PUT IT IN infra_portal!
 ```
 
-完整的域名/HTTPS 配置可以参考 [证书管理](https://doc.pgsty.com/zh/admin/cert) 教程，您也可以使用 Pigsty 自带的本地静态解析与自签发 HTTPS 证书作为下位替代。
+完整的域名/HTTPS 配置可以参考 [证书管理](https://pigsty.cc/docs/infra/admin/cert/) 教程，您也可以使用 Pigsty 自带的本地静态解析与自签发 HTTPS 证书作为下位替代。
 
-[![asciicast](https://doc.pgsty.com/img/asciinema/supa-domain.svg)](https://asciinema.org/a/731211)
+[![asciicast](https://asciinema.org/a/731211.svg)](https://asciinema.org/a/731211)
 
 
 
@@ -332,7 +332,7 @@ all:
 ./pgsql.yml -t pgbackrest
 ```
 
-Pigsty 会将备份仓库切换到外部对象存储上，更多备份配置可以参考 [PostgreSQL 备份](https://doc.pgsty.com/zh/pgsql/backup) 文档。
+Pigsty 会将备份仓库切换到外部对象存储上，更多备份配置可以参考 [PostgreSQL 备份](https://pigsty.cc/docs/pgsql/backup) 文档。
 
 
 
@@ -370,16 +370,15 @@ all:
 高可用的配置请参考 Pigsty 其他部份的文档，如果您懒得阅读学习，我们提供手把手扶上马的 Supabase 自建专家咨询服务 —— ¥2000 元免去折腾与下载的烦恼。
 
 单节点的 RTO / RPO 依赖外部对象存储服务提供兜底，如果您的这个节点挂了，外部 S3 存储中保留了备份，您可以在新的节点上重新部署 Supabase，然后从备份中恢复。
-这样的部署在故障时可以提供一个最低标准的 RTO （小时级恢复时长）/ RPO （MB级数据损失）[兜底容灾水平](https://doc.pgsty.com/zh/pgsql/backup) 兜底。
+这样的部署在故障时可以提供一个最低标准的 RTO （小时级恢复时长）/ RPO （MB级数据损失）[兜底容灾水平](https://pigsty.cc/docs/pgsql/backup) 兜底。
 
-如果想要达到 RTO < 30s ，切换零数据丢失，那么需要使用[多节点](https://doc.pgsty.com/zh/install/multinode)进行高可用部署，这涉及到：
+如果想要达到 RTO < 30s ，切换零数据丢失，那么需要使用[多节点](https://pigsty.cc/docs/deploy/install/)进行高可用部署，这涉及到：
 
-- [ETCD](https://doc.pgsty.com/zh/etcd/)： DCS 需要使用三个节点或以上，才能容忍一个节点的故障。
-- [PGSQL](https://doc.pgsty.com/zh/pgsql/)： PGSQL 同步提交不丢数据模式，建议使用至少三个节点。
-- [INFRA](https://doc.pgsty.com/zh/infra/)：监控基础设施故障影响稍小，建议生产环境使用双副本
+- [ETCD](https://pigsty.cc/docs/etcd/)： DCS 需要使用三个节点或以上，才能容忍一个节点的故障。
+- [PGSQL](https://pigsty.cc/docs/pgsql/)： PGSQL 同步提交不丢数据模式，建议使用至少三个节点。
+- [INFRA](https://pigsty.cc/docs/infra/)：监控基础设施故障影响稍小，建议生产环境使用双副本
 - Supabase 无状态容器本身也可以是多节点的副本，可以实现高可用。
 
-在这种情况下，您还需要修改 PostgreSQL 与 MinIO 的接入点，使用 DNS / L2 VIP / HAProxy 等 [高可用接入点](https://doc.pgsty.com/zh/pgsql/service#access)
+在这种情况下，您还需要修改 PostgreSQL 与 MinIO 的接入点，使用 DNS / L2 VIP / HAProxy 等 [高可用接入点](https://pigsty.cc/docs/pgsql/service/#接入服务)
 关于这些部分，您只需参考 Pigsty 中各个模块的文档进行配置部署即可。
 建议您参考 [`conf/ha/trio.yml`](https://github.com/pgsty/pigsty/blob/main/conf/ha/trio.yml) 与 [`conf/ha/safe.yml`](https://github.com/pgsty/pigsty/blob/main/conf/ha/trio.yml) 中的配置，将集群规模升级到三节点或以上。
-

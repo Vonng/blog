@@ -176,7 +176,7 @@ DockerHub 上的 postgres 镜像被广泛使用（据说是下载量最多的镜
 但显然社区还会不断出现新惊喜（吓），容器上运行数据库的状态，仍然没有达到裸 Linux 上运行的长期博弈均衡态。
 
 像 Locale 配置这样的工程细节有许许多多，绝对不是 docker pull 一个所谓 “官方镜像” 能解决的。
-例如 [Pigsty](https://pgsty.com) 为了解决用好 PostgreSQL 的问题，光本身的纯代码就有近十万行，
+例如 [Pigsty](https://pigsty.cc) 为了解决用好 PostgreSQL 的问题，光本身的纯代码就有近十万行，
 这也显然不是 “官方镜像” 一个几百行 Shell/Dockerfile 脚本能覆盖的了的。
 
 实际上有一些第三方的 PostgreSQL over Kubernetes 供应商，他们提供的 PG 容器会比这个 “官方版” 要好得多。
@@ -197,9 +197,9 @@ PostgreSQL 这样的数据库是与操作系统紧密联系的特殊软件。
 
 有很多人觉得这是一件很复杂的事情，好像又要折腾什么 YUM/APT 仓库，官方镜像太慢又要翻墙；
 国内镜像站也全面断更《[从PG“断供”看软件供应链中的信任问题](/pg/pg-mirror-pigsty)》，然后安装好了之后怎么配置调参优化也一筹莫展。
-实际上这都已经是老黄历了。老冯的 [开源 PG 发行版 Pigsty](https://doc.pgsty.com/zh) 就是为了直接在 Linux 上运行企业级 PostgreSQL 服务而设计的。
+实际上这都已经是老黄历了。老冯的 [开源 PG 发行版 Pigsty](https://pigsty.cc/docs/) 就是为了直接在 Linux 上运行企业级 PostgreSQL 服务而设计的。
 
-[![pigsty-install.png](pigsty-install.png)](https://doc.pgsty.com/zh/install)
+[![pigsty-install.png](pigsty-install.png)](https://pigsty.cc/docs/setup/install/)
 
 目前，我在 Debian 12/13，Ubuntu 22/24，EL 8/9/10 ，ARM / x86 也就是 14 个主流 Linux 发行版上提供了原生的 PostgreSQL 内核（PG 13-18 六个大版本），8 款不同风味的 PG 内核分支，近百个生态工具与 430 个生态扩展。
 并将其打造成一键部署安装拉起，自带监控高可用，PITR 的生产级方案。还提供了 PGDG 官方仓库的中国镜像，应该是目前 [国内唯一和 PGDG 保持同步的镜像站](/pg/pgext-cloud)。

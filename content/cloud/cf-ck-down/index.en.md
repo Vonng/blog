@@ -113,7 +113,7 @@ This was their most severe outage since 2019. They’ve had dashboard hiccups be
 
 ## My commentary
 
-I host [pigsty.io](https://pigsty.io) on Cloudflare. It went dark along with everyone else; thankfully I had backups on Vercel ([pgsty.com](https://pgsty.com)) and a mainland mirror at pigsty.cc. Irony alert: I had just upgraded from the free plan to the $240/year paid tier last week.
+I host [pigsty.io](https://pigsty.io) on Cloudflare. It went dark along with everyone else; thankfully I had backups on Vercel ([pgsty.com](https://pigsty.io)) and a mainland mirror at pigsty.cc. Irony alert: I had just upgraded from the free plan to the $240/year paid tier last week.
 
 Even as a loud “leave the cloud” advocate, I still relied on Cloudflare for CDN because building one yourself is pain. Yet the “cyber Buddha” has racked up more and more large-scale outages lately. People understand that failures happen, but seeing the entire industry tripping over the same low-level mistakes gets old.
 

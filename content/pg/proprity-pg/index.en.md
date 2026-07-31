@@ -144,7 +144,7 @@ After all, the PostgreSQL Global Development Group (PGDG) has already done this 
 [![percona.jpg](percona.jpg)](https://docs.percona.com/percona-for-postgresql/)
 
 So the parts he hasn't done, I can help Percona complete.
-This is why in Pigsty 3.6, we provided [support for Percona PostgreSQL distribution](https://doc.pgsty.com/zh/pgsql/kernel/percona/) — you can now use foolproof one-line commands to enable Percona's TDE-encrypted kernel.
+This is why in Pigsty 3.6, we provided [support for Percona PostgreSQL distribution](https://pigsty.io/docs/pgsql/kernel/percona/) — you can now use foolproof one-line commands to enable Percona's TDE-encrypted kernel.
 And fully integrate etcd / haproxy / patroni high availability, pgbackrest / minio backup recovery, grafana / prometheus monitoring, and ansible IAC.
 Of course, if you use native PG kernels, there are 423 extension plugins available for choice. I'll consider building these extension packages for PG kernel branches like Percona's in the future.
 
@@ -173,21 +173,21 @@ A few days ago, Pigsty just released version v3.6, which I called a "meta-distri
 It can seamlessly run various PG kernel distributions like "Percona" distribution, IvorySQL distribution, PolarDB distribution, WiltonDB distribution, OrioleDB, OpenHalo, etc., and transform them into ready-to-use RDS services.
 With Percona's TDE kernel, we currently support several flavors of PG kernels. If we count giant extensions like Citus, TimescaleDB, Omnigres, or projects like Supabase and Gel that wrap PG kernels as distributions, the number would be even higher — already dozens.
 
-[![kernels.jpg](kernels.jpg)](https://doc.pgsty.com/zh/pgsql/kernel/)
+[![kernels.jpg](kernels.jpg)](https://pigsty.io/docs/pgsql/kernel/)
 
 |                             Kernel                             |            Key Features            | Description                                                    |
 |:--------------------------------------------------------------:|:----------------------------------:|----------------------------------------------------------------|
-|  [PostgreSQL](https://doc.pgsty.com/zh/pgsql/kernel/postgres)  |            **Original**            | Vanilla PostgreSQL with 420+ extensions                        |
-|      [Citus](https://doc.pgsty.com/zh/pgsql/kernel/citus)      |        **Horizontal Scale**        | Distributed Postgres via native extension                      |
-|  [WiltonDB](https://doc.pgsty.com/zh/pgsql/kernel/babelfish)   |      **SQL Server Migration**      | SQL Server wire protocol compatibility                         |
-|   [IvorySQL](https://doc.pgsty.com/zh/pgsql/kernel/ivorysql)   |        **Oracle Migration**        | Oracle syntax and PL/SQL compatibility                         |
-|   [OpenHalo](https://doc.pgsty.com/zh/pgsql/kernel/openhalo)   |        **MySQL Migration**         | MySQL wire protocol compatibility                              |
-|    [Percona](https://doc.pgsty.com/zh/pgsql/kernel/percona)    |  **Transparent Data Encryption**   | Percona distribution with pg_tde                               |
-|   [FerretDB](https://doc.pgsty.com/zh/pgsql/kernel/ferretdb)   |       **MongoDB Migration**        | MongoDB wire protocol compatibility                            |
-|   [OrioleDB](https://doc.pgsty.com/zh/pgsql/kernel/orioledb)   |         **OLTP Optimized**         | Zheap, no bloat, S3 storage                                    |
-|    [PolarDB](https://doc.pgsty.com/zh/pgsql/kernel/polardb)    |        **Aurora-style RAC**        | RAC, Chinese domestic compliance                               |
-|   [Supabase](https://doc.pgsty.com/zh/pgsql/kernel/supabase)   |      **Backend as a Service**      | PostgreSQL-based BaaS, Firebase alternative                    |
-| [Cloudberry](https://doc.pgsty.com/zh/pgsql/kernel#cloudberry) | **MPP Data Warehouse & Analytics** | Massively parallel processing data warehouse (awaiting 2.0 GA) |
+|  [PostgreSQL](https://pigsty.io/docs/pgsql/kernel/postgres)  |            **Original**            | Vanilla PostgreSQL with 420+ extensions                        |
+|      [Citus](https://pigsty.io/docs/pgsql/kernel/citus)      |        **Horizontal Scale**        | Distributed Postgres via native extension                      |
+|  [WiltonDB](https://pigsty.io/docs/pgsql/kernel/babelfish)   |      **SQL Server Migration**      | SQL Server wire protocol compatibility                         |
+|   [IvorySQL](https://pigsty.io/docs/pgsql/kernel/ivorysql)   |        **Oracle Migration**        | Oracle syntax and PL/SQL compatibility                         |
+|   [OpenHalo](https://pigsty.io/docs/pgsql/kernel/openhalo)   |        **MySQL Migration**         | MySQL wire protocol compatibility                              |
+|    [Percona](https://pigsty.io/docs/pgsql/kernel/percona)    |  **Transparent Data Encryption**   | Percona distribution with pg_tde                               |
+|        [FerretDB](https://pigsty.io/docs/ferret/)          |       **MongoDB Migration**        | MongoDB wire protocol compatibility                            |
+|   [OrioleDB](https://pigsty.io/docs/pgsql/kernel/orioledb)   |         **OLTP Optimized**         | Zheap, no bloat, S3 storage                                    |
+|    [PolarDB](https://pigsty.io/docs/pgsql/kernel/polardb)    |        **Aurora-style RAC**        | RAC, Chinese domestic compliance                               |
+|   [Supabase](https://pigsty.io/docs/pgsql/kernel/supabase)   |      **Backend as a Service**      | PostgreSQL-based BaaS, Firebase alternative                    |
+| [Cloudberry](https://pigsty.io/docs/pgsql/kernel/cloudberry/) | **MPP Data Warehouse & Analytics** | Massively parallel processing data warehouse (awaiting 2.0 GA) |
 
 
 

@@ -153,7 +153,7 @@ tags: [开源, 供应链, 信任, 运维]
 
 ### PIGSTY PGSQL
 
-PIGSTY PGSQL 仓库：提供 [几款不同风味的 PG 内核分支](https://doc.pgsty.com/pgsql/kernel) (PolarDB, IvorySQL, Babelfish, OrioleDB, OpenHaloDB, Percona TDE, Supabase,... )
+PIGSTY PGSQL 仓库：提供 [几款不同风味的 PG 内核分支](https://pigsty.cc/docs/pgsql/kernel) (PolarDB, IvorySQL, Babelfish, OrioleDB, OpenHaloDB, Percona TDE, Supabase,... )
 ，与 PGDG 官方仓库配合使用，提供多达 [437 个 PG 扩展插件](https://pgext.cloud/list) 与生态常用工具。支持 [14 个 Linux 发行版大版本](https://pgext.cloud/os)。
 
 镜像地址： https://repo.pigsty.cc/apt/pgsql / https://repo.pigsty.cc/yum/pgsql

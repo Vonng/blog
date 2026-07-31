@@ -30,7 +30,7 @@ Combining the past nine years of survey data and plotting popularity on a scatte
 
 ![sf-used-trend.jpg](sf-used-trend.jpg)
 
-> [Professional developer usage trend chart](https://g.pgsty.com/d/sf-survey/stackoverflow-survey?orgId=1&from=2016-12-31T00:00:00.000Z&to=2025-01-31T00:00:00.000Z&timezone=browser&viewPanel=panel-10)
+> [Professional developer usage trend chart](https://demo.pigsty.io/ui/d/sf-survey/stackoverflow-survey?orgId=1&from=2016-12-31T00:00:00.000Z&to=2025-01-31T00:00:00.000Z&timezone=browser&viewPanel=panel-10)
 
 Additionally, it's worth noting that Supabase and DuckDB have become the "dark horses" on this list. The embedded analytics newcomer DuckDB achieved explosive exponential growth of 0.59%, 1.3%, 3.3% in the past three years, with a YoY growth rate as high as 146%. DuckDB broadly belongs to the PostgreSQL ecosystem — it uses PostgreSQL's syntax parser and can be used as a PG plugin extension. I've always been very optimistic about DuckDB's development prospects, believing it will complete the top-tier analytics engine missing from the PostgreSQL ecosystem. (See: [Whoever Integrates DuckDB Best Wins the OLAP World](/pg/pg-duckdb))
 
@@ -118,6 +118,6 @@ PostgreSQL distributions like Amazon RDS, Supabase, EDB, Pigsty, Percona, Crunch
 
 As usual, writing articles without ads is like not writing at all.
 
-My [Pigsty](https://pgsty.com/zh) is an open-source and ready-to-use PostgreSQL distribution, providing the best monitoring system in the PG world (3000+ metrics) and the most comprehensive extension support (423 extensions ready to use). It comes with high availability, PITR backup recovery, IaC automated one-click deployment, and supports using 10 different flavors of PG kernels: PG, Citus, IvorySQL, PolarDB, Babelfish, FerretDB, OpenHalo, OrioleDB, Percona TDE.
+My [Pigsty](https://pigsty.io) is an open-source and ready-to-use PostgreSQL distribution, providing the best monitoring system in the PG world (3000+ metrics) and the most comprehensive extension support (423 extensions ready to use). It comes with high availability, PITR backup recovery, IaC automated one-click deployment, and supports using 10 different flavors of PG kernels: PG, Citus, IvorySQL, PolarDB, Babelfish, FerretDB, OpenHalo, OrioleDB, Percona TDE.
 
 Pigsty enables users to build enterprise-grade PostgreSQL database services without database experts. Additionally, Pigsty is one of only two open-source projects providing production-grade self-hosted Supabase. If you need to use PostgreSQL, rather than manual setup or expensive RDS, why not try this?

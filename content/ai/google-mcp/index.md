@@ -156,7 +156,7 @@ Google 数据库 MCP 工具箱解决了 MCP 上生产的一个核心问题 —�
 
 ## 下载安装教程
 
-目前 MCP Toolbox for Database 提供了 macOS 下的包，以及 Linux/ Windows x86 的包。老冯把 Linux x86/ARM 平台打好了 RPM / DEB 包，在主流 Linux 系统上都可以使用 （仓库教程：https://pgsty.com/ext/repo/infra）
+目前 MCP Toolbox for Database 提供了 macOS 下的包，以及 Linux/ Windows x86 的包。老冯把 Linux x86/ARM 平台打好了 RPM / DEB 包，在主流 Linux 系统上都可以使用 （仓库教程：https://pigsty.cc/docs/repo/infra/）
 
 ```
 curl https://repo.pigsty.cc/pig | bash  # pig 包管理器

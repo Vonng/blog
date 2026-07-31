@@ -131,7 +131,7 @@ Pigsty，一个 PostgreSQL 发行版。从下载量和网站 UV 看，用户大�
 
 要是拿来和 Supabase 这种50亿美金的巨无霸比呢，差距确实很大，Supabase 的 Star 数量和用户量都是 Pigsty 的 20 倍。
 
-> Supabase 其实属于 2C 的 “Android”，而且也被老冯偷了家，目前 Pigsty 是极个别可以直接 [自建生产级 Supabase 的开源方案](https://doc.pgsty.com/app/supabase)。
+> Supabase 其实属于 2C 的 “Android”，而且也被老冯偷了家，目前 Pigsty 是极个别可以直接 [自建生产级 Supabase 的开源方案](https://pigsty.cc/docs/app/supabase/)。
 
 但这个生态允许错位竞争，可以同时出现多个赢家，
 如果看 **Linux 原生 PG RDS 发行版**这个细分赛道，Pigsty 拿第一当仁不让。
@@ -242,7 +242,7 @@ PG 呢？一个社区开发者写了 pgvector，几个扩展一起赛马，直�
 ### 面向数据库厂商的邀请
 
 对于数据库厂商来说，我想说的是，如果你们交付给客户的还是一个裸的 RPM / DEB 包，现在你可以选择用 Pigsty 交付一套完整的生产级基础设施。
-Pigsty 可以成为你们的交付载体。你们专注做内核、做特色功能，Pigsty 帮你们解决周边生态的问题。这是双赢的合作。[已经有好几款PG内核分支](https://doc.pgsty.com/zh/pgsql/kernel) 通过 Pigsty获得了完整的 RDS 能力。
+Pigsty 可以成为你们的交付载体。你们专注做内核、做特色功能，Pigsty 帮你们解决周边生态的问题。这是双赢的合作。[已经有好几款PG内核分支](https://pigsty.cc/docs/pgsql/kernel) 通过 Pigsty获得了完整的 RDS 能力。
 
 ![vendor-invite.webp](vendor-invite.webp)
 

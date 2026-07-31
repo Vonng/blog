@@ -146,7 +146,7 @@ Percona 也有一个 PMM 监控工具，算是 MySQL 生态做的非常好的监
 [![percona.jpg](percona.jpg)](https://docs.percona.com/percona-for-postgresql/)
 
 当然，我跟 Percona 的创始人 Peter Zaitsev 也有过交流，惺惺相惜，肯定算是同道中人。所以他没做的部分，我可以帮 Percona 补上。
-这也是为什么在 Pigsty 3.6 中，我们提供了 [对 Percona PostgreSQL 发行版的支持](https://doc.pgsty.com/zh/pgsql/kernel/percona/) —— 你现在可以用傻瓜式的一行命令，启用 Percona 带有 TDE 加密的内核。
+这也是为什么在 Pigsty 3.6 中，我们提供了 [对 Percona PostgreSQL 发行版的支持](https://pigsty.cc/docs/pgsql/kernel/percona/) —— 你现在可以用傻瓜式的一行命令，启用 Percona 带有 TDE 加密的内核。
 并完整的集成了 etcd / haproxy / patroni 高可用， pgbackrest / minio 备份恢复，grafana / prometheus 监控，以及 ansible IAC。
 当然，如果你使用原生 PG 内核，还有整整 423 个扩展插件可供选择，我会在未来考虑为 Percona 这样的 PG 内核分支也构建这些扩展包。
 
@@ -175,21 +175,21 @@ curl -fsSL https://repo.pigsty.io/get | bash; cd ~/pigsty;
 它可以丝滑运行像 “Percona” 发行版，IvorySQL 发行版，PolarDB 发行版，WiltonDB 发行版，OrioleDB，OpenHalo 等各种各样的 PG 内核发行版，并将其转换为一套开箱即用的 RDS 服务。
 加上 Percona 的 TDE 内核，目前我们已经支持了好几种种风味的 PG 内核，如果 Citus，TimescaleDB，Omnigres 这样的巨型扩展，或者把 Supabase，Gel 这类封装 PG 内核的项目也算做发行版，数量还要更多，已经有十几种了。
 
-[![kernels.jpg](kernels.jpg)](https://doc.pgsty.com/zh/pgsql/kernel/)
+[![kernels.jpg](kernels.jpg)](https://pigsty.cc/docs/pgsql/kernel/)
 
 |                               内核                               |       关键特性        | 描述                                 |
 |:--------------------------------------------------------------:|:-----------------:|------------------------------------|
-|  [PostgreSQL](https://doc.pgsty.com/zh/pgsql/kernel/postgres)  |     **原始版本**      | 原版 PostgreSQL 配备 420+ 扩展           |
-|      [Citus](https://doc.pgsty.com/zh/pgsql/kernel/citus)      |     **水平扩展**      | 通过原生扩展实现分布式 PostgreSQL             |
-|  [WiltonDB](https://doc.pgsty.com/zh/pgsql/kernel/babelfish)   | **SQL Server 迁移** | SQL Server 线协议兼容                   |
-|   [IvorySQL](https://doc.pgsty.com/zh/pgsql/kernel/ivorysql)   |   **Oracle 迁移**   | Oracle 语法和 PL/SQL 兼容               |
-|   [OpenHalo](https://doc.pgsty.com/zh/pgsql/kernel/openhalo)   |   **MySQL 迁移**    | MySQL 线协议兼容                        |
-|    [Percona](https://doc.pgsty.com/zh/pgsql/kernel/percona)    |    **透明数据加密**     | 带有 pg_tde 的 Percona 发行版            |
-|   [FerretDB](https://doc.pgsty.com/zh/pgsql/kernel/ferretdb)   |  **MongoDB 迁移**   | MongoDB 线协议兼容                      |
-|   [OrioleDB](https://doc.pgsty.com/zh/pgsql/kernel/orioledb)   |    **OLTP 优化**    | Zheap，无膨胀，S3 存储                    |
-|    [PolarDB](https://doc.pgsty.com/zh/pgsql/kernel/polardb)    | **Aurora 风格 RAC** | RAC，中国国产合规                         |
-|   [Supabase](https://doc.pgsty.com/zh/pgsql/kernel/supabase)   |     **后端即服务**     | 基于 PostgreSQL 的 BaaS，Firebase 替代方案 |
-| [Cloudberry](https://doc.pgsty.com/zh/pgsql/kernel#cloudberry) |  **MPP 数厂与数据分析**  | 大规模并行处理数据仓库（等待2.0GA）               |
+|  [PostgreSQL](https://pigsty.cc/docs/pgsql/kernel/postgres)  |     **原始版本**      | 原版 PostgreSQL 配备 420+ 扩展           |
+|      [Citus](https://pigsty.cc/docs/pgsql/kernel/citus)      |     **水平扩展**      | 通过原生扩展实现分布式 PostgreSQL             |
+|  [WiltonDB](https://pigsty.cc/docs/pgsql/kernel/babelfish)   | **SQL Server 迁移** | SQL Server 线协议兼容                   |
+|   [IvorySQL](https://pigsty.cc/docs/pgsql/kernel/ivorysql)   |   **Oracle 迁移**   | Oracle 语法和 PL/SQL 兼容               |
+|   [OpenHalo](https://pigsty.cc/docs/pgsql/kernel/openhalo)   |   **MySQL 迁移**    | MySQL 线协议兼容                        |
+|    [Percona](https://pigsty.cc/docs/pgsql/kernel/percona)    |    **透明数据加密**     | 带有 pg_tde 的 Percona 发行版            |
+|        [FerretDB](https://pigsty.cc/docs/ferret/)          |  **MongoDB 迁移**   | MongoDB 线协议兼容                      |
+|   [OrioleDB](https://pigsty.cc/docs/pgsql/kernel/orioledb)   |    **OLTP 优化**    | Zheap，无膨胀，S3 存储                    |
+|    [PolarDB](https://pigsty.cc/docs/pgsql/kernel/polardb)    | **Aurora 风格 RAC** | RAC，中国国产合规                         |
+|   [Supabase](https://pigsty.cc/docs/pgsql/kernel/supabase)   |     **后端即服务**     | 基于 PostgreSQL 的 BaaS，Firebase 替代方案 |
+| [Cloudberry](https://pigsty.cc/docs/pgsql/kernel/cloudberry/) |  **MPP 数厂与数据分析**  | 大规模并行处理数据仓库（等待2.0GA）               |
 
 
 
@@ -214,4 +214,3 @@ curl -fsSL https://repo.pigsty.io/get | bash; cd ~/pigsty;
 - [MongoDB没有未来：好营销救不了烂芒果](/db/bad-mongo/)
 - [Redis不开源是“开源”之耻，更是公有云之耻](/db/redis-oss/)
 - [范式转移：从云到本地优先](/cloud/paradigm/)
-

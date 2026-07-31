@@ -146,7 +146,7 @@ Therefore, I believe the AI era greatly favors [multi-modal, full-featured, exte
 
 ## Download and Installation Guide
 
-Currently, MCP Toolbox for Database provides packages for macOS and Linux/Windows x86. Vonng has packaged RPM/DEB packages for Linux x86/ARM platforms, usable on mainstream Linux systems (repository tutorial: https://pgsty.com/ext/repo/infra).
+Currently, MCP Toolbox for Database provides packages for macOS and Linux/Windows x86. Vonng has packaged RPM/DEB packages for Linux x86/ARM platforms, usable on mainstream Linux systems (repository tutorial: https://pigsty.io/docs/repo/infra/).
 
 ```
 curl https://repo.pigsty.cc/pig | bash  # pig package manager

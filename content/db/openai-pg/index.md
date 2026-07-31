@@ -235,7 +235,7 @@ PostgreSQL 的默认参数相当保守，例如 [默认使用 128 MB 内存](htt
 
 OpenAI 提出的几个问题，挑战其实并不是来自 PostgreSQL 本身，而是来自托管云服务的额外限制。 一种解决办法就是利用 Azure 或其他资源云的 IaaS 层，使用本地 NVMe SSD 实例存储自建 PostgreSQL 集群以绕开限制。
 
-实际上，老冯的 [Pigsty](https://pgsty.com/) 就是为了解决类似规模下 PostgreSQL 挑战而给自己做的云数据库解决方案。 It scales well ，支撑起了探探 25K vCPU 的 PostgreSQL 集群与 2.5 M QPS。 包括上面这些问题，甚至是许多 OpenAI 还没有遇到的问题也都有了解决方案，并做到了 Pigsty 中，并开源免费，开箱即用。
+实际上，老冯的 [Pigsty](https://pigsty.cc/) 就是为了解决类似规模下 PostgreSQL 挑战而给自己做的云数据库解决方案。 It scales well ，支撑起了探探 25K vCPU 的 PostgreSQL 集群与 2.5 M QPS。 包括上面这些问题，甚至是许多 OpenAI 还没有遇到的问题也都有了解决方案，并做到了 Pigsty 中，并开源免费，开箱即用。
 
 如果 OpenAI 感兴趣，我当然乐意提供一些支持，不过我觉得狂飙增长的时候，折腾数据库 Infra 可能并非高优先级的事项。 好在，他们还是有着非常优秀的 PostgreSQL DBA，能够继续探索出这些道路来。
 
