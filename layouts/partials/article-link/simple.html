@@ -27,6 +27,7 @@
 {{ if not .Params.hideFeatureImage }}
   {{/* frontmatter */}}
   {{ with $page }}
+    {{ $p := . }}
     {{ with .Params.featureimage }}
       {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
         {{ if site.Params.hotlinkFeatureImage }}
@@ -35,7 +36,10 @@
           {{ $featured = resources.GetRemote . }}
         {{ end }}
       {{ else }}
-        {{ $featured = resources.Get . }}
+        {{ $featured = $p.Resources.Get . }}
+        {{ if not $featured }}
+          {{ $featured = resources.Get . }}
+        {{ end }}
       {{ end }}
     {{ end }}
 
@@ -78,7 +82,7 @@
         role="presentation"
         loading="lazy"
         decoding="async"
-        class="not-prose absolute inset-0 w-full h-full object-cover">
+        class="not-prose absolute inset-0 w-full h-full object-cover" />
     </div>
   {{ end }}
   <div class="{{ $cardContentClasses }}">

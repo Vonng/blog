@@ -95,7 +95,7 @@ weight = 50
 [[main]]
 name = "Pigsty, FOSS PG RDS"
 parent = "Portfolio"
-url = "https://pgsty.com"
+url = "https://pigsty.io"
 weight = 51
 
 [[main]]
@@ -105,9 +105,9 @@ url = "https://pgext.cloud"
 weight = 60
 
 [[main]]
-name = "PG Exporter Agent"
+name = "PG Exporter"
 parent = "Portfolio"
-url = "https://exp.pgsty.com"
+url = "https://pigsty.io/docs/pg_exporter"
 weight = 70
 
 [[main]]

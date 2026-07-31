@@ -1,5 +1,5 @@
 ---
-title: "pgBackRest, PostgreSQL's Leading Open-Source Backup Tool, Is No Longer Maintained"
+title: "pgBackRest is No Longer Maintained"
 date: 2026-04-30
 author: Ruohang Feng
 summary: >

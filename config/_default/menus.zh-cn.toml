@@ -108,7 +108,7 @@ weight = 15
 [[main]]
 name = "PG Exporter 监控组件"
 parent = "作品"
-url = "https://exp.pgsty.com"
+url = "https://pigsty.io/docs/pg_exporter"
 weight = 70
 
 [[main]]

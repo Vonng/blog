@@ -12,9 +12,8 @@ Six months ago, on January 8, 2026, I wrote [**Git for Data: Instant PostgreSQL 
 
 This is a particularly good fit for AI agents. As I wrote in [What Kind of Database Do AI Agents Need?](/en/db/agent-native-db/), ultra-low-cost database cloning is critical for counterfactual experiments. So when Pigsty 4.0 shipped, I added this capability to its PostgreSQL database provisioning workflow.
 
-[![Screenshot of the earlier “Git for Data” article](old-post.webp)](/en/db/agent-native-db/)
+Today I saw [an article from Aliyun](https://mp.weixin.qq.com/s?__biz=Mzk2NDgzOTk3NA==&mid=2247523890&idx=1&sn=fdfe899fc6f7601f586b4ba32eaf147b&scene=21#wechat_redirect) announcing support for this feature in Alibaba Cloud RDS for PostgreSQL. I couldn't help laughing: that took them long enough. The feature itself is not complicated. It requires no kernel patch—just enable one setting in PostgreSQL 18 and add a `STRATEGY` option when creating the database. But simple as it sounds, a robust implementation still has a few edge cases to handle.
 
-Today I saw [an article from Alibaba Cloud Database](https://mp.weixin.qq.com/s?__biz=Mzk2NDgzOTk3NA==&mid=2247523890&idx=1&sn=fdfe899fc6f7601f586b4ba32eaf147b&scene=21#wechat_redirect) announcing support for this feature in Alibaba Cloud RDS for PostgreSQL. I couldn't help laughing: that took them long enough. The feature itself is not complicated. It requires no kernel patch—just enable one setting in PostgreSQL 18 and add a `STRATEGY` option when creating the database. But simple as it sounds, a robust implementation still has a few edge cases to handle.
 
 ## A Few Improvements
 
@@ -35,8 +34,6 @@ As long as the underlying filesystem supports CoW, such as XFS, cloning a databa
 ## Agent-Native CLI
 
 This command-line tool is built specifically for DBAs and DBA agents. You could already clone a database with an Ansible playbook or Pigsty's `/pg/bin/pg-clone` shell script, but neither is as convenient as using the `pig` CLI directly.
-
-![Pigsty clone documentation](clone-docs.webp)
 
 For example, before executing an operation, you can use `--plan` to print the plan. It tells you what Pig will do and what risks are involved. You can also use `-o json` or `-o yaml` to return results in JSON or YAML.
 

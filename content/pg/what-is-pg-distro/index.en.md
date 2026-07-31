@@ -29,8 +29,6 @@ Compile the Linux kernel and you still do not have a usable machine. There is no
 
 **Someone has to bridge that gulf, and there are countless ways to do it.** glibc or musl? systemd or OpenRC? apt, dnf, or pacman? A release every six months, or rolling releases? What should the default security policy be? How are packages signed? How are vulnerabilities patched? How long are versions maintained? Which services are enabled by default? The accumulated answers to those questions are what make a distribution.
 
-![linux-distro.webp](linux-distro.webp)
-
 A distribution, then, does not merely deliver a kernel. It delivers an integrated set of decisions—and the credibility of an organization willing to stand behind those decisions over time.
 
 Nobody says Debian, Red Hat, and Ubuntu are competing with Linus over who writes the better kernel. They compete at a different task: turning a shared kernel into a system that is more reliable, consistent, and easier to ship.
@@ -95,7 +93,7 @@ PGDG already provides a formidable piece of public infrastructure. Its YUM and A
 
 Precisely because that commons is so good, differentiation at the build-and-distribution layer requires something more. Pigsty's own repository, for example, fills in a large part of the missing extension catalog—another 300 extensions—along with infrastructure packages. It ships native RPM and DEB packages across 16 Linux distributions and has been maintained continuously for almost four years.
 
-![extension.webp](extension.webp)
+![pgext.webp](pgext.webp)
 
 Long-term credibility in packaging, fast patching, a stable supply chain, and a sustained track record of reliable maintenance do form a barrier—and that barrier compounds over time. But this is a defensive capability. It can make users comfortable basing production systems on your repository, yet by itself it rarely explains why they must choose you.
 

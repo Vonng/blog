@@ -1,7 +1,7 @@
 ---
 title: "pg_exporter: Monitor Agent"
 weight: 5
-externalUrl: "https://exp.pgsty.com"
+externalUrl: "https://pigsty.io/docs/pg_exporter"
 summary: "Export PG/PGB metrics to Prometheus"
 showDate: false
 showReadingTime: false

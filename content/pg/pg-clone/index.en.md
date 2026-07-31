@@ -54,13 +54,13 @@ You can run 10 cloned databases for parallel testing simultaneously—as long as
 
 However, not all filesystems support reflink. The good news is most modern Linux distributions have it enabled by default:
 
-| Filesystem    | Support Status | Notes                                        |
-|---------------|----------------|----------------------------------------------|
-| **XFS**       | ✅ Full support | Modern mkfs.xfs enables `reflink=1` by default |
-| **Btrfs**     | ✅ Full support | Native CoW filesystem                        |
-| **ZFS**       | ✅ Supported    | OpenZFS 2.2+ requires block_cloning enabled  |
-| **APFS**      | ✅ Full support | Native to macOS                              |
-| **ext4**      | ❌ Not supported | Falls back to traditional copy               |
+| Filesystem | Support Status  | Notes                                          |
+|------------|-----------------|------------------------------------------------|
+| **XFS**    | ✅ Full support  | Modern mkfs.xfs enables `reflink=1` by default |
+| **Btrfs**  | ✅ Full support  | Native CoW filesystem                          |
+| **ZFS**    | ✅ Supported     | OpenZFS 2.2+ requires block_cloning enabled    |
+| **APFS**   | ✅ Full support  | Native to macOS                                |
+| **ext4**   | ❌ Not supported | Falls back to traditional copy                 |
 
 If you're using mainstream distributions like EL 8/9/10, Debian 11/12/13, or Ubuntu 20.04/22.04/24.04, the default XFS already supports and enables reflink.
 
