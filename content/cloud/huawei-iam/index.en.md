@@ -83,8 +83,6 @@ All times below are GMT+8. Official facts and third-party signals are labeled se
 - **08:15 (third-party snapshot):** StatusGator showed 482 user submissions in the previous 24 hours.
 - **08:22 (author's monitoring):** The last report visible during my monitoring appeared. From 03:32 to 08:22, the third-party signal lasted at least **4 hours and 50 minutes**.
 
-![Timeline of the Huawei Cloud International Site incident](incident-timeline.webp)
-
 Large cloud failures involving identity and control-plane services are not unprecedented. In an earlier article, I analyzed Alibaba Cloud's 2023 outage as a suspected IAM/OSS circular dependency.
 
 ## Related Reading
