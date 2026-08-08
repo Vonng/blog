@@ -10,7 +10,7 @@ tags: [Huawei-Cloud, IAM, Cloud-Outage]
 
 At 02:49 GMT+8 on July 26, 2026, [Huawei Cloud said](https://www.huaweicloud.com/intl/en-us/notice/20260726033454857.html) that it had detected abnormalities affecting some accounts on its International Site, disrupting access to related services. Huawei Cloud later marked the notice as resolved, saying that the affected accounts had been restored, services were operating normally, and data integrity had been maintained. The notice gives neither a precise recovery time nor a root cause.
 
-![Huawei Cloud's official notice about abnormal International Site accounts](featured.webp)
+![notice.webp](notice.webp)
 
 The first dense cluster of third-party signals appeared on StatusGator at 03:32. In the data collected for this article, its rolling 24-hour submission count exceeded 450; the 08:15 snapshot below shows 482 user-submitted reports. Reports came from several International Site markets, including Argentina, Turkey, Brazil, Egypt, Thailand, Mexico, and Chile.
 
