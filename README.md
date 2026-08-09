@@ -4,7 +4,7 @@
 
 This is **Ruohang Feng** / [Vonng](https://github.com/Vonng)'s blog, about PostgreSQL, Database, Cloud-Exit, and other tech topics.
 
-- The Main Blog Site: https://vonng.com
+- The Main Site: https://vonng.com
 - The English Blog: https://vonng.com/en/
 - GitHub Pages: https://blog.vonng.com
 
