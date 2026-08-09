@@ -22,7 +22,6 @@ I have a client L who recently vented to me about an outrageous cascade of failu
 - [Solution: Cloud-Exit and Self-Building](#solution-cloud-exit-and-self-building)
 - [Advertisement Time: Expert Consulting](#advertisement-time-expert-consulting)
 
-
 ---------------
 
 ## The Incident: Beyond Belief
@@ -49,7 +48,6 @@ Post-incident explanations from the vendor made it even more bewildering:
 - WAL accumulation was due to hitting a BUG, which the client discovered, deduced, and pushed to resolve
 - The BUG was "allegedly" caused by cloud disk throughput being maxed out
 
-
 My friend Swedish Ma has consistently advocated that "[cloud databases can replace DBAs](https://mp.weixin.qq.com/s/PqCD80H927s0yJrBr4QQqw)".
 I believe this has theoretical feasibility — cloud vendors could build an expert pool providing [time-shared DBA services](/cloud/dba-vs-rds).
 
@@ -58,9 +56,6 @@ But the current reality is likely: **cloud vendors lack qualified DBAs, unprofes
 After hearing about this case, Ma could only helplessly argue: "**Garbage RDS isn't real RDS**".
 
 ![wechat-magong.png](wechat-magong.png)
-
-
-
 
 --------
 
@@ -80,9 +75,6 @@ Logically, cloud databases advertise their ultimate elasticity and flexible scal
 
 For memory shortage, upgrading two 32G servers to 64G, according to the pricing model we calculated in "[Analyzing Alibaba-Cloud Server Computing Cost](/en/cloud/ecs/#instance-family-impact-on-pricing)", this memory expansion operation alone could bring in tens of thousands in additional annual revenue. If it could solve the problem, that would be one thing, but in fact this memory expansion not only failed to solve the problem but also triggered bigger problems.
 
-
-
-
 --------
 
 ## Replica Failure: Questionable Competence
@@ -99,8 +91,6 @@ If you manually create replicas with `pg_basebackup`, you won't encounter this p
 
 You would encounter this problem in one situation: poorly designed homegrown high-availability service components or insufficiently tested automation scripts that **presumptuously "optimize" this parameter for you**.
 
-
-
 --------
 
 ## Primary Failure: Suffocating Operation
@@ -114,8 +104,6 @@ Honestly, I find this operation suffocating. Primary fencing is indeed a core is
 "**Special handling was done to avoid data corruption**" is indeed quite artistic — yes, directly shutting down the primary can achieve fencing and indeed won't lose data during high-availability failover due to replication lag, **but client data can't be written anymore**! This lost data is far more than that little lag. This operation inevitably reminds one of the famous "[Treating Hunchbacks](https://www.gushiwen.cn/shiwenv_ddbe67aad03d.aspx)" joke:
 
 ![tuobei.png](tuobei.png)
-
-
 
 --------
 
@@ -141,9 +129,6 @@ Alibaba-Cloud's database team isn't without PostgreSQL DBA experts - Digoal work
 
 I often see RDS users encounter problems that aren't resolved through official tickets, having to bypass tickets and directly seek help from Digoal in the PG community to [solve problems](/cloud/drop-rds/) — which is indeed quite dependent on luck and connections.
 
-
-
-
 --------
 
 ## Disk Expansion: Revenue Generation Tactics
@@ -168,9 +153,6 @@ Even the ESSD PL1 beggar disk comes with 50K IOPS, while client L's scenario of 
 
 I can't judge whether the practice of recommending memory expansion / disk expansion whenever problems arise is due to professional incompetence leading to misdiagnosis, or the evil desire to exploit information asymmetry for revenue generation, or both — but this practice of price gouging during illness inevitably reminds me of the once notorious Putian hospitals.
 
-
-
-
 --------
 
 ## Compensation Agreement: Hush Money Pills
@@ -190,9 +172,6 @@ Of course this is because client L's technical team has competence and ability t
 There are also problems "SLA" doesn't cover at all — for example, another case from client L earlier (direct quote): "*To get discounts, we needed to migrate to another new Alibaba-Cloud account. The new account started a same-configuration RDS with logical replication. After nearly a month of replication, data still wasn't synchronized, forcing us to abandon the new account migration, resulting in wasting tens of thousands of yuan.*" — This was truly paying money to buy suffering, with nowhere to seek justice.
 
 After several incidents bringing terrible experiences, client L finally couldn't tolerate it after this accident and decided to exit the cloud.
-
-
-
 
 --------
 
@@ -216,9 +195,6 @@ For client L, the benefits of cloud exit are immediate: just a **one-time invest
 
 **The biggest challenge in cloud exit and self-building RDS services is actually people and skills**. Client L already has a technically solid team but indeed lacks professional knowledge and experience with PostgreSQL. This is also a core reason why client L was willing to pay high premiums for RDS. But the professional competence RDS demonstrated in several incidents was even inferior to the client's own technical team, making continued cloud presence meaningless.
 
-
-
-
 --------
 
 ## Advertisement Time: Expert Consulting
@@ -235,8 +211,6 @@ But I must also emphasize that I advocate cloud exit concepts always targeting c
 
 For those customers with certain scale who are tied to cloud databases being continuously bled dry, you can indeed consider another option: self-building database services is by no means rocket science — **you just need to find the right tools and the right people**.
 
-
-
 --------
 
 ## Extended Reading
@@ -248,8 +222,6 @@ For those customers with certain scale who are tied to cloud databases being con
 [Exposing Cloud Object Storage: From Cost Reduction to Pig Slaughtering](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486688&idx=1&sn=bbdee063b65994cb5e15d3e3b7d87523&chksm=fe4b393bc93cb02d76c48f0fbfe3d60c8821b8079b1cfc05f8ccc56c1351b4a7a76b5794019a&scene=21#wechat_redirect)
 
 [**Analyzing Cloud Computing Cost: Did Alibaba-Cloud Really Cut Prices?**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487089&idx=1&sn=ca16c2e7e534380eadcb3a3870d8e3b4&chksm=fe4b3baac93cb2bc8c4b68c468acf3e8ac5ee124080a3e738262fe99dd1765c3adf9c56ea650&scene=21#wechat_redirect)
-
-
 
 [**From Cost Reduction Jokes to Real Cost Reduction and Efficiency**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486527&idx=1&sn=8e26f644f2b908fd21c83b81d329155d&chksm=fe4b39e4c93cb0f22271127a154a6ac5c45947b2051b06b7667ee5c203d136b5d2e8f6577b10&scene=21#wechat_redirect)
 
@@ -265,8 +237,6 @@ For those customers with certain scale who are tied to cloud databases being con
 
 [taobao.com Certificate Expired](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487367&idx=1&sn=d6e4abd2b2249d27bd8b8146b591b026&chksm=fe4b3a5cc93cb34a8e90e4b7f06803fa11ee8234014cd4f1aedff59e3bf3c846b3cb133090f2&scene=21#wechat_redirect)
 
-
-
 [What Can We Learn from Tencent Cloud's Failure Postmortem?](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487348&idx=1&sn=412cf2afcd93c3f0a83d65219c4a28e8&chksm=fe4b3aafc93cb3b900cef33bd0510c7c86367d71877b0ee65d4847da0ae1298e2b1fd88d0b3f&scene=21#wechat_redirect)
 
 [【Tencent】Epic Cloud Computing Disaster Part Two](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487267&idx=1&sn=7d31d44e89560356b5c5a2e7a40bb1e1&chksm=fe4b3af8c93cb3ee9b8000cd90a12a798395f67205d4ba5b0c77b8c5b6ce9ea448d9fc014921&scene=21#wechat_redirect)
@@ -276,8 +246,6 @@ For those customers with certain scale who are tied to cloud databases being con
 [Tencent Cloud: Face-Lost Amateur Hour](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487279&idx=1&sn=95231614887e129f298644ddc194909f&chksm=fe4b3af4c93cb3e29078b4716d3b633246db8e2081acff8b821181c9ae058a0daf91e45a40b9&scene=21#wechat_redirect)
 
 [Garbage Tencent Cloud CDN: From Getting Started to Giving Up](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485363&idx=1&sn=8622b25fd2309d4fc969d22964a04129&scene=21#wechat_redirect)
-
-
 
 [What Can We Learn from NetEase Cloud Music's Outage?](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488183&idx=1&sn=955849e8698fadcea9211b2731456222&chksm=fe4b276cc93cae7aeb43cc4128c9a18e7a5cb02721277cb61bba1e32b61a57ecdd18bd949277&scene=21#wechat_redirect)
 
@@ -289,8 +257,6 @@ For those customers with certain scale who are tied to cloud databases being con
 
 [Cloud Dark Forest: Exploding AWS Bills with Just S3 Bucket Names](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487536&idx=1&sn=0cd598f426de0b617c7f3318aed9bd95&chksm=fe4b25ebc93cacfd2d96a9704a0ae4dc2d330aee7cd4579641df513edce307ccdd3a9f94736e&scene=21#wechat_redirect)
 
-
-
 [Ahrefs Stays Off Cloud, Saves $400 Million](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487617&idx=1&sn=090b10e96e7e64c0ab0c5deb0cbb46ed&chksm=fe4b255ac93cac4cb270be6091ca6e1257afaa03d50c53316ce82a2be6150151f6077e07e9da&scene=21#wechat_redirect)
 
 [Cyber Buddha Cloudflare Roundtable Interview Q&A](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487400&idx=1&sn=cf5b94165d2791030e0e874dca8383c7&chksm=fe4b3a73c93cb3652df4d53316e554e5bd0a0d659c7cad7214e10c4a9892d8d1a679e2187583&scene=21#wechat_redirect)
@@ -298,8 +264,6 @@ For those customers with certain scale who are tied to cloud databases being con
 [Redis Going Closed Source is a Disgrace to "Open-Source" and Public Cloud](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487184&idx=1&sn=afa93b16ae95dba95d99a87ef6ff7605&chksm=fe4b3b0bc93cb21d07adb10713c1061a53b6438a5db0bd93a2e7a0f11ea365ba3d24ae02d13d&scene=21#wechat_redirect)
 
 [Cloudflare: The Cyber Buddha That Destroys Public Cloud](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487240&idx=1&sn=ba535fd0c1026bc2482ea6ad1e1fb8bf&chksm=fe4b3ad3c93cb3c50bfeaed64963cce25c49bee80364d3a8ca78b87d7c9f19fd4d79d3c62ddc&scene=21#wechat_redirect)
-
-
 
 [Cloud-Exit Odyssey](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485760&idx=1&sn=97096da1077a4fbb4c43452a3c4983c7&scene=21#wechat_redirect)
 

@@ -21,10 +21,6 @@ FerretDB, as an optional component, greatly benefits the enrichment of the Postg
 
 This article briefly introduces FerretDB's installation, deployment, and usage.
 
-
-
-
-
 ------
 
 ## Configuration
@@ -57,9 +53,6 @@ ferret-ha:
     vip_address: 10.10.10.99
     vip_interface: eth1
 ```
-
-
-
 
 ------
 
@@ -194,9 +187,6 @@ You can check FerretDB's supported MongoDB commands, along with some [known diff
     - collection name must be valid UTF-8 characters;
 9. FerretDB offers the same validation rules for the `scale` parameter in both the `collStats` and `dbStats` commands. If an invalid `scale` value is provided in the `dbStats` command, the same error codes will be triggered as with the `collStats` command.
 
-
-
-
 ------
 
 ## Playbooks
@@ -216,8 +206,6 @@ This playbook consists of the following subtasks:
 * `mongo_launch`: Start mongo/ferretdb services
 * `mongo_register`: Register mongo/ferretdb with Prometheus monitoring
 
-
-
 ------
 
 ## Monitoring
@@ -231,8 +219,6 @@ Mongo Overview: Mongo/FerretDB cluster overview
 This monitoring dashboard provides basic monitoring metrics for FerretDB. Since FerretDB uses PostgreSQL as the underlying storage, for more monitoring metrics, please refer to PostgreSQL's own monitoring.
 
 ![](ferretdb-dashboard.png)
-
-
 
 ------
 

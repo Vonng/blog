@@ -15,7 +15,6 @@ Pigsty 可以帮助您在自己的服务器上（物理机/虚拟机/云服务�
 
 > Pigsty 是 Supabase 官网文档上列举的三种自建部署之一：[Self-hosting: Third-Party Guides](https://supabase.com/docs/guides/self-hosting#third-party-guides)
 
-
 --------
 
 ## 简短版本
@@ -101,7 +100,6 @@ Supabase 内置了一系列由他们自己开发维护的 PG 扩展插件，并�
 在这一自建部署架构中，您获得了使用不同内核的自由（PG 15-17，OrioleDB），加装 [**440**](https://pgext.cloud/list/) 个扩展的自由，扩容与伸缩 Supabase / Postgres / MinIO 的自由，
 免于数据库运维杂务的自由，以及免于供应商锁定，本地运行到地老天荒的自由。 而相比于使用云服务需要付出的代价，不过是准备服务器和多敲几行命令而已。
 
-
 ------
 
 ## 单节点自建快速上手
@@ -144,15 +142,11 @@ vi pigsty.yml              # 编辑域名、密码、密钥...
 
 </Callout>
 
-
 <Callout title="生产部署请务必修改密码！" type="warning">
 
     对于严肃的生产部署，请 **务必** 修改所有默认密码！
 
 </Callout>
-
-
-
 
 ------
 
@@ -160,7 +154,7 @@ vi pigsty.yml              # 编辑域名、密码、密钥...
 
 以下是一些自建 Supabase 会涉及到的关键技术决策，供您参考：
 
-使用默认的**单节点部署** Supabase 无法享受到 PostgreSQL / MinIO 的高可用能力。
+使用默认的 **单节点部署** Supabase 无法享受到 PostgreSQL / MinIO 的高可用能力。
 尽管如此，单节点部署相比官方纯 Docker Compose 方案依然要有显著优势： 例如开箱即用的监控系统，自由安装扩展的能力，各个组件的扩缩容能力，以及提供兜底数据库时间点恢复能力等。
 
 如果您只有一台服务器，或者选择在云服务器上自建，Pigsty 建议您使用外部的 S3 替代本地的 MinIO 作为对象存储，存放 PostgreSQL 的备份，并承载 Supabase Storage 服务。
@@ -173,7 +167,6 @@ Supabase 的部分功能需要发送邮件，所以要用到 SMTP 服务。除�
 如果您的服务直接向公网暴露，我们强烈建议您使用真正的域名与 HTTPS 证书，并通过 [Nginx 门户](https://pigsty.cc/docs/infra/admin/portal/) 访问。
 
 接下来，我们会依次讨论一些进阶主题。如何在单节点部署的基础上，进一步提升 Supabase 的安全性、可用性与性能。
-
 
 ------
 
@@ -209,18 +202,18 @@ Supabase 的部分功能需要发送邮件，所以要用到 SMTP 服务。除�
 - 生成一个长度超过 40 个字符的 `JWT_SECRET`，并使用教程中的工具签发 `ANON_KEY` 与 `SERVICE_ROLE_KEY` 两个 JWT。
 - 使用教程中提供的工具，根据 `JWT_SECRET` 以及过期时间等属性，生成一个 `ANON_KEY` JWT，这是匿名用户的身份凭据。
 - 使用教程中提供的工具，根据 `JWT_SECRET` 以及过期时间等属性，生成一个 `SERVICE_ROLE_KEY`，这是权限更高服务角色的身份凭据。
-- 如果您使用的 PostgreSQL 业务用户使用了不同于默认值的密码，请相应修改 [`POSTGRES_PASSWORD``](https://github.com/pgsty/pigsty/blob/main/conf/supabase.yml#L144) 的值
-- 如果您的对象存储使用了不同于默认值的密码，请相应修改 [`S3_ACCESS_KEY``](https://github.com/pgsty/pigsty/blob/main/conf/supabase.yml#L154) 与 [`S3_SECRET_KEY``](https://github.com/pgsty/pigsty/blob/main/conf/supabase.yml#L155) 的值
+- 如果您使用的 PostgreSQL 业务用户使用了不同于默认值的密码，请相应修改 [`POSTGRES_PASSWORD`](https://github.com/pgsty/pigsty/blob/main/conf/supabase.yml#L144) 的值
+- 如果您的对象存储使用了不同于默认值的密码，请相应修改 [`S3_ACCESS_KEY`](https://github.com/pgsty/pigsty/blob/main/conf/supabase.yml#L154) 与 [`S3_SECRET_KEY`](https://github.com/pgsty/pigsty/blob/main/conf/supabase.yml#L155) 的值
 
 Supabase 部分的凭据修改后，您可以重启 Docker Compose 容器以应用新的配置：
 
 ```bash tab="剧本"
 ./app.yml -t app_config,app_launch
 ```
+
 ```bash tab="手工"
 cd /opt/supabase; make up
 ```
-
 
 ------
 
@@ -270,8 +263,6 @@ all:
 完整的域名/HTTPS 配置可以参考 [证书管理](https://pigsty.cc/docs/infra/admin/cert/) 教程，您也可以使用 Pigsty 自带的本地静态解析与自签发 HTTPS 证书作为下位替代。
 
 [![asciicast](https://asciinema.org/a/731211.svg)](https://asciinema.org/a/731211)
-
-
 
 ------
 
@@ -334,8 +325,6 @@ all:
 
 Pigsty 会将备份仓库切换到外部对象存储上，更多备份配置可以参考 [PostgreSQL 备份](https://pigsty.cc/docs/pgsql/backup) 文档。
 
-
-
 ------
 
 ## 进阶主题：使用SMTP
@@ -360,7 +349,6 @@ all:
 ```
 
 不要忘了使用 `app.yml` 来重载配置
-
 
 ------
 

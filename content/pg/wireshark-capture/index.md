@@ -17,14 +17,13 @@ Wireshark是一个很有用的工具，特别适合用来分析网络协议。
 ## 快速开始
 
 1. 下载并安装Wireshark：[下载地址](https://www.wireshark.org/download.html)
-2. 选择要抓包的网卡，如果是本地测试选择`lo0`即可。
-3. 添加抓包过滤器，如果PostgreSQL使用默认设置，使用`port 5432`即可。
+2. 选择要抓包的网卡，如果是本地测试选择 `lo0` 即可。
+3. 添加抓包过滤器，如果PostgreSQL使用默认设置，使用 `port 5432` 即可。
 4. 开始抓包
-5. 添加显示过滤器`pgsql`，这样就可以滤除无关的TCP协议报文。
+5. 添加显示过滤器 `pgsql`，这样就可以滤除无关的TCP协议报文。
 6. 然后就可以执行一些操作，观察并分析协议了
 
 ![](wireshark-capture.png)
-
 
 -----------------
 
@@ -36,7 +35,7 @@ Wireshark是一个很有用的工具，特别适合用来分析网络协议。
 psql postgres://localhost:5432/postgres?sslmode=disable -c 'SELECT 1 AS a, 2 AS b;'
 ```
 
-注意这里`sslmode=disable`是不能省略的，不然客户端会默认尝试发送SSL请求。`localhost`也是不能省略的，不然客户端会默认尝试使用unix socket。
+注意这里 `sslmode=disable` 是不能省略的，不然客户端会默认尝试发送SSL请求。`localhost` 也是不能省略的，不然客户端会默认尝试使用unix socket。
 
 这条Bash命令实际上在PostgreSQL对应着三个协议阶段与5组协议报文
 
@@ -48,18 +47,15 @@ psql postgres://localhost:5432/postgres?sslmode=disable -c 'SELECT 1 AS a, 2 AS 
 
 Wireshark内建了对PGSQL的解码，允许我们方便地查看PostgreSQL协议报文的内容。
 
-启动阶段，客户端向服务端发送了一条`StartupMessage (F)`，而服务端回送了一系列消息，包括`AuthenticationOK(R)`， `ParameterStatus(S)`, `BackendKeyData(K)` , `ReadyForQuery(Z)`。这里这几条消息都打包在同一个TCP报文中发送给客户端。
+启动阶段，客户端向服务端发送了一条 `StartupMessage (F)`，而服务端回送了一系列消息，包括 `AuthenticationOK(R)`， `ParameterStatus(S)`, `BackendKeyData(K)` , `ReadyForQuery(Z)`。这里这几条消息都打包在同一个TCP报文中发送给客户端。
 
-简单查询阶段，客户端发送了一条`Query (F)`消息，将SQL语句`SELECT 1 AS a, 2 AS b;`直接作为内容发送给服务器。服务器依次返回了`RowDescription(T)`,`DataRow(D)`,`CommandComplete(C)`,`ReadyForQuery(Z)`.
+简单查询阶段，客户端发送了一条 `Query (F)` 消息，将SQL语句 `SELECT 1 AS a, 2 AS b;` 直接作为内容发送给服务器。服务器依次返回了 `RowDescription(T)`,`DataRow(D)`,`CommandComplete(C)`,`ReadyForQuery(Z)`.
 
-终止阶段，客户端发送了一条`Terminate(X)`消息，终止连接。
-
-
+终止阶段，客户端发送了一条 `Terminate(X)` 消息，终止连接。
 
 -----------------
 
 ## 题外话：使用Mac进行无线网络嗅探
-
 
 结论： Mac: airport, tcpdump Windows: Omnipeek Linux: tcpdump, airmon-ng
 
@@ -73,7 +69,7 @@ Linux和Mac就很方便了。只要用tcpdump就可以，一般系统都自带�
 
 抓了包能干很多坏事，比如WEP网络抓几个IV包就可以用aircrack破密码，WPA网络抓到一个握手包就能跑字典破无线密码了。如果在同一个网络内，还可以看到各种未加密的流量……什么小黄图啊，隐私照啊之类的……。
 
-假如我已经知道某个手机的MAC地址，那么只要 `tcpdump -Ine -i en0 | grep $MAC_ADDRESS `就过滤出该手机相关的WiFi流量。
+假如我已经知道某个手机的MAC地址，那么只要 `tcpdump -Ine -i en0 | grep $MAC_ADDRESS` 就过滤出该手机相关的WiFi流量。
 
 具体帧的类型详情参看802.11协议，《802.11无线网络权威指南》等。
 

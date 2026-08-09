@@ -17,16 +17,11 @@ tags: [数据库, 硬件, 性能优化, 翻译]
 请看《[重新拿回计算机硬件的红利](https://mp.weixin.qq.com/s/1OSRcBfd58s0tgZTUZHB9g)》与《[分布式数据库是伪需求吗](https://mp.weixin.qq.com/s/-eaCoZR9Z5srQ-1YZm1QJA)》。
 而这篇文章很好地介绍了一些数据库领域的前沿软硬件结合实践，值得一读。
 
-
-
-
 --------
-
 
 [原文：Modern Hardware for Future Databases](https://transactional.blog/blog/2024-modern-database-hardware)
 
 我们正处于一个令人兴奋的数据库时代，每个主要资源领域都在不断进步，每一项进步都有可能影响最优的数据库架构。总的来说，我希望在未来十年内，能看到数据库架构发生一些有趣的转变，但我不确定是否能有必要的硬件支持。
-
 
 --------
 
@@ -52,12 +47,11 @@ tags: [数据库, 硬件, 性能优化, 翻译]
 
 最后，还有一类更新的硬件，延续了将更多计算能力放入网卡本身的趋势，即 SmartNIC 或数据处理单元（DPUs）。它们允许将任意计算下放到网卡，并可能响应其他网卡的请求而被调用。这些技术相当新颖，我建议查看 [《DPDPU：使用 DPU 进行数据处理》](https://scholar.google.com/scholar?cluster=14622696590036176289) 以获取概览，[《DDS：DPU 优化的分布式存储》](https://scholar.google.com/scholar?cluster=12305794631120951674) 了解如何将它们集成到数据库中，以及 [《Azure 加速网络：公共云中的 SmartNIC》](https://www.microsoft.com/en-us/research/uploads/prod/2018/03/Azure_SmartNIC_NSDI_2018.pdf) 了解部署细节。总体而言，我预计 SmartNIC 会将 RDMA 从简单的读写扩展到允许绕过 CPU 的通用 RPC（用于计算成本低的请求回复）。
 
-
 --------
 
 ## 存储
 
-在存储设备方面，有一些旨在降低特定用例中存储设备总拥有成本的进展。制造商巧妙地发现，可以读取比写入产生的磁化硬盘盘片的磁道宽度更小的条带，因此可以重叠磁道以达到最小宽度。于是，我们有了[叠瓦式磁记录（SMR）](https://www.storagereview.com/news/what-is-shingled-magnetic-recording-smr)硬盘驱动器，引入了将存储划分为**区域**（zones）的概念，这些区域只支持追加或擦除。SMR HDD 针对的是像[对象存储](https://dropbox.tech/infrastructure/four-years-of-smr-storage-what-we-love-and-whats-next)这样访问不频繁但需要存储大量数据的用例。
+在存储设备方面，有一些旨在降低特定用例中存储设备总拥有成本的进展。制造商巧妙地发现，可以读取比写入产生的磁化硬盘盘片的磁道宽度更小的条带，因此可以重叠磁道以达到最小宽度。于是，我们有了[叠瓦式磁记录（SMR）](https://www.storagereview.com/news/what-is-shingled-magnetic-recording-smr)硬盘驱动器，引入了将存储划分为 **区域**（zones）的概念，这些区域只支持追加或擦除。SMR HDD 针对的是像[对象存储](https://dropbox.tech/infrastructure/four-years-of-smr-storage-what-we-love-and-whats-next)这样访问不频繁但需要存储大量数据的用例。
 
 类似的想法已被应用到 SSD，**分区 SSD**（Zoned SSDs）也已出现。在 SSD 中暴露区域意味着驱动器不需要提供闪存转换层（FTL）或复杂的垃圾回收过程。与 SMR 类似，这降低了 ZNS SSD 相对于“常规”SSD 的成本，但还特别关注应用驱动的垃圾回收效率更高，从而减少总的写放大效应并延长驱动器寿命。考虑在 SSD 上的 LSM（Log-Structured Merge Trees），它们已经通过增量追加和大擦除块进行操作。移除 LSM 和 SSD 之间的 FTL，打开了优化的机会。最近，Google 和 Meta 合作提出了[灵活数据放置（FDP）](https://www.micron.com/about/blog/storage/innovations/eliminating-the-io-blender-promise-of-flexible-data-placement)的提案，它更像是对具有相关生命周期的写入进行分组的提示，而不是像 ZNS 那样严格执行分区。目标是实现更容易的升级路径，使 SSD 可以忽略写请求的 FDP 部分，仍然在语义上正确，只是性能或写放大效应更差。
 
@@ -68,7 +62,6 @@ tags: [数据库, 硬件, 性能优化, 翻译]
 > **注释**：截至 2024 年 7 月 25 日，AWS 已[取消发布 S3 Select](https://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/)，可能是为了支持 [S3 Object Lambda](https://aws.amazon.com/s3/features/object-lambda/)。
 
 作为 SSD 功能的倒数第二步，**SmartSSD** 正在出现，它允许在 SSD 中集成任意计算。[《在 SmartSSD 上进行查询处理：机会与挑战》](http://pages.cs.wisc.edu/~yxy/cs764-f20/papers/SmartSSD.pdf) 综述了它们在查询处理任务中的应用。将过滤器下推到存储总是有利的；我经常引用之前的工作，如利用 S3 Select 的 [PushdownDB](https://marcoserafini.github.io/assets/pdf/pushdown.pdf)，作为分析领域的优秀案例。使用 SmartSSD，我们有像 [《POLARDB 与计算存储的融合》](https://www.usenix.org/conference/fast20/presentation/cao-wei) 这样的论文。即使没有专门的集成，也有人认为，即使是透明的驱动器内压缩也能在写放大方面缩小 B+ 树和 LSM 之间的差距（[参考](https://www.usenix.org/conference/fast22/presentation/qiao)）。利用 SmartSSD 仍然是一个新兴的研究领域，但其潜在影响巨大。
-
 
 --------
 
@@ -97,7 +90,6 @@ tags: [数据库, 硬件, 性能优化, 翻译]
 还有机会使用更高能效的硬件。最新的神经处理单元（NPU）和张量处理单元（TPU）已经在类似 [《TCUDB：使用张量处理器加速数据库》](https://dl.acm.org/doi/pdf/10.1145/3514221.3517869) 的工作中被证明可用于查询处理。一些公司尝试利用 FPGA。[Swarm64](https://dbdb.io/db/swarm64) 曾试图（但可能失败了）进入这个市场。AWS 自己也以 [Redshift AQUA](https://aws.amazon.com/blogs/aws/new-aqua-advanced-query-accelerator-for-amazon-redshift/) 进行了尝试。即使是最大的公司，走到 ASIC 这一步似乎也不值得，因为连 Oracle 都在 2017 年[停止了他们的 SPARC 开发](https://www.hpcwire.com/2017/09/07/oracle-layoffs-reportedly-hit-sparc-solaris-hard/)。我对 FPGA 到 ASIC 的前景并不十分乐观，因为内存带宽无论如何都会在某个时候成为主要瓶颈，但 [ADMS](https://adms-conf.org/) 是关注该领域论文的会议。
 
 > **注释**：严格来说，ADMS 是附属于 VLDB 的一个研讨会，但我不知道泛指会议、期刊和研讨会的词是什么。
-
 
 --------
 

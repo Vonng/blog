@@ -100,8 +100,6 @@ Additionally, [`VACUUM` progress reporting](https://www.postgresql.org/docs/deve
 PostgreSQL 17 also introduces a new view, [`pg_wait_events`](https://www.postgresql.org/docs/17/view-pg-wait-events.html), providing descriptions of wait events that can be used with `pg_stat_activity` to gain deeper insights into why active sessions are waiting.
 Additionally, some information from the [`pg_stat_bgwriter`](https://www.postgresql.org/docs/17/monitoring-stats.html#MONITORING-PG-STAT-BGWRITER-VIEW) view has now been split into the new [`pg_stat_checkpointer`](https://www.postgresql.org/docs/17/monitoring-stats.html#MONITORING-PG-STAT-CHECKPOINTER-VIEW) view.
 
-
-
 ------
 
 ## Other Features
@@ -109,8 +107,6 @@ Additionally, some information from the [`pg_stat_bgwriter`](https://www.postgre
 PostgreSQL 17 has many other new features and improvements, many of which may benefit your use cases. Please refer to the [release notes](https://www.postgresql.org/docs/17/release-17.html) for a complete list of new features and changes:
 
 https://www.postgresql.org/docs/17/release-17.html
-
-
 
 ------
 
@@ -122,14 +118,11 @@ The PostgreSQL wiki publicly provides an [open issues](https://wiki.postgresql.o
 
 https://www.postgresql.org/account/submitbug/
 
-
-
 ------
 
 ## Beta Timeline
 
 This is the first Beta version of PostgreSQL 17. The PostgreSQL project will release more Beta versions as needed for testing, followed by one or more RC versions, with the final version expected around September or October 2024. For details, please refer to the [Beta testing](https://www.postgresql.org/developer/beta/) page.
-
 
 ------
 

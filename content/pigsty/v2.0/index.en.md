@@ -22,7 +22,6 @@ No beating around the bush — this is an ambitious goal: **overthrow cloud data
 
 ![intro](intro.webp)
 
-
 # 2.0 New Features
 
 Pigsty is a **better, local-first, open-source RDS for PostgreSQL alternative**.
@@ -40,7 +39,6 @@ Pigsty deeply integrates PostgreSQL ecosystem's three core extensions: **PostGIS
 In Pigsty, functional components are abstracted into **modules** that can be freely combined for various scenarios. The **`INFRA`** module comes with a complete modern monitoring stack, while the `NODE` module tunes nodes to specified states and integrates them into monitoring. Installing the **`PGSQL`** module on multiple nodes automatically forms a high-availability database cluster based on primary-replica replication, and the **`ETCD`** module provides consensus and metadata storage for database HA. The optional **`MINIO`** module can serve as storage for large files like images and videos, or as a database backup repository. **`REDIS`**, which pairs excellently with PG, is also supported. More modules (like **`GPSQL`**, **`MYSQL`**, **`KAFKA`**) will be added later, and you can develop your own modules to extend Pigsty's capabilities.
 
 ![modules](modules.webp)
-
 
 ## Stunning Observability
 
@@ -114,7 +112,6 @@ Pigsty aims to replace tedious manual database ops with database autopilot softw
 
 ![opensource](opensource.webp)
 
-
 # 2.0 Quick Start
 
 Pigsty 2.0 installation is still one command:
@@ -128,7 +125,6 @@ curl -fsSL http://download.pigsty.cc/get | bash
 For limited internet access, you can download the offline package for your OS from GitHub or CDN in advance. The monitoring system has a public demo: **http://demo.pigsty.cc**.
 
 ![demo](demo.webp)
-
 
 ----------------
 
@@ -145,7 +141,6 @@ For limited internet access, you can download the offline package for your OS fr
 * New `MINIO` module: independently deployable, multi-disk multi-node support, S3 local replacement, also for centralized PostgreSQL backup repository
 * Significantly simplified configuration parameters, usable without defaults; templates auto-adjust host and PG parameters based on machine specs, HBA/service definitions more concise and universal
 * License changed from Apache License 2.0 to AGPL 3.0 due to Grafana and MinIO dependencies
-
 
 ### Compatibility
 
@@ -178,7 +173,6 @@ For limited internet access, you can download the offline package for your OS fr
   * HAProxy 2.7 / Etcd 3.5 / MinIO 20230131022419 / mcli 20230128202938
   * Prometheus 2.42 / Grafana 9.3 / Loki & Promtail 2.7 / Node Exporter 1.5
 
-
 ### Security
 
 * Complete local self-signed CA: `pigsty-ca` for issuing internal component certificates
@@ -194,7 +188,6 @@ For limited internet access, you can download the offline package for your OS fr
 * High-security template provided: enforces global SSL and requires admin certificate login
 * All default HBA rules now explicitly defined in config files
 
-
 ### Maintainability
 
 * Existing config templates auto-adjust optimizations based on machine specs (CPU/memory/storage)
@@ -209,7 +202,6 @@ For limited internet access, you can download the offline package for your OS fr
 * Series of dedicated shell utilities added, wrapping common ops operations
 * All Ansible roles optimized for simplicity, readability, and maintainability — usable without default parameters
 * Additional Pgbouncer parameters can be defined at business database/user level
-
 
 ### API Changes
 
@@ -320,7 +312,6 @@ Pigsty v2.0 has extensive changes: 64 new parameters, 13 removed, 17 renamed.
 
 Special thanks to Italian user @alemacci for contributions on SSL encryption, backup, multi-OS distro adaptation, and adaptive parameter templates!
 
-
 ----------------
 
 ## v2.0.1 Release Notes
@@ -357,7 +348,6 @@ Security improvements and bug fixes for v2.0.0.
 * Fixed prometheus monitoring target definition file owner to `prometheus` user
 * Use admin user instead of root to delete DCS metadata
 * Fixed issue caused by Grafana 9.4 bug: missing Meta datasource
-
 
 ----------------
 

@@ -30,7 +30,6 @@ But here's what's really interesting: amid this meltdown, data-layer infrastruct
 
 To understand how this scalpel works, we need to go back to an earlier verdict.
 
-
 ------
 
 ## II. You Were Warned
@@ -46,7 +45,6 @@ A year ago, I cited this in [Software Starts from the Database in the AI Era](/d
 The question is: if SaaS's intermediary value gets compressed, where does the remaining value collapse to?
 
 The answer lies in the software stack's structure.
-
 
 ------
 
@@ -76,7 +74,6 @@ The software stack is collapsing toward a simpler structure: [**Agent + Database
 
 But "collapse" doesn't mean "software is dead." Because agents have two hard limitations, and these limitations determine how the market reprices.
 
-
 ------
 
 ## IV. AI's Two Achilles' Heels
@@ -98,7 +95,6 @@ AI can write tests, run tests, even generate massive test suites. But infrastruc
 So the split emerges: the closer to "generation and display," the easier AI compresses the price; the closer to "requires taste + requires verification + can't afford to be wrong," the harder to replace — even subject to repricing upward.
 
 These two points explain why the market is "pricing separately."
-
 
 ## V. The Logic of Differential Pricing
 
@@ -126,7 +122,6 @@ AI can generate copy, code, and reports — but it can't generate your company's
 
 When the translation layer gets squeezed thin by agents, what remains isn't "prettier software" — it's: **Agent + Database**. The market isn't doing a blanket panic sell — it's pricing "handle" and "bit," "skin" and "bone," separately.
 
-
 ------
 
 ## VI. Where Value Collapse Ends
@@ -147,7 +142,6 @@ Academic and industry consensus is converging too: more and more heavyweight voi
 
 If two years ago my [PostgreSQL Is Eating the Database World](/pg/pg-eat-db-world) was in the present tense, it's now approaching past perfect. The database landscape is clear: **PostgreSQL** is the Linux kernel of databases, unifying the database world. In other words, the endpoint of value collapse isn't the generic "databases" — it's increasingly: **PostgreSQL as the default digital reality interface.**
 
-
 ## VII. The Ultimate Runtime
 
 Since PostgreSQL conquering the database world is now a foregone conclusion, the next question is: **What kind of PostgreSQL represents the future?**
@@ -161,7 +155,6 @@ Databases are evolving from "warehouses that store data" to **"programmable real
 ![service-layer.svg](service-layer.svg)
 
 > This is also what I've been exploring with Pigsty: [**Agentic PostgreSQL Runtime**](https://pigsty.cc/docs/piglet). Making PostgreSQL not just a database, but a database runtime for the agent era.
-
 
 ------
 

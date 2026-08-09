@@ -58,7 +58,7 @@ Here, MySQL can only play the role of an OLTP relational database, but if it's P
 >
 > Honor the north with PostGIS.
 >
->  —— "Book of Rites: PostgreSQL Edition"
+> —— "Book of Rites: PostgreSQL Edition"
 
 In Tantan's old architecture, the entire system was designed around PostgreSQL. At a scale of millions of daily active users, millions of global DB-TPS, and hundreds of TB of data, only PostgreSQL was used for data components. Independent data warehouses, message queues, and caches were introduced later. And this is just a validated scale level; further exploiting PostgreSQL is completely feasible.
 

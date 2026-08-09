@@ -24,8 +24,6 @@ DOS worked. You could write programs, edit documents, play games. But it lacked 
 
 It took us 30 years to evolve from DOS to modern operating systems. The agent ecosystem is speedrunning that history. My core thesis: **the evolution of operating systems is the best lens for understanding agent infrastructure's future**. This analogy doesn't just explain the present—it predicts the most critical technical directions (and biggest opportunities) for the next 2-3 years.
 
-
-
 ---
 
 ## The Framework: Five Subsystems of Agent OS
@@ -198,8 +196,7 @@ But adoption isn't the same thing as technical destiny. MCP's success is largely
 
 My prediction: **the winner won't be MCP, nor bare CLI, but "Agent-native CLI"**—command-line tools with structured output, standardized error codes, and built-in discovery mechanisms. Imagine: every command has a `--json` output option, error codes follow unified semantics (like HTTP status codes), and commands include `--desc` parameters outputting machine-readable capability descriptions. This doesn't require inventing new protocols—just making existing tools more consistent. Like how RESTful APIs didn't invent HTTP, just made it more principled.
 
-> I just built an [cli toool for PostgreSQL](https://pigsty.io/docs/pig/pg/), to practice this idea. 
-
+> I just built an [cli toool for PostgreSQL](https://pigsty.io/docs/pig/pg/), to practice this idea.
 
 ---
 
@@ -271,7 +268,7 @@ The script of history is already written:
 
 The real watershed isn't models getting stronger—it's **system capability catching up**. Once this infrastructure takes shape, agents will transform from "toys that can write code" into "processes you can trust with your business."
 
-Who will write the Linux kernel of the agent era? I don't know. 
+Who will write the Linux kernel of the agent era? I don't know.
 This is an era full of opportunity and possibility. At history's turning point, anything is possible.
 
 In the 1980s, someone was writing DOS programs in a garage. In the 1990s, someone was writing the Linux kernel in a dorm room. On some late night in 202x, someone might be at a terminal right now, typing the first line of Agent OS code.

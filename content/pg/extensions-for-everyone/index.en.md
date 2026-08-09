@@ -84,7 +84,6 @@ So this is about a shared delivery layer. Not just for convenience, but also for
 
 [![04. Who Benefits?](04.webp)](https://vonng.com/work/extensions-for-everyone/04-who-benefits.html)
 
-
 --------
 
 ## Part II: The Ecosystem Landscape
@@ -160,7 +159,6 @@ The catalog also tracks dimensions beyond stars: language, license, category, la
 Now let us move from "what exists" to "what can actually be delivered".
 
 [![09. Dimension Analysis](09.webp)](https://vonng.com/work/extensions-for-everyone/09-dimension-analysis.html)
-
 
 --------
 
@@ -293,7 +291,6 @@ This matters for supply-chain trust. Users can rebuild everything themselves if 
 So that is the delivery layer: catalog, repository, CLI, and the build matrix behind them. On paper, it looks clean. In practice, the matrix is where things get hard.
 
 [![20. The CLI - PIG](20.webp)](https://vonng.com/work/extensions-for-everyone/20-the-cli-pig.html)
-
 
 --------
 

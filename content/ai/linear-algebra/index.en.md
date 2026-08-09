@@ -15,7 +15,7 @@ aliases: ["/misc/linear-algebra/"]
 
 <!--more-->
 
-##  Vectors
+## Vectors
 
 There are three perspectives on vectors:
 
@@ -38,8 +38,6 @@ There are three perspectives on vectors:
 
 * From this perspective, the associativity of matrix multiplication is self-evident. $A(BC)=(AB)C$ essentially applies the three linear transformations C, B, A in sequence.
 
-  ​
-
 ## Determinant
 
 * In linear transformations, there is an indicator that can measure the degree of area (volume) change before and after transformation. That is the determinant.
@@ -51,7 +49,7 @@ For linear transformations in $\mathbb{R}^3$, the absolute value of the determin
 
 <div>
 $$
-det(\left[\begin{matrix} a & b & c  \\ d & e & f\\ g & h & i\end{matrix}\right]) = 
+det(\left[\begin{matrix} a & b & c  \\ d & e & f\\ g & h & i\end{matrix}\right]) =
 a det(\left[ \begin{matrix}e & f \\ h & i\end{matrix}\right])
 - b det(\left[ \begin{matrix}d & f \\ g & i\end{matrix}\right])
 + c det(\left[ \begin{matrix}d & e \\ g & h\end{matrix}\right])
@@ -67,8 +65,6 @@ For systems of linear equations, if they don't contain fancy functions like $xy,
 When viewing A as a matrix, from the geometric perspective of linear transformation: this means linear transformation $A$ transforms vector $x$ into vector $v$. Thus when we solve for $x$, we are essentially finding the inverse transformation of this transformation, making it transform vector $v$ back to vector $x$. That is $A^{-1}Ax = x$, i.e., $A^{-1}A=E$. Introducing the identity matrix, the concept of identity transformation. Thus $x = A^{-1}v$
 
 Any linear transformation A must satisfy **mapping the zero vector to the zero vector**, so the homogeneous system of linear equations $Ax=0$ always has the trivial solution $x=\vec{0}$
-
-
 
 ## Matrix Algebra, Inverse Matrices
 
@@ -89,8 +85,6 @@ Things like inverse matrices only make sense for square matrices, because a matr
 For example, a $2\times3$ matrix, two rows and three columns, can be a mapping from three-dimensional space to two-dimensional space. The input is a three-dimensional vector that serves as weights for linear combination with the three column vectors of the matrix, producing a two-dimensional vector as output.
 
 For another example, a $1\times2$ matrix is actually a row vector. The input is a two-dimensional vector, and each basis vector is one-dimensional, i.e., a scalar. This is actually a linear transformation from two-dimensional space to the one-dimensional number line. This is actually the **dot product**
-
-
 
 ## Dot Product and Duality
 
@@ -146,8 +140,6 @@ Generalization: A linear transformation from multi-dimensional space to one-dime
 
 This property exists because linear transformations mapping multi-dimensional space to the number line can be described by a matrix with only one row. Each column of this matrix gives the position of the basis vector after transformation. Multiplying this matrix by some vector computationally equals the result of the dot product between the vector obtained by transposing the matrix and the original vector.
 
-
-
 ## Cross Product
 
 The cross product in $\mathbb{R}^2$ yields a scalar, whose sign indicates direction, and the calculation method is equivalent to the determinant of a two-dimensional matrix. But this is an illusion. The true cross product is defined in three-dimensional space $\mathbb{R}^3$.
@@ -164,7 +156,7 @@ Usually, the cross product of vectors is calculated by computing the determinant
 
 <div>
 $$
-\left[\begin{matrix}v_1 \\ v_2 \\ v_3 \end{matrix}\right] 
+\left[\begin{matrix}v_1 \\ v_2 \\ v_3 \end{matrix}\right]
 \times
 \left[\begin{matrix} w_1 \\ w_2 \\ w3 \end{matrix}\right]
 = det(\left[\begin{matrix} \hat{i} & v_1 & w_1 \\ \hat{j} & v_2 & w_2\\ \hat{k} & v_3 & w_3 \end{matrix}\right])
@@ -176,7 +168,7 @@ The result vector of the cross product can be calculated this way:
 
 <div>
 $$
-\left[\begin{matrix}v_1 \\ v_2 \\ v_3 \end{matrix}\right] 
+\left[\begin{matrix}v_1 \\ v_2 \\ v_3 \end{matrix}\right]
 \times
 \left[\begin{matrix} w_1 \\ w_2 \\ w3 \end{matrix}\right]
 = \left[\begin{matrix}v_2w_3-w_2v_3 \\ v_3w_1-v_1w_3 \\ v_1w_2-w_1v_2 \end{matrix}\right]
@@ -189,7 +181,7 @@ To explore this question, we proceed in three steps:
 
 * Construct a function
   <div>
-  $$f(\vec{x}) = det(\left[\begin{matrix}\vec{x} & \vec{v} & \vec{w}\end{matrix}\right]) 
+  $$f(\vec{x}) = det(\left[\begin{matrix}\vec{x} & \vec{v} & \vec{w}\end{matrix}\right])
   $$
   </div>
   This function contains $\vec{v},\vec{w}$ as parameters, with $\vec{x}$ as the independent variable. It's a mapping from three-dimensional vectors to one-dimensional scalars.
@@ -201,12 +193,10 @@ f(\left[\begin{matrix}x \\ y \\ z \end{matrix}\right] )
 $$
 </div>
 
-​   The reason for this construction is that
+The reason for this construction is that
 <div>$$\vec{v}\times\vec{w} = f(\left[\begin{matrix}\hat{i} \\ \hat{j} \\ \hat{k}\end{matrix}\right])$$</div>
 
 When the independent variable of this function takes the value $\left[\begin{matrix}\hat{i} \\ \hat{j} \\ \hat{k}\end{matrix}\right]$, the calculation result is exactly the cross product of parameters $\vec{v},\vec{w}$.
-
-
 
 * Prove that $f$ is a linear function, so $f(\vec{x})$ is equivalent to a linear transformation $M$. Since $f$ accepts a three-dimensional vector and outputs a scalar, this matrix must be a $1\times3$ flat matrix $\begin{matrix}[p_1 & p_2 & p_3]\end{matrix}$. But since a linear transformation from 3 dimensions to 1 dimension can be equivalent to a vector dot product, this flat matrix can be stood up and rewritten as a vector $\left[\begin{matrix}p_1 \\ p_2 \\ p_3\end{matrix}\right]$. Thus, matrix multiplication becomes a dot product with the dual vector.
 
@@ -221,8 +211,8 @@ $$
 
 <div>
 $$
-\vec{p} = \vec{v} \times \vec{w} 
-= f(\left[\begin{matrix}\hat{i} \\ \hat{j} \\ \hat{k}\end{matrix}\right]) 
+\vec{p} = \vec{v} \times \vec{w}
+= f(\left[\begin{matrix}\hat{i} \\ \hat{j} \\ \hat{k}\end{matrix}\right])
 = \left[\begin{matrix}v_2w_3-w_2v_3 \\ v_3w_1-v_1w_3 \\ v_1w_2-w_1v_2 \end{matrix}\right] \cdot
 \left[\begin{matrix}\hat{i} \\ \hat{j} \\ \hat{k}\end{matrix}\right]
 = \left[\begin{matrix}v_2w_3-w_2v_3 \\ v_3w_1-v_1w_3 \\ v_1w_2-w_1v_2 \end{matrix}\right]
@@ -230,8 +220,6 @@ $$
 </div>
 
 This vector $\vec{p}$ is exactly the calculation method of the dot product. Now, to deduce that p indeed has these properties, we need to use the constructed function $f$.
-
-
 
 * Because $f(\vec{x}) = det(\left[\begin{matrix}\vec{x} & \vec{v} & \vec{w}\end{matrix}\right]) $. The geometric meaning of the determinant is the volume of the parallelepiped enclosed by these three vectors. Here two vectors are already determined, and the third vector is the independent variable. Also because $f(\vec{x}) = \vec{p} \cdot \vec{x}$
 
@@ -242,8 +230,6 @@ This vector $\vec{p}$ is exactly the calculation method of the dot product. Now,
   $V = \vec{p}\cdot\vec{x} =|p||x|cos(\theta) =  hS $
 
   When vector $p$ is perpendicular to the base, $|x|cos\theta$ is the projection onto the height, equal to the height. At this time $|p| = S$
-
-
 
 ## Change of Basis
 
@@ -260,8 +246,6 @@ Conversely, if we want to translate coordinates in our eyes into coordinates of 
 So expressions of the form $B= Q^{-1}AQ$ suggest a mathematical transfer effect: first the linear transformation A occurs in our coordinate system, and Q is another coordinate system matrix. Then B is actually a linear transformation described using another coordinate system. It accepts coordinates in another coordinate system, applies the same transformation, and then still returns coordinates in another coordinate system.
 
 This is also the meaning of similar matrices. The physical change is the same, just described using different coordinate systems.
-
-
 
 ## Eigenvectors and Eigenvalues
 
@@ -283,15 +267,11 @@ This actually involves solving for $\lambda$ values that make $det(A-\lambda E) 
 
 Since this is a homogeneous system of equations with linearly dependent coefficient matrix, non-zero solutions definitely exist.
 
-
-
 * For some matrices, like rotations, every vector is twisted to a new position, and real-domain eigenvalues don't exist. That is, there are no corresponding eigenvectors. (However, there are complex eigenvalues)
 * For other linear transformations, like shearing, there might be only one eigenvalue and one eigenvector.
 * There also exist cases with only one eigenvalue but infinitely many eigenvectors, such as $x \mapsto \lambda E x$
 
-
-
-##### Eigenbasis	
+##### Eigenbasis
 
 Linear transformations can be described using different coordinate systems. What happens if the coordinate system uses basis vectors that are exactly eigenvectors?
 
@@ -300,8 +280,8 @@ If we use eigenvectors to form a coordinate system matrix Q, then in this coordi
 <div>
 $$
 A = Q^{-1}
-\left[\begin{matrix} 
- \lambda_{1} & 0 & \cdots & 0\\ 
+\left[\begin{matrix}
+ \lambda_{1} & 0 & \cdots & 0\\
  0 & \lambda_2 & \cdots & 0 \\
  \vdots & \vdots & \ddots & \vdots\\
  0 & 0 & \cdots & \lambda_n
@@ -314,8 +294,6 @@ This is **similarity diagonalization**
 
 The prerequisite for similarity diagonalization is that you can select enough eigenvectors to span the entire space.
 
-
-
 ## Vector Spaces
 
 Vectors can be all sorts of things, as long as they have vector properties (vectorish things), such as functions.
@@ -325,7 +303,5 @@ If we let the basis vectors of the coordinate system be not $\hat{i}, \hat{j}$, 
 Then algebraic operations defined on polynomial space, i.e., transformations, can also be represented using matrices.
 
 For example, the polynomial differentiation operation can be written as a matrix.
-
-
 
 The definition of vectors is an interface. Anything satisfying the 8 axioms of vectors can be processed by conclusions from linear algebra.

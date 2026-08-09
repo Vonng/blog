@@ -19,14 +19,13 @@ A **distribution** refers to a complete database solution consisting of a databa
 
 Pigsty differs from other database distributions with five core features:
 
-* **Comprehensive and professional** **monitoring system** 
+* **Comprehensive and professional** **monitoring system**
 * **Stable and reliable** **deployment solution**  
 * **Simple and worry-free user interface**
-* **Flexible and open** **extension mechanism** 
+* **Flexible and open** **extension mechanism**
 * **Free and friendly** **open-source license**
 
 These five characteristics make Pigsty truly a **ready-to-use** PostgreSQL distribution.
-
 
 ### Who Would Be Interested?
 
@@ -39,9 +38,6 @@ For developers (business developers, kernel developers, data developers), studen
 Additionally, Pigsty provides a flexible extension mechanism called "Datalet." People interested in data analysis and data visualization might be surprised to find that Pigsty can also serve as an integrated development environment for data analysis and visualization. Pigsty integrates PostgreSQL with common data analysis plugins and comes with Grafana and embedded Echarts support, allowing users to write, test, and distribute data mini-applications (Datalets). Such as: "Additional extension panel packages for Pigsty monitoring system," "Redis monitoring system," "PG log analysis system," "application monitoring," "data directory browser," etc.
 
 Finally, Pigsty adopts the free and friendly Apache License 2.0, which can be used commercially for free. **As long as you comply with Apache 2 License's attribution clauses, cloud vendors and software vendors are welcome to integrate and commercially develop secondary products**.
-
-
-
 
 ---------------
 
@@ -63,18 +59,15 @@ Pigsty's monitoring system is based on industry best practices, using Prometheus
 
 ![](pigsty-v09-3.webp)
 
-
-
-
 ---------------
 
 ## Stable Reliable Deployment Solution
 
 ![](pigsty-v09-4.jpg)
 
-> *A complex system that works is invariably found to have evolved from a simple system that works.* 
+> *A complex system that works is invariably found to have evolved from a simple system that works.*
 >
-> —John Gall, *Systemantics* (1975) 
+> —John Gall, *Systemantics* (1975)
 
 Databases are software for managing data; management systems are software for managing databases.
 
@@ -85,9 +78,6 @@ Pigsty has a built-in database management solution centered on Ansible. Based on
 Database clusters created by Pigsty are **distributed** and **highly available**. Pigsty-created databases achieve high availability based on DCS, Patroni, and Haproxy. Each database instance in a database cluster is **idempotent** in **usage** - any instance can provide complete read-write services through built-in load balancing components, offering a distributed database user experience. Database clusters can automatically perform failure detection and master-slave switching. Ordinary failures can self-heal in seconds to tens of seconds, with read-only traffic unaffected during this period. During failures, as long as any instance in the cluster survives, it can provide complete services externally.
 
 Pigsty's architectural solution has been carefully designed and evaluated, focusing on achieving required functionality with minimal complexity. This solution has been validated in production environments for long periods and large scales, and has been adopted by organizations in multiple industries including internet/B/G/M/F.
-
-
-
 
 ---------------
 
@@ -109,12 +99,11 @@ Pigsty can manage hundreds of high-spec production nodes in production environme
 
 ![](pigsty-v09-7.jpg)
 
-
 ### User Interface
 
-> *Clearly, we must break away from the sequential and not limit the computers. We must state definitions and provide for priorities and descriptions of data. We must state relation‐ ships, not procedures.*                        
+> *Clearly, we must break away from the sequential and not limit the computers. We must state definitions and provide for priorities and descriptions of data. We must state relation‐ ships, not procedures.*
 >
-> —Grace Murray Hopper, *Management and the Computer of the Future* (1962) 
+> —Grace Murray Hopper, *Management and the Computer of the Future* (1962)
 
 Pigsty incorporates the essence of Kubernetes architectural design, adopting declarative configuration and idempotent operation playbooks. Users only need to describe "what kind of database they want" without caring how Pigsty creates or modifies it. Pigsty will create the required database cluster from bare metal nodes in minutes according to user configuration file manifests.
 
@@ -122,14 +111,11 @@ For management and usage, Pigsty provides different levels of user interfaces to
 
 ![](pigsty-v09-8.jpg)
 
-
-
 ## Flexible Open Extension Mechanism
 
 PostgreSQL's **extensibility** has always been praised, with various extension plugins making PostgreSQL the most advanced open-source relational database. Pigsty also respects this value, providing an extension mechanism called "Datalet" that allows users and developers to further customize Pigsty for "unexpected" use cases, such as: data analysis and visualization.
 
 ![](pigsty-v09-9.jpg)
-
 
 When we have monitoring systems and management solutions, we also have the ready-to-use visualization platform Grafana and the powerful database PostgreSQL. This combination has tremendous power — especially for data-intensive applications. Users can perform data analysis and data visualization without writing frontend or backend code, creating richly interactive data application prototypes, or even the applications themselves.
 
@@ -137,11 +123,7 @@ Pigsty integrates Echarts and common map base layers, making it easy to implemen
 
 ![](pigsty-v09-10.jpg)
 
-
 Pigsty's monitoring system itself is an exemplar of Datalet: all Pigsty advanced topic monitoring panels are released as Datalets. Pigsty also comes with some interesting Datalet examples: Redis monitoring system, COVID-19 data analysis, 7th population census data analysis, PG log mining, etc. More ready-to-use Datalets will be added later, continuously expanding Pigsty's functionality and application scenarios.
-
-
-
 
 ---------------
 
@@ -159,14 +141,12 @@ When an open-source programmer works, their labor might actually contain the cry
 
 Relying on open source, giving back to open source. Pigsty adopts the friendly Apache License 2.0, which **can be used commercially for free**. **As long as you comply with Apache 2 License's attribution clauses, cloud vendors and software vendors are welcome to integrate and develop secondary commercial products**.
 
-
-
 ---------------
 
 ## About Pigsty
 
-> *A system cannot be successful if it is too strongly influenced by a single person. Once the initial design is complete and fairly robust, the real test begins as people with many different viewpoints undertake their own experiments*. 
-> — Donald Knuth 
+> *A system cannot be successful if it is too strongly influenced by a single person. Once the initial design is complete and fairly robust, the real test begins as people with many different viewpoints undertake their own experiments*.
+> — Donald Knuth
 
 Pigsty is built around the open-source database PostgreSQL. PostgreSQL is the world's **most advanced open-source relational database**, and Pigsty's goal is to be the **best open-source PostgreSQL distribution**.
 

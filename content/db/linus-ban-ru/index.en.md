@@ -12,13 +12,13 @@ tags: [Linux, Open-Source]
 Recently, Linus [**kicked out several Russian developers**](https://lore.kernel.org/all/CAHk-=whNGNVnYHHSXUAsWds_MoZ-iEgRMQMxZZ0z-jY4uHT+Gg@mail.gmail.com/) from the project, triggering an outcry in the open source world. But many people forget that Linux is Linus's personal project — it was 30 years ago, and it still is today. Linus himself has always personally held the supreme power of the open source project — the right to release Linux. The Linux community is essentially imperial — and Linus himself is the earliest and most successful technical dictator.
 
 > Ok, lots of Russian trolls out and about.
-> 
+>
 > It's entirely clear why the change was done, it's not getting reverted, and using multiple random anonymous accounts to try to "grass root" it by Russian troll factories isn't going to change anything. And FYI for the actual innocent bystanders who aren't troll farm accounts - the "various compliance requirements" are not just a US thing.
-> 
+>
 > If you haven't heard of Russian sanctions yet, you should try to read the news some day.  And by "news", I don't mean Russian state-sponsored spam.
-> 
+>
 > As to sending me a revert patch - please use whatever mush you call brains. I'm Finnish. Did you think I'd be *supporting* Russian aggression? Apparently it's not just lack of real news, it's lack of history knowledge too.
-> 
+>
 > Linus
 
 In the open source/free software community, there's the concept of **BDFL** ("Benevolent Dictator for Life"). Examples include Python's father Guido van Rossum and Linux's father Linus Torvalds. Of course, in many people's eyes, Linus doesn't qualify as a "benevolent ruler" but rather a "tyrant" — for instance, Linus often uses blunt, crude language to publicly criticize, shame, and attack other technologies, participants, and vendors.

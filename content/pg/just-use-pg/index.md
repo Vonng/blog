@@ -24,8 +24,7 @@ tags: [PostgreSQL, PG生态, 翻译]
 
 ### **简单来说，一切皆可用 Postgres 解决**
 
-
-请神容易送神难，让**复杂度**溜进家里，再送走就没那么容易了。
+请神容易送神难，让 **复杂度** 溜进家里，再送走就没那么容易了。
 
 ![](just-use-pg-1.png)
 
@@ -51,7 +50,7 @@ tags: [PostgreSQL, PG生态, 翻译]
 
 使用 Postgres + PostGIS 执行 **地理空间查询**[8]。
 
-使用 Postgres 进行**全文搜索**[9]，加装 [**ParadeDB**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486913&idx=1&sn=3b7d8cf3f0e323932aba52c897f3c7a4&chksm=fe4b381ac93cb10cc6175c4c7978b5903946d369fe0084fbae5edf76ab08d84134260f28dffc&scene=21#wechat_redirect) 替代 ElasticSearch。
+使用 Postgres 进行 **全文搜索**[9]，加装 [**ParadeDB**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486913&idx=1&sn=3b7d8cf3f0e323932aba52c897f3c7a4&chksm=fe4b381ac93cb10cc6175c4c7978b5903946d369fe0084fbae5edf76ab08d84134260f28dffc&scene=21#wechat_redirect) 替代 ElasticSearch。
 
 使用 Postgres **在数据库中生成JSON**[10]，免去服务器端代码编写，直接供 API 使用。
 
@@ -59,14 +58,11 @@ tags: [PostgreSQL, PG生态, 翻译]
 
 我已明言，**一切皆可Postgres**。
 
-
 ------
 
 ### 关于作者 Stephan
 
 作为一名CTO、临时CTO、CTO教练以及开发者，斯蒂芬在许多快速成长的初创公司的技术部门中都留下了自己的足迹。他在1981年左右，因为想编写视频游戏，就在一家百货公司自学了编程。斯蒂芬在乌尔姆大学（University of Ulm）学习计算机科学，专攻分布式系统和人工智能，并且还学习了哲学。90年代互联网进入德国时，他作为几家初创公司的首位编程员工。他创办过一家获风险资本投资的初创公司，在其他获得风险资本投资的快速成长的初创公司中负责架构、流程和成长挑战，曾在ImmoScout担任管理职位，并且是一家eBay Inc.公司的CTO。在他的妻子成功出售了她的初创公司后，他们搬到了海边，斯蒂芬开始从事CTO辅导工作。你可以在LinkedIn上找到他，或者在Twitter上关注@KingOfCoders。
-
-
 
 ------
 
@@ -86,13 +82,11 @@ tags: [PostgreSQL, PG生态, 翻译]
 
 ![](just-use-pg-arch-2.png)
 
-
 ------
 
 PostgreSQL 并不是一个简单的关系型数据库，而是一个数据管理的抽象框架，具有囊括一切，吞噬整个数据库世界的潜力。在十年前，这仅仅是一种潜力与可能性，在十年后，它已经兑现成为真正的影响力。而我很高兴能见证这个过程，并推动这一进程。
 
 > [**PostgreSQL is for Everything!**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486215&idx=1&sn=52ce37a537336a6d07448f35c7bc4cfd&chksm=fe4b3edcc93cb7ca2dc87602430c2beb09ae5e7dcb568158541a1bd026e305d69d94cea81da4&scene=21#wechat_redirect)
-
 
 ------
 
@@ -115,8 +109,6 @@ PostgreSQL 并不是一个简单的关系型数据库，而是一个数据管理
 [为什么说PostgreSQL前途无量？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484591&idx=1&sn=a6ab13d93bfa26fca969ba163b01e1d5&scene=21#wechat_redirect)
 
 [更好的开源RDS替代：Pigsty](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485518&idx=1&sn=3d5f3c753facc829b2300a15df50d237&scene=21#wechat_redirect)
-
-
 
 ### References
 

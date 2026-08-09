@@ -136,7 +136,7 @@ Koksu River scenery was quite good, very reminiscent of Kanas and Hemu Rivers - 
 ![](16.jpg)
 
 > Koksu riverbank
-> 
+>
 > Reportedly this will be developed into a scenic spot next year, requiring entrance tickets
 
 By noon reached the zip line point with its small store. Surprisingly, even in these deep mountains there were dirt roads accessible by vehicle. The small store was quite shabby, without our longed-for happy cola. Only a few items: Wusu beer, instant noodles, watermelon, and mutton. Instant noodles and Wusu both 10 yuan - truly conscience pricing. Actually with just this one supply point, the boss could charge 100 yuan and I'd still buy. First time finding beer and instant noodles so delicious - I downed two big green bottles and bought two more to pour into water bladders. Wusu is indeed quite strong; two bottles made me dizzy - good thing I didn't drink and ride...

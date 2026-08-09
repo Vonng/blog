@@ -22,8 +22,6 @@ aliases: ["/db/agent-moat/"]
 原理很朴素 —— **一个熟悉环境的普通人，会比来到陌生环境的天才更能干。这就是强龙不压地头蛇**。
 没有上下文的智力，是空转的。没有 Runtime 的 Agent，是虚浮的。
 
-
-
 ------
 
 ## OtterTune：一个价值 1200 万美元的教训
@@ -53,8 +51,6 @@ OtterTune 踩的坑，本质上是一个 Runtime 问题：**它试图在没有�
 
 > PS: 我知道他们开始第二轮创业了，这次还是做 PostgreSQL 调优，希望他们这次能走上正路
 
-
-
 ------
 
 ## Manus：真正的核心是那个沙箱
@@ -73,12 +69,10 @@ Manus 自己也说得很清楚：“The power of Sandbox lies in its completenes
 正是这个完备且确定的沙箱，让大模型的能力得以充分释放。没有这个沙箱，同样的模型只是一个聊天机器人。有了这个沙箱，它变成了一个能真正完成任务的 Agent。
 而且 Manus 换过好几次底层模型 —— 从 GPT 到 Claude —— 效果一直在线。
 
-最近爆火的 OpenClaw 也验证了同样的道理。它之所以能让人喊出 "AI with hands"，不是因为底层模型有多强，而是因为它深度接入了宿主操作系统 —— 
+最近爆火的 OpenClaw 也验证了同样的道理。它之所以能让人喊出 "AI with hands"，不是因为底层模型有多强，而是因为它深度接入了宿主操作系统 ——
 文件系统、Shell、浏览器、日历、消息应用全都通过 CLI 打通了。[把它丢到一个空白的云虚拟机里](https://mp.weixin.qq.com/s/1MnOjJShQrezxSKRpk4zNw)，脱离了这些本地环境的手脚，它就只是又一个普通的聊天机器人而已。
 
 Manus 和 OpenClaw 的成功验证了同一件事：**LLM 是大脑，但真正重要的是身体**。
-
-
 
 ------
 
@@ -127,7 +121,7 @@ Coding Agent 的上下文 是代码目录，DBA Agent 的上下文是什么？
 **第二条路：Kubernetes。** K8s Operator 理论上也能提供自动化运维能力。
 但 K8s 给数据库引入了大量不必要的复杂度 —— 存储编排、网络策略、状态管理、CRD 抽象层层叠叠。
 Agent 要在 K8s 上做数据库运维，需要理解的概念比直接管理数据库多出一个数量级。
-**K8s 的抽象层产生了巨大的阻抗，让 Agent 离它真正要管的东西——数据库本身——越来越远。** 
+**K8s 的抽象层产生了巨大的阻抗，让 Agent 离它真正要管的东西——数据库本身——越来越远。**
 这不是在给 Agent 提供身体，这是在给它套上一层厚重的太空服。
 
 **第三条路：Pigsty。** 一个开源的 PostgreSQL 发行版，直接基于原生 Linux 提供全家桶级的确定性 Runtime。
@@ -159,10 +153,9 @@ Pigsty 与 K8s 的区别：**没有不必要的抽象层。** Agent 直接面对
 学术研究需要可复现的环境，而基础设施即代码天然满足这个需求。同样的配置部署一百次，环境都一模一样。这正是 Agent 所需要的确定性。
 与此同时，我自己也在开发 DBA Agent。谁比基础设施的建造者更了解自己的 Runtime？一个开放的 Runtime 上，学术团队在探索边界，基础设施建造者在打磨核心，社区开发者在贡献创意。生态正在形成。
 
-如果你对 DBA 智能体感兴趣，Pigsty 可能是最好的试炼场。它提供了真实企业环境中 PostgreSQL 服务所需的一切上下文 —— 
+如果你对 DBA 智能体感兴趣，Pigsty 可能是最好的试炼场。它提供了真实企业环境中 PostgreSQL 服务所需的一切上下文 ——
 完整的 [**高可用**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247490952&idx=1&sn=bb69cb746fe7adb0adb9255e608f751f&scene=21#wechat_redirect) 与 PITR，
-以及 Best of Breed 的[ **可观测性**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247490769&idx=1&sn=e9716235d5f32dd3123a87afda5abb71&scene=21#wechat_redirect)。
-
+以及 Best of Breed 的[**可观测性**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247490769&idx=1&sn=e9716235d5f32dd3123a87afda5abb71&scene=21#wechat_redirect)。
 
 ------
 
@@ -177,7 +170,6 @@ Pigsty 与 K8s 的区别：**没有不必要的抽象层。** Agent 直接面对
 Agent 时代的护城河不是更聪明的大脑，而是更确定的身体。在这个确定性的身体中，一个简单的 CLAUDE.md 文件，就足够让中等智能水准的 LLM 表现出 中级 DBA 的水平来。
 
 ![数据库需求金字塔](db-needs-pyramid.jpg)
-
 
 OtterTune 用 1200 万美元证明了：没有身体的大脑走不通。Manus 用一个沙箱证明了：给大脑一个确定性的身体，它就能创造奇迹。
 强龙来了一条又一条，每条都比上一条更强。但地头蛇在自己的地盘上深耕日久，壁垒越积越厚。

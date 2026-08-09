@@ -258,4 +258,3 @@ Spat 提供类似键值存储的模式，支持字符串、列表、集合、哈
 - [Cary Huang: PGConf.dev 2024：在温哥华塑造 PostgreSQL 的未来](https://www.highgo.ca/2024/06/11/pgconf-dev-2024-shaping-the-future-of-postgresql-in-vancouver/)
 - [PGCon.Dev 扩展生态峰会小记 @ 温哥华](https://mp.weixin.qq.com/s/C0YyE52KbLLbnG1C2FqGRg)
 - [PG大会2024开幕，温哥华饭搭子驴友团呢？](https://mp.weixin.qq.com/s/4t1thBCDVS8y9dHiOxPZaA)
-

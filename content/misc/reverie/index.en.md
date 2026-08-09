@@ -21,8 +21,6 @@ When the money printing started in 2008, I was still confused. By the money shor
 
 So what is the script? I've guessed some of it. Logically, keeping quiet and making a fortune would be best, but I really can't bear to just watch from the sidelines. So today I'll share my views with everyone. **These are Jia Yucun's words, crazy ravings. Any resemblance is purely coincidental, and I take no responsibility.**
 
-
-
 ## Preface
 
 Thirty years east of the river, thirty years west of the river - sixty years make one Kondratiev cycle. The first thirty years were socialist construction, the latter thirty years the journey of reform and opening up. Personal choices determine fate, national choices determine national fortune: this year marks the 40th anniversary of reform and opening up. Since choosing monetary stimulus in 2008, the Party-state chose to walk the irreversible path of defying fate. In 2008, 2013, and 2015, it should have landed, but refusing to print money caused trouble. Under unlimited money printing, it was artificially extended three times, forcibly stretching the cycle's second half by ten years. Many collapse theorists saw the problems but cried wolf too early, foolishly staying short for ten years. Violating economic laws always requires payback - the higher you blow it, the harder you fall. Currently, monetary stimulus is basically ineffective, the external environment has changed dramatically, and hoping AI will drive the next technological revolution is basically hopeless. So the story is essentially determined.
@@ -36,8 +34,6 @@ Therefore, what our court faces is an unprecedented transformation in 40 years, 
 Forty years of reform and opening up - from post-80s to post-2000s generations, enough to span two generations with over a dozen generation gaps. People within forty-fifty years old were born in a golden age, riding reform spring winds and globalization waves in the main theme of peace and development, all the way successful and spirited. In over a decade of economic miracles, these people took **tomorrow will be better** for granted, full of beautiful expectations for the future. These people received depoliticized brainwashing education (deliberately designed rigid political courses), busy being strivers climbing up, with no time or concern for social reality. However, at the end of the cycle, many will become sacrifices of the era. For most people, knowing the script won't help them escape the harvest sickle, only losing the happiness of ignorance. So closing this article and exiting now is still possible.
 
 ![](reverie-matrix.jpg)
-
-
 
 ## The Script
 
@@ -104,8 +100,6 @@ Internet technology companies' core value is improving efficiency, liberating pr
 
 Many internet enterprise executives already sense the situation, starting layoffs and entering winter mode - now basically just waiting for BAT. But these important enterprises will unexpectedly be recruited. Boss Ma's wise retreat from control to teach is intelligent, can reference Liu Bocheng.
 
-
-
 **The fourth systemic risk impact is cultural transformation** - specifically called whatever name doesn't matter, you can call it Cultural Revolution 2.0. What's important is superstructure must adapt to economic base. Living hard lives must have supporting culture - entertainment unto death is wishful thinking. How can you provide pacifier entertainment when resources are insufficient? What's needed is main theme thought and arduous march spirit. So I especially recommend everyone understand North Korea's history. Culture needs to return to main themes, so excluding foreign culture is predictable. Boycott Christmas, American movies, Japanese cars, iPhones; weaken English's position in college entrance exams, strengthen Chinese position. WG2.0's goal is formatting everyone's thoughts, unifying them to overcome difficulties together with one leader, like the upcoming "Study Strong Country App" daily quota learning tasks for all.
 
 Additionally, our court will try finding legitimacy from traditional Confucian culture - these things appear in news broadcasts every few days: family traditions, rural sages, loyalty, filial piety, women's virtue. Confucius changed from stinking intellectual to Confucian sage again. Loyalty and filial piety, these feudal things, indeed help improve social stability and maintain rule. Also strongly promote "women's virtue," driving women back to families to relieve employment pressure and aging. Of course, such regression faces great resistance - definitely done through ostensibly improving women's welfare while actually weakening employment competitiveness. Interested parties can search People's Daily's latest comments about Shandong women not being allowed at dinner tables during New Year.
@@ -116,19 +110,13 @@ When things develop beyond expectations, Heaven's court has one adrenaline shot 
 
 Finally, preparation prevents panic - recent news broadcasts especially emphasize bottom-line thinking. The Party-state naturally prepared for worst-case scenarios. Hainan province-wide English learning, under weakened English education background, what this means deserves careful consideration. Those who can lead are top elites in struggle - having more sinister Plan B wouldn't be surprising at all. Won't elaborate.
 
-
-
 After discussing these problems, how long will this situation last? Ten to thirty years. Mainly a psychological expectation management problem. For mountain area farmers, maybe no particularly big impact. For ordinary people, centralized order or local order is better than no order. Last year's global climate significant change and food production reduction - once production order collapses, directly enter great famine mode. Well-informed, quick-thinking people already fled. Those remaining should honestly endure together. Immigration to Western countries also needs caution - tourism might be fine but immigration is uncertain. Can study WWII Japanese-Americans and Japanese-Canadians' experiences. For studying abroad, one might accidentally become a spy, maybe even treated as spy upon returning - reference intellectuals returning during Cultural Revolution. This world is too crazy, nowhere to escape.
 
 Again emphasizing, above all occurs in parallel world fictional deduction. Jia Yucun's words, don't take seriously, no responsibility.
 
-
-
 Well, the magical story ends. Whether thinking it's playing with slippery slope fallacies, worrying unnecessarily, or selling anxiety - it doesn't matter. After all, world operation doesn't depend on individual will. Of course, maybe I fell into negative echo chambers, but data doesn't lie (but can be faked). Since year beginning, many economic data already started losing speed, so much that Cyberspace Administration just issued regulations: "Financial information service providers shall not spread false information" - even many economic data can't be openly discussed.
 
 Grass snake gray lines, hidden pulses for thousands of miles. Following news reveals many things the Party-state already prepared for. I guess departmental level and above cadres should be very clear. Observing some high-position public figures' remarks also reveals many clues (especially recommend two samples: Global Times editor Hu Xijin and Tianfeng Securities chief economist Liu Yuhui, both chatterboxes with high information content).
-
-
 
 ## Conclusion
 

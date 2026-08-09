@@ -28,8 +28,6 @@ Love is determined by the following three factors: both parties' three views (wo
 
 In the romance stage, the most important factor determining whether two people can be together is the compatibility of their three views, which is the decisive factor of love. Methodology is determined by worldview - what kind of worldview leads to what kind of methodology. This saying is true, but these things sometimes play very important roles in relationships, so I propose listing them separately. What I mean here is methodology in the narrow sense, which can be understood as methods and means used to understand and transform emotions. As for marriage, what needs to be considered is often not just spiritual compatibility, but also matching material foundations. The saying "matching social status" has extremely strong practical significance for marriage. Therefore, material foundation will also be a major determining factor of love. The importance of these three factors is: three views, methodology, material foundation. Overall, the relationship should be as shown in the figure below.
 
-
-
 ## 1. Worldview, Life View, Values
 
 ![Three factors of love](love-factors.svg)
@@ -49,8 +47,6 @@ From this perspective, what determines love is undoubtedly the matching degree o
 Methodology is our general method of understanding and transforming the world, the way and method people use to observe things and handle problems. Here we narrow the scope, changing "world" to "love." The reason for listing it separately is simple: even if two people's three views match well, improper handling methods can still cause love to die prematurely. For example, when a couple has disagreement when buying furniture - say the man is a rational type pursuing practicality, favoring something powerful but ugly, while the woman is very emotional, choosing something gorgeous but single-function (well, this is the influence that incompatible three views often bring!). So how should both parties handle this? Choose to fight to the end? Choose compromise? Or should one party choose tolerance, abandoning their principles to temporarily accommodate the other? Well, like this, when disagreements arise due to differences in three views, it's time for methodology to work. Persistence in beliefs is unconditional, but actual behavior needs strength as guarantee. I really appreciate this saying. Sometimes, some methods indeed deviate from what you want, but their effects are indeed very good. Temporary compromise often works better than immediate fierce collision and adjustment.
 
 Methodology is a large category with many types: sweet words, catering to preferences - I can't list them all. But one very practical method I advocate is tolerance. Tolerance is a very great virtue. If everyone had this virtue, there wouldn't be so many cruel things happening. Therefore, tolerance is not something everyone is born with, so we need to cultivate this character ourselves. Tolerance is like a layer of lubricant, reducing some bumps during the adjustment process. Why hold grudges over the other's small mistakes? To err is human - when misunderstandings occur, rational thinking should dominate your brain. Think about how to solve problems rather than how to retaliate or demand apologies. Facing these setbacks with a tolerant attitude can make you live more happily. But remember, no matter how well methods and means are used, they can't compare to solid compatibility.
-
- 
 
 ## 3. Material Foundation
 
@@ -100,14 +96,10 @@ So what results do these three factors produce when combined? I'll roughly list 
 
    This is the most impossible love, basically can't even be friends, let alone lovers or spouses
 
- 
-
 In summary, I believe worldview, values, and life view matching has decisive influence on love.
 
 Finally, I quote a passage from the Bible:
 
 Love is patient, love is kind; love does not envy or boast; it is not arrogant or rude. It does not insist on its own way; it is not irritable or resentful; it does not rejoice at wrongdoing, but rejoices with the truth. Love bears all things, believes all things, hopes all things, endures all things; love never ends.
-
-
 
 Love is responsibility, love is dedication

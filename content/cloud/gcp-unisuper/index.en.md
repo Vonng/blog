@@ -5,7 +5,7 @@ date: 2024-05-11
 author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat Official Account](https://mp.weixin.qq.com/s/eH5HBbL7cQhjQY8rm1gFLQ)
 summary: >
-  Due to an "unprecedented configuration error," Google Cloud mistakenly deleted trillion-RMB fund giant **UniSuper**'s entire cloud account, cloud environment and all off-site backups, setting a new record in cloud computing history!
+  Due to an "unprecedented configuration error," Google Cloud mistakenly deleted trillion-RMB fund giant UniSuper's entire cloud account, cloud environment and all off-site backups, setting a new record in cloud computing history!
 tags: [Cloud-Exit, Cloud-Outage]
 ---
 

@@ -12,8 +12,6 @@ menu:
 
 > [微信公众号原文](https://mp.weixin.qq.com/s/TH-exGEpt4ZZrlz8fLGLLA)
 
-
-
 ISD 是 Integrated Surface Dataset 的缩写，是 NOAA 美国国家海洋和大气管理局公开的一份数据集。包括了全球接近3万个地表气象站从 1900 年迄今的观测记录，气象领域的朋友对此应该非常熟悉。
 
 我最近重新整理了一下这份数据集：编写了下载的脚本，解析的Parser，建模的PostgreSQL DDL，查询的SQL语句，可视化的Grafana Dashboard，以及清理好的 CSV 原始数据。用于探索分析，教学演示与数据库性能测试对比。
@@ -23,7 +21,6 @@ ISD 是 Integrated Surface Dataset 的缩写，是 NOAA 美国国家海洋和大
 ![isd-overview.png](isd-overview.png)
 
 项目的地址是：https://github.com/Vonng/isd
-
 
 ---------------
 
@@ -41,8 +38,6 @@ ISD 可以用来探索分析，或者测试衡量数据库性能。但更重要�
 
 ![isd-country.png](isd-country.png)
 
-
-
 ---------------
 
 ## 数据存储与建模
@@ -52,7 +47,6 @@ ISD 提供了四种粒度的数据集：亚小时级原始观测数据（hourly�
 其中最为重要的是前两者：**isd.hourly** 是气象站的原始观测记录，保留着最丰富的信息。**isd.daily** 是天级别的聚合汇总摘要，可以用来生成月度与年度的汇总摘要。
 
 在本项目中，默认使用了 isd.daily 数据，清洗压缩后约 2.8GB ， 1.6亿条。灌入 PostgreSQL 展开后含索引大概 30GB， 具体格式如下：
-
 
 ```sql
 CREATE TABLE IF NOT EXISTS isd.daily
@@ -100,12 +94,9 @@ CREATE TABLE IF NOT EXISTS isd.daily
 
 ```
 
-
 当然，还有一些关于气象站的元数据，以辅助表的形式存在：isd.station 存储了气象站基本信息，标号，名称，国家，位置，海拔，服役时间等。isd.history 存储了按月统计的历史观测记录数，isd.world 存储了世界上国家/地区的详细信息与地理边界（来自欧盟统计部门），isd.china 存储了中国行政区划信息，isd.mwcode 存储了天气代码的具体解释条目，isd.element 存储了气象要素的说明与数据覆盖率。
 
 ![isd-table.png](isd-table.png)
-
-
 
 ---------------
 
@@ -120,7 +111,6 @@ CREATE TABLE IF NOT EXISTS isd.daily
 数据解析器使用 Go 语言编写，您可以直接编译，或者直接下载编译好的二进制文件。解析器以管道模式工作，将年度数据 tarball 喂给它，它就会自动输出解析好的 CSV 数据。可以直接被 PostgreSQL COPY 命令消化。
 
 ![parser.png](parser.png)
-
 
 ---------------
 
@@ -143,8 +133,6 @@ CREATE TABLE IF NOT EXISTS isd.daily
 如果您对更精细粒度数据感兴趣，点击月份导航，会自动跳转到 ISD Detail 面板中，这里会提供日汇总级别的摘要数据，以及亚小时级别的原始观测记录。此外，在气象要素部分，也会展示一些额外的指标，包括分钟级别的温度，露点，气压，风速，风向，云量，可见度，降水，降雪，以及其他天气情况代码。
 
 ![isd-detail.webp](isd-detail.webp)
-
-
 
 ---------------
 

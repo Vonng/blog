@@ -61,7 +61,6 @@ curl -fsSL https://repo.pigsty.cc/get | bash
 cd ~/pigsty; ./bootstrap; ./configure; ./install.yml
 ```
 
-
 --------
 
 ### 重大变更
@@ -73,7 +72,7 @@ cd ~/pigsty; ./bootstrap; ./configure; ./install.yml
   * 有在这些系统上运行需求的用户请考虑我们的 [订阅服务](https://pigsty.io/zh/docs/about/service)
 
 * 默认使用在线安装，不再提供离线软件包，从而解决操作系统小版本兼容性问题。
-  * `bootstrap` 过程现在不再询问是否下载离线安装包，但如果 `/tmp/pkg.tgz` 存在，仍然会自动使用离线安装包。 
+  * `bootstrap` 过程现在不再询问是否下载离线安装包，但如果 `/tmp/pkg.tgz` 存在，仍然会自动使用离线安装包。
   * 有离线安装需求请自行制作离线软件包或考虑我们的 [订阅服务](https://pigsty.io/zh/docs/about/service)
 
 * Pigsty 使用的上游软件仓库进行统一调整，地址变更，并对所有软件包进行 GPG 签名与校验
@@ -83,7 +82,6 @@ cd ~/pigsty; ./bootstrap; ./configure; ./install.yml
 * API 参数变更与配置模板变更
   * EL 系与 Debian 系配置模板现在收拢统一，有差异的参数统一放置于 [`roles/node_id/vars/`](https://github.com/Vonng/pigsty/tree/master/roles/node_id/vars) 目录进行管理。
   * 配置目录变更，所有配置文件模板统一放置在 `conf` 目录下，并分为 `default`, `dbms`, `demo`, `build` 四大类。
-
 
 --------
 
@@ -133,7 +131,6 @@ cd ~/pigsty; ./bootstrap; ./configure; ./install.yml
 * 设置了 pgbouncer 默认参数，`max_prepared_statements = 128` 启用了事物池化模式下的准备语句支持，并设置 `server_lifetime` 为 600，
 * 修改了 patroni 模板默认参数，统一增大 `max_worker_processes` +8 可用后端进程，提高 `max_wal_senders` 与 `max_replication_slots` 至 50，并增大 OLAP 模板临时文件的大小限制为主磁盘的 1/5
 
-
 --------
 
 ### 版本升级
@@ -174,7 +171,6 @@ cd ~/pigsty; ./bootstrap; ./configure; ./install.yml
 
 Pigsty 重新编译了所有 PostgreSQL 扩展插件，PostgreSQL 扩展插件的最新版本，请参考 [扩展列表](https://pigsty.cc/docs/pgsql/ext/)
 
-
 --------
 
 ### 新应用
@@ -188,7 +184,6 @@ Pigsty 专业版现在提供试点的 Kubernetes 部署支持与 Kafka KRaft 集
 
 - **`KUBE`**： 使用 cri-dockerd 或 containerd 部署由 Pigsty 托管的 Kubernetes 集群
 - **`KAFKA`**：部署由 Kraft 协议支持的高可用 Kafka 集群
-
 
 --------
 

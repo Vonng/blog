@@ -45,8 +45,6 @@ But here is the problem: search PubMed for any one of them and the authors match
 
 None of the individual moves is outright fabrication. It is **sleight of hand**: borrowing the reputation of a real paper to support a false conclusion; smuggling a finding from one field into another; using an in vitro result to imply in vivo efficacy; substituting "symptom relief" for "disease prevention." AI is not inventing the evidence. It is rearranging genuine evidence into a false narrative. Every brick is real, but the blueprint is fake. Inspect each brick in isolation, and every one looks sound.
 
-
-
 -------
 
 ## What Does This Mean for Society?
@@ -76,7 +74,6 @@ If only one person gets fooled, the problem is still manageable. But consider th
 A wellness blogger uses AI to generate academic support for an article. Readers see properly formatted references, decide it is credible, and share it. Later, the article is scraped into another model's training corpus and treated as a source of knowledge. One training cycle later, "eating garlic prevents middle ear infections" has gone from an offhand invention to "a claim supported by multiple sources."
 
 This is not hypothetical. It is already happening. AI amplifies misinformation, launders it, and recycles it through circular citations until it acquires an "academic legitimacy" it never truly had.
-
 
 --------
 

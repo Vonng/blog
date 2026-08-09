@@ -12,8 +12,6 @@ tags: [PostgreSQL, PG生态, 开源, 翻译]
 >
 > 译者：[Vonng](https://vonng.com)，PostgreSQL 专家，Free RDS PG Alternative —— Pigsty 作者
 
-
-
 -----------
 
 ## PostgreSQL会修改开源许可证吗
@@ -35,7 +33,7 @@ PostgreSQL 的网站上其实 [有答案](https://www.postgresql.org/about/licen
 尽管这么说，但 PostgreSQL不会改变许可证，还是有一些原因在里面的：
 
 - 许可证的名字就叫 “[PostgreSQL许可证](https://www.postgresql.org/about/licence/)” —— 你都用项目来命名许可证了，还改什么协议？
-- PostgreSQL项目发起时，以开源社区协作为主旨，**意在防止任何单一实体控制本项目**。这一点作为项目的精神主旨已经延续了近三十年时间了，并且在项目 [项目政策 ](https://www.postgresql.org/about/policies/)中有着明确体现。
+- PostgreSQL项目发起时，以开源社区协作为主旨，**意在防止任何单一实体控制本项目**。这一点作为项目的精神主旨已经延续了近三十年时间了，并且在项目 [项目政策](https://www.postgresql.org/about/policies/)中有着明确体现。
 - [Dave Page 在这封邮件中明确表示过](https://www.postgresql.org/message-id/937d27e10910260840s1d28aab2o799f2c58d14dfb1e@mail.gmail.com) 😊
 
 那么真正的问题就变成了，**如果 PostgreSQL 要改变许可证，会出于什么理由呢**？通常变更许可证的原因是出于商业决策 —— 但看起来围绕 PostgreSQL 的商业业务与 PostgreSQL 的功能集合一样强壮。冯若航（Vonng）最近[写了一篇博客文章](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4)，突出展现了围绕 PostgreSQL 打造的软件与商业生态，这还仅仅是一部分。
@@ -45,7 +43,6 @@ PostgreSQL 的网站上其实 [有答案](https://www.postgresql.org/about/licen
 但 PostgreSQL 不会改变其许可证的最大原因是，这将对所有 PostgreSQL 用户产生不利影响。对一项技术来说，建立信任需要很长时间，尤其是当该技术经常用于应用程序最关键的部分：数据存储与检索。[PostgreSQL赢得了良好的声誉 —— 凭借其久经考验的架构、可靠性、数据完整性、强大的功能集、可扩展性，以及背后充满奉献精神的开源社区，始终如一地提供优质、创新的解决方案](https://www.postgresql.org/about/)。修改 PostgreSQL 的许可证将破坏该项目过去近三十年来建立起的所有良好声誉。
 
 尽管 PostgreSQL 项目确实有不完美之处（我当然也对这些不完美的地方有所贡献），但 PostgreSQL 许可证对PostgreSQL 社区和整个开源界来说，确实是一份真正的礼物，我们将继续珍惜并帮助保持 PostgreSQL 真正的自由和开源。毕竟，[官网上也是这么说的](https://www.postgresql.org/about/licence/) ;)
-
 
 ------
 
@@ -72,9 +69,6 @@ Redis 切换为更为严格的 SSPL 协议的核心原因，用 Redis Labs CEO �
 在抵御云厂商白嫖的实践中，修改协议是最常见的做法：但AGPLv3 过于严格容易敌我皆伤，SSPL 因为明确表达这种敌我歧视，不被算作开源。业界需要一种新的歧视性软件许可证协议，来达到名正言顺区分敌我的效果。使用双协议进行明确的边界区分，也开始成为一种主流的开源商业化实践。
 
 真正重要的事情一直都是软件自由，而“开源”只是实现软件自由的一种手段。而如果“开源”的理念无法适应新阶段矛盾斗争的需求，甚至会妨碍软件自由，它一样会过气，并不再重要，并最终被新的理念与实践所替代 —— 比如“本地优先”。
-
-
-
 
 ------
 

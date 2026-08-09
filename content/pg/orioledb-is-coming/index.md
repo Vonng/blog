@@ -104,8 +104,6 @@ OrioleDB 最近把自己的 Slogan 从 “高性能 OLTP 存储引擎” 修改�
 
 > [OrioleDB Docs: Decoupled storage and compute](https://www.orioledb.com/docs/usage/decoupled-storage)
 
-
-
 ------
 
 ## 所以，我想试试，咋整？

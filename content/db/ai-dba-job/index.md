@@ -12,8 +12,6 @@ aliases: ["/ai/ai-dba-job/"]
 
 前天在 HOW 2025 大会的圆桌上，萧主席问了一些关于 AI，数据库 DBA 有趣的问题，以下是老冯的观点，整理发出。
 
-
-
 ## OLTP / OLAP ，谁先被革命？
 
 **问题**：**OLTP / OLAP 领域，AI 在哪个领域更有可能先带来 “革命性” 的变化，DBA， 数据分析师，架构师又该如何应对这些变化。**
@@ -24,16 +22,13 @@ aliases: ["/ai/ai-dba-job/"]
 
 ![vonng1.webp](vonng1.webp)
 
-然而不同于 Github 上到处都是语料的编程数据样本，运维/数据库管理经验的公开数据积累是非常少的。SRE，DBA 则因为语料数据缺乏，加上反馈验证回路过长，在短期内还难以被直接替代。因此毫无疑问 AI 带来的 “革命性” 变化会首先发生在 OLAP 领域。 
+然而不同于 Github 上到处都是语料的编程数据样本，运维/数据库管理经验的公开数据积累是非常少的。SRE，DBA 则因为语料数据缺乏，加上反馈验证回路过长，在短期内还难以被直接替代。因此毫无疑问 AI 带来的 “革命性” 变化会首先发生在 OLAP 领域。
 
 一个鲜活的例子是，OpenAI 创始成员（[软件3.0时代，AI带来的范式转移](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489945&idx=1&sn=dbffc2a15e923cef5abb5df9b73426a4&scene=21#wechat_redirect)），Vibe Coding 之父安德烈·卡帕西（Andrej Karpathy）在 YC AI创业学院发表了主题演讲就提到过，他花了一天时间就糊出来一个菜单配图的应用，但是花了整整一周时间才把这个应用给部署上线 —— OPS 部份成了 Vibe Coding 的瓶颈。
 
 ![karpathy.webp](karpathy.webp)
 
 尽管如此，Agent 替代 DBA 也只是一个时间早晚的问题。也许三年，也许五年，最终 OLTP 领域的 DBA 工作也会在几年内被 AI 攻克。云计算和本地管控软件会自动化掉 70% - 90% 的工作，而 AI Agent 会处理剩下 9% 的工作，可能留下不到 1% 甚至 千分之一的疑难杂症给顶级 DBA 处理。
-
-
-
 
 ## 一体化还是专业化，如何选型？
 
@@ -43,7 +38,7 @@ aliases: ["/ai/ai-dba-job/"]
 
 前些日子，有个朋友问我一个向量 RAG 场景，应该用 PostgreSQL + pgvector 还是 Milvus，我问你有多少数据量 —— 两千万条。我回复说这个数量级您就别折腾了，一百多GB的数据放 PG 洒洒水，十几TB 的PG向量表我都见过照样跑的好好的。你要是数据量再翻个几百倍，[有淘宝图搜图百亿千亿量级的场景，用一个专用向量数据库很合理](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486505&idx=1&sn=a585c9ff22a81a8efe6b87ce9bd66cb1&scene=21#wechat_redirect)，而你现在已经用着PG，这么点规模就开始折腾，那不是给自己找事吗？
 
-同理，我也见过好几次有业务号称自己有超高增长，一上来就要申请一套水平分片库，最后只有 几十GB数据的滑稽故事。如果你的数据连几十TB都没有，那根本用不上什么分布式 NewSQL 数据库 ——[ OpenAI 可以用一套一主四十从PG支持五亿月活](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489761&idx=1&sn=9aeb45c299618fef1dd28635720bfa86&scene=21#wechat_redirect)，那 99.99% 的业务也可以靠一个 PostgreSQL 解决所有问题。[分布式数据库是伪需求](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489590&idx=1&sn=5dab5e2601bcc88cbc3fc8ec210efaec&scene=21#wechat_redirect)，[甚至也开始对 OLAP 分析/大数据成立了](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489788&idx=1&sn=23befb6797fdd4ac7a073d49802aa980&scene=21#wechat_redirect)。
+同理，我也见过好几次有业务号称自己有超高增长，一上来就要申请一套水平分片库，最后只有 几十GB数据的滑稽故事。如果你的数据连几十TB都没有，那根本用不上什么分布式 NewSQL 数据库 ——[OpenAI 可以用一套一主四十从PG支持五亿月活](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489761&idx=1&sn=9aeb45c299618fef1dd28635720bfa86&scene=21#wechat_redirect)，那 99.99% 的业务也可以靠一个 PostgreSQL 解决所有问题。[分布式数据库是伪需求](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489590&idx=1&sn=5dab5e2601bcc88cbc3fc8ec210efaec&scene=21#wechat_redirect)，[甚至也开始对 OLAP 分析/大数据成立了](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489788&idx=1&sn=23befb6797fdd4ac7a073d49802aa980&scene=21#wechat_redirect)。
 
 ![vonng2.webp](vonng2.webp)
 
@@ -56,9 +51,6 @@ aliases: ["/ai/ai-dba-job/"]
 ![prymaid.webp](prymaid.webp)
 
 过早优化是万恶之源 —— 为了自己不需要的属性付出复杂度，成本，人力，一致性维护上的代价没有意义。企业在数据库选型的时候一定要擦亮眼睛，不要为了自己并不需要的东西而瞎忙活 —— 而 PostgreSQL 毫无疑问就是数据库领域的默认安全牌。
-
-
-
 
 ## AI 时代的 DBA，何去何从？
 
@@ -90,12 +82,10 @@ AI 是极度利好专家的，在专家手中的 AI 能发挥出普通工程师 
 
 而 PG DBA 应该充分利用好当下这个优势，使用 Code Agent （以及 开源 PostgreSQL 数据库管控 Pigsty）武装自己，把自己改造成新一代的全能架构师 + 管理者，在别人还在吭哧吭哧啃数据库硬骨头的时候抢先出击，占领生态位高地。
 
-
-
 ### 广告时间
 
 老规矩，不打广告，写啥文章？😁
 
 开源免费企业级 PostgreSQL 发行版：认准 Pigsty
 
-https://pigsty.cc ，这是市面上唯二两个可以[自建 Supabase ](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488737&idx=1&sn=0bc6d0532addb19f70517cd8f8dcb098&scene=21#wechat_redirect)的开源 PostgreSQL 方案。 让你在虚拟机/物理机/云服务器上一键安装好带有高可用， 备份恢复，监控系统，IaC，连接池，访问控制的企业级 PostgreSQL / Supabase / MinIO / Redis / ... 数据库服务，并一条龙解决好 Nginx，域名，HTTPS，Docker，镜像，软件源翻墙等问题 ……
+https://pigsty.cc ，这是市面上唯二两个可以[自建 Supabase](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488737&idx=1&sn=0bc6d0532addb19f70517cd8f8dcb098&scene=21#wechat_redirect)的开源 PostgreSQL 方案。 让你在虚拟机/物理机/云服务器上一键安装好带有高可用， 备份恢复，监控系统，IaC，连接池，访问控制的企业级 PostgreSQL / Supabase / MinIO / Redis / ... 数据库服务，并一条龙解决好 Nginx，域名，HTTPS，Docker，镜像，软件源翻墙等问题 ……

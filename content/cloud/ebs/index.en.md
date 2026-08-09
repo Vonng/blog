@@ -4,7 +4,7 @@ date: 2023-03-15
 author: |
   [Ruohang Feng](https://vonng.com/en/) ([@Vonng](https://vonng.com/en/)) | [WeChat](https://mp.weixin.qq.com/s/UxjiUBTpb1pRUfGtR9V3ag)
 summary: >
-  The real business model of cloud: **"Cheap" EC2/S3 to attract customers, and fleece with "Expensive" EBS/RDS**   
+  The real business model of cloud: "Cheap" EC2/S3 to attract customers, and fleece with "Expensive" EBS/RDS.
 module: []
 categories: [Cloud]
 tags: [Cloud, Cloud-Exit, EBS]
@@ -23,8 +23,6 @@ But when compared to the **hundredfold markup of public cloud block storage**, c
 
 [![](featured.jpg)](https://mp.weixin.qq.com/s/UxjiUBTpb1pRUfGtR9V3ag)
 
-
-
 -------------
 
 ## TL; DR
@@ -35,11 +33,9 @@ Why is there such a staggering markup for plug-and-play disk hardware? Cloud pro
 
 With EC2 and EBS serving as the pricing anchors for cloud databases, their markups are several and several dozen times higher, respectively, thus supporting the exorbitant profit margins of cloud databases. However, such monopolistic profits are unsustainable: the impact of IDC 2.0/telecom/national cloud on IaaS; private cloud/cloud/-native/open source as alternatives to PaaS; and the tech industry's massive layoffs, AI disruption, and the impact of China's low labor costs on cloud services (through IT outsourcing/shared expertise). **If public clouds continue to adhere to their current fleecing model, diverging from their original mission of providing fundamental compute and storage infrastructure, they will inevitably face increasingly severe competition and challenges from the aforementioned forces.**
 
-
 -------------
 
 ## WHAT a Scam!
-
 
 When you use a microwave at home to heat up a ready-to-eat braised chicken rice meal costing 10 yuan, you wouldn't mind if a restaurant charges you 30 yuan for microwaving the same meal and serving it to you, considering the costs of rent, utilities, labor, and service. But what if the restaurant charges you 1000 yuan for the same dish, claiming: **"What we offer is not just braised chicken rice, but a reliable and flexible dining service"**, with the chef controlling the quality and cooking time, pay-per-portion so you get exactly as much as you want, pay-per-need so you get as much as you eat, with options to switch to hot and spicy soup or skewers if you don't feel like chicken, claiming it's all worth the price. Wouldn't you feel the urge to give the owner a piece of your mind? This is exactly what's happening with block storage!
 
@@ -69,8 +65,6 @@ Some "experts" claim that cloud block storage is stable and reliable, offering m
 
 > 《[Is the Cloud SLA Just a Placebo?](/cloud/sla/)》
 
-
-
 In plain language: if the service is down for a day and a half in a month (95% availability), you get a 100% coupon for that month's service fee; seven hours of downtime (99%) yields a 30% coupon; and a few minutes of downtime (99.9% for a single disk, 99.99% for a region) earns a 10% coupon. Cloud providers charge a hundredfold more, yet offer mere coupons as compensation for significant outages. Applications that can't tolerate even a few minutes of downtime wouldn't benefit from these meager coupons, reminiscent of the past incident, "The Disaster Tencent Cloud Brought to a Startup Company."
 
 SF Express offers 1% insurance for parcels, compensating for losses with real money. Annual commercial health insurance plans costing tens of thousands can cover millions in expenses when issues arise. The insurance industry should not be insulted; it operates on a principle of value for money. **Thus, an SLA is not an insurance policy against losses for users. At worst, it's a bitter pill to swallow without recourse; at best, it provides emotional comfort.**
@@ -78,7 +72,6 @@ SF Express offers 1% insurance for parcels, compensating for losses with real mo
 The premium charged for cloud database services might be justified by "expert manpower," but this rationale falls flat for plug-and-play disks, **with cloud providers unable to explain the exorbitant price markup**. When pressed, their engineers might only say:
 
 "We're just following AWS; that's how they designed it."
-
 
 -------------
 
@@ -115,7 +108,6 @@ These four points are well summarized, but what public clouds will not disclose 
 **Please deeply use the vendor's proprietary identity system** (vendor lock-in)
 
 **Faithfully contribute to the cloud database!** (Once users are locked in, the time to "slaughter" arrives)
-
 
 -------------
 
@@ -188,11 +180,9 @@ Unfortunately, for the sake of obfuscation, both cloud software and cloud hardwa
 
 **Public cloud providers that abandon platform neutrality and their original intent of being infrastructure providers, indulging in PaaS / SaaS / and even application layer profiteering, will sink in a bottomless competition.**
 
-
 -------------
 
 ## Where to Go
-
 
 **Monopolistic profits vanish as competition emerges, plunging public cloud providers into a grueling battle.**
 
@@ -217,8 +207,6 @@ Considering these trends, the combination of IDC2.0 and open-source self-buildin
 Staying true to the original mission is essential. Public clouds do an admirable job at the cloud hardware / IaaS level, except for being outrageously expensive, there aren’t many issues, and the offerings are indeed solid. If they could return to their original vision and truly excel as providers of basic infrastructure, akin to utilities, selling resources might not offer high margins, but it would allow them to earn money standing up. Continuing down the path of exploitation, however, will ultimately lead customers to vote with their feet.
 
 ![](ebs-13.png)
-
-
 
 ## References
 

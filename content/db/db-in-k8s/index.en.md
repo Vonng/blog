@@ -14,7 +14,6 @@ Whether databases should be housed in Kubernetes/Docker remains highly controver
 
 In the previous article, "Databases in Docker: Good or Bad," we discussed the pros and cons of containerizing databases. Today, let's delve into the trade-offs in orchestrating databases in K8S and explore why it's not a wise decision.
 
-
 -----------
 
 ## Summary
@@ -29,9 +28,6 @@ The "**cloud-native frenzy**," exemplified by K8S, has become a distorted phenom
 
 Until the reliability and performance of the network storage surpass local storage, placing databases in K8S is an unwise choice. There are other ways to seal the complexity of database management, such as RDS and open-source RDS solutions like [**Pigsty**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485518&idx=1&sn=3d5f3c753facc829b2300a15df50d237&chksm=fe4b3d95c93cb4833b8e80433cff46a893f939154be60a2a24ee96598f96b32271301abfda1f&scene=21#wechat_redirect), which are based on bare Metal or bare OS. Users should make wise decisions based on their situations and needs, carefully weighing the pros and cons.
 
-
-
-
 ---------
 
 ## The Status Quo
@@ -43,8 +39,6 @@ Countless cloud-native enthusiasts have attempted to migrate existing databases 
 However, complexity is a cost. With "cost reduction" becoming mainstream, voices of reflection have begun to emerge. Could-Exit Pioneers like DHH, who deeply utilized K8S in public clouds, abandoned it due to its excessive complexity during the transition to [self-hosted open-source solutions](https://mp.weixin.qq.com/s/CicctyvV1xk5B-AsKfzPjw), relying only on Docker and a Ruby tool named Kamal as alternatives. Many began to question whether stateful services like databases suit Kubernetes.
 
 K8S itself, in its effort to support stateful applications, has become increasingly complex, straying from its original intention as a container orchestration platform. Tim Hockin, a co-founder of Kubernetes, also voiced his rare concerns at this year's KubeCon in ["K8s is Cannibalizing Itself!"](https://mp.weixin.qq.com/s/9Q9kze9D2LT0-G2lXSvADg): "***Kubernetes has become too complex; it needs to learn restraint, or it will stop innovating and lose its base***."
-
-
 
 ----------
 
@@ -65,8 +59,6 @@ However, this presents a dilemma: should one use subpar cloud disks and tolerate
 Running a stateless K8S cluster is simple and reliable, as is running a stateful database on a physical machine's bare operating system. Mixing the two, however, results in a **lose-lose situation**: ***K8S loses its stateless flexibility and casual scheduling abilities, while the database sacrifices core attributes like reliability, security, efficiency, and simplicity in exchange for elasticity, resource utilization, and Day1 delivery speed that are not fundamentally important to databases***.
 
 A vivid example of the former is the performance optimization of [PostgreSQL@K8S](https://mp.weixin.qq.com/s/SCImfwEvkCPqZhLGx758Sw), which KubeBlocks contributed. K8S experts employed various advanced methods to solve performance issues that did not exist on bare metal/bare OS at all. A fresh case of the latter is Didi's [K8S architecture juggling disaster](https://mp.weixin.qq.com/s/FIOB_Oqefx1oez1iu7AGGg); if it weren't for putting the stateful MySQL in K8S, would rebuilding a stateless K8S cluster and redeploying applications take 12 hours to recover?
-
-
 
 -----------------------
 
@@ -106,7 +98,6 @@ As stated in ["From Reducing Costs and Smiles to Reducing Costs and Efficiency"]
 
 ![k8s-meme.png](k8s-meme.png)
 
-
 -----------------------
 
 ## The Cloud-Native Frenzy
@@ -125,8 +116,6 @@ The cloud-native landscape is filled with fancy projects. Every new development 
 
 The cloud-native movement's philosophy is compelling - democratizing the elastic scheduling capabilities of public clouds for every user. K8S indeed excels in stateless applications. However, excessive enthusiasm has led K8S astray from its original intent and direction - simply doing well in orchestrating stateless applications, burdened by the ill-conceived support for stateful applications.
 
-
-
 -----------------------
 
 ## Making Wise Decisions
@@ -142,7 +131,6 @@ We open-sourced our database service architecture — an out-of-the-box PostgreS
 > Pigsty vs StackGres
 
 Perhaps one day, when the reliability and performance of distributed network storage surpass local storage and mainstream databases have some native support for storage-computation separation, things might change again — K8S might become suitable for databases. But for now, I believe putting serious production OLTP databases into K8S is immature and inappropriate. I hope readers will make wise choices on this matter.
-
 
 -----------------------
 

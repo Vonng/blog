@@ -74,7 +74,6 @@ AI-assisted development, agent building, and automated engineering practices wil
 
 There is a brutal and obvious logic at work: **people who cannot use AI will be steamrolled by people who can.**
 
-
 --------
 
 Turn that around, though. If you are a programmer—even a junior one—you already have an enormous head start.
@@ -96,7 +95,6 @@ Move into another industry, however, and you start much farther ahead. That is n
 In most industries, digital competence still stops at basic office software (Windows + Office). It is not that these people lack ability. Most have simply never had the chance to work with terminals, command lines, and automated workflows.
 
 Take Claude Code into those industries to automate processes, analyze data, or build agent pipelines, and your productivity advantage will be almost unfair.
-
 
 ------
 

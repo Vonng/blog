@@ -87,8 +87,6 @@ aws s3 cp ./file.txt s3://your-bucket-name/random_key
 
 感谢你花时间阅读我的文章。希望它能帮你避免意外的 AWS 费用！
 
-
-
 ------
 
 ## 下云老冯评论
@@ -103,7 +101,6 @@ aws s3 cp ./file.txt s3://your-bucket-name/random_key
 
 但是在 AWS 看来，该特性被视为 Feature，而不是安全漏洞或者 Bug，可以用来咔咔爆用户的金币。同样的设计逻辑贯穿在 AWS 的产品设计逻辑中，例如，Route53 查询没有解析的域名也会收费，所以知道域名是 AWS 解析的话，也可以进行 DDoS。
 
-
 ---------------
 
 我并不确定本土云厂商是否使用了同样的处理逻辑。但他们基本都是直接或间接借鉴 AWS 的。所以有比较大的概率，也会是一样的情况。
@@ -111,7 +108,6 @@ aws s3 cp ./file.txt s3://your-bucket-name/random_key
 ![](ddos.jpg)
 
 > 作为信安专业出身，我很清楚业界的一些玩法，比如打DDoS 卖高防 —— 来自某群友的截图
-
 
 ---------------
 
@@ -124,4 +120,3 @@ aws s3 cp ./file.txt s3://your-bucket-name/random_key
 Well，总的来说，账单被刷爆，也算一种公有云上独有的安全风险了 —— 希望云用户保持谨慎小心，一点小失误，也许就会在账单上立即产生难以挽回的损失。
 
 ![](aws-joke.jpg)
-

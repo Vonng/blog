@@ -16,7 +16,6 @@ tags: [Pigsty]
 
 Following PostgreSQL's summer minor version updates and the release of PG 16 Beta, Pigsty closely tracks the PG community with the **v2.1** release. This update supports PostgreSQL 16 Beta1 high availability and new monitoring metrics, while also providing support for PG 12-15. Meanwhile, the AI vector extension PGVector officially joined Pigsty in v2.0.2 and is now enabled by default.
 
-
 ### Vector Database Extension: PGVector
 
 Vector databases have been extremely hot lately. There are many specialized vector database products on the market — commercial ones like Pinecone and Zilliz, and open-source ones like Milvus and Qdrant. Among all existing vector databases, **pgvector** is unique — it chose to build on the world's most powerful open-source relational database PostgreSQL as an extension, rather than starting from scratch as another specialized "database". After all, building a good TP database from zero is very difficult.
@@ -29,7 +28,6 @@ We're also working on a better PGVector implementation with improved functionali
 
 ![pgvector](pgvector.webp)
 
-
 ### PG16 Support and Observability
 
 Pigsty is perhaps the fastest distribution to provide PostgreSQL 16 support — although still in Beta, with some extensions yet to catch up, you can already spin up PostgreSQL 16 high-availability clusters for testing. PostgreSQL 16 has some practical new features: logical decoding and logical replication from standbys, new statistics views for I/O, parallel execution of full joins, better freezing performance, new SQL/JSON standard function set, and regular expressions in HBA authentication.
@@ -40,7 +38,6 @@ Pigsty pays special attention to PostgreSQL 16's observability improvements. The
 
 Another valuable observability improvement: `pg_stat_all_tables` and `pg_stat_all_indexes` now record the timestamp of the last sequential scan / index scan. While Pigsty's monitoring system could achieve this through scan statistics charts, official direct support is certainly better: users can intuitively draw conclusions like whether an index is unused and can be removed. Additionally, the `n_tup_newpage_upd` metric tells us how many rows on a table were moved to a new page during updates rather than updated in-place — this metric is valuable for optimizing UPDATE performance and adjusting table fill factor.
 
-
 ### PGSQL 12-15 Support
 
 Pigsty has supported PostgreSQL since version 10, always closely following the community's latest major versions. But users do have needs for older versions — some external components only support up to a certain version, some are cautious about upgrading to the latest major version, and some want to create a Pigsty-managed Standby Cluster from existing lower-version clusters for migration. Regardless, support for lower PostgreSQL versions is a real user demand. So in v2.1, we added support for PG 12-14, all included in the offline packages by default.
@@ -48,7 +45,6 @@ Pigsty has supported PostgreSQL since version 10, always closely following the c
 Each major version includes not just core packages, but also important extensions for that version: geospatial extension **PostGIS**, time-series database extension **TimescaleDB**, distributed database extension **citus**, vector database extension **PGVector**, online garbage collection extension **pg_repack**, CDC logical decoding extensions **wal2json** and **pglogical**, scheduled task extension **pg_cron**, and password strength checking extension **passwordcheck_cracklib** — ensuring each major version enjoys PostgreSQL ecosystem's core capabilities.
 
 PostgreSQL 11 can actually be supported too, but due to some missing extensions and its upcoming EOL, it was excluded from this update. For users new to PostgreSQL, we always recommend starting with the latest stable major version (currently 15). If you really need versions 10 or 11, you can follow the tutorial to adjust package versions in the repository and build yourself.
-
 
 ### Grafana Monitoring System Improvements
 
@@ -64,7 +60,6 @@ Before v2.1's release, I was happy to see a professionally maintained Apache Ech
 
 Additionally, Pigsty specifically added `echarts-gl` extension resources in Grafana's `public/chart` directory, allowing users to create cool 3D globe panels like those in Apache Echarts' official gallery using Pigsty's built-in Grafana without internet access.
 
-
 ### Other Utility Improvements
 
 Pigsty 2.1 adds 3 convenience commands: `profile`, `validate`, and `repo-add`.
@@ -74,7 +69,6 @@ The `bin/validate` command accepts a config file path as input, checking and val
 The `bin/repo-add` command is for manually adjusting YUM repos on nodes. When users want to add new packages to local repos, they often need to use Ansible playbook subtasks, which is inconvenient. Now you can use the wrapped command-line tool: for example, `bin/repo-add infra node,pgsql` will add repos categorized as `node` and `pgsql` to nodes in the `infra` group.
 
 The `bin/profile` command conveniently performs `perf` sampling for 1 minute on a process with a specific PID at a given IP address, generating a flame graph in Pigsty's web server directory. Users can open and browse it directly from the web interface — this feature is especially useful for analyzing internal database failures and performance bottlenecks.
-
 
 ----------------
 

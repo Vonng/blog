@@ -14,7 +14,6 @@ Programmers deal with **Code** (both programming code and encoding), and charact
 
 Without understanding the basic principles of character encoding, even simple operations like string comparison, sorting, and random access can easily lead you into pitfalls. Based on my observations, many engineers and programmers know almost nothing about character encoding itself, having only vague intuitive understanding of terms like ASCII, Unicode, and UTF. Therefore, I'm attempting to write this educational article, hoping to clarify these issues.
 
-
 ------------
 
 ## 0x01 Basic Concepts
@@ -48,7 +47,7 @@ Abstract characters are abstract symbols, independent of concrete forms: disting
 
 ![](char-glyph.png)
 
-Note that while **most** of the time glyphs and characters correspond one-to-one, there are still some many-to-many cases: one glyph might be composed of multiple characters, for example, the abstract character `à` (the fourth tone 'a' in Pinyin). We consider it a single 'character', but it can either be truly a single character or be composed of character `a` and the grave accent character `	̀`.
+Note that while **most** of the time glyphs and characters correspond one-to-one, there are still some many-to-many cases: one glyph might be composed of multiple characters, for example, the abstract character `à` (the fourth tone 'a' in Pinyin). We consider it a single 'character', but it can either be truly a single character or be composed of character `a` and the grave accent character `◌̀`.
 
 On the other hand, one character might also be composed of multiple glyphs, for example, many Arabic and Hindi scripts - symbols composed of many graphic elements (glyphs), complex like paintings, are actually single characters.
 
@@ -67,14 +66,12 @@ Computer science originated in Europe and America, so text processing initially 
 
 Fortunately, in computer science, there's a saying: "*Any problem in computer science can be solved by adding another level of indirection*". The model and architecture of character encoding has also evolved continuously with history. Let's first overview the architectural system of modern encoding models.
 
-
-
-
 ------------
 
 ## 0x02 Model Overview
 
 Modern encoding models are divided into five levels from bottom to top:
+
 - **Abstract Character Repertoire (ACR)**
 - **Coded Character Set (CCS)**
 - **Character Encoding Form (CEF)**
@@ -103,11 +100,6 @@ Why doesn't the Unicode standard directly map abstract characters to binary repr
 * Character encoding schema solves byte order problems (resolving transmission ambiguity).
 
 Let's look at the details between each level.
-
-
-
-
-
 
 ------------
 
@@ -160,9 +152,6 @@ The difference between abstract character repertoires and coded character sets i
 Unfortunately, there's another problem. Character sets can be open or closed. For example, the ASCII character set defines 128 abstract characters and will never add more. It's a closed character set. Unicode attempts to collect all characters and is constantly expanding. As of Unicode 9.0.0 in June 2016, it has collected 128,237 characters and will continue to grow in the future. It's an open character set. Open means the number of characters has no upper limit - new characters can be added at any time, like Emoji, with new expression characters introduced to Unicode almost every year. This creates an inherent contradiction: **the contradiction between infinite natural numbers and finite integer values**.
 
 Character Encoding Form is designed to solve this problem.
-
-
-
 
 ------------
 
@@ -243,11 +232,6 @@ UTF-8 uses bytes as code units, so there's actually no byte order problem. The o
 
 Note that in the current context, UTF-8, UTF-16, UTF-32 are actually CES-level concepts - i.e., CEF with byte serialization schemes - which can confuse with CEF-level concepts with the same names. Therefore, when discussing UTF-8, UTF-16, UTF-32, we must distinguish whether they're CEF or CES. For example, UTF-16 as an encoding schema produces byte sequences with BOM, while UTF-16 as an encoding form produces code unit sequences without the BOM concept.
 
-
-
-
-
-
 ------------
 
 ## 0x05 UTF-8
@@ -291,9 +275,6 @@ func UTF8Encode(i uint32) (b []byte) {
 }
 ```
 
-
-
-
 ------------
 
 ## 0x06 Character Encoding in Programming Languages
@@ -328,7 +309,7 @@ If Go can serve as an exemplary implementation of character encoding handling, t
 
 **The first problem** is Python2's very unreasonable default encoding scheme:
 
--  Python2 uses `'xxx'` as **byte string literals** with type `<str>`, but `<str>` is essentially **byte strings** not **character strings**.
+- Python2 uses `'xxx'` as **byte string literals** with type `<str>`, but `<str>` is essentially **byte strings** not **character strings**.
 - Python2 uses `u'xxx'` as **character string literal** syntax with type `<unicode>`. `<unicode>` is true **character strings** where every character belongs to UCS.
 
 Meanwhile, Python2 interpreter's default encoding scheme (CES) is US-ASCII. As contrast, languages like Java, C#, Javascript all use UTF-16 as internal default encoding scheme. Go language's internal default encoding scheme uses UTF-8. Python2 defaulting to US-ASCII is truly bizarre, though this has historical reasons. Python3 obediently changed to UTF-8.
@@ -339,8 +320,5 @@ Meanwhile, Python2 interpreter's default encoding scheme (CES) is US-ASCII. As c
 * Byte string `<str>` is decoded through character encoding scheme to get character string `<unicode>`
 
 Why call it `<str>` if it's byte string? Also, using quotes without any prefix for str literal syntax is very counter-intuitive. Therefore, many people fell into pitfalls. Of course, the type design of `<str>` and `<unicode>` and their relationship design itself is unproblematic. What should be criticized are the **names** of these two types and their **literal representation methods**. As for how to improve, Python3 has provided the answer. After understanding character encoding models, what operations are correct should be clear to readers.
-
-
-
 
 > [WeChat Original Article](https://mp.weixin.qq.com/s/Yzd64oCjjlk4brERhKBuKA)

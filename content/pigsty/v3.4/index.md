@@ -27,7 +27,6 @@ tags: [Pigsty]
 
 ![](values.jpg)
 
-
 --------
 
 ## 自动申请证书
@@ -44,7 +43,6 @@ Dify、Odoo、Supabase 等应用自建模板均已采用此功能。安装完成
 
 v3.4 中 Nginx 的可配置项更加丰富：可使用 `config` 向 nginx 注入配置，使用 `enforce` 强制重定向 HTTPS。自建网站在绝大多数场景下可做到完全不碰传统 Nginx 配置文件。
 
-
 --------
 
 ## 本地化排序最佳实践
@@ -52,6 +50,7 @@ v3.4 中 Nginx 的可配置项更加丰富：可使用 `config` 向 nginx 注入
 许多程序员对 Locale/Collation 规则不太了解，但这确实是一个相当重要的配置。使用不当的 Collation 不仅可能带来数倍性能损失，还可能导致数据不一致甚至数据丢失 —— 索引与排序规则紧密相关，Collation 绝非无关紧要的配置。
 
 推荐阅读：
+
 - [PG中的本地化排序规则](https://pigsty.cc/blog/pg/collation/)
 - PGCon.Dev 2024: [Collations from A to Z](https://www.pgcon.org/events/pgcondev2024/schedule/session/630/)
 
@@ -70,7 +69,6 @@ Pigsty v3.4 反映了这种最佳实践：
 
 除非数据库密集工作在特定语言排序场景，否则此默认值即为最佳实践。可使用 PostgreSQL COLLATION 语法在查询/索引/列上指定其他排序规则，PG + ICU 共支持 841 种排序规则。
 
-
 --------
 
 ## 时间点恢复增强
@@ -87,7 +85,6 @@ Pigsty v3.4 反映了这种最佳实践：
 
 备份监控方面，v3.4 引入了 `pgbackrest_exporter` 用于收集备份监控指标，PGSQL PITR 监控面板也会显示当前备份状态。此前用户只能通过 PGCAT Instance 查询当前状态，而无历史记录，本次改进对分析备份状态大有帮助。
 
-
 --------
 
 ## 扩展插件更新
@@ -101,7 +98,6 @@ v3.4 新增扩展 `pgspider_ext`，利用各种 FDW 实现多数据源查询。�
 **Apache AGE 图数据库扩展**：该项目的开发者似乎被裁员，基本进入无维护状态。作为发行版，Pigsty 尽力为其提供支持 —— 根据 Debian 上的 Patch 重新编译了 AGE 1.5.0 的 PG 13-17 扩展，补上了缺少 EL RPM 的遗憾。
 
 ![](age.jpg)
-
 
 --------
 
@@ -125,7 +121,6 @@ repo_extra_packages: [ ivorysql ]                              # 下载 IvorySQL
 ![](kernels.jpg)
 
 同时更新了 Supabase 模板至最新版本，将 Citus 更新至 13.0.2。下一步将关注专注 OLTP 性能的 OrioleDB 以及提供 MySQL 协议兼容性的 OpenHalo 内核。
-
 
 --------
 
@@ -151,7 +146,6 @@ docker-ce docker-compose-plugin ferretdb2 duckdb restic juicefs vray grafana-inf
 
 Docker 使用量确实很大，主要用于运行 pgAdmin 等软件，因此将其纳入默认下载。
 
-
 --------
 
 ## v3.5 特性展望
@@ -164,8 +158,6 @@ v3.5 计划功能：
 | 配置 | Vibe Config Wizard 配置向导与 MCP Server |
 | Docker | Debian 12 x86/ARM Pigsty Docker 镜像 |
 | 内核 | OrioleDB 与 OpenHalo 支持 |
-
-
 
 --------
 --------
@@ -317,8 +309,6 @@ c927238f0343cde82a4a9ab230ecd2ac  pigsty-pkg-v3.4.0.u24.aarch64.tgz
 --------
 
 更多版本信息请参考 [GitHub 发布页面](https://github.com/pgsty/pigsty/releases/tag/v3.4.0)。
-
-
 
 --------
 

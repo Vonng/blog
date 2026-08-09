@@ -33,32 +33,29 @@ Open source is a global collaborative software **R&D** model with overwhelming d
 
 In summary, we believe **operational self-reliance** focuses on: replacing uncontrollable third-party services and restricted commercial software, encouraging domestic suppliers to provide technical services and distributions based on popular open source infrastructure software. For open source infrastructure software with significant practical value, encourage learning, exploration, research, and contribution. Incubate and cultivate domestic open source communities, maintain fair competitive environments and healthy commercial ecosystems. **R&D self-reliance** focuses on: actively participating in global open source software supply chain governance, improving domestic software companies' and teams' voice in global top infrastructure software open source projects, cultivating technical teams with global vision and advanced R&D capabilities. Should stop low-level repetitive "domestic OS/database kernel forks" and focus on building internationally influential services and software distributions.
 
-
-
 ----------
 
 ## Appendix: Different Levels of Self-Reliance and Control
 
 For infrastructure software, control levels from high to low can be subdivided into nine levels:
 
-9: Own software release rights (release rights, 67%) 
+9: Own software release rights (release rights, 67%)
 
-8: Hold majority voting rights (dominance, 51%) 
+8: Hold majority voting rights (dominance, 51%)
 
-7: Hold minority veto rights (veto power, 34%) 
+7: Hold minority veto rights (veto power, 34%)
 
-6: Have proposal voice (voice, 10%) 
+6: Have proposal voice (voice, 10%)
 
-**5: Control source code (follow mainline, fix bugs)** 
+**5: Control source code (follow mainline, fix bugs)**
 
-**4: Obtain source code (cross-platform redistribution)** 
+**4: Obtain source code (cross-platform redistribution)**
 
-**3: Control binaries (local autonomous operation)** 
+**3: Control binaries (local autonomous operation)**
 
-2: Restricted binaries (local restricted use) 
+2: Restricted binaries (local restricted use)
 
-1: Rent services (call remote services) 
-
+1: Rent services (call remote services)
 
 Among these, levels 1-5 are **operational self-reliance**, and levels 5-9 are **R&D self-reliance**. Simplifying the R&D self-reliance levels gives us this self-reliance and control demand pyramid:
 
@@ -66,7 +63,7 @@ Level 1 self-reliance, **renting services**, has the worst control: hardware and
 
 Level 2 self-reliance, **restricted binaries**, means software can run on your own hardware but contains additional restrictions: like needing regularly updated license files or requiring online authentication to run. Problems with this type of software are similar to the previous level: if the software provider goes bankrupt or stops production, applications using such software will die within a limited time. Some commercial operating systems/commercial databases requiring license files belong to this category.
 
-Level 3 self-reliance, **controlling binaries**, means software can run without restrictions on any mainstream hardware. Users can deploy software without internet access and use its complete functionality indefinitely. Having unrestricted binaries also means domestic suppliers can provide their own services based on the software, essentially **reskinning**. **Most scenarios requiring self-reliance fall into this level**. 
+Level 3 self-reliance, **controlling binaries**, means software can run without restrictions on any mainstream hardware. Users can deploy software without internet access and use its complete functionality indefinitely. Having unrestricted binaries also means domestic suppliers can provide their own services based on the software, essentially **reskinning**. **Most scenarios requiring self-reliance fall into this level**.
 
 Level 4 self-reliance, **having source code**, means software can be recompiled and redistributed. This level of self-reliance means that even if hardware is sanctioned, existing open source software systems can still run on domestic operating systems/hardware. It also means domestic suppliers can provide their own distributions, services, **shell-wrapping**, and redistribution. **Open source infrastructure software sits at this level by default**. Most domestic operating systems/databases claiming "self-research" actually belong to this category.
 

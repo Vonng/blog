@@ -37,12 +37,9 @@ tags: [Apple, AI, 硬件]
 
 老冯不是，我还真能用上。
 
-
 [WinStudio，一万块在本地跑200B大模型？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247490389&idx=1&sn=c80d97f60ebe69fe303273de228e14c5&scene=21#wechat_redirect)
 
 ![本地运行 200B 模型的示意图](200b.webp)
-
-
 
 六万块如果去买国补的 Macbook 新丐版与 Mac Mini，够买 16 ～ 19 台了。去买 32c / 128G  的 AI MAX 395 WinStudio 准系统，能买四台。 但整一堆啰啰对老冯没有意义，我需要的就是在单机上堆料堆到极致。
 
@@ -83,8 +80,6 @@ tags: [Apple, AI, 硬件]
 ![M5 Ultra 规格与统一内存预估](rumor.webp)
 
 关于本地 AI ，我其实不指望 M5 MAX 来跑 “大模型”，只要能在 32B 稠密模型的甜点位上高速运行，或者能运行一些 100B+ 左右的 MoE 就已经很不错了。倒是适合跑一些小助理，苦力活 Agent。但真要说有意义的本地推理，年中发布的 M5 Ultra 是真正值得期待的设备。
-
-
 
 ------
 

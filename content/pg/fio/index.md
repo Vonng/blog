@@ -54,7 +54,6 @@ fio -name=1mseqr   -runtime=120 -filename=/data1/seq.txt  -ioengine=libaio -dire
 fio -name=1mseqrw  -runtime=120 -filename=/data1/seq.txt  -ioengine=libaio -direct=1 -bs=1024k -size=200g -iodepth=256 -numjobs=8 -rw=rw     -rwmixwrite=30 -group_reporting -time_based
 ```
 
-
 测试 PostgreSQL 相关的 IO 性能表现时，应当主要以 8KB 随机IO为主，可以考虑以下参数组合。
 
 3个维度：RW Ratio, Block Size, N Jobs 进行排列组合
@@ -62,4 +61,3 @@ fio -name=1mseqrw  -runtime=120 -filename=/data1/seq.txt  -ioengine=libaio -dire
 * RW Ratio:  Pure Read, Pure Write, rwmixwrite=80, rwmixwrite=20
 * Block Size = 4KB (OS granular), 8KB (DB granular)
 * N jobs: 1 , 4 , 8 , 16 ,32
-

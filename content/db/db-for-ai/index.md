@@ -24,7 +24,6 @@ aliases: ["/ai/db-for-ai/"]
 
 > WSJ: Snowflake 将以 2.5 亿美元收购 Crunchy Data[1]
 
-
 -------
 
 ## 为什么是PostgreSQL？
@@ -51,8 +50,6 @@ aliases: ["/ai/db-for-ai/"]
 
 ![ecosystem.gif](ecosystem.gif)
 
-
-
 ## 关于 CrunchyData
 
 本次被收购的 CrunchyData 就是 [DuckDB 缝合大赛](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489279&idx=1&sn=ca161963f98ec000a4d3bba41edaea85&scene=21#wechat_redirect) 的主要玩家之一。他们最近主要发力的点就在于 PostgreSQL 数据仓库 （Crunchy Bridge），他们还有一个相关的开源项目 `pg_parquet` ，提供了在 PG 中读写 S3 上 Parquet 文件的能力，刚出来的时候我就打好了包放在 [Pigsty 扩展仓库](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488596&idx=1&sn=d60c8b73d154fd07201b5a81bc106805&scene=21#wechat_redirect)中，也真的有一些用户在用。
@@ -66,8 +63,6 @@ CrunchyData 是 PostgreSQL 生态的知名公司，PostgreSQL 社区的核心组
 一个 **Postgres Kubernetes Operator**，老冯对 [K8S放数据库这种事不感冒](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486587&idx=1&sn=16521d6854711a4fe429464aeb2df6bd&scene=21#wechat_redirect) ，但显然 CrunchyData 的 PGO 在这个领域绝对算是第一梯队的头部玩家。
 
 以及从去年开始发力的 **PostgreSQL 数据仓库**，啊对，就是把 DuckDB 和 Iceberg 这些东西缝合进 PostgreSQL 里面。
-
-
 
 ## 老冯点评
 
@@ -83,9 +78,7 @@ CrunchyData 正好是在去年我那篇 《[PostgreSQL is eating the database wo
 
 **现在这种实践成为主流的最后的临门一脚，就是 PG 缝合 DuckDB**，（DuckLake 或者 Iceberg） 一旦缝合足够好，PG 的 OLAP 分析性能直接进入 T0 梯队，**那么这些 OLAP / 大数据方案就没有活路了** —— 我将其形容为数据库世界中的 “[火星撞地球](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489279&idx=1&sn=ca161963f98ec000a4d3bba41edaea85&scene=21#wechat_redirect)”。
 
-这件事的**关键阻碍**是什么，是 PG 的存储引擎表访问接口（TAM）。这就正好卡在 CrunchyData 的 Tom Lane 手中。
-
-
+这件事的 **关键阻碍** 是什么，是 PG 的存储引擎表访问接口（TAM）。这就正好卡在 CrunchyData 的 Tom Lane 手中。
 
 ### PG内核的否决权
 
@@ -106,23 +99,17 @@ CrunchyData 正好是在去年我那篇 《[PostgreSQL is eating the database wo
 
 另一方面，OpenAI 传言要收购的 Supabase，它准备使用 [OrioleDB](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489444&idx=1&sn=840f6632e27899b6764b8c0f96cd368e&scene=21#wechat_redirect) 内核，也依赖几个表访问方法的补丁，一直卡着没进入 PG 18 内核，那么这一收购还能牵制住其他想走这条路的公司，可谓一石二鸟。
 
-
-
 ### 人才是最关键的因素
 
 Databricks，Snowflake，以及（OpenAI） 毫无疑问的拉起了数据库市场中的新一轮抢购战斗。
 
 背后的逻辑很清楚：数据库在 AI 时代依然是坚挺的核心部门，而 PostgreSQL 正在 “统一与征服” 整个数据库世界，那么及时培养收购自己在这个领域的代理人就非常重要了。那些在 PostgreSQL 领域独占鳌头，令人赞叹的优秀公司，如今只剩下极少数，这是一场“抢椅子”游戏，谁能抓住这些公司里的核心人才，将其收入囊中，谁就能抢先在未来占据更大的生态位。
 
-
-
 在这一点上，老冯还是比较得意的，因为所有这些 PostgreSQL 公司里面，只有老冯是 “**一人公司**”。老冯很清楚这个领域有多热闹，就连我这个 “个体户” 都有一个亿的估值（by 陆奇） —— 而且已经有不只一家云厂商开价两千万尝试收购了，不过他们都很鸡贼的想用更便宜的价格直接挖走锁死我个人。反正老冯已经稳定盈利了，着急的也不是我。
 
 背后的逻辑是，一个在野的顶级人才能毁坏达成行业垄断联盟的尝试 —— 以现在开源 Pigsty 使用的部署规模来看，给 RDS 每年造成过亿损失算是非常保守估计了 —— 而且还在不断增长，毕竟价格战谁打的过用爱发电的零元购呢？
 
 何况现在这股 “开源癌” 已经从中国溢出来卷全球了（40+% 用户来自海外）。老实说 —— **这种改变世界的掀桌子乐趣是赚多少钱都比不了的。** 老冯也努努力，看看能不能把 Pigsty 做成数据库领域的 DeepSeek，哈哈。
-
-
 
 ### 广告时间
 

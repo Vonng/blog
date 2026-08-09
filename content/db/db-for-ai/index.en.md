@@ -24,7 +24,6 @@ But this isn't just a grudge match between two data warehouse giants - PostgreSQ
 
 > WSJ: Snowflake to acquire Crunchy Data for $250 million[1]
 
-
 -------
 
 ## Why PostgreSQL?
@@ -51,8 +50,6 @@ Open source and advanced technology are PG's backbone, while its edge is "extens
 
 ![ecosystem.gif](ecosystem.gif)
 
-
-
 ## About CrunchyData
 
 The acquired CrunchyData is one of the main players in the [DuckDB stitching competition](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489279&idx=1&sn=ca161963f98ec000a4d3bba41edaea85&scene=21#wechat_redirect). Their recent focus has been on PostgreSQL data warehousing (Crunchy Bridge). They also have a related open-source project `pg_parquet` that provides the ability to read and write Parquet files on S3 from PG. When it first came out, I packaged it and put it in the [Pigsty extension repository](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488596&idx=1&sn=d60c8b73d154fd07201b5a81bc106805&scene=21#wechat_redirect), and some users are actually using it.
@@ -66,8 +63,6 @@ CrunchyData is a well-known company in the PostgreSQL ecosystem. Tom Lane, a cor
 A **Postgres Kubernetes Operator**. Lao Feng [isn't fond of putting databases in K8S](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486587&idx=1&sn=16521d6854711a4fe429464aeb2df6bd&scene=21#wechat_redirect), but clearly CrunchyData's PGO is definitely a first-tier leading player in this field.
 
 And the **PostgreSQL data warehouse** they've been pushing since last year - yes, stitching DuckDB and Iceberg stuff into PostgreSQL.
-
-
 
 ## Lao Feng's Commentary
 
@@ -84,8 +79,6 @@ Simply put, if the de facto standard for OLTP is already PG, isn't it more conve
 **The final kick to make this practice mainstream is PG stitching with DuckDB** (DuckLake or Iceberg). Once the stitching is good enough, PG's OLAP analysis performance directly enters the T0 tier, **then these OLAP/big data solutions have no way to survive** - I describe this as "[Mars Hitting Earth](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489279&idx=1&sn=ca161963f98ec000a4d3bba41edaea85&scene=21#wechat_redirect)" in the database world.
 
 The **key obstacle** to this is PG's storage engine table access interface (TAM). This happens to be in the hands of Tom Lane at CrunchyData.
-
-
 
 ### PG-Kernel's Veto Power
 
@@ -106,23 +99,17 @@ Of course, this path can at most be called "containment" and can't completely bl
 
 On the other hand, Supabase (rumored to be acquired by OpenAI) plans to use the [OrioleDB](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489444&idx=1&sn=840f6632e27899b6764b8c0f96cd368e&scene=21#wechat_redirect) kernel, which also depends on several table access method patches that have been stuck and haven't entered the PG 18 kernel. This acquisition can also constrain other companies wanting to take this path - killing two birds with one stone.
 
-
-
 ### Talent is the Most Critical Factor
 
 Databricks, Snowflake, and (OpenAI) have undoubtedly launched a new round of acquisition battles in the database market.
 
 The logic behind this is clear: databases remain a solid core department in the AI era, and PostgreSQL is "unifying and conquering" the entire database world. Therefore, timely cultivation and acquisition of proxies in this field becomes very important. Those companies that dominate and excel admirably in the PostgreSQL field are now extremely few - this is a game of "musical chairs." Whoever can grab the core talent from these companies and bring them into their fold will be able to occupy larger ecological niches in the future.
 
-
-
 In this regard, Lao Feng is quite proud, because among all these PostgreSQL companies, only Lao Feng is a "**one-person company**." Lao Feng knows very well how lively this field is - even I, an "individual entrepreneur," have a valuation of 100 million (by Lu Qi) - and more than one cloud vendor has offered 20 million trying to acquire, though they're all quite cunning, wanting to lock me in personally at cheaper prices. Anyway, Lao Feng is already profitable and stable - I'm not the one who's anxious.
 
 The logic behind this is that a single top-tier talent can destroy attempts to achieve industry monopoly alliances - based on the current deployment scale of open-source Pigsty, causing over 100 million in losses to RDS annually is a very conservative estimate - and it's still growing. After all, who can beat zero-yuan shopping powered by love in price wars?
 
 What's more, this "open-source cancer" has already spilled over from China to roll globally (40%+ users from overseas). Honestly - **this kind of world-changing table-flipping fun can't be matched by earning any amount of money.** Lao Feng is also working hard to see if I can make Pigsty the DeepSeek of the database field, haha.
-
-
 
 ### Ad Time
 

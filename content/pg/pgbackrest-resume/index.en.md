@@ -23,7 +23,6 @@ What matters here is not the breezy line that "the open-source community really 
 
 This was an unusually clean case of forced price discovery in an open-source commons.
 
-
 --------
 
 ## What Happened in Those Seven Days
@@ -66,7 +65,6 @@ When the Linux Foundation responded to Redis's license change by launching [Valk
 
 That is already very fast.
 
-
 --------
 
 ## Who Might Pay: Public Signals and Speculation
@@ -94,7 +92,6 @@ The names really worth watching are the major cloud providers: AWS, Google Cloud
 If not, that would be unsurprising. Most likely, companies inside the PostgreSQL ecosystem will pool money to save their own tool. The companies making the most money will remain silent while the companies most dependent on the software put out the fire.
 
 That is one of the open-source world's most familiar absurdities.
-
 
 --------
 
@@ -133,7 +130,6 @@ It was hardball, and it worked. I expect others will copy the tactic. But the pr
 
 When an ordinary small project tries this, it simply dies. When pgBackRest does it, the market bids.
 
-
 --------
 
 ## Is This an Exceptional Case?
@@ -160,8 +156,6 @@ Lætitia's line about companies buying memory and GPUs was not rhetoric. From 20
 
 After Snowflake acquired Crunchy Data, the funding and employment path that had enabled David to maintain pgBackRest did not continue. This is not an isolated case. We will see more like it.
 
-
-
 --------
 
 ## Advice for Users
@@ -175,7 +169,6 @@ Pigsty already ships with pgBackRest configured and ready to use, so Pigsty user
 If you are using pgBackRest, keep using it. [v2.58.0](https://github.com/pgbackrest/pgbackrest/releases/tag/release/2.58.0) is solid.
 Even when the repository was archived, the concern was only that a lack of maintenance might create problems over time. Now that maintenance is expected to continue, there is even less reason to worry.
 
-
 --------
 
 ## Finally
@@ -188,8 +181,6 @@ Many people assume they owe nothing and can simply free-ride. When everyone make
 David proved the point in the hardest possible way. Not through evangelism, appeals, or another moralizing essay about what "the community" ought to do. He archived the project and put every dependent party in front of the same bill.
 
 It was not the most graceful solution, but it worked. I sincerely hope open-source users will support the projects they rely on, within their means. Do not wait until a maintainer reaches the breaking point before scrambling to save the project.
-
-
 
 --------
 

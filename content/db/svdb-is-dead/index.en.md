@@ -13,8 +13,6 @@ Vector storage and retrieval is a real need, but specialized vector databases ar
 
 [![](featured.jpg)](https://mp.weixin.qq.com/s/0eBZ4zyX6XjBQO0GqlANnw)
 
-
-
 ------
 
 ## How Did Vector Databases Get Hot?
@@ -43,7 +41,6 @@ But these violent celebrations will eventually end in violent collapse. This coo
 
 > How far is the specialized vector database myth from collapse?
 
-
 ------
 
 ## Are Vector Databases a False Need?
@@ -68,9 +65,6 @@ The bigger problem is that while databases are high-threshold work, the "vector"
 
 Therefore, specialized vector databases are trapped in a dead end: small needs are solved by OpenAI directly, standard needs are captured by existing mature databases with vector extensions, and supporting ultra-large needs has almost no barriers, more likely requiring model fine-tuning. The ecological niche left for specialized vector databases might support one specialized vector database kernel vendor's survival, but building an industry is impossible.
 
-
-
-
 ------
 
 ## General Databases vs Specialized Databases
@@ -92,7 +86,6 @@ Relational databases have developed to be quite mature today — supporting vari
 > Database Demand Pyramid: Performance is just one selection consideration
 
 In most cases, specialized vector databases' disadvantages far outweigh advantages: data redundancy, massive unnecessary data movement work, lack of consistency between distributed components, additional professional skill complexity costs, learning costs and labor costs, additional software licensing fees, extremely limited query language capabilities, programmability, extensibility, limited toolchains, and worse data integrity and availability compared to real databases. The only benefit users can usually expect is **performance** — response time or throughput, but this sole "advantage" quickly becomes invalid...
-
 
 ------
 
@@ -117,8 +110,6 @@ As a database, Pinecone also lacks various basic capabilities databases should h
 ![pinecone-options.png](svdb-pinecone-options.png)
 
 It's not just Pinecone — other specialized vector databases except Milvus are basically similar. Of course, some users argue that comparing SaaS with database software isn't fair. This isn't a problem — major cloud vendors' RDS for PostgreSQL already provide PGVector extensions, and there are SaaS/Serverless services like Neon/Supabase and self-built distributions like [Pigsty](https://pigsty.cc). If you can use a more functional, better performing, more stable and secure general vector database at much lower cost, why spend big money and time struggling with a "specialized vector database" with no advantages? Users who figured this out have already migrated from pinecone to pgvector — "[Why We Replaced Pinecone with PGVector](https://medium.com/@jeffreyip54/why-we-replaced-pinecone-with-pgvector-2f679d253eba)"
-
-
 
 ------
 

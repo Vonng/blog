@@ -16,7 +16,6 @@ A **sorting algorithm** is an algorithm that can arrange a string of data in a s
 
 Two basic operations required for sortable objects are: Compare and Swap
 
-
 ## Classification of Sorting Algorithms
 
 | Category   | Subcategories                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
@@ -35,9 +34,7 @@ Two basic operations required for sortable objects are: Compare and Swap
 * Applicability to linked lists.
 * Whether it's in-place sorting. In-place sorting algorithms don't need extra space to save copies except for a few variables.
 
-
 ## Sorting Algorithm Performance Quick Reference
-
 
 | Category   | Sorting Method | Average Time Complexity           | Best Time Complexity           | Worst Time Complexity           | Space Complexity             | Stability |
 |------|------|-------------------|-------------------|-------------------|-------------------|-----|
@@ -50,12 +47,12 @@ Two basic operations required for sortable objects are: Compare and Swap
 | Merge Sort | Merge Sort | $O(n\log_{2}{n})$ | $O(n\log_{2}{n})$ | $O(n\log_{2}{n})$ | $O(1)$            | Stable  |
 
 ### Memory Techniques
+
 * Four major basic sorts: insertion, selection, exchange, merge.
 * Advanced version of insertion is shell, selection is heap sort, bubble is quicksort.
 * Only simple sorting methods are stable, but selection sort is unstable. Direct insertion, bubble, and merge are stable.
 * Only heap sort and merge sort guarantee worst-case time complexity
 * For small-scale data, basic sorting algorithms actually have certain advantages.
-
 
 ### Analysis Framework
 
@@ -87,8 +84,6 @@ def is_sorted(data, cmp=None):
   
 def test_sort(func=sorted):print(is_sorted(func(random_data())))
 ```
-
-
 
 ## Selection Sort
 
@@ -144,7 +139,6 @@ def selection_sort(A):
 | Time Complexity | $O(n^2)$      | $O(n^2)$      | $O(n^2)$      |
 | Comparisons  | $\frac{n(n-1)}{2}$ | $\frac{n(n-1)}{2}$ | $\frac{n(n-1)}{2}$ |
 | Swaps  | $n-1$        | $n-1$        | $n-1$        |
-
 
 ## Insertion Sort
 
@@ -222,9 +216,6 @@ The improved implementation mainly includes using reverse bubbling first to gene
 | Comparisons  | $\frac{n^2}{4}$ | $\frac{n(n-1)}{2}$ | $n-1$  |
 | Swaps  | $\frac{n^2}{4}$ | $\frac{n(n-1)}{2}$ | 0      |
 
-
-
-
 ## Bubble Sort
 
 Bubble sort is an **exchange sort** that works by continuously correcting inverse pairs in the sequence. Each round of bubbling causes the largest element from the front unordered region to float up to the back ordered region. It has the simplest implementation.
@@ -264,7 +255,7 @@ def bubble_sort(A):
 
 * Belongs to exchange sorting
 * Stable sorting
-* In-place sorting, space complexity $O(1)$ 
+* In-place sorting, space complexity $O(1)$
 * Extremely simple implementation. Two iterations, outer `range(n-1)`, inner `range(n-1-i)`.
 
 | Item\Case |        Average Case        |        Worst Case        |        Best Case        |
@@ -272,9 +263,6 @@ def bubble_sort(A):
 | Time Complexity |      $O(n^2)$      |      $O(n^2)$      |      $O(n^2)$      |
 | Comparisons  | $\frac{n(n-1)}{2}$ | $\frac{n(n-1)}{2}$ | $\frac{n(n-1)}{2}$ |
 | Swaps  |        Number of inversions         | $\frac{n(n-1)}{2}$ |         0          |
-
-
-
 
 ## Shell Sort
 
@@ -314,13 +302,10 @@ First generate the step sequence, with maximum step around one-tenth of array le
 
 * Best known shell step sequence is: 1, 5, 19, 41, 109
 
-
 * Belongs to advanced insertion sort
 * Unstable sorting
 * Adaptive sorting.
-* In-place sorting, space complexity $O(1)$ 
-
-
+* In-place sorting, space complexity $O(1)$
 
 ## Counting Sort
 
@@ -349,9 +334,6 @@ def count_sort(A):
     for i in range(N): A[i] = buf[i]
     return A
 ```
-
-
-
 
 ## Quicksort
 
@@ -419,15 +401,11 @@ Don't want to prove this anymore.
 | Space Complexity |      $O(\log n)$       |       $O(n)$       |    $O(\log n)$    |
 | Comparisons  |      $O(n\log n)$      | $\frac{n(n-1)}{2}$ |   $O(n\log n)$    |
 
-
-
-
 ## Merge Sort
 
 **Merging** is combining two sorted files into one larger ordered file.
 
 * Merge implementation
-
 
 Merging is the core of merge sort. The core idea is: if a subarray has reached the end, continue with elements from the other subarray; if neither has reached the end, compare the current elements of both subarrays.
 
@@ -501,7 +479,6 @@ def msort(A, lo, hi):
 
 * Stable sorting
 
-
 * Space complexity $O(n)$, needs basically equivalent additional storage space.
 * If the merge method used is stable, then merge sort is stable.
 * Uses divide-and-conquer, proposed by von Neumann.
@@ -512,9 +489,6 @@ def msort(A, lo, hi):
 |-------|:-----------------:|:-----------------:|:--------------------:|
 | Time Complexity | $O(n\log_{2}{n})$ | $O(n\log_{2}{n})$ |  $O(n\log_{2}{n})$   |
 | Comparisons  |   $O(n\log n)$    | $n\log_2n - n+1$  | $\frac{n\log_2n}{2}$ |
-
-
-
 
 ## Heap Sort & Priority Queue
 

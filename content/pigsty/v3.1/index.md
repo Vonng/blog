@@ -21,7 +21,6 @@ tags: [Pigsty]
 与此同时，Pigsty还提供了ARM64 架构的初步支持，并且支持了新发布的 Ubuntu 24.04 大操作系统发行版大版本。
 最后，这个版本提供了一系列开箱即用的场景化模板，统一了不同操作系统发行版使用配置文件，极大简化了配置管理工作。
 
-
 --------
 
 ## 自建Supabase
@@ -47,8 +46,6 @@ Supabase 的口号是：“**花个周末写写，随便扩容至百万**”。�
 
 这两天我会准备一些关于 [自建 Supabase 最佳实践](https://pigsty.cc/docs/pgsql/kernel/supabase) 的教程，敬请期待。
 
-
-
 --------
 
 ## PostgreSQL 17
@@ -64,7 +61,6 @@ Supabase 的口号是：“**花个周末写写，随便扩容至百万**”。�
 ![perf.png](perf.jpg)
 
 Pigsty 3.1 + PostgreSQL 17 的性能回归测试，详细的性能评测报告将会在最近几天发出，敬请期待。
-
 
 ----------------
 
@@ -89,7 +85,6 @@ Pigsty 的扩展仓库基于原生的操作系统包管理器，公开共享，�
 目前使用 Rust + pgrx 开发扩展的新项目不少，Pigsty 收录了 **23** 个 Rust 扩展。
 如果你有好的扩展推荐，欢迎告诉我，我会考察测试后，尽快将其加入到仓库中。
 如果你是 PostgreSQL 扩展作者，我们也欢迎将你的扩展提交到 Pigsty 仓库中，我们可以帮助您打包分发，解决最后一公里的交付问题。
-
 
 ----------------
 
@@ -121,7 +116,6 @@ Ubuntu 24.04 noble 已经发布半年了，已经开始有一些用户在生产�
 
 > <i class="fas fa-circle-check text-primary"></i> = 首要版本支持；<i class="fas fa-circle-check text-secondary"></i> = 配置可选支持； <i class="fas fa-circle-check text-danger"></i> = 过期版本商业支持
 
-
 ----------------
 
 ## ARM 支持
@@ -139,9 +133,6 @@ ARM 架构最近不断攻城略地，尤其是在云计算领域，ARM 服务器
 EL8 有一些PGDG官方包缺失，Ubuntu24有个别扩展缺失，所以目前还不建议在这两个系统上使用 ARM 版本。
 
 我准备将 ARM 试点运行一两个小版本，当扩展齐全之后，我会将其标记为 GA。欢迎各位朋友试用 ARM 版本并向我提出反馈意见。
-
-
-
 
 ----------------
 
@@ -170,9 +161,6 @@ pg_extensions: # extensions to be installed on this cluster
 举个例子，如果你想下载安装 PG 16 的内核与扩展，以前你需要把下载列表和安装列表里的包全换成16的版本，现在你只需要简单的修改一个 `pg_version` 参数就行了。
 最后的效果非常好，基本实现了所有操作系统发行版都能使用相同的配置文件进行安装，将不同系统的差异与管理复杂度都隐藏在了内部。
 
-
-
-
 ----------------
 
 ## 基础设施改进
@@ -183,8 +171,6 @@ pg_extensions: # extensions to be installed on this cluster
 
 此外，我们还维护着 Prometheus 与 Grafana 的 YUM/ATP x AMD/ARM 软件仓库，并实时跟进这些可观测性组件的版本。在这次升级中，Prometheus 升级到了 v3 大版本，而 VictoriaLogs 也正式发布了 v1 版本。
 总的来说，如果你需要用到这些监控软件，Pigsty 的仓库也能帮到您。
-
-
 
 ----------------
 
@@ -212,11 +198,9 @@ Pigsty 将 MinIO 用作 PostgreSQL 的备份存储，与 Supabase 的底层存�
 再加上网电运维，整个五年TCO 也超不过云上一年的折后消费，所以这里蕴含着惊人的降本增效潜力。
 如果你的的业务在大量使用对象存储，那么本地 MinIO 自建 + Cloudflare 可能是非常值得考虑的一个更优解。
 
-
 ----------------
 
 ## 服务体系
-
 
 Pigsty v3.1 达到了一个我比较满意的状态，接下来我的工作重心会放在服务体系的构建上。
 
@@ -231,9 +215,6 @@ Pigsty 是个开源免费的软件，它已经解决了 PG 运维中会遇到的
 ![price.png](price.jpg)
 
 所以这次我也重新调整了一下定价体系，基本锚定业界平均定价水平。反正这也是你情我愿的双向选择，欢迎有兴趣的朋友们选购专业服务，打钱支持！新人新办法，老客老价格。
-
-
-
 
 ----------------
 
@@ -273,8 +254,6 @@ Pigsty 是个开源免费的软件，它已经解决了 PG 运维中会遇到的
 - etcd 3.5.16 -> 3.5.17
 - tigerbeetle 16.8 -> 0.16.13
 
-
-
 **API变更**
 
 - `repo_upstream`: 针对每个具体的操作系统发行版生成默认值：[`roles/node_id/vars`](https://github.com/Vonng/pigsty/tree/main/roles/node_id/vars)
@@ -284,4 +263,3 @@ Pigsty 是个开源免费的软件，它已经解决了 PG 运维中会遇到的
 - `pg_packages`: 默认值修改为：`postgresql, wal2json pg_repack pgvector, patroni pgbouncer pgbackrest pg_exporter pgbadger vip-manager`
 - `pg_extensions`: 默认值修改为空数组 `[]`。
 - `infra_portal`: 允许为 `home` 服务器指定 `path`，替代默认的本地仓库路径 `nginx_home` (`/www`)
-

@@ -14,7 +14,6 @@ PGConf.Dev is the global PostgreSQL developer conference and the successor to PG
 
 Today's program focuses more on the community, working groups, and open discussions. On May 20 and 21, the main conference program will run across three parallel rooms, covering everything from core patches, query optimization, and logical replication to extensions, the broader ecosystem, and the community itself. As usual, I am still finishing my slides and speaker notes. Hopefully I can leave an impression on the people in the room—or at least keep them awake.
 
-
 ## My Talk: Extensions for Everyone
 
 I have one full-length conference talk this year: **Extensions for Everyone**, scheduled for **Wednesday, May 20, 4:00–4:25 p.m. Vancouver time, in the Canfor room (1600)**.
@@ -22,7 +21,6 @@ I have one full-length conference talk this year: **Extensions for Everyone**, s
 The subject is straightforward. As a Chinese developer who has spent years working on PostgreSQL extension distribution in the trenches, I want to talk about the problems I have seen and the lessons I have learned: the real challenges facing the extension ecosystem today, why distribution is so difficult, where cross-distribution packaging gets stuck, and where the community could take the ecosystem next.
 
 I will try to give a systematic account of the experience I have accumulated while building Pigsty, PGEXT.CLOUD, and the `pig` CLI.
-
 
 ## Chinese Vendors on This Stage
 
@@ -35,7 +33,6 @@ HighGo's participation and mine have followed parallel paths through the three e
 - **This year**, both of us have moved up to full 25-minute sessions—and, by an amusing coincidence, we are speaking in the same time slot.
 
 Chinese voices did not appear on this stage overnight. We got here one step at a time.
-
 
 ## Two Full-Length Talks from China
 
@@ -61,7 +58,6 @@ HighGo architect **Chao Li** also previously had a talk accepted: **Learning Pos
 
 Unfortunately, his visa was not approved in time, so he could not make the trip. The conference website no longer lists the talk. The Fletcher room (1900) slot originally assigned to it has been replaced by Masahiko Sawada's **Implementing DDL Deparsing and DDL Replication**. A thematically similar talk about a new contributor's growth, **My Journey into PostgreSQL Development**, will take place in the Labatt room (1700).
 
-
 ## The Conference Program
 
 This year's program covers a broad range of subjects, with a somewhat tighter pace than in previous years:
@@ -70,7 +66,6 @@ This year's program covers a broad range of subjects, with a somewhat tighter pa
 - **Wednesday, May 20, through Thursday, May 21**: Two days of the main program, with three rooms running in parallel. Topics range from core patches, query optimization, and logical replication to extensions, the ecosystem, and the community.
 - **Friday, May 22**: The traditional Unconference Day, with the agenda proposed and voted on by attendees that morning.
 - **Wednesday evening**: The **30 Years of PostgreSQL Retrospective**, featuring Bruce Momjian, Tom Lane, Jan Wieck, Vadim Mikheev, and other central figures looking back on PostgreSQL's first 30 years together. Miss a gathering like this, and it may be a long time before the same group comes together again.
-
 
 That is the broad outline. I probably will not have much free time once the conference gets going, but I will try to share some of the interesting moments here: talks, hallway conversations, and scenes worth remembering.
 

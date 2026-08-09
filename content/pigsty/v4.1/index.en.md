@@ -15,8 +15,7 @@ tags: [Pigsty]
 
 [![](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v4.1.0)
 
-
-If there is one takeaway from this release, it is that **speed matters**. 
+If there is one takeaway from this release, it is that **speed matters**.
 On February 12, 2026, the PostgreSQL community released [18.2 / 17.8 / 16.12 / 15.16 / 14.21](https://www.postgresql.org/about/news/postgresql-182-178-1612-1516-and-1421-released-3235/) on the regular minor cadence.
 As far as I could tell, the teams with production-grade support ready on the same day included **AWS RDS**, **EDB**, and **Pigsty**.
 

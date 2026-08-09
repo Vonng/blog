@@ -16,14 +16,11 @@ tags: [PostgreSQL, PG生态, 翻译]
 >
 > 点击“查看原文”查看英文原文：https://jkatz05.com/post/postgres/postgresql-2024/
 
-
-
 在我经常听到的问题中，有一个尤为深刻：***“PostgreSQL 将走向何方？”***  —— 这也是我经常问自己的一个问题。这个问题不仅仅局限在数据库内核引擎的技术层面，而关乎整个社区的方方面面 —— 包括相关的开源项目、活动和社区发展。PostgreSQL 已经广受欢迎，并且已经是第四次被 [DB Engine评为“**年度数据库**”](https://db-engines.com/en/blog_post/106)。尽管已取得显著成功，我们依然需要不时地后退一步，从更宏观的角度思考 PostgreSQL 的未来。虽然这种思考不会立即带来显著的变化，但它对于社区正在进行的工作提供了重要的背景板。
 
 新年是思考 **“PostgreSQL的未来”** 这一问题的绝佳时机，我对2024年的PostgreSQL发展方向也有一些思考，这里是我的一些想法：这并不是一个路线图，而是我个人对 PostgreSQL 发展方向的一些想法。
 
 -------
-
 
 ## PostgreSQL功能开发
 
@@ -35,14 +32,11 @@ tags: [PostgreSQL, PG生态, 翻译]
 
 这些特性组将成为 2024 年，甚至更长时间段里的工作重点。接下来，我将对每个特性类目进行更深入的探讨。
 
-
 ### 可用性
 
 对于PostgreSQL现有用户和潜在用户来说，提高可用性是最迫切的需求。这个需求不仅仅是排在第一位，而且毫不夸张地讲，也同时能排在第二位和第三位。虽然重启 PostgreSQL 通常可以迅速完成，但在某些极端情况下，这个过程可能耗时过长。此外，长时间的写入阻塞，例如某些锁操作，也可被视作一种“停机时间”。
 
 大部分 PostgreSQL 用户对现有的可用性水平已感满意，但有些工作负载对可用性的要求极为严格。为了更好地满足这些要求，我们需要进行额外的开发工作。这篇文章或这一小节就聚焦于这一点：通过改进使 PostgreSQL 适用于更多有严苛可用性需求的环境。
-
-
 
 #### 逻辑复制是如何助益于双主，蓝绿部署，零停机升级，以及其他工作流的
 
@@ -62,21 +56,17 @@ tags: [PostgreSQL, PG生态, 翻译]
 
 这些努力能让 PostgreSQL 适用于更多种类的负载，特别是那些有着极致严苛可用性要求的场景，并简化用户在生产环境中滚动发布新变更的方式。尽管改进逻辑复制功能的道路仍然漫长，但 2024 年无疑将为 PostgreSQL 带来更多强大的功能特性，帮助用户在关键环境中更加高效地运行 PostgreSQL。
 
-
-
 #### 减少锁定
 
-另一个有关可用性的领域是**模式维护操作**（即[DDL](https://en.wikipedia.org/wiki/Data_definition_language)语句）。例如，[`ALTER TABLE`](https://www.postgresql.org/docs/current/sql-altertable.html)的大部分形式会对表施加 [`ACCESS EXCLUSIVE`](https://www.postgresql.org/docs/current/explicit-locking.html#LOCKING-TABLES) 锁，从而阻止对该表的所有并发访问。对于许多用户来说这等同于不可用，即使这只是数据的一个子集。PostgreSQL 缺乏对非阻塞/在线模式维护操作的完整支持，随着其他关系数据库也开始支持这些功能，这方面的不足开始逐渐凸显。
+另一个有关可用性的领域是 **模式维护操作**（即[DDL](https://en.wikipedia.org/wiki/Data_definition_language)语句）。例如，[`ALTER TABLE`](https://www.postgresql.org/docs/current/sql-altertable.html)的大部分形式会对表施加 [`ACCESS EXCLUSIVE`](https://www.postgresql.org/docs/current/explicit-locking.html#LOCKING-TABLES) 锁，从而阻止对该表的所有并发访问。对于许多用户来说这等同于不可用，即使这只是数据的一个子集。PostgreSQL 缺乏对非阻塞/在线模式维护操作的完整支持，随着其他关系数据库也开始支持这些功能，这方面的不足开始逐渐凸显。
 
 目前虽有多种工具和扩展支持非阻塞模式更新，但如果 PostgreSQL 能原生支持更广泛的非阻塞模式变更，那肯定更方便，而且性能也会更好。从设计上来看，我们已有了开发此功能的基础，但还需要一些时间来实现。尽管我不确定是否有正在进行中的具体实现，但我相信在2024年我们应该在这方面取得更多进展：让用户能够在不阻塞写入的情况下执行大部分（或全部）DDL 命令
-
-
 
 #### 性能
 
 性能是一个不断持续演进的特性 —— 我们总是会追求更快的速度。好消息是，PostgreSQL 在垂直扩展能力上享有盛誉 —— 当你为单个实例提供更多硬件资源时，PostgreSQL 也能扩展自如。虽然在某些场景下，水平扩展读写操作是有意义的。但我们还是要确保 PostgreSQL 能够随着计算和内存资源的增加而持续扩展。
 
-举个更具体的例子：考虑到 AWS EC2 实例中有着高达 [448 vCPU / 24TB 内存 ](https://aws.amazon.com/ec2/instance-types/high-memory/)的选配项 ——  PostgreSQL 能否在单个实例上充分利用这些资源呢？我们可以根据 PostgreSQL 用户现在与未来可能使用的硬件配置，设定一个性能提升的目标，并持续提升 PostgreSQL 的整体表现。
+举个更具体的例子：考虑到 AWS EC2 实例中有着高达 [448 vCPU / 24TB 内存](https://aws.amazon.com/ec2/instance-types/high-memory/)的选配项 ——  PostgreSQL 能否在单个实例上充分利用这些资源呢？我们可以根据 PostgreSQL 用户现在与未来可能使用的硬件配置，设定一个性能提升的目标，并持续提升 PostgreSQL 的整体表现。
 
 在 2024 年，已经有多项工作致力于继续垂直扩展 PostgreSQL。其中最大的努力之一，也是一个持续多年的项目，就是在 PostgreSQL 中支持 DirectIO（DIO）与 Asynchronous IO（AIO）。至于细节我就留给 Andres Freund 在[PGConf.EU](https://www.pgconf.eu/)上关于[在 PostgreSQL 中添加 AIO 的现状](https://anarazel.de/talks/2023-12-14-pgconf-eu-path-to-aio/path-to-aio.pdf)的PPT来讲了。看起来在 2024 年，我们将离完全支持 AIO 更进一步。
 
@@ -86,15 +76,13 @@ tags: [PostgreSQL, PG生态, 翻译]
 
 这并不是一份关于性能特性的详细清单。在 PostgreSQL 服务器性能上还有很多工作要做，包括索引优化、改进锁机制、充分利用硬件加速等。此外，客户端（如驱动程序和连接池）上的工作也能为应用与 PostgreSQL 的交互带来额外的性能提升。展望 2024 年，看看社区正在进行的工作，我相信 PostgreSQL 在各个领域上的性能都会有整体性提升。
 
-
-
 ### 开发者特性
 
 我认为 "**开发者特性** "（developer features）是一个相当宽泛的类目，核心在于如何让用户围绕 PostgreSQL 来架构 & 构建应用。这里包括：SQL语法、函数、[存储过程语言支持](https://wiki.postgresql.org/wiki/PL_Matrix)，以及帮助用户从其他数据库系统迁移到 PostgreSQL 的功能。一个具体的创新例子是在 PostgreSQL 14 中引入的 [`multirange`](https://www.postgresql.org/docs/current/rangetypes.html) 数据类型，它允许用户将一些不连续的 **范围（Range）** 聚合在一起，这个特性非常实用，我个人在实现一个调度功能时，用它[将数百行PL/pgSQL代码减少到三行](https://www.crunchydata.com/blog/better-range-types-in-postgres-14-turning-100-lines-of-sql-into-3)。开发者特性也关乎 PostgreSQL 如何支持新出现的工作负载：例如[JSON 或向量](https://jkatz05.com/post/postgres/vectors-json-postgresql/)。
 
-值得一提的是，许多开发者特性创新主要出现在**扩展（Extension）** 上，而这正是 PostgreSQL 可扩展模型的优势所在。然而就数据库服务器本身而言，PostgreSQL 在某些开发者特性上的发布速度相比过去有所落后。例如，尽管PostgreSQL是[第一个将JSON作为可查询数据类型](https://jkatz05.com/post/postgres/vectors-json-postgresql/)的关系数据库，但它在实现 SQL/JSON 标准锁定义的语法与特性上已经开始变得迟缓。PostreSQL 16 发布了 SQL/JSON 中的一些语法特性，2024 年也会有更多的努力用在实现 SQL/JSON 标准上。
+值得一提的是，许多开发者特性创新主要出现在 **扩展（Extension）** 上，而这正是 PostgreSQL 可扩展模型的优势所在。然而就数据库服务器本身而言，PostgreSQL 在某些开发者特性上的发布速度相比过去有所落后。例如，尽管PostgreSQL是[第一个将JSON作为可查询数据类型](https://jkatz05.com/post/postgres/vectors-json-postgresql/)的关系数据库，但它在实现 SQL/JSON 标准锁定义的语法与特性上已经开始变得迟缓。PostreSQL 16 发布了 SQL/JSON 中的一些语法特性，2024 年也会有更多的努力用在实现 SQL/JSON 标准上。
 
-话既然说到这儿了，我们应当着力于 PostgreSQL 中那些**无法通过扩展插件实现的开发者特性**，比如 SQL标准特性。我的建议是集中精力关注那些其他数据库已经具备的功能，比如进一步实现 SQL/JSON 标准（例如： `JSON_TABLE`）、系统层面的版本化表（对于审计、闪回，与在特定时间点进行的时态查询非常有用），以及对模块的支持（对于“打包”存储过程来说尤其重要）。
+话既然说到这儿了，我们应当着力于 PostgreSQL 中那些 **无法通过扩展插件实现的开发者特性**，比如 SQL标准特性。我的建议是集中精力关注那些其他数据库已经具备的功能，比如进一步实现 SQL/JSON 标准（例如： `JSON_TABLE`）、系统层面的版本化表（对于审计、闪回，与在特定时间点进行的时态查询非常有用），以及对模块的支持（对于“打包”存储过程来说尤其重要）。
 
 此外，考虑到之前讨论的可用性和性能问题，我们应继续努力简化用户从其他数据库迁移到 PostgreSQL 的过程。在我的日常工作中，我有机会了解了大量与数据库迁移相关的内容：从商业数据库到 PostgreSQL 的迁移策略。当我们增强 PostgreSQL 功能的同时，也有许多机会可以简化迁移流程。包括引入其他数据库中现有的功能（例如全局临时表、全局分区索引、[自治事务](https://www.postgresql.org/message-id/f7470d5a-3cf1-4919-8404-5c4d91341a9f@tantorlabs.com)），并在 PL/pgSQL 中增加更多功能与性能优化（如批量数据处理函数、[模式变量](https://commitfest.postgresql.org/46/1608/)、[缓存函数元数据](https://commitfest.postgresql.org/46/4684/)）。所有这些都将改善 PostgreSQL 开发者的体验，并让其他关系数据库的用户更容易采纳 PostgreSQL。
 
@@ -102,27 +90,23 @@ tags: [PostgreSQL, PG生态, 翻译]
 
 我确信在 2024 年，PostgreSQL 可以在这些领域取得显著进步。我们看到在 PostgreSQL 的扩展生态中，有大量的新能力正在涌现；但即便如此，我们还是可以继续直接为 PostgreSQL 添加新特性，让它更易于构建应用。
 
-
-
 ### 安全性如何？
 
 我想快速过一下 PostgreSQL 的安全特性。众所周知在安全敏感型场景中，PostgreSQL 有着极佳的声誉。但总会有许多能改进的地方。在过去几年中，PostgreSQL社区对引入[透明数据加密](https://wiki.postgresql.org/wiki/Transparent_Data_Encryption)（TDE）的原生支持表现出许多兴趣与关注。然而还有许多其他地方可以搞搞创新，比如支持其他的身份验证方式/机制（主要需求是OIDC），或是探索联邦授权模式的可能性，使PostgreSQL能够继承其他系统的权限设置。尽管这些特性在当下都颇有挑战，我建议先在 “Per-Database” 层面上支持 TDE。这里我不想过多展开，因为已经有在 PostgreSQL 中满足这些特性需求的方法了，但我们还是应该不懈努力，争取实现完整的原生支持。
 
 让我们再来看看PostgreSQL能在2024年里发力的其他方向。
 
-
 -------
 
 ## 扩展
 
-PostgreSQL 的设计是**高度可扩展的**。您可以为PostgreSQL添加新功能，而无需分叉项目。包括新的数据类型、索引方法、与其他数据库系统协同工作的方法、更易于管理PostgreSQL特性的实用工具、[额外的编程语言支持](https://wiki.postgresql.org/wiki/PL_Matrix)，甚至[编写自己的扩展插件](https://github.com/aws/pg_tle)。人们已经围绕一些特定的 PostgreSQL 扩展（如[PostGIS](https://postgis.net/)）建立了开源社区和公司；PostgreSQL 单一数据库便能支持不同类型的工作负载（地理空间、时间序列、数据分析、人工智能），正是**扩展**让这件事变得可能。[数千个可用的PostgreSQL扩展](https://gist.github.com/joelonsql/e5aa27f8cc9bd22b8999b7de8aee9d47)成为了PostgreSQL的 "力量倍增器" —— 它一方面让用户能够快速的为数据库新增功能，另一方面也极大推动了 PostgreSQL 的普及与采用。
+PostgreSQL 的设计是 **高度可扩展的**。您可以为PostgreSQL添加新功能，而无需分叉项目。包括新的数据类型、索引方法、与其他数据库系统协同工作的方法、更易于管理PostgreSQL特性的实用工具、[额外的编程语言支持](https://wiki.postgresql.org/wiki/PL_Matrix)，甚至[编写自己的扩展插件](https://github.com/aws/pg_tle)。人们已经围绕一些特定的 PostgreSQL 扩展（如[PostGIS](https://postgis.net/)）建立了开源社区和公司；PostgreSQL 单一数据库便能支持不同类型的工作负载（地理空间、时间序列、数据分析、人工智能），正是 **扩展** 让这件事变得可能。[数千个可用的PostgreSQL扩展](https://gist.github.com/joelonsql/e5aa27f8cc9bd22b8999b7de8aee9d47)成为了PostgreSQL的 "力量倍增器" —— 它一方面让用户能够快速的为数据库新增功能，另一方面也极大推动了 PostgreSQL 的普及与采用。
 
 然而这也产生了一个副作用，即“**扩展蔓延**”现象。用户如何去选择合适的扩展？扩展的支持程度如何？如何判断某个扩展是否有持续积极的维护？如何为扩展做出自己的贡献？甚至“在哪里可以下载扩展”也成为了一个大问题。postgresql.org 提供了一个[不完整的扩展列表](https://www.postgresql.org/download/products/6-postgresql-extensions/)，社区也维护了一些[扩展包](https://www.postgresql.org/download/)，也有其他几个可供选择的 PostgreSQL 扩展仓库（例如 [PGXN](https://pgxn.org/)、[dbdev](https://database.dev/)、[Trunk](https://pgt.dev/)）和 [pgxman](https://pgxman.com/) 可供选择。
 
 PostgreSQL社区的一个优势是去中心化，广泛散布于世界各处。但我们可以做得更好，帮助用户在复杂的数据管理中做出明智的选择。我认为2024年是一个机遇，我们可以投入更多资源来整合与展示 PostgreSQL 扩展，帮助用户理解什么时候可以使用哪些扩展，并了解扩展们的开发成熟度，并同样为扩展开发者提供更好的管理支持与维护资源。
 
 -------
-
 
 ## 社区建设
 
@@ -146,7 +130,6 @@ PostgreSQL社区的一个优势是去中心化，广泛散布于世界各处。�
 最后是透明度问题。在开源领域这可能听起来有些奇怪，毕竟它本身就是开放的。但有不少治理问题并不会在公开场合讨论，了解决策制定的流程会很有帮助。[PostgreSQL 行为守则委员会](https://www.postgresql.org/about/policies/coc_committee/) 提供了一个优秀的例子：一个社区如何就需要敏感处理的问题保持透明度。该委员会每年都会发布一份报告（[这是 2022 年的报告](https://www.postgresql.org/about/policies/coc/reports/2022/)），包括案例的总体描述和整体统计数据。我们可以在许多 PostgreSQL 团队中复制这种做法 —— 这些团队参与的任务可能由于其敏感性需要保密。
 
 -------
-
 
 ## 结论：本来这篇文章应该更短
 

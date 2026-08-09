@@ -9,7 +9,6 @@ tags: [PostgreSQL, PG生态, 扩展]
 
 > [微信公众号原文链接](https://mp.weixin.qq.com/s/bx2dRxlrtLcM6AD2qsplQQ)
 
-
 ---------------
 
 ## PG生态新玩家ParadeDB
@@ -24,8 +23,6 @@ ParadeDB 实际上是由三个 PostgreSQL 扩展组成：`pg_bm25`，`pg_analyti
 
 ![](paradedb-rank.webp)
 
-
-
 ---------------
 
 ## ParadeDB
@@ -33,7 +30,6 @@ ParadeDB 实际上是由三个 PostgreSQL 扩展组成：`pg_bm25`，`pg_analyti
 我们荣幸地向您介绍 ParadeDB：针对搜索场景优化的 PostgreSQL 数据库。**ParadeDB** 是第一个旨在成为 Elasticsearch 替代的 Postgres 数据库构建，被设计为可以在PG表上进行闪电般快速的全文检索、语义检索、以及混合检索。
 
 ![](paradedb-logo.png)
-
 
 ### ParadeDB解决什么问题？
 
@@ -87,6 +83,3 @@ ParadeDB 的托管云版本目前处于 PrivateBeta 阶段。我们的目标是�
 我们核心团队的重点是开发 ParadeDB 的开源版本，将在 2023 年冬季推出。
 
 我们 Build in Public，并很高兴能与整个社区分享 ParadeDB。欢迎关注我们，在未来的博文中我们会进一步详细介绍 ParadeDB 背后的有趣技术挑战。
-
-
-

@@ -20,15 +20,12 @@ tags: [PostgreSQL, PG管理, 故障档案]
 
 * 故障原因：
   * 内因：使用了INTEGER而不是BIGINT作为主键类型。
-  * 外因：业务方不了解`SEQUENCE`的特性，执行大量违背约束的无效插入，浪费了大量序列号。
+  * 外因：业务方不了解 `SEQUENCE` 的特性，执行大量违背约束的无效插入，浪费了大量序列号。
 
 * 修复方案：
   * 紧急操作：降级线上插入函数为直接返回，避免错误扩大。
   * 应急方案：创建临时表，生成5000万个浪费空洞中的临时ID，修改插入函数，变为先检查再插入，并从该临时ID表中取ID。
   * 解决方案：执行模式迁移，将所有相关表的主键与外键类型更新为Bigint。
-
-
-
 
 -----------------
 
@@ -63,7 +60,7 @@ CREATE TABLE sample(
 INSERT INTO sample(name, value) VALUES(?,?)
 ```
 
-当然，实际上由于`name`列上的约束，如果插入了重复的`name`字段，事务就会报错中止并回滚。然而序列号已经被消耗掉了，即使事务回滚了，序列号也不会回滚。
+当然，实际上由于 `name` 列上的约束，如果插入了重复的 `name` 字段，事务就会报错中止并回滚。然而序列号已经被消耗掉了，即使事务回滚了，序列号也不会回滚。
 
 ```bash
 vonng=# INSERT INTO sample(name, value) VALUES('Alice',1);
@@ -98,8 +95,6 @@ vonng=# SELECT currval('sample_id_seq'::RegClass);
 
 因此，当执行的插入有大量重复，即有大量的冲突时，可能会导致序列号消耗的非常快。出现大量空洞！
 
-
-
 另一个需要注意的点在于，UPSERT操作也会消耗序列号！从表现上来看，这就意味着即使实际操作是UPDATE而不是INSERT，也会消耗一个序列号。
 
 ```sql
@@ -119,9 +114,6 @@ vonng=# SELECT currval('sample_id_seq'::RegClass);
        5
 (1 row)
 ```
-
-
-
 
 -----------------
 
@@ -143,7 +135,6 @@ DELETE FROM sample_temp_id WHERE id = (SELECT id FROM sample_temp_id FOR UPDATE 
 ```
 
 修改插入存储过程，每次从临时ID表中取一个ID，显式插入表中。
-
 
 -----------------
 

@@ -18,7 +18,6 @@ Pigsty v1.5 is officially released! Complete Docker support brings a rich applic
 
 Other improvements include: infrastructure self-monitoring, better cold backup support, new CMDB compatible with Redis and Greenplum, ETCD as high-availability DCS, and better log collection and visualization. GitHub Stars crossed 500!
 
-
 --------
 
 ## Highlights
@@ -33,7 +32,6 @@ Other improvements include: infrastructure self-monitoring, better cold backup s
 | ETCD as DCS | Alternative to Consul for PostgreSQL/Patroni |
 | Redis Improvements | Supports single-instance level init and remove operations |
 
-
 --------
 
 ## Docker Support
@@ -44,7 +42,6 @@ Many software products need databases, but putting databases in containers remai
 
 In Pigsty v1.4.1, Docker was added as an experimental feature; in v1.5, Docker becomes a default Pigsty component, enabled by default on the meta node. Regular nodes have it disabled by default, but you can enable Docker on all nodes via configuration.
 
-
 --------
 
 ## Application Ecosystem
@@ -54,7 +51,6 @@ Docker itself is just a tool — what matters is the massive **application ecosy
 Pigsty curated some commonly used software, especially those using PostgreSQL and Redis, providing one-click launch tutorials and shortcuts, plus an offline-ready Docker image package `docker.tgz`.
 
 ![](docker-apps.jpg)
-
 
 ### Code Hosting Platform: Gitea
 
@@ -68,7 +64,6 @@ cd ~/pigsty/app/gitea; make up
 
 This command uses Docker Compose to launch the Gitea image, using Pigsty's default CMDB `pg-meta.gitea` as metadata storage. Access the domain or port specified in the config file to access your code hosting service.
 
-
 ### Database Management Platform: PgAdmin
 
 PgAdmin4 is a classic PostgreSQL management tool with many useful features. Pigsty provides the latest PgAdmin4 6.9 support — just one command to start the image, automatically loading all managed database instances from Pigsty.
@@ -78,7 +73,6 @@ cd ~/pigsty/app/pgadmin; make up; make conf
 ```
 
 ![](pgadmin.jpg)
-
 
 ### Schema Change Tool: Bytebase
 
@@ -90,7 +84,6 @@ cd ~/pigsty/app/bytebase; make up
 
 ![](bytebase.jpg)
 
-
 ### Web Client: PGWEB
 
 Sometimes users want to query small amounts of data from production databases using personal accounts — a browser-based PostgreSQL client works great. PGWEB can be deployed on the management node or a dedicated bastion host, with specific HBA rules allowing personal users to query production read-only instances.
@@ -100,7 +93,6 @@ cd ~/pigsty/app/pgweb; make up
 ```
 
 ![](pgweb.jpg)
-
 
 ### Object Storage: MinIO
 
@@ -114,7 +106,6 @@ cd ~/pigsty/app/minio; make up
 
 Building on MinIO, you can use JuiceFS to convert massive distributed storage into a filesystem for other services.
 
-
 --------
 
 ## Data Analysis Environment: Jupyter
@@ -122,7 +113,6 @@ Building on MinIO, you can use JuiceFS to convert massive distributed storage in
 Pigsty provides a powerful data analysis tool: Jupyter Lab, allowing combined Python and SQL data processing and analysis. Jupyter Lab doesn't run via Docker by default — it runs directly under a restricted OS user on the management node for easier database interaction.
 
 ![](jupyter.jpg)
-
 
 ### Database Schema Reports: SchemaSPY
 
@@ -134,7 +124,6 @@ bin/schemaspy 10.10.10.10 meta pigsty
 
 ![](schemaspy.jpg)
 
-
 ### Database Log Analysis Reports
 
 To view database log summary information:
@@ -144,7 +133,6 @@ bin/pglog-summary 10.10.10.10
 ```
 
 ![](pgbadger.jpg)
-
 
 ### More Applications
 
@@ -161,7 +149,6 @@ Many well-known software applications can be launched with Pigsty + Docker:
 | Discourse | Open-source forum based on PG and Redis |
 | KeyCloak | Open-source SSO single sign-on solution |
 
-
 --------
 
 ## Better Cold Backups
@@ -175,7 +162,6 @@ In Pigsty v1.5, the cold backup mechanism was improved:
 - For power users, `pg_probackup` is provided as a backup solution
 - Built-in MinIO Docker images lay the foundation for out-of-the-box offsite disaster recovery
 
-
 ### Scheduled Tasks
 
 Pigsty v1.5 supports configuring scheduled tasks for nodes, including both append and overwrite modes for `/etc/crontab`. Basic physical cold backups, log analysis, schema dumps, garbage collection, and statistics collection can all be managed in a unified, declarative way.
@@ -184,13 +170,11 @@ Pigsty v1.5 supports configuring scheduled tasks for nodes, including both appen
 
 The most important is the default daily full backup at 1:00 AM. Combined with Pigsty's default last-day WAL archive, you can restore the database to any state within the past day, providing a solid safety net for software defects and human-error-induced data loss.
 
-
 ### Delayed Replicas
 
 In Pigsty v1.5, creating a delayed replica no longer requires manually running `patronictl edit-config` to adjust cluster configuration — just declare it like this to create a delayed replica (cluster):
 
 ![](delay-replica.jpg)
-
 
 --------
 
@@ -232,7 +216,6 @@ cd ~/pigsty/app/kong; make up
 
 ![](kong.jpg)
 
-
 --------
 
 ## Infrastructure Monitoring
@@ -259,7 +242,6 @@ In Pigsty v1.5's Home dashboard, infrastructure appears as light-green component
 
 > Loki Overview: log collection component self-monitoring
 
-
 --------
 
 ## ETCD as DCS
@@ -276,7 +258,6 @@ Pigsty v1.5 provides an out-of-the-box monitoring dashboard for ETCD and Consul:
 
 Currently, ETCD as DCS is a minimum viable implementation without CA certificates and TLS support — this will be added in a future security hardening update.
 
-
 --------
 
 ## Better Log Collection and Visualization
@@ -286,7 +267,6 @@ In Pigsty v1.5, separate access logs are enabled by default for each upstream se
 ![](nginx-overview.jpg)
 
 > NGINX Overview: showing Nginx metrics and logs
-
 
 --------
 --------
@@ -302,7 +282,6 @@ In Pigsty v1.5, separate access logs are enabled by default for each upstream se
 * Better cold backup support: default scheduled backup tasks, `pg_probackup` backup tool, one-click delayed replica creation
 * ETCD can now be used as PostgreSQL/Patroni DCS service, as an alternative to Consul
 * Redis playbook/role improvements: now allows init and remove operations for individual Redis instances, not just entire Redis nodes
-
 
 ### Monitoring System
 
@@ -325,7 +304,6 @@ In Pigsty v1.5, separate access logs are enabled by default for each upstream se
 * `pg_class` metrics collector removed by default, related metrics added to `pg_table` and `pg_index` collectors
 * `pg_table_size` metrics collector now enabled by default with 300-second cache time
 
-
 ### Deployment
 
 * New optional package `docker.tgz` with common app images: Pgadmin, Pgweb, Postgrest, ByteBase, Kong, Minio, etc.
@@ -339,7 +317,6 @@ In Pigsty v1.5, separate access logs are enabled by default for each upstream se
 * Loki and Promtail now installed via `fpm`-built RPM packages
 * DCS3 config template now uses a 3-node `pg-meta` cluster with a single-node delayed replica
 
-
 ### Software Upgrades
 
 * PostgreSQL upgraded to 14.3
@@ -350,13 +327,11 @@ In Pigsty v1.5, separate access logs are enabled by default for each upstream se
 * Grafana upgraded to v8.5.2
 * Loki & Promtail upgraded to v2.5.0, using fpm packaging
 
-
 ### Bug Fixes
 
 * Fixed Loki and Promtail default config filename issues
 * Fixed Loki and Promtail environment variable expansion issues
 * Complete English documentation translation and revision; documentation JS resources now served locally, no internet access required
-
 
 ### API Changes
 
@@ -408,7 +383,6 @@ In Pigsty v1.5, separate access logs are enabled by default for each upstream se
 - `haproxy_admin_auth_enabled` -> `haproxy_auth_enabled`
 - `pg_shared_libraries` -> `pg_libs`
 - `dcs_type` -> `pg_dcs_type`
-
 
 --------
 

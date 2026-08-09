@@ -3,7 +3,7 @@ title: "Inferential Statistics: The Past and Present of p-values"
 date: 2017-04-18
 author: "vonng"
 math: true
-summary: "The core of inferential statistics lies in hypothesis testing. The basic logic is based on an important argument from philosophy of science: **universal propositions can only be falsified, not proven**. The reasoning is simple: individual cases cannot prove a universal proposition, but they can refute it."
+summary: "The core of inferential statistics lies in hypothesis testing. The basic logic is based on an important argument from philosophy of science: universal propositions can only be falsified, not proven. The reasoning is simple: individual cases cannot prove a universal proposition, but they can refute it."
 ai: true
 aliases: ["/misc/inferential-stats/"]
 ---

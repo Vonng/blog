@@ -40,7 +40,7 @@ DuckDB 整个数据库软件源代码就是一个头文件一个c++文件，编�
 
 从这个角度来说，duckdb 更像是 RocksDB 这样的底层 “存储引擎”，一个 OLAP 算子。 本身距离一个真正的 “数据库” / “大数据分析平台” 还有很多工作要做。
 
-PostgreSQL 则在数据管理领域深耕多年，拥有完善的事务机制、权限控制、备份恢复和扩展机制。 传统的 OLTP 场景下 PostgreSQL 更是 [“老牌猛将”](https://mp.weixin.qq.com/s/651zXDKGwFy8i0Owrmm-Xg) 。 但 PostgreSQL 的一个主要遗憾就是：尽管PostgreSQL 本身提供了很强大的分析功能集，应付常规的分析任务绰绰有余。 但在较大数据量下全量分析的**性能**，相比专用的实时数仓仍然有些不够看。
+PostgreSQL 则在数据管理领域深耕多年，拥有完善的事务机制、权限控制、备份恢复和扩展机制。 传统的 OLTP 场景下 PostgreSQL 更是 [“老牌猛将”](https://mp.weixin.qq.com/s/651zXDKGwFy8i0Owrmm-Xg) 。 但 PostgreSQL 的一个主要遗憾就是：尽管PostgreSQL 本身提供了很强大的分析功能集，应付常规的分析任务绰绰有余。 但在较大数据量下全量分析的 **性能**，相比专用的实时数仓仍然有些不够看。
 
 ![clickbench.png](clickbench.png)
 
@@ -135,4 +135,4 @@ PostgreSQL OLAP 生态的现状，正如同两年前的向量数据库插件一�
 - [Andy Pavlo: 2024年度数据库回顾](https://mp.weixin.qq.com/s/jgYDHdCqWDRDfoFkfs7W8Q)
 
 -
-- 
+-

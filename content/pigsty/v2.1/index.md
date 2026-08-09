@@ -28,11 +28,7 @@ https://github.com/Vonng/pigsty/releases/tag/v2.1.0
 
 同时透露一下，我们正在制作一个功能、性能、易用性更好的 PGVector 实现，将于后续版本纳入 Pigsty 中，敬请期待。
 
-
-
 ![pgvector](pgvector.webp)
-
-
 
 ### PG16支持与可观测性
 
@@ -40,15 +36,9 @@ Pigsty 也许是最快提供 PostgreSQL 16 支持的发行版 —— 尽管目�
 
 Pigsty 特别关注 PostgreSQL 16 中的可观测性改进，新的 `pg_stat_io` 视图，让用户可以直接从数据库内访问到重要的 I/O 统计指标，对于性能优化，故障分析具有非常重要的意义。在以前，用户只能在数据库/BGWriter上看到有限的统计指标，想要更精细的统计数据，只能关联操作系统层面的I/O指标进行分析。现在，你可以从后端进程类型/关系类型/操作类型三个维度，对读/写/追加/回刷/Fsync/命中/逐出等行为进行深入的洞察。
 
-
-
 ![pg-stat-io](pg-stat-io.webp)
 
-
-
 另外一个非常有价值的可观测性改进点是，`pg_stat_all_tables` 与 `pg_stat_all_indexes` 会记录最后一次顺序扫描 / 索引扫描的时间。尽管这个功能在 Pigsty 的监控系统中可以通过扫描统计图表实现，但官方提供直接的支持肯定更好：用户可以直观地得出一些结论：比如某一个索引是不是没用上可以考虑移除。此外，`n_tup_newpage_upd` 指标可以告诉我们表上有多少行在更新时不是在页内原地更新，而是移动到了一个新的页面上，这个指标对于优化 UPDATE 性能，调整表填充因子具有重要的参考价值。
-
-
 
 ### PGSQL 12 - 15 支持
 
@@ -59,8 +49,6 @@ Pigsty 从 PostgreSQL 10 开始提供支持，但一直紧跟社区主干的最�
 ![图片](https://mmbiz.qpic.cn/mmbiz_png/Wkpr3rA9wF2x7uWVvRRWtoD8z1o2SArPsPHf3F2auz2O9k86GuibzhYjyNDp6v6UWYDvPNsQ84yapIAVicrJYTSA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
 
 PostgreSQL 11 其实也可以支持，但因为有一些扩展缺失，加之即将进入 EOL，所以就排除在本次更新中。对于新尝试 PostgreSQL 的用户，我们始终建议从最新的稳定大版本（目前为15）开始使用。如果您真的希望使用 10 或 11，也可以参照教程调整仓库中的软件包版本自行构建。
-
-
 
 ### Grafana监控系统改进
 
@@ -76,8 +64,6 @@ PostgreSQL 11 其实也可以支持，但因为有一些扩展缺失，加之即
 
 此外，Pigsty 还专门添加了 `echarts-gl` 的扩展资源，放置于 Grafana `public/chart` 目录下，允许用户使用 Pigsty 自带的 Grafana，无需互联网访问即可实现出 Apache Echarts 官方文档库中炫酷的三维地球等面板。
 
-
-
 ### 其他便利工具的改进
 
 在 Pigsty 2.1 中，添加了 3 个便利命令，`profile`，`validate`，`repo-add`。
@@ -87,13 +73,6 @@ PostgreSQL 11 其实也可以支持，但因为有一些扩展缺失，加之即
 `bin/repo-add` 命令用于手工调整节点上的 YUM 仓库。当用户想要往本地软件仓库添加一些新的软件包时，经常需要使用 Ansible 剧本的子任务来进行管理，较为不便，现在您可以使用包装的命令行工具来完成这一点：比如，`bin/repo-add infra node,pgsql` 就会向 `infra` 分组的节点上添加分类为 `node` 与 `pgsql` 的软件源。
 
 `bin/profile` 命令可以便捷地针对某个 IP 地址上特定 PID 的进程进行 `perf` 采样1分钟，并在 Pigsty Web服务器目录生成火焰图，用户可以直接从网页界面打开浏览，这个功能对于分析数据库内部的故障与性能瓶颈尤为有用。
-
-
-
-
-
-
-
 
 ----------------
 
@@ -116,7 +95,7 @@ PostgreSQL 11 其实也可以支持，但因为有一些扩展缺失，加之即
 **软件升级**
 
 * PostgreSQL 15.3 , 14.8, 13.11, 12.15, 11.20, and 16 beta1
-* pgBackRest 2.46 / pgbouncer 1.19 
+* pgBackRest 2.46 / pgbouncer 1.19
 * Redis 7.0.11
 * Grafana v9.5.3
 * Loki / Promtail / Logcli 2.8.2
@@ -124,7 +103,6 @@ PostgreSQL 11 其实也可以支持，但因为有一些扩展缺失，加之即
 * TimescaleDB 2.11.0
 * minio-20230518000536 / mcli-20230518165900
 * Bytebase v2.2.0
-
 
 **改进增强**
 

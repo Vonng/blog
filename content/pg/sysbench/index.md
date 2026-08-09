@@ -12,7 +12,6 @@ tags: [PostgreSQL, PG管理, 性能]
 
 sysbench首页：https://github.com/akopytov/sysbench
 
-
 ---------------------
 
 ## 安装
@@ -58,8 +57,6 @@ make -j
 make install
 ```
 
-
-
 ---------------------
 
 ## 准备
@@ -91,8 +88,6 @@ Creating table 'sbtest3'...
 Inserting 100000 records into 'sbtest3'
 Creating a secondary index on 'sbtest3'...
 ```
-
-
 
 ---------------------
 
@@ -153,4 +148,3 @@ Threads fairness:
     events (avg/stddev):           2282.7500/4.02
     execution time (avg/stddev):   11.9988/0.00
 ```
-

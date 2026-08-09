@@ -20,7 +20,6 @@ Those statements sound almost identical. The small distinction between them is a
 
 Here is why.
 
-
 -------
 
 ## 1. The Endgame Is a Three-Way Split
@@ -104,7 +103,6 @@ The problem with memory frameworks is that they stand on that side of the line. 
 
 Memory frameworks have no place in the industry structure, and the methodological case cuts against them too. The two lines meet here.
 
-
 -------
 
 ## 5. Where the Real Moats Are
@@ -128,7 +126,6 @@ What is not on that front line? **The physical world's persistence layer.** A da
 The more powerful an agent becomes, the more it needs a reliable anchor in the physical world. The agent revolution will not diminish the value of databases. **It will magnify it.**
 
 So in the three-way endgame, the model vendors will fight until they bleed, and the harness builders are still feeling their way forward. **Only the database foundation was laid thirty years ago and will still be there thirty years from now.**
-
 
 -------
 

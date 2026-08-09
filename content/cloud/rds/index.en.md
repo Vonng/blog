@@ -4,7 +4,7 @@ date: 2023-01-30
 author: |
   [Feng Ruohang](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [WeChat Original](https://mp.weixin.qq.com/s/LefEAXTcBH-KBJNhXNoc7A) | [Vonng Blog](/en/cloud/rds/)
 summary: >
-  Winter is coming, tech giants are laying off workers entering cost-reduction mode. Can cloud databases, the number one public cloud cash cow, still tell their story? The money you spend on cloud databases for one year is enough to buy several or even dozens of higher-performing servers. **Are you paying an IQ tax by using cloud databases?**
+  Winter is coming, tech giants are laying off workers entering cost-reduction mode. Can cloud databases, the number one public cloud cash cow, still tell their story? The money you spend on cloud databases for one year is enough to buy several or even dozens of higher-performing servers. Are you paying an IQ tax by using cloud databases?
 tags: [Cloud-Exit,RDS,AWS,Alibaba-Cloud]
 ---
 
@@ -20,8 +20,6 @@ Recently, an article by DHH, co-founder of Basecamp & HEY, caused a stir【1,2�
 
 [![](featured.webp)](https://mp.weixin.qq.com/s/YKqH324Qtg0mj6WfSMb66w)
 
-
-
 ---------
 
 ## Absurd Pricing
@@ -36,9 +34,7 @@ DBA costs aren't included here: two or three people managing tens of thousands o
 
 If you directly purchase cloud database of this specification, what are the costs? Let's look at domestic Alibaba-Cloud pricing【3】. Since the basic version (beggar version) is really unusable for production (refer to: "[Cloud Database: From Database Drop to Exit](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485093&idx=1&sn=5815f71f1d832101d35a75f5aa4acd3c&chksm=fe4b337ec93cba68fbf30eb0ed50d052c6e8972d42cf506051b5016668f4555edaa0756688dc&scene=21#wechat_redirect)"), we choose high-availability version, typically with two to three instances underneath. Annual/monthly payment, PostgreSQL 15 on x86 engine, East China 1 default AZ, dedicated 64-core 256GB instance: pg.x4m.8xlarge.2c, with a 3.2TB ESSD PL3 cloud disk. Annual costs range from 250,000 (3 years) to 750,000 (on-demand), with storage costs accounting for about 1/3.
 
-
 ![](rds-1.png)
-
 
 Let's also look at AWS, the public cloud leader【4】【5】. The closest on AWS is db.m5.16xlarge, also 64-core 256GB multi-AZ deployment. Similarly, we add a 3.2TB io1 SSD disk with maximum 80k IOPS. Checking AWS global and China region pricing, total costs range from 1.6-2.17 million yuan annually, with storage costs accounting for about half. Overall costs shown in the table below:
 
@@ -69,7 +65,6 @@ So the question is: **if one year of cloud database costs can buy you several or
 
 **Are you paying an IQ tax by using cloud databases?**
 
-
 ---------
 
 ## Applicable Scenarios
@@ -97,7 +92,6 @@ So cloud vendors' money comes from VC-funded tech startups seeking explosive gro
 
 **If your business fits public cloud's applicable spectrum, that's great; but paying several to dozens of times premium for unnecessary flexibility and elasticity is pure IQ tax.**
 
-
 ---------
 
 ## Cost Assassin
@@ -117,7 +111,6 @@ Later at my next stop, the situation was completely different. We managed 25,000
 ![](rds-31.png)
 
 Here we can use a simple method to calculate unit costs: one core computing power (including mem/disk) used for one month's comprehensive cost, abbreviated as **core·month**. We calculated self-built costs for various machine models and cloud vendor quotes, roughly as follows:
-
 
 |               Hardware Computing Power                |  Unit Price   |
 |:----------------------------------------------------:|:-------------:|
@@ -142,7 +135,6 @@ Here we can use a simple method to calculate unit costs: one core computing powe
 |        Alibaba-Cloud RDS PG 8x Memory (Dedicated)        |      410      |
 |            Oracle Database License            |     10000     |
 
-
 So the question becomes: why can 20-yuan server hardware sell for hundreds, and with cloud database software can multiply several times more? **Are operations made of gold, or are servers made of gold?**
 
 Common response is: ***Databases are the crown jewel of infrastructure software, embodying countless intangible intellectual property BlahBlah***. Therefore software prices far exceeding hardware are very reasonable. If it's top commercial databases like Oracle, or Sony Nintendo console games, this makes sense.
@@ -161,9 +153,6 @@ But cloud databases are extremely outrageous - same one-core computing power for
 
 If you only have one or two cores of RDS, don't bother - pay some tax. But if your business has scaled up and still doesn't exit cloud quickly, you're really paying IQ tax.
 
-
-
-
 ------------------
 
 ## Good Enough?
@@ -172,9 +161,7 @@ If you only have one or two cores of RDS, don't bother - pay some tax. But if yo
 
 Regarding cloud database/cloud/ server costs, if you can chat with sales to this point, the pitch becomes: ***Though we're expensive, we're good!***
 
-
 **But are cloud databases really good?**
-
 
 Should say, for toy applications, small websites, personal hosting, and wildcatters with no technical knowledge, RDS might be good enough. But in the eyes of high-value customers and database experts, RDS is just passing-grade cafeteria food.
 
@@ -210,9 +197,6 @@ Of course, this doesn't mean self-building won't have these problems - just that
 
 However, everything exists for a reason. Cloud databases aren't worthless - in **scalability**, cloud databases indeed rolled out new heights, like various Serverless tricks, but this mainly saves cloud vendors money through overselling, not much meaning for users.
 
-
-
-
 ------------------
 
 ## Eliminate DBAs?
@@ -238,7 +222,6 @@ Whether public cloud vendors, Kubernetes-represented cloud-native/private cloud,
 **In large organizations, a good DBA is crucial**. However, excellent DBAs are quite rare, supply can't meet demand, so this role can only be outsourced in most organizations: to professional database service companies, to cloud database RDS service teams. Organizations unable to find DBA supply can only **insource** this responsibility to their own dev/ops personnel until company scale is large enough or they've suffered enough, then some Dev/Ops develop corresponding capabilities.
 
 **DBAs won't be eliminated, only concentrated in cloud vendors providing monopolized services.**
-
 
 ------------------
 
@@ -268,9 +251,6 @@ There's action for every force. Local-first software corresponding to cloud soft
 Open source projects represented by K8S bring resource scheduling/intelligent operations capabilities originally exclusive to public cloud to all enterprises, letting enterprises run 'cloud' capabilities locally. For stateless applications, it's already a good enough "cloud operating system" kernel. Ceph/Minio also provide open source alternatives to S3 object storage. Only one question remains unanswered: how to manage and deploy stateful, production-grade database services?
 
 The era calls for open source RDS alternatives.
-
-
-
 
 ------------------
 
@@ -312,13 +292,9 @@ Pigsty is simple and easy to use, human costs and complexity match RDS, but reso
 
 > RDS cost vs scale cost curve
 
-
 Pigsty lets you practice ultimate FinOps philosophy — using prices almost approaching pure resources, run production-grade PostgreSQL RDS database services anywhere (ECS, resource cloud, data center servers, even local laptop VMs). **Making cloud database capability costs change from proportional to resource marginal costs to approximately zero fixed learning costs**.
 
-
-
 **If you can use better RDS services at a fraction of the cost, then using cloud databases would be pure IQ tax.**
-
 
 ------------------
 

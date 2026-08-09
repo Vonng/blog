@@ -12,29 +12,27 @@ tags: [PostgreSQL, PG管理, 备份]
 
 备份有三种形式：SQL转储，文件系统备份，连续归档
 
-
-
 ## 1. SQL转储
 
 SQL 转储方法的思想是：
 
-创建一个由SQL命令组成的文件，服务器能利用其中的SQL命令重建与转储时状态一样的数据库。 
+创建一个由SQL命令组成的文件，服务器能利用其中的SQL命令重建与转储时状态一样的数据库。
 
 ### 1.1 转储
 
-工具`pg_dump`、`pg_dumpall`用于进行SQL转储。结果输出到stdout。
+工具 `pg_dump`、`pg_dumpall` 用于进行SQL转储。结果输出到stdout。
 
 ```bash
 pg_dump dbname > filename
 pg_dump dbname -f filename
 ```
 
-* `pg_dump`是一个普通的PostgreSQL客户端应用。可以在任何可以访问该数据库的远端主机上进行备份工作。
-* `pg_dump`不会以任何特殊权限运行，必须要有你想备份的表的读权限，同时它也遵循同样的HBA机制。
+* `pg_dump` 是一个普通的PostgreSQL客户端应用。可以在任何可以访问该数据库的远端主机上进行备份工作。
+* `pg_dump` 不会以任何特殊权限运行，必须要有你想备份的表的读权限，同时它也遵循同样的HBA机制。
 * 要备份整个数据库，几乎总是需要一个数据库超级用户。
 * 该备份方式的重要优势是，它是跨版本、跨机器架构的备份方式。（最远回溯至7.0）
-* `pg_dump`的备份是内部一致的，是转储开始时刻的数据库快照，转储期间的更新不被包括在内。
-* `pg_dump`不会阻塞其他数据库操作，但需要排它锁的命令除外（例如大多数 ALTER TABLE）
+* `pg_dump` 的备份是内部一致的，是转储开始时刻的数据库快照，转储期间的更新不被包括在内。
+* `pg_dump` 不会阻塞其他数据库操作，但需要排它锁的命令除外（例如大多数 ALTER TABLE）
 
 ### 1.2 恢复
 
@@ -44,7 +42,7 @@ pg_dump dbname -f filename
 psql dbname < infile
 ```
 
-* 这条命令不会创建数据库`dbname`，必须在执行psql前自己从`template0`创建。例如，用命令`createdb -T template0 dbname`。默认`template1`和`template0`是一样的，新创建的数据库默认以`template1`为模板。
+* 这条命令不会创建数据库 `dbname`，必须在执行psql前自己从 `template0` 创建。例如，用命令 `createdb -T template0 dbname`。默认 `template1` 和 `template0` 是一样的，新创建的数据库默认以 `template1` 为模板。
 
   `CREATE DATABASE dbname TEMPLATE template0;`
 
@@ -52,13 +50,13 @@ psql dbname < infile
 
 * 在开始恢复之前，转储库中对象的拥有者以及在其上被授予了权限的用户必须已经存在。如果它们不存在，那么恢复过程将无法将对象创建成具有原来的所属关系以及权限（有时候这就是你所需要的，但通常不是）。
 
-* 恢复时遇到错误自动终止，则可以设置`ON_ERROR_STOP`变量来运行psql，遇到SQL错误后退出并返回状态3：
+* 恢复时遇到错误自动终止，则可以设置 `ON_ERROR_STOP` 变量来运行psql，遇到SQL错误后退出并返回状态3：
 
 ```bash
 psql --set ON_ERROR_STOP=on dbname < infile
 ```
 
-* 恢复时可以使用单个事务来保证要么完全正确恢复，要么完全回滚。使用`-1`或`--single-transaction`
+* 恢复时可以使用单个事务来保证要么完全正确恢复，要么完全回滚。使用 `-1` 或 `--single-transaction`
 * pg_dump和psql可以通过管道on-the-fly做转储与恢复
 
 ```
@@ -67,15 +65,15 @@ pg_dump -h host1 dbname | psql -h host2 dbname
 
 ### 1.3 全局转储
 
-一些信息属于数据库集簇，而不是单个数据库的，例如角色、表空间。如果希望转储这些，可使用`pg_dumpall`
+一些信息属于数据库集簇，而不是单个数据库的，例如角色、表空间。如果希望转储这些，可使用 `pg_dumpall`
 
 ```
 pg_dumpall > outfile
 ```
 
-如果只想要全局的数据（角色与表空间），则可以使用`-g, --globals-only`参数。
+如果只想要全局的数据（角色与表空间），则可以使用 `-g, --globals-only` 参数。
 
-转储的结果可以使用psql恢复，通常将转储载入到一个空集簇中可以用`postgres`作为数据库名
+转储的结果可以使用psql恢复，通常将转储载入到一个空集簇中可以用 `postgres` 作为数据库名
 
 ```
 psql -f infile postgres
@@ -121,10 +119,6 @@ cat testdb.sql.xz* | xz -cd | psql # 恢复
 -T --exclude-table
 ```
 
-
-
-
-
 ## 2. 文件系统转储
 
 SQL 转储方法的思想是：拷贝数据目录的所有文件。为了得到一个可用的备份，所有备份文件都应当保持一致。
@@ -135,27 +129,20 @@ SQL 转储方法的思想是：拷贝数据目录的所有文件。为了得到�
 
 - 最简单的方式：停机，直接拷贝数据目录的所有文件。
 
-
 - 有办法通过文件系统（例如xfs）获得一致的冻结快照也可以不停机，但wal和数据目录必须是一致的。
 - 可以通过制作pg_basebackup进行远程归档备份，可以不停机。
 
-
 - 可以通过停机执行rsync的方式向远端增量同步数据变更。
-
-
-
-
-
 
 ## 3. PITR 连续归档与时间点恢复
 
 Pg在运行中会不断产生WAL，WAL记录了操作日志，从某一个基础的全量备份开始回放后续的WAL，就可以恢复数据库到任意的时刻的状态。为了实现这样的功能，就需要配置WAL归档，将数据库生成的WAL不断保存起来。
 
-WAL在逻辑上是一段无限的字节流。`pg_lsn`类型（bigint）可以标记WAL中的位置，`pg_lsn`代表一个WAL中的字节位置偏移量。但实践中WAL不是连续的一个文件，而被分割为每16MB一段。
+WAL在逻辑上是一段无限的字节流。`pg_lsn` 类型（bigint）可以标记WAL中的位置，`pg_lsn` 代表一个WAL中的字节位置偏移量。但实践中WAL不是连续的一个文件，而被分割为每16MB一段。
 
-WAL文件名是有规律的，而且归档时不允许更改。通常为24位十六进制数字，`000000010000000000000003`，其中前面8位十六进制数字表示时间线，后面的16位表示16MB块的序号。即`lsn >> 24`的值。
+WAL文件名是有规律的，而且归档时不允许更改。通常为24位十六进制数字，`000000010000000000000003`，其中前面8位十六进制数字表示时间线，后面的16位表示16MB块的序号。即 `lsn >> 24` 的值。
 
-查看`pg_lsn`时，例如`0/84A8300`，只要去掉最后六位hex，就可以得到WAL文件序号的后面部分，这里，也就是`8`，如果使用的是默认时间线1，那么对应的WAL文件就是`000000010000000000000008`。
+查看 `pg_lsn` 时，例如 `0/84A8300`，只要去掉最后六位hex，就可以得到WAL文件序号的后面部分，这里，也就是 `8`，如果使用的是默认时间线1，那么对应的WAL文件就是 `000000010000000000000008`。
 
 ### 3.1 准备环境
 
@@ -195,12 +182,11 @@ EOF
 chmod a+x /var/lib/pgsql/data/conf.d/archive.sh
 ```
 
-归档脚本可以简单到只是一个`cp`，也可以非常复杂。但需要注意以下事项：
+归档脚本可以简单到只是一个 `cp`，也可以非常复杂。但需要注意以下事项：
 
-- 归档命令使用数据库用户`postgres`执行，最好放在0700的目录下面。
+- 归档命令使用数据库用户 `postgres` 执行，最好放在0700的目录下面。
 - 归档命令应当拒绝覆盖现有文件，出现覆盖时，返回一个错误代码。
 - 归档命令可以通过reload配置更新。
-
 
 - 处理归档失败时的情形
 
@@ -208,7 +194,7 @@ chmod a+x /var/lib/pgsql/data/conf.d/archive.sh
 
 - WAL不会记录对配置文件的变更。
 
-- 归档命令中：`%p` 会替换为生成待归档WAL的路径，而`%f`会替换为待归档WAL的文件名
+- 归档命令中：`%p` 会替换为生成待归档WAL的路径，而 `%f` 会替换为待归档WAL的文件名
 
 - 归档脚本可以使用更复杂的逻辑，例如下面的归档命令，在归档目录中每天创建一个以日期YYYYMMDD命名的文件夹，在每天12点移除前一天的归档日志。每天的归档日志使用xz压缩存储。
 
@@ -219,8 +205,7 @@ chmod a+x /var/lib/pgsql/data/conf.d/archive.sh
   xz -c %p > ${wal_dir}/$(date +%Y%m%d)/%f.xz
   ```
 
-- 归档也可以使用外部专用备份工具进行。例如`pgbackrest`与`barman`等。
-
+- 归档也可以使用外部专用备份工具进行。例如 `pgbackrest` 与 `barman` 等。
 
 ### 3.3 测试归档
 
@@ -232,7 +217,7 @@ pg_ctl -D /var/lib/pgsql/data start
 psql postgres -c "SELECT name,setting FROM pg_settings where name like '%archive%';"
 ```
 
-在当前shell开启监视循环，不断查询WAL的位置，以及归档目录和`pg_wal`中的文件变化
+在当前shell开启监视循环，不断查询WAL的位置，以及归档目录和 `pg_wal` 中的文件变化
 
 ```bash
 for((i=0;i<100;i++)) do 
@@ -242,7 +227,7 @@ for((i=0;i<100;i++)) do
 done
 ```
 
-在另一个Shell中创建一张测试表`foobar`，包含单一的时间戳列，并引入负载，每秒写入一万条记录：
+在另一个Shell中创建一张测试表 `foobar`，包含单一的时间戳列，并引入负载，每秒写入一万条记录：
 
 ```bash
 psql postgres -c 'CREATE TABLE foobar(ts TIMESTAMP);'
@@ -275,13 +260,13 @@ done
 
 #### 手工切换WAL
 
-再开启一个Shell，执行`pg_switch_wal`，强制写入一个新的WAL文件
+再开启一个Shell，执行 `pg_switch_wal`，强制写入一个新的WAL文件
 
 ```bash
 psql postgres -c 'SELECT pg_switch_wal();'
 ```
 
-可以看到，虽然位置才到`32C1D68`，但立即就跳到了下一个16MB的边界点。
+可以看到，虽然位置才到 `32C1D68`，但立即就跳到了下一个16MB的边界点。
 
 ```bash
 000000010000000000000001 000000010000000000000002 000000010000000000000003 archive_status
@@ -310,7 +295,7 @@ psql postgres -c 'SELECT pg_switch_wal();'
 
 #### 强制kill数据库
 
-数据库因为故障异常关闭，重启之后，会从最近的检查点，也就是`0/2FB0160`开始重放WAL。
+数据库因为故障异常关闭，重启之后，会从最近的检查点，也就是 `0/2FB0160` 开始重放WAL。
 
 ```bash
 [17:03:37] vonng@vonng-mac /var/lib/pgsql
@@ -347,7 +332,7 @@ $ psql postgres -c 'SELECT pg_current_wal_lsn() as current, pg_current_wal_inser
  0/49CBF20 | 0/49CBF20 | 0/49CBF20
 ```
 
-使用`pg_basebackup`制作基础备份
+使用 `pg_basebackup` 制作基础备份
 
 ```bash
 psql postgres -c 'SELECT now();'
@@ -376,21 +361,19 @@ pg_basebackup: waiting for background process to finish streaming ...
 pg_basebackup: base backup completed
 ```
 
-
-
 ### 3.5 使用备份
 
 #### 直接使用
 
-最简单的使用方式，就是直接用`pg_ctl`启动它。
+最简单的使用方式，就是直接用 `pg_ctl` 启动它。
 
-当`recovery.conf`不存在时，这样做会启动一个新的完整数据库实例，原原本本地保留了备份完成时的状态。数据库会并不会意识到自己是一个备份。而是以为自己上次没有正常关闭，应用`pg_wal`目录中自带的WAL进行修复，正常重启。
+当 `recovery.conf` 不存在时，这样做会启动一个新的完整数据库实例，原原本本地保留了备份完成时的状态。数据库会并不会意识到自己是一个备份。而是以为自己上次没有正常关闭，应用 `pg_wal` 目录中自带的WAL进行修复，正常重启。
 
 基础的全量备份可能每天或每周备份一次，要想恢复到最新的时刻，需要和WAL归档配合使用。
 
 #### 使用WAL归档追赶进度
 
-可以在备份中数据库下创建一个`recovery.conf`文件，并指定`restore_command`选项。这样的话，当使用`pg_ctl`启动这个数据目录时，postgres会依次拉取所需的WAL，直到没有了为止。
+可以在备份中数据库下创建一个 `recovery.conf` 文件，并指定 `restore_command` 选项。这样的话，当使用 `pg_ctl` 启动这个数据目录时，postgres会依次拉取所需的WAL，直到没有了为止。
 
 ```bash
 cat >> /var/lib/pgsql/bkup/recovery.conf <<- 'EOF'
@@ -398,7 +381,7 @@ restore_command = 'cp /var/lib/pgsql/wal/%f %p'
 EOF
 ```
 
-继续在原始主库中执行负载，这时候WAL的进度已经到了`0/9060CE0`，而制作备份的时候位置还在`0/5000028`。
+继续在原始主库中执行负载，这时候WAL的进度已经到了 `0/9060CE0`，而制作备份的时候位置还在 `0/5000028`。
 
 启动备份之后，可以发现，备份数据库自动从归档文件夹拉取了5~8号WAL并应用。
 
@@ -448,26 +431,24 @@ $ psql postgres -p 5433 -c 'SELECT max(ts) FROM foobar;'
 (1 row)
 ```
 
-通常`archive_command, restore_command`主要用于紧急情况下的恢复，比如主库从库都挂了。因为还没有归档
-
-
+通常 `archive_command, restore_command` 主要用于紧急情况下的恢复，比如主库从库都挂了。因为还没有归档
 
 ### 3.6 指定进度
 
-默认情况下，恢复将会一直恢复到 WAL 日志的末尾。下面的参数可以被用来指定一个更早的停止点。`recovery_target`、`recovery_target_name`、`recovery_target_time`和`recovery_target_xid`四个选项中最多只能使用一个，如果在配置文件中使用了多个，将使用最后一个。
+默认情况下，恢复将会一直恢复到 WAL 日志的末尾。下面的参数可以被用来指定一个更早的停止点。`recovery_target`、`recovery_target_name`、`recovery_target_time` 和 `recovery_target_xid` 四个选项中最多只能使用一个，如果在配置文件中使用了多个，将使用最后一个。
 
 上面四个恢复目标中，常用的是 `recovery_target_time`，用于指明将系统恢复到什么时间。
 
 另外几个常用的选项包括：
 
 - `recovery_target_inclusive` (`boolean`) ：是否包括目标点，默认为true
-- `recovery_target_timeline` (`string`)： 指定恢复到一个特定的时间线中。 
+- `recovery_target_timeline` (`string`)： 指定恢复到一个特定的时间线中。
 - `recovery_target_action` (`enum`)：指定在达到恢复目标时服务器应该立刻采取的动作。
-  - `pause`: 暂停恢复，默认选项，可通过`pg_wal_replay_resume`恢复。
+  - `pause`: 暂停恢复，默认选项，可通过 `pg_wal_replay_resume` 恢复。
   - `shutdown`:  自动关闭。
   - `promote`: 开始接受连接
 
-例如在`2018-01-25 18:51:20` 创建了一个备份
+例如在 `2018-01-25 18:51:20` 创建了一个备份
 
 ```bash
 $ psql postgres -c 'SELECT now();'
@@ -489,7 +470,7 @@ pg_basebackup: waiting for background process to finish streaming ...
 pg_basebackup: base backup completed
 ```
 
-之后运行了两分钟，到了`2018-01-25 18:53:05`我们发现有几条脏数据，于是从备份开始恢复，希望恢复到脏数据出现前一分钟的状态，例如`2018-01-25 18:52`
+之后运行了两分钟，到了 `2018-01-25 18:53:05` 我们发现有几条脏数据，于是从备份开始恢复，希望恢复到脏数据出现前一分钟的状态，例如 `2018-01-25 18:52`
 
 可以这样配置
 
@@ -550,7 +531,7 @@ for((i=0;i<1000;i++)) do
 done
 ```
 
-可以看到，WAL归档目录中出现了两个`6`号WAL段文件，如果没有前面的时间线作为区分，WAL就会被覆盖。
+可以看到，WAL归档目录中出现了两个 `6` 号WAL段文件，如果没有前面的时间线作为区分，WAL就会被覆盖。
 
 ```bash
 $ ls -alh wal
@@ -569,15 +550,13 @@ drwxr-xr-x   6 vonng  wheel   192B Jan 25 18:51 ..
 -rw-------   1 vonng  wheel    16M Jan 25 18:59 000000020000000000000007
 ```
 
-假设完成恢复之后又反悔了，则可以用基础备份通过指定`recovery_target_timeline = '1'` 再次恢复回第一次运行到18:53 时的状态。
+假设完成恢复之后又反悔了，则可以用基础备份通过指定 `recovery_target_timeline = '1'` 再次恢复回第一次运行到18:53 时的状态。
 
 ### 3.8 其他注意事项
 
 * 在Pg 10之前，哈希索引上的操作不会被记录在WAL中，需要在Slave上手工REINDEX。
-* 不要在创建基础备份的时候修改任何**模板数据库**
+* 不要在创建基础备份的时候修改任何 **模板数据库**
 * 注意表空间会严格按照字面值记录其路径，如果使用了表空间，恢复时要非常小心。
-
-
 
 ## 4. 制作备机
 
@@ -603,13 +582,13 @@ pg_ctl -D /var/lib/pgsql/master init && pg_ctl -D /var/lib/pgsql/master start
 
 #### 创建用户
 
-创建备库需要一个具有`REPLICATION`权限的用户，这里在Master中创建`replication`用户
+创建备库需要一个具有 `REPLICATION` 权限的用户，这里在Master中创建 `replication` 用户
 
 ```bash
 psql postgres -c 'CREATE USER replication REPLICATION;'
 ```
 
-为了创建从库，需要一个具有`REPLICATION`权限的用户，并在`pg_hba`中允许访问，10中默认允许：
+为了创建从库，需要一个具有 `REPLICATION` 权限的用户，并在 `pg_hba` 中允许访问，10中默认允许：
 
 ```ini
 local   replication     all                                     trust
@@ -618,13 +597,13 @@ host    replication     all             127.0.0.1/32            trust
 
 #### 制作备库
 
-通过`pg_basebackup`创建一个slave实例。实际上是连接到Master实例，并复制一份数据目录到本地。
+通过 `pg_basebackup` 创建一个slave实例。实际上是连接到Master实例，并复制一份数据目录到本地。
 
 ```bash
 pg_basebackup -Fp -Pv -R -c fast -U replication -h localhost -D /var/lib/pgsql/slave
 ```
 
-这里的关键是通过`-R` 选项，在备份的制作过程中自动将主机的连接信息填入`recovery.conf`，这样使用`pg_ctl `启动时，数据库会意识到自己是备机，并从主机自动拉取WAL追赶进度。
+这里的关键是通过 `-R` 选项，在备份的制作过程中自动将主机的连接信息填入 `recovery.conf`，这样使用 `pg_ctl` 启动时，数据库会意识到自己是备机，并从主机自动拉取WAL追赶进度。
 
 #### 启动从库
 
@@ -632,24 +611,24 @@ pg_basebackup -Fp -Pv -R -c fast -U replication -h localhost -D /var/lib/pgsql/s
 pg_ctl -D /var/lib/pgsql/slave -o "-p 5433" start
 ```
 
-从库与主库的唯一区别在于，数据目录中多了一个`recovery.conf`文件。这个文件不仅仅可以用于标识从库的身份，而且在故障恢复时也需要用到。对于`pg_basebackup`构造的从库，它默认包含两个参数：
+从库与主库的唯一区别在于，数据目录中多了一个 `recovery.conf` 文件。这个文件不仅仅可以用于标识从库的身份，而且在故障恢复时也需要用到。对于 `pg_basebackup` 构造的从库，它默认包含两个参数：
 
 ```ini
 standby_mode = 'on'
 primary_conninfo = 'user=replication passfile=''/Users/vonng/.pgpass'' host=localhost port=5432 sslmode=prefer sslcompression=1 krbsrvname=postgres target_session_attrs=any'
 ```
 
-`standby_mode`指明是否将PostgreSQL作为从库启动。
+`standby_mode` 指明是否将PostgreSQL作为从库启动。
 
-在备份时，`standby_mode`默认关闭，这样当所有的WAL拉取完毕后，就完成恢复，进入正常工作模式。
+在备份时，`standby_mode` 默认关闭，这样当所有的WAL拉取完毕后，就完成恢复，进入正常工作模式。
 
 如果打开，那么数据库会意识到自己是备机，那么即使到达WAL末尾也不会停止，它会持续拉取主库的WAL，追赶主库的进度。
 
-拉取WAL有两种办法，通过`primary_conninfo`流式复制拉取（9.0后的新特性，推荐，默认），或者通过`restore_command`来手工指明WAL的获取方式（老办法，恢复时使用）。
+拉取WAL有两种办法，通过 `primary_conninfo` 流式复制拉取（9.0后的新特性，推荐，默认），或者通过 `restore_command` 来手工指明WAL的获取方式（老办法，恢复时使用）。
 
 #### 查看状态
 
-主库的所有从库可以通过系统视图`pg_stat_replication`查阅：
+主库的所有从库可以通过系统视图 `pg_stat_replication` 查阅：
 
 ```bash
 $ psql postgres -tzxc 'SELECT * FROM pg_stat_replication;'
@@ -674,7 +653,7 @@ sync_priority    | 0
 sync_state       | async
 ```
 
-检查主库和备库的状态可以使用函数`pg_is_in_recovery`，备库会处于恢复状态：
+检查主库和备库的状态可以使用函数 `pg_is_in_recovery`，备库会处于恢复状态：
 
 ```bash
 $ psql postgres -Atzc 'SELECT pg_is_in_recovery()' && \

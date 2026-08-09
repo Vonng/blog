@@ -21,7 +21,6 @@ tags: [可观测性, VictoriaMetrics, Prometheus, 监控]
 
 ![arch.png](arch.png)
 
-
 在 Pigsty 里面，我之前一直用 **Prometheus**，而 VM 作为专业版可选模块。不过最近有个契机，让我感觉有必要给 Pigsty 的监控基建也翻新一下了 —— 第一是原本使用的日志方案 Grafana Loki 和 Promtail 要淘汰了，想来想去还是得上 VictoriaLogs。第二是正好有个客户 —— **影视飓风** 要部署生产级别的 VictoriaMetrics，我就干脆一起搞了。
 
 VictoriaMetrics 其实是一个全家桶，不仅仅可以替代 Prometheus，而且还有 VictoriaLogs 用于存储日志，VictoriaTraces 存储链路追踪，我想着干脆都一起上了吧。于是就在 Pigsty v4 中对 Infra 模块整个进行重写。
@@ -54,13 +53,9 @@ valyala 这哥们还贼有个性，一个人单枪匹马搞出来的东西吊打
 
 当然，要是说只是省点内存磁盘 CPU 啥的，我倒也没那么大兴趣去换。主要是查询响应时间也快了很多，这就不一样了，特别是 VictoriaLogs 相比 Loki，简直就是碾压式的降维打击。面板加载的速度肉眼可见的快了许多，那种上百个 Panel 的 Dashboard 也是瞬间全出，这个感觉实在是太爽了！
 
-
-
 老冯自己的测试毕竟规模有限，业界三方数据更有说服力。下面是 Claude 汇总的一些测试用例。不是百分之几十几十的提升，都是几倍几倍的提升，朴实无华的强力。
 
 ![Third Party Benchmarks](third-party-benchmarks.png)
-
-
 
 ## Victoria 如何替代 Prometheus
 
@@ -84,25 +79,19 @@ valyala 这哥们还贼有个性，一个人单枪匹马搞出来的东西吊打
 
 **为什么我看这 Loki 不爽很久了？**
 
-Loki 的设计哲学是“不索引全文，只索引标签”。听起来很美好，但在大规模日志检索时，它本质上就是个**分布式的 Grep**。你要查几个关键字，它得把原本的数据块拉出来暴力扫描。数据量一上来，查询慢得让人怀疑人生，动不动就超时或者 OOM（内存溢出）。有时候日志面板时间范围拉大一点，就直接报错了。
+Loki 的设计哲学是“不索引全文，只索引标签”。听起来很美好，但在大规模日志检索时，它本质上就是个 **分布式的 Grep**。你要查几个关键字，它得把原本的数据块拉出来暴力扫描。数据量一上来，查询慢得让人怀疑人生，动不动就超时或者 OOM（内存溢出）。有时候日志面板时间范围拉大一点，就直接报错了。
 
 而 VictoriaLogs 采用了类似 ClickHouse 的列存和 Bloom Filter 技术。它虽然也不搞全文索引（那样太费空间），但在过滤和定位数据块上做得极极极其高效。不仅快的一批，而且稳如老狗。10x 的性能力大砖飞，大力出奇迹。
 
-
-
 ![VictoriaLogs Performance](vlogs-performance.png)
-
-
 
 虽然 VLogs 不兼容 LogQL，使用的是自己的 **LogsQL**，但这一次，我把 Loki 的查询语句 **LogQL** 全部丢进了垃圾桶。LogsQL 明显要优雅，简洁的多：
 
 ![LogsQL Syntax Example](logsql-syntax.png)
 
-最爽的是，LogsQL 里 Stream Selector 是**可选的**。你可以直接写 `"error" "timeout"` 来全局搜索，不用像 LogQL 那样必须先指定标签。这在排查问题的时候太实用了 —— 很多时候你根本不知道错误会出现在哪个服务里。
+最爽的是，LogsQL 里 Stream Selector 是 **可选的**。你可以直接写 `"error" "timeout"` 来全局搜索，不用像 LogQL 那样必须先指定标签。这在排查问题的时候太实用了 —— 很多时候你根本不知道错误会出现在哪个服务里。
 
 如果你还在用 ELK 或者 Loki 这类古早日志方案，真的不如试一试力大砖飞的 VictoriaLogs。说不定连  ClickHouse 的活儿都能干掉一部分了。
-
-
 
 ### VictoriaTraces
 
@@ -118,11 +107,7 @@ Loki 的设计哲学是“不索引全文，只索引标签”。听起来很美
 
 虽然 Pigsty v4 才正式切换到 Victoria 全家桶，但是 Pigsty Infra 仓库里面维护这些RPM/DEB 包已经很长时间了，久经生产考验。当然也顺便一提，这里面还有其他好东西，比如 Grafana / Prometheus / 对象存储全家桶。（[包括 MinIO 不再发布二进制后](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247490694&idx=1&sn=d79444d4b55d6d42133f88db84fa5e18&scene=21#wechat_redirect)，老冯还打了 2025-12 修完 CVE 的 RPM/DEB 包）
 
-
-
 当然，即使是打好了包，从零开始部署 VM 全家桶还是需要不少工作的，设计目录，参考文档进行配置，接入 Grafana ，开发 Dashboard，Nginx 对接，证书申请，有很多很多脏活累活 —— 就算你用容器也一样省不了。所以老冯的 Pigsty 还有一个妙用，就是一键在 Linux 裸机上帮你拉起这套全家桶。
-
-
 
 如你所见，所有服务都被 nginx 封装好了 （又省掉了一个 VMAuth 组件哈哈），统一通过 80/443 端口的 i.pigsty 服务对外暴露。 Nginx + Grafana + VMetrics + VLogs + Vtraces + VMALERT + Alertmanager —— 可观测性七件套，As your service! 整整齐齐一家人！
 
@@ -133,7 +118,6 @@ Loki 的设计哲学是“不索引全文，只索引标签”。听起来很美
 ![Self Monitoring Dashboard](self-monitoring-dashboard.png)
 
 从某种意义上来说，现在的 Pigsty 不仅仅是一个 PostgreSQL 数据库发行版了，**还是一个 Observability 可观测性发行版！**
-
 
 --------
 

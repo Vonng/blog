@@ -11,7 +11,6 @@ tags: [Cloud-Outage]
 
 This afternoon around 14:44, NetEase Cloud Music experienced an [outage](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488162&idx=1&sn=5913eb51b437e365c685ed11917a3302&chksm=fe4b2779c93cae6ff254f4568f3e7895e005ce249ab4e0e3111bf3665a54fed35b381ff55aa9&scene=21#wechat_redirect), recovering at 17:11. The rumored cause was **infrastructure/cloud/ disk storage** related issues.
 
-
 ------
 
 ## Incident Timeline
@@ -31,8 +30,6 @@ The outage lasted until 17:11 when NetEase Cloud Music recovered, and the 163 ma
 At 17:16, NetEase Cloud Music's Zhihu account posted an apology notice, stating that searching for "enjoy music" tomorrow would provide a 7-day Black Vinyl VIP **friend fee**.
 
 ![heijiao.png](heijiao.png)
-
-
 
 ------
 
@@ -56,8 +53,6 @@ The last release remains at RC without an official version, and the project has 
 
 The Curve team leader also published an article "Curve: Regretful Farewell, Unfinished Journey" on their official account, which was subsequently deleted. I had some impression of this because Curve was one of two open-source shared storage solutions recommended by PolarDB, so I specifically researched this project. Now it seems...
 
-
-
 ------
 
 ## Lessons Learned
@@ -71,8 +66,6 @@ The second lesson — **Self-developed solutions are fine, but keep people aroun
 The third lesson: **Beware of big company open source**. As an underlying storage project, once deployed, it's not something you can simply replace. When NetEase killed the Curve project, all infrastructure using Curve became unmaintained ruins. Stonebraker mentioned this in his famous paper "What Goes Around Comes Around":
 
 ![stonebraker.png](stonebraker.png)
-
-
 
 --------
 

@@ -12,7 +12,6 @@ tags: [PostgreSQL, PG管理, 工具]
 - [`vmstat`](#vmstat)
 - [`iostat`](#iostat)
 
-
 -----------------------
 
 ## `top`
@@ -22,19 +21,19 @@ tags: [PostgreSQL, PG管理, 工具]
 ### 摘要
 
 - 按下空格或回车强制刷新
-- 使用`h`打开帮助
-- 使用`l,t,m`收起摘要部分。
-- 使用`d`修改刷新周期
-- 使用`z`开启颜色高亮
-- 使用`u`列出指定用户的进程
-- 使用`<>`来改变排序列
-- 使用`P`按CPU使用率排序
-- 使用`M`按驻留内存大小排序
-- 使用`T`按累计时间排序
+- 使用 `h` 打开帮助
+- 使用 `l,t,m` 收起摘要部分。
+- 使用 `d` 修改刷新周期
+- 使用 `z` 开启颜色高亮
+- 使用 `u` 列出指定用户的进程
+- 使用 `<>` 来改变排序列
+- 使用 `P` 按CPU使用率排序
+- 使用 `M` 按驻留内存大小排序
+- 使用 `T` 按累计时间排序
 
 ### 批处理模式
 
-`-b`参数可以用于批处理模式，配合`-n`参数指定批次数目。同时`-d`参数可以指定批次的间隔时间
+`-b` 参数可以用于批处理模式，配合 `-n` 参数指定批次数目。同时 `-d` 参数可以指定批次的间隔时间
 
 例如获取机器当前的负载使用情况，以0.1秒为间隔获取三次，获取最后一次的CPU摘要。
 
@@ -45,7 +44,7 @@ Cpu(s):  4.1%us,  1.0%sy,  0.0%ni, 94.8%id,  0.0%wa,  0.0%hi,  0.1%si,  0.0%st
 
 ### 输出格式
 
-`top`的输出分为两部分，上面几行是系统摘要，下面是进程列表，两者通过一个空行分割。下面是`top`命令的输出样例：
+`top` 的输出分为两部分，上面几行是系统摘要，下面是进程列表，两者通过一个空行分割。下面是 `top` 命令的输出样例：
 
 ```
 top - 12:11:01 up 401 days, 19:17,  2 users,  load average: 1.12, 1.26, 1.40
@@ -69,9 +68,9 @@ Swap: 67108860k total,        0k used, 67108860k free, 366252364k cached
 
 摘要默认由三个部分，共计五行组成：
 
-* 系统运行时间，平均负载，共计一行（`l`切换内容）
-* 任务、CPU状态，各一行（`t`切换内容）
-* 内存使用，Swap使用，各一行（`m`切换内容）
+* 系统运行时间，平均负载，共计一行（`l` 切换内容）
+* 任务、CPU状态，各一行（`t` 切换内容）
+* 内存使用，Swap使用，各一行（`m` 切换内容）
 
 **系统运行时间和平均负载**
 
@@ -121,7 +120,6 @@ Swap: 67108860k total,        0k used, 67108860k free, 366252364k cached
 * 内存部分：全部可用内存、已使用内存、空闲内存、缓冲内存。
 * SWAP部分：全部、已使用、空闲和缓冲交换空间。
 
-
 ### 进程部分
 
 进程部分默认会显示一些关键信息
@@ -145,7 +143,7 @@ Swap: 67108860k total,        0k used, 67108860k free, 366252364k cached
 - **VIRT**：进程使用的虚拟内存。
 - **RES**：驻留内存大小。驻留内存是任务使用的非交换物理内存大小。
 - **SHR**：SHR是进程使用的共享内存。
-- **S**这个是进程的状态。它有以下不同的值:
+- **S** 这个是进程的状态。它有以下不同的值:
 
 - D - 不可中断的睡眠态。
 - R – 运行态
@@ -172,23 +170,11 @@ static const char * const task_state_array[] = {
 };
 ```
 
-- `R (TASK_RUNNING)`，可执行状态。实际运行与`Ready`在Linux都算做Running状态
+- `R (TASK_RUNNING)`，可执行状态。实际运行与 `Ready` 在Linux都算做Running状态
 - `S (TASK_INTERRUPTIBLE)`，可中断的睡眠态，进程等待事件，位于等待队列中。
 - `D (TASK_UNINTERRUPTIBLE)`，不可中断的睡眠态，无法响应异步信号，例如硬件操作，内核线程
 - `T (TASK_STOPPED | TASK_TRACED)`，暂停状态或跟踪状态，由SIGSTOP或断点触发
-- `Z (TASK_DEAD)`，子进程退出后，父进程还没有来收尸，留下`task_structure`的进程就处于这种状态。
-
-
-
-
-
-
-
-
-
-
-
-
+- `Z (TASK_DEAD)`，子进程退出后，父进程还没有来收尸，留下 `task_structure` 的进程就处于这种状态。
 
 -----------------------
 
@@ -200,8 +186,8 @@ static const char * const task_state_array[] = {
 free -b | -k | -m | -g | -h -s delay  -a -l
 ```
 
-* 其中`-b | -k | -m | -g | -h `可用于控制显示大小时的单位（字节，KB,MB,GB，自动适配）
-* `-s`可以指定轮询周期，`-c`指定轮询次数。
+* 其中 `-b | -k | -m | -g | -h` 可用于控制显示大小时的单位（字节，KB,MB,GB，自动适配）
+* `-s` 可以指定轮询周期，`-c` 指定轮询次数。
 
 ### 输出样例
 
@@ -213,15 +199,14 @@ Mem:        387491     379383       8107      37762        182     348862
 Swap:        65535          0      65535
 ```
 
-* 这里，总内存有378GB，使用370GB，空闲8GB。三者存在`total=used+free`的关系。共享内存占36GB。
-* buffers与cache由操作系统分配管理，用于提高I/O性能，其中Buffer是写入缓冲，而Cache是读取缓存。这一行表示，应用程序**已使用**的`buffers/cached`，以及理论上**可使用**的`buffers/cache`。
+* 这里，总内存有378GB，使用370GB，空闲8GB。三者存在 `total=used+free` 的关系。共享内存占36GB。
+* buffers与cache由操作系统分配管理，用于提高I/O性能，其中Buffer是写入缓冲，而Cache是读取缓存。这一行表示，应用程序 **已使用** 的 `buffers/cached`，以及理论上 **可使用** 的 `buffers/cache`。
     `-/+ buffers/cache:      30338     357153`
 * 最后一行显示了SWAP信息，总的SWAP空间，实际使用的SWAP空间，以及可用的SWAP空间。只要没有用到SWAP（used = 0），就说明内存空间仍然够用。
 
-    
 ### 数据来源
 
-free实际上是通过`cat /proc/meminfo`获取信息的。
+free实际上是通过 `cat /proc/meminfo` 获取信息的。
 
 详细信息：https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/s2-proc-meminfo
 
@@ -272,7 +257,7 @@ DirectMap2M:     2021376 kB
 DirectMap1G:    400556032 kB
 ```
 
-其中，free与`/proc/meminfo`中指标的对应关系为：
+其中，free与 `/proc/meminfo` 中指标的对应关系为：
 
 ```
 total	= (MemTotal + SwapTotal)
@@ -295,20 +280,9 @@ $ echo 2 > /proc/sys/vm/drop_caches	# drop dentries & inode
 $ echo 3 > /proc/sys/vm/drop_caches	# drop all
 ```
 
-
-
-
-
-
-
-
-
-
-
 -----------------------
 
 ## `vmstat`
-
 
 汇报虚拟内存统计信息
 
@@ -330,7 +304,7 @@ vmstat [-V]
 vmstat <delay> <count>
 ```
 
-例如`vmstat 1 10`就是以1秒为间隔，采样10次内存统计信息。
+例如 `vmstat 1 10` 就是以1秒为间隔，采样10次内存统计信息。
 
 ### 样例输出
 
@@ -381,16 +355,6 @@ CPU
 - `/proc/stat`
 - `/proc/*/stat`
 
-
-
-
-
-
-
-
-
-
-
 -----------------------
 
 ## `iostat`
@@ -403,7 +367,7 @@ CPU
 iostat [ -c ] [ -d ] [ -N ] [ -n ] [ -h ] [ -k | -m ] [ -t ] [ -V ] [ -x ] [ -y ] [ -z ] [ -j { ID | LABEL | PATH | UUID | ... } [ device [...] | ALL ] ] [ device [...] | ALL ] [ -p [ device [,...] | ALL ] ] [interval [ count ] ]
 ```
 
-默认情况下iostat会打印cpu信息和磁盘io信息，使用`-d`参数只显示IO部分，使用`-x`打印更多信息。样例输出：
+默认情况下iostat会打印cpu信息和磁盘io信息，使用 `-d` 参数只显示IO部分，使用 `-x` 打印更多信息。样例输出：
 
 ```
 avg-cpu:  %user   %nice %system %iowait  %steal   %idle
@@ -418,18 +382,18 @@ dm-0              0.00         0.00         0.00          0          0
 
 ### 常用选项
 
-- 使用`-d`参数只显示IO部分的信息，而`-c`参数则只显示CPU部分的信息。
-- 使用`-x`会打印更详细的扩展信息
-- 使用`-k`会使用KB替代块数目作为部分数值的单位，`-m`则使用MB。
+- 使用 `-d` 参数只显示IO部分的信息，而 `-c` 参数则只显示CPU部分的信息。
+- 使用 `-x` 会打印更详细的扩展信息
+- 使用 `-k` 会使用KB替代块数目作为部分数值的单位，`-m` 则使用MB。
 
 ### 输出说明
 
-不带`-x`选项默认会为每个设备打印5列：
+不带 `-x` 选项默认会为每个设备打印5列：
 
 - tps：该设备每秒的传输次数。（多个逻辑请求可能会合并为一个IO请求，传输量未知）
--kB_read/s：每秒从设备读取的数据量；kB_wrtn/s：每秒向设备写入的数据量；kB_read：读取的总数据量；kB_wrtn：写入的总数量数据量；这些单位都为Kilobytes，这是使用`-k`参数的情况。默认则以块数为单位。
+-kB_read/s：每秒从设备读取的数据量；kB_wrtn/s：每秒向设备写入的数据量；kB_read：读取的总数据量；kB_wrtn：写入的总数量数据量；这些单位都为Kilobytes，这是使用 `-k` 参数的情况。默认则以块数为单位。
 
-带有`-x`选项后，会打印更多信息：
+带有 `-x` 选项后，会打印更多信息：
 
 - rrqm/s：每秒这个设备相关的读取请求有多少被Merge了（当系统调用需要读取数据的时候，VFS将请求发到各个FS，如果FS发现不同的读取请求读取的是相同Block的数据，FS会将这个请求合并Merge）；
 - wrqm/s：每秒这个设备相关的写入请求有多少被Merge了。
@@ -440,7 +404,6 @@ dm-0              0.00         0.00         0.00          0          0
 - await：每一个IO请求的处理的平均时间（单位是毫秒）
 - r_await/w_await：读/写的平均响应时间。
 - %util：设备的带宽利用率，IO时间占比。在统计时间内所有处理IO时间。一般该参数是100%表示设备已经接近满负荷运行了。
-
 
 ### 常用方法
 
@@ -463,7 +426,3 @@ iostat -dxk /dev/dfa 1 10
 /proc/self/mountstats contains statistics for network filesystems.
 /dev/disk contains persistent device names.
 ```
-
-
-
-

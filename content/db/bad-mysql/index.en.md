@@ -19,7 +19,6 @@ Furthermore, MySQL's **Serializable/SR** isolation level that can "avoid" these 
 
 In summary, **MySQL's ACID has flaws and doesn't match documentation promises** — this may lead to serious correctness issues. Although such problems can be avoided through explicit locking and other methods, users should indeed be fully aware of the trade-offs and risks here: when choosing MySQL for scenarios requiring correctness/consistency, please exercise extreme caution.
 
-
 - [Why is correctness important?](#why-is-correctness-important)
 - [What do Hermitage's results say?](#what-do-hermitages-results-say)
 - [What new discoveries does JEPSEN have?](#what-new-discoveries-does-jepsen-have)
@@ -52,7 +51,6 @@ RDBMS allow different **isolation levels**, letting users trade off between **pe
 To ensure correctness, users can use additional concurrency control mechanisms like explicit locking or SELECT FOR UPDATE, but this introduces additional complexity and affects system simplicity. For financial scenarios, correctness is extremely important — accounting errors and reconciliation mismatches can have serious real-world consequences; however, for rough-and-ready internet scenarios, a few data errors may be acceptable — correctness priority usually yields to performance.
 This laid the groundwork for **MySQL's** correctness problems as it rode the internet boom.
 
-
 --------------------
 
 ## What do Hermitage's results say?
@@ -70,7 +68,6 @@ MySQL's problems are more significant: because the default **Repeatable Read/RR*
 It should be noted that ANSI SQL 92 isolation levels are a poor, crude, and widely criticized standard that only defined three anomaly phenomena and used them to distinguish four isolation levels — but there are actually many more anomaly types/isolation levels. The famous paper "A Critique of ANSI SQL Isolation Levels" proposed corrections and introduced several important new isolation levels, giving their strength relationship partial order diagram (left figure).
 
 Under the new model, many databases' "**Read Committed/RC**" and "**Repeatable Read/RR**" are actually the more practical "**Monotonic Atomic View/MAV**" and "**Snapshot Isolation/SI**". But MySQL is indeed unique: in Hermitage's evaluation, MySQL's **Repeatable Read/RR** is far from **Snapshot Isolation/SI**, doesn't meet ANSI 92 **Repeatable Read/RR** standards, with actual level being **Monotonic Atomic View/MAV**. JEPSEN's research further pointed out that MySQL **Repeatable Read/RR** doesn't even meet **Monotonic Atomic View/MAV**, being only slightly stronger than **Read Committed/RC**.
-
 
 --------------------
 
@@ -93,7 +90,6 @@ MySQL 8.0.34's **RU**, **RC**, **SR** isolation levels comply with ANSI standard
 MySQL RR transactions observed phenomena violating internal consistency, monotonicity, and atomicity. This adjusted its rating to an undefined isolation level only slightly higher than RC.
 
 In JEPSEN's tests, six anomalies were disclosed total. Since problems known from 2014 are skipped, we focus on JEPSEN's newly discovered anomalies. Here are several specific examples.
-
 
 --------------------
 
@@ -124,7 +120,6 @@ COMMIT;
 But in test results, 126 out of 9048 transactions showed **internal consistency errors** — despite running at repeatable read isolation level, the actual names read still changed. This behavior contradicts MySQL's [isolation level documentation](https://dev.mysql.com/doc/refman/8.0/en/innodb-transaction-isolation-levels.html#isolevel_repeatable-read), which states: "Consistent reads within the same transaction read the snapshot established by the first read." It contradicts MySQL's [consistent read documentation](https://dev.mysql.com/doc/refman/8.0/en/innodb-consistent-read.html), which specifically states that "InnoDB assigns a point in time at a transaction's first read, and effects of concurrent transactions should not appear in subsequent reads."
 
 ANSI/Adya repeatable read essentially means: once a transaction observes a value, it can count on that value staying stable for the rest of the transaction. MySQL is the opposite: **write requests are invitations for another transaction to sneak in and break the state the user just read**. Such isolation design and behavior is incredibly stupid. But there are even more outrageous things — like **monotonicity** and **atomicity** problems.
-
 
 --------------------
 
@@ -163,15 +158,11 @@ MySQL's [consistent read documentation](https://dev.mysql.com/doc/refman/8.0/en/
 
 Therefore, MySQL's Repeatable Read/RR isolation level is neither atomic nor monotonic. It's even worse than most databases' **Read Committed/RC**, which are essentially atomic and monotonic **Monotonic Atomic View/MAV**.
 
-
-
 Another noteworthy issue: MySQL's default configuration transactions exhibit phenomena violating **atomicity**. I raised this issue for industry discussion in [an article two years ago](https://mp.weixin.qq.com/s/KBypNeeM4puvzGiKFJ1FmQ). The MySQL community's view is that this is a configurable feature through `sql_mode`, not a flaw.
 
 But this argument can't change the fact: MySQL indeed violates the principle of least surprise, allowing users to do such atomicity-violating stupid things under default configuration. Similarly, there's the `replica_preserve_commit_order` parameter.
 
 ![mysql-atom.png](mysql-atom.png)
-
-
 
 --------------------
 
@@ -194,8 +185,6 @@ In the diagram, blue/green represents correctly using rules/rollback to avoid an
 Clearly, PostgreSQL SR and CockroachDB SR built on it have the best correctness, followed by Oracle SR; they mainly avoid concurrent anomalies through mechanisms and rules; while MySQL's correctness level is unbearable to look at.
 
 Professor Li Haixiang detailed this analysis in his special article "[The Utterly Useless MySQL](https://mp.weixin.qq.com/s/__mnrLBN88RPgpET0kq3vg)": although MySQL's **Serializable/SR** can ensure correctness through extensive use of deadlock detection algorithms, handling concurrent anomalies this way seriously affects database **performance and practical value**.
-
-
 
 --------------------
 
@@ -230,7 +219,6 @@ There are many ways to solve performance problems — even waiting for exponenti
 ![sf2023.png](mysql-sf2023.png)
 
 In StackOverflow's 2023 global developer survey, PostgreSQL's developer usage rate officially surpassed MySQL, becoming [the world's most popular database](https://mp.weixin.qq.com/s/xewE87WEaZHp-K5hjuk65A). MySQL, with its terrible correctness and difficulty achieving high performance, should seriously consider its breakthrough path.
-
 
 ------
 

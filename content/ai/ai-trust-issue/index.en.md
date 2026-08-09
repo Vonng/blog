@@ -38,7 +38,6 @@ This runs deeper than any particular problem involving jobs, copyright, or secur
 People who lose jobs can find new ones. Copyright law can be rewritten. Security holes can be patched.
 But once trust collapses, rebuilding it takes generations.
 
-
 --------
 
 ## 2. Trust Is Not One Thing

@@ -11,9 +11,7 @@ tags: [PostgreSQL, PG生态, MSSQL]
 
 许多人对于 PostgreSQL 生态已经发展到什么阶段并没有一个直观的印象 —— 除了 [吞噬数据库世界](/pg/pg-eat-db-world)，囊括万物的扩展生态之外，PostgreSQL 还可以直接从内核层面，替换掉 Oracle，SQL Server 与 MongoDB，当然 MySQL 就更不在话下了。
 
-当然要说主流数据库中，暴露风险最高的是谁，那毫无疑问是**微软的 SQL Server 了**。MSSQL 被替代的是最彻底的 —— 直接在 WireProtocol 层面被替代了。而主导这件事的是 AWS，亚马逊云服务。
-
-
+当然要说主流数据库中，暴露风险最高的是谁，那毫无疑问是 **微软的 SQL Server 了**。MSSQL 被替代的是最彻底的 —— 直接在 WireProtocol 层面被替代了。而主导这件事的是 AWS，亚马逊云服务。
 
 --------
 
@@ -23,14 +21,10 @@ tags: [PostgreSQL, PG生态, MSSQL]
 AWS 拿着开源的 PostgreSQL 和 MySQL 内核，一路杀穿数据库市场，拳打 Oracle ，脚踢微软，成为数据库市场份额毫无争议的一哥。
 而这两年 AWS 更是玩了一招釜底抽薪，开发整合了一个 BabelfishPG 的扩展插件，提供“**线缆协议**”级别的兼容性。
 
-
 ![marketshare.png](marketshare.png)
 
-所谓**线缆协议兼容**，就是指客户端什么都不用改，依然访问 SQL Server 1433 端口，使用 MSSQL 的驱动与命令行工具（sqlcmd）访问加装 BabelfishPG 的集群就可以了。
+所谓 **线缆协议兼容**，就是指客户端什么都不用改，依然访问 SQL Server 1433 端口，使用 MSSQL 的驱动与命令行工具（sqlcmd）访问加装 BabelfishPG 的集群就可以了。
 而且更神奇的是，你依然可以使用 PostgreSQL 的协议语言语法，从原来的 5432 端口访问，和 SQL Server 的客户端并存 —— 这就给迁移带来了极大的便利条件。
-
-
-
 
 --------
 
@@ -41,8 +35,6 @@ AWS 拿着开源的 PostgreSQL 和 MySQL 内核，一路杀穿数据库市场，
 ![wiltondb.png](wiltondb.png)
 
 在不同的平台上编译打包这样的内核与扩展并不是轻松容易的一件事，因此 WiltonDB —— 一个 Babelfish 的发行版就做了这件事，将 BabelfishPG 编译打包为 EL 7/8/9 与 Ubuntu 系统，甚至 Windows 下可用的 RPM / DEB / MSI 包。
-
-
 
 --------
 
@@ -64,24 +56,19 @@ AWS 拿着开源的 PostgreSQL 和 MySQL 内核，一路杀穿数据库市场，
 
 这意味着原本属于 PostgreSQL RDS 的能力 —— 高可用，时间点恢复，监控系统，IaC管控，SOP预案，甚至无数的扩展插件都可以嫁接融合到 SQL Server 版本的内核之上。
 
-
-
-
 --------
 
 ## 如何迁移？
 
-
 PostgreSQL 生态除了有Babelfish这样给力的内核与扩展，还有着繁荣的工具生态。如果要想从 SQL Server 或 MySQL 迁移到 PostgreSQL ，我强烈推荐一款杀手级迁移工具：[**PGLOADER**](https://pgloader.readthedocs.io/en/latest/ref/mssql.html)。
 
-这款迁移工具傻瓜化到了离谱的程度，在理想的情况下，你只需要两个数据库的**连接串**，就可以完成迁移了。对，真的是一行多余的废话都没有。
+这款迁移工具傻瓜化到了离谱的程度，在理想的情况下，你只需要两个数据库的 **连接串**，就可以完成迁移了。对，真的是一行多余的废话都没有。
 
 ```bash
 pgloader mssql://user@mshost/dbname pgsql://pguser@pghost/dbname
 ```
 
 有了 MSSQL 兼容内核扩展，又有了迁移工具，存量的 SQL Server 搬迁会变的非常容易。
-
 
 --------
 
@@ -90,7 +77,6 @@ pgloader mssql://user@mshost/dbname pgsql://pguser@pghost/dbname
 除了 MSSQL，PostgreSQL 生态还有旨在替代 Oracle替代：PolarDB O 与 IvorySQL，旨在替代 MongoDB 的 FerretDB 与 PongoDB。以及三百多个提供各式各样功能的扩展插件。实际上，几乎整个数据库世界都在受到 PostgreSQL 的冲击 —— 除了那些与 PostgreSQL 错开生态位（SQLite，DuckDB，MinIO），或者干脆就是 PostgreSQL 套壳（Supabase，RDS，Aurora/Polar）的数据库。
 
 我们最近发布的开源 RDS PostgreSQL 方案 —— Pigsty 最近就支持了这些 PG 替换内核，允许用户在一套 PostgreSQL 部署中提供 MSSQL，Oracle，MongoDB，Firebase，MongoDB 的兼容性替代能力。不过限于篇幅，那就是后面几篇要介绍的内容了。
-
 
 除了 MSSQL，PostgreSQL 生态还有旨在替代 Oracle替代：PolarDB O 与 IvorySQL，旨在替代 MongoDB 的 FerretDB 与 PongoDB。[以及三百多个提供各式各样功能的扩展插件。](https://pgext.cloud/zh/list)
 

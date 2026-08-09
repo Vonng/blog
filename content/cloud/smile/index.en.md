@@ -46,7 +46,7 @@ We don't know the answers to these questions. But we can be sure that unrestrict
 
 When failures occur, they go through a process of **problem perception, analysis and location, resolution and handling**. All these require system R&D/operations personnel to invest brainpower for handling. In this process, there's a basic empirical rule:
 
-Failure handling time **t** = 
+Failure handling time **t** =
 
 System and problem complexity **W** / Available online intellectual power **P**.
 
@@ -55,7 +55,6 @@ Failure handling optimization aims to shorten failure recovery time `t` as much 
 ![time-limit.png](smile-time-limit.png)
 
 With time limits fixed, you either reduce costs or improve efficiency. However, **cost reduction should target system complexity costs, not personnel costs; efficiency improvement shouldn't be about presentation talking points and jokes, but available online intellectual power and management effectiveness**. Unfortunately, many companies did neither well, turning cost reduction and efficiency improvement into cost reduction jokes.
-
 
 -------------
 
@@ -79,7 +78,6 @@ When system complexity costs exceed team intellectual power, disaster-level fail
 
 However, organizational tacit knowledge is lost as veterans leave. When lost to a certain degree, the system becomes walking dead — just waiting for some trigger to knock it down and explode. In the ruins, new generations of young novices gradually become veterans, then lose cost-effectiveness and get fired, cycling endlessly in the loop above.
 
-
 -------------
 
 ## Increasing Management Effectiveness
@@ -100,11 +98,9 @@ Not being able to locate root causes reflects inadequate observability construct
 
 Looking at Alibaba-Cloud RDS for PostgreSQL and PolarDB cloud database monitoring systems, everything is just this pitiful single page of charts. If they're using this thing to analyze and locate failures, no wonder others need dozens of minutes.
 
-
 **Third is management philosophy and insight**. For example, stability construction needs 10 million investment. There's always opportunistic amateur hours jumping out saying: we only need 5 million or less — then maybe do nothing, just **bet** no problems occur. Win the bet, make easy money; lose the bet, leave. But it's also possible this team has real skills using technology to reduce costs. But how many people in leadership positions have enough insight to truly distinguish this?
 
 Another example: advanced failure experience is actually very valuable wealth for engineers and companies — these are lessons fed with real money. However, many managers' first thought when problems occur is to "sacrifice a programmer/operations engineer," giving away this wealth to the next company for free. Such environments naturally produce blame-shifting culture, do-nothing-wrong attitudes, and muddling through.
-
 
 **Fourth is people-first**. Taking myself as an example, at Tantan I almost fully automated my work as DBA. Why did I do this? First, I could enjoy the dividends of technological progress — automating my own work let me have plenty of time for tea and newspapers. The company wouldn't fire me for automation and daily tea drinking, so no security concerns, allowing free exploration. I single-handedly created a complete [open source RDS](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485518&idx=1&sn=3d5f3c753facc829b2300a15df50d237&chksm=fe4b3d95c93cb4833b8e80433cff46a893f939154be60a2a24ee96598f96b32271301abfda1f&scene=21#wechat_redirect).
 

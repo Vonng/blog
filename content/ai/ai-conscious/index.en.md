@@ -72,5 +72,5 @@ Technically all three are doable; maybe some lab already has it. But the moment 
 - Philosopher-king AIs named David, Solomon, Rehoboam eventually rule. Believers trust machine sovereigns to assign everyone their optimal path. Robots toil; humans live as organic decor in a terrestrial heaven.
 
 > **1 Samuel 8**
-> 
+>
 > The Israelites begged for a king so they’d win wars. Samuel warned that a king would conscript their sons and seize their oxen, and when they cried out God wouldn’t listen. They insisted. They got David and Solomon—and Solomon’s son Rehoboam, who turned tyrant. When they cried out again, God said, “You asked for this.”

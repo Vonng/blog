@@ -20,7 +20,6 @@ Meanwhile, the agent next door — running a mediocre model but deeply wired int
 
 The principle is simple: **a mediocre local who knows the terrain beats a genius dropped into unfamiliar territory. That's home court advantage.** Intelligence without context is idle. An agent without a runtime is vapor.
 
-
 ------
 
 ## OtterTune: A $12M Lesson
@@ -43,7 +42,6 @@ OtterTune's fundamental mistake was a runtime problem: **it tried to do ops with
 
 > PS: I know they've started a second venture, again doing PostgreSQL tuning. Hope they get it right this time.
 
-
 ------
 
 ## Manus: The Real Core Is the Sandbox
@@ -63,7 +61,6 @@ It's this complete, deterministic sandbox that unleashes the model's full capabi
 The recent viral hit OpenClaw proves the same point. It earned the "AI with hands" label not because the underlying model is superior, but because it deeply integrates with the host OS — filesystem, shell, browser, calendar, messaging apps all wired through CLI. [Drop it into a blank cloud VM](https://mp.weixin.qq.com/s/1MnOjJShQrezxSKRpk4zNw), stripped of those local hooks, and it's just another chatbot.
 
 Manus and OpenClaw validate the same thing: **the LLM is the brain, but what really matters is the body.**
-
 
 ------
 
@@ -130,7 +127,6 @@ The Tsinghua University database team started working on this in 2024. Their D-B
 Academic research needs reproducible environments, and Infrastructure as Code naturally delivers this. Same config deployed a hundred times, identical environment every time. That's exactly the determinism agents need. Meanwhile, I'm building a DBA Agent myself. Who understands a runtime better than the person who built it? On an open runtime, academic teams explore boundaries, infrastructure builders refine the core, community developers contribute ideas. An ecosystem is forming.
 
 If you're interested in DBA agents, Pigsty might be the best proving ground. It provides everything a PostgreSQL service needs in a real enterprise environment — full [**HA**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247490952&idx=1&sn=bb69cb746fe7adb0adb9255e608f751f&scene=21#wechat_redirect) with PITR, and best-of-breed [**observability**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247490769&idx=1&sn=e9716235d5f32dd3123a87afda5abb71&scene=21#wechat_redirect).
-
 
 ------
 

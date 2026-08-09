@@ -71,10 +71,10 @@ PostgreSQL provides a series of functions to determine the space occupied by var
 
 | Function                        | Statistical Scope                                        |
 | ------------------------------- | -------------------------------------------------------- |
-| `pg_total_relation_size(oid) `  | Entire relation, including table, indexes, TOAST, etc.  |
-| `pg_indexes_size(oid) `         | Space occupied by relation's index portion              |
+| `pg_total_relation_size(oid)`  | Entire relation, including table, indexes, TOAST, etc.  |
+| `pg_indexes_size(oid)`         | Space occupied by relation's index portion              |
 | `pg_table_size(oid)`            | Space occupied by relation excluding indexes            |
-| `pg_relation_size(oid) `        | Get size of a relation's main file part (main fork)    |
+| `pg_relation_size(oid)`        | Get size of a relation's main file part (main fork)    |
 | `pg_relation_size(oid, 'main')` | Get relation's `main` fork size                         |
 | `pg_relation_size(oid, 'fsm')`  | Get relation's `fsm` fork size                          |
 | `pg_relation_size(oid, 'vm')`   | Get relation's `vm` fork size                           |

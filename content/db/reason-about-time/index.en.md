@@ -16,20 +16,17 @@ Let's discuss the principles of leap years, leap seconds, time and time zones, a
 
 [![](featured.jpg)](https://mp.weixin.qq.com/s/JNLMAzpLnk6y9lCSpClPlQ)
 
-
 --------------
 
 ## 0x01 Seconds and Timekeeping
 
 The unit of time is the second, but the definition of a second has not remained constant. It has both an astronomical definition and a physical definition.
 
-
 ### Universal Time (UT1)
 
 Initially, **the definition of a second was derived from the day**. A second was defined as 1/86400 of a mean solar day. A solar day is defined by astronomical phenomena: the **interval** between two consecutive **noon** times is defined as a **solar day**; a day has 86400 seconds, so one second equals 1/86400 of a day. Perfect! The time standard formed by this standard is called **Universal Time (UT1)**, or less precisely, **Greenwich Mean Time (GMT)**. Let's use GMT to refer to it below.
 
 This definition is intuitive, but has a problem: it's based on astronomical phenomena - the periodic motion of Earth relative to the Sun. Whether using Earth's revolution or rotation to define the second, there's an awkward issue: although the speed changes of Earth's rotation and revolution are very slow, they're not constant. For example, Earth's rotation is gradually slowing down, and the Earth-Moon position also causes each day's length to vary slightly. This means that the second, as a fundamental physical unit, actually varies in length. This becomes awkward when measuring **time durations** - a second from decades ago might already be different from today's second.
-
 
 ### Atomic Time (TAI)
 
@@ -63,9 +60,6 @@ This is the **leap second** mechanism. UTC is based on TAI, so it also runs fast
 
 So GMT and UTC are different - you can see `2016-12-31 23:59:60` in UTC time, but not in GMT.
 
-
-
-
 --------------
 
 ## 0x02 Local Time and Time Zones
@@ -89,8 +83,6 @@ Actually, whether there's a geographical region doesn't matter - the key is the 
 For example, UTC and GMT time zones are both `+0`, meaning no offset. China's East 8th zone has an offset of `+8`, meaning when calculating local time, 8 hours must be added to UTC time.
 
 **Daylight Saving Time (DST)** can be viewed as a special time zone offset correction. It refers to moving clocks forward by one hour (not necessarily one hour) during summer when daylight comes earlier, thereby saving energy (lighting). China briefly used daylight saving time between 1986 and 1992. The EU has used daylight saving time since 1996, though recent EU polls show 84% of citizens want to abolish daylight saving time. For programmers, daylight saving time is also an additional hassle - hopefully it can be swept into the dustbin of history soon.
-
-
 
 --------------
 
@@ -133,7 +125,6 @@ date -r 1500000000 '+%Y-%m-%d %H:%M:%S'		# MacOS, BSD
 Long ago, when the battery on the motherboard died, the system clock would automatically reset to 0. Many software bugs also caused timestamps to be 0, i.e., `1970-01-01`. This epoch time became known to many non-programmers.
 
 Of course, the 4-byte Unix timestamp limit of 2038 is no longer distant from today (2024), and software that hasn't been updated to use 8-byte timestamps will face a much more severe Y2K problem than leap day gas station outages - they'll simply stop working, like the idiot MySQL that still hasn't been updated.
-
 
 --------------
 
@@ -234,8 +225,6 @@ postgres=# SELECT '2024-02-29'::DATE - '365day'::INTERVAL;
  2023-03-01 00:00:00
 ```
 
-
-
 ### Common Confusion: Timestamp Conversion
 
 A frequently confusing issue in PostgreSQL is the mutual conversion between `TIMESTAMP` and `TIMESTAMPTZ`.
@@ -266,7 +255,6 @@ vonng=# SELECT now()::TIMESTAMP, now()::TIMESTAMP AT TIME ZONE 'UTC';
 -- This means UTC time 2019-05-23 17:03:00
 ```
 
-
 ### Common Confusion: Time Zone Offsets
 
 Of course, PostgreSQL timestamps have a somewhat counter-intuitive design related to time zones: when using `AT TIME ZONE`, you should avoid using numerical time zones like `+8`, `-6` and instead use time zone names.
@@ -295,7 +283,6 @@ timezone
 ---------------------
 2024-01-15 05:00:00
 ```
-
 
 The reason is that using Interval instead of time zone names has different processing logic:
 

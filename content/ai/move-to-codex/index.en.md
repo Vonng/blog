@@ -15,7 +15,6 @@ A few days ago, my $200 Claude Code Max subscription came up for renewal, so I c
 
 ![codex.webp](codex.webp)
 
-
 Tools like these belong on month-to-month subscriptions. The SOTA crown keeps changing hands. Claude was riding high a few months ago; over the past two months, GPT-5.5 has wiped the floor with it.
 
 ![codex2.webp](codex2.webp)
@@ -28,8 +27,6 @@ OpenAI's Codex app and CLI have steadily matured, and the underlying models have
 
 The same goes for the surrounding engineering. My DBA Agent work assumed Claude by default, and its project files followed the `CLAUDE.md` convention. In the next release, I plan to switch the default to `AGENTS.md` plus Codex and make that combination the default AI integration stack.
 
-
-
 ------
 
 ## Why Codex
@@ -39,7 +36,6 @@ First, the capability gains are real. For large, difficult jobs, the contest is 
 Second, the engineering keeps getting more polished. Codex's CLI, web interface, and automation workflows make the whole experience remarkably smooth. Much of my daily work now runs through automated pipelines: every morning, one produces a daily news brief; another syncs the Pigsty site; another checks for PostgreSQL extension updates and kicks off several downstream workflows whenever a new release appears. As long as my computer is on, it all runs by itself. The GUI app also makes it effortless to manage several tasks at once.
 
 Third—and this matters a great deal to me—the Codex CLI is released under the Apache 2.0 license: plainly and unambiguously open source, unlike Claude Code. I have never been fond of Anthropic as a company. The moment an open-source alternative reaches feature parity, I will switch without hesitation.
-
 
 ------
 

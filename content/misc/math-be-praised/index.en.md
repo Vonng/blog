@@ -18,8 +18,6 @@ Countless electric branches extend from this tower
 
 Permeating through space, leaping upon water's surface.
 
-
-
 Within the tower, there exists such a group of people
 
 They ceaselessly chisel and carve, downward, upward
@@ -31,8 +29,6 @@ They are building theoretical halls that unify all things
 That dark void in the center of heaven and earth awaits exploration
 
 Though this journey stretches endlessly, the path is obstructed and long
-
-
 
 Sometimes, a certain section of the ivory tower will have a small skylight carved out
 

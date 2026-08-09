@@ -9,29 +9,25 @@ tags: [PostgreSQL, PG管理, 扩展]
 ---
 
 
-PostgreSQL是最先进的开源数据库，其中一个非常给力的特性就是FDW：外部数据包装器（Foreign Data Wrapper）。通过FDW，用户可以用统一的方式从Pg中访问各类外部数据源。`file_fdw`就是其中随数据库附赠的两个fdw之一。随着pg10的更新，`file_fdw`也添加了一颗赛艇的功能：从程序输出读取。
+PostgreSQL是最先进的开源数据库，其中一个非常给力的特性就是FDW：外部数据包装器（Foreign Data Wrapper）。通过FDW，用户可以用统一的方式从Pg中访问各类外部数据源。`file_fdw` 就是其中随数据库附赠的两个fdw之一。随着pg10的更新，`file_fdw` 也添加了一颗赛艇的功能：从程序输出读取。
 
-小霸王妙用无穷，我们能通过`file_fdw`，轻松查看操作系统信息，拉取网络数据，把各种各样的数据源轻松喂进数据库里统一查看管理。
-
-
-
+小霸王妙用无穷，我们能通过 `file_fdw`，轻松查看操作系统信息，拉取网络数据，把各种各样的数据源轻松喂进数据库里统一查看管理。
 
 ---------------
 
 ## 安装与配置
 
-`file_fdw`是Pg自带的组件，不需要奇怪的配置，在数据库中执行以下命令即可启用`file_fdw`：
+`file_fdw` 是Pg自带的组件，不需要奇怪的配置，在数据库中执行以下命令即可启用 `file_fdw`：
 
 ```plsql
 CREATE EXTENSION file_fdw;
 ```
 
-启用FDW插件之后，需要创建一个实例，也是一行SQL搞定，创建一个名为`fs`的FDW Server实例。
+启用FDW插件之后，需要创建一个实例，也是一行SQL搞定，创建一个名为 `fs` 的FDW Server实例。
 
 ```plsql
 CREATE SERVER fs FOREIGN DATA WRAPPER file_fdw;
 ```
-
 
 ---------------
 
@@ -58,7 +54,7 @@ vonng    26467  0.0  0.1 272100  1588 ?        Ss   10月26   0:01 postgres: bgw
 
 ```
 
-可以通过`awk`，将`ps`的命令输出规整为分隔符为`\x1F`的csv格式。
+可以通过 `awk`，将 `ps` 的命令输出规整为分隔符为 `\x1F` 的csv格式。
 
 ```
 ps aux | awk '{print $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,substr($0,index($0,$11))}' OFS='\037'
@@ -84,16 +80,11 @@ PROGRAM $$ps aux | awk '{print $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,substr($0,index($0
 FORMAT 'csv', DELIMITER E'\037', HEADER 'TRUE');
 ```
 
-这里，关键是通过`CREATE FOREIGN TABLE OPTIONS (xxxx)`中的`OPTIONS`提供相应的参数，在`PROGRAM`参数中填入上面的命令，pg就会在查询这张表的时候自动执行此命令，并读取其输出。`FORMAT`参数可以指定为`CSV`，`DELIMITER`参数指定为之前使用的`\x1F`，并通过`HEADER 'TRUE'`忽略CSV的第一行
+这里，关键是通过 `CREATE FOREIGN TABLE OPTIONS (xxxx)` 中的 `OPTIONS` 提供相应的参数，在 `PROGRAM` 参数中填入上面的命令，pg就会在查询这张表的时候自动执行此命令，并读取其输出。`FORMAT` 参数可以指定为 `CSV`，`DELIMITER` 参数指定为之前使用的 `\x1F`，并通过 `HEADER 'TRUE'` 忽略CSV的第一行
 
 那么结果如何呢？
 
 ![](file_fdw.png)
-
-
-
-
-
 
 ---------------
 
@@ -102,7 +93,6 @@ FORMAT 'csv', DELIMITER E'\037', HEADER 'TRUE');
 最简单的场景，原本系统指标监控需要编写各种监测脚本，部署在奇奇怪怪的地方。然后定期执行拉取metric，再存进数据库。现在通过file_fdw的方式，可以将感兴趣的指标直接录入数据库表，一步到位，而且维护方便，部署简单，更加可靠。在外表上加上视图，定期拉取聚合，将原本一个监控系统完成的事情，在数据库中一条龙解决了。
 
 因为可以从程序输出读取结果，因此file_fdw可以与linux生态里各类强大的命令行工具配合使用，发挥出强大的威力。
-
 
 ---------------
 

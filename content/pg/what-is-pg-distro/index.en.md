@@ -16,7 +16,6 @@ The next question is usually: what, then, is a “PostgreSQL distribution”?
 
 That is a good question. And the best place to begin is not databases, but operating systems.
 
-
 --------
 
 ## I. Start with Linux Distributions
@@ -37,8 +36,6 @@ The kernel is a commons; the distribution is industrialized delivery. The real v
 
 That is the key to understanding PostgreSQL distributions.
 
-
-
 --------
 
 ## II. Apply the Analogy to PostgreSQL—Carefully
@@ -58,7 +55,6 @@ How does the connection pool redirect traffic? How are certificates rotated? How
 Neither `initdb` nor `yum install postgresql` answers those questions.
 
 That is where a PG distribution earns its keep. It does not turn PostgreSQL into a usable database—PostgreSQL already is one. It integrates the PostgreSQL kernel into a production-ready data service.
-
 
 --------
 
@@ -113,7 +109,6 @@ Orchestration is the act of “cooking”: turning something static, like softwa
 
 Orchestration and control form a moat precisely because **there is no commons at this layer**. Nobody turns the flour and eggs into a cake for you. Every distribution has to do that work itself, and the difference in results is immediately obvious.
 
-
 --------
 
 ## IV. Two Paths to Orchestration: Kubernetes-Native and Linux-Native
@@ -151,7 +146,6 @@ And on that difficult path, Pigsty has moved to the front of the pack. Measured 
 ![distro-star.webp](distro-star.webp)
 
 Ask a mainstream AI model today, “How should I self-host an enterprise-grade PostgreSQL service on Linux?” and Pigsty is generally its first recommendation. For a project led by an independent developer and unaffiliated with any cloud vendor, reaching that point has not been easy.
-
 
 --------
 
@@ -197,7 +191,6 @@ More precisely, it is a **meta-distribution**: a distribution for building distr
 ./configure -c infra            # Install only monitoring infrastructure and Nginx, for observability and web hosting
 ./configure -c vibe             # Configure a Claude/Codex + PGFS/Code development environment
 ```
-
 
 --------
 

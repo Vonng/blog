@@ -12,7 +12,6 @@ Percona 是 MySQL 生态的扛旗者与主要三方厂商，最近几年也在�
 
 > [The growing dominance of PostgreSQL and the emergence of propriety solutions](https://experience.percona.com/postgresql/postgresql-market-in-2025/the-growing-dominance-of-postgresql )
 
-
 ## PostgreSQL主导地位不断提升，专有解决方案纷纷涌现
 
 截至 2025 年，PostgreSQL 在关系型数据库市场的份额达到 16.85%，是仅次于 MySQL 的第二大开源数据库。它已成为 Instagram、Reddit、Spotify，甚至 NASA 等大型数据密集型机构的首选数据库。截至目前，大约 11.9% 年营收超过 2 亿美元的公司在生产环境中使用 PostgreSQL。
@@ -42,7 +41,6 @@ Percona 是 MySQL 生态的扛旗者与主要三方厂商，最近几年也在�
 
 > 老冯注：还有刚刚新鲜出炉的《[KubeSphere 断供跑路](/cloud/kubesphere-rugpull/)》
 
-
 ## MongoDB 能告诉我们 PostgreSQL 将走向何方吗？
 
 再看看 MongoDB 或许能带来一些启示。MongoDB 曾一度被誉为关系型数据库的开源替代方案，就如同如今的 PostgreSQL 一样，但其发展轨迹后来却明显转向了专有化。
@@ -68,7 +66,6 @@ MongoDB 转向更严格的许可证模式及厂商主导的云平台之路，与
 面向企业的 PostgreSQL 厂商也在推出专有扩展和增值服务，这些举措虽然提供了便利，却对数据库的真正可移植性构成了障碍。
 **那些曾经让 MongoDB（以及更早的 Oracle）走向封闭的力量，如今也同样在 PostgreSQL 的生态中发挥作用。**
 
-
 ## 依赖专有 PostgreSQL 的业务风险
 
 对于 IT 决策者而言，PostgreSQL 商业化所带来的风险远不止数据库架构本身 —— 它甚至会影响整个技术版图。
@@ -76,7 +73,6 @@ MongoDB 转向更严格的许可证模式及厂商主导的云平台之路，与
 当云成本上涨、授权模式演变时，今天的决定明天就可能变成代价高昂的陷阱。
 有限的可移植性可能扰乱上云计划，使多云战略复杂化，并阻碍灾难恢复。
 而随着厂商不断推出专有附加组件或激进的产品策略（比如 MongoDB 大力推广 Atlas），谁也无法预料接下来还会出现哪些新的限制。
-
 
 ### 供应商锁定
 
@@ -91,7 +87,6 @@ MongoDB 转向更严格的许可证模式及厂商主导的云平台之路，与
 
 更值得注意的是，作为最大的专有 PostgreSQL 供应商之一，EDB 甚至发表过一篇博文为供应商锁定现象辩护，声称这“未必是件坏事”。
 文中作者以构建和维护内部 PostgreSQL 所需的专门技术为理由，为选择专有方案进行开脱（这一点我们稍后还会提到）。但试问，这种论调究竟对谁有利？
-
 
 ### 对市场变化反应迟缓
 
@@ -124,9 +119,8 @@ MongoDB 转向更严格的许可证模式及厂商主导的云平台之路，与
 也许您的团队没有足够的时间、深厚的专业技能或人手来设计高可用架构、在大规模下调优性能、及时跟进每次版本升级，以及在复杂基础设施中管理合规。但这并不意味着您只能屈从于专有或云托管方案。
 
 Percona for PostgreSQL 为希望规避专有方案风险、又无力完全自建 PostgreSQL 运维的组织指明了一条清晰的前进道路。
-Percona 提供的是一个完全开源、具备企业级水准的 PostgreSQL 解决方案——包含完善的高可用、安全、可观测性和性能优化等工具支持 —— 
+Percona 提供的是一个完全开源、具备企业级水准的 PostgreSQL 解决方案——包含完善的高可用、安全、可观测性和性能优化等工具支持 ——
 且没有任何专有束缚或意外的许可费用。您依然可以自主掌控数据库运行的地点和方式，并灵活地将其部署在本地、云、混合云或 Kubernetes 环境中。
-
 
 ## 老冯评论
 
@@ -135,7 +129,7 @@ Percona 抛出了一个非常重要的问题。PostgreSQL 日益主宰数据库�
 
 ### Percona 发行版
 
-Percona 算是比较早一批明确提出 [“PostgreSQL 发行版”](https://docs.percona.com/postgresql/17/third-party.html) 概念的开源厂商，他们有两个非常不错的扩展 —— 
+Percona 算是比较早一批明确提出 [“PostgreSQL 发行版”](https://docs.percona.com/postgresql/17/third-party.html) 概念的开源厂商，他们有两个非常不错的扩展 ——
 [`pg_stat_monitor`](https://pgext.cloud/e/pg_stat_monitor) 与 [`pg_tde`](https://pgext.cloud/e/pg_tde)，前者提供了 PostgreSQL 中的高级可观测性指标，后者则提供透明加密的功能。
 Percona 也有一个 PMM 监控工具，算是 MySQL 生态做的非常好的监控平台，最近也做了一些 PostgreSQL 的支持。
 当然，因为 pg_tde 所需的补丁一直没有合入 PG 主干，因此 Percona 不得不自己制作了打补丁的 PostgreSQL 内核包，以配合他们的 pg_tde 透明加密扩展使用
@@ -161,7 +155,6 @@ curl -fsSL https://repo.pigsty.io/get | bash; cd ~/pigsty;
 因此，我提供了 Percona 仓库的镜像，并且确保用户在使用 Pigsty 安装包括 Percona PG 发行版在内的10种 PG 内核时，本地都会有完整的安装包与系统依赖，自动生成一个 YUM/APT 软件仓库，
 可以供用户在断网环境中，轻松部署复制出一模一样的环境与节点，实现独立运营到地老天荒的效果。甚至，就连构建这些 RPM/DEB 包的完整说明，工具，我也都完全放在 GitHub 上开源了。
 而更重要的是，比起给你 RPM/DEB 包，更重要的是如何把这些包攒成企业级服务的经验，这些经验沉淀为 Ansible Playbook 与 SOP，以一键部署，开箱即用的方式，让即使是新手也能轻松上手。
-
 
 ### Pigsty 元发行版
 
@@ -191,15 +184,12 @@ curl -fsSL https://repo.pigsty.io/get | bash; cd ~/pigsty;
 |   [Supabase](https://pigsty.cc/docs/pgsql/kernel/supabase)   |     **后端即服务**     | 基于 PostgreSQL 的 BaaS，Firebase 替代方案 |
 | [Cloudberry](https://pigsty.cc/docs/pgsql/kernel/cloudberry/) |  **MPP 数厂与数据分析**  | 大规模并行处理数据仓库（等待2.0GA）               |
 
-
-
 在以前，这种服务你需要在 AWS 或者各家 DBaaS 上花大钱去购买，而且还会被束手束脚，忍受各种功能阉割，以及乞丐云盘带来的性能羞辱（PlanetScale 刚刚也群嘲过了）。
 而如果想要自建，经验丰富足的 PostgreSQL DBA 是如此稀缺，即使是 [像 OpenAI 这样的顶级独角兽也要付出高昂的故障代价自己砸人培养](/db/openai-pg/)。
 
 自由是最昂贵的顶级奢侈品 —— 老冯深知软件自由的美好，以及它背后的高昂代价。
 但老冯希望有更多人有机会享受到它 —— 让每个人都能轻松负担的起可靠，稳定，省心的企业级 PostgreSQL 服务，享受 PostgreSQL 生态的乐趣。
 这就是 Pigsty 所做的事情 —— 一个真正代表 “软件自由” 价值观的开源 PostgreSQL 发行版，让你脱离供应商，许可证，互联网，软件仓库，甚至是技术专家的 “锁定”，实现终极意义上的自主可控与软件自由。
-
 
 ## 参考阅读
 

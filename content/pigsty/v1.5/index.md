@@ -14,10 +14,9 @@ tags: [Pigsty]
 
 [![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v1.5.0)
 
-Pigsty v1.5 正式发布！完整的 Docker 支持带来了丰富的应用生态，无数使用数据库的软件均可**开箱即用**！
+Pigsty v1.5 正式发布！完整的 Docker 支持带来了丰富的应用生态，无数使用数据库的软件均可 **开箱即用**！
 
 其他改进包括：基础设施自我监控、更好的冷备份支持、兼容 Redis 与 Greenplum 的新 CMDB、ETCD 作为高可用 DCS、更好的日志收集与呈现。Github Star 突破 500！
-
 
 --------
 
@@ -33,7 +32,6 @@ Pigsty v1.5 正式发布！完整的 Docker 支持带来了丰富的应用生态
 | ETCD 作为 DCS | PostgreSQL/Patroni 的 Consul 备选方案 |
 | Redis 改进 | 支持单实例级别的初始化与移除操作 |
 
-
 --------
 
 ## Docker 支持
@@ -44,17 +42,15 @@ Pigsty v1.5 中最重要的特性莫过于 Docker 支持。无数软件与工具
 
 在 Pigsty v1.4.1 中，Docker 作为实验特性被加入；在 v1.5 中，Docker 将作为 Pigsty 的默认组件，在管理节点上默认启用。普通节点默认关闭，但可以通过配置项在所有节点上启用 Docker。
 
-
 --------
 
 ## 应用生态
 
-Docker 本身只是工具，重要的是 Docker 所代表的巨大**应用生态**！
+Docker 本身只是工具，重要的是 Docker 所代表的巨大 **应用生态**！
 
 Pigsty 挑选了一些常用软件，特别是那些使用 PostgreSQL 与 Redis 的软件，制作了一键拉起的教程与快捷方式，并提供可以离线使用自动加载的镜像软件包 `docker.tgz`。
 
 ![](docker-apps.jpg)
-
 
 ### 代码托管平台 Gitea
 
@@ -68,7 +64,6 @@ cd ~/pigsty/app/gitea; make up
 
 该命令将使用 Docker Compose 配置文件拉起 Gitea 镜像，并使用外部 Pigsty 默认的 CMDB `pg-meta.gitea` 作为元数据存储。访问配置文件指定的域名或端口，即可访问自己的代码托管服务。
 
-
 ### 数据库管控平台 PgAdmin
 
 PgAdmin4 是老牌的 PostgreSQL 管控工具，提供了很多实用功能。Pigsty 提供了最新的 6.9 版本 PgAdmin4 支持，只需一行命令即可启动镜像，并自动加载 Pigsty 中所有托管数据库实例列表。
@@ -78,7 +73,6 @@ cd ~/pigsty/app/pgadmin; make up; make conf
 ```
 
 ![](pgadmin.jpg)
-
 
 ### 模式变更工具 Bytebase
 
@@ -90,7 +84,6 @@ cd ~/pigsty/app/bytebase; make up
 
 ![](bytebase.jpg)
 
-
 ### 网页客户端 PGWEB
 
 有时用户想使用个人账号从生产数据库中小批量查询数据，这时基于浏览器的 PostgreSQL 客户端会很好用。PGWEB 可以部署在管理节点或专用堡垒机上，设置特定的 HBA 规则来允许个人用户查询生产只读实例。
@@ -100,7 +93,6 @@ cd ~/pigsty/app/pgweb; make up
 ```
 
 ![](pgweb.jpg)
-
 
 ### 对象存储 MinIO
 
@@ -114,7 +106,6 @@ cd ~/pigsty/app/minio; make up
 
 在 MinIO 的基础上，可以进一步使用 JuiceFS，将对象存储提供的大规模分布式存储转换为文件系统，供其他服务使用。
 
-
 --------
 
 ## 数据分析环境 Jupyter
@@ -122,7 +113,6 @@ cd ~/pigsty/app/minio; make up
 Pigsty 提供了趁手的数据分析工具：Jupyter Lab，可以使用 Python 与 SQL 进行组合数据处理与分析。Jupyter Lab 默认并不是通过 Docker 启动，而是由管理节点受限的操作系统用户直接运行，以便于与数据库交互。
 
 ![](jupyter.jpg)
-
 
 ### 数据库模式报表 SchemaSPY
 
@@ -134,7 +124,6 @@ bin/schemaspy 10.10.10.10 meta pigsty
 
 ![](schemaspy.jpg)
 
-
 ### 数据库日志分析报表
 
 当需要查阅数据库日志的汇总摘要信息时，可以使用 Pgbadger：
@@ -144,7 +133,6 @@ bin/pglog-summary 10.10.10.10
 ```
 
 ![](pgbadger.jpg)
-
 
 ### 更多应用
 
@@ -161,12 +149,11 @@ bin/pglog-summary 10.10.10.10
 | Discourse | 基于 PG 与 Redis 的开源论坛 |
 | KeyCloak | 开源 SSO 单点登录解决方案 |
 
-
 --------
 
 ## 更好的冷备份
 
-数据故障大体可以分为两类：**硬件故障/资源不足**（坏盘/宕机）和**软件缺陷/人为错误**（删库/删表）。**基于主从复制的物理复制用于应对前者，延迟从库与冷备份通常用于应对后者**。因为误删数据的操作会立刻被复制到从库上执行，所以热备份与温备份都无法解决诸如 `DROP DATABASE`、`DROP TABLE` 这样的错误，需要使用**冷备份**或**延迟从库**。
+数据故障大体可以分为两类：**硬件故障/资源不足**（坏盘/宕机）和 **软件缺陷/人为错误**（删库/删表）。**基于主从复制的物理复制用于应对前者，延迟从库与冷备份通常用于应对后者**。因为误删数据的操作会立刻被复制到从库上执行，所以热备份与温备份都无法解决诸如 `DROP DATABASE`、`DROP TABLE` 这样的错误，需要使用 **冷备份** 或 **延迟从库**。
 
 在 Pigsty v1.5 中，对冷备份机制进行了改善：
 
@@ -174,7 +161,6 @@ bin/pglog-summary 10.10.10.10
 - 改善了延迟从库的创建机制，只需声明即可自动创建
 - 对于专家用户，提供了 `pg_probackup` 作为备份解决方案
 - 内置的 MinIO Docker 镜像将为后续的开箱即用异地灾备中心奠定基础
-
 
 ### 定时任务
 
@@ -184,13 +170,11 @@ Pigsty v1.5 支持为节点配置定时任务，包括追加与覆盖 `/etc/cron
 
 其中最重要的是默认在每天凌晨 1 点制作一个全量备份。加上 Pigsty 默认自带的最近一天 WAL 日志归档，可以将数据库恢复至 1 天内的任意状态，为软件缺陷、人为故障导致的删库删表提供了有力的兜底。
 
-
 ### 延迟从库
 
 在 Pigsty v1.5 中，创建延迟从库不再需要手工执行 `patronictl edit-config` 调整集群配置，只需像下面这样声明，即可为集群创建一个延迟从库（集群）。
 
 ![](delay-replica.jpg)
-
 
 --------
 
@@ -232,7 +216,6 @@ cd ~/pigsty/app/kong; make up
 
 ![](kong.jpg)
 
-
 --------
 
 ## 基础设施监控
@@ -259,7 +242,6 @@ Pigsty v1.5 的 Home 监控中，基础设施作为嫩绿色的组件，与 NODE
 
 > Loki Overview：日志收集组件自监控
 
-
 --------
 
 ## ETCD 作为 DCS
@@ -276,7 +258,6 @@ Pigsty v1.5 针对 ETCD 与 Consul 进行了开箱即用的监控面板：DCS Ov
 
 目前 ETCD 作为 DCS 属于最小可用功能实现，并没有添加 CA 证书与 TLS 支持，将在后续版本安全性加固专项中补充。
 
-
 --------
 
 ## 更好的日志收集与呈现
@@ -286,7 +267,6 @@ Pigsty v1.5 针对 ETCD 与 Consul 进行了开箱即用的监控面板：DCS Ov
 ![](nginx-overview.jpg)
 
 > NGINX Overview：展示 Nginx 指标与日志
-
 
 --------
 --------
@@ -302,7 +282,6 @@ Pigsty v1.5 针对 ETCD 与 Consul 进行了开箱即用的监控面板：DCS Ov
 * 更好的冷备份支持：默认定时备份任务，添加 `pg_probackup` 备份工具，一键创建延时从库。
 * ETCD 现在可以用作 PostgreSQL/Patroni 的 DCS 服务，作为 Consul 的备选项。
 * Redis 剧本/角色改善：现在允许对单个 Redis 实例，而非整个 Redis 节点进行初始化与移除。
-
 
 ### 监控系统
 
@@ -325,7 +304,6 @@ Pigsty v1.5 针对 ETCD 与 Consul 进行了开箱即用的监控面板：DCS Ov
 * `pg_class` 指标收集器默认移除，相关指标添加至 `pg_table` 与 `pg_index` 收集器中。
 * `pg_table_size` 指标收集器现在默认启用，默认设置有 300 秒的缓存时间。
 
-
 ### 部署方案
 
 * 新增可选软件包 `docker.tgz`，带有常用应用镜像：Pgadmin, Pgweb, Postgrest, ByteBase, Kong, Minio 等。
@@ -333,12 +311,11 @@ Pigsty v1.5 针对 ETCD 与 Consul 进行了开箱即用的监控面板：DCS Ov
 * 允许通过 `pg_dcs_type` 指定 PG 高可用使用的 DCS 服务，Consul（默认），ETCD（备选）
 * 允许通过 `node_crontab` 参数，为节点配置定时任务，例如数据库备份、VACUUM，统计收集等。
 * 新增了 `pg_checksum` 选项，启用时，数据库集群将启用数据校验和（此前只有 `crit` 模板默认启用）
-* 新增了 `pg_delay` 选项，当实例为 Standby Cluster Leader 时，此参数可以用于配置一个**延迟从库**
+* 新增了 `pg_delay` 选项，当实例为 Standby Cluster Leader 时，此参数可以用于配置一个 **延迟从库**
 * 新增了软件包 `pg_probackup`，默认角色 `replicator` 现在默认赋予了备份相关函数所需的权限。
 * Redis 部署现在拆分为两个部分：Redis 节点与 Redis 实例，通过 `redis_port` 参数可以精确控制一个具体实例。
 * Loki 与 Promtail 现在使用 `frpm` 制作的 RPM 软件包进行安装。
 * DCS3 配置模板现在使用一个 3 节点的 `pg-meta` 集群，与一个单节点的延迟从库。
-
 
 ### 软件升级
 
@@ -350,13 +327,11 @@ Pigsty v1.5 针对 ETCD 与 Consul 进行了开箱即用的监控面板：DCS Ov
 * 升级 Grafana 至 v8.5.2
 * 升级 Loki & Promtail 至 v2.5.0，使用 frpm 打包。
 
-
 ### 问题修复
 
 * 修复了 Loki 与 Promtail 默认配置文件名的问题
 * 修复了 Loki 与 Promtail 环境变量无法正确展开的问题
 * 对英文文档进行了一次完整的翻译与修缮，文档依赖的 JS 资源现在直接从本地获取，无需互联网访问。
-
 
 ### API 变化
 
@@ -408,7 +383,6 @@ Pigsty v1.5 针对 ETCD 与 Consul 进行了开箱即用的监控面板：DCS Ov
 - `haproxy_admin_auth_enabled` -> `haproxy_auth_enabled`
 - `pg_shared_libraries` -> `pg_libs`
 - `dcs_type` -> `pg_dcs_type`
-
 
 --------
 

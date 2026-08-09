@@ -3,7 +3,7 @@ title: "Can Chinese Domestic Databases Really Compete?"
 date: 2024-04-25
 author: vonng
 summary: >
-  Friends often ask me, **can Chinese domestic databases really compete?** To be honest, **it's a question that offends people**. So let's try speaking with data - I hope the charts provided in this article can help readers understand the database ecosystem landscape and establish more accurate proportional awareness.
+  Friends often ask me, can Chinese domestic databases really compete? To be honest, it's a question that offends people. So let's try speaking with data - I hope the charts provided in this article can help readers understand the database ecosystem landscape and establish more accurate proportional awareness.
 series: ["Xinchang Localization"]
 series_order: 4
 tags: [Database, Domestic-Database]
@@ -19,7 +19,7 @@ Friends often ask me, can Chinese domestic databases really compete? To be hones
 
 There are many ways to evaluate whether a database "can compete", but **popularity** is the most common metric. For any technology, popularity determines user scale and ecosystem prosperity. Only this kind of final existential result can convince everyone.
 
-Regarding database popularity, I think three data sources can serve as references: [**StackOverflow Global Developer Survey**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485933&idx=3&sn=ea360aa7a59a4cd23ad5f9a9f415a0a0&chksm=fe4b3c36c93cb520bda4596136e927d7cf92c597a76c04077c256588b2428202bdb7f004c08b&scene=21#wechat_redirect)[1], **DB-Engine Database Popularity Ranking**[2], and **Motianlun Chinese Domestic Database Ranking**[3].
+Regarding database popularity, I think three data sources can serve as references: [**StackOverflow Global Developer Survey**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485933&idx=3&sn=ea360aa7a59a4cd23ad5f9a9f415a0a0&chksm=fe4b3c36c93cb520bda4596136e927d7cf92c597a76c04077c256588b2428202bdb7f004c08b&scene=21#wechat_redirect) [1], **DB-Engine Database Popularity Ranking**[2], and **Motianlun Chinese Domestic Database Ranking**[3].
 
 ------
 

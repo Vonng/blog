@@ -17,13 +17,13 @@ Yesterday’s post “[PG ‘Export Controls’ and Supply-Chain Trust](/en/pg/p
 I replied:
 
 > Thanks for the feedback and for everything TUNA/university mirrors have done over the years. I see the PostgreSQL repo [has synced again](https://mirrors.tuna.tsinghua.edu.cn/postgresql/repos/yum/18/)—credit where it’s due.
-> 
+>
 > When I first spotted the issue I was using Alibaba-Cloud’s PG mirror. Later I noticed TUNA was in the same state, so out of community duty I [reported it on the mailing list](https://groups.google.com/g/tuna-general/c/BU8P7X3y4sI) and got “this list isn’t for Alibaba” followed by silence. That context colors my tone.
-> 
+>
 > In hindsight, words like “lying flat” were too emotional—especially when applied to **your team**—and read like moral judgments on volunteers. That wasn’t my intent. If the wording hurt maintainers, I apologize. I already [changed the language](https://github.com/Vonng/blog/commit/916697a88f143679d658dc52338827ce603444fd) to neutral phrasing like “stale” or “no longer maintained.”
-> 
+>
 > You’re right: university mirrors are volunteer efforts with no contractual SLA. There’s nothing to “demand.” But from a downstream perspective, when PGDG cuts rsync and major domestic mirrors stall for months, users depending on “recommended mirrors” experience a supply-chain outage. Trust erodes.
-> 
+>
 > My takeaway: if there’s no service promise, treating a volunteer mirror as production infrastructure is a mistake. My own fix is to stop relying on external mirrors altogether—Pigsty now mirrors PGDG ourselves. Your perspective helps others understand what mirrors can and can’t do, which is valuable.
 
 ## My reflections
@@ -81,4 +81,4 @@ Below is the current snapshot of what Pigsty mirrors (PostgreSQL ecosystem, obse
 | [vip-manager](https://github.com/cybertec-postgresql/vip-manager) 4.0.0 | | [mysqld_exporter](https://github.com/prometheus/mysqld_exporter) 0.18.0 | | [mtail](https://github.com/google/mtail) 3.0.8 | |
 | [pev2](https://github.com/pgsty/infra-pkg/tree/main/noarch/pev2) 1.17.0 | | [redis_exporter](https://github.com/oliver006/redis_exporter) 1.80.0 | | [genai-toolbox](https://github.com/googleapis/genai-toolbox) 0.18.0 | |
 | [promscale](https://github.com/timescale/promscale) 0.17.0 | | [kafka_exporter](https://github.com/danielqsj/kafka_exporter) 1.9.0 | | [sqlcmd](https://github.com/microsoft/go-sqlcmd) 1.8.0 | |
-| [pgschema](https://github.com/pgschema/pgschema) 1.4.2 | | [mongodb_exporter](https://github.com/percona/mongodb_exporter) 0.47.1 | | |
+| [pgschema](https://github.com/pgschema/pgschema) 1.4.2 | | [mongodb_exporter](https://github.com/percona/mongodb_exporter) 0.47.1 | | | |

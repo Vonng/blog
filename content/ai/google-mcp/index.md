@@ -23,10 +23,7 @@ aliases: ["/db/google-mcp/"]
 
 > https://googleapis.github.io/genai-toolbox/getting-started/introduction/
 
-
 ------
-
-
 
 ## 快速上手
 
@@ -119,10 +116,7 @@ toolsets:
     - cancel-hotel
 ```
 
-
 ------
-
-
 
 ## 特性说明
 
@@ -136,8 +130,6 @@ toolsets:
 
 ![code.webp](code.webp)
 
-
-
 ------
 
 ## 老冯评价
@@ -148,7 +140,7 @@ Google 数据库 MCP 工具箱解决了 MCP 上生产的一个核心问题 —�
 
 但如果开发者将业务逻辑整个下沉到数据库里，将原本 Service 层面的 API 接口放在 Oracle / PostgreSQL 这样的数据库中用存储过程实现，那么对 Agent 的智力/上下文要求就会减小许多 —— 从 DAO 成抽象，到 Service 层抽象。
 
-另外，存储过程的两大缺点 —— **对开发/DBA水平要求高**，**占用数据库服务器性能**，在当下基本上已经不再是问题了。[ Vibe Coding 解决了存储过程编写](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489471&idx=1&sn=fb8cdcbdac233959f153a4d11eec9ffa&scene=21#wechat_redirect)与维护的问题，而当下[硬件突飞猛进的发展](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486489&idx=1&sn=f2be1be496de46ac5ca816ac39cfdf24&scene=21#wechat_redirect)让 TP 数据库的性能余量又开始充裕丰饶起来。那么节省多次交互 RT，收拢访问权限，抽象封装复杂度这些优势就会凸显出来。
+另外，存储过程的两大缺点 —— **对开发/DBA水平要求高**，**占用数据库服务器性能**，在当下基本上已经不再是问题了。[Vibe Coding 解决了存储过程编写](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489471&idx=1&sn=fb8cdcbdac233959f153a4d11eec9ffa&scene=21#wechat_redirect)与维护的问题，而当下[硬件突飞猛进的发展](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486489&idx=1&sn=f2be1be496de46ac5ca816ac39cfdf24&scene=21#wechat_redirect)让 TP 数据库的性能余量又开始充裕丰饶起来。那么节省多次交互 RT，收拢访问权限，抽象封装复杂度这些优势就会凸显出来。
 
 ![pl.webp](pl.webp)
 

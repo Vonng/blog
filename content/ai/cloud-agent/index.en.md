@@ -13,7 +13,6 @@ Before you hit "one-click deploy" on that cloud AI assistant, ask yourself: what
 
 There's a reason why people by Mac mini rather than running clawdbot on the cloud.
 
-
 ## When AI Becomes Your Butler
 
 Moltbot (formerly Clawdbot) just exploded on GitHub. Tens of thousands of stars in days. Mac Minis sold out.

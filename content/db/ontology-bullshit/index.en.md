@@ -67,7 +67,6 @@ Palantir's 2025 annual report discloses: the top 20 customers average **$93.9 mi
 Across all 954 customers, the average is roughly **$4.7 million/year**.
 That gives a sense of the commercial scale attached to this model.
 
-
 ------
 
 ## III. The Same Idea, Reframed Five Times
@@ -201,7 +200,6 @@ It lets a company that fundamentally wins deals through political connections an
 look like a software platform company with an irreplaceable technical moat.
 Think of it as the American version of "data middle platform" plus staff augmentation.
 
-
 ------
 
 ## VII. A Product with a Heavy Services Layer
@@ -318,7 +316,6 @@ Mac and cheese can be great. But you can't call "deconstruction" your technical 
 especially when the dish costs $90 million a year.
 
 Next time you see a vendor drop "Ontology" into a pitch deck, be on your guard.
-
 
 ------
 

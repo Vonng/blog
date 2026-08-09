@@ -32,15 +32,11 @@ tags: [软件工程, 研发效能, Ruby, 翻译]
 
 —— 至少在 AGI 霸主到来前，生物核都不会彻底过时！但没有人知道这一天何时会来，或者是否会到来。所以最好着眼于当下的经济学，选择对你来说最能提高生产力的工具链，并相信快乐的程序员将是你投资中最划算的一笔。
 
-
 > 作者：David Heinemeier Hansson，DHH，37 Signal CTO，Ruby on Rails 作者
 >
 > 译者：Vonng，PostgreSQL Hacker，开源 RDS PG —— Pigsty 作者，数据库老司机，云计算泥石流。
 >
 > [优先优化生物内核，其次是硅内核](https://world.hey.com/dhh/optimize-for-bio-cores-first-silicon-cores-second-112a6c3f) @ 2024-09-06
-
-
-
 
 --------
 
@@ -59,15 +55,9 @@ DHH 的博客一如既往地充满洞见 —— 虽然事实听上去可能并�
 
 所以，传统数据库内核是一个夕阳产业，将与格力空调，联想电脑一样成为低毛利的制造业。 而真正的高科技与技术创新，将发生在数据库管控上 —— 用软件辅助、赋能、甚至冒天下之大不韪的“替代” 一部分开发者 —— 如何用好数据库内核与硅基CPU核，提高生物核的生产力，降低认知成本，简化复杂度，提高易用性。这才是未来数据库行业的发展方向。
 
-
-
-
 高科技行业就是要依靠技术创新驱动。如果你能用开源 PG 内核替代 Oracle ，SQL Server，那别人也能 —— 最好的结果无非就是甲骨文微软都放弃传统数据库转型做云服务，传统数据库成为低利润的制造业。正如二十年的 PC 行业一样。二十年前 IBM 戴尔惠普都是国际玩家，中国联想说要做到世界一流。今天看联想确实做到了，但是 PC 行业早就不是高科技行业了，只是一个最无聊普通的制造业。
 
 即使是在国内看起来很能打的[真自研分布式数据库内核](/db/distributive-bullshit)，如果选错了赛道，那所能期待的最好结局也不过是成为数据库行业的长虹，赚五个点的利润。然后被拿着开源 PostgreSQL 内核提供服务的 云厂商 RDS 和本地优先 RDS 骑脸输出，最终成为数据库领域的 “Kilo-Girl”。
-
-
-
 
 --------
 
@@ -79,32 +69,20 @@ DHH 的博客一如既往地充满洞见 —— 虽然事实听上去可能并�
 
 A big part of the reason that companies are going ga-ga over AI right now is the promise that it might materially lower their payroll for programmers. If a company currently needs 10 programmers to do a job, each have a cost of $200,000/year, then that's a $2m/year problem. If AI could even cut off 1/4 of that, they would have saved half a million! Cut double that, and it's a million. Efficiency gains add up quick on the bottom line when it comes to programmers!
 
-
 That's why I love Ruby! That's why I work on Rails! For twenty years, it's been clear to me that this is where the puck was going. Programmers continuing to become more expensive, computers continuing to become less so. Therefore, the smart bet was on making those programmers more productive EVEN AT THE EXPENSE OF THE COMPUTER!
-
 
 That's what so many programmers have a difficult time internalizing. They are in effect very expensive biological computing cores, and the real scarce resource. Silicon computing cores are far more plentiful, and their cost keeps going down. So as every year passes, it becomes an even better deal trading compute time for programmer productivity. AI is one way of doing that, but it's also what tools like Ruby on Rails were about since the start.
 
-
 Let's return to that $200,000/year programmer. You can rent 1 AMD EPYC core from Hetzner for $55/year (they sell them in bulk, $220/month for a box of 48, so 220 x 12 / 48 = 55). That means the price of one biological core is the same as the price of 3663 silicon cores. Meaning that if you manage to make the bio core 10% more efficient, you will have saved the equivalent cost of 366 silicon cores. Make the bio core a quarter more efficient, and you'll have saved nearly ONE THOUSAND silicon cores!
-
 
 But many of these squishy, biological programming cores have a distinctly human sympathy for their silicon counterparts that overrides the math. They simply feel bad asking the silicon to do more work, if they could spend more of their own time to reduce the load by using less efficient for them / more efficient for silicon tools and techniques. For some, it seems to be damn near a moral duty to relieve the silicon of as many burdens they might believe they're able carry instead.
 
-
-
 And I actually respect that from an artsy, spiritual perspective! There *is* something beautifully wholesome about making computers do more with fewer resources. I still look oh-so-fondly back on the demo days of the Commodore 64 and Amiga. What those wizards were able to squeeze out of [a mere 4kb](https://www.youtube.com/watch?v=wl6mXn_wHEw) to make the computer dance in sound and picture was truly incredible.
-
 
 It just doesn't make much economic sense, most of the time. Sure, there's still work at the vanguard of the computing threshold. Somebody's gotta squeeze the last drop of performance out of that NVIDIA 4090, such that our 3D engines can raytrace at 4K and 120FPS. But that's not the reality at most software businesses that are in the business of making business software (say that three times fast!). Computers have long since been way fast enough for that work to happen without heroic optimization efforts.
 
-
 And that's the kind of work I've been doing for said twenty years! Making business software and selling it as SaaS. That's what an entire industry has been doing to tremendous profit and gainful employment across the land. It's been a bull run for the ages, and it's been mostly driven by programmers working in high-level languages figuring out business logic and finding product-market fit.
 
-
-
 So whenever you hear a discussion about computing efficiency, you should always have the squishy, biological cores in mind. Most software around the world is priced on their inputs, not on the silicon it requires. Meaning even small incremental improvements to bio core productivity is worth large additional expenditures on silicon chips. And every year, the ratio grows greater in favor of the bio cores.
-
-
 
 At least up until the point that we make them obsolete and welcome our AGI overlords! But nobody seems to know when or if that's going to happen, so best you deal in the economics of the present day, pick the most productive tool chain available to you, and bet that happy programmers will be the best bang for your buck.

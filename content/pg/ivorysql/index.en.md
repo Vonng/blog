@@ -13,14 +13,13 @@ My take was simple: if your SQL doesn't run on vanilla Postgres, fix your app ra
 
 Then a migration task slightly changed my mind.
 
-
 --------
 
 ## The Problem: A JAR and Nothing Else
 
 A Fortune 500 auto company asked me to upgrade their database.
 They were running EDB (EnterpriseDB) PostgreSQL 9.1 — released September 2011, roughly 15 years ago.
-The system had already caused several production incidents on their cloud platform. 
+The system had already caused several production incidents on their cloud platform.
 (mainly because of a 22TB DB on 500 IOPS disk, LOL)
 
 Time to move.
@@ -54,14 +53,14 @@ LINE 1: SELECT SYSDATE;
 Time: 0.249 ms
 ```
 
-And this is where PostgreSQL's extensibility hits a wall. You can extend types, operators, indexes, storage engines, execution hooks, foreign data wrappers — 
+And this is where PostgreSQL's extensibility hits a wall. You can extend types, operators, indexes, storage engines, execution hooks, foreign data wrappers —
 but you **cannot extend the SQL grammar** through an extension. Recognizing `SYSDATE` as a keyword requires changes to the parser itself, deep in core.
 
 ![extensibility.webp](extensibility.webp)
 
 > [Anarchy in the Database - Survey and Evaluation of DBMS Extensibility](https://abigalekim.github.io/assets/pdf/Anarchy_in_the_Database_PGConfDev2024.pdf)
 
-With source code, the fix would be trivial: global find-and-replace. 
+With source code, the fix would be trivial: global find-and-replace.
 Without the app source, the debt has to be absorbed somewhere else.
 Decompiling the JAR to patch SQL string literals is theoretically possible, but brittle and hard to validate.
 
@@ -73,20 +72,18 @@ So the problem landed on the database layer.
 
 The requirement is awkward, but still real. So what are the options?
 
-EDB handles this well — it's a proven product — but the customer had their own reasons for moving away from it (budget). 
+EDB handles this well — it's a proven product — but the customer had their own reasons for moving away from it (budget).
 Various domestic Oracle-compatible databases weren't acceptable for compliance reasons either.
 After filtering constraints, the practical open-source option was [IvorySQL](https://www.ivorysql.org/).
 
-IvorySQL is an Apache-2.0 fork of PostgreSQL maintained by HighGo. 
-It adds Oracle compatibility at the kernel level: PL/SQL support, Oracle-style syntax and functions, 
+IvorySQL is an Apache-2.0 fork of PostgreSQL maintained by HighGo.
+It adds Oracle compatibility at the kernel level: PL/SQL support, Oracle-style syntax and functions,
 compatible data types and system views. The current release, IvorySQL 5.1, tracks PostgreSQL 18.1.
 
-One important nuance: this is **SQL-level** compatibility, not wire-protocol compatibility. 
-Clients still connect with standard PostgreSQL drivers. 
-IvorySQL exposes a separate Oracle-compatible port (1521 by default) where the parser accepts Oracle idioms. 
+One important nuance: this is **SQL-level** compatibility, not wire-protocol compatibility.
+Clients still connect with standard PostgreSQL drivers.
+IvorySQL exposes a separate Oracle-compatible port (1521 by default) where the parser accepts Oracle idioms.
 The standard PG port (5432) remains vanilla:
-
-
 
 ------
 
@@ -130,8 +127,6 @@ I haven't hit stability issues in practice, though for kernel-level bugs, HighGo
 So yes, this solved a very specific legacy Oracle-compatibility problem cleanly.
 It is a niche, but clearly not a fake one.
 
-
-
 -------
 
 ## Pigsty as a "meta-distribution"
@@ -157,6 +152,7 @@ So I built them myself: EL 8-10, Debian 12/13, Ubuntu 22/24, x86_64 + ARM64, 14 
 This was non-trivial; Codex ran a lot of integration/unit tests and we had to patch a few issues before EL10/Debian13 were clean.
 
 Also updated recently:
+
 - OrioleDB to 1.6 Beta14
 - Percona PGTDE to 18.1
 - pgEdge newly added (spock 5.0.5)

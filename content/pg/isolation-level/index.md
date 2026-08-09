@@ -8,36 +8,31 @@ tags: [PostgreSQL, PG开发]
 ---
 
 
-PostgreSQL实际上只有两种事务隔离等级：**读已提交（Read Commited）** 与**可序列化（Serializable）**
+PostgreSQL实际上只有两种事务隔离等级：**读已提交（Read Commited）** 与 **可序列化（Serializable）**
 
 ---------------------
 
 ## 基础
 
-SQL标准定义了四种隔离级别，但PostgreSQL实际上只有两种事务隔离等级：**读已提交（Read Commited）** 与**可序列化（Serializable）**
+SQL标准定义了四种隔离级别，但PostgreSQL实际上只有两种事务隔离等级：**读已提交（Read Commited）** 与 **可序列化（Serializable）**
 
 SQL标准定义了四种隔离级别，但实际上这也是很粗鄙的一种划分。详情请参考[并发异常那些事](/db/concurrent-control/)。
-
-
 
 ## 查看/设置事务隔离等级
 
 通过执行：`SELECT current_setting('transaction_isolation');` 可以查看当前事务隔离等级。
 
-通过在事务块顶部执行 `SET TRANSACTION ISOLATION LEVEL { SERIALIZABLE | REPEATABLE READ | READ COMMITTED | READ UNCOMMITTED } `来设定事务的隔离等级。
+通过在事务块顶部执行 `SET TRANSACTION ISOLATION LEVEL { SERIALIZABLE | REPEATABLE READ | READ COMMITTED | READ UNCOMMITTED }` 来设定事务的隔离等级。
 
 或者为当前会话生命周期设置事务隔离等级：
 
 `SET SESSION CHARACTERISTICS AS TRANSACTION transaction_mode`
-
-
 
 | Actual isolation level     | P4 | G-single | G2-item | G2 |
 |----------------------------|----|----------|---------|----|
 | RC（monotonic atomic views） | -  | -        | -       | -  |
 | RR（snapshot isolation）     | ✓  | ✓        | -       | -  |
 | Serializable               | ✓  | ✓        | ✓       | ✓  |
-
 
 ## 隔离等级与并发问题
 
@@ -47,8 +42,6 @@ SQL标准定义了四种隔离级别，但实际上这也是很粗鄙的一种�
 CREATE TABLE t (k INTEGER PRIMARY KEY, v int);
 TRUNCATE t; INSERT INTO t VALUES (1,10), (2,20);
 ```
-
-
 
 ## 更新丢失（P4）
 
@@ -61,11 +54,11 @@ PostgreSQL的 **读已提交RC** 隔离等级无法阻止丢失更新的问题�
 |                 T1                  |                 T2                  | Comment  |
 |:-----------------------------------:|:-----------------------------------:|:--------:|
 |             ` begin; `              |                                     |          |
-|                                     |              ` begin;`              |          |
+|                                     |              `begin;`              |          |
 |    `SELECT v FROM t WHERE k = 1`    |                                     |   T1读    |
 |                                     |    `SELECT v FROM t WHERE k = 1`    |   T2读    |
-| `update t set v = 11 where k = 1; ` |                                     |   T1写    |
-|                                     | ` update t set v = 11 where k = 1;` | T2因T1阻塞  |
+| `update t set v = 11 where k = 1;` |                                     |   T1写    |
+|                                     | `update t set v = 11 where k = 1;` | T2因T1阻塞  |
 |              `COMMIT`               |                                     | T2恢复，写入  |
 |                                     |              `COMMIT`               | T2写入覆盖T1 |
 
@@ -76,19 +69,15 @@ PostgreSQL的 **读已提交RC** 隔离等级无法阻止丢失更新的问题�
 |                  T1                  |                   T2                   | Comment  |
 |:------------------------------------:|:--------------------------------------:|:--------:|
 |              ` begin; `              |                                        |          |
-|                                      |               ` begin;`                |          |
-| `update t set v = v+1 where k = 1; ` |                                        |   T1写    |
-|                                      | ` update t set v = v + 1 where k = 1;` | T2因T1阻塞  |
+|                                      |               `begin;`                |          |
+| `update t set v = v+1 where k = 1;` |                                        |   T1写    |
+|                                      | `update t set v = v + 1 where k = 1;` | T2因T1阻塞  |
 |               `COMMIT`               |                                        | T2恢复，写入  |
 |                                      |                `COMMIT`                | T2写入覆盖T1 |
 
 解决这个问题有两种方式，使用原子操作，或者在可重复读的隔离等级执行事务。
 
 在可重复读的隔离等级
-
-
-
-
 
 ## 读已提交（RC）
 
@@ -109,24 +98,20 @@ commit; -- T2
 select * from test; -- either. Shows 1 => 12, 2 => 22
 ```
 
-
-
 |                            T1                             |                            T2                             |     Comment     |
 |:---------------------------------------------------------:|:---------------------------------------------------------:|:---------------:|
-| ` begin; set transaction isolation level read committed;` |                                                           |                 |
-|                                                           | ` begin; set transaction isolation level read committed;` |                 |
-|            `update t set v = 11 where k = 1; `            |                                                           |                 |
-|                                                           |            ` update t set v = 12 where k = 1;`            |   T2会等待T1持有的锁   |
+| `begin; set transaction isolation level read committed;` |                                                           |                 |
+|                                                           | `begin; set transaction isolation level read committed;` |                 |
+|            `update t set v = 11 where k = 1;`            |                                                           |                 |
+|                                                           |            `update t set v = 12 where k = 1;`            |   T2会等待T1持有的锁   |
 |                     `SELECT * FROM t`                     |                                                           |   2:20, 1:11    |
-|          ` update pair set v = 21 where k = 2;`           |                                                           |                 |
-|                        ` commit;`                         |                                                           |      T2解锁       |
-|                                                           |                  ` select * from pair;`                   | T2看见T1的结果和自己的修改 |
-|                                                           |            ` update t set v = 22 where k = 2`             |                 |
+|          `update pair set v = 21 where k = 2;`           |                                                           |                 |
+|                        `commit;`                         |                                                           |      T2解锁       |
+|                                                           |                  `select * from pair;`                   | T2看见T1的结果和自己的修改 |
+|                                                           |            `update t set v = 22 where k = 2`             |                 |
 |                                                           |                         `commit`                          |                 |
 
 提交后的结果
-
-
 
 1
 
@@ -156,10 +141,6 @@ select * from test; -- either. Shows 1 => 12, 2 => 22
  t       | relation | 6/494              | 37672 | RowExclusiveLock | t       | t
  t       | tuple    | 6/494              | 37672 | ExclusiveLock    | t       | f
 ```
-
-
-
-
 
 # Testing PostgreSQL transaction isolation levels
 

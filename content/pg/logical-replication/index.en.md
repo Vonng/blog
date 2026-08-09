@@ -121,7 +121,7 @@ Publications can be queried using the psql meta-command `\dRp`.
  postgres | t          | t       | t       | t       | t         | f
 ```
 
-###  `pg_publication` Publication Definition Table
+### `pg_publication` Publication Definition Table
 
 `pg_publication` contains raw publication definitions, with each record corresponding to one publication.
 
@@ -142,7 +142,7 @@ pubviaroot   | f
 * `pubinsert|update|delete|truncate`: Whether to publish these operations
 * `pubviaroot`: If set, any partitioned table (leaf table) will use the topmost (partitioned) table's **replica identity**. So the entire partitioned table can be treated as one table rather than a series of tables for publication.
 
-###  `pg_publication_tables` Publication Content Table
+### `pg_publication_tables` Publication Content Table
 
 `pg_publication_tables` is a view composed of `pg_publication`, `pg_class`, and `pg_namespace`, recording table information included in publications.
 
@@ -271,7 +271,7 @@ Subscriptions can be queried using the psql meta-command `\dRs`.
  pg_bench_sub | postgres | t       | {pg_bench_pub}
 ```
 
-###  `pg_subscription` Subscription Definition Table
+### `pg_subscription` Subscription Definition Table
 
 Each logical subscription has one record. Note this view spans database clusters; each database can see subscription information for the entire cluster.
 
@@ -409,7 +409,7 @@ Logical replication uses an architecture similar to physical streaming replicati
 
 Subscriber monitoring information can be obtained through the `pg_stat_subscription` view.
 
-###  `pg_stat_subscription` Subscription Statistics Table
+### `pg_stat_subscription` Subscription Statistics Table
 
 Each **active subscription** has **at least one** record in this view, i.e., the Main Worker (responsible for applying logical logs).
 
@@ -432,7 +432,7 @@ latest_end_time       | 2021-02-22 17:05:06.578574+08
 
 Usually, an active subscription has one apply process running. Disabled or crashed subscriptions have no records in this view. During initial synchronization, synchronized tables will have additional worker process records.
 
-###  `pg_replication_slot` Replication Slots
+### `pg_replication_slot` Replication Slots
 
 ```bash
 postgres@meta:5432/meta=# table pg_replication_slots ;

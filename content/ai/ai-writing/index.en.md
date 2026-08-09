@@ -40,7 +40,6 @@ Here is my writing process. You can decide for yourself whether this counts as "
 By the end of that workflow, an article that used to take hours now takes tens of minutes.
 AI gives me several times the efficiency and saves me several times the time, without blunting the depth or sharpness of the final piece.
 
-
 ---
 
 ## What Does "AI-Written" Actually Mean?
@@ -58,7 +57,6 @@ Go one layer deeper and the popularity of that comment starts to look like a for
 At the end of the day, I am a database distribution author and a founder, not a full-time content creator, and I do not make a cent from writing articles. I do not have the time or interest to write every post the slow, artisanal way.
 Readers can like whatever they like. Read it or do not. But if someone shows up in the comments just to be obnoxious, I will block them without hesitation.
 
-
 -----
 
 ## How I Think About AI
@@ -70,7 +68,6 @@ AI gives everyone fluent prose, accurate retrieval, and efficient content genera
 At bottom, **AI is a multiplier, not a replacement.** Whatever you multiply, it enlarges. If you bring depth, AI amplifies that into sharper insight. If your head is mush, AI helps you produce smoother mush. If you approach AI with your own point of view and a real commitment to truth, it can answer with creative sparks and deep observations. If you give it mediocre questions, it gives you the usual safe, balanced, blandly exhaustive reply.
 
 Same model, completely different outcomes depending on who is using it. The difference is never the tool. It is the person.
-
 
 ------
 

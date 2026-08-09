@@ -14,7 +14,7 @@ tags: [Pigsty]
 
 [![](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v2.7.0)
 
-2024-05-20，Pigsty v2.7 发布了。在这个版本中收录的可用扩展插件数量，达到了惊人的 **255** 个，成功让 PostgreSQL 的**全能性**又达到了一个全新高度！
+2024-05-20，Pigsty v2.7 发布了。在这个版本中收录的可用扩展插件数量，达到了惊人的 **255** 个，成功让 PostgreSQL 的 **全能性** 又达到了一个全新高度！
 
 同时，我们提供了一些新的 Docker 应用模板，例如开源的企业 ERP 软件全家桶 —— **Odoo**，**Jupyter** Notebook，并率先提供了 **Supabase** GA 版本的支持。
 同时，我们还为后续容器版本的推出扫清了障碍；提供了帮助用户应付国产信创检查的方案 —— PolarDB 支持；并正式进行了专业版与开源版的产品功能区分。
@@ -32,7 +32,7 @@ tags: [Pigsty]
 
 在《[PostgreSQL正在吞噬数据库世界](/pg/pg-eat-db-world)》一文中，我抛出了一个观点：PostgreSQL 并不是一个简单的关系型数据库，而是一个数据管理的抽象框架，具有囊括一切，吞噬整个数据库世界的力量。
 
-而 PG 之所以能做到这一点，除了**开源**、**先进**这两点外，真正的秘诀在于 **扩展** —— **极致可扩展性，与繁荣的扩展生态** 是 PostgreSQL 独一无二的特点，也是它从无数数据库中脱颖而出的法宝与秘诀。
+而 PG 之所以能做到这一点，除了 **开源**、**先进** 这两点外，真正的秘诀在于 **扩展** —— **极致可扩展性，与繁荣的扩展生态** 是 PostgreSQL 独一无二的特点，也是它从无数数据库中脱颖而出的法宝与秘诀。
 
 因此，在 Pigsty v2.7 版本中，我们重新审视了整个 PostgreSQL 生态的所有扩展插件，将其中一些佼佼者收录其中，我们新收录的扩展如下：
 
@@ -63,7 +63,7 @@ tags: [Pigsty]
 
 ------
 
-Supabase 出品的 [**wrappers**](https://github.com/supabase/wrappers) 看上去是一个扩展，但它其实提供了一个用 Rust 编写 FDW 的插件，提供了对**十种**外部数据源的包装访问！
+Supabase 出品的 [**wrappers**](https://github.com/supabase/wrappers) 看上去是一个扩展，但它其实提供了一个用 Rust 编写 FDW 的插件，提供了对 **十种** 外部数据源的包装访问！
 
 | FDW         | Description                                                                   | Read | Modify |
 |-------------|-------------------------------------------------------------------------------|------|--------|
@@ -79,7 +79,6 @@ Supabase 出品的 [**wrappers**](https://github.com/supabase/wrappers) 看上�
 | SQL Server  | A FDW for [Microsoft SQL Server](https://www.microsoft.com/en-au/sql-server/) | ✅    | ❌      |
 | Redis       | A FDW for [Redis](https://redis.io/)                                          | ✅    | ❌      |
 | AWS Cognito | A FDW for [AWS Cognito](https://aws.amazon.com/cognito/)                      | ✅    | ❌      |
-
 
 这意味着，你现在可以用 PostgreSQL **读写** BigQuery, ClickHouse, 以及支付服务 Stripe 数据了。Firebase，Airtable，S3，Logflare，Auth0，SQL Server，Redis，Cognito 也提供了通过 PostgreSQL ，使用 SQL 读取的能力。
 
@@ -186,7 +185,6 @@ SELECT COUNT(*) FROM trips;
 
 > [v0.7 changelog](https://github.com/pgvector/pgvector/blob/master/CHANGELOG.md)
 
-
 当然，还有其他一些 AI 相关的扩展插件，例如 **pg_vectorize** 可以帮助你封装实现一个 RAG 服务，新的 **pg_tiktoken** 可以帮助你在 PG 中，计算调用 OpenAI 模型时所需的 Token 数量。此外，**pg_similarity** 可以提供17种额外的距离度量函数，**imgsmlr** 可以提供图片相似度处理函数, **bigm** 可以提供基于二元组的全文检索支持, **zhparser** 可以提供中文分词能力。
 
 ------
@@ -261,7 +259,7 @@ SELECT COUNT(*) FROM trips;
 许多国产数据库都是这样的：企业花点钱买一套“国产xxx”放在那里，上面来检查了，就拿出来糊弄一下，实际上该用啥还是继续用啥（我要给这种务实的态度点个赞！👍）
 但是很多时候，即使客户想要用的就是原生 PG，但没有一块 “**国产**” 的牌子，确实是很难走立项采购流程的，我们就有一些客户面临这样让人头大的难题。
 
-不过大部分用户也不愿意当傻狍子和冤大头，许多有国产化要求的企业都是这样的：花点钱买一套“国产xxx”放在那里，上面来检查了，就拿出来糊弄一下，实际上该用啥还是继续用啥（我要给这种务实的态度点个赞！👍） 
+不过大部分用户也不愿意当傻狍子和冤大头，许多有国产化要求的企业都是这样的：花点钱买一套“国产xxx”放在那里，上面来检查了，就拿出来糊弄一下，实际上该用啥还是继续用啥（我要给这种务实的态度点个赞！👍）
 但是很多时候，即使客户想要用的就是原生 PG，但没有一块 “**国产**” 的牌子，确实是很难走立项采购流程的，我们就有一些客户面临这样让人头大的难题。
 
 因此，我们想了一个绝妙的折衷办法 —— PolarDB for PostgreSQL。根据 【[安全可靠测评结果公告（2023年第1号）](http://www.itsec.gov.cn/aqkkcp/cpgg/202312/t20231226_162074.html)】，附表三、集中式数据库：
@@ -282,8 +280,6 @@ PolarDB 属于自主可控，安全可靠的国产信创数据库。（中国信
 
 最后说点实际的，如果你问我，有什么功能是“国产数据库”有，而 PostgreSQL 没有的，我还真知道一个 —— 所谓的 “商密” 算法。最主要的是三个：
 用于替代 RSA 的 SM2 算法，用于替代 MD5/SHA 的 SM3 算法，用于替代 DES/AES 的 SM4 算法。但现在，原生的 PostgreSQL 也可以通过 `smcrypto` 扩展插件也可以提供商密算法支持了！
-
-
 
 -----------------
 
@@ -307,8 +303,6 @@ Odoo 使用，且仅使用了 PostgreSQL 作为数据存储。整套 ERP 软件�
 
 最后能实现的效果是，在一台裸虚拟机上，你只需要几行命令就可以拉起生产质量的企业级 ERP 系统！关于 Odoo ，后面我会专门出一期教程，介绍如何利用 Pigsty 自建 ERP 系统。
 
-
-
 -----------------
 
 ## PITR与监控面板
@@ -322,8 +316,6 @@ Pigsty 已经提供了开箱即用的 PITR ，允许用户回滚到任意时间�
 ![pitr.png](pitr.jpg)
 
 后面，我们会专门出一期教程，介绍如何利用 Pigsty 的 [**PITR**](https://pigsty.cc/docs/concept/pitr) 功能，实现企业级的数据备份与恢复。
-
-
 
 -----------------
 
@@ -345,7 +337,7 @@ Pigsty 已经提供了开箱即用的 PITR ，允许用户回滚到任意时间�
 | SLA：无 | SLA：工作日时效内响应 | SLA：5 x 8 (<4h) | SLA：7 x 24 (紧急on-call) |
 | 社区公益支持答疑 | 提供基础咨询服务 | 提供专业咨询服务 | 提供企业级咨询服务 |
 
-Pigsty 专业版与开源的区别主要在于兼容性与功能模块，例如 PostgreSQL 大版本支持范围，操作系统大版本支持范围，芯片架构支持范围。 
+Pigsty 专业版与开源的区别主要在于兼容性与功能模块，例如 PostgreSQL 大版本支持范围，操作系统大版本支持范围，芯片架构支持范围。
 
 在原本的功能设计中，开源版将只包括 INFRA, NODE, PGSQL, ETCD 四个与 PostgreSQL 服务紧密关联的核心模块，我纠结了很久是否要将 MinIO, Redis, FerretDB (Mongo), 以及 Docker 四个 **扩展模块** 划到专业版中，但最终还是决定将其保留在开源版里 —— 因为它们已经开源了，没道理再阉割掉。
 但是与 PostgreSQL 相关性不大的其他模块以及后续的新功能模块，例如 Greenplum，MySQL，DuckDB，Kafka，Mongo, SealOS (Cloud) 都一定会划归专业版中。
@@ -354,10 +346,6 @@ Pigsty 专业版与开源的区别主要在于兼容性与功能模块，例如 
 另外，在这个版本中，我们自己维护了完整的 ARM64 Prometheus & Grafana 软件源，也可以在专业版中提供 Arm64 的芯片架构支持了，如果有需要跑在 arm 服务器，或者 “国产芯片” 上，这是一个不错的特性。
 
 总的来说，Pigsty v2.7 的开源/专业版区分，在不影响开源用户使用体验的前提下，又给了企业用户一个充分的付费理由 ；）。
-
-
-
-
 
 -----------------
 
@@ -368,7 +356,6 @@ Pigsty 专业版与开源的区别主要在于兼容性与功能模块，例如 
 但正所谓，酒香也怕巷子深 —— 所以接下来的工作重点会更多地转移到运营、营销、销售上去。开源项目的持续运营离不开用户与客户的支持，如果 Pigsty 帮助到了您，欢迎考虑赞助我们，或采购我们的服务订阅～。
 
 当然，说起运营 —— 就在下周，也就是五月28号，我将去温哥华参加 2024 PostgreSQL 开发者大会，a.k.a 第一届 PGConf.Dev （以前叫 PG Con）。共同探讨 PostgreSQL 的未来，并更进一步地把 Pigsty 推向全球！
-
 
 ----------------
 
@@ -450,7 +437,6 @@ Pigsty 专业版与开源的区别主要在于兼容性与功能模块，例如 
 - pg_graphql: 1.5.0 -> 1.5.4
 - pg_net 0.8.0 -> 0.9.1
 - pg_sparse (deprecated)
-
 
 **缺陷修复**
 

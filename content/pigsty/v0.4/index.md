@@ -20,8 +20,7 @@ tags: [Pigsty]
 
 第二个公开测试版v0.4现已正式发行
 
-Pigsty v0.4 对监控系统进行了整体升级改造，精心挑选了10个面板作为标准的Pigsty开源内容。同时，针对Grafana 7.3的不兼容升级进行了大量适配改造工作。使用升级的`pg_exporter v0.3.1`作为默认指标导出器，调整了监控报警规则的监控面板连接。
-
+Pigsty v0.4 对监控系统进行了整体升级改造，精心挑选了10个面板作为标准的Pigsty开源内容。同时，针对Grafana 7.3的不兼容升级进行了大量适配改造工作。使用升级的 `pg_exporter v0.3.1` 作为默认指标导出器，调整了监控报警规则的监控面板连接。
 
 ### Pigsty开源版
 
@@ -60,4 +59,3 @@ Pigsty v0.4进行了大量软件适配工作，包括：
 ### 离线安装包
 
 * v0.4的离线安装包（CentOS 7.8）已经可以从Github下载：[pkg.tgz](https://github.com/Vonng/pigsty/releases/download/v0.4.0/pkg.tgz)
-

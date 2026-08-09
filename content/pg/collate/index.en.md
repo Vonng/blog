@@ -24,8 +24,6 @@ Unfortunately, PostgreSQL's default `locale` and `encoding` configurations depen
 
 ![](featured.webp)
 
-
-
 ------
 
 ## TL;DR
@@ -34,8 +32,6 @@ Unfortunately, PostgreSQL's default `locale` and `encoding` configurations depen
 * Using non-C localization rules can cause operations involving string comparisons to have several times to dozens of times higher overhead, **significantly impacting performance**
 * Using non-C localization rules prevents `LIKE` queries from using regular indexes, easily causing pitfalls and cascading failures.
 * Instances using non-C localization rules can support `LIKE` queries by creating indexes with `text_ops COLLATE "C"` or `text_pattern_ops`.
-
-
 
 ------
 
@@ -69,9 +65,6 @@ Countries or regions that speak Chinese (`LANG=zh`) related `LOCAL`s include:
 * `MO` Macau: `zh_MO`
 * `TW` Taiwan: `zh_TW`
 * `SG` Singapore: `zh_SG`
-
-
-
 
 ------
 
@@ -144,10 +137,6 @@ For example, the `LC_COLLATE` provided by `zh_CN` uses the `iso14651_t1_pinyin` 
 
 Let's look at an example of how LOCALE's COLLATION affects Postgres behavior.
 
-
-
-
-
 ------
 
 ## Collation Rule Example
@@ -198,8 +187,6 @@ You can see that sorting by the `zh_CN` collation rule produces results in pinyi
 
 Of course, this query result depends on the specific definition of the `zh_CN` collation rule. Such collation rules are not defined by the database itself—the database only provides the `C` collation rule (or its alias `POSIX`). COLLATION sources are usually either the operating system, `glibc`, or third-party localization libraries (like `icu`), so different **actual definitions** might produce different effects.
 
-
-
 #### **But what's the cost?**
 
 The biggest negative impact of using non-`C` or non-`POSIX` LOCALE in PostgreSQL is:
@@ -207,10 +194,6 @@ The biggest negative impact of using non-`C` or non-`POSIX` LOCALE in PostgreSQL
 **Specific collation rules have enormous performance impact on operations involving string size comparisons, and they also prevent the use of regular indexes in `LIKE` query clauses.**
 
 Additionally, C LOCALE is guaranteed by the database itself to be used on any operating system and platform, while other LOCALEs are not, so using non-C Locale has worse portability.
-
-
-
-
 
 ------
 
@@ -279,10 +262,6 @@ If sorting potentially involves O(n2) comparison operations with 10x overhead, t
 Compared to `C` Locale, using `zh_CN` or other Locales may cause **several times** additional performance overhead.
 
 Besides this, incorrect Locale not only brings performance losses but also causes **functional losses**.
-
-
-
-
 
 ------
 
@@ -365,10 +344,6 @@ The inability of `LIKE` to use regular indexes seems solvable by creating an add
 
 For developers unfamiliar with this issue, it's very likely that due to incorrect LOCALE configuration, patterns that work locally will cause cascading failures online due to not using indexes (e.g., local using C, but production environment using non-C LOCALE).
 
-
-
-
-
 ------
 
 ## Compatibility
@@ -402,7 +377,5 @@ SELECT upper('a' COLLATE "zh_CN");  -- Execute case conversion based on zh_CN ru
 SELECT  '阿' < '波';                 -- false, under default collation rules 阿(38463) > 波(27874)
 SELECT  '阿' < '波' COLLATE "zh_CN"; -- true, explicitly use Chinese pinyin collation: 阿(a) < 波(bo)
 ```
-
-
 
 The only known issue currently appears in the `pg_trgm` extension.

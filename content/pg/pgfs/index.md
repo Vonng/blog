@@ -35,7 +35,7 @@ juicefs format sqlite3:/tmp/jfs.db myjfs     # 使用SQLite3存储元数据，�
 juicefs mount sqlite3:/tmp/jfs.db ~/jfs -d   # 将这个文件系统挂载到 ~/jfs 
 ```
 
-**妙就妙在**：JuiceFS 还支持使用PostgreSQL 作为**元数据**和**对象数据**的存储后端！ 也就是说，你只需要把JuiceFS的后端改成一个已经安装好的PostgreSQL实例，就能得到一个基于数据库的“文件系统”。
+**妙就妙在**：JuiceFS 还支持使用PostgreSQL 作为 **元数据** 和 **对象数据** 的存储后端！ 也就是说，你只需要把JuiceFS的后端改成一个已经安装好的PostgreSQL实例，就能得到一个基于数据库的“文件系统”。
 
 于是，如果你有现成的PostgreSQL数据库（例如通过 Pigsty 单机安装），就能一键拉起一套 "PGFS"：
 
@@ -67,9 +67,9 @@ juicefs umount /data2
 
 ## PGFS实战：文件系统也能PITR
 
-设想我们有一套 Odoo，它需要在`/var/lib/odoo`之类的目录存放文件数据。 传统上，如果需要把Odoo的数据库回溯到过去，虽然数据库能通过WAL日志进行时间点恢复，可文件系统依然得靠外部快照或CDP。
+设想我们有一套 Odoo，它需要在 `/var/lib/odoo` 之类的目录存放文件数据。 传统上，如果需要把Odoo的数据库回溯到过去，虽然数据库能通过WAL日志进行时间点恢复，可文件系统依然得靠外部快照或CDP。
 
-**而现在，如果把`/var/lib/odoo` 挂载到PGFS上**，所有对文件系统的写操作就变成了对PG数据库的写操作。 数据库再也不是单纯保存SQL数据，它还同时承载了文件系统的信息。 这就意味着：当我做PITR时，不仅数据库能回到某个时间点，**文件也能够瞬间“随数据库”一起回到同一时刻**。
+**而现在，如果把 `/var/lib/odoo` 挂载到PGFS上**，所有对文件系统的写操作就变成了对PG数据库的写操作。 数据库再也不是单纯保存SQL数据，它还同时承载了文件系统的信息。 这就意味着：当我做PITR时，不仅数据库能回到某个时间点，**文件也能够瞬间“随数据库”一起回到同一时刻**。
 
 有人可能会问，ZFS 不也能快照吗？是的，ZFS能做快照并回滚，但那依然是基于具体快照点， 想要精细到某一秒或某几分钟前，则需要真正的日志式方案或CDP功能。 JuiceFS+PG的组合，就等同于把文件操作日志写进了数据库的WAL里，而这可是PostgreSQL天生便擅长的一件事。
 
@@ -146,7 +146,7 @@ Time used: 42.2 s, CPU: 687.2%, Memory: 179.4 MiB
 
 <details style="box-sizing: border-box; color: rgb(33, 37, 41); font-family: &quot;Open Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><summary style="box-sizing: border-box; display: list-item; cursor: pointer;">另一个样本：阿里云ESSD PL1乞丐盘测试结果</summary><div class="highlight" style="box-sizing: border-box; --bs-card-spacer-y: 1rem; --bs-card-spacer-x: 1rem; --bs-card-title-spacer-y: 0.5rem; --bs-card-border-width: 1px; --bs-card-border-color: rgba(0, 0, 0, 0.175); --bs-card-border-radius: 0.375rem; --bs-card-box-shadow: ; --bs-card-inner-border-radius: calc(0.375rem - 1px); --bs-card-cap-padding-y: 0.5rem; --bs-card-cap-padding-x: 1rem; --bs-card-cap-bg: rgba(0, 0, 0, 0.03); --bs-card-cap-color: ; --bs-card-height: ; --bs-card-color: ; --bs-card-bg: #fff; --bs-card-img-overlay-padding: 1rem; --bs-card-group-margin: 0.75rem; position: relative; display: flex; flex-direction: column; min-width: 0px; height: auto; overflow-wrap: break-word; background-color: rgb(255, 255, 255); background-clip: border-box; border-color: rgba(0, 0, 0, 0.176); border-style: solid; border-width: 0.555556px; border-image: none 100% / 1 / 0 stretch; border-radius: 6px; box-shadow: none; margin: 2rem 0px; padding: 0px;"><pre tabindex="0" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 0.875em; display: block; margin: 0px; overflow: auto; overflow-wrap: normal; background-color: rgb(248, 248, 248); padding: 1rem; border-radius: inherit; tab-size: 4;"><div class="click-to-copy" style="box-sizing: border-box; display: block; text-align: right;"></div><code class="language-fallback" data-lang="fallback" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 14px; color: inherit; overflow-wrap: break-word; word-break: normal; padding: 0px; margin: 0px; white-space: pre; border: 0px; background-color: inherit !important;"><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span></code></pre></div></details>
 
-虽然与原生FS相比吞吐性能肯定逊色，但对于那些**文件量不大、访问频次较低**的应用场景已经足够了。 毕竟用“数据库充当文件系统”，本身就不是为了跑大型存储和高并发写入， 而是为了让数据库和文件系统能“同步回到过去”，能用就行。
+虽然与原生FS相比吞吐性能肯定逊色，但对于那些 **文件量不大、访问频次较低** 的应用场景已经足够了。 毕竟用“数据库充当文件系统”，本身就不是为了跑大型存储和高并发写入， 而是为了让数据库和文件系统能“同步回到过去”，能用就行。
 
 ------
 
@@ -210,4 +210,4 @@ odoo:
 
 完成这些后，就在同一台服务器上跑起了一套“企业级” Odoo：后端数据库由 Pigsty 管理、文件系统由JuiceFS挂载，而JuiceFS的底层又连接在PG上。 **一旦出现“回退需求”**，只要对PG执行 PITR，就能把文件和数据库一起“回到指定时刻”。这对于有相似需求的应用，比如Dify、Gitlab、Gitea、MatterMost等，都同样适用。
 
-回顾这一切，你会发现：本来需要花大价钱、依赖高端存储硬件才能实现的CDP， 如今用一套轻量级开源组合就能搞定。虽然带有“穷人工程”的DIY痕迹，但**它确实简单、稳定且足够实用**，值得在更多场景中探索和尝试。
+回顾这一切，你会发现：本来需要花大价钱、依赖高端存储硬件才能实现的CDP， 如今用一套轻量级开源组合就能搞定。虽然带有“穷人工程”的DIY痕迹，但 **它确实简单、稳定且足够实用**，值得在更多场景中探索和尝试。

@@ -18,22 +18,19 @@ PostgreSQL 今天发布了新的大版本 16，带来了一系列改进。Pigsty
 
 Pigsty v2.4 目前仍为 Beta 状态，可以使用以下命令快速上手。**文档修缮完成后，将正式发布**。
 
- `bash -c "$(curl -fsSL https://get.pigsty.cc/beta)"` 
+ `bash -c "$(curl -fsSL https://get.pigsty.cc/beta)"`
 
 ![图片](banner.jpg)
-
-
 
 -------
 
 ## 亮点特性
 
-•PostgreSQL 16 正式发布，Pigsty在发布后1小时内提供支持。•可以监控云数据库，RDS for PostgreSQL，以及 PolarDB，提供全新的 PGRDS 监控面板•正式提供**商业支持与咨询服务**。并发布首个 LTS 版本，为订阅客户提供最长5年的支持。•新扩展插件: **Apache AGE** ，在 PostgreSQL 上提供图数据库查询能力•新扩展插件: **zhparser**，中文分词，用于支持中文全文检索功能•新扩展插件: **pg_roaringbitmap**，高效实现 RoaringBitmap 位图功能•新扩展插件: **pg_embedding**，另一种基于 HNSW 索引的向量数据库插件hnsw alternative to pgvector•新扩展插件: **pg_tle**，由 AWS 出品的可信语言存储过程管理/发布/打包扩展•新扩展插件: **pgsql-http**，在数据库中使用 SQL 接口直接发送HTTP请求处理响应。•其他新增插件：**pg_auth_mon，pg_checksums，pg_failover_slots，pg_readonly，postgresql-unit pg_store_plans，pg_uuidv7，set_user**•Redis改进：支持 Redis 哨兵监控，配置主从集群的自动高可用。
+•PostgreSQL 16 正式发布，Pigsty在发布后1小时内提供支持。•可以监控云数据库，RDS for PostgreSQL，以及 PolarDB，提供全新的 PGRDS 监控面板•正式提供 **商业支持与咨询服务**。并发布首个 LTS 版本，为订阅客户提供最长5年的支持。•新扩展插件: **Apache AGE** ，在 PostgreSQL 上提供图数据库查询能力•新扩展插件: **zhparser**，中文分词，用于支持中文全文检索功能•新扩展插件: **pg_roaringbitmap**，高效实现 RoaringBitmap 位图功能•新扩展插件: **pg_embedding**，另一种基于 HNSW 索引的向量数据库插件hnsw alternative to pgvector•新扩展插件: **pg_tle**，由 AWS 出品的可信语言存储过程管理/发布/打包扩展•新扩展插件: **pgsql-http**，在数据库中使用 SQL 接口直接发送HTTP请求处理响应。•其他新增插件：**pg_auth_mon，pg_checksums，pg_failover_slots，pg_readonly，postgresql-unit pg_store_plans，pg_uuidv7，set_user**•Redis改进：支持 Redis 哨兵监控，配置主从集群的自动高可用。
 
 **API变化**
 
 •新增参数，`REDIS`.`redis_sentinel_monitor`，用于指定 Sentinel 集群监控的主库列表
-
 
 -------
 
@@ -44,7 +41,6 @@ Pigsty 也许是最早提供 PostgreSQL 16 支持的发行版，从 16 beta1 就
 PostgreSQL 16 有一些比较实用的新功能：从库逻辑解码与逻辑复制，针对I/O的新统计视图，全连接的并行执行，更好的冻结性能，符合 SQL/JSON 标准的新函数集，以及在HBA认证中使用正则表达式等等。
 
 不过要注意的是，PGDG 官方仓库目前决定在 PostgreSQL 16 中放弃对 EL7 的支持，所以 PG16 仅在 EL8 与 EL9 及其兼容操作系统发行版中可用。
-
 
 -------
 
@@ -64,8 +60,6 @@ Pigsty v2.4 提供了对 RDS 监控的支持。特别是还添加了对 PolarDB 
 
 ![图片](pgrds-dashboard-2.jpg)
 
-
-
 -------
 
 ## 商业支持
@@ -76,8 +70,6 @@ Pigsty v2.4 是第一个 LTS 版本，将为企业订阅用户提供3年的长�
 
 ![图片](support-page.jpg)
 
-
-
 -------
 
 ## REDIS高可用
@@ -87,7 +79,6 @@ Pigsty v2.4 中，我们提供了一个新的参数 redis_sentinel_monitor ，�
 ![图片](redis-sentinel.jpg)
 
 与此同时，我们也在 Redis 监控中添加了 Sentinel 相关指标与面板，并针对 Redis 7.x 的新特性进行了适配。
-
 
 -------
 
@@ -115,16 +106,9 @@ Pigsty v2.4 提供了一系列的新扩展插件，包括尚未收录在 PGDG �
 
 ![图片](roaringbitmap.jpg)
 
-
-
 具体细节就不在此展开了，后面我们会专门出一些文章，介绍这些强力扩展的使用方式。
 
 欢迎大家使用 Pigsty 并提出反馈意见，加讨论群请微信搜索 Pigsty 小助手：pigsty-cc 。
-
-
-
-
-
 
 ----------------
 

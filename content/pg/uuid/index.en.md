@@ -16,6 +16,7 @@ A recent project needed to generate business transaction IDs with the following 
 Before reinventing the wheel, first check if there are existing solutions.
 
 ### Serial
+
 Traditional practice often implements business transaction IDs through database auto-increment sequences or ID generation services.
 `MySQL`'s `Auto Increment`, `Postgres`'s `Serial`, or writing a small ID generation service with `Redis+lua` are all convenient and quick solutions. This approach can guarantee global uniqueness, but creates central node dependency: each node needs to access the database once to get a sequence number. This creates availability issues: if we can generate transaction IDs locally and return responses directly, why must we use a network access to get IDs? If the database goes down, nodes also fail. So this is not an ideal solution.
 
@@ -122,7 +123,7 @@ In UUID:
 
 * `version` is fixed to `0b0001`, i.e., version number fixed to `1`.
 
-	Reflected in literal value: the first `hex` of the third group in a valid UUID v1 must be `1`:
+    Reflected in literal value: the first `hex` of the third group in a valid UUID v1 must be `1`:
 
   * *6b54058a-a413-***1***1e6-b501-a0999b048337*
 
@@ -130,7 +131,7 @@ In UUID:
 
 * `variant` is a field used to distinguish from other types of UUIDs (like GUID), specifying UUID bit field interpretation method. Fixed to `0b10` here.
 
-	Reflected in literal value, the first `hex` of the fourth group in a valid UUID v1 must be one of `8,9,A,B`:
+    Reflected in literal value, the first `hex` of the fourth group in a valid UUID v1 must be one of `8,9,A,B`:
 
   * *6b54058a-a413-11e6-***b***501-a0999b048337*
 

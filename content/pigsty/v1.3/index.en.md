@@ -16,7 +16,6 @@ tags: [Pigsty]
 
 Pigsty v1.3 is officially released, featuring Redis support, a rebuilt PGCAT application, and enhanced PGSQL monitoring.
 
-
 ----------------
 
 ## Redis Support
@@ -33,7 +32,6 @@ The Pigsty demo now includes Redis cluster examples:
 
 ![redis-demo](redis-demo.jpg)
 
-
 ### Three Deployment Modes
 
 Redis has three classic deployment patterns: primary-replica (Standalone), native cluster (Cluster), and high-availability sentinel (Sentinel). Pigsty v1.3 supports all three.
@@ -41,7 +39,6 @@ Redis has three classic deployment patterns: primary-replica (Standalone), nativ
 ![redis-overview](redis-overview.jpg)
 
 The Redis Overview dashboard shows three sample clusters, each demonstrating a different deployment mode.
-
 
 ### Declarative Configuration
 
@@ -55,7 +52,6 @@ A Redis cluster only needs a few required identity parameters. Of course, you ca
 
 ![redis-params-2](redis-params-2.jpg)
 
-
 ### Auto-Monitoring
 
 Redis clusters and instances created with Pigsty are automatically integrated into the monitoring system.
@@ -65,7 +61,6 @@ Redis clusters and instances created with Pigsty are automatically integrated in
 The Redis cluster dashboard homepage — click on a specific instance to jump to instance-level monitoring:
 
 ![redis-instance](redis-instance.jpg)
-
 
 ----------------
 
@@ -89,7 +84,6 @@ Single PostgreSQL database catalog info, including schemas, tables, indexes, seq
 
 Redesigned PGCAT TABLE dashboard with detailed per-column statistics.
 
-
 ### Agentless Design
 
 PGCAT only needs a target database URL — no agent installation required. Even monitor-only deployments of existing instances get full PGCAT functionality.
@@ -97,7 +91,6 @@ PGCAT only needs a target database URL — no agent installation required. Even 
 ![pgsql-monitor-only](pgsql-monitor-only.jpg)
 
 In Pigsty v1.3's monitor-only deployment mode, external PostgreSQL instances are also registered in Grafana with PGCAT enabled by default.
-
 
 ----------------
 
@@ -112,7 +105,6 @@ In Pigsty v1.3, the PGSQL Cluster dashboard adds quick-navigation panels for 10 
 Both PGSQL Instance and PGSQL Cluster now include quick-navigation panels for rapid problem identification. PGSQL Service was completely redesigned — simpler and more intuitive for quickly understanding cluster topology. Other dashboards also received optimizations and improvements.
 
 Additionally, v1.3 includes improvements to the semi-automated database migration playbook and profiling tool support.
-
 
 ----------------
 
@@ -153,7 +145,6 @@ Additionally, v1.3 includes improvements to the semi-automated database migratio
 - Added Greenplum RPM packages and dependencies
 - Added Redis RPM and source packages
 - Added `perf` as default package
-
 
 ----------------
 

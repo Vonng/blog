@@ -18,7 +18,6 @@ Negative $9 million means not only do they not charge you, they pay you to use i
 
 A few days earlier, Andreessen had tweeted: "AGI is here, just not evenly distributed yet." One day later, he explained what "not evenly distributed" actually looks like.
 
-
 ------
 
 ## What happened?
@@ -32,7 +31,6 @@ How strong is it? On the software engineering benchmark SWE-bench, it scored 93.
 The oldest of those bugs had been sitting inside OpenBSD for 27 years. In the Linux kernel, it found and chained multiple vulnerabilities into a full privilege-escalation path from ordinary user to root. In a Firefox 147 exploit-generation test, the previous model produced working exploit code twice. Mythos did it 181 times. That is a 90x jump.
 
 But this post is not about how strong the model is. It is about something else: **you cannot use it, even if you are willing to pay.**
-
 
 ------
 
@@ -49,7 +47,6 @@ Sounds like a lot? Against the real denominator, it rounds to zero. How many tec
 ![Illustration of Project Glasswing's audience scale](glasswing-scale.png)
 
 More importantly, Anthropic is not charging these giants. It is subsidizing them with **$100 million in usage credits**. Andreessen's "negative $9 million" is just the arithmetic: $100 million divided by 11 outside core partners is about $9 million in compute subsidy per company. Someone on X even asked Grok to explain the pricing in unit-economics terms. Grok's answer was razor sharp:
-
 
 ------
 
@@ -73,7 +70,6 @@ Maybe you are completely sincere. But the objective result is still this: **the 
 
 Yes, Anthropic says the partners will share findings, and once the vulnerabilities are patched the whole industry benefits. That is like the king promising that his knights will protect the village. But protection and empowerment are not the same thing. The protected are still protected people. Your security depends on whether the knights do their job, not on whether you can defend yourself.
 
-
 ------
 
 ## Not a price barrier, an identity barrier
@@ -90,13 +86,11 @@ Maybe. But how long is "temporary"? Six months? A year? Two years? By the time M
 
 And once this pattern is validated, let the giants use it first, then give it to the public once it is "safe," it becomes the default playbook for every AI lab. "Safety" slides from a public-interest concept into a polite synonym for access control.
 
-
 ------
 
 ## Digital feudalism
 
 I have said to friends before that the most likely social form of the AI era is not cyberpunk and not utopia, but **digital feudalism**. I even asked Claude to estimate the odds once, and it gave me this:
-
 
 > ### Possible Futures
 >
@@ -116,9 +110,6 @@ I have said to friends before that the most likely social form of the AI era is 
 > 2. **The Tech-Dependent Class**: Programmers, designers, analysts, and others who can wield AI tools effectively. They live comfortably but have weak bargaining power and are highly replaceable.
 > 3. **The Managed Class**: Workers whose jobs are heavily structured and surveilled by AI. Nominally free laborers, but in practice the "execution endpoints of the algorithm." Material conditions are tolerable, but upward mobility is virtually closed off.
 > 4. **The Excluded**: Those who, for various reasons, cannot fit into any of the tiers above.
-
-
-
 
 After Mythos, I think the probability of the future collapsing toward that default has only gone up.
 
@@ -142,7 +133,6 @@ That is no longer feudalism. It is something colder: **structural redundancy**. 
 
 That is what makes the Mythos episode truly chilling. "You cannot buy the best AI" is only the surface layer. The deeper issue is this: **once the strongest AI can do everything you can do, "being needed" itself starts to disappear as a historical condition.**
 
-
 ------
 
 ## The gilded age and the subsidy window
@@ -158,7 +148,6 @@ Once your entire workflow is built around Claude Code, once your coding style, d
 This is not a conspiracy theory. It is textbook platform lock-in. Every internet platform runs the same playbook: subsidize to acquire users, then raise prices and harvest. The only difference is what gets harvested. In the past it was your attention and your data. This time it is your **productivity and workflow dependence**.
 
 Further reading: ["AI Survival Guide: Where Is the Biggest Upside?"](/en/db/ai-bonus/)
-
 
 ------
 

@@ -16,7 +16,6 @@ tags: [Pigsty]
 
 Pigsty v1.1 is officially released, featuring a brand-new homepage design, plus support for JupyterLab, PGWeb, PEV2, PgBadger, and other useful tools.
 
-
 ----------------
 
 ## Brand New Homepage
@@ -27,11 +26,9 @@ The Home Dashboard in Grafana has long served as Pigsty's de facto "homepage." N
 
 This homepage is a local version of the documentation site, served by the default Nginx.
 
-
 ### Service Navigation
 
 The homepage provides navigation to all Pigsty service components, including Consul, Grafana, Prometheus, AlertManager, and the newly introduced **PGWeb** and **JupyterLab** in v1.1. Click the component name/URL in the center, or use the `Service` dropdown menu in the top-right navigation bar.
-
 
 ### Monitoring Navigation
 
@@ -39,20 +36,17 @@ The homepage can display clusters and instances in your Pigsty deployment (optio
 
 ![monitor-nav](monitor-nav.jpg)
 
-
 ### App Navigation
 
 The App dropdown in the top-right corner is the entry point for Pigsty's extended features. In v1.1, Pigsty ships with several useful and interesting apps, all configurable via options.
 
 ![app-nav](app-nav.jpg)
 
-
 ### Local Documentation
 
 In Pigsty v1.1, you can access local offline documentation directly from the homepage, available in both English and Chinese.
 
 ![local-docs](local-docs.jpg)
-
 
 ----------------
 
@@ -68,7 +62,6 @@ With Jupyter Notebook, you can efficiently and agilely extract, process, analyze
 
 With great power comes great risk. Jupyter's ability to execute arbitrary code is too risky for production environments, so it's disabled by default in production configuration templates.
 
-
 ----------------
 
 ## PGWeb
@@ -83,7 +76,6 @@ Like Jupyter, PGWeb is enabled by default in demo and personal configuration tem
 
 Users can browse schemas and objects in the database, quickly view table data, execute queries, and more.
 
-
 ----------------
 
 ## PEV2
@@ -93,7 +85,6 @@ PEV2 is a handy execution plan visualizer that converts PostgreSQL EXPLAIN outpu
 ![pev2](pev2.jpg)
 
 This tool is extremely useful for optimizing slow queries and analyzing auto_explain results.
-
 
 ----------------
 
@@ -106,7 +97,6 @@ Use `bin/pglog-summary [ip] [date]` to pull logs from a specific node on a speci
 ![pgbadger](pgbadger.jpg)
 
 Add this command to crontab to automatically generate database operation reports daily or near-real-time.
-
 
 ----------------
 
@@ -131,7 +121,6 @@ Software upgrade list:
 | Consul | v1.10.2 |
 | vip-manager | v1.0.1 |
 
-
 ----------------
 
 ## Database Migration Playbook
@@ -144,7 +133,6 @@ Fill in the source and target cluster information, and the playbook will automat
 
 ![migration-2](migration-2.jpg)
 
-
 ----------------
 
 ## Sample App: Privacy Log Visualization
@@ -154,7 +142,6 @@ Pigsty's default demo apps now include a new one: Apple App Privacy Log Visualiz
 ![applog-1](applog-1.jpg)
 
 ![applog-2](applog-2.jpg)
-
 
 ----------------
 
@@ -167,7 +154,6 @@ v1.1 adds a new feature for database instances: Dummy File. The concept is simpl
 **Promscale Support**
 
 v1.1 adds the Promscale package. This interesting component lets you replace Prometheus's time-series storage with TimescaleDB (PostgreSQL).
-
 
 ----------------
 
@@ -209,7 +195,6 @@ v1.1 adds the Promscale package. This interesting component lets you replace Pro
 - Renamed internal flag `repo_exist` to `repo_exists`
 - `repo_address` default value changed to `pigsty` instead of `yum.pigsty`
 - HAProxy access point changed to `http://pigsty` instead of `http://h.pigsty`
-
 
 ----------------
 

@@ -26,7 +26,6 @@ When someone throws mud at everyone in this profession, someone needs to stand u
 
 3. Manual DBAs need to be replaced by code-based software
 
-
 **My perspective:**
 
 1. The first point is invalid output - DBAs exist precisely to balance development on the stability side.
@@ -36,7 +35,6 @@ When someone throws mud at everyone in this profession, someone needs to stand u
 3. The third point contains partial truth but severely overestimates short-term changes, and cloud databases aren't the only path.
 
 Let me elaborate:
-
 
 ### DBAs Are Responsible for Stability
 
@@ -48,8 +46,6 @@ Development is responsible for new features, while SRE/DBAs are responsible for 
 
 I was once a DBA but also did plenty of Dev work. I have firsthand experience with both development and DBA mindsets. When I first started as a developer, I ran neural networks, recommendation systems, web servers, and crawlers "in the PostgreSQL database," used FDW to connect MongoDB, HBase, and a bunch of external systems. Stability? It ran fine! Until no operations or DBA was willing to maintain it, and I had to become a DBA myself to eat my own dog food and take responsibility. Only then did I develop empathy for DBAs/operations and learn to choose carefully what to do and what not to do.
 
-
-
 ### Who Cares About Delivery Speed?
 
 **Evaluating a database requires considering many dimensions: stability, reliability, security, simplicity, scalability, extensibility, observability, maintainability, cost-effectiveness**, etc. **Delivery speed** barely qualifies as a minor subsidiary dimension within "scalability" and doesn't rank high among database system attributes that need attention.
@@ -59,8 +55,6 @@ More importantly, **cost-effectiveness is the primary product strength**. **Comp
 ![meme.png](no-dba-bullshit-meme.png)
 
 Take AWS's 64-core 256GB `db.m5.16xlarge` RDS as an example, costing $25,817/month (about 180,000 RMB). One month's rent could buy two servers with much better performance outright. Any rational enterprise user can see the logic: **if purchasing such services isn't for short-term, temporary needs, it's absolutely a major financial misconduct**.
-
-
 
 ### Not Afraid of Delivery Speed Competition Either
 
@@ -74,8 +68,6 @@ Actually, with machines ready, networks connected, and planning complete: using 
 
 > The cloud database product manager who came up with this pricing must have had their head slammed in a door
 
-
-
 ### The Strawman of Sharding
 
 Ma argues that database sharding is a tool DBAs use to inflate their value.
@@ -87,8 +79,6 @@ To this day, **hardware storage technology development has left many old-timers 
 Software-wise, take PostgreSQL as an example: single tables using heap storage can handle tens of TBs and hundreds of billions of records without problem, plus the Citus extension can transform it into a distributed database in place. Various distributed databases' selling point is also "no need for sharding." This is all old news. Except for very specific scenarios, probably only orthodox MySQL users still play with sharding based on "single tables can't exceed 20M records."
 
 Of course, distributed databases require **higher, not lower** DBA skill levels. So what Ma mainly wants to say here is NoSQL, more specifically DynamoDB - this supposedly "maintenance-free" database that can directly eliminate DBAs. However, a database with 10ms average latency, a flat KV storage abstraction equivalent to a file system, and RCU/WCU billing that's even more predatory than RDS - what qualifies it to claim it can replace DBAs?
-
-
 
 ## Expecting NoSQL to Replace DBAs Is Dreaming
 
@@ -106,8 +96,6 @@ State management is an eternal problem in information systems. Ma thinks DBAs ar
 
 As I said in "[Why Learn Database Principles and Design](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247483673&idx=1&sn=2a895a6f6e4b3e882395203757ec4e60&chksm=fe4b34c2c93cbdd49686c79ba27327b0dd16f266a82ab7de6e9985b8808207646fa1c7796da4&scene=21#wechat_redirect)," those who only write code are code farmers; **learn databases well, and you can basically make a living**; add **operating systems and computer networks** on top of that, and you can be a decent programmer. Unfortunately, data modeling and SQL have almost become lost arts: this foundational knowledge is being forgotten by **new generation engineers** who design ridiculous schemas, don't know how to create indexes properly, then hastily conclude that relational databases and SQL are garbage, we must use crude and fast NoSQL to save time. However, people always need reliable systems to handle critical business data: in many enterprises, core data is still a regular relational database as **Source of Truth**, with NoSQL databases only used for non-critical data. Any developer jumping out to say DynamoDB/Redis/MongoDB/HBase is so awesome, I can put all my state there and never need DBAs again, is undoubtedly ridiculous.
 
-
-
 ### DBAs Are Guardians of Enterprise Databases
 
 Ma's final shot targets DBA professional ethics: DBAs who want to delete databases can't be stopped by anyone.
@@ -119,8 +107,6 @@ Qualified DBAs can effectively reduce the range of people capable of delivering 
 I despise and am outraged by behavior that throws dirty water on the DBA community 😄. Following this logic, I could completely argue that the public cloud vendors Ma loves are the biggest threat to data security: using cloud is just outsourcing operations and DBAs to cloud vendors, **and you absolutely cannot prevent some privileged developer/operations/DBA at a cloud vendor from casually browsing your database or simply downloading a backup for entertainment. You have no recourse, no evidence, and mainly because you have no ability to know this happened**. There are many such people, one operations script glitch can blow up a large area, and the compensation you can expect is just painless service credit vouchers.
 
 Reference reading: "[Cloud RDS: From Database Deletion to Running Away](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485093&idx=1&sn=5815f71f1d832101d35a75f5aa4acd3c&chksm=fe4b337ec93cba68fbf30eb0ed50d052c6e8972d42cf506051b5016668f4555edaa0756688dc&scene=21#wechat_redirect)"
-
-
 
 ### DBAs Retiring from History?
 

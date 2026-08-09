@@ -13,7 +13,7 @@ menu:
 ---
 
 > [WeChat original](https://mp.weixin.qq.com/s/clM2f2f2-EPa4EVBIpznfw)
-> 
+>
 > “Humans are the bootloader for silicon life.” —Elon Musk
 
 Maybe we’re about to witness an AI-worshipping religion. Imagine this:
@@ -27,5 +27,5 @@ Maybe we’re about to witness an AI-worshipping religion. Imagine this:
 - Eventually humanity births philosopher-king AIs named David, Solomon, Rehoboam. Machine sovereigns assign everyone their optimal destiny. Robots toil; humans live as organic decor in an earthly paradise.
 
 > **1 Samuel 8**
-> 
+>
 > The Israelites begged for a king to win battles. Samuel warned a king would conscript their sons and seize their oxen, and when they cried out God wouldn’t listen. They insisted. They got David and Solomon—and Solomon’s son Rehoboam, who turned tyrant. When they cried again, God replied, “You asked for this.”

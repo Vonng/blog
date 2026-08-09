@@ -5,7 +5,7 @@ date: 2024-04-30
 author: |
   [Maciej Pocwierz](https://medium.com/@maciej.pocwierz) | Translated by: [Feng Ruohang](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [WeChat Original](https://mp.weixin.qq.com/s/35ScjtPjC1GNGKaSArJhcA) | [English Original](https://medium.com/@maciej.pocwierz/how-an-empty-s3-bucket-can-make-your-aws-bill-explode-934a383cb8b1)
 summary: >
-  The dark forest law has emerged on public cloud: **Anyone who knows your S3 object storage bucket name can explode your cloud bill.** 
+  The dark forest law has emerged on public cloud: Anyone who knows your S3 object storage bucket name can explode your cloud bill.
 tags: [Cloud-Exit,AWS,S3]
 ---
 
@@ -87,8 +87,6 @@ This way you can avoid additional costs from API redirects.
 
 Thanks for taking time to read my article. Hope it helps you avoid unexpected AWS costs!
 
-
-
 ------
 
 ## Cloud-Exit Lao Feng's Commentary
@@ -103,7 +101,6 @@ But from common sense, this is completely unreasonable — requests initiated by
 
 But in AWS's view, this feature is considered a Feature, not a security vulnerability or bug, usable to drain users' gold coins. The same design logic runs through AWS's product design logic. For example, Route53 charges for querying domains that don't resolve, so knowing a domain uses AWS resolution can also enable DDoS.
 
-
 ---------------
 
 I'm not sure if domestic cloud vendors use the same handling logic. But they basically directly or indirectly learn from AWS. So there's a fairly high probability they would handle it the same way.
@@ -111,7 +108,6 @@ I'm not sure if domestic cloud vendors use the same handling logic. But they bas
 ![](ddos.jpg)
 
 > As someone from cybersecurity background, I know some industry practices, like DDoS attacks to sell high-defense services — screenshot from a group member
-
 
 ---------------
 

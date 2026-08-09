@@ -16,8 +16,7 @@ tags: [Pigsty]
 
 经过两个月的精心打磨，Pigsty v3.3 正式发布。作为开源的"开箱即用" PostgreSQL 发行版，Pigsty 旨在凝聚 PG 生态的合力，为本地自建提供与云上 RDS 媲美的免运维便捷体验。
 
-本版本聚焦三个关键领域：**扩展插件**、**建站体验**和**应用模板**，大幅增强了开发、运维、部署等多方面的能力。
-
+本版本聚焦三个关键领域：**扩展插件**、**建站体验** 和 **应用模板**，大幅增强了开发、运维、部署等多方面的能力。
 
 --------
 
@@ -48,7 +47,6 @@ PostgreSQL 以其丰富的扩展机制著称，孕育了庞大的数据库生态
 
 Pigsty 与 Omnigres 达成深度合作伙伴关系：Pigsty 整合分发 Omnigres 扩展，Omnigres 作为下游将 Pigsty 扩展仓库中的扩展交付给其用户，实现互惠共赢。
 
-
 --------
 
 ## FerretDB 2.0：PostgreSQL 变身 MongoDB
@@ -58,7 +56,6 @@ Pigsty 与 Omnigres 达成深度合作伙伴关系：Pigsty 整合分发 Omnigre
 ![](ferretdb.jpg)
 
 可将 PG 变为核心功能完备的 MongoDB 5.0，使用 MongoDB 客户端与线缆协议访问 PostgreSQL 中的数据。
-
 
 --------
 
@@ -70,7 +67,6 @@ Pigsty v3.3 第一时间跟进了 pg_duckdb 0.3.1、pg_mooncake 0.1.2、pg_analy
 
 在 ClickHouse 自家榜单 ClickBench 上，PG 扩展 mooncake 已成功挤进 Top 10 T1 梯队。在激烈的竞争角逐下，PostgreSQL 生态很快会出现比肩向量数据库生态中 `pgvector` 的 OLAP 玩家。
 
-
 --------
 
 ## pig 与扩展仓库
@@ -80,7 +76,6 @@ Pigsty v3.3 第一时间跟进了 pg_duckdb 0.3.1、pg_mooncake 0.1.2、pg_analy
 虽然独一无二的扩展库可作为 Pigsty 的核心竞争优势，但更希望为 PostgreSQL 生态做出更多贡献。因此 `pig` 包管理器与 PostgreSQL 扩展仓库基于 **Apache 2.0** 宽松协议开源，对公众与同行开放。
 
 已有多家 PostgreSQL 厂商基于 Pigsty 扩展仓库安装扩展，成为 Pigsty 的下游。这是一种扎实参与全球软件供应链的方式。
-
 
 --------
 
@@ -97,7 +92,6 @@ Pigsty 提供全功能的 Nginx 配置方案和证书申请 SOP，其网站和�
 ![](certbot.jpg)
 
 Pigsty v3.2 已将 certbot 整合并默认安装，可一行命令完成 HTTPS 证书申请与续签。可用 Nginx 代理各种服务，使用不同域名区分，统一收口到 80/443 端口对外服务 —— 只需打开入站 80/443 TCP 端口即可。
-
 
 --------
 
@@ -121,7 +115,6 @@ Pigsty v3.3 提供全新剧本 `app.yml`，将基于 PostgreSQL 的 Docker 软�
 
 从裸机到完整的生产应用服务，只需几条命令、几分钟等待。
 
-
 --------
 
 ## pig 命令行能力增强
@@ -139,7 +132,6 @@ pig build ext citus   # 构建某个扩展
 ```
 
 Pigsty 维护的 200+ 扩展均通过此方式构建。即使操作系统不在 Pigsty 支持的十大发行版中，也可轻松 DIY 扩展 RPM/DEB 包。
-
 
 --------
 
@@ -161,7 +153,6 @@ Pigsty 维护的 200+ 扩展均通过此方式构建。即使操作系统不在 
 
 PG 扩展目录已整合到文档站 pigsty.cc/ext 中，并提供中文版本。小工具可自动扫描 Pigsty 与 PGDG 仓库扩展包版本并生成数据库记录、信息页，用户可直接从网页浏览并下载扩展 RPM/DEB 包。
 
-
 --------
 
 ## 多内核支持更新
@@ -173,8 +164,6 @@ v3.3 跟进了 IvorySQL 4.2（PG 17 兼容版本），解决了 pgbackrest 备�
 同时推动 PolarDB 团队提供了 Debian 及 ARM64 平台的 DEB 包。PolarDB 现可在 Pigsty 支持的 10 大操作系统发行版上丝滑运行。
 
 使用 PolarDB 内核的场景：若有"国产化"要求，PolarDB 是最简单直接、物美价廉的方案，Pigsty 能将 PolarDB 内核 RPM/DEB 封装成强大的 RDS 服务。
-
-
 
 --------
 --------

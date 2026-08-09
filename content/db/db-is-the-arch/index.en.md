@@ -11,8 +11,6 @@ tags: [PostgreSQL]
 
 Databases are the core of business architecture - this is self-evident consensus. But what if we go further and **treat databases as business architecture itself**, putting business logic, web servers, and even entire front and back ends into databases? What sparks would that create? Will the future be a world where databases devour backends, frontends, operating systems, and even everything?
 
-
-
 --------
 
 ## Database Drives the Future
@@ -40,13 +38,10 @@ Seeing this magical approach, I once doubted whether this thing could actually w
 Browsers can access HTML pages, and HTML pages can dynamically access HTTP servers and database stored procedures through JavaScript.
 This means you can stuff a complete frontend-backend-database three-tier architecture application entirely into a database!
 
-
 > The essence of this idea is: **stuffing all business logic, even web servers and entire front and back ends into PostgreSQL databases**.
 > Let's look at an interesting example. Executing the following SQL in PostgreSQL will start a web server, serving `/www` as the root directory of a web server:
 > My god, PostgreSQL database actually pulled up an HTTP server, running on port `8080` by default! You can use it as Nginx!
 > Besides implementing httpd, he also implemented many "standard libraries" as PG extensions, including a complete package of 33 extension plugins, providing complete web application development capabilities within PostgreSQL!
-
-
 
 --------
 
@@ -67,8 +62,6 @@ So-called database sharding, multi-region multi-center, active-active across reg
 
 No matter how business architectures are twisted, the underlying fundamentals remain constant. Databases being the core of business architecture has long been self-evident consensus.
 But what if we go further and **treat databases as business architecture itself**?
-
-
 
 --------
 
@@ -103,11 +96,7 @@ Users familiar with Oracle might find this somewhat similar to Oracle Apex. But 
 
 ![](pl.png)
 
-
-
 Besides the `httpd` extension here, Omnigres also provides another 33 extension plugins. This complete extension suite provides complete web application development capabilities within PostgreSQL!
-
-
 
 --------
 
@@ -128,11 +117,6 @@ And at that time (2017), databases were usually the performance bottleneck of en
 But times have changed. LLM emergence and hardware development make this approach much more feasible:
 GPT has reached the level of skilled mid-to-senior developers who can write stored procedures proficiently, while hardware following Moore's Law has pushed single-machine performance to incredible levels.
 Therefore, putting business logic into databases, even making databases become entire business architectures themselves, becomes a very worthwhile practice to explore in the current era.
-
-
-
-
-
 
 --------
 
@@ -156,8 +140,6 @@ Of course, there might be even more radical attempts - for example, Stonebraker'
 
 This might mean the pendulum in software architecture is swinging back to simplicity and common sense - frontends bypassing fancy middleware to directly access databases, spiraling back to original C/S and B/S architectures.
 Or as Nadella said, Agents could directly bypass middlemen, replacing front and back ends and software to read and write databases - a new A(gent)/D(atabase) architecture wouldn't be impossible.
-
-
 
 --------
 

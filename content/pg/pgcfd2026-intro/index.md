@@ -14,7 +14,6 @@ PGConf.Dev 是 PostgreSQL 全球开发者大会，前身是 PGCon。它是核心
 
 今天的议程更偏社区、工作组和开放讨论；5 月 20 日、21 日两天，则是三个厅并行的正式 Session，从核心 Patch、查询优化、逻辑复制，一路聊到扩展、生态和社区。照例，老冯这两天还在赶 PPT 和演讲稿——希望能给到场的朋友留下点印象，别让大家在台下打瞌睡就好。
 
-
 ## 我的话题：Extensions for Everyone
 
 这次我有一个正式演讲，题目是 **Extensions for Everyone**，安排在 **5 月 20 日（周三）16:00–16:25，Canfor 厅（1600）**。
@@ -22,7 +21,6 @@ PGConf.Dev 是 PostgreSQL 全球开发者大会，前身是 PGCon。它是核心
 主题不用绕弯子。作为一个常年在一线折腾 PostgreSQL 扩展分发的中国开发者，我想聊聊这几年看到的问题和踩过的坑：扩展生态当下面临的真实挑战是什么，分发为什么这么难，跨发行版打包到底卡在哪里，社区生态又可以往哪个方向再推一步。
 
 Pigsty、PGEXT.CLOUD、`pig` CLI 这一路攒下来的经验，我会尽量系统地讲一遍。
-
 
 ## 中国厂商在这个舞台上
 
@@ -35,7 +33,6 @@ Pigsty、PGEXT.CLOUD、`pig` CLI 这一路攒下来的经验，我会尽量系�
 - **这一届大会**，我们俩都升级到了正式的 25 分钟 Session，而且还撞在同一个时间段，算是挺有意思的巧合。
 
 所以，中国声音出现在这个舞台上，并不是一夜之间的事，而是一步一步走过来的。
-
 
 ## 两场来自中国的正式分享
 
@@ -61,7 +58,6 @@ Grant 要聊的是中国数以万计的 PostgreSQL 用户和全球核心社区�
 
 可惜因为签证没有及时批下来，这场最终没能成行，当前大会官网也已经不再列出这个议题。原本同一时间段的 Fletcher 厅（1900），现在替换成了 Masahiko Sawada 的 **Implementing DDL Deparsing and DDL Replication**；主题相近的新人贡献者成长分享，则是 Labatt 厅（1700）的 **My Journey into PostgreSQL Development**。
 
-
 ## 大会整体安排
 
 这届大会的主题很丰富，节奏也比往届更紧凑一些：
@@ -70,7 +66,6 @@ Grant 要聊的是中国数以万计的 PostgreSQL 用户和全球核心社区�
 - **5 月 20 日（周三）至 5 月 21 日（周四）**：两天主议程，三个厅并行，从核心 Patch、查询优化、逻辑复制，到 Extensions、生态、社区，覆盖面很广。
 - **5 月 22 日（周五）**：经典的 Unconference 日，议程当天由参会者现场提议并投票产生。
 - **周三晚上**：还有 **30 Years of PostgreSQL Retrospective**。Bruce Momjian、Tom Lane、Jan Wieck、Vadim Mikheev 等一众核心人物同台回顾 PostgreSQL 30 年。这种场子，错过就再难凑齐了。
-
 
 大体就这些。这几天大会开始，估计也没太多空闲，但我会尽量把现场一些有意思的片段同步到这边来，包括话题、走廊里的对话，以及一些值得留下来的瞬间。
 

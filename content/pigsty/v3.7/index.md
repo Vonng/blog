@@ -22,7 +22,6 @@ Pigsty v3.7.0 正式发布，带来完整的 PostgreSQL 18 生产级支持，以
 
 ![](magneto-award.jpg)
 
-
 --------
 
 ## PostgreSQL 18 成为默认版本
@@ -32,7 +31,6 @@ Pigsty v3.7.0 正式发布，带来完整的 PostgreSQL 18 生产级支持，以
 PG 18 引入了多项重要特性：时态主键（Temporal Primary Key）、内置 UUIDv7、索引跳跃扫描（Index Skip Scan）、异步 I/O（AIO）、虚拟生成列、EXPLAIN 增强、OAuth 2.0 支持等。如果这些特性符合你的业务需求，现在是升级的好时机。
 
 与此同时，11 月发布的 PG 13.23 将是 PG 13 的最后一个版本，该大版本正式进入 EOL 状态。Pigsty v3.7 是最后一个包含 PG 13 完整扩展支持的版本 —— 所有扩展均已重新编译，但后续将不再更新。
-
 
 --------
 
@@ -59,7 +57,6 @@ PG 18 引入了多项重要特性：时态主键（Temporal Primary Key）、内
 
 ![](magneto-cert.jpg)
 
-
 --------
 
 ## 新增操作系统支持：EL 10 与 Debian 13
@@ -80,7 +77,6 @@ PG 18 引入了多项重要特性：时态主键（Temporal Primary Key）、内
 
 **维护策略调整**：Pigsty 将仅维护各系列最近两个大版本。随着 EL 10 与 Debian 13 的加入，EL 8、Debian 11、Ubuntu 20.04 将不再主动更新（支持不移除），新扩展包与测试流程不再覆盖这些老系统。
 
-
 --------
 
 ## 多内核同步更新
@@ -100,7 +96,6 @@ PG 18 引入了多项重要特性：时态主键（Temporal Primary Key）、内
 
 这些内核均可在新操作系统上平滑使用（Babelfish 除外），进一步巩固了 Pigsty 作为"元发行版"（Meta-Distribution）的定位 —— 一个可以开箱即用体验各种 PostgreSQL 风味的统一平台。
 
-
 --------
 
 ## 参数模板优化
@@ -113,7 +108,6 @@ PG 18 引入了多项重要特性：时态主键（Temporal Primary Key）、内
 - 确保各类扩展拥有充足的 background worker 资源
 - 放宽 OLTP 模板对并行查询的限制
 - 新增维护保养、故障排查、误删恢复等 SOP 文档
-
 
 --------
 
@@ -129,8 +123,6 @@ Pigsty 已成为 PostgreSQL 生态中国开源项目中 Star 数最高的项目�
 - **构建差异化优势**：业界领先的监控系统与最完整的扩展生态
 - **整合生态资源**：融合 Supabase、Percona 等发行版的核心能力
 - **优化开发者体验**：在保证专业性的同时兼顾易用性
-
-
 
 --------
 --------

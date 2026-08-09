@@ -21,14 +21,11 @@ tags: [数据库, MongoDB, PostgreSQL, 技术评论]
 
 然而诚信是商业的根本，“好营销救不了烂芒果”，建立在谎言与忽悠之上的营销不会有好下场。今天我就来带大家看看，MongoDB 营销的锦绣丝绸被套里，填进去的都是些什么烂棉花。
 
-
-
-
 ---------
 
 ## 烂产品靠营销上位
 
-图灵奖得主，数据库祖师爷 Stonebraker 老爷子在最近在 SIGMOD 2024 发表的名著级论文《[What goes around comes around... And Around](https://db.cs.cmu.edu/papers/2024/whatgoesaround-sigmodrec2024.pdf)》中对此有过精辟的评价：“绝对不要低估好营销对**烂产品**的影响 —— **比如 MySQL 与 MongoDB**”。
+图灵奖得主，数据库祖师爷 Stonebraker 老爷子在最近在 SIGMOD 2024 发表的名著级论文《[What goes around comes around... And Around](https://db.cs.cmu.edu/papers/2024/whatgoesaround-sigmodrec2024.pdf)》中对此有过精辟的评价：“绝对不要低估好营销对 **烂产品** 的影响 —— **比如 MySQL 与 MongoDB**”。
 
 ![](stonebraker.png)
 
@@ -43,8 +40,6 @@ tags: [数据库, MongoDB, PostgreSQL, 技术评论]
 
 像这样刻意造假忽悠的案例绝非个例，MongoDB 还在贬低同业产品自抬身价上有诸多记录。例如在官网文章《[从PostgreSQL迁移到MongoDB](https://www.mongodb.com/resources/compare/mongodb-postgresql/dsl-migrating-postgres-to-mongodb)》中，MongoDB 宣称自己是 “**可扩展灵活的新一代现代通用数据库**”，
 而 PostgreSQL 是 “**复杂且容易出错的老旧单片关系数据库**”。完全无视了其实自己在整体的性能，功能，正确性，甚至自己标榜的应对大数据量的吞吐与可伸缩性上完全被 PostgreSQL 吊打的事实。
-
-
 
 -----------
 
@@ -67,15 +62,13 @@ PostgreSQL 在功能上是 MongoDB 的上位替代，所以可以对 MongoDB 的
 （另一被原位兼容的是 [SQL Server](https://mp.weixin.qq.com/s/c2TmMo0DflkSUli1BsLthQ) ）； PongoDB 则是直接在 NodeJS 客户端驱动侧将 PG 仿真成一个 MongoDB。
 此外还有 `mongo_fdw`，可以让 PG 从 MongoDB 中用 SQL 读取数据，`wal2mongo` 将 PG 变更抽取为 BSON。
 
-例如 [**FerretDB**](/pg/ferretdb) 项目通过中间件的方式在 PostgreSQL 集群上实现了 MongoDB 线缆协议兼容性 —— MongoDB 应用甚至都不需要更换客户端驱动，修改业务代码就能迁移到 PostgreSQL 上。（另一被原位线缆兼容的是 [**SQL Server** ](/pg/pg-replace-mssql)）；**PongoDB** 则是直接在 NodeJS 客户端驱动侧将 PG 仿真成一个 MongoDB。此外还有 `mongo_fdw`，可以让 PG 从 MongoDB 中用 SQL 读取数据，`wal2mongo` 将 PG 变更抽取为 BSON。
+例如 [**FerretDB**](/pg/ferretdb) 项目通过中间件的方式在 PostgreSQL 集群上实现了 MongoDB 线缆协议兼容性 —— MongoDB 应用甚至都不需要更换客户端驱动，修改业务代码就能迁移到 PostgreSQL 上。（另一被原位线缆兼容的是 [**SQL Server**](/pg/pg-replace-mssql)）；**PongoDB** 则是直接在 NodeJS 客户端驱动侧将 PG 仿真成一个 MongoDB。此外还有 `mongo_fdw`，可以让 PG 从 MongoDB 中用 SQL 读取数据，`wal2mongo` 将 PG 变更抽取为 BSON。
 
 ![ferret.webp](ferret.webp)
 
-在易用性上，各家云厂商都推出了开箱即用的 PG RDS 服务，想要开源自建也有 [**Pigsty**](https://pigsty.cc/zh/) 这样开箱即用的解决方案，还有 Serverless 的 Neon 更是让PG上手门槛低到一行命令就能直接用起来。 
+在易用性上，各家云厂商都推出了开箱即用的 PG RDS 服务，想要开源自建也有 [**Pigsty**](https://pigsty.cc/zh/) 这样开箱即用的解决方案，还有 Serverless 的 Neon 更是让PG上手门槛低到一行命令就能直接用起来。
 
 此外，相比于 MongoDB 使用的 SSPL 协议（已经不再是一个开源协议了），PostgreSQL 使用的类 BSD 开源协议显然要友善的多，PG可以在不需要软件授权费的情况下，提供更好的上位功能替代 —— Do more pay less! 不赢都难。
-
-
 
 -----------
 
@@ -89,10 +82,9 @@ PostgreSQL 在功能上是 MongoDB 的上位替代，所以可以对 MongoDB 的
 
 这个例子再次体现了 MongoDB 在营销上的脸皮 —— 用一种极其精致的语言艺术，从一大坨 Bullshit 中精心挑选出了一颗未消化的花生米，而一笔带过在正确性/一致性上的各种致命硬伤。
 
-
 -------
 
-另一个有趣的点是**性能**。作为一个专用的文档数据库，**性能** 应当是其相对于通用数据库的杀手级特性。
+另一个有趣的点是 **性能**。作为一个专用的文档数据库，**性能** 应当是其相对于通用数据库的杀手级特性。
 
 先前有一篇《《[从 MongoDB 到 PostgreSQL 的大迁移](https://mp.weixin.qq.com/s/V4V5eTWEb02NBIO5kfZt7A)》引发了 MongoDB 用户的关注，我的用户群里有位朋友 @flyingcrp 问了这样一个问题 —— 为什么PG上的一个插件或者功能点就能顶得上别人一个完整的产品？
 
@@ -109,8 +101,6 @@ PostgreSQL 在功能上是 MongoDB 的上位替代，所以可以对 MongoDB 的
 在当下，[**单机 PostgreSQL 性能**](/pg/pg-performence) 可以轻松 Scale 到几十TB ～ 几百TB数量级，支撑几十万的点写入 QPS 与几百万的点查询 QPS。只用 PostgreSQL 支撑业务到百万日活 / 百万美元营收甚至直接 IPO 都毫无问题。
 
 老实说，MongoDB 的性能已经完全跟不上时代了，而它引以为傲的“内置分片”可伸缩性，[**在软件架构与性能突飞猛进**](/pg/pg-scalability)，[**硬件遵循摩尔定律指数发展**](/cloud/bonus/) 的当下显得毫无意义。
-
-
 
 --------
 
@@ -135,15 +125,13 @@ MongoDB 和 MySQL 属于那种典型的 “面向初学者” 的数据库，针
 
 而趋势是：越来越多的用户在提升的过程中，从 MongoDB 和 MySQL 迁移到了上位替代 PostgreSQL 中。从而成就了新一代世界上最流行的数据库 —— PostgreSQL。
 
-
-
 --------
 
 ## 风评已然臭不可闻
 
 许多使用过 MongoDB 的开发者都对其留下了极其恶劣的印象，包括我自己。我上一次和 MongoDB 打交道是在 2016 年。我们部门先前用 MongoDB 搭建了一套实时统计平台，存放全网应用下载/安装/启动计数器，几 TB 规模的数据。我负责把这套在线业务的 MongoDB 迁移到 PostgreSQL。
 
-在这个过程中，我对 MongoDB 留下了**糟糕的印象** —— 我花费了很多时间清洗 MongoDB 中模式错乱的垃圾数据。包括一些匪夷所思的问题（比如 Collection 里有整本的小说，SQL 注入的脚本，非法的零字符、Unicode码位与Surrogate Pair，各种花里胡哨的模式），堪称是一个史诗级的垃圾箱。
+在这个过程中，我对 MongoDB 留下了 **糟糕的印象** —— 我花费了很多时间清洗 MongoDB 中模式错乱的垃圾数据。包括一些匪夷所思的问题（比如 Collection 里有整本的小说，SQL 注入的脚本，非法的零字符、Unicode码位与Surrogate Pair，各种花里胡哨的模式），堪称是一个史诗级的垃圾箱。
 
 在这个过程中，我也深入研究了 MongoDB 的查询语言，并将其翻译为标准 SQL。我甚至使用 Multicorn 写了一个 MongoDB 的外部数据源包装器 FDW 来做到这一点，顺便还水了篇 [关于 Mongo/HBase FDW 的论文](https://vonng.com/pdf/unified_access_layer_with_postgresql_fdw.pdf)。（比较巧的是，我那时候确实不知道 —— MongoDB 官方竟然也是这么用FDW干分析的！）
 
@@ -184,9 +172,6 @@ MongoDB 和 MySQL 属于那种典型的 “面向初学者” 的数据库，针
 
 ![shotgun.webp](shotgun.webp)
 
-
-
-
 --------
 
 ## MongoDB没有未来
@@ -208,10 +193,5 @@ MongoDB 根本没有与 PostgreSQL 在产品、技术上堂堂正正一战的能
 
 ![stock.png](stock.png)
 
-我认为任何开发者，创业者，投资人都不应该把赌注押在 MongoDB 上 
+我认为任何开发者，创业者，投资人都不应该把赌注押在 MongoDB 上
 —— **这确实是一个没有希望，也没有未来的数据库**。
-
-
-
-
-

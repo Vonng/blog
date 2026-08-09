@@ -20,7 +20,6 @@ Flexibly applying database functionality can easily achieve a 30,000-fold perfor
 |   4   |        GIST         |          4           |  Simplest expression, fully accurate | Simple form, more accurate distance, PostgreSQL specific |
 |   5   | `btree_gist` Compound Index |     1      |  Simplest expression, fully accurate | Simple form, more accurate distance, PostgreSQL specific |
 
-
 ---------------
 
 ## Scenario
@@ -47,7 +46,6 @@ When taking a ride-hailing service and selecting pickup locations, or when order
 Nearest neighbor search is such a commonly used function that optimization benefits are very significant.
 
 Let's start with a specific problem and describe the evolution of implementation methods for this functionality - how to achieve more than 30,000-fold performance improvement.
-
 
 ---------------
 
@@ -159,9 +157,6 @@ In martial arts, nothing beats speed. The internet emphasizes speed - running fa
 How fast is fast enough? One millisecond - that's fast enough. This is also our optimization goal.
 
 Alright, let's get to the meat. Before PostGIS shows its true power, let's first see how far traditional relational databases can go in solving this problem.
-
-
-
 
 ---------------
 
@@ -352,9 +347,6 @@ Let's ignore this annoying problem for now and see if traditional relational dat
 | ![](knn-badcase-1.png)  | ![mage-20180321221805](knn-badcase-2.webp) |
 | Prosperous Wudaokou, 10 shops in 1km easy. |     300km away for one shop, Xinjiang people cry in toilets     |
 
-
-
-
 ---------------
 
 ## LEVEL-3 Compound Index and Clustering
@@ -410,7 +402,6 @@ Improved from 30ms to 10ms, 3x performance improvement
 For traditional relational databases, this is about the limit
 
 Is there an elegant, correct, fast solution?
-
 
 ---------------
 
@@ -499,8 +490,6 @@ Generalized Search Tree - a universal search tree with balanced tree structure. 
 
 Usually topological queries and rough people-circling are suitable for Geometry type, while precise calculations and judgments must use Geography type. Here, sorting by distance requires precise distance, so Geography is used.
 
-
-
 ---------------
 
 ## LEVEL-5 btree_gist
@@ -579,12 +568,6 @@ class GetHandler(http.server.BaseHTTPRequestHandler):
 
 with http.server.HTTPServer(("localhost", 3001), GetHandler) as httpd: httpd.serve_forever()
 ```
-
-
-
-
-
-
 
 ---------------
 

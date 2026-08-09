@@ -11,8 +11,6 @@ tags: [PostgreSQL, PG管理, 日志]
 
 建议配置PostgreSQL的日志格式为CSV，方便分析，而且可以直接导入PostgreSQL数据表中。
 
-
-
 ## 日志相关配置项
 
 ```ini
@@ -32,8 +30,6 @@ track_io_timing =on
 track_functions =all
 track_activity_query_size =16384
 ```
-
-
 
 ## 日志收集
 
@@ -73,10 +69,6 @@ topics:
 - topic: 'log.db'
 ```
 
-
-
-
-
 ## CSV日志格式
 
 很有趣的想法，将CSV日志弄成PostgreSQL表，对于分析而言非常方便。
@@ -114,8 +106,6 @@ create table postgresql_log
 );
 ```
 
-
-
 ## 导入日志
 
 日志是结构良好的CSV，（CSV允许跨行记录），直接使用COPY命令导入即可。
@@ -123,8 +113,6 @@ create table postgresql_log
 ```sql
 COPY postgresql_log FROM '/var/lib/pgsql/data/pg_log/postgresql.log' CSV DELIMITER ',';
 ```
-
-
 
 ## 映射日志
 
@@ -181,12 +169,6 @@ CREATE FOREIGN TABLE IF NOT EXISTS monitor.pg_log_sat() INHERITS (monitor.pg_log
 CREATE FOREIGN TABLE IF NOT EXISTS monitor.pg_log_sun() INHERITS (monitor.pg_log) SERVER pg_log OPTIONS (filename '/pg/data/log/postgresql-Sun.csv', format 'csv');
 
 ```
-
-
-
-
-
-
 
 ## 加工日志
 
@@ -250,4 +232,3 @@ $$
 LANGUAGE plpgsql
 IMMUTABLE;
 ```
-

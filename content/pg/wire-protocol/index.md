@@ -17,13 +17,13 @@ tags: [PostgreSQL, PG开发, PG内核]
 
 启动阶段的基本流程如下所示：
 
-* 客户端发送一条`StartupMessage (F)`向服务端发起连接请求
+* 客户端发送一条 `StartupMessage (F)` 向服务端发起连接请求
 
-  载荷包括`0x30000`的Int32版本号魔数，以及一系列kv结构的运行时参数（NULL0分割，必须参数为`user`），
+  载荷包括 `0x30000` 的Int32版本号魔数，以及一系列kv结构的运行时参数（NULL0分割，必须参数为 `user`），
 
-* 客户端等待服务端响应，主要是等待服务端发送的`ReadyForQuery (Z)`事件，该事件代表服务端已经准备好接收请求。
+* 客户端等待服务端响应，主要是等待服务端发送的 `ReadyForQuery (Z)` 事件，该事件代表服务端已经准备好接收请求。
 
-上面是连接建立过程中最主要的两个事件，其他事件包括包括认证消息 `AuthenticationXXX (R)` ，后端密钥消息 `BackendKeyData (K)`，错误消息`ErrorResponse (E)`，一系列上下文无关消息（`NoticeResponse (N)`，`NotificationResponse (A)`，`ParameterStatus(S)`）
+上面是连接建立过程中最主要的两个事件，其他事件包括包括认证消息 `AuthenticationXXX (R)` ，后端密钥消息 `BackendKeyData (K)`，错误消息 `ErrorResponse (E)`，一系列上下文无关消息（`NoticeResponse (N)`，`NotificationResponse (A)`，`ParameterStatus(S)`）
 
 我们可以编写一个go程序模拟这一过程：
 
@@ -104,15 +104,11 @@ func main() {
 [QUERY] query complete
 ```
 
-
-
-
-
 ------------------
 
 ## 连接代理
 
- 可以在`jackc/pgx/pgproto3`的基础上，很轻松地编写一些中间件。例如下面的代码就是一个非常简单的“连接代理”：
+ 可以在 `jackc/pgx/pgproto3` 的基础上，很轻松地编写一些中间件。例如下面的代码就是一个非常简单的“连接代理”：
 
 ```sql
 package main
@@ -221,4 +217,3 @@ $ psql postgres://127.0.0.1:5433/data?sslmode=disable -c 'SELECT * FROM pg_stat_
 [F2B] *pgproto3.Terminate &{}
 
 ```
-

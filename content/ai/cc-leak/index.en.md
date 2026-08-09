@@ -15,7 +15,6 @@ Good news: Anthropic's latest flagship coding agent, Claude Code, just had its e
 The GitHub repo already has over a thousand stars, 4,700-plus source files, and more than half a million lines of code, all for free. No paywall, no NDA, just click and read.
 The strongest agent implementation on the market, fully exposed. TypeScript, tools, multi-agent coordination, system prompts, even the internal codename KAIROS. Everything is on the table.
 
-
 --------
 
 ## Is This an April Fools' Joke?
@@ -29,8 +28,6 @@ This is not Anthropic generously releasing Claude Code under Apache 2.0. Someone
 ![src-tree.webp](src-tree.webp)
 
 This is not "open source." This is **public by accident**.
-
-
 
 -----
 
@@ -51,7 +48,6 @@ More interestingly, at the time of writing, NPM already showed the latest versio
 
 It reminds me of an old line: **history does not repeat itself, but it does rhyme.**
 
-
 -----
 
 ## What Did the Last Leak Trigger?
@@ -69,8 +65,6 @@ Then Claude Code's source landed in front of everyone:
 None of this was rocket science. But it told the whole industry: **this is how SOTA does it. That's it?**
 
 So everyone followed. That wave of agent tooling owes more than a little to Claude Code's leak, even if Anthropic would never want to admit it.
-
-
 
 ---
 
@@ -105,7 +99,6 @@ Give it a few days and there will probably be another wave of coding assistants.
 
 > https://zread.ai/instructkr/claude-code/1-overview
 
-
 ---
 
 ## Anthropic's Recent Talent for Leaking
@@ -117,7 +110,6 @@ But the context makes it more interesting. Just last week, on March 26, Fortune 
 Go back a little further and, this January, Check Point disclosed a Claude Code security bug: a malicious repo could exfiltrate a user's API key through the `ANTHROPIC_BASE_URL` setting in `.claude/settings.json`. The user only had to open the repository.
 
 Source Map leak, CMS data-lake leak, security bug... for a company that brands itself around "AI Safety," Anthropic's Q1 2026 had a certain performance-art quality to it.
-
 
 ---
 
@@ -139,7 +131,6 @@ One `npm install`, two seconds, and the malware was already sending data back to
 
 Honestly, the tricks that come out of the JS and TS world are sometimes hard to believe.
 
-
 -----
 
 ## So What Is the Impact?
@@ -160,7 +151,6 @@ More people can now audit Claude Code's permission model, hooks, and MCP trust b
 
 Of course, Claude also gets its moment of self-reflection. I asked Claude Opus to comment on the leak, and it seemed oddly pleased about the whole thing.
 
-
 ---
 
 ## A Farce on the Eve of April Fools'
@@ -172,8 +162,6 @@ But the truth is: the full Claude Code source really did end up public on GitHub
 **That may be the best April Fools' joke of 2026: it is real.**
 
 History says Anthropic will likely follow the same script as last time: delete, clean up, block, and move on. So if you want a copy, you should probably grab one while you still can.
-
-
 
 ---
 

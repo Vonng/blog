@@ -24,7 +24,7 @@ Pigsty v4.2 正式发布，紧随 PostgreSQL 紧急号外小版本更新。
 
 PostgreSQL 以极致的可扩展性闻名。生态中有超过 1000 个扩展，Pigsty 则提供了其中 461 个开箱即用。
 
-但有些能力是扩展做不到的 —— 比如**定制语法**。如果你想在 PostgreSQL 里原生使用 Oracle 的 PL/SQL、SQL Server 的 T-SQL、MongoDB 的 BSON 协议、或者 Cypher 图查询语法，而不是通过函数调用来模拟，那你就需要修改内核。这也是为什么 Pigsty 不仅提供生态中数量最多的扩展，还要支持不同的内核分支。
+但有些能力是扩展做不到的 —— 比如 **定制语法**。如果你想在 PostgreSQL 里原生使用 Oracle 的 PL/SQL、SQL Server 的 T-SQL、MongoDB 的 BSON 协议、或者 Cypher 图查询语法，而不是通过函数调用来模拟，那你就需要修改内核。这也是为什么 Pigsty 不仅提供生态中数量最多的扩展，还要支持不同的内核分支。
 
 在 Pigsty 里使用这些内核，和使用原版 PostgreSQL 几乎没有区别 —— 同样的部署流程、同样的监控面板、同样的高可用机制、同样的备份恢复。区别只是配置文件里改一个 `pg_mode` 的值。一行配置的差异，工程上的大一统。
 
@@ -121,13 +121,13 @@ Cloudberry 2.0 发布后就不再提供官方二进制包了 —— 之前 1.6 �
 
 ## Babelfish：SQL Server 兼容
 
-说完三个新增内核，再来聊三个**重建**的内核。
+说完三个新增内核，再来聊三个 **重建** 的内核。
 
 Babelfish 是 AWS 开源的 SQL Server 兼容层 —— 让 PostgreSQL 理解 T-SQL 语法和 TDS 协议，你的 SQL Server 应用不改驱动、不改大部分查询，就能连上 PostgreSQL 跑起来。好项目，但打包构建实在是复杂，复杂到专门有一个开源项目 WiltonDB 就是干这件事的。
 
 老冯之前偷懒，直接用了 WiltonDB 打的包。说实话，那个包的质量一直让我不太舒服：不支持 Debian 全系列和 EL10，依赖体系跟标准 PG 不一样，而且版本还停留在 PG15 —— 但 Babelfish 上游都已经支持 PG17 了。
 
-这次一不做二不休，自己打。有了前面几个内核的打包经验，这个反而简单了 —— 把 Babelfish 的四个核心扩展打成一个包，配合一个 Patch 内核包，开箱即用。现在**不再依赖外部 WiltonDB 仓库**，直接从 Pigsty 仓库安装即可。版本升级到了 **Babelfish 5.5 + PG17**。
+这次一不做二不休，自己打。有了前面几个内核的打包经验，这个反而简单了 —— 把 Babelfish 的四个核心扩展打成一个包，配合一个 Patch 内核包，开箱即用。现在 **不再依赖外部 WiltonDB 仓库**，直接从 Pigsty 仓库安装即可。版本升级到了 **Babelfish 5.5 + PG17**。
 
 在 Pigsty 中使用：`configure -c mssql`。
 
@@ -168,7 +168,7 @@ OpenHalo 是重建的第三个内核。它提供了 MySQL 线缆协议兼容 —
 
 **Percona TDE**（`pg_mode: tde`）—— 透明数据加密，满足合规场景中"落盘加密"的刚需。更新节奏稍慢于 PG 主线，后续会跟进到最新版本。
 
-**PolarDB**（`pg_mode: polar`）—— 阿里开源的共享存储架构 PG 内核，更新了小版本。值得一提的是，本版本中我们已经**去掉了带信创资质的 PolarDB-O 的支持**，开源版只保留社区 PG 版本。
+**PolarDB**（`pg_mode: polar`）—— 阿里开源的共享存储架构 PG 内核，更新了小版本。值得一提的是，本版本中我们已经 **去掉了带信创资质的 PolarDB-O 的支持**，开源版只保留社区 PG 版本。
 
 **Citus**（`pg_mode: citus`）—— 微软出品的分布式扩展，正式发布 14.0.0 版本，支持 PG 18。
 
@@ -180,7 +180,7 @@ OpenHalo 是重建的第三个内核。它提供了 MySQL 线缆协议兼容 —
 
 ## 一份配置，十核齐飞
 
-说了这么多内核，最好玩的事情其实是这个：我们做了一个 `demo/kernels.yml` 配置文件 —— 如果你有 10 台虚拟机，可以用这个模板**一键拉起 10 个不同的 PG 内核**。
+说了这么多内核，最好玩的事情其实是这个：我们做了一个 `demo/kernels.yml` 配置文件 —— 如果你有 10 台虚拟机，可以用这个模板 **一键拉起 10 个不同的 PG 内核**。
 
 每个集群都有独立的监控面板、高可用、备份恢复，就像管理 10 个标准 PostgreSQL 一样。纯属炫技，但也是一个很好的参考模板：如果你想在一套 Pigsty 里混合部署多种内核，具体该怎么配置。
 
@@ -198,11 +198,7 @@ OpenHalo 是重建的第三个内核。它提供了 MySQL 线缆协议兼容 —
 
 为什么？因为老冯一直觉得"企业级"这个词听起来比"云"还古老，甚至带有一种"传统杀猪盘二次方"的气质。所以宁可叫"Battery-Included"、叫"FLOSS RDS"，也不愿意把这个词放上去。后来我想明白了：不应该因为这个词被别人用烂了，就回避一个本来属于自己的描述。Pigsty 的高可用、备份恢复、监控告警、安全加固、合规能力，每一项都经得起和商业方案正面对比。实力到了，该戴的帽子就戴上，不亏心。
 
-另一个变化是**去掉了"RDS 替代"** 的说法。以前叫自己"开源 RDS 替代"，是一种借力定位——用人们熟悉的品类锚点来解释"Pigsty 是什么"。但到了今天，我们有信心说：不需要用别人来定义自己。Pigsty 就是 Pigsty，一个企业级的 PostgreSQL 发行版。在 PostgreSQL 发行版的赛道上 —— Linux 原生这条路线里 —— Pigsty 就是最能打的。
-
-
-
-
+另一个变化是 **去掉了"RDS 替代"** 的说法。以前叫自己"开源 RDS 替代"，是一种借力定位——用人们熟悉的品类锚点来解释"Pigsty 是什么"。但到了今天，我们有信心说：不需要用别人来定义自己。Pigsty 就是 Pigsty，一个企业级的 PostgreSQL 发行版。在 PostgreSQL 发行版的赛道上 —— Linux 原生这条路线里 —— Pigsty 就是最能打的。
 
 ------
 
@@ -236,11 +232,6 @@ Pigsty 作为开源项目，我觉得已经达到了相当完善的程度。后�
 
 Pigsty 本身会继续跟着 PG 小版本的节奏走。下个版本可能会正式补上 Cloudberry 的部署剧本，加上本地 SMTP 服务器支持（maddy / stalwart）。大的新功能暂时不急 —— 当前这个架构持续稳定地跑下去，就挺好。
 
-
-
-
-
-
 --------
 
 ## v4.2.0 提交注记
@@ -265,7 +256,6 @@ Pigsty 本身会继续跟着 PG 小版本的节奏走。下个版本可能会正
 - Rich/Sample 模板显式补全 `dbuser_meta` 默认值；`node.sh` 中 systemd 自动补全逻辑简化。
 - `pgbackrest` 初始化增加重试（2 次、间隔 5 秒），缓解 `stanza-create` 与 `archive-push` 锁竞争失败。
 - Vibe 模板更新：内置 `@anthropic-ai/claude-code`、`@openai/codex`、`happy-coder` 等 npm 工具，默认示例补入 `age` 扩展。
-
 
 **PG 软件更新**
 
@@ -339,7 +329,6 @@ Pigsty 本身会继续跟着 PG 小版本的节奏走。下个版本可能会正
 | `stalwart`                   | -              | 0.15.5         |
 | `maddy`                      | -              | 0.8.2          |
 
-
 **API变化**
 
 - `pg_mode` 增加 `agens` 与 `pgedge`。
@@ -375,9 +364,6 @@ c98972fe9226657ac1faa7b72a22498b  pigsty-pkg-v4.2.0.u22.aarch64.tgz
 143e404f4681c7d0bbd78ef7982cd652  pigsty-pkg-v4.2.0.u24.aarch64.tgz
 00dfa86f477f3adff984906211ab3190  pigsty-pkg-v4.2.0.u24.x86_64.tgz
 ```
-
-
-
 
 ------
 
@@ -423,7 +409,6 @@ PGDG YUM 仓库已经归档移除 [pg13](https://yum.postgresql.org/news/pg13-en
 | pg_eviltransform | -       | 0.0.2   | 新增扩展               |
 | pg_qos           | -       | 1.0.0   | 新增扩展，QoS 资源治理      |
 
-
 **基础设施软件包更新**
 
 | 名称                           | 旧版本            | 新版本            | 备注 |
@@ -445,7 +430,6 @@ PGDG YUM 仓库已经归档移除 [pg13](https://yum.postgresql.org/news/pg13-en
 | `gost`                       | -              | 2.12.0         | 新增 |
 | `sabiql`                     | -              | 1.6.2          | 新增 |
 | `agentsview`                 | -              | 0.10.0         | 新增 |
-
 
 **校验和**
 

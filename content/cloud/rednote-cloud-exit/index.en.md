@@ -30,7 +30,6 @@ With over 300 million MAU, RedNote isn't just "China's Instagram"—it's essenti
 
 So the question stands: **"Did RedNote actually exit the cloud?"**
 
-
 --------
 
 ## What Did RedNote Actually Say?
@@ -56,7 +55,6 @@ The reality is that RedNote's current strategy is crystal clear: **"self-built d
 ![idc-en.jpg](idc-en.jpg)
 
 So here's the question: when a company elevates self-built infrastructure to the top of the stack, is that "cloud exit" or not?
-
 
 --------
 
@@ -84,7 +82,6 @@ When a company demotes public cloud from "infrastructure" to "utility-like tempo
 If we're going to wait for 100% account termination before calling it cloud exit, then virtually no major company in the world has ever "left the cloud." Using the neutral term "hybrid cloud" to obscure the fact that core assets are flowing out is just wordplay.
 
 Bottom line: RedNote went from self-identifying as "born on the cloud" to implementing a **"self-built first"** hybrid architecture. If that's not cloud exit, what is?
-
 
 --------
 
@@ -115,7 +112,6 @@ Beyond the explicit bill, there's the more insidious **"lock-in tax."** When you
 
 For a company seeking an IPO or higher valuation, shaving billions in annual costs through architectural optimization flows straight to the bottom line. With typical PE multiples, that translates to tens of billions in market cap. Staying married to public cloud is arguably a dereliction of fiduciary duty to shareholders.
 
-
 --------
 
 ## Reliability: Don't Put All Your Eggs in One Basket
@@ -145,7 +141,6 @@ It gave them a firsthand taste of what "all eggs in one basket" really means—*
 
 When you're paying massive "protection money" every year but still worry about getting wiped out in one stroke, building your own data center and owning your infrastructure becomes the only source of real security.
 
-
 --------
 
 ## The Lesson: An Infra Coming-of-Age
@@ -163,7 +158,6 @@ Of course, the cloud exit journey isn't all smooth sailing. RedNote undoubtedly 
 **Data gravity**: Compute is easy to move; data is hard. RedNote has massive data lakes and warehouses. If those data workloads were deeply coupled with Alibaba's big data platform (MaxCompute/ODPS, etc.) early on, migrating them back to self-built big data clusters means enormous data transfer costs and compatibility headaches. This is probably why RedNote maintains a "hybrid" posture—[the data layer is far more complex than compute](/cloud/finops).
 
 The path isn't easy. But RedNote's choice proves one thing: **Once you're big enough, you've earned the right to become your own cloud.**
-
 
 --------
 

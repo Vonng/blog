@@ -45,7 +45,7 @@ PostgreSQL 17 现在可以同时利用 Planner 的统计信息与 [公共表表�
 
 ### 分区和分布式工作负载增强
 
-PostgreSQL 17  的分区管理更为灵活，新增了**拆分**与**合并**分区的能力，并允许分区表使用 **身份列（Identity Column）** 和**排它约束**（Exclude Constraints）。
+PostgreSQL 17  的分区管理更为灵活，新增了 **拆分** 与 **合并** 分区的能力，并允许分区表使用 **身份列（Identity Column）** 和 **排它约束**（Exclude Constraints）。
 此外，[PostgreSQL 外部数据包装器](https://www.postgresql.org/docs/17/postgres-fdw.html)（[`postgres_fdw`](https://www.postgresql.org/docs/17/postgres-fdw.html)）现在可以将 `EXISTS` 和 `IN` 子查询下推到远端服务器，从而提升性能。
 
 PostgreSQL 17 为逻辑复制添加了新功能，使其在高可用架构和大版本升级中更加易用。
@@ -99,8 +99,6 @@ PostgreSQL 17 标准化了 [`pg_stat_statements`](https://www.postgresql.org/doc
 PostgreSQL 17 还引入了一个新视图，[`pg_wait_events`](https://www.postgresql.org/docs/17/view-pg-wait-events.html)，提供关于等待事件的描述，可以与 `pg_stat_activity` 共同使用，以便深入了解活动会话出现等待的原因。
 此外，[`pg_stat_bgwriter`](https://www.postgresql.org/docs/17/monitoring-stats.html#MONITORING-PG-STAT-BGWRITER-VIEW) 视图中的一些信息，现在被拆分到新的 [`pg_stat_checkpointer`](https://www.postgresql.org/docs/17/monitoring-stats.html#MONITORING-PG-STAT-CHECKPOINTER-VIEW) 视图中了。
 
-
-
 ------
 
 ## 其他功能
@@ -108,8 +106,6 @@ PostgreSQL 17 还引入了一个新视图，[`pg_wait_events`](https://www.postg
 PostgreSQL 17 还有许多其他新功能与改进，很多改进都可能会对您的用例有所帮助。请参阅[发布说明](https://www.postgresql.org/docs/17/release-17.html)以获取完整的新功能和变更列表：
 
 https://www.postgresql.org/docs/17/release-17.html
-
-
 
 ------
 
@@ -121,14 +117,11 @@ PostgreSQL wiki 中公开提供了[开放问题](https://wiki.postgresql.org/wik
 
 https://www.postgresql.org/account/submitbug/
 
-
-
 ------
 
 ## Beta 时间表
 
 这是 PostgreSQL 17 的第一个 Beta 版本。PostgreSQL 项目将根据测试需要发布更多的 Beta 版本，随后是一或多个 RC 版本，最终版本大约会在 2024 年 9 月或 10 月发布。详细信息请参阅 [Beta 测试](https://www.postgresql.org/developer/beta/) 页面。
-
 
 ------
 

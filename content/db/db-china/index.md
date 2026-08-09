@@ -18,7 +18,7 @@ tags: [数据库, 国产数据库, 技术评论]
 
 评价一个数据库“能不能打”有许多种方式，但 “**流行度**” 是最常见的指标。对一项技术而言，流行度决定了用户的规模与生态的繁荣程度，唯有这种最终存在意义上的结果才能让所有人心服口服。
 
-关于数据库流行度这个问题，我认为有三份数据可以作为参考：[**StackOverflow 全球开发者调研**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485933&idx=3&sn=ea360aa7a59a4cd23ad5f9a9f415a0a0&chksm=fe4b3c36c93cb520bda4596136e927d7cf92c597a76c04077c256588b2428202bdb7f004c08b&scene=21#wechat_redirect)[1]，**DB-Engine 数据库流行度排行榜**[2]，以及**墨天轮国产数据库排行榜**[3]。
+关于数据库流行度这个问题，我认为有三份数据可以作为参考：[**StackOverflow 全球开发者调研**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485933&idx=3&sn=ea360aa7a59a4cd23ad5f9a9f415a0a0&chksm=fe4b3c36c93cb520bda4596136e927d7cf92c597a76c04077c256588b2428202bdb7f004c08b&scene=21#wechat_redirect) [1]，**DB-Engine 数据库流行度排行榜**[2]，以及 **墨天轮国产数据库排行榜**[3]。
 
 ------
 
@@ -28,11 +28,11 @@ tags: [数据库, 国产数据库, 技术评论]
 
 ------
 
-其次是 **DB-Engine** 数据库流行度排行榜， DB-Engine 属于综合性热搜指数，将 Google, Bing, Google Trends，StackOverflow，DBA Stack Exchange，Indeed, Simply Hired， LinkedIn，Twitter 上的间接数据合成了一个**热搜指数**。
+其次是 **DB-Engine** 数据库流行度排行榜， DB-Engine 属于综合性热搜指数，将 Google, Bing, Google Trends，StackOverflow，DBA Stack Exchange，Indeed, Simply Hired， LinkedIn，Twitter 上的间接数据合成了一个 **热搜指数**。
 
 ![db-china-2.png](db-china-2.png)
 
-热度指数有着很好的 **纵向可比性** —— 我们可以用它来判断某个数据库的流行度走势 —— 是更流行了还是更过气了，因为评分标准是一样的。但在 **横向可比性** 上表现不佳 —— 例如你没办法细分用户搜索的目的。所以热度指标在**横向对比**不同数据库时只能作为一个模糊的参考 —— 但在**数量级**上的准确性还是OK的。
+热度指数有着很好的 **纵向可比性** —— 我们可以用它来判断某个数据库的流行度走势 —— 是更流行了还是更过气了，因为评分标准是一样的。但在 **横向可比性** 上表现不佳 —— 例如你没办法细分用户搜索的目的。所以热度指标在 **横向对比** 不同数据库时只能作为一个模糊的参考 —— 但在 **数量级** 上的准确性还是OK的。
 
 ------
 
@@ -46,19 +46,17 @@ tags: [数据库, 国产数据库, 技术评论]
 
 ## 锚点：TiDB
 
-**TiDB** 是唯一一个，同时出现在三个榜单里的数据库，因此可以作为**锚点**。
+**TiDB** 是唯一一个，同时出现在三个榜单里的数据库，因此可以作为 **锚点**。
 
 在 [StackOverflow 2023 调研](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485933&idx=3&sn=ea360aa7a59a4cd23ad5f9a9f415a0a0&chksm=fe4b3c36c93cb520bda4596136e927d7cf92c597a76c04077c256588b2428202bdb7f004c08b&scene=21#wechat_redirect) 中，TiDB 作为最后一名，首次出现在数据库流行度榜单里，也是唯一入选的 “国产数据库”。图左中，TiDB 的开发者使用率为 **0.20%**，与排名第一的 PostgreSQL (45.55%) 和排名第二的 MySQL (41.09%) 相比，流行度相差了大约 **两三百倍**。
 
 ![db-china-4.png](db-china-4.png)
 
-
 ------
 
-第二份 DB-Engine 数据可以交叉印证这一点 —— TiDB 在 DB-Engine 上的评分是国产数据库中最高的 —— 在2024年4月份，为 **5.14** 分。关系型数据库四大天王（ [**PostgreSQL**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487055&idx=1&sn=9d7bd8b6d9b07478dba7f87d0a663535&scene=21#wechat_redirect)，[**MySQL**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486710&idx=1&sn=261e4754df6c85954b50d8f68f277abe&scene=21#wechat_redirect)，Oracle，SQL Server）相比，也是**小几百倍**的差距。
+第二份 DB-Engine 数据可以交叉印证这一点 —— TiDB 在 DB-Engine 上的评分是国产数据库中最高的 —— 在2024年4月份，为 **5.14** 分。关系型数据库四大天王（ [**PostgreSQL**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487055&idx=1&sn=9d7bd8b6d9b07478dba7f87d0a663535&scene=21#wechat_redirect)，[**MySQL**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486710&idx=1&sn=261e4754df6c85954b50d8f68f277abe&scene=21#wechat_redirect)，Oracle，SQL Server）相比，也是 **小几百倍** 的差距。
 
 ![db-china-5.png](db-china-5.png)
-
 
 ------
 
@@ -72,13 +70,11 @@ tags: [数据库, 国产数据库, 技术评论]
 
 ------
 
-
 ## 微不足道的战五渣
 
 在 DB-Engine 收录的全球 **478** 款数据库中，可以找到 **46** 款列入墨天轮国产数据库名单的产品。将其过去十二年间的流行度绘制在图表上，得到下图 —— 乍看之下，好一片 “欣欣向荣”，蓬勃发展的势头。
 
 ![db-china-7.png](db-china-7.png)
-
 
 ------
 
@@ -92,21 +88,17 @@ tags: [数据库, 国产数据库, 技术评论]
 
 ------
 
-如果把所有国产数据库视作一个整体，在这个榜单里面可以凭 34.7 分排到第 26 名，占总分数的**千分之五**。（最上面一条黑带）
+如果把所有国产数据库视作一个整体，在这个榜单里面可以凭 34.7 分排到第 26 名，占总分数的 **千分之五**。（最上面一条黑带）
 
 ![db-china-9.png](db-china-9.png)
-
 
 这个数字，差不多就是国产数据库国际影响力（DB-Engine）的一个摘要概括：**尽管在数量上占了 1/10**（如果以墨天轮算可以近半），**但总影响力只有千分之五。其中的最强者 TiDB，战斗力也只有5 ……**
 
 ![db-china-10.png](db-china-10.png)
 
-
 当然再次强调，热度/指数类数据横向可比性非常一般，仅适合在数量级层面用作参考 —— 但这也足够得出一些结论了……
 
 ![db-china-11.jpeg](db-china-11.jpeg)
-
-
 
 ------
 
@@ -120,7 +112,6 @@ tags: [数据库, 国产数据库, 技术评论]
 
 ![db-china-13.png](db-china-13.png)
 
-
 ------
 
 **但过气这件事，并非国产数据库所独有** — **其实绝大多数的数据库其实都正在过气中**。DB-Engine 过去12 年中的流行度数据趋势可以揭示这一点 —— 尽管 DB-Engine 热度指标的的横向可比性很一般，但纵向可比性还是很不错的 —— 因此在判断流行 & 过气趋势上仍然有很大的参考价值。
@@ -130,7 +121,6 @@ tags: [数据库, 国产数据库, 技术评论]
 **如果我们将目光聚焦在最近三年，不难发现在所有数据库中，只有 PostgreSQL 与 Snowflake 的流行度有显著增长**。而最大的输家是 SQL Server，Oracle，MySQL，与 MongoDB …… 。分析数仓类组件（广义上的数据库）在最近三年有少量增长，**而绝大部分其他数据库都处在过气通道中**。
 
 ![db-china-14.png](db-china-14.png)
-
 
 ------
 
@@ -146,12 +136,9 @@ NoSQL 运动的兴起，让 MongoDB ，ElasticSearch，Redis 在 2012 - 2022 互
 
 ![db-china-16.png](db-china-16.png)
 
-
 **这些数据为我们揭示出数据库领域的基本格局：除了 PostgreSQL 之外的主要数据库都在过气中…**
 
 ![db-china-17.png](db-china-17.png)
-
-
 
 ------
 
@@ -162,7 +149,6 @@ NoSQL 运动的兴起，让 MongoDB ，ElasticSearch，Redis 在 2012 - 2022 互
 对于这个问题，我在 《[**PostgreSQL 正在吞噬数据库世界**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487055&idx=1&sn=9d7bd8b6d9b07478dba7f87d0a663535&scene=21#wechat_redirect)》中提出了一种简单的解释：**PostgreSQL 正在凭借其强大的扩展插件生态，内化吞噬整个数据库世界**。根据奥卡姆剃刀原理 —— 最简单的解释往往也最接近真相。
 
 ![db-china-18.png](db-china-18.png)
-
 
 ------
 
@@ -182,7 +168,6 @@ Linux 内核一统服务器操作系统天下后，曾经的同台竞争者 BSD�
 
 [![db-china-20.png](db-china-20.png)](https://mp.weixin.qq.com/s/W7EtaJAw3k2Fwk7vuatkdQ)
 
-
 ------
 
 **国产数据库的竞争，变成了 PostgreSQL / MySQL 生态内部的竞争**。一个国产数据库能打与否，取决于其 “**含P量**” —— 含有 PostgreSQL 内核的纯度与版本新鲜度。版本越新，魔改越少，附加值越高，使用价值就越高，也就越能打。
@@ -197,8 +182,6 @@ Linux 内核一统服务器操作系统天下后，曾经的同台竞争者 BSD�
 
 ![db-china-21.png](db-china-21.png)
 
-
-
 ------
 
 在这场竞赛中，公有云 RDS 拿到了第一张入场券。而尝试在本地提供更好、更便宜、 RDS for PostgreSQL 的 [**Pigsty**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485518&idx=1&sn=3d5f3c753facc829b2300a15df50d237&chksm=fe4b3d95c93cb4833b8e80433cff46a893f939154be60a2a24ee96598f96b32271301abfda1f&scene=21#wechat_redirect) 对云数据库这种模式提出了挑战，同时还有十几款尝试用 云原生方式解决 RDS 本地化挑战的 [**Kubernetes Operator**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486587&idx=1&sn=16521d6854711a4fe429464aeb2df6bd&scene=21#wechat_redirect) 正在摩拳擦掌，跃跃欲试，要把 RDS 拉下马来。
@@ -209,14 +192,11 @@ Linux 内核一统服务器操作系统天下后，曾经的同台竞争者 BSD�
 
 **数据库领域正在从寒武纪大爆发走向侏罗纪大灭绝**，**在这一过程中，1% 的种子将会继承 99% 的未来，并演化出新的生态与规则**。我希望数据库用户们可以明智地选择与决策，站在未来与希望的一侧，而不要把生命浪费在没有前途的事物上，比如……
 
-
-
 ------
 
 ### References
 
 注：本文使用的图表与数据，公开发布于 Pigsty Demo 站点：https://demo.pigsty.cc/d/db-analysis/
-
 
 `[1]` StackOverflow 全球开发者调研: *https://survey.stackoverflow.co/2023/?utm_source=so-owned&utm_medium=blog&utm_campaign=dev-survey-results-2023&utm_content=survey-results#most-popular-technologies-database-prof*
 

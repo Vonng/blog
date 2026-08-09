@@ -18,13 +18,13 @@ The second edition isn’t a light edit. Chapter 1 is brand new, and many others
 Bottom line: this book won’t make you a master of any specific database, but it gives you the conceptual map to navigate the field, recognize the real problems, and spot BS instantly. Even veterans get something out of revisiting it, and the updated references are a fantastic jumping-off point for deeper study.
 
 > Most modern apps are data-intensive. This book walks from storage internals to architecture with clarity. Architects, DBAs, backend engineers, PMs—all win.
-> 
+>
 > It blends theory and practice. Almost every scenario it describes has smacked me in real life. “If only I’d read this earlier…”
-> 
+>
 > It explains origins instead of dumping definitions, traces evolution instead of stacking facts, makes complex ideas approachable without losing depth. The citations at each chapter’s end are gold.
-> 
+>
 > It arms you with a framework to design, implement, and critique data systems. Once you internalize it, you can duel “experts” with confidence 🤣.
-> 
+>
 > Back in 2017 this was the best tech book I read. Leaving it untranslated felt wrong. Translating was my way of paying it forward—and a great excuse to sharpen both English and Chinese.
 
 I finished the first translation in 2017. Eight years flew by. That was when I pivoted from “full-stack engineer” to PostgreSQL DBA; DDIA nudged me down that path. Translating it opened doors, built reputation, and gave me my first taste of open source fun.

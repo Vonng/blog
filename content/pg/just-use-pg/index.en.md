@@ -5,7 +5,7 @@ showAuthor: false
 author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat Official Account](https://mp.weixin.qq.com/s/bx2dRxlrtLcM6AD2qsplQQ)
 summary: >
-  Whether **production databases** should be containerized remains a controversial topic. From a DBA's perspective, I believe that **currently**, putting production databases in Docker is still a bad idea.
+  Whether production databases should be containerized remains a controversial topic. From a DBA's perspective, I believe that currently, putting production databases in Docker is still a bad idea.
 tags: [PostgreSQL,PG-Ecosystem]
 ---
 
@@ -24,7 +24,6 @@ In helping many startups, I've observed that far more people overcomplicate thei
 ------
 
 ### **Simply put, everything can be solved with PostgreSQL**
-
 
 Complexity is easy to invite but hard to dismiss—once **complexity** creeps into your home, getting rid of it isn't so easy.
 
@@ -60,14 +59,11 @@ Use **GraphQL adapters** to make PostgreSQL provide GraphQL services.
 
 I've said it clearly: **Just use PostgreSQL for everything**.
 
-
 ------
 
 ### About Author Stephan
 
 As a CTO, interim CTO, CTO coach, and developer, Stephan has left his mark in the technical departments of many rapidly growing startups. He learned programming around 1981 at a department store, wanting to write video games. Stephan studied computer science at the University of Ulm, specializing in distributed systems and artificial intelligence, and also studied philosophy. When the internet entered Germany in the 90s, he was the first programming employee at several startups. He founded a venture capital-funded startup, handled architecture, processes, and growth challenges at other VC-funded fast-growing startups, held management positions at ImmoScout, and was CTO of an eBay Inc. company. After his wife successfully sold her startup, they moved to the seaside, and Stephan began CTO coaching work. You can find him on LinkedIn or follow @KingOfCoders on Twitter.
-
-
 
 ------
 
@@ -87,13 +83,11 @@ This story has a second half — the subsequent "microservices transformation" b
 
 ![](just-use-pg-arch-2.png)
 
-
 ------
 
 PostgreSQL isn't just a simple relational database but a data management abstraction framework with the potential to encompass everything and devour the entire database world. Ten years ago, this was merely potential and possibility; ten years later, it has materialized into real influence. I'm glad to witness this process and push this progress forward.
 
 > [**PostgreSQL is for Everything!**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486215&idx=1&sn=52ce37a537336a6d07448f35c7bc4cfd&chksm=fe4b3edcc93cb7ca2dc87602430c2beb09ae5e7dcb568158541a1bd026e305d69d94cea81da4&scene=21#wechat_redirect)
-
 
 ------
 
@@ -116,8 +110,6 @@ PostgreSQL isn't just a simple relational database but a data management abstrac
 [Why PostgreSQL Has an Unlimited Future?](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484591&idx=1&sn=a6ab13d93bfa26fca969ba163b01e1d5&scene=21#wechat_redirect)
 
 [Better Open-Source RDS Alternative: Pigsty](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485518&idx=1&sn=3d5f3c753facc829b2300a15df50d237&scene=21#wechat_redirect)
-
-
 
 ### References
 

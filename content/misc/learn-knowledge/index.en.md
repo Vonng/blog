@@ -8,7 +8,6 @@ summary: |
 
 > [Original WeChat Article](https://mp.weixin.qq.com/s/47b9NCLOKoqgx9cfP2EDhA)
 
-
 ## Levels of Knowledge
 
 > When we say "learning knowledge," what exactly are we talking about?
@@ -16,8 +15,6 @@ summary: |
 > When we say someone is "smart," what exactly do we mean?
 
 Through observation and contemplation, we can divide the process of deepening understanding in the mind from accepting knowledge to the highest level of "intuition" into four stages: knowledge, understanding, consciousness, and intuition. The overall function of cognition is continuous and monotonically increasing, but there is a leap between the stages of understanding and consciousness. So let us clarify what these four terms actually mean.
-
-
 
 ## First Level: Knowledge
 
@@ -35,7 +32,6 @@ Knowledge can be a conceptual node in mental space, or rather, a data object in 
 
 > Upon seeing a process, one immediately thinks of `top, ps, kill` commands, thinks of `pid, ppid`, thinks of `exec, fork, open` system calls, thinks of file descriptors and process tables, pipes, scheduling, priorities, registers, status words, signals, ELF format, working directory, thinks of deadlocks, PV operations, semaphores, critical sections. Thinks of `bash`, thinks of executing `rm -rf /` with `bash`, thinks of dropping databases, thinks of databases...
 
-
 When concept nodes form networks, we move from **knowledge** to the level of **understanding**.
 
 > ### Knowledge vs Understanding
@@ -45,8 +41,6 @@ When concept nodes form networks, we move from **knowledge** to the level of **u
 > **知道知晓知识知足知命知府知事知了知青知悉知心知音认知知府知州知县知会知己知交知名知根知底知己知彼知冷知热上知天文下知地理知其一不知其二知其然不知其所以然知难而退知情达理知人知面知书达理知无不言知遇之恩知人论世知人善任知子莫若父知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知知**
 >
 > After staring at the same Chinese character for more than a certain period of time, you might experience what foreigners experience when looking at Chinese characters. Readers may find that the character begins to look very strange and unrecognizable. It no longer seems like a text symbol but becomes a picture composed of "矢" and "口." This phenomenon is called "**cognitive saturation**" in psychology. This situation is equivalent to stripping away the connections between the text and other concepts. After losing these connections, we can no longer understand the character. This example well demonstrates the difference between **knowledge** and **understanding**.
-
-
 
 ## Second Level: Understanding
 
@@ -60,13 +54,9 @@ Taking Chinese characters as an example, when we read the character "知" (know)
 
 ![Image](featured.jpg)
 
-
-
 Regardless, both basic and understood knowledge are stored only as external knowledge and cannot yet be called one's own knowledge. They may still be "forgotten" (understood knowledge being "forgotten" actually means sinking from the surface of memory into the depths of the mind), but these forgotten parts don't truly disappear - they will continue to exist as nourishment for the next stage.
 
 The essence of understanding is **systematizing** knowledge. However, at the "understanding" stage, the network of knowledge concepts still exists as an explicit structure in the mind. This is like a program - given input, it can process according to a series of rules and produce output. Using understood knowledge is like applying rules, following patterns, following procedures to solve problems, and this process is **conscious** and **deliberate**. As **understanding** deepens and is repeated, conscious processing rules are gradually "burned" into the brain's hardware, much like burning software logic into FPGA to become hardware logic, forming **consciousness**.
-
-
 
 ## Third Level: Consciousness
 
@@ -78,13 +68,9 @@ Conscious knowledge has several major characteristics:
 2. Conscious knowledge can be applied naturally - it can be used spontaneously in an unconscious, natural state following thought, without requiring conscious direction.
 3. Conscious knowledge no longer involves issues of forgetting, memory, and recall. It seems that conscious knowledge doesn't exist in the cerebral cortex but below it, forming fixed structures. Compared to unsublimated knowledge, the storage state of conscious knowledge can be compared to data in computer memory - memory information can be directly accessed, while external storage information must go through memory (equivalent to conscious direction) before it can be used.
 
-
-
 Usually, what we call political consciousness, positioning awareness, design consciousness, etc., refers to this state that doesn't require deliberate direction: no need to think, let intuition take over the response. Compared to learning knowledge and skills, perhaps consciousness in motor skills is easier to understand: once anyone learns to walk, upright stepping immediately becomes an instinct that doesn't require conscious participation, but the difficulty of developing bipedal walking robots shows that this is actually quite a complex skill.
 
 The essence of conscious knowledge is **making systematized knowledge intuitive**, burning it into "muscle memory." After entering the consciousness level, facing problems produces **intuition**. Intuition is the key difference between experts and skilled practitioners. Conscious people, when facing problems, often need no help from logical reasoning to immediately locate key points and respond as naturally as flowing water. Experts compared to ordinary people are like ASIC/FPGA hardware encoding versus software logic - knowledge and experience have become instinct, allowing them to free up attention for higher-level creative thinking activities. However, correspondingly, burned-in hardware performs well but lacks flexibility, so many experts who specialize too deeply in one field often fall into tunnel vision, which is why many outstanding achievements are completed by young and middle-aged people.
-
-
 
 ## Fourth Level: Intuition
 
@@ -97,8 +83,6 @@ The essence of intuitive knowledge is **fusing conscious knowledge from all fiel
 Intuition and inspiration are not the same thing. Inspiration can manifest as the creation and invention of new things - it's a point-in-time flash that can be encountered but not sought, declining with age. Intuition mainly manifests as deeper, more abstract sublimation of existing knowledge, with anticipatable quality. We can only say it can approach inspirational creation, but it's not yet inspirational creation.
 
 Usually when we say someone is "smart," we don't mean how deeply they understand a particular knowledge, but rather that this person has high intuition. A person's consciousness and intuitive "ability" are latent within themselves - they can only accept inspiration, induction, stimulation, and development from external factors, but cannot be transmitted, transcribed, or copied. On the other hand, the "background" for a person to develop consciousness and intuition also lies in their own long-term knowledge accumulation. Intuition is an extremely precious attribute - both internal and external factors are important; talent and effort are both indispensable.
-
-
 
 ## Methods of Learning
 

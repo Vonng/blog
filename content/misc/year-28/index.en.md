@@ -18,8 +18,6 @@ Age 28 began with a journey: after the pandemic had briefly subsided during Nati
 
 Unfortunately, happiness and joy in life are always fleeting. Just one month later, I received devastating news. My closest relative, grandfather, passed away, plunging my life into darkness. Everything seemed to lose meaning, and endless despair enveloped me. [Farewell to Grandfather](/misc/yaoguoxun/)
 
-
-
 ## Life in Decline
 
 A meaningless life is terrifying—food becomes tasteless, sleep elusive, all goals and willpower lost. I struggled to escape this quagmire but only sank deeper. For the next two months, I filled every weekend with activities: skiing, ice climbing, attending PG conferences, self-driving in Yunnan, [Meili Snow Mountain New Year's trek](/trip/20201228-yubeng/), hosting Tantan's annual meeting. It looked colorful and rich, but was actually just pursuing novelty and thrills to fill inner emptiness.
@@ -41,8 +39,6 @@ Most terrifyingly, decline gradually became habit: even after legs healed, I no 
 Actually, I'd experienced this twice before. On my 18th birthday ten years ago, parents' divorce plus father's cancer left me drifting through freshman year. Four or five years ago, [father's death](/misc/fengzhenbiao/) also left me exhausted and tormented. There's no miracle cure for this—only time can heal wounds.
 
 My 28th birthday is also the first decade anniversary of adulthood. Indeed, a good day to start anew: reclaim life, face living again.
-
-
 
 ## Review and Planning
 

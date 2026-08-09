@@ -26,7 +26,6 @@ Pigsty v2.3 introduces the ability to bind an **L2 VIP** to a host node cluster 
 
 For monitoring, Pigsty v2.3 builds on v2.2's foundation with additional polish: new VIP monitoring, VIP and node PING metrics prominently placed in NODE/PGSQL monitoring, a new lock wait tree view in PGSQL monitoring, Redis monitoring style updates, MinIO monitoring adapted to new metric names, and MySQL/MongoDB monitoring stubs laying groundwork for future implementation.
 
-
 ## MongoDB Support?
 
 MongoDB is a popular NoSQL document database. But due to licensing issues (SSPL) and positioning concerns (Postgres distribution), Pigsty chose to use FerretDB to provide MongoDB support. FerretDB is an interesting open-source project: **it lets PostgreSQL provide MongoDB capabilities**.
@@ -75,7 +74,6 @@ mongosh 'mongodb://test:test@10.10.10.45:27017/test?authMechanism=PLAIN'
 
 For users looking to migrate from MongoDB to PostgreSQL, this is a minimal-effort compromise solution. Pigsty also offers another approach via MongoFDW: query existing MongoDB clusters using SQL from within PostgreSQL.
 
-
 ## New App: NocoDB
 
 Pigsty v2.3 adds built-in support for NocoDB. Use the default Docker Compose template to spin up NocoDB with one command and use the built-in PostgreSQL for storage.
@@ -92,7 +90,6 @@ In Pigsty, spinning up NocoDB is dead simple — just one command. Modify the `D
 cd ~/pigsty/app/nocodb; make up
 ```
 
-
 ## Node VIP Support
 
 Pigsty v2.3 introduces the ability to bind an **L2 VIP** to a host node cluster using the VRRP protocol to eliminate single points of failure across the entire chain, with complete monitoring support.
@@ -108,7 +105,6 @@ Binding an L2 VIP to a cluster is simple: enable `vip_enabled`, assign a unique 
 L2 VIPs are automatically monitored. When the MASTER goes down, BACKUP takes over immediately.
 
 ![vip-failover](vip-failover.webp)
-
 
 ## Monitoring Improvements
 
@@ -144,7 +140,6 @@ For Redis monitoring, related dashboards have been unified to match PGSQL and NO
 
 ![redis-monitoring](redis-monitoring.webp)
 
-
 ## Smoother Build Process
 
 Pigsty v2.2 introduced official Yum repos; v2.3 enables site-wide HTTPS by default.
@@ -152,7 +147,6 @@ Pigsty v2.2 introduced official Yum repos; v2.3 enables site-wide HTTPS by defau
 When downloading Pigsty software directly from the internet, you might encounter firewall/GFW issues. For example, default Grafana/Prometheus Yum repos can be extremely slow. Additionally, some scattered RPM packages need web URL downloads rather than repotrack.
 
 Pigsty v2.2 solved this with an official Yum repo at http://get.pigsty.cc, configured as a default upstream source. All scattered RPMs and packages requiring VPN access are hosted there, significantly speeding up online installation/builds.
-
 
 ## Installation
 
@@ -174,7 +168,6 @@ https://get.pigsty.cc/v2.3.0/pigsty-pkg-v2.3.0.el9.x86_64.tgz
 That's what Pigsty v2.3 brings to the table.
 
 For more details, check out the official Pigsty documentation: https://pigsty.io and GitHub Release Notes: https://github.com/pgsty/pigsty/releases/tag/v2.3.0
-
 
 ----------------
 
@@ -209,7 +202,6 @@ MD5 (pigsty-pkg-v2.3.0.el7.x86_64.tgz) = 81db95f1c591008725175d280ad23615
 MD5 (pigsty-pkg-v2.3.0.el8.x86_64.tgz) = 6f4d169b36f6ec4aa33bfd5901c9abbe
 MD5 (pigsty-pkg-v2.3.0.el9.x86_64.tgz) = 4bc9ae920e7de6dd8988ca7ee681459d
 ```
-
 
 ----------------
 

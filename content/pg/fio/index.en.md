@@ -56,7 +56,6 @@ fio -name=1mseqr   -runtime=120 -filename=/data1/seq.txt  -ioengine=libaio -dire
 fio -name=1mseqrw  -runtime=120 -filename=/data1/seq.txt  -ioengine=libaio -direct=1 -bs=1024k -size=200g -iodepth=256 -numjobs=8 -rw=rw     -rwmixwrite=30 -group_reporting -time_based
 ```
 
-
 When testing PostgreSQL-related I/O performance, focus should primarily be on 8KB random I/O. Consider the following parameter combinations.
 
 Three dimensions: RW Ratio, Block Size, N Jobs for permutation and combination

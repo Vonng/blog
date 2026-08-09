@@ -20,7 +20,6 @@ Additionally, Pigsty now officially supports self-hosted Supabase and PostgresML
 
 For monitoring, Pigsty has optimized the PostgreSQL dashboard experience, added new Patroni & Exporter dashboards, and redesigned the PGSQL Query dashboard based on query macro-optimization methodology.
 
-
 ------
 
 ### About Pigsty
@@ -28,7 +27,6 @@ For monitoring, Pigsty has optimized the PostgreSQL dashboard experience, added 
 [**Pigsty**](https://pigsty.io) is an out-of-the-box [**PostgreSQL**](https://www.postgresql.org/) distribution providing a local-first open-source alternative to RDS PostgreSQL. It enables users to run better enterprise-grade PostgreSQL database services at a fraction of cloud RDS costs using pure hardware. For more information, visit **https://pigsty.io**.
 
 ![intro](intro.webp)
-
 
 ------
 
@@ -58,7 +56,6 @@ Pigsty's auto-configuration now detects Debian/Ubuntu systems, automatically usi
 
 Users typically don't need to adjust these parameters, so the Pigsty workflow on Deb systems is virtually identical. In fact, Pigsty's offline package build template works exactly this way: completing full Pigsty installations on seven different operating systems at once, without any special handling.
 
-
 ------
 
 ## New Extensions
@@ -86,7 +83,6 @@ Another interesting extension, `pg_similarity`, is available by default in Ubunt
 Additionally, we've updated Supabase support to the latest version: `20231013070755`. You can self-host Supabase on EL8/EL9 systems using Pigsty's PostgreSQL database.
 
 Including PostgreSQL's built-in extensions, Pigsty 2.5 supports 150+ extensions. Despite this abundance, note that they're all **optional**. Pigsty provides `pg_repack`, `wal2json`, and `passwordcheck_cracklib` (EL) for all PostgreSQL major versions, with only the online bloat management extension `pg_repack` installed by default. Other extensions, if not installed, impose no extra burden on the system.
-
 
 ------
 
@@ -119,6 +115,7 @@ The PGSQL first screen shows the most critical query performance metrics: QPS an
 ![Query QPS/RT](query-qps-rt.webp)
 
 Next are `dM/dc` metrics for user experience optimization, where M includes:
+
 - Average rows returned per query
 - Average execution time per query
 - Average WAL size per query
@@ -137,7 +134,6 @@ The final section shows `%M` metrics for workload balancing. Reveals a specific 
 ![Query Percent](query-percent.webp)
 
 Beyond these three dashboards, Pigsty has optimized and fixed many other panels. Many panel info sections now provide more detail: what metrics the panel shows, what problems it solves, etc. We've also introduced three new Grafana plugins for CSV/JSON datasources and variable panels.
-
 
 ------
 
@@ -225,7 +221,6 @@ MD5 (pigsty-pkg-v2.5.0.debian12.x86_64.tgz) = 1e469cc86a19702e48d7c1a37e2f14f9
 MD5 (pigsty-pkg-v2.5.0.ubuntu20.x86_64.tgz) = cc3af3b7c12f98969d3c6962f7c4bd8f
 MD5 (pigsty-pkg-v2.5.0.ubuntu22.x86_64.tgz) = c5b2b1a4867eee624e57aed58ac65a80
 ```
-
 
 ----------------
 

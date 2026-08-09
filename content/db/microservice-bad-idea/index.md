@@ -39,18 +39,15 @@ SOA 在亚马逊的规模下很有意义，没有任何一个团队能够知道�
 
 我很高兴在记忆中已经是第三次击退这种僵尸狂潮一样的蠢主意了。但我们必须保持警惕，因为我们早晚还得继续这么干：有些山炮想法无论弄死多少次都会卷土重来。你能做的就是当它们借尸还魂的时候及时认出来，用文章霰弹枪给他喷个稀巴烂。
 
-
 > 有效的复杂系统总是从简单的系统演化而来。反之亦然：从零设计的复杂系统没一个能有效工作的。
 >
 > —— 约翰・加尔，Systemantics（1975）
-
 
 本文作者 DHH， Ruby on Rails 作者，37signals CTO，译者 Vonng。
 
 原题为  Even Amazon can't make sense of serverless or microservices[1] 。即《亚马逊自个都觉得微服务和Serverless扯淡了》
 
 [![](featured.jpg)](https://mp.weixin.qq.com/s/mEmz8pviahEAWy1-SA8vcg)
-
 
 ### References
 

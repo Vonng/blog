@@ -10,7 +10,6 @@ tags: [PostgreSQL, PG-Ecosystem, Extension]
 
 > [Original WeChat Article Link](https://mp.weixin.qq.com/s/bx2dRxlrtLcM6AD2qsplQQ)
 
-
 ---------------
 
 ## New PostgreSQL Ecosystem Player: ParadeDB
@@ -18,6 +17,7 @@ tags: [PostgreSQL, PG-Ecosystem, Extension]
 YC S23 invested in a new project called [ParadeDB](https://www.paradedb.com/), which is extremely interesting. Their slogan is "Postgres for Search & Analytics — Modern Elasticsearch Alternative built on Postgres". It's PostgreSQL for search and analytics, aiming to be an Elasticsearch alternative.
 
 PostgreSQL's ecosystem is indeed becoming increasingly prosperous. Among PG-based extensions and derivatives, we already have:
+
 - MongoDB open-source alternative based on PG — FerretDB
 - SQL Server open-source alternative — Babelfish  
 - Firebase open-source alternative — Supabase
@@ -30,8 +30,6 @@ I've translated ParadeDB's official website introduction and four blog articles 
 
 ![](paradedb-rank.webp)
 
-
-
 ---------------
 
 ## ParadeDB
@@ -39,7 +37,6 @@ I've translated ParadeDB's official website introduction and four blog articles 
 We're proud to introduce ParadeDB: a PostgreSQL database optimized for search scenarios. **ParadeDB** is the first Postgres database built to be an Elasticsearch alternative, designed for lightning-fast full-text, semantic, and hybrid search on PostgreSQL tables.
 
 ![](paradedb-logo.png)
-
 
 ### What Problems Does ParadeDB Solve?
 

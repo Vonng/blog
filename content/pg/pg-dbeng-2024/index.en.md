@@ -19,14 +19,11 @@ Of course, PostgreSQL was also the Database of the Year in 2023, 2019, 2018, and
 >
 > Let's rewind to nearly 35 years ago, when "Postgres" first made its debut. Since then, to keep pace with database technology trends, PostgreSQL has continuously evolved, becoming increasingly powerful while maintaining unwavering stability. PostgreSQL 17, launched in September 2024, brought new optimizations and feature extensions in performance and replication, pushing this "evergreen tree" to new heights. Looking at today's open-source community, PostgreSQL can be called a model that combines both popularity and strength, with enduring prosperity.
 
-
 What's most interesting is that according to DB-Engine's popularity ranking score increases this year, Snowflake gained 28 points while PostgreSQL gained 14.5 points. By their Database of the Year calculation rules (January 2025 - January 2024 popularity scores), "Snowflake" should have won "Database of the Year," but the editors still chose PostgreSQL as the Database of the Year.
-
 
 Of course, I don't think DB-Engine's editors would make such a foolish elementary math error. Honestly, given PostgreSQL's amazing growth and impressive performance in 2024, if they hadn't named PostgreSQL as Database of the Year, the only ones losing credibility and face would be the ranking itself (just like if Breath of the Wild and The Witcher 3 weren't considered Game of the Year, the only ones embarrassed would be the gaming media). So I guess the editors had no choice but to stubbornly crown PostgreSQL No.1 against their own data.
 
 Honestly, compared to [StackOverflow's Annual Global Developer Survey](https://mp.weixin.qq.com/s/VD_o1HIUVQHmHGcAS4UNwA) with first-hand large sample surveys, DB-Engine's popularity rankings can only serve as a rough reference — given its unified standards, it has good reference value for studying databases' popularity changes relative to their own historical trends (longitudinal comparability), but its reference value for horizontal comparisons of different databases' popularity (cross-sectional comparability) is significantly diminished.
-
 
 ------
 

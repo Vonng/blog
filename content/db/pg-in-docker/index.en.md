@@ -12,7 +12,6 @@ For stateless app services, containers are an almost perfect devops solution. Ho
 
 From a developer's perspective, I'm a big fan of Docker & Kubernetes and believe that they might be the future standard for software deployment and operations. But as a database administrator, I think hosting production databases in Docker/K8S is still a bad idea.
 
-
 --------------
 
 ## What problems does Docker solve?
@@ -25,8 +24,6 @@ But when it comes to containerizing the production database itself, the scenario
 
 Such containers are no longer ephemeral entities that can be freely created, destroyed, moved, or transferred; they become bound to the underlying environment. Thus, the many advantages of using containers for traditional apps are not applicable to database containers.
 
-
-
 --------------
 
 ## Reliability
@@ -36,7 +33,6 @@ Getting software up & running is one thing; ensuring its reliability is another.
 **Reliability** is the paramount attribute for databases. It's the system's ability to function correctly during adversity (hardware/software faults, human error), i.e. fault tolerance and resilience. Unlike **liveness attribute** such as performance, reliability, a safety attribute, proves itself over time or falsify by failures, often overlooked until disaster strikes.
 
 Docker's description notably omits "reliability" —— the crucial attribute for database.
-
 
 ### Reliability Proof
 
@@ -68,8 +64,6 @@ A subtle **real-world case** involved starting two PostgreSQL server on the same
 
 Do databases need isolation? Absolutely, but not this kind. Databases often demand dedicated physical machines for performance reasons, with only the database process and essential tools running. Even in containers, they're typically bound exclusively to physical/virtual machines. Thus, the type of isolation Docker provides is somewhat irrelevant for such deployments, though it is a handy feature for cloud providers to efficiently oversell in a multi-tenant environment.
 
-
-
 --------------
 
 ## Maintainability
@@ -77,7 +71,6 @@ Do databases need isolation? Absolutely, but not this kind. Databases often dema
 > Docker simplify the day one setup, but bring much more troubles on day two operation.
 
 The bulk of software expenses isn't in initial development but in ongoing maintenance, which includes fixing vulnerabilities, ensuring operational continuity, handling outages, upgrading versions, repaying technical debt, and adding new features. Maintainability is crucial for the quality of life in operations work. Docker shines in this aspect with its infrastructure-as-code approach, effectively turning operational knowledge into reusable code, accumulating it in a streamlined manner rather than scattered across various installation/setup documents. Docker excels here, especially for stateless applications with frequently changing logic. Docker and Kubernetes facilitate deployment, scaling, publishing, and rolling upgrades, allowing Devs to perform Ops tasks, and Ops to handle DBA duties (somewhat convincingly).
-
 
 ### Day 1 Setup
 
@@ -124,7 +117,6 @@ Docker's awkwardness in hosting production databases stems from the stateful nat
 
 In conclusion, while Docker can improve system maintainability in some aspects, like simplifying new instance creation, the introduced complexities often undermine these benefits.
 
-
 ### Tooling
 
 Databases require tools for maintenance, including a variety of operational scripts, deployment, backup, archiving, failover, version upgrades, plugin installation, connection pooling, performance analysis, monitoring, tuning, inspection, and repair. Most of these tools are designed for bare-metal deployments. Like databases, these tools need thorough and careful testing. Getting something to run versus ensuring its stable, long-term, and correct operation are distinct levels of reliability.
@@ -139,10 +131,6 @@ Similar issues arise with some failure detection tools and common system command
 
 Treating Docker like a VM, many tools may still function, but this defeats much of Docker's purpose, reducing it to just another package manager. Some argue that Docker enhances system reliability through standardized deployment, given the more controlled environment. While this is true, I believe that if the personnel managing the database understand how to configure the database environment, there's no fundamental difference between scripting environment initialization in a Shell script or in a Dockerfile.
 
-
-
-
-
 --------------
 
 ## Scalability
@@ -150,7 +138,6 @@ Treating Docker like a VM, many tools may still function, but this defeats much 
 Performance is another point that people concerned a lot. From the performance perspective, the basic principle of  database deployment is: The close to hardware, The better it is.  Additional isolation & abstraction layer is bad for database performance. More isolation means more overhead, even if it is just an additional `memcpy` in the kernel .
 
 For performance-seeking scenarios, some databases choose to bypass the operating system's page management mechanism to operate the disk directly, while some databases may even use FPGA or GPU to speed up query processing. Docker as a lightweight container, performance suffers not much, and the impact to performance-insensitive scenarios may not be significant, but the extra abstract layer will definitely make performance worse than make it better.
-
 
 --------------
 

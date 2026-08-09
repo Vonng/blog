@@ -10,24 +10,17 @@ summary: Recently, a historic debate in the database industry has sparked heated
 
 > **Introduction:** Recently, a historic debate in the database industry has sparked heated discussion. The post-90s entrepreneur Feng Ruohang, known as the "ace debater" in the database community, has come into public view. Why did he participate in such technical debates that could potentially "start flame wars"? What are his views on the future development of databases? In this exclusive interview, we invite him to discuss his technical journey and hot topics in the database field!
 
-
 ![](vonng.png)
 
 **Founder of Pigsty Cloud Data - Feng Ruohang**
 
 > **Bio:** Founder of Pigsty Cloud Data, author of the open-source RDS PG alternative - Pigsty. PostgreSQL expert and full-stack developer, open-source contributor, member of the PostgreSQL Chinese Community Technical Committee, Modb MVP; PostgreSQL ACE; formerly worked at Alibaba, Tantan, Apple. Translated works include "PostgreSQL Guide: Internal Exploration" and "Designing Data-Intensive Applications."
 
-
-
 **—— The following is the complete interview ——**
-
-
 
 ------
 
 **1. How did you get involved with the database industry? What suddenly inspired your entrepreneurial idea?**
-
-
 
 **Feng Ruohang**: My interest was actually in AI during my studies - working on neural networks/cellular automata and such interesting projects. When I entered the industry, I was also an algorithm engineer. However, I quickly discovered that the core of AI is actually **data**, or rather - the entire information system revolves around and serves the database at its core. So, I started tinkering with databases.
 
@@ -41,13 +34,9 @@ A sufficiently useful open-source software can immediately improve the productiv
 
 > Extended reading: 《[Post-90s, Quit Job to Start Business, Claims to Kill Cloud Databases](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485182&idx=1&sn=b06b9f2f4e6375fdfd255a85e0f3b89a&scene=21#wechat_redirect)》
 
-
-
 ------
 
 **2. In 2022, Pigsty completed seed funding. As free open-source software, what is the business model?**
-
-
 
 **Feng Ruohang**: What made me decide to start full-time entrepreneurship was the support from Miracle Plus: I casually applied and ended up being selected from over five thousand projects, securing seed funding. Such opportunities are extremely rare, allowing me to do what I truly want to do - something truly meaningful. Since angels are funding me, I have no reason not to go for it, right?
 
@@ -59,13 +48,9 @@ Pigsty is to PostgreSQL what RedHat is to Linux. **Software is open-source and f
 
 > Extended reading: 《[Better Open-Source RDS Alternative: Pigsty](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485518&idx=1&sn=3d5f3c753facc829b2300a15df50d237&scene=21#wechat_redirect)》
 
-
-
 ------
 
 **3. As a senior PG practitioner, if you were to describe PostgreSQL's competitive advantages with three keywords, what would they be?**
-
-
 
 **Feng Ruohang: Open-source, Advanced, Extensible.**
 
@@ -79,13 +64,9 @@ Within a considerable scale, PostgreSQL can independently play the role of a mul
 
 > Extended reading: 《[PostgreSQL: The World's Most Successful Database](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485216&idx=1&sn=1b59c7dda5f347145c2f39d2679a274d&scene=21#wechat_redirect)》
 
-
-
 ------
 
 **4. Some time ago, the MySQL vs PG themed debate activity was truly a historic battle in the database industry. Some say "the quality of technology is not determined by debate." Why did you participate in such technical debate activities that could potentially "start flame wars"? What's the story behind this? What was your biggest takeaway after participating?**
-
-
 
 **Feng Ruohang**: The quality of technology itself is indeed not determined by debate, but debate reveals the superiority of technology: public debate transforms "shared knowledge" into "public knowledge," building consensus - which is extremely important for the **ecological** development of open-source software.
 
@@ -99,13 +80,9 @@ My takeaway is: to have an exciting debate, you need opponents with comparable s
 
 > Extended reading: 《[How to View the MySQL vs PGSQL Live Streaming Drama](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486025&idx=1&sn=463029f58b41b5835780b6d2203be889&scene=21#wechat_redirect)》
 
-
-
 ------
 
 **5. Your public account has multiple articles about "cloud exit." Why do you advocate for "cloud exit"?**
-
-
 
 **Feng Ruohang**: With economic downturn, cost reduction and efficiency improvement have become the main theme. [Cloud exit](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485760&idx=1&sn=97096da1077a4fbb4c43452a3c4983c7&chksm=fe4b3c9bc93cb58d5724454f0210c13362393a4abb05f9b9fbc0146a9b188b4520f6211bc891&scene=21#wechat_redirect) to reduce expensive cloud expenses is also being put on the agenda by more and more companies.
 
@@ -121,13 +98,9 @@ In the past decade, hardware has continued to evolve at **Moore's Law** speed, I
 
 > Extended reading: 《[Public Cloud Mudslide Collection - Deconstructing Public Clouds with Data](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485781&idx=1&sn=c139a77e53572cb538d3fd087eb80c8b&scene=21#wechat_redirect)》
 
-
-
 ------
 
 **6. From a technical perspective, what stage of international databases are domestic databases currently at? Please envision what the competitive landscape of domestic databases will be like in 20-30 years? Which domestic databases do you currently favor?**
-
-
 
 **Feng Ruohang**: **For OLTP database kernels led by Chinese companies, my personal judgment is that there's about a 10-year gap with world-leading levels**. For example, in global search engine trend charts, you can significantly observe that the wave trends of MySQL/PostgreSQL, the world's two most popular databases, have about a ten-year lag in China. For instance, globally MySQL's popularity decline trend started peaking and declining from 2004, but in China it suddenly became popular in 2014, then peaked and entered decline.
 
@@ -143,13 +116,9 @@ Low-quality software forks not only have no use value but also waste scarce soft
 
 > Extended reading: 《[What Kind of Autonomy and Control Does Basic Software Need?](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486061&idx=1&sn=a1452dfa864f702d40bf612839a4e9e4&scene=21#wechat_redirect)》
 
-
-
 ------
 
 **7. The constant emergence of new technologies has given databases new vitality. What directions do you think databases will develop in the future?**
-
-
 
 **Feng Ruohang**: **Better and faster, trouble-free and cost-effective. Or: quality, security, efficiency, cost.**
 
@@ -165,13 +134,9 @@ Additionally, the definition of databases will also evolve: what we now call "da
 
 > Extended reading: 《[Are Distributed Databases a False Requirement?](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485549&idx=1&sn=7c34439d82431129c57aba211202b5ca&scene=21#wechat_redirect)》/《[Technical Reflection - Database Source Investigation](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485576&idx=1&sn=d13184a3cbbf756ee0c2ed0d0a288d7a&scene=21#wechat_redirect)》
 
-
-
 ------
 
 **8. As a database practitioner, whether in database kernel development or as a DBA, what do you think is most important for achieving success in your field?**
-
-
 
 **Feng Ruohang: I think the most important thing is going with the flow.**
 
@@ -183,13 +148,9 @@ Going with the flow, the key is "**taking action**." Wisdom helps you recognize 
 
 > Extended reading: [Refuting "Why You Shouldn't Hire DBAs Again"](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485335&idx=1&sn=c37c2ee787fe4fc1b6909500c5f05583&scene=21#wechat_redirect)
 
-
-
 ------
 
 **9. Some say you are "the tech world's comedian, a tech fanatic among comedians." How do you view this assessment?**
-
-
 
 **Feng Ruohang**: I think this assessment is quite good. I greatly admire Linus and Jobs - the former is a top tech fanatic (Hacker), the latter is a top comedian (Story Teller), and I'm naturally influenced by my idols, developing skills in both directions.
 
@@ -201,13 +162,9 @@ Confucius said: "If substance exceeds refinement, one becomes crude; if refineme
 
 > Extended reading: 《[Pigsty Pitch in Three Minutes](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485126&idx=1&sn=455f35f378e1c252aa52ceff3ebef976&scene=21#wechat_redirect)》
 
-
-
 ------
 
 **10. Regarding PostgreSQL database, how do you recommend learning it?**
-
-
 
 **Feng Ruohang**: I recommend Learn by Doing.
 

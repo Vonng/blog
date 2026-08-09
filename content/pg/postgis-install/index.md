@@ -13,7 +13,6 @@ tags: [PostgreSQL, PG管理, 扩展]
 
 > 参考<http://www.postgresonline.com/journal/archives/362-An-almost-idiots-guide-to-install-PostgreSQL-9.5,-PostGIS-2.2-and-pgRouting-2.1.0-with-Yum.html>
 
-
 ----------
 
 ### 1. 安装环境
@@ -22,7 +21,6 @@ tags: [PostgreSQL, PG管理, 扩展]
 - PostgreSQL10
 - PostGIS2.4
 - PGROUTING2.5.2
-
 
 ----------
 
@@ -68,7 +66,7 @@ yum install -y postgresql10 postgresql10-server postgresql10-libs postgresql10-c
 
 ##### 2.5 启动服务
 
-默认情况下，PG安装目录为`/usr/pgsql-10/`，data目录为`/var/lib/pgsql/`,系统默认创建用户`postgres`
+默认情况下，PG安装目录为 `/usr/pgsql-10/`，data目录为 `/var/lib/pgsql/`,系统默认创建用户 `postgres`
 
 ```
 passwd postgres # 为系统postgres设置密码
@@ -93,7 +91,8 @@ yum install postgis24_10-client postgis24_10
 > 错误：软件包：postgis24_10-2.4.2-1.rhel7.x86_64 (pgdg10)
 >           需要：gdal-libs >= 1.9.0
 > ```
-> 你可以尝试通过以下命令解决:```yum -y install epel-release```
+>
+> 你可以尝试通过以下命令解决：`yum -y install epel-release`
 
 ### 4. fdw安装
 
@@ -118,25 +117,17 @@ CREATE EXTENSION ogr_fdw;
 SELECT postgis_full_version();
 ```
 
-
-
-
 ----------
 
 ## 编译工具
 
 此类工具一般系统都自带。
 
-* GCC与G++，版本至少为`4.x`。
+* GCC与G++，版本至少为 `4.x`。
 * GNU Make，CMake， Autotools
-* Git 
+* Git
 
-CentOS下直接通过`sudo yum install gcc gcc-c++ git autoconf automake libtool m4 `安装。
-
-
-
-
-
+CentOS下直接通过 `sudo yum install gcc gcc-c++ git autoconf automake libtool m4` 安装。
 
 ----------
 
@@ -145,8 +136,6 @@ CentOS下直接通过`sudo yum install gcc gcc-c++ git autoconf automake libtool
 ### PostgreSQL
 
 PostgreSQL是PostGIS的宿主平台。这里以10.1为例。
-
-
 
 ### GEOS
 
@@ -180,9 +169,9 @@ sudo make install
 
 ### JSON-C
 
-目前用于导入GeoJSON格式的数据，函数`ST_GeomFromGeoJson`用到了这个库。
+目前用于导入GeoJSON格式的数据，函数 `ST_GeomFromGeoJson` 用到了这个库。
 
-编译`json-c`需要用到`autoconf, automake, libtool`。
+编译 `json-c` 需要用到 `autoconf, automake, libtool`。
 
 ```bash
 git clone https://github.com/json-c/json-c
@@ -196,9 +185,9 @@ make install
 
 ### LibXML2
 
-目前用于导入GML与KML格式的数据，函数`ST_GeomFromGML`和`ST_GeomFromKML`依赖这个库。
+目前用于导入GML与KML格式的数据，函数 `ST_GeomFromGML` 和 `ST_GeomFromKML` 依赖这个库。
 
-目前可以在这个[下载服务器](https://download.gnome.org/sources/libxml2/)上获取，目前使用的版本是`2.9.7`
+目前可以在这个[下载服务器](https://download.gnome.org/sources/libxml2/)上获取，目前使用的版本是 `2.9.7`
 
 ```bash
 tar -zxf libxml2-sources-2.9.7.tar.gz
@@ -208,28 +197,22 @@ make
 sudo make install
 ```
 
-
-
 ### GADL
 
 ```bash
 wget -P . http://download.osgeo.org/gdal/2.2.3/gdal-2.2.3.tar.gz
 ```
 
-
-
 ### SFCGAL
 
 SFCGAL是CGAL的扩展包装，虽说是可选项，但是很多函数都会经常用到，因此这里也需要安装。[下载页面](http://oslandia.github.io/SFCGAL/installation.html)
 
-SFCGAL依赖的东西比较多。包括`CMake, CGAL, Boost, MPFR, GMP`等，其中，`CGAL`在上面手动安装过了。这里还需要手动安装BOOST
+SFCGAL依赖的东西比较多。包括 `CMake, CGAL, Boost, MPFR, GMP` 等，其中，`CGAL` 在上面手动安装过了。这里还需要手动安装BOOST
 
 ```bash
 wget -P . https://github.com/Oslandia/SFCGAL/archive/v1.3.0.tar.gz
 
 ```
-
-
 
 ### Boost
 
@@ -242,4 +225,3 @@ cd boost_1_65_1
 ./bootstrap.sh
 ./b2
 ```
-

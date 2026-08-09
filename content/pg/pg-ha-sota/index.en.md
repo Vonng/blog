@@ -16,7 +16,6 @@ In hindsight, this choice saved me seven years of detours. Today, whether you lo
 
 So why did Patroni become the de facto standard? What makes it good? How should you actually do PostgreSQL HA? Let's break it down.
 
-
 ------
 
 ## Availability, RTO, and RPO
@@ -50,7 +49,6 @@ The highest tier typically requires RTO in the minutes range (~tens of seconds) 
 
 But clearly, due to information asymmetry, many people don't know this. So today I'll walk you through the SOTA de facto standard for PostgreSQL HA — [**Patroni**](https://patroni.readthedocs.io/en/).
 
-
 --------
 
 ## TL;DR
@@ -60,7 +58,6 @@ With proper configuration, Patroni easily achieves **RTO < 30s with RPO = 0**. T
 For RPO, Patroni can implement Oracle's Maximum Performance / Maximum Availability / Maximum Protection modes — and even offers stronger consistency options than Oracle's Maximum Protection. For RTO, Patroni achieves end-to-end RTO < 30s on commodity hardware, including fault detection, primary-replica switchover, and load balancer health check — the full chain.
 
 Let's dig into the RPO and RTO trade-offs in detail.
-
 
 --------
 
@@ -73,7 +70,6 @@ However, stricter RPO comes at a cost: higher write latency, reduced throughput,
 Under async replication, there's always some replication lag between replica and primary (typically 10KB-100KB / 100µs-10ms depending on network and throughput). If the primary fails, the replica may not have fully synced the latest data. A failover at that point means the new primary may be missing some un-replicated data.
 
 ![rpo-diagram.webp](rpo-diagram.webp)
-
 
 ### How It Works
 
@@ -98,7 +94,6 @@ In fact, by configuring Patroni and PostgreSQL, you can achieve even stronger co
 > JEPSEN has documented a very rare edge case — we'll cover that in a dedicated article.
 
 For the vast majority of workloads, async replication (Maximum Performance) provides sufficient RPO guarantees. For strict data integrity requirements, use Maximum Availability / Maximum Protection mode to ensure RPO = 0.
-
 
 --------
 
@@ -132,7 +127,6 @@ In general, under same-rack network conditions for common failure paths, **RTO <
 
 Serious RTO analysis is complex. Below, I'll cover parameter configurations for four typical network conditions, RTO breakdowns for two major failure paths, and best/average/worst case scenarios. The measurement scope is HAProxy accepting write connections — the stricter end-to-end metric. Unless noted otherwise, we discuss the **worst-case** bound, not average or best.
 
-
 ### Architecture
 
 RTO can't be discussed in isolation from architecture, scenario, environment, and resources. So let's start with the classic Patroni/Etcd/HAProxy HA architecture:
@@ -146,7 +140,6 @@ RTO can't be discussed in isolation from architecture, scenario, environment, an
 - HAProxy exposes cluster services externally and routes traffic to healthy nodes via Patroni health checks.
 
 In this architecture, HA RTO primarily depends on Patroni parameters, secondarily on HAProxy parameters.
-
 
 ### Parameter Configuration
 
@@ -169,7 +162,6 @@ Using worst-case as our baseline: default config gives RTO < 45s, optimal ("fast
 Critical note: virtually every PG HA solution on the market ships with Patroni's default parameters unmodified. While defaults give RTO < 45s for standard passive failover, the default `primary_start_timeout` of 300 seconds means that in the "PG primary crashes and restarts" scenario, worst-case RTO balloons to 324 seconds — violating typical RTO targets.
 
 If you're hand-rolling Patroni HA, watch out for this.
-
 
 ### Failure Paths
 
@@ -200,7 +192,6 @@ For **average** case: the "fast" profile lands at 23-24s, default "normal" at 34
 
 ![rto-mode-param.webp](rto-mode-param.webp)
 
-
 ### On RAC and Distributed Databases
 
 Some databases promise very low RTO, even claiming sub-second failover or RTO = 0. These typically use shared-storage RAC architectures or distributed Raft/Paxos protocols. Look closely and you'll find these claims only hold for **specific failure domains**, with trade-offs that introduce other limitations.
@@ -212,7 +203,6 @@ Some NewSQL distributed databases are slightly more honest. CockroachDB uses Raf
 By contrast, shared-nothing architecture is much cleaner: explicitly manage multiple storage replicas, each node is autonomous, no storage SPOF. Shared-storage can't easily scale horizontally, while shared-nothing scales to dozens of replicas — OpenAI runs 1 primary + 40 replicas; we ran 1+32 PG clusters at Tantan. This is why shared-nothing has become the mainstream choice for database HA over the past two decades.
 
 My take: anyone pushing shared-storage HA solutions in 2026 is likely selling hardware or cloud disks. I'll skip the detailed critique here, but may write a dedicated piece on the real performance and costs of RAC and distributed databases, and why Corosync + Pacemaker — that absurdly complex relic — belongs in a museum.
-
 
 --------
 
@@ -233,7 +223,6 @@ However, most solutions using Patroni ship with completely default parameters. N
 One more thing: HA alone isn't enough. Patroni handles hardware failures, but for accidental data deletion or logical errors, you need PITR as a backstop. So today covered Patroni as the de facto standard for PostgreSQL HA; next up will be pgBackRest as the de facto standard for backup/restore.
 
 Friends, stop hand-rolling PG HA! DIY setups don't really help your technical growth or your business. Understand the principles, know how to use it — that's enough. Instead of reinventing the wheel, spend your time learning PG itself. There are so many extensions to explore — way more interesting than fiddling with HA and PITR.
-
 
 --------
 

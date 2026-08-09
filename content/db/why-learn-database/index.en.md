@@ -4,7 +4,7 @@ date: 2018-04-20
 author: |
   [Feng Ruohang](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [WeChat](https://mp.weixin.qq.com/s/PePSPDfyJt-ZkKjH8sUa6w) | [Zhihu](https://www.zhihu.com/question/273489729/answer/377084748)
 summary: >
-  Those who only know how to code are just programmers; **learn databases well, and you can at least make a living**; but for **excellent** engineers, merely **using** databases is far from enough.
+  Those who only know how to code are just programmers; learn databases well, and you can at least make a living; but for excellent engineers, merely using databases is far from enough.
 tags: [Database]
 ---
 
@@ -75,7 +75,5 @@ When you realize these designs are meant to solve real production problems and h
 Textbooks, books, documentation, videos, mailing lists, and blogs are all great learning resources. For textbooks, the black-cover series from Huazhang are quite good, "Database System Concepts" is excellent. But I recommend first reading this book: [**Designing Data-Intensive Applications**](https://github.com/Vonng/ddia), which is excellently written - I thought it was so good that I voluntarily translated it. "What you get on paper is shallow, and you must practice to truly understand." Practice yields true knowledge. For newcomers, which database to choose? I personally recommend PostgreSQL, the world's most advanced open-source relational database - elegant design and powerful functionality. For evangelism, please welcome Brother De: https://github.com/digoal/blog. If you have time, you can also look at Redis - simple and readable source code, very commonly used in practice, and you should learn more about non-relational databases too.
 
 Finally, although relational databases are powerful, they're not the end of data processing - try as many different types of databases as possible.
-
-
 
 > Original Zhihu question: [Why do computer science students need to learn database principles and design?](https://www.zhihu.com/question/273489729/answer/377084748)

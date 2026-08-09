@@ -13,7 +13,6 @@ tags: [PostgreSQL, PG管理]
 不过老冯必须提醒各位，**最好不要在最近两周进行 PostgreSQL 新增部署与更新**，因为这个例行小版本引入了两个 BUG。
 这两个 BUG 将在 2026-02-26 的 **号外小版本**（out-of-cycle release）中修复。
 
-
 ## 表现
 
 ### BUG 1：substring() 对非 ASCII Toast 文本报错
@@ -33,8 +32,6 @@ https://www.postgresql.org/message-id/19406-9867fddddd724fca@postgresql.org
 
 这也解释了为什么 `SELECT substring('中文测试', 1, 2)` 正常，而 `SELECT substring(col, 1, 2) FROM t` 可能报错。
 
-
-
 ### BUG 2：新版本回放旧版本 WAL 时 FATAL 中断
 
 第二个问题发生在跨小版本的 WAL 回放路径上，报错：“could not access status of transaction”。
@@ -45,7 +42,6 @@ https://www.postgresql.org/message-id/349f9c82-3a8b-48ad-8cc4-fe81553793dd%40iki
 
 这个问题出现在“新小版本二进制回放旧小版本 WAL”场景中。除了主备流复制追 WAL，还包括使用归档做恢复（PITR）等回放路径。
 但考虑到触发条件比较特殊，实际影响范围可能相对有限。
-
 
 ## 影响
 
@@ -61,8 +57,6 @@ https://www.postgresql.org/message-id/349f9c82-3a8b-48ad-8cc4-fe81553793dd%40iki
 Pigsty v4.2.0 将与 PG 18.3 同期发布，提供最新的离线安装包，以及对现有 PG 小版本升级到最新小版本的迁移手册。
 
 如果您确实非常着急要在这两周内部署上新，那么可以使用 Pigsty v4.0 的离线安装包，安装 18.1 系列小版本，并在后续进行小版本升级。
-
-
 
 ## 老冯评论
 
@@ -90,7 +84,6 @@ Pigsty v4.2.0 将与 PG 18.3 同期发布，提供最新的离线安装包，以
 - 版本：仅 14.4（只针对 PG 14）
 - 原因：PostgreSQL 14.0 以来，`CREATE INDEX CONCURRENTLY` 和 `REINDEX CONCURRENTLY` 存在 **静默索引数据损坏** 问题。
 
-
 最近三次的号外小版本模式非常清晰：**2024、2025、2026 连续三年的例行更新之后都紧跟了一次紧急修复，而且主要是安全补丁引入的回归**。我觉得背后有几个结构性原因：
 
 **第一，安全修复的时间压力与质量之间的矛盾**。CVE 修复有保密期（embargo），补丁在公开前只能在极小范围内审查和测试。
@@ -111,8 +104,6 @@ PostgreSQL 的 `make check` 回归测试套件历史悠久但覆盖面有限，�
 
 另一个启示是 —— 通常我们认为升级小版本是足够安全的，但显然，这几次号外版本的发布也在提醒我们：追新有风险。
 如果不是数据库老司机，在没有 CVE，恶性 bug 的前提下，说不定还是滞后两个小版本来使用更为稳妥。
-
-
 
 ## 公告原文
 

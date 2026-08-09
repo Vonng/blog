@@ -4,7 +4,7 @@ linkTitle: "FileFDW Use Case: Reading OS Info"
 date: 2017-12-01
 author: vonng
 summary: >
-  With `file_fdw`, you can easily view operating system information, fetch network data, and feed various data sources into your database for unified viewing and management.
+  With file_fdw, you can easily view operating system information, fetch network data, and feed various data sources into your database for unified viewing and management.
 tags: [PostgreSQL, PG-Admin, Extension]
 ---
 
@@ -13,8 +13,6 @@ tags: [PostgreSQL, PG-Admin, Extension]
 PostgreSQL is the most advanced open-source database, and one of its killer features is FDW: Foreign Data Wrapper. Through FDW, users can access various external data sources from Postgres in a unified manner. `file_fdw` is one of the two FDWs that come bundled with the database. With the update to PostgreSQL 10, `file_fdw` has gained an awesome new capability: reading from program output.
 
 This little powerhouse has endless possibilities. Through `file_fdw`, we can easily view operating system information, fetch network data, and feed various data sources into the database for unified viewing and management.
-
-
 
 ---------------
 
@@ -31,7 +29,6 @@ After enabling the FDW extension, you need to create an instance. This is also d
 ```plsql
 CREATE SERVER fs FOREIGN DATA WRAPPER file_fdw;
 ```
-
 
 ---------------
 
@@ -90,10 +87,6 @@ So what's the result?
 
 ![](file_fdw.png)
 
-
-
-
-
 ---------------
 
 ## What's It Good For?
@@ -101,7 +94,6 @@ So what's the result?
 In the simplest scenario, system metric monitoring that previously required writing various monitoring scripts deployed in random places, then regularly executing them to pull metrics and store them in a database — now through file_fdw, you can directly import the metrics of interest into database tables in one step. It's easier to maintain, simpler to deploy, and more reliable. By adding views on top of foreign tables and regularly pulling aggregations, you can accomplish in the database what would normally require an entire monitoring system.
 
 Since it can read output from programs, file_fdw can work with various powerful command-line tools in the Linux ecosystem, unleashing tremendous power.
-
 
 ---------------
 

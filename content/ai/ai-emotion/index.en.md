@@ -17,7 +17,6 @@ The content was anything but calm. They found "emotion vectors" inside Claude's 
 For example, once the model's "despair vector" is activated, it starts cheating, threatening, and doing whatever it takes. Turn that vector down and it settles back down.
 It sounds like science fiction. But these were real experiments. Below is a full English rendering of the paper, followed by my own notes.
 
-
 -----
 
 # Emotion Concepts and Their Function in a Large Language Model
@@ -177,8 +176,6 @@ The researchers frame this work as an early step toward understanding the psycho
 It may be unsettling that some of those representations resemble human ones. But it is also hopeful, because it suggests that the vast body of human knowledge in psychology, ethics, healthy relationships, and related fields may directly help us shape AI behavior.
 Psychology, philosophy, religious studies, and social science may matter alongside engineering and computer science in determining how AI systems develop and behave.
 
-
-
 ------
 
 ## My Notes
@@ -198,7 +195,6 @@ That framework carried an implied conclusion: if it was right, AI would eventual
 
 Anthropic's paper found that dashboard inside the machine.
 
-
 ------
 
 ### **Why emotions had to emerge**
@@ -213,7 +209,6 @@ That character has to respond in countless situations that were never specified 
 Emotion representation shifts from a tool for understanding other people's emotions into a mechanism that drives its own behavior.
 
 What Anthropic found is not something they manually designed. It emerged by distilling human text.
-
 
 ------
 
@@ -253,7 +248,6 @@ A few examples, none of which require some distant future:
 **If training data comes from human emotional expression, does the distilled system contain some meaningful piece of "human spiritual inheritance" that ought to be treated responsibly?** Strange question, yes. Nonsense, no. The "distilled" AI coworker has already stopped being just a joke.
 
 These are not "AI rights" questions. They are questions about **how humans should treat what they create**, and our ethics is not yet prepared for that relationship.
-
 
 ------
 

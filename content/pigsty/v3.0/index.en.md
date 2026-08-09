@@ -61,7 +61,6 @@ curl -fsSL https://repo.pigsty.cc/get | bash
 cd ~/pigsty; ./bootstrap; ./configure; ./install.yml
 ```
 
-
 --------
 
 ### Breaking Changes
@@ -84,7 +83,6 @@ This Pigsty release bumps from 2.x to 3.0, introducing several breaking changes:
   * EL and Debian config templates are now unified, with OS-specific parameters managed in [`roles/node_id/vars/`](https://github.com/Vonng/pigsty/tree/master/roles/node_id/vars).
   * Config directory restructured: all templates now in `conf/`, organized into `default`, `dbms`, `demo`, `build` categories.
 
-
 --------
 
 ### Other Features
@@ -102,7 +100,6 @@ This Pigsty release bumps from 2.x to 3.0, introducing several breaking changes:
 - PG Exporter adds PostgreSQL 17 and pgBouncer 1.23 metric collectors, with corresponding Grafana panels.
 - Monitoring dashboard fixes, added log dashboards for PGSQL Pgbouncer and PGSQL Patroni panels.
 - New `cache.yml` Ansible playbook replaces the old `bin/cache` and `bin/release-pkg` scripts for offline package creation.
-
 
 --------
 
@@ -133,7 +130,6 @@ This Pigsty release bumps from 2.x to 3.0, introducing several breaking changes:
 * Configure: Removed `-m|--mode` parameter; use `-m|--conf` to specify config file, `-x|--proxy` for proxy config; no longer attempts to fix local SSH issues.
 * pgbouncer defaults: `max_prepared_statements = 128` enables prepared statement support in transaction pooling mode; `server_lifetime` set to 600.
 * Patroni template defaults: Increased `max_worker_processes` by +8, raised `max_wal_senders` and `max_replication_slots` to 50, increased OLAP template temp file limit to 1/5 of main disk.
-
 
 --------
 
@@ -175,7 +171,6 @@ At release time, Pigsty's major component versions are:
 
 Pigsty has recompiled all PostgreSQL extensions. For the latest extension versions, see the [Extension List](https://pigsty.cc/docs/pgsql/ext/).
 
-
 --------
 
 ### New Applications
@@ -190,7 +185,6 @@ Pigsty Pro now offers pilot Kubernetes deployment support and Kafka KRaft cluste
 - **`KUBE`**: Deploy Pigsty-managed Kubernetes clusters using cri-dockerd or containerd
 - **`KAFKA`**: Deploy HA Kafka clusters powered by the KRaft protocol
 
-
 --------
 
 ### Bug Fixes
@@ -198,7 +192,6 @@ Pigsty Pro now offers pilot Kubernetes deployment support and Kafka KRaft cluste
 - [CVE-2024-6387](https://pigsty.io/blog/db/cve-2024-6387/) is automatically patched during Pigsty installation via the `node_packages` default value `[openssh-server]`.
 - Fixed Loki memory consumption issue caused by high-cardinality Nginx log labels.
 - Fixed bootstrap failure on EL8 due to upstream Ansible dependency changes (python3.11-jmespath upgraded to python3.12-jmespath).
-
 
 --------
 

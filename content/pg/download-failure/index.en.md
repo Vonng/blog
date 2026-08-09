@@ -75,12 +75,15 @@ Production environments used connection pools. Normally 5-10 actual database con
 #### Evidence
 
 ##### Connection-Pool Active Connections
+
 ![pgb-active-conn-5888653](download-failure-pgb-active-conn.png)
 
 ##### Connection-Pool Queued Connections
+
 ![pgb-wait-conn](download-failure-pgb-wait-conn.png)
 
 ##### Database Backend Connections
+
 ![pg-conn](download-failure-pg-conn.png)
 
 #### Fix

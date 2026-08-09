@@ -11,9 +11,8 @@ tags: [PostgreSQL, PG管理]
 索引很有用， 但不是免费的。没用到的索引是一种浪费，使用以下SQL找出未使用的索引：
 
 * 首先要排除用于实现约束的索引（删不得）
-* 表达式索引（`pg_index.indkey`中含有0号字段）
+* 表达式索引（`pg_index.indkey` 中含有0号字段）
 * 然后找出走索引扫描的次数为0的索引（也可以换个更宽松的条件，比如扫描小于1000次的）
-
 
 ---------------
 
@@ -63,8 +62,6 @@ WHERE s.idx_scan = 0      -- has never been scanned
 ORDER BY pg_relation_size(s.indexrelid) DESC;
 ```
 
-
-
 ---------------
 
 ### 批量生成删除索引的命令
@@ -82,9 +79,6 @@ WHERE s.idx_scan = 0      -- has never been scanned
 ORDER BY pg_relation_size(s.indexrelid) DESC;
 ```
 
-
-
-
 ---------------
 
 ## 找出重复的索引
@@ -100,4 +94,3 @@ GROUP BY
   indrelid, indkey
 HAVING COUNT(*) > 1;
 ```
-

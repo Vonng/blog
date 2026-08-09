@@ -12,7 +12,6 @@ tags: [Cloud, Cloud-Exit, FinOps]
 
 At the SACC 2023 FinOps session, I fiercely criticized cloud vendors. This is a transcript of my speech, introducing the ultimate FinOps concept — **Cloud-Exit** and its best practice.
 
-
 -----------------
 
 ## TL; DR
@@ -29,8 +28,6 @@ At the SACC 2023 FinOps session, I fiercely criticized cloud vendors. This is a 
 
 [![](finops.jpg)](https://mp.weixin.qq.com/s/Yp_PU8nmyK-NVq0clD98RQ)
 
-
-
 -----------------
 
 ## Misaligned FinOps Focus
@@ -44,7 +41,6 @@ The FinOps Foundation states that FinOps focuses on "**cloud cost optimization**
 In the first stop of my career, I experienced a FinOps movement firsthand. Our BU was among the first internal users of Alibaba-Cloud and also where the "**data middle platform**" concept originated. Alibaba-Cloud sent over a dozen engineers to help us migrate to the cloud. After migrating to ODPS, our annual storage and computing costs were **70 million**, and through FinOps methods like health scoring, we did optimize and save tens of millions. However, running the same services with an in-house Hadoop suite in our data center cost **less than 10 million annually** — **savings are good, but they're nothing compared to the multiplied resource costs**.
 
 As cost reduction and efficiency become the main theme, cloud repatriation is becoming a trend. Alibaba, the inventor of the middle platform concept, has already started dismantling its own middle platform. Yet, many companies are still falling into the trap of the slaughterhouse, repeating the old path of cloud migration - cloud repatriation.
-
 
 -----------------
 
@@ -105,9 +101,6 @@ Comparing the costs of self-hosting versus using a cloud database:
 
 Any meaningful cost reduction and efficiency increase initiative cannot ignore this issue: if there's potential to slash resource prices by 50% to 200%, then focusing on a 30% reduction in waste is not a priority. As long as your main business is on the cloud, traditional FinOps is like scratching an itch through a boot — **migrating off the cloud is the focal point of FinOps**.
 
-
-
-
 -----------------
 
 ## The Endgame of FinOps is Exiting from the Cloud
@@ -123,9 +116,6 @@ However, digitalization in enterprises is phased, and different companies are at
 Enterprises should evaluate their scale and stage, assess their business, and weigh the pros and cons accordingly. For small-scale startups, the cloud can indeed save a lot of manpower costs, which is very attractive — **but please be cautious not to be locked in by vendors due to the convenience offered**. If your annual cloud expenditure has already exceeded 1 million yuan, it's time to seriously consider **the benefits of descending from the cloud** — many businesses do not require the elasticity for massive concurrent spikes or training AI models. Paying a premium for temporary/sudden needs or overseas compliance is reasonable, but paying several times to tens of times more for **unnecessary elasticity** is wasteful. You can keep the truly elastic parts of your operations on the public cloud and transfer those parts that do not require elasticity to IDCs. Just by doing this, the cost savings could be astonishing.
 
 **Descending from the cloud is the ultimate goal of traditional FinOps and the starting point of true FinOps.**
-
-
-
 
 -----------------
 
@@ -155,18 +145,14 @@ However, for users with the capability to self-host, capable of flexibly moving 
 
 If you prefer not to hassle, IDCs can directly sell you virtual machines at 20% of the list price, or you can rent a physical server with 64C/256G for a couple thousand a month; whether renting an entire data center or just a single colocation space, it's all feasible. A retail colocation space with comprehensive services can be settled for about five thousand a year, running a K8S or virtualization on a couple of hundred-core physical servers, why bother with flexible ECS?
 
-
-
-
 -----------------
 
 ## FinOps Leads to CLoud-Exit
 
 Building your own infrastructure comes with the added perk of extreme FinOps—utilizing out-of-warranty or even second-hand servers. Servers are typically depreciated over three to five years, yet it's not rare to see them operational for eight to ten years. This contrasts with cloud services, where you're just consuming resources; owning your server translates to tangible assets, making any extended use essentially a gain.
 
-For instance, a new 64-core, 256GB server could cost around \$7,000, but after a year or two, the price for such "electronic waste" drops to merely \$400. 
+For instance, a new 64-core, 256GB server could cost around \$7,000, but after a year or two, the price for such "electronic waste" drops to merely \$400.
 By replacing the most failure-prone components with brand new enterprise-grade 3.2TB NVMe SSDs (costing \$390), you could secure the entire setup for just $800.
-
 
 In such scenarios, your vCPU·Month price could plummet to less than $0.15, a figure legendary in the gaming industry, where server costs can dip to mere cents.
 With Kubernetes (K8S) orchestration and database high-availability switching, reliability can be assured through parallel operation of multiple such servers, achieving an astonishing cost-efficiency ratio.
@@ -180,10 +166,6 @@ Your operations should ideally converge to using just virtual machines and objec
 Such a CloudNative tech stack theoretically enables operation and flexible migration across any resource environment, thus avoiding vendor lock-in and maintaining control. This allows you to either significantly cut costs by moving off the cloud or leverage it to negotiate discounts with public cloud providers.
 
 However, self-hosting isn't without risks, with RDS representing a major potential vulnerability.
-
-
-
-
 
 -----------------
 
@@ -209,13 +191,9 @@ Perhaps it's the socialist ethos of Nordic companies that nurtures such pure fre
 
 **This is the essence of FinOps—empowering users with viable alternatives and the ability to self-host, thus negotiating with cloud providers from a position of strength**.
 
-
-
-
 -----------------
 
 ## References
-
 
 [1] [云计算为啥还没挖沙子赚钱？](https://mp.weixin.qq.com/s/JU4lznF6-5Q4LaJTnG8SSQ)
 

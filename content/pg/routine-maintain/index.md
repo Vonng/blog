@@ -16,7 +16,6 @@ tags: [PostgreSQL, PG管理]
 
 对Pg而言，有三项比较重要的维护工作：备份、重整、清理
 
-
 * **备份（backup）**：最重要的例行工作，生命线。
   * 制作基础备份
   * 归档增量WAL
@@ -27,23 +26,17 @@ tags: [PostgreSQL, PG管理]
   * 更新统计数据，生成更好的执行计划。
   * 回收死元组。节约空间，提高性能。
 
-
-
 ## 备份
 
-备份可以使用`pg_backrest` 作为一条龙解决方案，但这里考虑使用脚本进行备份。
+备份可以使用 `pg_backrest` 作为一条龙解决方案，但这里考虑使用脚本进行备份。
 
 参考：[`pg-backup`](https://github.com/Vonng/pigsty/blob/master/roles/postgres/files/pg/pg-backup)
 
-
-
 ## 重整
 
-重整使用`pg_repack`，PostgreSQL自带源里包含了pg_repack
+重整使用 `pg_repack`，PostgreSQL自带源里包含了pg_repack
 
 参考：[`pg-repack`](https://github.com/Vonng/pigsty/blob/master/roles/postgres/files/pg/pg-repack)
-
-
 
 ## 清理
 

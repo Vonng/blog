@@ -50,8 +50,7 @@ tags: [PostgreSQL, PG生态, 翻译]
 >
 > —— [Manoj Khangaonkar](https://twitter.com/mjkhanga/status/1780230248728350730)
 
-> *“Postgres不仅仅是一个关系数据库，它是一种生活方式。” —— [ilaksh](https://news.ycombinator.com/item?id=39874270)
-
+> *“Postgres不仅仅是一个关系数据库，它是一种生活方式。” —— [ilaksh](https://news.ycombinator.com/item?id=39874270)*
 
 凭借其坚如磐石的基础，加上其原生功能与扩展插件带来的强大功能集，开发者现在可以单凭 PostgreSQL 解决所有问题，用简洁明了的方式，取代复杂且脆弱的数据架构。
 
@@ -84,9 +83,6 @@ tags: [PostgreSQL, PG生态, 翻译]
 直到现在。
 
 但要理解为什么会发生这种情况，我们必须先了解一个更为基础的趋势以及这个趋势是如何改变人类现实的基本性质的。
-
-
-
 
 ----------------
 
@@ -181,13 +177,11 @@ tags: [PostgreSQL, PG生态, 翻译]
 
 有更好的办法解决这个问题。
 
-
-
 ----------------
 
 ## PostgreSQL王者归来
 
-故事在这里发生转折，我们的主角不再是一个崭新的数据库，而是一个老牌数据库，它的名字只有 ~~核心~~开发人员才会喜欢：PostgreSQL。
+故事在这里发生转折，我们的主角不再是一个崭新的数据库，而是一个老牌数据库，它的名字只有 ~~核心~~ 开发人员才会喜欢：PostgreSQL。
 
 起初，PostgreSQL 在 MySQL 之后居于第二位，且与其相距甚远。MySQL 使用起来更简单，背后有公司支持，而且名字朗朗上口。但后来 MySQL 被 Sun Microsystems 收购（2008年），随后又被 Oracle 收购（2009年）。于是在那时，软件开发者们开始重新考虑使用什么数据库 —— 他们原本视 MySQL 为摆脱昂贵的 Oracle 专制统治的自由软件救星。
 
@@ -215,8 +209,6 @@ tags: [PostgreSQL, PG生态, 翻译]
 
 PostgreSQL 是答案。PostgreSQL 是我们解放自我，并构建未来的方式。
 
-
-
 ----------------
 
 ## 解放自我，构建未来，拥抱 PostgreSQL
@@ -232,8 +224,6 @@ PostgreSQL 是答案。PostgreSQL 是我们解放自我，并构建未来的方�
 同样，也有更多创新的独立公司围绕着 PostgreSQL 内核开发，以改善其使用体验：[Supabase](https://supabase.com/)（2020年）正在将 PostgreSQL 打造成一个适用于网页和移动开发者的 Firebase 替代品；[Neon](https://neon.tech/)（2021年）和 [Xata](https://xata.io/)（2022年）都在实现将 PostgreSQL “伸缩至零”， 以适应间歇性 Serverless 工作负载；[Tembo](https://tembo.io/)（2022年）为各种用例提供开箱即用的技术栈；[Nile](https://www.thenile.dev/)（2023年）正在使 PostgreSQL 更易于用于 SaaS 应用；还有许多其他公司。当然，还有我们，[**Timescale**](https://www.timescale.com/)（2017年）。
 
 > 此处省略三节关于 TimescaleDB 的介绍
-
-
 
 ----------------
 

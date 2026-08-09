@@ -18,6 +18,7 @@ aliases: ["/misc/descriptive-stats/"]
 ## 1. Statistics and the Scientific Method
 
 ### 1.1 Methods of Knowing
+
 Throughout history, humans have mainly acquired knowledge through: **authority, rationalism, intuition, and scientific method**
 
 * **Authority**: Acquiring knowledge based on tradition or opinions of authority figures
@@ -26,6 +27,7 @@ Throughout history, humans have mainly acquired knowledge through: **authority, 
 * **Scientific Method**: Uses reasoning and intuition to acquire truth, but relies on experimentation and **statistical methods** for objective evaluation
 
 ### 1.2 Terminology Definitions
+
 * **Population**: The complete set of individuals, objects, or scores that the researcher is interested in studying. The population is the group from which the experimental subjects are drawn.
 * **Sample**: A sample is a subset of the population
 * **Variable**: Any characteristic or trait of an event, object, or individual that changes under different conditions due to changing circumstances is called a variable.
@@ -36,12 +38,15 @@ Throughout history, humans have mainly acquired knowledge through: **authority, 
 * **Parameter**: A numerical value calculated based on population data, which is a quantitative description of population characteristics.
 
 ### 1.3 Scientific Research and Statistics
+
 Scientific research can be divided into observational studies and true experimental research.
+
 * Observational studies: Variables are not subjectively controlled by researchers, so causal relationships between variables cannot be determined. Includes natural observation, parameter estimation, and correlational studies.
 * True experimental research: Researchers manipulate an independent variable to study its effect on the dependent variable.
 * **Only true experimental research can determine causal relationships**
 
 ### 1.4 Descriptive Statistics and Inferential Statistics
+
 * Statistical analysis is divided into **descriptive statistics** and **inferential statistics**.
 * **Descriptive Statistics** is technology for describing or characterizing existing data
 * **Inferential Statistics** is technology for making inferences about populations using existing sample data.
@@ -49,6 +54,7 @@ Scientific research can be divided into observational studies and true experimen
 ## 2. Basic Concepts of Measurement
 
 ### 2.1 Measurement Scales
+
 Statistics is the process of handling data, data is the result of measurement, and we collect data through **measurement scales**.
 
 * **Nominal Scale**
@@ -88,8 +94,10 @@ Statistics is the process of handling data, data is the result of measurement, a
   In physics, the significant figures of calculation results should be consistent with the original data.
 
 ### 2.3 Rounding
+
 Rounding is not actually as simple as imagined, especially pay attention to the corner case where the remainder is 1/2.
 Rules are as follows:
+
 1. Divide the number to be rounded into two parts: **potential answer** and **remainder**. The **potential answer** is the number extended to decimal places. 3.1245 = 3.12 + 0.045; **remainder** is the remaining part of the number.
 2. Add a decimal point before the first digit of the remainder and compare with 1/2. 0.045 -> 0.45
 3. If the remainder is greater than 1/2, add 1 to the last digit of the potential answer; if less, keep unchanged
@@ -107,12 +115,15 @@ It's the default implementation in .NET, but Python's round method and JavaScrip
 ## 3. Frequency Distributions
 
 ### 3.1 Data Grouping
+
 When data volume is large and widely distributed, listing data individually would result in many frequencies of 0. In such cases, **individual values are usually grouped into intervals**, presented as grouped data frequency distributions.
 
 Data grouping is important work. One important issue is determining interval width. **Grouping data will always lose some information** - the wider the interval, the more information is lost. We cannot know how data is distributed within intervals, so wider intervals create more ambiguity. However, narrower intervals present data closer to raw data - the extreme example would be intervals only one unit wide, which returns us to individual values. So the problem of individual values returns: many data points with frequency 0. Therefore, **narrower intervals make it difficult to clearly show distribution shape and central tendency**.
 
 #### 3.1.1 Creating Grouped Frequency Distributions
+
 Steps to create grouped frequency distributions:
+
 1. Find the **range** of the data
    - Range = maximum value - minimum value
 2. Determine the **class width** for each group
@@ -140,6 +151,7 @@ Steps to create grouped frequency distributions:
 * Percentiles are used for measuring relative position, for individual performance in a reference group. **Given a percentile point, find the corresponding value.** For example, when we want to know the critical scores corresponding to the top 10% and bottom 10% of students, we're finding the 90th and 10th percentile points.
 
 #### 3.2.1 Calculating Percentiles
+
 Calculating percentiles from original ungrouped distribution data is **simple**. First, sort the score values. Assuming there are N data points and we want the x% percentile point, then take the element at position x * N in the ordered data array $data[ceil(\frac{Nx}{100})]$ as the percentile point. The data index is rounded down to an integer using ceil, but this crude approach isn't good. Suppose there's data from 1 to 99 (99 numbers total), and we want the 50% percentile point - should this percentile point be 49 or 50? If it's 49, it's actually the 48.5% percentile point; if it's 50, it's the 50.9% percentile point.
 
 On the other hand, after data grouping statistics, information is lost, and we can no longer simply obtain percentile point values through `data[index]`.
@@ -153,21 +165,21 @@ To solve these two problems, the correct percentile calculation method is as fol
    We examine the cumulative frequency distribution of each partition from small to large. If the cumulative frequency distribution of an interval is greater than or equal to the Nx calculated above, while the cumulative frequency distribution of the previous interval is less than Nx, then we can confirm that the x percentile point falls within this interval.
 
 3. Determine the number of values between the group's lower limit score and Nx, i.e., the cumulative number of values. $N(1-cdf(X_L))$
-   
+
    This is easy to understand. We've located the partition where the x percentile point is located, but haven't precisely located this value. For example, we want the 50th percentile point of 200 data points, which is approximately the value of the 100th data point.
-   
+
    Suppose interval [30, 40) has a cumulative frequency distribution of 100. According to the definition of cumulative frequency distribution, there are exactly 100 data points less than the partition upper limit 40, so the 50th percentile point is known to be 40 without calculation. For another assumption, suppose interval [30, 40) has a cumulative frequency distribution of 90, and interval [40, 50) has a cumulative frequency distribution of 110. We can determine that the 100th data point falls in interval [40, 50). Moreover, 100-90=10 data points are accumulated in interval [40, 50). Then: cumulative number = Nx - cumulative frequency of all groups to the left of this group = $N(1-cdf(X_L))$
 
 4. The fourth step is to determine the additional offset.
-   
+
    The so-called additional unit is like this: we want to take a point on the scale, but after data grouping distribution, we can no longer know the internal data distribution of the grouping. So we assume that within a grouping, data is uniformly distributed. Therefore, final percentile point = interval lower limit + additional offset
-   
+
    Offset = (cumulative number / frequency distribution within group) * class width: (10 / 20) * 10 = 5
 
 5. Determine the percentile
-   
+
    Percentile point = interval lower limit + additional offset
-   
+
    50th percentile point = interval lower limit 40 + offset 5 = 45.
 
 ### 3.3 Percentile Rank
@@ -177,45 +189,55 @@ To solve these two problems, the correct percentile calculation method is as fol
 * Percentile rank is used when we want to know the percentile rank of a certain value. Opposite to percentiles, percentile rank is **given a score, find the corresponding percentile point**. For example, if we want to know what percentage of classmates a score of 85 beats in class, we're finding the percentile rank of 85.
 
 #### 3.3.1 Calculating Percentile Rank
+
 Suppose we want to find the percentile rank x for a score of y.
 First, find the group where score y falls, take the percentage X corresponding to this group's lower limit, record this group's lower limit as Y.
 (y-Y) is the cumulative score, (y-Y)/class width is also the cumulative proportion. The cumulative proportion multiplied by this group's frequency (percentage of total data) gives the cumulative percentage value. Adding the percentage X corresponding to this group's lower limit gives the percentile rank.
 
 ### 3.4 Frequency Distribution Graphs
+
 Frequency distribution graphs usually include the following four types:
+
 * Bar chart
 * Histogram  
 * Frequency polygon
 * Cumulative curve
 
 #### 3.4.1 Bar Chart
+
 * **Nominal data** or **ordinal data** frequency distributions are commonly represented by bar charts.
 * Each bar represents a **category**, and there are no quantitative relationships between categories, but there may be order (which generally doesn't exist).
 
 #### 3.4.2 Histogram
+
 * Histograms are usually used to represent frequency distributions of **interval data** and **ratio data**.
 * Histograms look similar to bar charts, but bars in histograms represent **group intervals** that are **equal distance** or **proportional**. Each group interval is located on the horizontal axis, with each group using precise group limits as the beginning and end of bars.
 * Adjacent bars in histograms must be connected because groups in histograms are continuous.
 * Usually, the midpoint of each group is used as the scale value on the horizontal axis.
 
 #### 3.4.3 Frequency Polygon (Line Chart)
+
 * Frequency polygons are similar to histograms and are usually used to represent frequency distributions of **interval data** and **ratio data**.
 * The difference is that line charts mark the frequency of **group midpoint values** on the X-axis as points on the Y-axis and connect these points into a line. **Adding one group midpoint value at each end** connects the line's beginning and end to the horizontal axis, forming a polygon.
 
 #### 3.4.4 Cumulative Curve
+
 * Both cumulative frequency and cumulative percentage can be represented by cumulative percentage curves.
 * **The horizontal axis of cumulative curves takes the exact upper limits of each group** because the definition of a group's cumulative percentage refers to the percentage of data less than the group's upper boundary.
 * The vertical axis of cumulative percentage is 0~100 or 0~1.
 * Cumulative curves are monotonically non-decreasing curves, so cumulative curves are also called ogive curves, appearing 'S'-shaped.
 
 ### Frequency Curve Shapes
+
 Frequency distributions have various shapes in graphs. **Frequency curves** can usually be divided into two types:
 
 #### Symmetrical Curves
+
 If a curve can overlap when folded in half, it's a symmetrical curve.
 Common symmetrical curves include bell-shaped, rectangular, and U-shaped.
 
 #### Skewed Curves
+
 If a curve cannot overlap when folded in half, it's a skewed curve.
 Common skewed curves include J-shaped, **positively skewed**, and **negatively skewed**.
 When a curve is positively skewed, **most data** concentrates in the **low score section of the horizontal axis**, with the tail pointing toward the high score section.
@@ -230,6 +252,7 @@ When a curve is negatively skewed, **most data** concentrates in the **high scor
 Three measures commonly used for central tendency include **arithmetic mean**, **median**, and **mode**.
 
 #### Arithmetic Mean
+
 **Arithmetic mean** refers to the sum of scores divided by the number of scores.
 There are two types of means: **sample mean $\bar X$** and **population mean $\mu$**
 Sample mean $\bar X$ formula:
@@ -249,6 +272,7 @@ $$
 They look the same, but $X_i$ in the two formulas has different meanings, representing sample data points and population data points respectively.
 
 ##### Characteristics of the Mean
+
 1. The mean is sensitive to exact values of all scores in the distribution (mode and median are not necessarily).
 2. The sum of deviations equals zero: $\sum (X_i-\bar X)=0$
 3. The mean is very sensitive to extreme scores.
@@ -256,6 +280,7 @@ They look the same, but $X_i$ in the two formulas has different meanings, repres
 5. In most cases, among central tendency indicators, the mean is least affected by sampling variation.
 
 ##### Overall Mean
+
 Given the means of several groups of data, to find their overall mean, use the formula:
 
 $$
@@ -266,35 +291,42 @@ $$
 So the overall mean is often called the weighted average.
 
 #### Median
+
 The median (Mdn) refers to the scale value where 50% of scores fall below it, so it's also the 50th percentile, written as $P_{50}$.
 Therefore, calculating the median is calculating the 50th percentile, which won't be repeated here.
 
 ##### Characteristics of the Median
+
 1. The median is less sensitive to extreme scores than the mean
    Therefore, when describing skewed distribution data, the median is more suitable than the mean.
 2. The median has lower sampling stability than the mean.
    So it's rarely used in inferential statistics.
 
 #### Mode
+
 The mode refers to the score that appears most frequently in the distribution.
 
 Usually, when data has a unimodal distribution, the mode is unique. But some distributions have multiple modes.
 Mode measurement is very easy, but it has poor stability between samples and may have multiple values, so it's used less frequently.
 
 #### Measures of Central Tendency and Symmetry
+
 * If a distribution is a unimodal symmetric distribution, then its **mean**, **mode**, and **median** are all the same number.
 * If the distribution is skewed, then the mean and median are not equal. Remember that the mean is greatly affected by extreme values, so when the distribution is positively skewed (concentrated on the left), the mean is less than the median; when the distribution is negatively skewed, the mean is greater than the median.
 * The mode is the peak of the distribution.
 
 ### Measures of Variability
+
 Variability measurement is a quantitative description of dispersion degree. Three commonly used variability values are range, standard deviation, and variance.
 
 #### Range
+
 Range refers to the difference between the highest and lowest scores in a group of data. That is: Range = maximum value - minimum value.
 
 #### Standard Deviation
 
 ##### Deviation Scores
+
 Deviation score refers to the distance between the raw score and the distribution mean.
 Sample data deviation formula: $X - \bar X$
 Population data deviation formula: $X-\mu$
@@ -320,16 +352,19 @@ The population standard deviation calculation formula is similar to the sample s
 $$s \approx \sigma = \sqrt{\frac{SS}{N-1}}=\sqrt{\frac{\sum (X-\bar X)^2}{N-1}}$$
 
 ##### Direct Calculation Using Raw Scores
+
 If raw data is directly known, you can use data **sum of squares** minus data **sum squared**/N to calculate sum of squared deviations, formula as follows:
 
 $$SS=\sum X^2 - \frac{(\sum X)^2}{N}$$
 
 #### Characteristics of Standard Deviation
+
 * Standard deviation provides measurement of dispersion relative to the mean, sensitive to every score in the distribution.
 * Standard deviation has stable sampling fluctuation.
 * Both standard deviation and mean are suitable for algebraic operations, facilitating inferential statistics.
 
 ### Variance
+
 Variance equals the square of standard deviation.
 Sample data variance formula: $s^2=\frac{SS}{N}$
 Population data variance formula: $\sigma ^ 2 = \frac{SS_{pop}}{N}$
@@ -350,7 +385,7 @@ But usually we don't know the population mean μ, only the sample mean $\bar{X}$
 
 $$
 \frac{1}{N-1} \sum_{i=1}^{n}{(X_i - \bar{X})^2}
-= \sigma^2 \ge s^2 = 
+= \sigma^2 \ge s^2 =
 \frac{1}{N} \sum_{i=1}^{n}{(X_i - \bar{X})^2}
 $$
 
@@ -359,9 +394,9 @@ Because calculating the mean uses one degree of freedom, the other N-1 data poin
 $$
 \begin{equation}
 \begin{aligned}
-s^2 &= \frac{1}{N} \sum_{i=1}^{n}{(X_i - \bar{X})^2}  = \frac{1}{N} \sum_{i=1}^{n}{[ (X_i - μ) + (μ-\bar{X}) ]^2} \\ 
+s^2 &= \frac{1}{N} \sum_{i=1}^{n}{(X_i - \bar{X})^2}  = \frac{1}{N} \sum_{i=1}^{n}{[ (X_i - μ) + (μ-\bar{X}) ]^2} \\
 &= \frac{1}{N} \sum_{i=1}^{n}{(X_i - μ)^2}+ \frac{2}{N} \sum_{i=1}^{n}{(X_i - μ^2)(μ - \bar{X})} + \frac{1}{N} \sum_{i=1}^{n}{(μ - \bar{X})^2} \\
-&= \frac{1}{N} \sum_{i=1}^{n}{(X_i - μ)^2} - 2(μ -\bar{X})^2 + (μ-\bar{X})^2 \\ 
+&= \frac{1}{N} \sum_{i=1}^{n}{(X_i - μ)^2} - 2(μ -\bar{X})^2 + (μ-\bar{X})^2 \\
 &= \frac{1}{N} \sum_{i=1}^{n}{(X_i - μ)^2 - (μ-\bar{X})^2} \\
 \end{aligned}
 \end{equation}
@@ -384,11 +419,13 @@ $$
 ## 5. Normal Curve and Standard Scores
 
 The normal distribution is very important because:
+
 * Many random variables' distributions approximate the normal curve.
 * Many inferential test sample distributions tend toward normal distribution as sample size increases.
 * Many inferential tests require sampling to be normally distributed.
 
 ### 5.1 Normal Curve
+
 The normal curve is a theoretical distribution of population scores. It's a bell-shaped curve with the formula:
 
 $$
@@ -399,6 +436,7 @@ e^{\frac{-(X-\mu)^2}{2\sigma ^2}}
 $$
 
 If you need normal distribution tables, CDF or PDF, you can calculate through the scipy package:
+
 ```python
 from scipy.stats import norm
 norm.cdf(1.2)
@@ -409,6 +447,7 @@ From the formula, if we take the second derivative of the distribution function,
 Theoretically, the normal curve never intersects the X-axis; it only gets closer and closer to the X-axis. The X-axis is called the asymptote.
 
 #### Area Under the Normal Curve
+
 The normal curve is often a probability density function (PDF). The area enclosed by the probability density function, two vertical lines, and the X-axis represents the probability of events occurring.
 Probability within $\mu \pm\sigma$ is 68.26%
 Probability within $\mu \pm2\sigma$ is 95.44%  
@@ -427,11 +466,13 @@ The process of changing raw scores is called **score transformation**, resulting
 After score transformation, any normally distributed distribution now becomes comparable.
 
 #### Characteristics of z-scores
+
 * z-scores have the same distribution shape as raw scores.
 * The mean of z-scores is always 0.
 * The standard deviation of z-scores always equals 1.
 
 #### Finding Area (CDF) Given Raw Scores
+
 This can be seen as finding percentiles. For example, if my IQ is 158, what percentage of people did I beat?
 First, the IQ model can be seen as a normal distribution with mean 100 and standard deviation 16.
 IQ 158 converts to z-score as (158-100)/16 = 3.625. Looking up the normal distribution CDF table:
@@ -446,6 +487,7 @@ IQ 158 converts to z-score as (158-100)/16 = 3.625. Looking up the normal distri
 An IQ of 158 beats 99.99% of people, truly one in ten thousand.
 
 #### Finding Raw Scores Given Area (CDF)
+
 This is the reverse table lookup: what IQ score represents one in a million?
 
 One in a million means beating 99.9999% of people, i.e., cdf(z)=0.999999.
@@ -462,6 +504,7 @@ Using the inverse function of CDF, we get z-score 4.75. Converting back to stand
 ## 6. Correlation
 
 ### 6.1 Introduction
+
 We might be interested in relationships between two variables.
 Because if two variables are **correlated**, then one variable **might** be the cause of another variable.
 If two variables are **uncorrelated**, then there cannot be a causal relationship between them.
@@ -471,23 +514,28 @@ That is, **correlation doesn't necessarily mean causation, but causation definit
 The difference is: correlation cares whether relationships exist, determining size and direction. Regression focuses on using correlation for prediction.
 
 ### 6.2 Relationships
+
 **Correlation** mainly represents the size and direction of **relationships**, so we need to first examine the characteristics of relationships.
 
 #### Linear Relationships
+
 **Scatter plot** is a graph drawn based on paired X and Y values.
 **Linear relationship** means the relationship between two variables can be **accurately** described by a straight line.
 
 #### Positive and Negative Correlation
+
 **Positive relationship** means variables have relationships with **the same direction of change**
 **Negative relationship** means variables have relationships with **opposite directions of change**
 
 #### Perfect and Imperfect Correlation
+
 **Perfect relationship** means all points with positive or negative correlation fall on the same straight line.
 **Imperfect relationship** means correlation exists but not all points fall on the same straight line.
 Although most of the time we encounter imperfect correlations and can't draw a line through all points, we can draw a line that fits the data to the maximum extent.
 This best-fit line is often used for prediction. When used this way, it's called a **regression line**.
 
 ### 6.3 Correlation
+
 Correlation mainly focuses on the direction and degree of relationships.
 Relationship direction is mainly divided into positive and negative.
 Relationship degree mainly refers to the size and strength of relationships, ranging from no relationship to perfect correlation.
@@ -498,6 +546,7 @@ The larger the absolute value, the stronger the correlation. The sign of the cor
 Sample correlation coefficient is usually represented as r, population correlation coefficient is usually $\rho$.
 
 #### Pearson Linear Correlation Coefficient r
+
 **Pearson r** is a measure of the degree to which paired scores occupy the same or opposite positions in their respective distributions.
 Simply put, if we convert two random variables X and Y distributions to z-scores.
 The closer each pair of variable scores is positioned in the standard normal distribution, the more correlated the two variables can be considered.
@@ -515,7 +564,7 @@ $$
 \displaystyle
 r=\frac
 {\sum_{i=1}^n(X_i-\bar{X})(Y_i-\bar{Y})}
-{\sqrt{(\sum_{i=1}^n(X_i-\bar{X})^2)} 
+{\sqrt{(\sum_{i=1}^n(X_i-\bar{X})^2)}
 \sqrt{(\sum_{i=1}^n(Y_i-\bar{Y})^2)} }
 $$
 
@@ -538,6 +587,7 @@ $$
 $$
 
 ##### Other Interpretations of Pearson Correlation Coefficient
+
 Suppose a pair of random variables X, Y has correlation greater than zero.
 We perform regression and predict Y based on score $X_i$. The predicted value is $\hat{Y_i}$, and the actual Y value corresponding to $X_i$ is $Y_i$.
 
@@ -562,6 +612,7 @@ r^2=\frac
 $$
 
 ##### Pearson Distance
+
 Sometimes for convenience, we use **Pearson distance**, which is 1 minus the Pearson coefficient.
 $$
 d_{X,Y}=1-\rho_{X,Y}
@@ -570,6 +621,7 @@ So Pearson distance ranges from $[0,2]$
 At 0, the distance is closest with perfect positive correlation; at 2, the distance is farthest with perfect negative correlation.
 
 ##### Geometric Interpretation
+
 Geometrically, if we view the values of random variables X and Y as vectors, the correlation coefficient equals the cosine of the vector angle.
 
 $$
@@ -578,24 +630,30 @@ cos\theta = \frac{\vec{x}\cdot\vec{y}}{\lvert \lvert x \rvert\rvert \times \lver
 $$
 
 ##### Calculating Pearson Correlation Coefficient
+
 ```python
 >>> from scipy.stats import pearsonr
 >>> pearsonr([1,2,3],[4,5,6])
 (1.0,0.0)
 ```
+
 [Using Scipy to Calculate Pearson Correlation Coefficient](http://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html)
 
 #### Other Correlation Coefficients
+
 ##### Forms of Correlation
+
 Choosing which correlation coefficient depends on the form of correlation relationship, such as whether it's linear or curved.
 Curved relationships can use η as a correlation coefficient, so η² can also be used as a measure of effect size.
 
 ##### Measurement Scales
+
 Correlation coefficient selection also depends on measurement scale choice.
 Pearson correlation coefficient is defined on **interval scales** and **ratio scales**.
 If you want to define correlation coefficients on **ordinal scales**, we need **Spearman rank correlation coefficient rho**.
 
 #### Spearman Rank Correlation Coefficient rho
+
 Spearman rank correlation coefficient ρ(rs) is actually the application of Pearson correlation coefficient to rank data.
 For data with no duplicates or very few duplicates, the simplest formula for calculating rho is:
 
@@ -612,12 +670,14 @@ This isn't enough yet; you also need to set duplicate rank levels as the average
 For example, if three duplicate data ranks are 5, 6, 7, then each rank becomes 6, and the next highest score rank should be 8.
 
 #### Range Restriction Effect on Correlation
+
 If correlation exists between X and Y, restricting the range of either variable will weaken this correlation.
 Simply put, originally the scatter plot was a galaxy-like long elliptical disk where correlation could be seen.
 Now I restrict X values, taking a piece from the galaxy center, so sampling gets a parallelogram-like scatter plot with no particularly obvious pattern.
 Correlation naturally decreases.
 
 #### Extreme Value Effects
+
 When calculating correlation coefficients, pay attention to whether there are extreme values in the data, especially when sample sizes are relatively small.
 Suppose X, Y have several points on [(0,0),(10,10)) that are not very correlated. Now I add a sample point (1000,1000).
 Immediately a regression curve is drawn from (5,5) to (1000,1000), and the correlation coefficient instantly goes up...
@@ -625,6 +685,7 @@ Immediately a regression curve is drawn from (5,5) to (1000,1000), and the corre
 #### Correlation Doesn't Imply Causation
 
 When two variables are correlated, there are four possibilities:
+
 * X and Y are spuriously correlated
 * X causes Y  
 * Y causes X
@@ -645,6 +706,7 @@ Of course, actually, what we want to minimize is $\sum (Y-\hat{Y})^2$
 The reason for using least squares regression lines instead of any random straight line is that its total prediction accuracy is higher than any possible regression line.
 
 ### 7.2 Establishing the Least Squares Regression Line
+
 The least squares regression equation is $\hat{Y}=b_YX+a_Y$
 Here, $b_y$ refers to the line slope that minimizes Y prediction, and $a_Y$ refers to the Y-axis intercept that minimizes prediction error.
 
@@ -682,7 +744,7 @@ $$
 {\begin{bmatrix}
 1 & X_1 \\
 \vdots & \vdots \\
-1 & X_N 
+1 & X_N
 \end{bmatrix}}
 {\begin{bmatrix}
 a_Y \\

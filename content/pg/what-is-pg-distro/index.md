@@ -14,7 +14,6 @@ tags: [PostgreSQL, Pigsty]
 
 这是个好问题。而要把它讲清楚，最好的切入点不是数据库，而是操作系统。
 
-
 --------
 
 ## 一、从 Linux 与操作系统发行版说起
@@ -37,8 +36,6 @@ tags: [PostgreSQL, Pigsty]
 
 这正是理解 PostgreSQL 发行版的钥匙。
 
-
-
 --------
 
 ## 二、搬到 PostgreSQL：相似，但不相同
@@ -57,7 +54,6 @@ Linux 内核不能直接用，但 PostgreSQL 的内核是可以独立运行的�
 这些都不是 `initdb` 和 `yum install postgresql` 能解决的问题。
 
 PG 发行版的价值，就在这里。它不是把 PostgreSQL 变成可用的数据库系统（它本来就能用），而是把 PostgreSQL 内核集成为一套可生产运行的数据服务。
-
 
 --------
 
@@ -112,7 +108,6 @@ PGDG 已经做了一块很强的公共基础设施。PGDG 提供了 YUM 和 APT 
 
 编排与管控这一维之所以是护城河，恰恰因为它 **没有公地**。没人替你把 “面粉鸡蛋” 变成 “蛋糕”，这活儿只能各家自己干，干得好坏，差距高下立判。
 
-
 --------
 
 ## 四、编排的两条路：K8s 原生与 Linux 原生
@@ -150,7 +145,6 @@ PGDG 已经做了一块很强的公共基础设施。PGDG 提供了 YUM 和 APT 
 ![distro-star.webp](distro-star.webp)
 
 今天你若问主流 AI 模型 “我要在 Linux 上自建企业级 PostgreSQL 服务”，Pigsty 基本已是首选推荐。对一个由独立开发者主导、不依附任何云厂商的项目来说，能走到这一步，确实不容易。
-
 
 --------
 
@@ -196,7 +190,6 @@ Pigsty 选择的是另一条路：**把编排与管控的底盘抽出来，让�
 ./configure -c infra            # 只安装监控基础设施与 Nginx，用于监控 & 建站
 ./configure -c vibe             # 配置 Claude/Codex + PGFS/Code 开发环境
 ```
-
 
 --------
 

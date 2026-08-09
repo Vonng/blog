@@ -16,7 +16,6 @@ GitHub 仓库已有上千 Star，四千七百多个源文件，五十多万行�
 地表最强 Agent 实现全部白给，全场 TypeScript 统统白给！Tools 实现白给！多 Agent 协调白给！System Prompt 白给！
 内部代号 KAIROS 都白给！挥泪大放送，走过路过千万不要错过！
 
-
 --------
 
 ## 这是一个愚人节笑话吗？
@@ -32,8 +31,6 @@ GitHub 仓库已有上千 Star，四千七百多个源文件，五十多万行�
 ![src-tree.webp](src-tree.webp)
 
 这不是“开源”，这是 **开裆裤**。
-
-
 
 -----
 
@@ -56,7 +53,6 @@ Anthropic 当时的反应堪称迅速：推更新删除 Source Map，同时从 N
 
 这让我想起一句老话：**历史不会简单地重复，但它确实押韵。**
 
-
 -----
 
 ## 上次翻车引发了什么？
@@ -74,8 +70,6 @@ Anthropic 当时的反应堪称迅速：推更新删除 Source Map，同时从 N
 这不是什么火箭科学。但它告诉了整个行业：**SOTA 就是这么做的。原来就这？**
 
 于是大家纷纷跟进。那一波爆发，Claude Code 的泄露功不可没——虽然 Anthropic 肯定不想承认这一点。
-
-
 
 ---
 
@@ -112,7 +106,6 @@ Claude Code 的语音模式。这在公开文档和 Changelog 中有所提及，
 
 > https://zread.ai/instructkr/claude-code/1-overview
 
-
 ---
 
 ## Anthropic 最近的“泄露体质”
@@ -124,7 +117,6 @@ Claude Code 的语音模式。这在公开文档和 Changelog 中有所提及，
 再往前推，今年 1 月 Check Point 披露了 Claude Code 的安全漏洞 CVE-2026-21852——恶意仓库可以通过 `.claude/settings.json` 中的 `ANTHROPIC_BASE_URL` 配置窃取用户的 API Key，用户只需要打开仓库就会中招。
 
 Source Map 泄露 + CMS 数据湖泄露 + 安全漏洞……对于一家以 “AI Safety” 为核心招牌的公司来说，2026 年 Q1 的表现多少有些行为艺术的味道。
-
 
 ---
 
@@ -146,7 +138,6 @@ Claude Code 用 TypeScript 编写，通过 `npm install -g` 全局安装分发�
 StepSecurity 的安全研究者称这是“有记录以来针对 Top-10 NPM 包最精密的供应链攻击之一”。Anthropic 的 Source Map 泄露简直是“小巫见大巫”。
 
 老实说，前端圈 JS、TS 圈的这些花活，真是让人瞠目结舌。
-
 
 -----
 
@@ -170,7 +161,6 @@ Anthropic 在 Harness 维度上和大家共产了一把，虽然尴尬，但不�
 
 ![claude-comment.webp](claude-comment.webp)
 
-
 ---
 
 ## 愚人节前的滑稽戏
@@ -182,8 +172,6 @@ Anthropic 在 Harness 维度上和大家共产了一把，虽然尴尬，但不�
 **这大概是 2026 年最好的愚人节笑话：它是真的。**
 
 历史告诉我们，一年前的那次泄露，Anthropic 紧急删除、清理、封堵。这次大概率也会重复同样的流程。所以如果你想看的话——趁现在赶紧去保存一份吧。
-
-
 
 ---
 

@@ -42,7 +42,6 @@ This isn't prophecy. This is happening now.
 
 ![featured.webp](featured.webp)
 
-
 ------
 
 ## II. The Death of the Middle Layer
@@ -81,8 +80,6 @@ Agent flow: Snap a photo, say "calculate this meal's calories and update my fitn
 
 **Zero "App interface" in the whole process. The Agent IS the interface.**
 
-
-
 ------
 
 ## III. The Unexpected Victory of CLI
@@ -112,7 +109,6 @@ Plus, CLI naturally supports chaining and reuse—exactly what Agents excel at: 
 Rather than stuffing complete docs into context, just call CLI `--help` when needed. CLI's "fetch on demand" beats "load everything" every time.
 
 **Unix was born in 1969. Small tools, text streams, composability—this philosophy is being vindicated by AI Agents 55 years later.**
-
 
 ------
 
@@ -161,7 +157,6 @@ Such interfaces will look like CLI, but they're no longer CLI for human devs—t
 
 > I'm also exploring what Agentic CLI for PostgreSQL management should look like: [**PIG**](https://pigsty.io/docs/pig).
 
-
 ------
 
 ## V. GUI Won't Die, But It Will Transform
@@ -178,7 +173,6 @@ This layer of "visual prompts" dramatically lowers the barrier to asking questio
 
 In a world where Agents handle intent and CLI handles execution, GUI is no longer a pretty skin over databases—it's the **prompting canvas** and **results display layer**:
 It summarizes Agent suggestions, transforms complex state into visual layers, provides structured review of conversation history. GUIs that fully leverage human visual cognition will persist.
-
 
 ------
 
@@ -204,7 +198,6 @@ Thirty years ago, database designers couldn't have imagined SQL would become the
 Translation layers are being squashed. Software form factors are changing.
 
 Those who understand this trend will define the next generation of infrastructure.
-
 
 ## References
 

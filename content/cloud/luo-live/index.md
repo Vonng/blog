@@ -13,7 +13,6 @@ tags: [下云, 阿里云]
 
 > 这牙膏确实还不错，但这云服务器嘛…
 
-
 ---------------
 
 ## 云计算可以2C吗？
@@ -29,7 +28,6 @@ tags: [下云, 阿里云]
 ![](luo-live-3.jpg)
 
 在 IT 规模光谱的一侧 —— 个人站长与小微企业上，新一代云服务/SaaS（CF，Neon，Vercel，Supabase），赛博菩萨们的免费套餐，对公有云产生了明显的替代与冲击；在光谱的另一侧 —— 中大型企业组织中，新出现的 IDC 2.0 与开源管控软件替代合流，短路掉公有云这个中间商，利用好[硬件摩尔定律](https://mp.weixin.qq.com/s/1OSRcBfd58s0tgZTUZHB9g)的累积优势，成为[终极FinOps实践](https://mp.weixin.qq.com/s/Yp_PU8nmyK-NVq0clD98RQ)，实现极为[惊人的降本增效能力](https://mp.weixin.qq.com/s/CicctyvV1xk5B-AsKfzPjw)。
-
 
 ---------------
 

@@ -16,12 +16,11 @@ tags: [Pigsty]
 
 Pigsty v1.3 正式发布，新增 Redis 支持、PGCAT 应用重构、PGSQL 监控增强。
 
-
 ----------------
 
 ## Redis 支持
 
-虽然 PostgreSQL 是**世界上最先进的开源关系型数据库**，但一个好汉三个帮。Pigsty v1.3 为 PostgreSQL 引入了一位得力的缓存伙伴：**世界上最快的数据库** —— Redis。
+虽然 PostgreSQL 是 **世界上最先进的开源关系型数据库**，但一个好汉三个帮。Pigsty v1.3 为 PostgreSQL 引入了一位得力的缓存伙伴：**世界上最快的数据库** —— Redis。
 
 ![redis-partner](redis-partner.jpg)
 
@@ -33,7 +32,6 @@ Pigsty Demo 中已经纳入 Redis 集群样例：
 
 ![redis-demo](redis-demo.jpg)
 
-
 ### 三种部署模式
 
 Redis 有三种经典部署模式：普通主从结构（Standalone）、原生集群（Cluster）、高可用哨兵（Sentinel）。Pigsty v1.3 全部支持。
@@ -41,7 +39,6 @@ Redis 有三种经典部署模式：普通主从结构（Standalone）、原生�
 ![redis-overview](redis-overview.jpg)
 
 Redis Overview 首页展示了三个样例集群，分别对应三种部署模式。
-
 
 ### 声明式配置
 
@@ -55,7 +52,6 @@ Redis Overview 首页展示了三个样例集群，分别对应三种部署模�
 
 ![redis-params-2](redis-params-2.jpg)
 
-
 ### 自动监控
 
 使用 Pigsty 创建的 Redis 集群与实例会自动纳入监控系统。
@@ -65,7 +61,6 @@ Redis Overview 首页展示了三个样例集群，分别对应三种部署模�
 单个 Redis 集群的监控首页，点击具体实例可跳转至实例级监控：
 
 ![redis-instance](redis-instance.jpg)
-
 
 ----------------
 
@@ -89,7 +84,6 @@ v1.3 重构了 PGCAT 应用，这是一个直接从 Grafana 访问并可视化 P
 
 PGCAT TABLE Dashboard 改版：添加每一列的详细统计信息展示。
 
-
 ### 无侵入式设计
 
 PGCAT 只需一个可访问的目标数据库 URL 即可使用，无需安装任何 Agent。即使是仅监控模式部署现有实例，也可以完整使用 PGCAT 功能。
@@ -97,7 +91,6 @@ PGCAT 只需一个可访问的目标数据库 URL 即可使用，无需安装任
 ![pgsql-monitor-only](pgsql-monitor-only.jpg)
 
 在 Pigsty v1.3 的仅监控部署模式中，外部 PostgreSQL 实例也会在 Grafana 中注册并默认启用 PGCAT 功能。
-
 
 ----------------
 
@@ -112,7 +105,6 @@ PGCAT 只需一个可访问的目标数据库 URL 即可使用，无需安装任
 PGSQL Instance、PGSQL Cluster 都新增了若干快速导览面板，用于快速定位问题。PGSQL Service 完整重置，更为简洁直观，便于快速理清集群拓扑。其他 Dashboard 也有相应优化与改进。
 
 此外，v1.3 还包含半自动数据库迁移剧本的改进、Profiling 工具支持等功能增强。
-
 
 ----------------
 
@@ -153,7 +145,6 @@ PGSQL Instance、PGSQL Cluster 都新增了若干快速导览面板，用于快�
 - 添加 Greenplum RPM 和依赖项
 - 添加 Redis RPM 及源码包
 - 将 perf 添加为默认包
-
 
 ----------------
 

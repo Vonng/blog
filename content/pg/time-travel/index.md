@@ -21,7 +21,6 @@ patroni 进程启动时间和pid时间不一致。就会认为：postgres is not
 
 两个时间相差超过30秒。patroni 就尿了，启动不了了。
 
-
 打印错误信息的代码为：
 
 ```python
@@ -29,7 +28,6 @@ start_time = int(self._postmaster_pid.get('start_time', 0))
 if start_time and abs(self.create_time() - start_time) > 3:
     logger.info('Process %s is not postmaster, too much difference between PID file start time %s and process start time %s', self.pid, self.create_time(), start_time)
 ```
-
 
 同时，发现了Patroni里的一个BUG：https://github.com/zalando/patroni/issues/811 错误信息里两个时间戳打反了。
 

@@ -22,7 +22,7 @@ Well, I recently witnessed a live cloud database drop-and-run incident. This art
 
 -------------
 
-## Incident Scene 
+## Incident Scene
 
 ![case-1.png](drop-rds-case-1.webp)
 
@@ -96,7 +96,7 @@ pg-testdelay:
 
 In the PGSQL REPLICATION monitoring dashboard, `pg-test` cluster replication metrics are shown above. After enabling replication delay configuration, delayed replica `pg-testdelay-1` has stable 1-minute "Apply Delay". In LSN progress charts, primary's LSN progress and delayed replica's LSN progress differ by exactly 1 minute on the horizontal time axis.
 
-You can also create regular backup clusters, then use **`pg edit-config pg-testdelay `** to manually modify delay duration configuration.
+You can also create regular backup clusters, then use **`pg edit-config pg-testdelay`** to manually modify delay duration configuration.
 
 ![edit-config.png](drop-rds-edit-config.png)
 

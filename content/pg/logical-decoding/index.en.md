@@ -9,7 +9,6 @@ tags: [PostgreSQL, PG-Development, CDC]
 
 In actual production, we often need to synchronize database states to other places, such as synchronizing to data warehouses for analysis, to message queues for downstream consumption, or to caches to accelerate queries. Generally speaking, there are two major methods for moving state: ETL and CDC.
 
-
 --------------------
 
 ## Prerequisites
@@ -104,8 +103,6 @@ Of course, it can also be more compact and efficient strict Protobuf format, mor
 **Logical decoding** solves the problem of **decoding** database internal binary representation change events into formats users are interested in. This process is necessary because database internal representations are very compact. To interpret raw binary WAL logs, you need not only knowledge about WAL structure but also **System Catalog**, i.e., metadata. Without metadata, you can only parse a series of oids that only the database can understand, not schema names, table names, column names that users might be interested in.
 
 Regarding stream replication protocols, replication slots, transaction snapshots and other concepts and functions, we won't expand on them here. Let's move to the hands-on section.
-
-
 
 --------------------
 
@@ -310,11 +307,6 @@ Another interesting scenario is UNDO LOG. PostgreSQL's crash recovery is based o
 Finally, output plugins can format change events into various forms. Decoding output as Redis kv operations, or just extracting some key fields for updating statistics or building external indexes, has great imagination space.
 
 Writing custom logical decoding output plugins is not complex. You can refer to [this](https://www.postgresql.org/docs/11/logicaldecoding-output-plugin.html) official documentation. After all, logical decoding output plugins are essentially just a collection of string-concatenating callback functions. Based on [official samples](https://github.com/postgres/postgres/blob/master/contrib/test_decoding/test_decoding.c) with slight modifications, you can easily implement your own logical decoding output plugin.
-
-
-
-
-
 
 --------------------
 
@@ -554,11 +546,6 @@ catalog_xmin        | 1371
 restart_lsn         | 2D/AB269A80       -- Next client reconnection will start replaying from here
 confirmed_flush_lsn | 2D/AB269AB8       -- Message progress client has confirmed completion
 ```
-
-
-
-
-
 
 --------------------
 

@@ -22,8 +22,6 @@ When I finished, I was a bit dazed myself: a few years ago, this would have take
 
 [![pgBackRest Chinese docs](backrest.webp)](https://pigsty.cc/docs/pgbackrest)
 
-
-
 ------
 
 ## Do Chinese Docs Really Matter?
@@ -48,8 +46,6 @@ As for Chinese docs for PgBouncer, Patroni, and pgBackRest? Virtually nonexisten
 
 This isn't because the Chinese community isn't trying. Translating documentation is a thankless grind: massive workload, high technical bar, no direct payoff, and you have to keep up with every version update. Passion-driven volunteering simply isn't sustainable for work like this.
 
-
-
 ------
 
 ## What Did AI Change?
@@ -68,8 +64,6 @@ Of course, I don't just blindly throw everything at AI. I do a full pass over th
 
 This proves once again that in the AI era, things that used to require an entire company or a large team can now be done by one person. Documentation translation is just one example. The barrier to community building and open-source maintenance has been fundamentally changed.
 
-
-
 ------
 
 ## What's Next?
@@ -85,8 +79,6 @@ What does a truly vibrant technical community need? I've thought about this: you
 Most critically, you need your own core value proposition — something like an open-source project to serve as a rallying point. Now think about it: none of this is actually that hard to pull off anymore. These were things I wanted to do before but didn't have the bandwidth for. Now with AI backing me up, I can sit here surfing and delegating by voice, tokens aplenty — many things I never dared imagine before can now be handled by one person with ease.
 
 Some might ask: in the age of AI agents, won't agents read the docs directly in the future? Do we even need Chinese translations anymore? Maybe we won't even need doc sites — just throw an `llm.txt` in the project and call it a day. Perhaps. But at least for now, I still frequently consult PG docs myself. Until agents truly replace humans, this work remains hugely valuable.
-
-
 
 ------
 

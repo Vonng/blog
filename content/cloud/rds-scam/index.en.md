@@ -16,7 +16,6 @@ Quality, security, efficiency, and cost analysis,
 
 Cloud exit database self-building: how to implement in practice!
 
-
 ----------
 
 ## TL;DR
@@ -26,7 +25,6 @@ From commercial software to open source software to cloud software, the software
 Cloud databases are a very profitable business: they can sell hardware computing power costing less than 20¥/core·month at ten to dozens of times markup, easily achieving 50%-70% or even higher gross margins.
 
 However, as hardware follows Moore's Law and open source alternatives emerge for cloud management software, this business faces severe challenges: cloud database services lose cost-effectiveness, and cloud exit self-building becomes a trend.
-
 
 -----------
 
@@ -43,7 +41,6 @@ Unfortunately, cloud services don't provide quality service matching their high 
 The more serious problem is: as hardware follows Moore's Law development and open source alternatives emerge for cloud management software, the cloud database model faces severe challenges:
 Cloud database services lose cost-effectiveness, and cloud exit self-building becomes a trend.
 
-
 -----------
 
 **What are cloud databases?**
@@ -55,7 +52,6 @@ The common feature of these two delivery paradigms is that software is a "produc
 
 Cloud database services (AWS/Alibaba-Cloud/... RDS) typically bundle software and hardware resources, packaging open source database kernels running on cloud servers as "services":
 Users access and use database services through cloud platform-provided database URLs, managing databases through cloud vendor proprietary management software (platform/PaaS).
-
 
 -----------
 
@@ -69,16 +65,11 @@ Open source software brought huge industry transformation - **the history of the
 
 **Then, cloud devoured open source**. Public cloud software is the result of internet giants productizing their ability to use open source software for external output. Public cloud vendors wrap open source database kernels with shells, package them with management software running on managed hardware, and hire shared DBA experts for support, becoming **cloud database services** (RDS). **Cloud is indeed a valuable service, also providing new monetization paths for much software. But cloud vendors' free-riding behavior is undoubtedly exploitation and extraction from open source software communities**, and cloud computing Robin Hoods are also gathering to organize counterattacks.
 
-
 -----------
-
 
 **Classic commercial databases Oracle, DB2, SQL Server all sell very expensively - why can't cloud databases sell at high prices?**
 
 In the commercial software era, which can be called Software 1.0 era, databases represented by Oracle, SQL Server, IBM were indeed very expensive.
-
-
-
 
 -----------
 
@@ -106,9 +97,6 @@ Startup phase, extremely small traffic simple applications / 2 completely unpred
 
 3. Setting aside grand narratives, cloud database costs are not cheap. ... (elasticity/0-100km acceleration), introducing cost issues.
 
-
-
-
 -----------
 
 **Why this saying? Why feel expensive?**
@@ -123,21 +111,14 @@ Not just us, Ruby on Rails author DHH shared their complete 37 Signal company cl
 
 Introducing [DHH's cloud exit example](https://pigsty.io/zh/cloud//odyssey/), $3M annual consumption. After one-time **$600k** investment in self-hosted servers, annual spending dropped to $1M, one-third of original. Could save $7M over five years. Cloud exit took half a year without requiring more personnel for operations.
 
-
-
-
 Especially considering open source alternatives' emergence
-— 
+—
 
 "Virtue doesn't match position leads to disaster"
 
 Literal meaning: using cloud databases is actually paying five-star hotel Michelin restaurant prices for cafeteria pre-made meal packages.
 
-
 For example on AWS, if you want to purchase a high-spec PostgreSQL cloud database instance, you typically need to pay over ten times the price of corresponding cloud servers. Considering cloud servers themselves have about 5x markup, cloud services compared to scale self-building
-
-
-
 
 -----------
 
@@ -146,7 +127,6 @@ For example on AWS, if you want to purchase a high-spec PostgreSQL cloud databas
 Last episode's cloud computing mudslide discussed Luo Yonghao selling "cloud" in Taobao livestream: first selling robot vacuums, then tardy Luo read scripts selling "cloud" for forty minutes, then abruptly switched to selling **Colgate enzyme-free toothpaste**. This was clearly a failed livestream attempt: over a thousand enterprises ordered cloud servers in the livestream, 100-200 yuan cloud server unit prices plus one-per-company purchase limits meant at most 200k revenue, possibly less than Luo's appearance fee.
 
 I wrote an article "[Luo Yonghao Can't Save Toothpaste Cloud](https://mp.weixin.qq.com/s/s_MCdaCByDBuocXkY1tvKw)" mocking Alibaba-Cloud selling virtual machines in livestreams as toothpaste cloud. Then my friend Swedish Ma immediately wrote "[Toothpaste Cloud? You're Flattering Cloud Vendors](https://mp.weixin.qq.com/s/ffrwbLiGxTLO1jVh8mHiBA)" refuting: "No domestic cloud vendor deserves the toothpaste cloud title. From profit margins to social value to brand management, quality management and market education, public cloud vendors are completely outclassed by toothpaste manufacturers."
-
 
 -----------
 
@@ -160,9 +140,6 @@ Open source software brought huge industry transformation - **the history of the
 
 **Then, cloud devoured open source**. Public cloud software is the result of internet giants productizing their own ability to use open source software for external output. Public cloud vendors wrap open source database kernels with shells, package them with management software running on managed hardware, and hire shared DBA experts for support, becoming **cloud database services** (RDS). **This is indeed a valuable service, also providing new monetization paths for much software. But cloud vendors' free-riding behavior is undoubtedly exploitation and extraction from open source software communities**, and defenders of computing freedom in open source organizations and developers will naturally fight back.
 
-
-
-
 -------------
 
 ## Are Cloud Databases Overpriced Cafeteria Meals
@@ -173,14 +150,11 @@ Depends on comparison - compared to traditional commercial databases Oracle it's
 
 -----------
 
-
 **Question: Can cloud save DBA/database expert costs?**
 
 Yes, good DBAs are scarce and hard to find. But using cloud databases doesn't mean you no longer need DBAs - you just save system construction work and daily operational work, but there are parts you can't save. Second, we can calculate specifically at what scale hiring a DBA is cost-effective compared to cloud databases. (Discussing several pricing models)
 
-
 -----------
-
 
 **Question: What's the relationship between RDS and DBAs?**
 
@@ -219,7 +193,6 @@ First look at retail unit prices, GB·month unit price, 2 cents, Alibaba-Cloud E
 
 1TB storage·month price (full discount): self-purchase 16, AWS 1900, Alibaba-Cloud 3200
 
-
 -----------
 
 **Question: We've discussed cost issues above, but how can you focus only on cost? How important is cost really?**
@@ -228,13 +201,11 @@ When you have leading advantages in technology and products, cost isn't that imp
 
 Alibaba's main business e-commerce was badly beaten by "cheap" Pinduoduo. What does Pinduoduo rely on? Just plain old cheapness. What you can sell on Taobao Tmall, I can sell the same but cheaper - that's core competitiveness. You're not Hermès, Rolex, luxury goods logic where you need to buy several times the goods to even sell to you. What can commodity cloud servers sandwiched between toothpaste and vacuum cleaners in Luo's livestream compete on besides cheapness?
 
-
 -----------
 
 **Question: When is cost not important?**
 
 Second point is economic upswing prosperity periods, startup companies racing for speed during growth phases - calculating costs might be premature. But now it's obviously economic downturn recession... Also, if your product is good enough, users can ignore costs. Like going to five-star hotels, Michelin restaurants - you don't care about their ingredient costs, right? OpenAI ChatGPT is unique, take it or leave it. But going to wet markets to buy vegetables, you do look at costs. Cloud databases, cloud servers, cloud disks are all "ingredients," not dishes, requiring cost calculation and price comparison. (Yellow braised chicken rice story)
-
 
 -----------
 
@@ -311,7 +282,6 @@ Second issue is resource utilization. RDS management eats 2GB... doing nothing b
 High-availability cloud databases have replicas but don't let you read them. Consuming double your resources, right? If you want read-only instances you need to apply separately.
 
 Finally, improved resource utilization profits go to cloud vendors, benefits harvested by cloud vendors, costs borne by users.
-
 
 -----------
 

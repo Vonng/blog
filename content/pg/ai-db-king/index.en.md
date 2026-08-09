@@ -21,7 +21,6 @@ The complexity and fragmentation brought by microservices are now levying a mass
 
 > — A lightning talk by Feng at the "8th China PostgreSQL Ecosystem Conference"
 
-
 ### Polyglot Persistence: A Nightmare of Cognitive Fragmentation
 
 In traditional "best practices," we're accustomed to scattering data everywhere: MySQL for transactions, Redis for caching, MongoDB for documents, Elasticsearch for search, Milvus for vectors.
@@ -41,7 +40,6 @@ Imagine a typical cross-domain query: "Find users who purchased product X, visit
 This "ping-pong" architecture isn't just inefficient—it causes **context overload**. Stuffing all tool definitions into a single mega-Agent rapidly exhausts the budget. When irrelevant schemas and intermediate data fill the window, the LLM's reasoning ability hits a ceiling, directly causing "hallucinations" to spike.
 
 **Context economics favors lean, focused tools and abhors sprawling heterogeneous systems.**
-
 
 --------
 
@@ -86,7 +84,6 @@ For Agents, this achieves perfect **location transparency**. The Agent just need
 
 This is the ultimate form of "zero-glue" architecture: Agents no longer need to write hundreds of lines of Python for ETL. They just send a high-density SQL statement declaring what they want.
 
-
 ### Stored Procedures: Server-Side Toolbox
 
 PostgreSQL supports stored procedures in over twenty languages: Python, JavaScript, Rust, and more. This isn't just functionality—it's an architectural force multiplier:
@@ -94,7 +91,6 @@ PostgreSQL supports stored procedures in over twenty languages: Python, JavaScri
 - **Token Savings**: Complex business logic (RAG pipelines, data cleaning) is crystallized in database functions, no longer consuming precious prompt space.
 - **Security and Sandboxing**: Agents call encapsulated functions (Tools), not raw SQL—permission boundaries are clear and controllable.
 - **Performance**: Logic runs adjacent to data, eliminating network I/O overhead—usually the biggest performance bottleneck.
-
 
 ### Interface Standardization: psql as IDE
 
@@ -107,8 +103,6 @@ A single `psql` with a connection string from the command line is all you need t
 With just this one connection, an Agent can use `pg_net` / `pg_curl` to access the network, FDW to read and write anything, and SQL to orchestrate logic—even execute shell commands.
 
 **psql provides a superset of Bash functionality, making it naturally suited to become AI Agents' next preferred execution environment.**
-
-
 
 ## Conclusion
 

@@ -12,7 +12,6 @@ tags: [数据库, MySQL, PostgreSQL, 技术评论, 翻译]
 
 > 作者：[Peter Zaitsev](https://www.percona.com/blog/author/pz/) | 译：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信公众号](https://mp.weixin.qq.com/s/xveP91NMYF4NFlIX_JcpYA)
 
-
 Percona 的老板 Peter Zaitsev最近发表一篇博客，讨论了MySQL是否还能跟上PostgreSQL的脚步。
 
 Percona 作为MySQL 生态扛旗者，Percona 开发了知名的PT系列工具，MySQL备份工具，监控工具与发行版。他们的看法在相当程度上代表了 MySQL 社区的想法。
@@ -21,8 +20,6 @@ Percona 作为MySQL 生态扛旗者，Percona 开发了知名的PT系列工具�
 >
 > 译者：[Vonng](https://vonng.com/en)，[Pigsty](https://pigsty.io) 作者，PostgreSQL 大法师，数据库老司机，云计算泥石流。
 
-
-
 ## MySQL还能跟上PostgreSQL的步伐吗？
 
 当我与MySQL社区的老前辈交谈时，我经常听到这样的问题：“*为什么MySQL如此出色，依然比PostgreSQL更受欢迎（至少根据DB-Engines的统计方法），但它的地位却在不断下降，而PostgreSQL的受欢迎程度却在不可阻挡地增长？*” 在MySQL 生态能做些什么扭转这一趋势吗？让我们来深入探讨一下！
@@ -30,8 +27,6 @@ Percona 作为MySQL 生态扛旗者，Percona 开发了知名的PT系列工具�
 ![db-engine.png](db-engine.png)
 
 让我们看看为什么PostgreSQL一直表现如此强劲，而MySQL却在走下坡路。我认为这归结为所有权与治理、许可证、社区、架构以及开源产品的势能。
-
-
 
 ## 所有权和治理
 
@@ -68,11 +63,9 @@ MySQL 确实允许云供应商创建自己的商业分支，具有MySQL兼容性
 
 **MySQL社区能做什么？** 这里社区还是可以发挥一点作用的 —— 尽管当前的状况使得工作更困难，回报更少，但我们仍然可以做很多事情。如果你关心 MySQL 的未来，我鼓励你组织与参与各种活动，尤其是在狭窄的 MySQL生态之外，去撰写文章、录制视频、出版书籍。在社交媒体上推广它们，并将它们提交到 Hacker News。
 
-特别是，不要错过[ FOSDEM 2025 MySQL Devroom ](https://www.mysqlandfriends.eu/)的征稿！
+特别是，不要错过[FOSDEM 2025 MySQL Devroom](https://www.mysqlandfriends.eu/)的征稿！
 
 这也是 Oracle 可以参与的部分，它们可以在不减少盈利的情况下参与这些活动，并与潜在的贡献者互动 —— 举办一些外部贡献者可以参与的活动，与他们分享计划，支持他们的贡献 —— 至少在他们与你的“MySQL社区”蓝图一致的情况下。
-
-
 
 ## 架构
 
@@ -86,8 +79,6 @@ PostgreSQL 的设计高度可扩展，而且已经实现有大量强大的扩展
 
 我们首先需要为MySQL建立一个“社区插件市场”，这将鼓励开发者构建更多插件并让它们得到更多曝光。我们还需要Oracle的支持 —— 承诺扩展MySQL的插件架构，赋能开发者构建插件 —— 即使这会与Oracle的产品产生一些竞争。例如，如果 MySQL 有插件可以创建自定义数据类型和可插拔索引，或许我们已经会看到 MySQL 的 PGVector替代品了。
 
-
-
 ## 开源产品的势头
 
 选择数据库是一个长期的赌注，因为更换数据库并不容易。去问问那些几十年前选择了 Oracle 而现在被其束缚的人吧。这意味着在选择数据库时，你需要考虑未来，不仅要考虑这些数据库在十年后是否依然存在，而且要考虑随着时间的发展，它是否还能满足未来的技术需求。
@@ -95,8 +86,6 @@ PostgreSQL 的设计高度可扩展，而且已经实现有大量强大的扩展
 正如我在文章 [《Oracle最终还是杀死了MySQL！》](https://mp.weixin.qq.com/s/1zlDPie_bVvP7eO6_uTkSw) 中所写到的，我认为Oracle已经将大量开发重心转移到专有商业版和云专属的 MySQL 版本上 —— 几乎放弃了 MySQL 社区版。虽然今日的 MySQL 仍然在许多应用中表现出色，但它确实正在落后过气中，MySQL 社区中的许多人都在质疑它是还有未来。
 
 **MySQL社区能做什么？** 还是那句话，决定权在 Oracle 手中，因为他们是唯一能决定 MySQL 官方路线的人。你可能会问，那么我们的 [Percona Server for MySQL](https://www.percona.com/mysql/software/percona-server-for-mysql) 呢？我相信在Percona，我们确实提供了一个领先的 Oracle MySQL的开源替代品，但因为我们专注于完整的 MySQL 兼容性，所以必须谨慎对待对 MySQL 所做的变更，以避免破坏这种兼容性或使上游合并成本过高。[MariaDB](https://mariadb.org/) 做出了不同的利弊权衡；不受限制的创新使其与MySQL 的兼容性越来越差，而且每个新版本都离 MySQL 越来越远。
-
-
 
 ## MariaDB
 
@@ -108,13 +97,6 @@ PostgreSQL 的设计高度可扩展，而且已经实现有大量强大的扩展
 
 MariaDB 也已经与 MySQL 有了显著的分歧，调和这些差异将需要多年的努力，但我认为如果有足够的资源和社区意愿，这也许是一个可以解决的问题。
 
-
-
 ### 总结
 
 正如你所看到的，由于 MySQL 的所有权和治理方式，MySQL 社区在其能做的事情上受到限制。从长远来看，我认为 MySQL 社区唯一能与 PostgreSQL 竞争的方法是所有重要的参与者联合起来（就像[Valkey项目](https://valkey.io/)那样），在不同的品牌下创建一个 MySQL 的替代品 —— 这可以解决上述大部分问题。
-
-
-
-
-

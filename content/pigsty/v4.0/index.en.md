@@ -43,7 +43,6 @@ I'd call this version "Finished Software" — it's reached a state I'm genuinely
 - [Finished Software: Quality I'm Happy With](#finished)
 - [Entering the AI Era: Built for Agents](#ai-era)
 
-
 ------
 
 ## License Change: Back to Apache 2.0 {#license}
@@ -54,7 +53,6 @@ Want to build your own custom PG distro? Fork Pigsty and skip the yak shaving.
 
 For the full rationale, see my separate post:
 [From AGPL to Apache: Thoughts on Pigsty's Relicensing](/pg/pigsty-relicense).
-
 
 ------
 
@@ -95,8 +93,6 @@ Big picture: the current [INFRA module](https://pigsty.io/docs/infra) is basical
 Metrics + Logs + Trace + Alert + unified UI.
 Add the OOTB Grafana and you've got an enterprise-grade observability platform.
 
-
-
 ------
 
 ## Container Support: Docker Gang Rejoice {#docker}
@@ -121,8 +117,6 @@ Base image is ~200 MB (vs 3 GB for the kitchen sink).
 
 Post-deploy, you're good to go: port 8080 for web, 2222 for ssh, 5432 for postgres.
 Works on Windows, macOS, Linux — quick and easy test drive.
-
-
 
 ------
 
@@ -177,8 +171,6 @@ Bottom line: PG 18's major extensions are locked and loaded,
 params fully optimized, metrics fully collected.
 PG 18 in Pigsty is battle-ready for the harshest production environments.
 
-
-
 ------
 
 ## Security Hardening: Passwords, Firewall, SELinux {#security}
@@ -214,8 +206,6 @@ These security policies are progressive:
 with random strong passwords generated, default config is already secure enough.
 Advanced options are there for enterprises to evaluate tradeoffs.
 
-
-
 ------
 
 ## JUICE Module: Database as Filesystem {#juice}
@@ -239,7 +229,6 @@ Previously only high-end commercial CDP appliances had this —
 now Pigsty provides it free. PIGLET AI sandbox has this configured by default.
 
 ![vibe.webp](vibe.webp)
-
 
 ------
 
@@ -271,8 +260,6 @@ This module powers [PIGLET.RUN](https://piglet.run)
 and is the cloud dev environment I personally use.
 Post-install, you've got a complete cloud development environment —
 secure and fully equipped.
-
-
 
 ------
 
@@ -314,8 +301,6 @@ More posts coming on this.
 
 [pig-v10]: https://www.postgresql.org/about/news/pig-v10-released-with-pgextcloud-444-pg-extensions-on-14-linux-3214/
 
-
-
 ------
 
 ## HA Optimization: RTO/RPO Deep Dive {#ha}
@@ -350,7 +335,6 @@ Theoretical analysis so users can run Patroni HA with peace of mind.
 
 > Theoretical decomposition keeps RTO upper bounds at
 > 30/45/90/150s for the four param sets
-
 
 ------
 
@@ -388,8 +372,6 @@ run `pig pitr`, it handles everything automagically.
 Restore your database cluster in-place/incrementally/efficiently to your target point.
 Newbies and AI Agents alike can leverage this easily — that's the bar we're aiming for.
 
-
-
 ------
 
 ## IaC Enhancements: More Fine-Grained Knobs {#iac}
@@ -420,8 +402,6 @@ End result: IaC your way to customizing every PostgreSQL cluster detail.
 Databases, users, inheritance, permissions, HBA, services, extensions, schemas —
 one shot, spin up production-ready database clusters.
 This IaC config-as-code approach is natural and friendly for both DBAs and DBA Agents.
-
-
 
 ------
 
@@ -476,8 +456,6 @@ external contributions actually slow things down.
 So Pigsty will take a similar path: **Open Source, but not Open Collaboration** —
 accepting Issues, feature requests, and feedback only, no more PRs.
 
-
-
 ------
 
 ## Finished Software: Quality I'm Happy With {#finished}
@@ -499,7 +477,6 @@ With AI help, this barely takes time; one PG major version per year is fine.
 The remaining 10 points are left for ecosystem, product, and commercial services to grow.
 
 And my energy can finally shift to that seed planted three years ago.
-
 
 ------
 
@@ -562,10 +539,6 @@ And every life needs a reliable heart.
 
 Welcome to the game.
 
-
-
-
-
 ------
 
 # Pigsty v4.0.0 ReleaseNote
@@ -602,7 +575,6 @@ curl https://pigsty.io/get | bash -s v4.0.0
 
 [![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v4.0.0)
 
-
 ------
 
 ## Infrastructure Package Updates
@@ -637,7 +609,6 @@ working on both macOS (Docker Desktop) and Linux.
 ```bash
 cd ~/pigsty/docker; make launch    # = make up config deploy
 ```
-
 
 ------
 
@@ -777,10 +748,12 @@ pgBackRest updated to 2.58 with HTTP support.
 ## Interface Improvements
 
 **Playbook Rename**:
+
 - `install.yml` → `deploy.yml` for better semantics
 - New `vibe.yml` playbook for VIBE AI coding sandbox
 
 **pg_databases Improvements**:
+
 - Database removal: use `state` field (`create`, `absent`, `recreate`)
 - Database cloning: use `strategy` parameter for clone method
 - Support newer locale params: `locale_provider`, `icu_locale`, `icu_rules`
@@ -789,37 +762,42 @@ pgBackRest updated to 2.58 with HTTP support.
 - Allow `state: absent` in extension to remove extensions
 
 **pg_users Improvements**:
+
 - New `admin` parameter with `ADMIN OPTION` for re-granting
 - New `set` and `inherit` options for user role attributes
 
 **pg_hba Improvements**:
+
 - Support `order` field for HBA rule priority
 - Support IPv6 localhost access
 - Allow specifying trusted intranet via `node_firewall_intranet`
 
 **Other Improvements**:
+
 - Default privileges for Supabase roles
 - `node_crontab` auto-restores original crontab on `node-rm`
 - New `infra_extra_services` for homepage service entries
-
 
 ------
 
 ## Parameter Optimization
 
 **I/O Parameters**
+
 - `pg_io_method`: auto, sync, worker, io_uring options, default worker
 - `maintenance_io_concurrency` set to 100 for SSD
 - `effective_io_concurrency` reduced from 1000 to 200
 - `file_copy_method` set to `clone` for PG18 instant database cloning
 
 **Replication & Logging**
+
 - `idle_replication_slot_timeout`: default 7d, crit template 3d
 - `log_lock_failures`: enabled for oltp, crit templates
 - `track_cost_delay_timing`: enabled for olap, crit templates
 - `log_connections`: auth logs for oltp/olap, full logs for crit
 
 **HA Parameters**
+
 - New `pg_rto_plan` integrating Patroni & HAProxy RTO config
   - `fast`: Fastest failover (~15s), for high availability requirements
   - `norm`: Standard mode (~30s), balanced (default)
@@ -830,10 +808,12 @@ pgBackRest updated to 2.58 with HTTP support.
 - Crit template enables Patroni strict sync mode
 
 **Backup & Recovery**
+
 - PITR default `archive_mode` changed to `preserve`
 - `pg-pitr` supports pre-recovery backup
 
 **Other**
+
 - Fixed `duckdb.allow_community_extensions` always active issue
 - pg_hba and pgbouncer_hba now support IPv6 localhost
 
@@ -842,6 +822,7 @@ pgBackRest updated to 2.58 with HTTP support.
 ## Architecture Improvements
 
 **Directories & Portal**:
+
 - Fixed `/infra` symlink pointing to `/data/infra` on Infra nodes
 - Infra data defaults to `/data/infra` for container convenience
 - Local repo at `/data/nginx/pigsty`, `/www` symlinks to `/data/nginx`
@@ -849,6 +830,7 @@ pgBackRest updated to 2.58 with HTTP support.
 - Default homepage domain renamed from `h.pigsty` to `i.pigsty`
 
 **Scripts**:
+
 - New `/pg/bin/pg-fork` for instant CoW replica creation
 - Enhanced `/pg/bin/pg-pitr` for instance-level PITR with pre-backup
 - New `/pg/bin/pg-drop-role` for safe user deletion
@@ -856,10 +838,12 @@ pgBackRest updated to 2.58 with HTTP support.
 - Restored `pg-vacuum` and `pg-repack` scripts
 
 **New Playbooks**:
+
 - `juice.yml`: Deploy JuiceFS instances
 - `vibe.yml`: Deploy VIBE AI sandbox
 
 **Module Improvements**:
+
 - Explicit cron/cronie package installation for minimal system
 - UV Python manager moved from `infra` to `node` module
 - `pg_remove`/`pg_pitr` etcd metadata removal runs on etcd cluster
@@ -873,12 +857,14 @@ pgBackRest updated to 2.58 with HTTP support.
 - Restored EL7 compatibility
 
 **System Tuning**:
+
 - Tuned systemd service NOFILE limits based on workload
 - Fixed tuned profile activation by restarting tuned service
 - Added runtime directory for PostgreSQL systemd service
 - Fixed `ip_local_port_range` start/end value parity alignment
 
 **Multi-Cloud**:
+
 - Terraform: AWS, Azure, GCP, Hetzner, DigitalOcean, Linode, Vultr, TencentCloud
 
 ------
@@ -886,15 +872,18 @@ pgBackRest updated to 2.58 with HTTP support.
 ## Security Improvements
 
 **Password Management**:
+
 - `configure -g` for auto-generating strong random passwords
 - Changed MinIO default password to avoid well-known defaults
 
 **Firewall & SELinux**:
+
 - Replaced `node_disable_firewall` with `node_firewall_mode`
 - Replaced `node_disable_selinux` with `node_selinux_mode`
 - Configured correct SELinux contexts for HAProxy, Nginx, DNSMasq, Redis
 
 **Access Control**:
+
 - Enabled etcd RBAC, each cluster can only manage its own PG cluster
 - etcd root password stored in `/etc/etcd/etcd.pass`, admin-readable only
 - Added `admin_ip` to Patroni API whitelist
@@ -903,11 +892,13 @@ pgBackRest updated to 2.58 with HTTP support.
 - Revoked script ownership from non-root users
 
 **Certificates & Auth**:
+
 - Nginx Basic Auth support for optional HTTP authentication
 - Fixed ownca certificate validity for Chrome recognition
 - New `vip_auth_pass` parameter for VRRP authentication
 
 **Other**:
+
 - Fixed `ansible copy content` empty field errors
 - Fixed `pg_pitr` race conditions during Patroni cluster recovery
 - Protected `files/pki/ca` directory with mode 0700
@@ -944,7 +935,6 @@ pgBackRest updated to 2.58 with HTTP support.
 | etcd/MinIO removal cleanup incomplete  | Fixed systemd service and DNS cleanup |
 | IvorySql 18 file_copy_method           | Fixed incompatibility with clone      |
 | tuned profile activation               | Fixed by restarting tuned service     |
-
 
 ------
 
@@ -1017,7 +1007,6 @@ pgBackRest updated to 2.58 with HTTP support.
 | Ubuntu 22.04/24.04 |   ✅    |    ✅    |
 
 **PostgreSQL**: 13, 14, 15, 16, 17, 18
-
 
 ------
 

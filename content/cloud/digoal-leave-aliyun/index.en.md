@@ -19,7 +19,6 @@ Databases still matter in the AI era, but they do not generate anything like the
 
 Here is my take.
 
-
 ## 1. Digoal
 
 Anyone who works with PostgreSQL in China knows Digoal.
@@ -36,7 +35,6 @@ His blog opens with a line: "Public service is a lifetime commitment." Grand dec
 Digoal is one of the defining figures of China's PostgreSQL community. Now that face has left Alibaba Cloud. To most people, this is just another story about someone leaving a Chinese tech giant.
 To anyone watching PostgreSQL in China, however, the signal matters far more than the personnel news itself. An era for PostgreSQL at Alibaba Cloud may have ended.
 
-
 ## 2. Fighting for a Foothold
 
 To understand why Digoal's departure matters, you first need to know what using PostgreSQL inside Alibaba was like.
@@ -51,7 +49,6 @@ Digoal faced much the same battle, only he entered it earlier and went much deep
 Promoting PostgreSQL in a company where MySQL held overwhelming dominance was always an uphill fight.
 
 Digoal fought it for ten years.
-
 
 ## 3. A Battle over Direction
 
@@ -80,7 +77,6 @@ His standing in the community came from his love for PostgreSQL and years of dee
 
 **Put the soul of a PostgreSQL community inside an organization that increasingly has no need for that community, and the outcome is almost inevitable.**
 
-
 ## 4. PostgreSQL in China
 
 PostgreSQL occupies an awkward position in China's cloud database market.
@@ -97,7 +93,6 @@ More awkward still, a significant share of PostgreSQL deployments in China are r
 **For ten years, Digoal's PostgreSQL advocacy at Alibaba Cloud was, in a sense, one man's passion pushing against the inertia of an entire market.** That effort deserves admiration, but it is also fragile. It depends heavily on how much tolerance and support the organization is willing to give one person.
 When the organization's attention shifts to PolarDB, "domestic databases," AI, or anything with greater commercial value, the evangelist ends up in an awkward place.
 
-
 ## 5. Ask Digoal. It Works.
 
 The PostgreSQL community has a telling habit. When something goes wrong with Alibaba Cloud RDS PostgreSQL, users do not first open a support ticket. They assume the ticket will be mostly useless and tag Digoal directly in a group chat instead.
@@ -113,7 +108,6 @@ Call it the community freeloading on Digoal, or call it Digoal freely giving his
 That generosity is part of what makes the PostgreSQL community special, and part of Digoal's personal appeal.
 
 It is difficult to quantify any of this in a KPI. Users still notice when it disappears.
-
 
 ## 6. The Distilled Hero
 
@@ -134,7 +128,6 @@ Management theory calls this greater organizational maturity. In practice, the p
 
 Qwen could not keep Justin Lin. Alibaba Cloud's database organization could not keep Digoal.
 Perhaps this is not one company's problem, but another glimpse of the permanent fault line between the machinery of Big Tech and technical idealists.
-
 
 ## 7. A Personal Note
 
@@ -158,7 +151,6 @@ From the outside, management may look glamorous. In reality, it is draining. Dea
 
 I imagine Digoal has felt much the same over his years at Alibaba. After ten years there, he should have achieved financial independence.
 He could run an OPC like mine, do some PostgreSQL consulting, and enjoy an easy, comfortable life.
-
 
 ## 8. What Comes Next
 

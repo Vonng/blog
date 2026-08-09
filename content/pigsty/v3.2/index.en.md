@@ -18,7 +18,6 @@ Pigsty wraps up 2024 with its final release: v3.2. This release brings the `pig`
 
 This release includes routine fixes, tracks Supabase's intense release week changes, and provides RPM/DEB packages for Grafana plugins and data sources.
 
-
 --------
 
 ## The pig CLI Tool
@@ -42,7 +41,6 @@ Pig focuses on cross-distro harmony — whether on Debian, Ubuntu, or Red Hat de
 If [**PostgreSQL's future is unstoppable extensibility**](/pg/pg-eat-db-world), Pig is the tool that helps unlock that potential. After all, nobody complains about a PostgreSQL instance having too many extensions — unused ones have zero impact, and needed ones are right at your fingertips.
 
 ![](pig-ext.jpg)
-
 
 --------
 
@@ -73,7 +71,6 @@ Complete ARM64 support builds confidence for more chip architecture support. For
 
 ![](ibm-linuxone.jpg)
 
-
 --------
 
 ## Supabase Tracking
@@ -94,7 +91,6 @@ With this opportunity, Pigsty is also preparing to extend extension capabilities
 | WiltonDB | SQL Server compatible |
 | PolarDB PG | Alibaba Cloud open-source |
 | OrioleDB | OLTP optimized |
-
 
 --------
 
@@ -121,7 +117,6 @@ Additionally, independent RPM/DEB packages were created for architecture-depende
 
 Meanwhile, RPM/DEB packages were also created for VictoriaMetrics and VictoriaLogs Grafana data source plugins, making it convenient for users to use these two open-source time-series and log databases in Grafana.
 
-
 --------
 
 ## Future Development Plans
@@ -131,7 +126,6 @@ Pigsty itself has reached a fairly mature state. The focus for the coming period
 Currently, there's a rare opportunity window: users and developers are realizing the importance of PostgreSQL extensions, but the PostgreSQL ecosystem doesn't yet have a de facto standard for extension distribution. Pigsty is committed to making `pig` an influential PostgreSQL extension distribution standard.
 
 Of course, Pigsty itself has always lacked a good enough CLI tool. Going forward, we'll integrate functionality scattered across various Ansible playbooks into `pig`, making it more convenient for users to manage Pigsty and PostgreSQL.
-
 
 --------
 
@@ -147,6 +141,7 @@ Of course, Pigsty itself has always lacked a good enough CLI tool. Going forward
 ### Package Changes
 
 **New Extensions**
+
 - Added timescaledb, timescaledb-loader, timescaledb-toolkit, timescaledb-tool to PIGSTY repo
 - Added [pg_timescaledb](https://github.com/timescale/timescaledb), recompiled for EL
 - Added [pgroonga](https://pgext.cloud/e/pgroonga), recompiled for all EL versions
@@ -156,6 +151,7 @@ Of course, Pigsty itself has always lacked a good enough CLI tool. Going forward
 - Added [pgpdf](https://github.com/Florents-Tselai/pgpdf) 0.1.0
 
 **Updated Extensions**
+
 - pgvectorscale 0.4.0 -> 0.5.1
 - pg_parquet 0.1.0 -> 0.1.1
 - pg_polyline 0.0.1
@@ -167,6 +163,7 @@ Of course, Pigsty itself has always lacked a good enough CLI tool. Going forward
 - `pgoutput` marked as new PostgreSQL Contrib extension
 
 **Infrastructure**
+
 - Added promscale 0.17.0
 - Added grafana-plugins 11.4
 - Added grafana-infinity-plugins
@@ -185,11 +182,13 @@ Of course, Pigsty itself has always lacked a good enough CLI tool. Going forward
 - pg_export 0.7.0 -> 0.7.1
 
 **Bug Fixes**
+
 - el8.aarch64: Added python3-cdiff to fix patroni dependency issue
 - el9.aarch64: Added timescaledb-tools to fix missing official repo issue
 - el9.aarch64: Added pg_filedump to fix missing official repo issue
 
 **Removed Extensions**
+
 - **pg_mooncake**: Removed due to conflict with `pg_duckdb`
 - **pg_top**: Removed due to too many missing versions, quality issues
 - **hunspell_pt_pt**: Removed due to conflict with PG official dictionary files

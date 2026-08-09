@@ -14,7 +14,6 @@ This is a particularly good fit for AI agents. As I wrote in [What Kind of Datab
 
 Today I saw [an article from Aliyun](https://mp.weixin.qq.com/s?__biz=Mzk2NDgzOTk3NA==&mid=2247523890&idx=1&sn=fdfe899fc6f7601f586b4ba32eaf147b&scene=21#wechat_redirect) announcing support for this feature in Alibaba Cloud RDS for PostgreSQL. I couldn't help laughing: that took them long enough. The feature itself is not complicated. It requires no kernel patch—just enable one setting in PostgreSQL 18 and add a `STRATEGY` option when creating the database. But simple as it sounds, a robust implementation still has a few edge cases to handle.
 
-
 ## A Few Improvements
 
 Previously, cloning a database through Pigsty's IaC-style workflow was still somewhat cumbersome: first define the clone with another database as its template, then run the database creation workflow.
@@ -60,8 +59,6 @@ PITR with `pig` is now very convenient as well. The example below performs an en
 This release of the `pig` CLI adds many management features, including operations for PostgreSQL, Patroni, and pgBackRest. They are now all exposed as Agent-Native CLI commands like `pg clone` and `pg fork`, making them equally convenient for human DBAs and AI agents. I will write a dedicated article about them in a few days.
 
 ![](featured.webp)
-
-
 
 ## Further Reading
 

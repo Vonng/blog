@@ -20,7 +20,7 @@ tags: [开源, 政府采购, 信创, 自主可控]
 
 **参考阅读：[德国州政府弃用微软，转投 Linux 和 LibreOffice](https://www.zdnet.com/article/german-state-ditches-microsoft-for-linux-and-libreoffice/)**
 
-做出这一决定并不容易。早在2011年，瑞士联邦最高法院就[将其法院应用程序 Open Justitia  使用开源许可证发布](https://www.openjustitia.ch/DE/interne_Open_Justitia.html)。而这让专有法律软件公司 Weblaw 感到不满。十多年来，围绕这一问题的政治和法律争斗不断。最终，EMBAG 于 2023 年通过。这项法律不仅允许瑞士政府或其承包商发布开源软件，还要求代码**必须以开源许可证发布**，“除非第三方版权或安全相关原因排除或限制了这一点。”
+做出这一决定并不容易。早在2011年，瑞士联邦最高法院就[将其法院应用程序 Open Justitia  使用开源许可证发布](https://www.openjustitia.ch/DE/interne_Open_Justitia.html)。而这让专有法律软件公司 Weblaw 感到不满。十多年来，围绕这一问题的政治和法律争斗不断。最终，EMBAG 于 2023 年通过。这项法律不仅允许瑞士政府或其承包商发布开源软件，还要求代码 **必须以开源许可证发布**，“除非第三方版权或安全相关原因排除或限制了这一点。”
 
 [伯尔尼应用科学大学](https://www.bfh.ch/en/)公共部门转型研究所的负责人 Matthias Stürmer 教授领导了这场立法斗争。他将这项法律称为“政府、IT行业和社会的巨大机遇”。Stürmer 认为，所有人都将从这项法规中受益，因为它减少了公共部门的供应商锁定，并允许企业扩展其数字业务解决方案，并有潜力降低IT成本并提高纳税人服务质量。
 
@@ -43,7 +43,6 @@ EMBAG 的实施预计将成为其他国家考虑类似措施的典范。它旨�
 **同时：[Linux 需要防病毒软件吗？](https://www.zdnet.com/article/do-you-need-antivirus-on-linux/)**
 
 总的来说，尽管瑞士的立法举措将其置于全球开源运动的前沿，但在欧洲和美国仍需做更多工作以推动开源软件的普及和应用。
-
 
 --------
 

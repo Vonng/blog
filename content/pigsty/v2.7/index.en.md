@@ -20,7 +20,6 @@ Additionally, we provide some new Docker app templates, including the open-sourc
 
 We've also paved the way for upcoming container versions, provided PolarDB support to help users pass domestic compliance audits, and officially differentiated Pro and Open Source editions.
 
-
 ------------
 
 ## Extensions Galore
@@ -193,7 +192,6 @@ Through the magic of extreme extensibility, PostgreSQL achieves completeness, ba
 
 Today, PostgreSQL is unstoppable. And Pigsty gives PostgreSQL wings to soar.
 
-
 -----------------
 
 ## Out-of-the-Box ERP
@@ -216,7 +214,6 @@ As a PostgreSQL distribution, there's no reason not to support Odoo. Pigsty v2.7
 
 The result: on a bare VM, you can spin up a production-quality enterprise ERP with just a few commands!
 
-
 -----------------
 
 ## PITR and Dashboards
@@ -228,7 +225,6 @@ ERP systems like Odoo have very different database requirements from traditional
 Pigsty already provides out-of-the-box PITR for rollback to any point in time. But the required information was scattered across the monitoring system, so Pigsty v2.7 provides a dedicated PGSQL PITR dashboard for PITR context.
 
 ![PITR Dashboard](pitr.jpg)
-
 
 -----------------
 
@@ -249,7 +245,6 @@ In the original design, open source would include only INFRA, NODE, PGSQL, ETCD 
 
 For compatibility, Pigsty Pro provides full lifecycle PG 12-16 support across seven major OS versions. We also maintain complete ARM64 Prometheus & Grafana repos for ARM servers and "domestic chips."
 
-
 -----------------
 
 ## Looking Forward
@@ -259,7 +254,6 @@ Overall, Pigsty has reached my ideal state. Functionally, it's already excellent
 But as they say, even fine wine fears a deep alley — so upcoming work will shift to operations, marketing, and sales. Sustainable open source requires user and customer support. If Pigsty has helped you, please consider sponsoring us or purchasing our subscriptions.
 
 Speaking of marketing — next week (May 28), I'll be in Vancouver for 2024 PostgreSQL Developer Conference, a.k.a. the first PGConf.Dev (formerly PG Con), discussing PostgreSQL's future and pushing Pigsty to the global stage!
-
 
 ----------------
 

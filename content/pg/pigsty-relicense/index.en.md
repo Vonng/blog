@@ -14,7 +14,6 @@ tags: [Pigsty, OpenSource]
 
 Here's why I changed it, what it means, and my take on open source, ecosystems, and commercialization.
 
-
 --------
 
 ## The Origin Story
@@ -164,15 +163,13 @@ Started a company for enterprise support, kept some modules enterprise-only. No 
 
 Pigsty has a commercial edition — same codebase, but supports more operating systems and legacy PG versions. Includes CLI tooling, DBA agent, SOPs, and a non-open-source test suite with failure scenarios — similar to SQLite's approach.
 
-
-But the commercial edition isn't the point. Enterprises don't pay for what you've open-sourced — they pay for delivered value: 
-taking production from "works well" to "bulletproof" That includes warranties, SLAs, troubleshooting, and operational know-how from running Postgres at scale 
+But the commercial edition isn't the point. Enterprises don't pay for what you've open-sourced — they pay for delivered value:
+taking production from "works well" to "bulletproof" That includes warranties, SLAs, troubleshooting, and operational know-how from running Postgres at scale
 — things that won't appear in AI training dataset. So I'm not selling the product — that's free. **Pigsty is free; while the consulting isn't.**
 
 AI Agent has been a force multiplier. Most of my time now goes to asking the right questions and validating outputs. Scales quiet well.
 
 If you're using Pigsty and find value in what I'm building, subscriptions are welcome. You get commercial guarantees; I get to keep building.
-
 
 --------
 

@@ -201,7 +201,7 @@ In fact, all user interactions with TimescaleDB are with hypertables. Creating t
 
 A hypertable is defined by a standard schema with column names and types, where at least one column specifies a time value, and another column (optionally) specifies an additional partitioning key.
 
-> Tip: See our [data model][] for further discussion of various ways to organize data depending on your use case; the simplest and most natural is in "wide tables" like many relational databases.
+> Tip: See our [data model](#time-series-data-model) for further discussion of various ways to organize data depending on your use case; the simplest and most natural is in "wide tables" like many relational databases.
 
 A single TimescaleDB deployment can store multiple hypertables, each with different schemas.
 
@@ -235,7 +235,7 @@ Once data is large enough that we can't fit all pages of indexes (e.g., B-trees)
 
 However, since each chunk created by TimescaleDB is itself stored as a separate database table, all its indexes are only built on these much smaller tables rather than a single table representing the entire dataset. So if we size these chunks correctly, we can put the latest tables (and their B-trees) entirely in memory and avoid the problem of swapping to disk, while maintaining support for multiple indexes.
 
-For more information about the motivation and design of TimescaleDB's adaptive space/time chunking, see our [technical blog post][chunking].
+For more information about the motivation and design of TimescaleDB's adaptive space/time chunking, see the [architecture discussion](https://docs.timescale.com/introduction/architecture#benefits-chunking).
 
 ---------------
 

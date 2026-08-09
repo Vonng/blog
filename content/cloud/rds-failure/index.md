@@ -21,7 +21,6 @@ tags: [下云, RDS, 阿里云]
 - [解决方案：下云自建](#解决方案下云自建)
 - [广告时间：专家咨询](#广告时间专家咨询)
 
-
 ---------------
 
 ## 事故经过：匪夷所思
@@ -48,7 +47,6 @@ tags: [下云, RDS, 阿里云]
 - WAL堆积是因为卡BUG了，还是客户侧发现，推断并推动解决的
 - 卡 BUG “据称” 是因为云盘吞吐打满了
 
-
 我的朋友瑞典马工一贯主张，“[用云数据库可以替代DBA](https://mp.weixin.qq.com/s/PqCD80H927s0yJrBr4QQqw)”。
 我认为在理论上有一定可行性 —— 由云厂商组建一个专家池，提供[DBA时分共享服务](/cloud/dba-vs-rds)。
 
@@ -57,9 +55,6 @@ tags: [下云, RDS, 阿里云]
 在听闻这个案例之后，马工也只能无奈强辩：“**辣鸡RDS不是真RDS**”。
 
 ![wechat-magong.png](wechat-magong.png)
-
-
-
 
 --------
 
@@ -79,9 +74,6 @@ PostgreSQL 使用双缓冲，OLTP实例在使用内存时，页面都放在一�
 
 内存不足，两台32G扩64G，按照《[剖析阿里云服务器算力成本](/cloud/ecs/#实例族对价格的影响)》我们精算过的定价模型，一项内存扩容操作每年带来的额外收入就能有万把块。如果能解决问题那还好说，但事实上这次内存扩容不但没有解决问题，还引发了更大的问题。
 
-
-
-
 --------
 
 ## 从库宕机：素养堪忧
@@ -98,8 +90,6 @@ PostgreSQL 使用双缓冲，OLTP实例在使用内存时，页面都放在一�
 
 在一种情况下你会遇到这种问题：考虑不周的家酿高可用服务组件，或未经充分测试的自动化脚本，**自以为是地替你“优化”了这个参数**。
 
-
-
 --------
 
 ## 主库宕机：令人窒息
@@ -113,8 +103,6 @@ PostgreSQL 使用双缓冲，OLTP实例在使用内存时，页面都放在一�
 “**为了避免数据损坏做了特殊处理**” 这句话确实很有艺术性 —— 没错，把主库直接关掉可以实现 Fencing ，也确实不会在高可用切换时因为复制延迟丢数据，**但客户数据写不进去了啊**！这丢的数据可比那点延迟多多了。这种操作，很难不让人想起那个著名的《[善治伛者](https://www.gushiwen.cn/shiwenv_ddbe67aad03d.aspx)》笑话：
 
 ![tuobei.png](tuobei.png)
-
-
 
 --------
 
@@ -140,9 +128,6 @@ RDS 工程师给出的诊断是，磁盘 IO 打满导致 WAL 堆积，建议升�
 
 我经常看到 RDS 的用户遇到了问题，通过官方工单没有得到解决，只能绕过工单，通过在 PG 社区中 [直接求助德哥解决](/cloud/drop-rds/) —— 而这确实是比较考验运气与关系的一件事。
 
-
-
-
 --------
 
 ## 扩容磁盘：创收有术
@@ -167,9 +152,6 @@ RDS 工程师给出的诊断是，磁盘 IO 打满导致 WAL 堆积，建议升�
 
 我不好判断遇到问题就建议 扩容内存 / 扩容磁盘 这样的做法，到底是出于专业素养不足导致的误诊，还是渴望利用信息不对称创收的邪念，抑或两者兼而有之 —— 但这种趁病要价的做法，确实让我联想起了曾经声名狼藉的莆田医院。
 
-
-
-
 --------
 
 ## 协议赔偿：封口药丸
@@ -190,9 +172,6 @@ RDS 工程师给出的诊断是，磁盘 IO 打满导致 WAL 堆积，建议升�
 
 经过几次故障带来的糟心体验，客户L终于在这次事故后难以忍受，拍板决定下云了。
 
-
-
-
 --------
 
 ## 解决方案：下云自建
@@ -209,15 +188,11 @@ RDS 工程师给出的诊断是，磁盘 IO 打满导致 WAL 堆积，建议升�
 
 如在《[下云奥德赛：是时候放弃云计算了吗](/cloud/odyssey/#02-22-指导下云的五条价值观)》 中 DHH 所说的那样：
 
-> “我们明智地花钱：在几个关键例子上，云的成本都极其高昂 —— 无论是**大型物理机数据库、大型 NVMe 存储，或者只是最新最快的算**力。租生产队的驴所花的钱是如此高昂，以至于几个月的租金就能与直接购买它的价格持平。在这种情况下，你应该直接直接把这头驴买下来！我们将把我们的钱，花在我们自己的硬件和我们自己的人身上，其他的一切都会被压缩。”
+> “我们明智地花钱：在几个关键例子上，云的成本都极其高昂 —— 无论是 **大型物理机数据库、大型 NVMe 存储，或者只是最新最快的算** 力。租生产队的驴所花的钱是如此高昂，以至于几个月的租金就能与直接购买它的价格持平。在这种情况下，你应该直接直接把这头驴买下来！我们将把我们的钱，花在我们自己的硬件和我们自己的人身上，其他的一切都会被压缩。”
 
-对客户L来说，下云带来的好处是立竿见影的：只需要 RDS 几个月费用的**一次性投资**，就足够超配几倍到十几倍的硬件资源，重新拿回[硬件发展的红利](/cloud/bonus/)，[实现惊人的降本增效水平](/cloud/finops) —— **你不再需要对着账单抠抠搜搜，也不用再发愁什么资源不够**。这确实是一个值得思考的问题：如果云下资源单价变为十分之一甚至百分之几，那么云上鼓吹的弹性还剩多大意义？而阻止云上用户下云自建的原因又会是什么呢？
+对客户L来说，下云带来的好处是立竿见影的：只需要 RDS 几个月费用的 **一次性投资**，就足够超配几倍到十几倍的硬件资源，重新拿回[硬件发展的红利](/cloud/bonus/)，[实现惊人的降本增效水平](/cloud/finops) —— **你不再需要对着账单抠抠搜搜，也不用再发愁什么资源不够**。这确实是一个值得思考的问题：如果云下资源单价变为十分之一甚至百分之几，那么云上鼓吹的弹性还剩多大意义？而阻止云上用户下云自建的原因又会是什么呢？
 
 **下云自建 RDS 服务最大的挑战其实是人与技能**，客户L已经有着一个技术扎实的团队，但确实缺少在 PostgreSQL 上的专业知识与经验。这也是客户L之所以愿意为 RDS 支付高溢价的一个核心原因。但 RDS 在几次事故中体现出来的专业素养，甚至还不如客户本身的技术团队强，这就让继续留在云上变得毫无意义。
-
-
-
-
 
 --------
 
@@ -229,13 +204,11 @@ RDS 工程师给出的诊断是，磁盘 IO 打满导致 WAL 堆积，建议升�
 
 ![subscription.png](subscription.png)
 
-我认为**咨询**是一种站着挣钱的体面模式：我没有任何动机去推销内存与云盘，或者说胡话兜售自己的产品（因为产品是开源免费的！）。所以我完全可以站在甲方立场上，给出对甲方利益最优的建议。甲乙双方都不用去干苦哈哈的数据库运维，因为这些工作已经被 Pigsty 这个我编写的开源工具完全自动化掉了。我只需要在零星的关键时刻提供专家意见与决策支持，并不会消耗多少精力与时间，却能帮助甲方实现原本全职雇佣顶级DBA专家才能实现的效果，最终实现双方共赢。
+我认为 **咨询** 是一种站着挣钱的体面模式：我没有任何动机去推销内存与云盘，或者说胡话兜售自己的产品（因为产品是开源免费的！）。所以我完全可以站在甲方立场上，给出对甲方利益最优的建议。甲乙双方都不用去干苦哈哈的数据库运维，因为这些工作已经被 Pigsty 这个我编写的开源工具完全自动化掉了。我只需要在零星的关键时刻提供专家意见与决策支持，并不会消耗多少精力与时间，却能帮助甲方实现原本全职雇佣顶级DBA专家才能实现的效果，最终实现双方共赢。
 
-但是我也必须强调，我提倡下云理念，从来都是针对那些**有一定数据规模与技术实力**的客户，比如这里的客户L。如果您的场景落在云计算舒适光谱中（例如用 1C2G 折扣 MySQL 跑 OA ），也缺乏技术扎实或值得信赖的工程师，我会诚实地建议你不要折腾 —— 99 一年的 RDS 总比你自己的 yum install 强不少，还要啥自行车呢？当然针对这种用例，我确实建议你考虑一下 Neon，Supabase，Cloudflare 这些[赛博菩萨们](/cloud/cloudflare)的免费套餐，**可能连一块钱都用不着**。
+但是我也必须强调，我提倡下云理念，从来都是针对那些 **有一定数据规模与技术实力** 的客户，比如这里的客户L。如果您的场景落在云计算舒适光谱中（例如用 1C2G 折扣 MySQL 跑 OA ），也缺乏技术扎实或值得信赖的工程师，我会诚实地建议你不要折腾 —— 99 一年的 RDS 总比你自己的 yum install 强不少，还要啥自行车呢？当然针对这种用例，我确实建议你考虑一下 Neon，Supabase，Cloudflare 这些[赛博菩萨们](/cloud/cloudflare)的免费套餐，**可能连一块钱都用不着**。
 
 而对于那些有一定规模，绑死在云数据库上被不断抽血的客户，你确实可以考虑另外一个选项：自建数据库服务绝非什么高深的火箭科学 —— **你需要做的只是找到正确的工具与正确的人而已**。
-
-
 
 --------
 
@@ -248,8 +221,6 @@ RDS 工程师给出的诊断是，磁盘 IO 打满导致 WAL 堆积，建议升�
 [扒皮云对象存储：从降本到杀猪](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486688&idx=1&sn=bbdee063b65994cb5e15d3e3b7d87523&chksm=fe4b393bc93cb02d76c48f0fbfe3d60c8821b8079b1cfc05f8ccc56c1351b4a7a76b5794019a&scene=21#wechat_redirect)
 
 [**剖析云算力成本，阿里云真的降价了吗？**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487089&idx=1&sn=ca16c2e7e534380eadcb3a3870d8e3b4&chksm=fe4b3baac93cb2bc8c4b68c468acf3e8ac5ee124080a3e738262fe99dd1765c3adf9c56ea650&scene=21#wechat_redirect)
-
-
 
 [**从降本增笑到真的降本增效**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486527&idx=1&sn=8e26f644f2b908fd21c83b81d329155d&chksm=fe4b39e4c93cb0f22271127a154a6ac5c45947b2051b06b7667ee5c203d136b5d2e8f6577b10&scene=21#wechat_redirect)
 
@@ -265,8 +236,6 @@ RDS 工程师给出的诊断是，磁盘 IO 打满导致 WAL 堆积，建议升�
 
 [taobao.com证书过期](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487367&idx=1&sn=d6e4abd2b2249d27bd8b8146b591b026&chksm=fe4b3a5cc93cb34a8e90e4b7f06803fa11ee8234014cd4f1aedff59e3bf3c846b3cb133090f2&scene=21#wechat_redirect)
 
-
-
 [我们能从腾讯云故障复盘中学到什么？](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487348&idx=1&sn=412cf2afcd93c3f0a83d65219c4a28e8&chksm=fe4b3aafc93cb3b900cef33bd0510c7c86367d71877b0ee65d4847da0ae1298e2b1fd88d0b3f&scene=21#wechat_redirect)
 
 [【腾讯】云计算史诗级二翻车来了](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487267&idx=1&sn=7d31d44e89560356b5c5a2e7a40bb1e1&chksm=fe4b3af8c93cb3ee9b8000cd90a12a798395f67205d4ba5b0c77b8c5b6ce9ea448d9fc014921&scene=21#wechat_redirect)
@@ -276,8 +245,6 @@ RDS 工程师给出的诊断是，磁盘 IO 打满导致 WAL 堆积，建议升�
 [腾讯云：颜面尽失的草台班子](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487279&idx=1&sn=95231614887e129f298644ddc194909f&chksm=fe4b3af4c93cb3e29078b4716d3b633246db8e2081acff8b821181c9ae058a0daf91e45a40b9&scene=21#wechat_redirect)
 
 [垃圾腾讯云CDN：从入门到放弃](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485363&idx=1&sn=8622b25fd2309d4fc969d22964a04129&scene=21#wechat_redirect)
-
-
 
 [我们能从网易云音乐故障中学到什么？](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488183&idx=1&sn=955849e8698fadcea9211b2731456222&chksm=fe4b276cc93cae7aeb43cc4128c9a18e7a5cb02721277cb61bba1e32b61a57ecdd18bd949277&scene=21#wechat_redirect)
 
@@ -289,8 +256,6 @@ RDS 工程师给出的诊断是，磁盘 IO 打满导致 WAL 堆积，建议升�
 
 [云上黑暗森林：打爆AWS云账单，只需要S3桶名](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487536&idx=1&sn=0cd598f426de0b617c7f3318aed9bd95&chksm=fe4b25ebc93cacfd2d96a9704a0ae4dc2d330aee7cd4579641df513edce307ccdd3a9f94736e&scene=21#wechat_redirect)
 
-
-
 [Ahrefs不上云，省下四亿美元](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487617&idx=1&sn=090b10e96e7e64c0ab0c5deb0cbb46ed&chksm=fe4b255ac93cac4cb270be6091ca6e1257afaa03d50c53316ce82a2be6150151f6077e07e9da&scene=21#wechat_redirect)
 
 [赛博菩萨Cloudflare圆桌访谈与问答录](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487400&idx=1&sn=cf5b94165d2791030e0e874dca8383c7&chksm=fe4b3a73c93cb3652df4d53316e554e5bd0a0d659c7cad7214e10c4a9892d8d1a679e2187583&scene=21#wechat_redirect)
@@ -298,8 +263,6 @@ RDS 工程师给出的诊断是，磁盘 IO 打满导致 WAL 堆积，建议升�
 [Redis不开源是“开源”之耻，更是公有云之耻](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487184&idx=1&sn=afa93b16ae95dba95d99a87ef6ff7605&chksm=fe4b3b0bc93cb21d07adb10713c1061a53b6438a5db0bd93a2e7a0f11ea365ba3d24ae02d13d&scene=21#wechat_redirect)
 
 [吊打公有云的赛博佛祖 Cloudflare](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487240&idx=1&sn=ba535fd0c1026bc2482ea6ad1e1fb8bf&chksm=fe4b3ad3c93cb3c50bfeaed64963cce25c49bee80364d3a8ca78b87d7c9f19fd4d79d3c62ddc&scene=21#wechat_redirect)
-
-
 
 [下云奥德赛](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485760&idx=1&sn=97096da1077a4fbb4c43452a3c4983c7&scene=21#wechat_redirect)
 

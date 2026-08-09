@@ -28,8 +28,6 @@ available as RPM / DEB packages on mainstream Linux OS distros. The goal is to t
 
 <a href="/en/pg/pg-eat-db-world/"><img src="/pg/pg-eat-db-world/ecosystem.jpg" alt="PostgreSQL extension ecosystem" style="max-width: 1000px; max-height: 1000px; width: 100%; height: auto;"></a>
 
-
-
 --------
 
 ## The status quo
@@ -53,9 +51,6 @@ In fact, even most PostgreSQL Docker images rely on the PGDG repo to install ext
 
 I’m deeply grateful for Devrim's maintenance of the PGDG YUM repo and Christoph's work with the APT repo. Their efforts to make PostgreSQL installation and extension management seamless are incredibly valuable.
 But as a distribution creator myself, I’ve encountered some challenges with PostgreSQL extension distribution.
-
-
-
 
 --------
 
@@ -88,10 +83,6 @@ On top of alignment, there’s the problem of **completeness**. PGXN lists over 
 There are also several powerful new Rust-based extensions that PGDG doesn’t include, such as [`pg_graphql`](https://pigsty.io/ext/e/pg_graphql/), [`pg_jsonschema`](https://pigsty.io/ext/e/pg_jsonschema/), and [`wrappers`](https://pigsty.io/ext/e/wrappers/) for [self-hosting Supabase](https://pigsty.io/docs/app/supabase/);
 [`pg_search`](https://pigsty.io/ext/e/pg_search/) as an Elasticsearch alternative; and [`pg_analytics`](https://pigsty.io/ext/e/pg_analytics/), [`pg_parquet`](https://pigsty.io/ext/e/pg_parquet/), and [`pg_mooncake`](https://pigsty.io/ext/e/pg_mooncake/) for OLAP processing. The reason? They are too slow to compile...
 
-
-
-
-
 --------
 
 ## What's the solution?
@@ -120,8 +111,6 @@ I’ve created a comprehensive directory listing all supported extensions, with 
 <a href="https://pigsty.io/ext/e/citus/"><img src="/pg/pg-ext-repo/citus.png" alt="Citus extension detail page" style="max-width: 800px; max-height: 1000px; width: 100%; height: auto;"></a>
 
 I hope this repository can serve as the ultimate solution to the frustration users face when extensions are difficult to find, compile, or install.
-
-
 
 --------
 
@@ -199,7 +188,6 @@ To simply add extensions to existing clusters:
 
 Although this repo is designed to be used with Pigsty, it is **not mandatory**. You can still enable this repository on any EL/Debian/Ubuntu system with a simple one-liner in the shell:
 
-
 ### APT Repo
 
 <a href="https://pigsty.io/docs/pgsql/ext/repo/#apt-repository"><img alt="Linux x86_64" src="https://img.shields.io/badge/Linux-x86_64-%23FCC624?style=flat&logo=linux&labelColor=FCC624&logoColor=black"></a>
@@ -234,7 +222,6 @@ curl -fsSL https://repo.pigsty.io/yum/repo | sudo tee /etc/yum.repos.d/pigsty.re
 sudo yum makecache
 ```
 
-
 --------------
 
 ## What's in this repo?
@@ -242,8 +229,6 @@ sudo yum makecache
 The live catalog organizes extensions by category, platform, repository, language, license, and attributes. It started with categories such as TIME, GIS, RAG, FTS, OLAP, FEAT, LANG, TYPE, FUNC, ADMIN, STAT, SEC, FDW, SIM, and ETL, and continues to evolve as the extension ecosystem grows.
 
 Check the [Pigsty Extension Catalog](https://pigsty.io/ext/list/) for the current details.
-
-
 
 --------
 

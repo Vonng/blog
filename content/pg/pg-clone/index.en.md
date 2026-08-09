@@ -41,7 +41,6 @@ It just creates a new set of metadata pointers pointing to the same physical dis
 
 **No data movement, just metadata operations.** So whether the database is 1GB or 1TB, cloning time is constant—on modern NVMe SSDs, I've tested cloning a 120GB database in about 200 milliseconds. A 797GB database takes roughly 569 milliseconds.
 
-
 ------
 
 ## Copy-on-Write: Why No Extra Space?
@@ -66,8 +65,6 @@ If you're using mainstream distributions like EL 8/9/10, Debian 11/12/13, or Ubu
 
 Still on CentOS 7.9 with ext4? Well, you're out of luck—time to upgrade.
 
-
-
 ### Key Limitation: No Connections to Template Database
 
 While this feature is great, there's one unavoidable limitation: during cloning, the template database **cannot have any active connections**.
@@ -87,7 +84,6 @@ EOF
 
 Note: these two statements can't be executed separately, but can't be in the same transaction either (`CREATE DATABASE` can't run inside a transaction block).
 So you need to use psql stdin approach—using `psql -c` auto-wraps in a transaction, which will fail.
-
 
 ### Optimization in Pigsty
 
@@ -111,9 +107,6 @@ Then run: `bin/pgsql-db pg-meta meta_dev`, and Pigsty handles all the details au
 
 Of course, there are quite a few details involved—for instance, you need to ensure `file_copy_method` is correctly set to `clone` for this feature, which Pigsty has already configured for all PG18+ clusters.
 What if the database you want to clone is the management database `postgres` itself (connections not allowed during cloning)? Or what about terminating all connections before cloning? All handled automatically.
-
-
-
 
 ### Are There Other Approaches?
 
@@ -170,7 +163,6 @@ And this PITR is also incremental, so it's fast too.
 The most direct use case for this mechanism is accidental data deletion—but not enough to warrant a full database rollback.
 In such cases, you can use `pg-fork` to instantly clone an exact replica of the production database,
 then do an incremental rollback with pg-pitr to a few minutes earlier, start it up, query the deleted data, and write it back.
-
 
 ### Cluster-Level Cloning
 

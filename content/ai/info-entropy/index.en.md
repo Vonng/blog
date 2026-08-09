@@ -3,7 +3,7 @@ title: "Fundamentals of Information Theory: Entropy"
 date: 2016-05-18
 author: "vonng"
 math: true
-summary: "Reading notes on 'Elements of Information Theory': What is **entropy**? Entropy is a measure of the uncertainty of random variables, and also a measure of the information needed to describe random variables on average."
+summary: "Reading notes on 'Elements of Information Theory': What is entropy? Entropy is a measure of the uncertainty of random variables, and also a measure of the information needed to describe random variables on average."
 ai: true
 aliases: ["/misc/info-entropy/"]
 ---
@@ -73,7 +73,7 @@ $$
 Then it becomes clear: the optimal encoding length $L$ for letter $x$, weighted by its occurrence probability $p(x)$, gives the optimal average encoding length—which is entropy!
 
 $$
-\sum_{x \in \mathcal{X}} {p(x)L(x)} = \sum_{x \in \mathcal{X}} {p(x)\log_2{\frac 1 {p(x)}}} 
+\sum_{x \in \mathcal{X}} {p(x)L(x)} = \sum_{x \in \mathcal{X}} {p(x)\log_2{\frac 1 {p(x)}}}
 = \sum_{x \in \mathcal{X}} -p(x)\log_2 p(x) =  H(X)
 $$
 

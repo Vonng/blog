@@ -16,7 +16,6 @@ tags: [Pigsty]
 
 Pigsty v1.2 is officially released, making PostgreSQL 14 the default version and adding support for monitoring existing database instances independently.
 
-
 ----------------
 
 ## PostgreSQL 14 Becomes the Default
@@ -28,7 +27,6 @@ Meanwhile, the time-series extension TimescaleDB 2.5 and geospatial extension Po
 ![timescale-postgis-citus](timescale-postgis-citus.jpg)
 
 All three are mutually compatible and can be used together.
-
 
 ----------------
 
@@ -54,7 +52,6 @@ The new minimal deployment mode no longer requires login or admin privileges on 
 
 Although you only get PostgreSQL metrics, most of Pigsty's monitoring system functionality still works. Testing shows Pigsty can also directly monitor MatrixDB, Greenplum, and other PostgreSQL-derived/compatible database products.
 
-
 ----------------
 
 ## Streamlined Configuration Templates
@@ -78,7 +75,6 @@ During configuration, the setup wizard automatically selects the appropriate par
 
 Pigsty maintains its tradition of one-liner installation: `./configure && make install`.
 
-
 ----------------
 
 ## Utility Playbooks
@@ -86,7 +82,6 @@ Pigsty maintains its tradition of one-liner installation: `./configure && make i
 The new `pgsql-migration` playbook auto-generates the commands, scripts, and documentation needed for database migration, making online zero-downtime migrations based on logical replication simple (already used to migrate dozens of databases in production).
 
 The `pgsql-audit` playbook generates audit reports for database instances based on audit requirements.
-
 
 ----------------
 
@@ -104,7 +99,6 @@ v1.2 provides two new Pigsty App examples:
 
 Both apps are simple but practical, each built in under an hour. Pigsty is an excellent tool for rapidly prototyping functional applications.
 
-
 ----------------
 
 ## Looking Ahead
@@ -120,7 +114,6 @@ Both apps are simple but practical, each built in under an hour. Pigsty is an ex
 **REDIS v1beta** — Redis is often used alongside PostgreSQL; future versions will integrate Redis deployment and monitoring as a complete solution.
 
 ![redis-v1](redis-v1.jpg)
-
 
 ----------------
 
@@ -158,7 +151,6 @@ Both apps are simple but practical, each built in under an hour. Pigsty is an ex
 
 - pgbouncer_exporter resource owner changed to `{{ pg_dbsu }}` instead of postgres
 - Fixed pg_exporter duplicate metrics on pg_table/pg_index during `REINDEX TABLE CONCURRENTLY`
-
 
 ----------------
 

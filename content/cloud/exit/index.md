@@ -107,7 +107,7 @@ tags: [下云]
 
 [牙膏云？您可别吹捧云厂商了](https://mp.weixin.qq.com/s/XZqe4tbJ9lgf8a6PWj7vjw)【转载】
 
-[互联网技术大师速成班 ](https://mp.weixin.qq.com/s/8ZffsCgchv8LH5ujv0lRGQ)【转载】
+[互联网技术大师速成班](https://mp.weixin.qq.com/s/8ZffsCgchv8LH5ujv0lRGQ)【转载】
 
 [互联网故障背后的草台班子们](https://mp.weixin.qq.com/s/OxhhJ4U1P43di_eaE1uGPw)【转载】
 

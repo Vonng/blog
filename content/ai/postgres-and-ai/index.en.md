@@ -35,7 +35,6 @@ Where things get interesting is at the PG distribution layer. Whether you use RD
 
 [CMU PostgreSQL vs. The World Seminar Series](https://db.cs.cmu.edu/seminars/spring2026/)
 
-
 -----
 
 ## The PG Community's Turn Toward AI
@@ -56,7 +55,6 @@ That said, a lot of the AI enthusiasm is happening at the vendor and distributio
 
 [Stop Arguing, the Database Question in the AI Era Is Already Settled](/db/db-for-ai/)
 
-
 -----
 
 ## What Did PG Get Right?
@@ -72,7 +70,6 @@ Take `pgvector` as an example. Roughly 8,000 lines of extension code, sitting on
 The same pattern is now showing up in full-text search, analytics, and more. More and more `pgvector`-like extensions are emerging and taking down one database niche after another. That flourishing extension ecosystem exists because PG's extensibility is so extreme. By contrast, MySQL still does not have a mature vector search capability even in the community edition. It largely missed this entire AI wave.
 
 [Whoever Integrates DuckDB Best Wins OLAP](/pg/pg-duckdb/)
-
 
 -----
 
@@ -91,7 +88,6 @@ At the two ends of the spectrum, there are still niches. If you only need a smal
 [Are Dedicated Vector Databases Dead?](/en/db/svdb-is-dead/)
 
 [LLMs and PGVector](/pg/llm-and-pgvector/)
-
 
 -----
 
@@ -112,7 +108,6 @@ This path of evolution brings another huge side benefit: it collapses the cognit
 Of course, DuckDB is another database with strong extensibility, and SQLite counts for half. In my view, only databases with this property really deserve to be called databases for the AI era. The future belongs to data platforms that support agile parallel exploration, flexible composition, free extension loading, and synergistic effects.
 
 [Why PG Will Dominate Databases in the AI Era](/pg/ai-db-king/)
-
 
 -----
 
@@ -135,9 +130,6 @@ Agent memory frameworks are indeed flourishing right now, but from a moat perspe
 [The OS Moment for AI Agents](/en/db/agent-os/)
 
 [What Kind of Database Do Agents Need?](/db/agent-native-db/)
-
-
-
 
 -----
 
@@ -165,8 +157,6 @@ I say "might" because this is still just a minimal prototype. Between a social e
 
 [Database as Application Architecture](/db/db-is-the-arch/)
 
-
-
 -----
 
 ## Database Choice Is Moving to Agents
@@ -188,8 +178,6 @@ This is not just theory. I have seen a very interesting signal in my own data: C
 This creates a snowball effect in the AI era: better docs -> agents are more likely to recommend you -> more people use you through agents -> more practical feedback -> more best-practice docs -> agents understand you better and recommend you more accurately. Positive feedback loop, winner takes most.
 
 PG has a huge first-mover advantage on this dimension. It has the most complete documentation and the most active community of any database. **This may turn out to be the most important and most counterintuitive dimension of future database competition.**
-
-
 
 -----
 
@@ -221,7 +209,6 @@ But DBAs have one structural advantage that often gets overlooked: AI's impact o
 
 [AI Was Used as the Excuse to Lay Off 4,000 People, but Demand for Programmers Still Rose 11%](/ai/ai-sack/)
 
-
 -----
 
 ## What Should New Engineers Do?
@@ -245,8 +232,6 @@ When you connect both ends, understanding infrastructure downward and harnessing
 [New Programmers in the AI Era: Where Do You Go?](/en/db/ai-survival/)
 
 [The AI Era Survival Guide: Where Is the Biggest Upside?](/en/db/ai-bonus/)
-
-
 
 -----
 

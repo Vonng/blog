@@ -12,7 +12,7 @@ This is **Ruohang Feng** / [Vonng](https://github.com/Vonng)'s blog, about Postg
 
 ## License
 
-This blog is licensed under **CC BY 4.0**. You're free to share and adapt the content, 
+This blog is licensed under **CC BY 4.0**. You're free to share and adapt the content,
 as long as you give appropriate credit, link to the license, and indicate if changes were made.
 
 Built with [Hugo](https://github.com/gohugoio/hugo) and the [**Blowfish**](https://blowfish.page/) theme.

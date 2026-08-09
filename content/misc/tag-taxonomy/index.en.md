@@ -9,7 +9,6 @@ summary: |
 
 Recently, I needed to design a tag management system for a business. During the process of organizing existing tags, I developed this theoretical framework.
 
-
 ## 0. Tag Definition: Tag Taxonomy
 
 For **tags**, it's difficult to provide a universally accepted definition that specifies the difference and genus of this concept.
@@ -17,7 +16,6 @@ So to grasp this concept, we need to adopt another approach: **classification** 
 
 The first question to solve is: what types of tags exist? How do we classify tags?
 First, let's classify "how to classify" itself: examining tag classification from both "form" and "content" perspectives.
-
 
 ## 1. Formal Classification of Tags
 
@@ -42,7 +40,6 @@ Predicted game score tag: {0 : 0.2, ..., 100 : 0.003, ..., 198 : 0.01, 199 : 0.0
 Predicted age tag: 30 : <confidence 0.72>
 ```
 
-
 Through observation, we can discover some patterns:
 
 ### 1.1 From Tag Organization Structure
@@ -58,8 +55,6 @@ From tag organization structure, tags can be classified into four types: **singl
 This gives us two basically orthogonal dimensions: **whether multi-value tag**, **whether with weights**.
 These four tag structure types, **single-value tags**, **multi-value tags**, **multi-weight tags**, correspond exactly to JSON's three Primitive Types: `atomic`, `array`, `object`. The special **single-weight tags** can be mapped to length-2 `array`.
 
-
-
 ### 1.2 From Tag Atomic Types
 
 We know that computer (x86, general-purpose computer) implementations essentially only provide two atomic data types: **integer** and **floating-point**. Pointers, single characters, booleans, floating-point numbers all belong to **numeric types**, and the extremely common **character arrays** can be seen as **string types**, so logically we actually only have two atomic data types: `Numeric` and `String`.
@@ -73,8 +68,6 @@ Tag **atomic types** and **structure types** are not completely orthogonal due t
 #### Conclusion:
 
 From atomic type classification: tags can be classified as `integer`, `floating-point`, `string`.
-
-
 
 ### 1.3 From Integer Atomic Type Interpretation Methods
 
@@ -107,16 +100,16 @@ So, the interpretation method for integer atomic types can also be a tag classif
 
 #### FAQ:
 
-*   What's the difference between enumeration and integer, i.e., when to use integer vs enumeration?
+* What's the difference between enumeration and integer, i.e., when to use integer vs enumeration?
     Simple: use enumeration when values **can be exhausted, reasonable in number, infrequent changes**. For example, city codes are suitable enumeration tags: exhaustible, acceptable scale, though may change, probability and correction cost are acceptable. On the other hand, **a person's hair count** can certainly be represented by an integer, but it's neither exhaustible nor reasonable in number, clearly unsuitable as enumeration tags.
 
-*   Difference between enumeration and string?
+* Difference between enumeration and string?
       For example, user's phone brand seems representable by single-value string tag or enumeration. But it's more suitable as `string` rather than `enumeration`. Because phone brands aren't fixed in number, brands constantly emerge and disappear. In this situation, frequent enumeration dictionary changes would bring many inconveniences to tag usage.
 
-*   What's special about enumeration tags?
+* What's special about enumeration tags?
       Enumeration tags need maintaining a tag dictionary table for **enumeration item ID** to **enumeration item name** mappings. Multiple enumeration tags' dictionaries can be maintained in the same table. Also, enumeration tags can have hierarchical relationships. For example, "city enumeration tags" can have upper-level tags: "province enumeration tags". Enumeration tags with hierarchical relationships can easily implement roll-up and drill-down through **enumeration item mapping**.
 
-*   Why not use strings as **enumeration item IDs**?
+* Why not use strings as **enumeration item IDs**?
       Enumerations in most languages default to integer implementation. Integer IDs have huge performance advantages and simplicity over string IDs.
 
 #### Conclusion:
@@ -124,10 +117,10 @@ So, the interpretation method for integer atomic types can also be a tag classif
 Classifying by **atomic tag value type and interpretation method**, we get one dimension: `tag atomic type`.
 This dimension has 4 values: `enumeration`, `integer`, `floating-point`, `string`
 
-
-###  1.4 Formal Classification Summary
+### 1.4 Formal Classification Summary
 
 From above, we get two main, basically orthogonal classification dimensions from tag form:
+
 * Organization structure: { `single-value tag`, `single-weight tag`, `multi-value tag`, `multi-weight tag` }
 * Atomic type: { `enumeration tag`, `integer tag`, `text tag`, `floating-point tag` }
 
@@ -138,7 +131,6 @@ According to tag atomic type frequency, we can assign earlier encodings to most 
 Since most common tags are single-value tags, placing tag structure type bit field before tag atomic type bit field is reasonable design.
 Enumeration tags are most numerous, integer second, some string tags, floating-point tags relatively rare.
 So, we can assign encodings for tag formal types as follows:
-
 
 #### 1.4.1 Tag Structure Type Field
 
@@ -206,9 +198,6 @@ Here are examples for each tag type:
 | 13 | Multi-weight integer | json | Lucky numbers preference: {"7":0.32, "5":0.63} |
 | 14 | Multi-weight text | json | Website browsing preference tags: {"Q&A":0.55, "Social":0.75} |
 
-
-
-
 ## 2. Content Classification of Tags
 
 Tag classification by **content nature**, compared to **formal classification**, appears much more diverse. Can classify purely by tag value characteristics (Nullable, whether weights normalized, etc...), or by tag source scenarios (mobile, PC), tag ownership (private, internal, group, company), tag scale, tag dependencies, tag ID types, or frontend display hierarchical categories, etc. many dimensions.
@@ -217,17 +206,16 @@ Formal classification determines tag presentation, but content classification do
 
 But for content classification, we still need further examination. Tag content classification can be further subdivided into: classification by **tag inherent attributes** and by **artificial usage**. Those belonging to tag inherent attributes are suitable for tag metadata tables as fields. Those belonging to artificial usage division may frequently change requirements. So we need a mechanism supporting dynamic classification system addition without changing database schema. This article suggests using WordPress-like Taxonomy concepts to implement such dynamic classification systems.
 
-
 ### 2.2 Tag Dynamic Classification System Design
 
 To provide flexibility adapting to changing requirements, consider building a **classification system table (tag_taxonomy)**, a **classification item table (tag_term)**, and a **classification table (tag_classification)**. Dynamically implement classification system addition. If implementing hierarchical classification systems, just maintain **parent entry** fields for each **classification item** in the **classification item table**.
 
 For example, if we need to dynamically add a "public/private" classification. First register this classification system in the **classification system table**: "Tag Public/Private Classification System". Then add "Public", "Private" two **classification items** in the **classification item table**, referencing the **Tag Public/Private Classification System** in the **classification system table** through foreign keys. Finally in the **tag classification table**, associate specific tags with **classification items** through foreign keys.
 
-
 ### 2.3 Content Summary
 
 For tag content classification:
+
 * Tag **inherent properties** are suitable as **tag table** fields
 * Tag **artificial classification** suits using dynamic classification systems through foreign key introduction.
 

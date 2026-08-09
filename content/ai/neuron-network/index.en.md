@@ -44,17 +44,16 @@ The mathematical model of a neuron mainly includes:
 $$
 a
 = \sigma(
- 	\left[ \begin{matrix} 
- 		w_{1} & ⋯  & w_{n} \\  
- 	\end{matrix}\right]  ·
- 	\left[ \begin{array}{x} x_1 \\ ⋮ \\ ⋮ \\ x_n \end{array}\right] + 
- 	b
+     \left[ \begin{matrix}
+         w_{1} & ⋯  & w_{n} \\
+     \end{matrix}\right]  ·
+     \left[ \begin{array}{x} x_1 \\ ⋮ \\ ⋮ \\ x_n \end{array}\right] +
+     b
 )
 $$
 </div>
 
 The activation function typically uses the S-shaped function, also called sigmoid or logsig, because this function has excellent properties: **smooth and differentiable**, shape close to the hard-limit transfer function used by perceptrons, and **convenient computation** of function values and derivative values.
-
 
 $$
 σ(z) = \frac 1 {1+e^{-z}}
@@ -86,13 +85,13 @@ Now consider a single-layer neural network with $n$ inputs and $s$ neurons (outp
 $$
 \left[ \begin{array}{a} a_1 \\ ⋮ \\ a_s \end{array}\right]
 = \sigma(
- 	\left[ \begin{matrix} 
- 		w_{1,1} & ⋯  & w_{1,n} \\  
- 		⋮ & ⋱  & ⋮  \\ 
- 		w_{s,1} & ⋯  & w_{s,n} \\  
- 	\end{matrix}\right]  ·
- 	\left[ \begin{array}{x} x_1 \\ ⋮ \\ ⋮ \\ x_n \end{array}\right] + 
- 	\left[ \begin{array}{b} b_1 \\ ⋮ \\ b_s \end{array}\right]
+     \left[ \begin{matrix}
+         w_{1,1} & ⋯  & w_{1,n} \\
+         ⋮ & ⋱  & ⋮  \\
+         w_{s,1} & ⋯  & w_{s,n} \\
+     \end{matrix}\right]  ·
+     \left[ \begin{array}{x} x_1 \\ ⋮ \\ ⋮ \\ x_n \end{array}\right] +
+     \left[ \begin{array}{b} b_1 \\ ⋮ \\ b_s \end{array}\right]
 )
 $$
 </div>
@@ -121,13 +120,13 @@ Now consider an $L$-layer neural network with layer sizes: $d_1,d_2,⋯,d_L$. Th
 $$
 \left[ \begin{array}{a} a^l_1 \\ ⋮ \\ a^l_{d_l} \end{array}\right]
 = \sigma(
- 	\left[ \begin{matrix} 
- 		w^l_{1,1} & ⋯  & w^l_{1,d_{l-1}} \\  
- 		⋮ & ⋱  & ⋮  \\ 
- 		w^l_{d_l,1} & ⋯  & w^l_{d_l,d_{l-1}} \\  
- 	\end{matrix}\right]  ·
- 	\left[ \begin{array}{x} a^{l-1}_1 \\ ⋮ \\ ⋮ \\ a^{l-1}_{d_{l-1}} \end{array}\right] + 
- 	\left[ \begin{array}{b} b^l_1 \\ ⋮ \\ b^l_{d_l} \end{array}\right])
+     \left[ \begin{matrix}
+         w^l_{1,1} & ⋯  & w^l_{1,d_{l-1}} \\
+         ⋮ & ⋱  & ⋮  \\
+         w^l_{d_l,1} & ⋯  & w^l_{d_l,d_{l-1}} \\
+     \end{matrix}\right]  ·
+     \left[ \begin{array}{x} a^{l-1}_1 \\ ⋮ \\ ⋮ \\ a^{l-1}_{d_{l-1}} \end{array}\right] +
+     \left[ \begin{array}{b} b^l_1 \\ ⋮ \\ b^l_{d_l} \end{array}\right])
 $$
 
 #### Meaning of Weight Matrices
@@ -141,8 +140,6 @@ The weights of multi-layer neural networks are represented by a series of weight
 - That is, $w^3_{24}$ represents the connection weight from neuron 4 in layer 2 to neuron 2 in layer 3
 
 Just remember that in weight matrix $W$, the **row index represents neurons in the current layer** and the **column index represents neurons in the previous layer**.
-
-
 
 ## Neural Network Inference
 
@@ -163,8 +160,6 @@ $$
 
 Inference is essentially a series of matrix multiplications and vector operations. A trained neural network can be efficiently implemented in various languages. The function of a neural network is manifested through inference. Inference is simple to implement, but how to **train the neural network** is the real challenge.
 
-
-
 ## Neural Network Training
 
 Training a neural network is the process of adjusting weight and bias parameters in the network to improve its performance.
@@ -177,7 +172,7 @@ The cost function measures the performance of a neural network. It's a real-valu
 
 1. **Error is non-negative; the better the neural network performs, the smaller the error**
 2. **Cost can be written as a function of neural network output**
-3. **Total cost equals the mean of individual sample costs**: $C=\frac{1}{n} \sum_x C_x$ 
+3. **Total cost equals the mean of individual sample costs**: $C=\frac{1}{n} \sum_x C_x$
 
 The most commonly used simple cost function is the **quadratic cost function**, also called **Mean Square Error (MSE)**
 
@@ -203,8 +198,6 @@ Based on sample usage, gradient descent is divided into:
 Using only one sample each time is called online learning or incremental learning.
 
 When all training set samples have been used once, it's called completing one **iteration**.
-
-
 
 ### Gradient Descent Algorithm
 
@@ -238,8 +231,6 @@ $$
 The real challenge lies in computing gradients $∇C_w,∇C_b$. Using differential methods to compute parameter gradients through $\frac {C(p+ε)-C} {ε}$ would require one feed-forward and one $C(p+ε)$ calculation for each parameter in the network. Facing the ocean of parameters in neural networks, this approach is impractical.
 
 **Back propagation** algorithm can solve this problem. Through clever simplification, it can efficiently compute gradients for all parameters in the entire network with one forward pass and one backward pass.
-
-
 
 ## Backpropagation
 
@@ -331,7 +322,7 @@ $$
 This equation can be directly derived from the backpropagation error definition using chain rule with all weighted inputs $z^{l+1}$ from the next layer as intermediate variables:
 
 $$
-δ^l_j = \frac {∂C}{∂z^l_j} 
+δ^l_j = \frac {∂C}{∂z^l_j}
 = \sum_{k=1}^{d_{l+1}}  \frac{∂C}{∂z^{l+1}_k} \frac{∂z^{l+1}_k}{∂z^{l}_j}
 = \sum_{k=1}^{d_{l+1}}  (δ^{l+1}_k  \frac{∂z^{l+1}_k}{∂z^{l}_j})
 $$
@@ -389,9 +380,9 @@ From error definition, taking partial derivative with $w^l_{jk}$ as intermediate
 
 $$
 \begin{align}
-δ^l_j & = \frac{∂C}{∂z^l_j} 
-= \frac{∂C}{∂w^l_{jk}} \frac{∂ w_{jk}}{∂ z^l_j} 
-= ∇C_{w^l_{jk}} \frac{∂w_{jk}}{∂ z^l_j} 
+δ^l_j & = \frac{∂C}{∂z^l_j}
+= \frac{∂C}{∂w^l_{jk}} \frac{∂ w_{jk}}{∂ z^l_j}
+= ∇C_{w^l_{jk}} \frac{∂w_{jk}}{∂ z^l_j}
 \end{align}
 $$
 
@@ -421,7 +412,6 @@ $$
 
 - **Current layer error row vector**: $δ^l$, dimension ($d_l \times 1$)
 
-
 - **Previous layer activation column vector**: $(a^{l-1})^T$, dimension ($1 \times d_{l-1}$)
 
 QED
@@ -439,8 +429,8 @@ $$
 From definition:
 
 $$
-δ^l_j  = \frac{∂C}{∂z^l_j} 
-= \frac{∂C}{∂b^l_j} \frac{∂b_j}{∂z^l_j} 
+δ^l_j  = \frac{∂C}{∂z^l_j}
+= \frac{∂C}{∂b^l_j} \frac{∂b_j}{∂z^l_j}
 = ∇C_{b^l_{j}} \frac{∂b_j}{∂z^l_j}
 $$
 
@@ -451,8 +441,6 @@ QED
 ------
 
 All four equations are now proven. They just need to be converted to code to work.
-
-
 
 ## Neural Network Implementation
 
@@ -534,8 +522,6 @@ After one iteration, the network achieves 90% classification accuracy on the tes
 
 For fifty lines of code, this result is remarkable. However, 96% accuracy would probably still be unacceptable in actual production. To achieve better results, neural networks need optimization.
 
-
-
 ## Neural Network Optimization
 
 This covers the basic knowledge of neural networks, but optimizing their performance is an endless challenge. Each optimization technique can be studied in depth as an advanced topic. Optimization methods are diverse: mathematics, science, engineering, philosophy, and even metaphysics...
@@ -586,7 +572,7 @@ $$
 C = - [ y ln(a) + (1-y)ln(1-a)]
 $$
 
-Though it looks complex, the output layer error formula becomes exceptionally simple: $δ^L =  a^L - y$ 
+Though it looks complex, the output layer error formula becomes exceptionally simple: $δ^L =  a^L - y$
 
 Compared to MSE, it eliminates the derivative factor, so error is directly proportional to (predicted value - actual value), avoiding learning speed being slowed by activation function derivatives, and is simpler to compute.
 
@@ -682,8 +668,6 @@ w → w' = w\left(1 - \frac{ηλ}{n} \right) - η\frac{∂C_0}{∂ w}
 $$
 
 Note that $n$ here is the total number of training samples, not the number of samples used in a mini-batch.
-
-
 
 #### Improved Implementation
 

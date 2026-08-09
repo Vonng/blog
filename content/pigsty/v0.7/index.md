@@ -18,8 +18,7 @@ tags: [Pigsty]
 
 ## v0.7.0
 
-v0.7 针对**接入已有数据库实例**进行了改进，现在用户可以采用 **仅监控部署（Monly Deployment）** 模式使用Pigsty。同时新增了专用于管理数据库与用户、以及单独部署监控的剧本，并对数据库与用户的定义进行改进。
-
+v0.7 针对 **接入已有数据库实例** 进行了改进，现在用户可以采用 **仅监控部署（Monly Deployment）** 模式使用Pigsty。同时新增了专用于管理数据库与用户、以及单独部署监控的剧本，并对数据库与用户的定义进行改进。
 
 ### 改动内容
 
@@ -70,10 +69,6 @@ pg_databases                                   # 变化细节参考 数据库管
 pg_default_privilegs -> pg_default_privileges # 很明显这是一个错别字
 ```
 
-
-
-
-
 ## 仅监控模式
 
 有时用户不希望使用Pigsty供给方案，只希望使用Pigsty监控系统管理现有PostgreSQL实例。
@@ -82,12 +77,10 @@ Pigsty提供了 [**仅监控部署（monly, monitor-only）**](https://pigsty.cc
 
 仅监控模式的部署流程与标准模式大体上保持一致，但省略了很多步骤
 
-- 在**元节点**上完成[基础设施初始化](https://pigsty.cc/docs/pgsql/playbook)的部分与标准流程保持一致，仍然通过`./infra.yml`完成。
-- 不需要在**数据库节点**上完成 **基础设施初始化**。
-- 不需要在**数据库节点**上执行[数据库初始化](https://pigsty.cc/docs/pgsql/playbook)的绝大多数任务，而是通过专用的`./pgsql-monitor.yml` 完成仅监控系统部署。
+- 在 **元节点** 上完成[基础设施初始化](https://pigsty.cc/docs/pgsql/playbook)的部分与标准流程保持一致，仍然通过 `./infra.yml` 完成。
+- 不需要在 **数据库节点** 上完成 **基础设施初始化**。
+- 不需要在 **数据库节点** 上执行[数据库初始化](https://pigsty.cc/docs/pgsql/playbook)的绝大多数任务，而是通过专用的 `./pgsql-monitor.yml` 完成仅监控系统部署。
 - 实际使用的配置项大大减少，只保留基础设施相关变量，与 [监控系统](https://pigsty.cc/docs/pgsql/monitor/) 相关的少量变量。
-
-
 
 ## 数据库管理
 
@@ -133,15 +126,13 @@ pg_databases:
 
 ### 数据库变更
 
-在运行中集群中创建新数据库可以使用`pgsql-createdb.yml`剧本，在配置中定义完新数据库后，执行以下剧本。
+在运行中集群中创建新数据库可以使用 `pgsql-createdb.yml` 剧本，在配置中定义完新数据库后，执行以下剧本。
 
 ```bash
 ./pgsql-createdb.yml -e pg_database=<your_new_database_name>
 ```
 
-通过`-e pg_datbase=`告知需要创建的数据库名称，则该数据库即会被创建（或修改）。具体执行的命令参见集群主库`/pg/tmp/pg-db-{{ database.name}}.sql`文件。
-
-
+通过 `-e pg_datbase=` 告知需要创建的数据库名称，则该数据库即会被创建（或修改）。具体执行的命令参见集群主库 `/pg/tmp/pg-db-{{ database.name}}.sql` 文件。
 
 ## 用户管理
 
@@ -189,7 +180,7 @@ pg_users:
 
 * `groups` field rename to `roles`
 
-* `options` now split into separated configration entries: 
+* `options` now split into separated configration entries:
 
   `login`, `superuser`, `createdb`, `createrole`, `inherit`, `replication`,`bypassrls`,`connlimit`
 
@@ -199,12 +190,10 @@ pg_users:
 
 ### 用户管理
 
-在运行中集群中创建新数据库可以使用`pgsql-createuser.yml`剧本，在配置中定义完新数据库后，执行以下剧本。
+在运行中集群中创建新数据库可以使用 `pgsql-createuser.yml` 剧本，在配置中定义完新数据库后，执行以下剧本。
 
 ```bash
 ./pgsql-createuser.yml -e pg_user=<your_new_user_name>
 ```
 
-通过`-e pg_user=`告知需要创建的数据库名称，则该数据库即会被创建（或修改）。具体执行的命令参见集群主库`/pg/tmp/pg-user-{{ user.name}}.sql`文件。
-
-
+通过 `-e pg_user=` 告知需要创建的数据库名称，则该数据库即会被创建（或修改）。具体执行的命令参见集群主库 `/pg/tmp/pg-user-{{ user.name}}.sql` 文件。

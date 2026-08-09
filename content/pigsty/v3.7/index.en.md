@@ -22,7 +22,6 @@ For outstanding contributions to the PostgreSQL extension ecosystem, Pigsty rece
 
 ![](magneto-award.jpg)
 
-
 --------
 
 ## PostgreSQL 18 Becomes Default Version
@@ -32,7 +31,6 @@ With the release of PostgreSQL 18.1, PG 18 is production-ready. Pigsty v3.7 offi
 PG 18 introduces several important features: Temporal Primary Key, built-in UUIDv7, Index Skip Scan, Asynchronous I/O (AIO), virtual generated columns, EXPLAIN enhancements, OAuth 2.0 support, and more. If these features match your business needs, now is a good time to upgrade.
 
 Meanwhile, PG 13.23 released in November will be the last PG 13 version — that major version has officially entered EOL status. Pigsty v3.7 is the last version with complete PG 13 extension support — all extensions have been recompiled, but will no longer be updated going forward.
-
 
 --------
 
@@ -59,7 +57,6 @@ To improve efficiency, we fully automated the entire extension build process. No
 
 ![](magneto-cert.jpg)
 
-
 --------
 
 ## New OS Support: EL 10 and Debian 13
@@ -80,7 +77,6 @@ This is also why we don't recommend users manually wrestling with PostgreSQL dep
 
 **Maintenance Strategy Adjustment**: Pigsty will only maintain the two most recent major versions in each series. With EL 10 and Debian 13 joining, EL 8, Debian 11, and Ubuntu 20.04 will no longer receive proactive updates (support not removed) — new extension packages and test processes will no longer cover these older systems.
 
-
 --------
 
 ## Multi-Kernel Synchronized Updates
@@ -100,7 +96,6 @@ Besides the vanilla PostgreSQL kernel, this version synchronizes updates across 
 
 All these kernels work smoothly on new operating systems (except Babelfish), further solidifying Pigsty's position as a "Meta-Distribution" — a unified platform for out-of-the-box experience with various PostgreSQL flavors.
 
-
 --------
 
 ## Parameter Template Optimization
@@ -113,7 +108,6 @@ Default parameter templates optimized for PG 18 and new scenarios:
 - Ensured adequate background worker resources for various extensions
 - Relaxed OLTP template restrictions on parallel queries
 - Added maintenance, troubleshooting, and accidental deletion recovery SOP documentation
-
 
 --------
 
@@ -129,8 +123,6 @@ Implementation path:
 - **Build Differentiated Advantages**: Industry-leading monitoring system and most complete extension ecosystem
 - **Integrate Ecosystem Resources**: Incorporating core capabilities from distributions like Supabase and Percona
 - **Optimize Developer Experience**: Balancing professionalism with usability
-
-
 
 --------
 --------

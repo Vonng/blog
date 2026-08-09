@@ -12,8 +12,6 @@ There is a table named `cards`. Its auto-incrementing numeric primary key is `id
 
 The `result` column contains the expression. Only 1 solution is required; if no solution exists, `result` should be `NULL`.
 
-
-
 1. The rules of the 24-point game: only addition, subtraction, multiplication, and division are allowed—no factorials, exponentiation, or other operators. Each number must be used, and may be used only once. Parentheses may be used to change precedence.
 
 2. The submission must be a single SQL statement. Built-in database functions are allowed, but stored procedures, user-defined functions, and code blocks are not.
@@ -26,7 +24,6 @@ The `result` column contains the expression. Only 1 solution is required; if no 
 
 6. The submitted SQL must not exceed 10 KB.
 
-
 The MySQL old hands at NineData gave their home team one hell of an edge in this contest. Here's how.
 
 Because that 10 KB limit is downright sneaky. The fastest solutions all use prime-number lookup tables, and concatenating the text for every solution takes roughly 10,018 characters. To squeeze that table under 10 KB, you need a few compression tricks.
@@ -34,7 +31,6 @@ Because that 10 KB limit is downright sneaky. The fastest solutions all use prim
 MySQL ships with `COMPRESS` and `UNCOMPRESS`. Vanilla PostgreSQL does not; it needs the `pgsql-gzip` extension, which NineData's contest platform does not provide.
 
 Here is the PostgreSQL solution:
-
 
 -----------
 
@@ -77,7 +73,6 @@ FROM poker24.cards c LEFT JOIN a a ON a.i =
 The query text here is over 10,000 characters—10,896, to be exact. There are several ways to trim it: turn that enormous `CASE` into an inline function, then replace the decimal primary-key literals with hexadecimal ones, and the query would fit under 10 KB.
 But the rules forbid user-defined functions and stored procedures, so we need another route. The real problem is how to compress that giant string in the middle.
 
-
 -----------
 
 ## Compression
@@ -99,8 +94,6 @@ SELECT c.id, c1, c2, c3, c4, result FROM poker24.cards c LEFT JOIN a a ON a.i =
 *CASE c3 WHEN 1 THEN 2 WHEN 2 THEN 3 WHEN 3 THEN 5 WHEN 4 THEN 7 WHEN 5 THEN 11 WHEN 6 THEN 13 WHEN 7 THEN 17 WHEN 8 THEN 19 WHEN 9 THEN 23 WHEN 10 THEN 29 END
 *CASE c4 WHEN 1 THEN 2 WHEN 2 THEN 3 WHEN 3 THEN 5 WHEN 4 THEN 7 WHEN 5 THEN 11 WHEN 6 THEN 13 WHEN 7 THEN 17 WHEN 8 THEN 19 WHEN 9 THEN 23 WHEN 10 THEN 29 END);
 ```
-
-
 
 -----------
 

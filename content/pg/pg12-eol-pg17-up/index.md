@@ -22,8 +22,6 @@ PG 12 最后一个小版本为 2024-11-14 发布的 12.21，而这将是 PG 12 �
 | 13      | 13.17         | Yes       | September 24, 2020 | November 13, 2025 |
 | 12      | 12.21         | No        | October 3, 2019    | November 14, 2024 |
 
-
-
 --------
 
 ## PG12下台
@@ -49,8 +47,6 @@ PostgreSQL 12 是五年前发布的版本，我认为是继 PG 10 之后的一�
 
 在这五年里，Pigsty 从一个自己用的PG监控系统/测试沙箱，变成了一个被广泛使用的开源项目，在全球社区都有了知名度。回头看看，不禁有些感慨。
 
-
-
 --------
 
 ## PG17上位
@@ -69,19 +65,13 @@ PostgreSQL 12 是五年前发布的版本，我认为是继 PG 10 之后的一�
 
 > https://smalldatum.blogspot.com/2024/09/postgres-17rc1-vs-sysbench-on-small.html
 
-
 之前我对 PostgreSQL 14 进行过一次全方位的 [**性能评测**](/pg/pg-performence)，但那已经是三年前了，所以我准备针对最新的 PostgreSQL 17.1 重新进行一次评测。
 
 最近我整了台非常牛逼的物理机，128C 256G，配四块 3.2 T Gen4 NVMe SSD 加一块硬件 NVMe RAID 加速卡，准备看看 PostgreSQL，pgvector，以及一系列 OLAP 扩展插件能在这台性能怪兽上表现出什么样的性能，结果敬请期待。
 
-
-
 总的来说，我认为 17.1 的推出将会是一个合适的升级时机，我也准备在未来几天里发布 Pigsty v3.1 ，在里面将 PG 17 升级为 Pigsty 默认使用的主要大版本，取代原本的 PG16。
 
 考虑到 PostgreSQL 在 10.0 之后提供了逻辑复制的功能特性，而 Pigsty 提供了使用逻辑复制进行不停机的蓝绿部署升级的完整方案 —— PG 大版本升级的难度早已今非昔比。我也将会在近期推出一个不停机大版本升级教程，帮助用户将现有的 PostgreSQL 16 或更低版本无缝升级到 PG 17
-
-
-
 
 --------
 
@@ -119,8 +109,6 @@ PostgreSQL 12 是五年前发布的版本，我认为是继 PG 10 之后的一�
 
 > [Pigsty Release Note](https://pigsty.cc/docs/releasenote)
 
-
-
 而这一次从 PG 16 - PG 17，生态适配的速度显著加快了，这才三个月不到，就完成了之前需要半年的活计。在这一点上，我很自豪地说，我还是做了不少工作的。
 比如在《[PostgreSQL神功大成！最全扩展仓库](https://mp.weixin.qq.com/s/Dv3--O0K70Fevz39r3T4Ag)》中介绍过的 https://pgext.cloud/zh ，这里维护了 PG 生态超过一半的扩展插件。
 
@@ -141,10 +129,6 @@ PostgreSQL 12 是五年前发布的版本，我认为是继 PG 10 之后的一�
 Hydra 和 DuckDB 原厂 MotherDuck 亲自下场搞的 `pg_duckdb`，全部都已经实现了 PG 17 支持，并且在 Pigsty 扩展仓库中可用。
 
 考虑到分布式的 Citus 用户并不多，列存 Hydra 已经有大把全新的 DuckDB 扩展可以替代，我认为 PG17 在扩展生态上已经达到了一个令人满意的状态，可以作为生产环境的首要大版本使用了。而在 PG17 上实现这一点的用时，比 PG 16 快了近一倍
-
-
-
-
 
 -------
 
@@ -168,6 +152,4 @@ PostgreSQL 已经毫无疑问地即将成为数据库领域的 Linux 内核，�
 - 阿里云 [PolarDB](https://pigsty.cc/docs/kernel/polardb) for PostgreSQL / Oracle 国产化信创内核支持
 - 允许用户更方便地自建 [Supabase](https://pigsty.cc/docs/kernel/supabase) —— 开源 Firebase，一站式后端平台
 
-
 如果您希望使用原汁原味的 PostgreSQL 体验，欢迎使用我们的发行版，开源免费，没有供应商锁定；同时我们也提供商业咨询支持，为您解决疑难杂症兜底的需求与烦恼。
-

@@ -20,7 +20,6 @@ GitHub stars are taking off!
 
 ![](github-star.jpg)
 
-
 --------
 
 ## Modular Architecture
@@ -51,7 +50,6 @@ The core feature of Pigsty v1.4 is a major refactor of the underlying architectu
 ![](modular-architecture.jpg)
 
 > Modular playbooks and configuration parameters
-
 
 --------
 
@@ -85,13 +83,11 @@ The dedicated PGSQL Matrix dashboard shows core monitoring metrics for a MatrixD
 
 > Defining a 4-node MatrixDB requires only this configuration
 
-
 --------
 
 ## Monitoring System Evolution
 
 The monitoring system has always played a core role in Pigsty. In v1.4, Pigsty's monitoring system has significant improvements.
-
 
 ### Host Monitoring
 
@@ -117,7 +113,6 @@ Node monitoring provides three levels: global overview, cluster, and single node
 
 While Pigsty is positioned as a batteries-included PostgreSQL distribution, it also contains host monitoring best practices. Some users don't need database features at all — they just use Pigsty for host monitoring.
 
-
 ### Log Collection
 
 In Pigsty v1.4, Loki and Promtail log collection components are upgraded to default system components. Loki, made by Grafana Labs, uses a label system similar to Prometheus with LogQL similar to PromQL. It's a lightweight, elegant log collection, processing, and analysis solution.
@@ -135,7 +130,6 @@ Additionally, besides node logs, you can also view real-time infrastructure log 
 ![](infra-overview.jpg)
 
 > INFRA Overview panel showing infrastructure logs
-
 
 ### PGSQL Monitoring
 
@@ -167,7 +161,6 @@ More importantly, you can see aggregate views of every table and query type acro
 
 The colored TreeMap quickly reflects two-dimensional attributes: for tables, size represents space occupied, color represents access frequency. For queries, size represents total time spent on that query type, color represents average response time.
 
-
 ### Application Dashboards
 
 Besides the four core modules **INFRA**, **NODES**, **PGSQL**, **REDIS**, the Pigsty Grafana home has one more section: **APP**. This is for user applications. Any monitoring dashboard tagged with `APP` and `Overview` appears in Pigsty's dashboard navigation. Pigsty ships with a ready-to-use small app PGLOG for analyzing PostgreSQL's own CSV logs, quickly locating anomalies from logs and jumping to specific connection details.
@@ -191,7 +184,6 @@ More data application examples will be added continuously.
 ![](dbeng-trend.jpg)
 
 > DBEng Trend: Using authoritative DB-Engines popularity data to predict when PostgreSQL will become the world's most popular relational database
-
 
 --------
 
@@ -217,7 +209,6 @@ cd ~/pigsty && ./configure  # Configure
 make install                # Install
 ```
 
-
 --------
 
 ## Case Study: Tantan
@@ -237,7 +228,6 @@ At Tantan, Pigsty underwent long-term, large-scale, rigorous production testing.
 ![](primary-failover.jpg)
 
 > A typical primary crash scenario: 30s after primary goes down, replica is promoted to new primary, 30s of business write impact then self-healing
-
 
 --------
 --------
@@ -321,7 +311,6 @@ At Tantan, Pigsty underwent long-term, large-scale, rigorous production testing.
 - `pg_exporter_params`: Extra URL parameters for pg_exporter when generating monitoring target URL
 - `pg_provision`: Boolean variable indicating whether to execute provisioning part of `postgres` role
 - `no_cmdb`: Used for `infra.yml` and `infra-demo.yml` playbooks, won't create CMDB on meta node
-
 
 --------
 

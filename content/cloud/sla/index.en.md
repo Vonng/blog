@@ -12,8 +12,6 @@ In the world of cloud computing, Service Level Agreements (SLAs) are seen as a c
 
 [![](sla.jpg)](https://mp.weixin.qq.com/s/LC5jAhuVObRcrTLxI1FUQA)
 
-
-
 ----------------
 
 ## Insurance Policy or Placebo?
@@ -23,7 +21,6 @@ One of the reasons many users opt for cloud services is for the "safety net" the
 Data is the lifeline of many businesses, and cloud storage serves as the foundation for nearly all data storage on the public cloud. Let's take cloud storage services as an example. Many cloud service providers boast of their cloud storage services having nine nines of **data reliability** [1]. However, upon examining their SLAs, we find that these crucial promises are conspicuously absent from the SLAs [2].
 
 What is typically included in the SLAs is the service's **availability**. Even this promised availability is superficial, paling in comparison to the core business reliability metrics in the real world, with compensation schemes that are practically negligible in the face of common downtime losses. **Compared to an insurance policy, SLAs more closely resemble placebos that offer emotional value.**
-
 
 ----------------
 
@@ -51,8 +48,6 @@ For some internet companies, a 15-minute service outage is enough to jeopardize 
 
 What's more outrageous is that these compensations are not automatically provided to you after a failure occurs. Users are required to measure downtime themselves, submit evidence for claims within a specific timeframe (**usually two months**), and request compensation to receive any. This requires users to collect monitoring metrics and log evidence to negotiate with cloud providers, and the compensation returned is not in cash but in vouchers/duration compensations — **meaning virtually no real loss for the cloud providers and no actual value for the users, with almost no chance of compensating for the actual losses incurred during service interruptions.**
 
-
-
 ----------------
 
 ## Is the "Safety Net" Meaningful?
@@ -71,7 +66,6 @@ In contrast, the traditional insurance industry genuinely provides coverage for 
 
 Cloud service providers charge far more than the BOM for their expensive services (see: "Are Public Clouds a Pig Butchering Scam?" [7]), but when service issues arise, their so-called "safety net" compensation is merely vouchers, which is clearly unfair.
 
-
 ----------------
 
 ## Vanished Reliability
@@ -86,10 +80,6 @@ Yet, upon examining the SLAs of various cloud providers, this promise disappears
 
 In the 2018 sensational case "The Disaster Tencent Cloud Brought to a Startup Company!" [8], the startup believed the cloud provider's promises and stored data on server hard drives, only to encounter what was termed "silent disk errors": "Years of accumulated data were lost, causing nearly ten million yuan in losses." Tencent Cloud expressed apologies to the company, willing to compensate the actual expenses incurred on Tencent Cloud totaling 3,569 yuan and, with the aim of helping the business quickly recover, promised an additional compensation of 132,900 yuan
 
-
-
-
-
 ----------------
 
 ## What Exactly is an SLA
@@ -100,9 +90,8 @@ However, SLAs are deliberately confused with the actual reliability of the servi
 
 The UPTIME INSTITUTE's annual data center failure analysis report shows that many cloud services perform below their published SLAs. The analysis of failures in 2022 found that efforts to contain the frequency of failures have failed, and the cost and consequences of failures are worsening [9].
 
-
 > **Key Findings Include**:
-> 
+>
 > - **High outage rates haven’t changed significantly.** One in five organizations report experiencing a “serious” or “severe” outage (involving significant financial losses, reputational damage, compliance breaches and in some severe cases, loss of life) in the past three years, marking a slight upward trend in the prevalence of major outages. According to Uptime’s 2022 Data Center Resiliency Survey, 80% of data center managers and operators have experienced some type of outage in the past three years – a marginal increase over the norm, which has fluctuated between 70% and 80%.
 > - **The proportion of outages costing over $100,000 has soared in recent years.** Over 60% of failures result in at least $100,000 in total losses, up substantially from 39% in 2019. The share of outages that cost upwards of $1 million increased from 11% to 15% over that same period.
 > - **Power-related problems continue to dog data center operators.** Power-related outages account for 43% of outages that are classified as significant (causing downtime and financial loss). The single biggest cause of power incidents is uninterruptible power supply (UPS) failures.
@@ -112,9 +101,6 @@ The UPTIME INSTITUTE's annual data center failure analysis report shows that man
 > - **Prolonged downtime is becoming more common in publicly reported outages.** The gap between the beginning of a major public outage and full recovery has stretched significantly over the last five years. Nearly 30% of these outages in 2021 lasted more than 24 hours, a disturbing increase from just 8% in 2017.
 > - **Public outage trends suggest there will be at least 20 serious, high-profile IT outages worldwide each year.** Of the 108 publicly reported outages in 2021, 27 were serious or severe. This ratio has been fairly consistent since the Uptime Intelligence team began cataloging major outages in 2016, indicating that roughly one-fourth of publicly recorded outages each year are likely to be serious or severe.
 
-
-
-
 Rather than compensating users, SLAs are more of a "punishment" for cloud providers when their service quality fails to meet standards. The deterrent effect of the punishment depends on the certainty and severity of the punishment. Monthly duration/voucher compensations impose virtually no real cost on cloud providers, making the severity of the punishment nearly zero; compensation also requires users to submit evidence and get approval from the cloud provider, meaning the certainty is not high either.
 
 Compared to experts and engineers who might lose bonuses and jobs due to failures, the punishment of SLAs for cloud providers is akin to a slap on the wrist. If the punishment is meaningless, then cloud providers have no incentive to improve service quality. When users encounter problems, they can only wait and die, and the service attitude towards small customers, in particular, is arrogantly dismissive compared to self-built/third-party service companies.
@@ -123,13 +109,11 @@ More subtly, cloud providers have absolute power over the SLA agreement: they re
 
 Thus, SLAs are not an insurance policy against losses for users. In the worst-case scenario, it's an unavoidable loss; at best, it provides emotional comfort. Therefore, when choosing cloud services, we need to be vigilant and fully understand the contents of their SLAs to make informed decisions.
 
-
-
 ----------------
 
 ## Reference
 
-【1】[阿里云 ESSD云盘](https://help.aliyun.com/document_detail/122389.html) 
+【1】[阿里云 ESSD云盘](https://help.aliyun.com/document_detail/122389.html)
 
 【2】[阿里云 SLA 汇总页](https://help.aliyun.com/document_detail/56773.htm)
 
@@ -137,9 +121,9 @@ Thus, SLAs are not an insurance policy against losses for users. In the worst-ca
 
 【4】[AWS EC2 SLA 样例](https://d1.awsstatic.com/legal/AmazonComputeServiceLevelAgreement/Amazon_Compute_Service_Level_Agreement_Chinese_Simplfied_(CN)2022-05-25.pdf)
 
-【5】[云SLA更像是惩罚用户而不是补偿用户](https://journal.uptimeinstitute.com/cloud/-slas-punish-not-compensate/) 
+【5】[云SLA更像是惩罚用户而不是补偿用户](https://journal.uptimeinstitute.com/cloud/-slas-punish-not-compensate/)
 
-【6】[NVMe SSD失效率统计](https://www.usenix.org/system/files/atc22-lu.pdf) 
+【6】[NVMe SSD失效率统计](https://www.usenix.org/system/files/atc22-lu.pdf)
 
 【7】[公有云是不是杀猪盘](https://mp.weixin.qq.com/s/UxjiUBTpb1pRUfGtR9V3ag)
 

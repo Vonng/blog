@@ -20,7 +20,6 @@ Additionally, Pigsty 3.1 delivers one-click [self-hosted Supabase](https://pigst
 Meanwhile, Pigsty provides initial ARM64 architecture support and adds support for the newly released Ubuntu 24.04 major OS release.
 Finally, this version offers a series of ready-to-use scenario templates, unifying configuration files across different OS distributions and dramatically simplifying configuration management.
 
-
 --------
 
 ## Self-Hosted Supabase
@@ -46,8 +45,6 @@ In this version, we've optimized the experience to this state — on a fresh OS 
 
 I'll be preparing some tutorials on [Supabase self-hosting best practices](https://pigsty.cc/docs/pgsql/kernel/supabase) in the coming days, stay tuned.
 
-
-
 --------
 
 ## PostgreSQL 17
@@ -63,7 +60,6 @@ Under PG 17, that number reaches 180 MB/s. Of course, turning off all safety swi
 ![perf.png](perf.jpg)
 
 Performance regression testing for Pigsty 3.1 + PostgreSQL 17. Detailed performance benchmark reports will be published in the coming days, stay tuned.
-
 
 ----------------
 
@@ -88,7 +84,6 @@ For more details, see "[PostgreSQL Achieves Mastery: The Most Complete Extension
 Currently, there are quite a few new projects developing extensions with Rust + pgrx, and Pigsty includes **23** Rust extensions.
 If you have good extension recommendations, let me know — I'll evaluate and test them and add them to the repository ASAP.
 If you're a PostgreSQL extension author, we welcome you to submit your extension to the Pigsty repository — we can help you package and distribute it, solving the last-mile delivery problem.
-
 
 ----------------
 
@@ -120,7 +115,6 @@ We provide the latest software packages and complete extension sets for these fi
 
 > Primary = Primary version support; Supported = Configurable support; Legacy = Legacy version commercial support
 
-
 ----------------
 
 ## ARM Support
@@ -138,9 +132,6 @@ Currently, the ARM version runs well on EL9, Debian 12, and Ubuntu 22.04.
 EL8 has some missing official PGDG packages, and Ubuntu 24 has some individual missing extensions, so we don't recommend using the ARM version on these two systems yet.
 
 I plan to pilot ARM for one or two minor versions, and once extensions are complete, I'll mark it as GA. Welcome to try the ARM version and provide feedback.
-
-
-
 
 ----------------
 
@@ -169,9 +160,6 @@ pg_extensions: # extensions to be installed on this cluster
 For example, if you want to download and install PG 16 kernel and extensions, previously you'd need to change all packages in the download and install lists to version 16 — now you just modify one `pg_version` parameter.
 The end result is excellent: basically all OS distributions can use the same config file for installation, hiding system differences and management complexity internally.
 
-
-
-
 ----------------
 
 ## Infrastructure Improvements
@@ -182,8 +170,6 @@ Now, the official Pigsty repository directly provides mirrors for Babelfish, Ivo
 
 Additionally, we maintain Prometheus and Grafana YUM/APT x AMD/ARM repositories, tracking these observability component versions in real-time. In this upgrade, Prometheus upgrades to v3, and VictoriaLogs officially releases v1.
 In summary, if you need these monitoring tools, Pigsty's repository can help.
-
-
 
 ----------------
 
@@ -211,7 +197,6 @@ A 1.2 PB dedicated storage server costs around ¥100K RMB, with 3-way replicatio
 Add in network, power, and ops, and the entire 5-year TCO doesn't exceed one year's discounted cloud spend — that's massive cost-saving potential.
 If your business heavily uses object storage, local MinIO self-hosting + Cloudflare might be a much better solution worth considering.
 
-
 ----------------
 
 ## Service System
@@ -229,9 +214,6 @@ My previous service pricing was too low, drawing comments from domestic and inte
 ![price.png](price.jpg)
 
 So this time I've re-adjusted the pricing system, basically anchoring to industry average pricing levels. After all, it's a mutual choice — welcome interested friends to purchase professional services and support! New customers get new pricing, existing customers keep old pricing.
-
-
-
 
 ----------------
 

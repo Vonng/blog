@@ -26,7 +26,6 @@ A Wuhan traffic-police officer told the media:
 
 Last night's incident came nowhere close to paralyzing the entire city. But it exposed a clear path to that outcome.
 
-
 --------
 
 ## What Does a Large-Scale Simultaneous Failure Tell Us?
@@ -110,7 +109,6 @@ Consider an analogy: connecting every traffic light in a city to one central sys
 Anyone who has built distributed systems knows why that architecture is hard to trust in critical infrastructure. Power grids are segmented, banking systems are layered, and DNS has local caches. **Any system that can affect safety in the physical world must be able to operate independently or fail safely when its central node goes down.**
 
 At least from the public information and what was observed at the scene, Apollo Go did not adequately demonstrate that capability last night.
-
 
 --------
 

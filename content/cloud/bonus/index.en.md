@@ -16,7 +16,6 @@ Hardware performance is skyrocketing, and costs are plummeting, turning the publ
 
 [![](featured.jpg)](https://mp.weixin.qq.com/s/1OSRcBfd58s0tgZTUZHB9g)
 
-
 -----------
 
 ## Revolutionary New Hardware
@@ -51,9 +50,6 @@ Besides computing and storage, network hardware has also improved significantly.
 
 As computing, storage, and networking hardware evolve exponentially following Moore's Law, hardware becomes fascinating again. But the real intrigue lies in how these technological leaps will impact the world.
 
-
-
-
 -----------
 
 ## Distributed Losing Favor
@@ -72,14 +68,13 @@ In the realm of big data analytics (OLAP), distributed systems might have been e
 
 The core trade-off of distributed databases is "quality for quantity," sacrificing functionality, performance, complexity, and reliability in exchange for greater data capacity and throughput. However, "premature optimization is the root of all evil," and designing for unnecessary scale is futile. If scale is no longer an issue, then sacrificing other attributes for unneeded capacity, incurring extra complexity and costs, becomes utterly pointless.
 
-
 -----------
 
 ## Cost of Owning Servers
 
 With new hardware boasting such powerful performance, what about the cost? Moore's Law states that **every 18 to 24 months, processor performance doubles while the cost halves**. Compared to a decade ago, new hardware is not only more powerful but also cheaper.
 
-In "[DHH: The Cloud-Exit Odyssey](/cloud/odyssey/)", we have a fresh example of a public procurement. DHH and 37 Signals purchased a batch of physical machines for their move away from the cloud in 2023: they bought 20 servers from Dell, totaling 4,000-core vCPUs, 7,680GB of memory, and 384TB of NVMe storage, among other things, for a total expenditure of \$500,000. 
+In "[DHH: The Cloud-Exit Odyssey](/cloud/odyssey/)", we have a fresh example of a public procurement. DHH and 37 Signals purchased a batch of physical machines for their move away from the cloud in 2023: they bought 20 servers from Dell, totaling 4,000-core vCPUs, 7,680GB of memory, and 384TB of NVMe storage, among other things, for a total expenditure of \$500,000.
 
 The specific configuration of each server was as follows: Dell R7625 server, 192 vCPU / 384 GB memory: two AMD EPYC 9454 processors (48 cores/96 threads, 2.75 GHz), equipped with 2x vCPU memory (16 x 32GB memory), a 12 TB NVMe Gen4 SSD, plus other components, **at a cost of \$20,000 per server ($\19,980), amortized over five years is \$333 per month**.
 
@@ -103,7 +98,6 @@ I believe DHH's figures are accurate, as at Tantan, from day one, we chose to bu
 |     AWS C5N.METAL 96C (1y Reserve, All Upfront)      |      20.6       |
 |     AWS C5N.METAL 96C (3y Reserve, All Upfront)      |      12.8       |
 
-
 -----------
 
 ## Cloud Rental Price
@@ -114,11 +108,9 @@ Note that these prices do not include the hundredfold premium for EBS cloud stor
 
 EC2 and EBS prices can be considered the anchor of cloud service pricing, for example, the premium rate of cloud databases RDS that mainly use EC2 and EBS compared to local self-built solutions fluctuates between the two, depending on your storage usage: **the unit price of cloud databases is dozens of times that of self-built solutions**. For more details, refer to "[Is Cloud Database a Dumb Tax?](/cloud/rds/)".
 
-Of course, we can't deny the cost advantages of public clouds for micro instances and startups — for example, the nano instances on public clouds used to patch together 1~~2C, 0.5~~2G configurations really can be offered to users at a core-month cost of a few dollars. In "[Exploiting Alibaba-Cloud ECS for a Digital Homestead](/cloud/ecs/)," I recommended exploiting Alibaba-Cloud's Double 11 virtual machine deals for this reason. For instance, a 2C 2G server's compute cost, calculated with a 500% overselling, is 84 CNY per year, and the cost for 40G cloud disk storage, calculated with triple replication, is about 20 CNY per year, making the annual cost for these two parts over a hundred CNY. This doesn't include the cost of a public IP or the more valuable 3M bandwidth (for example, if you could fully utilize 3M bandwidth 24 hours a day, that would mean 32G of data per day, costing about 25 CNY). The list price for such cloud servers is ¥1500 per year, so the 99¥ price allowing for a low-cost renewal for four years indeed can be considered a loss-leading benefit.
+Of course, we can't deny the cost advantages of public clouds for micro instances and startups — for example, the nano instances on public clouds used to patch together 1–2C, 0.5–2G configurations really can be offered to users at a core-month cost of a few dollars. In "[Exploiting Alibaba-Cloud ECS for a Digital Homestead](/cloud/ecs/)," I recommended exploiting Alibaba-Cloud's Double 11 virtual machine deals for this reason. For instance, a 2C 2G server's compute cost, calculated with a 500% overselling, is 84 CNY per year, and the cost for 40G cloud disk storage, calculated with triple replication, is about 20 CNY per year, making the annual cost for these two parts over a hundred CNY. This doesn't include the cost of a public IP or the more valuable 3M bandwidth (for example, if you could fully utilize 3M bandwidth 24 hours a day, that would mean 32G of data per day, costing about 25 CNY). The list price for such cloud servers is ¥1500 per year, so the 99¥ price allowing for a low-cost renewal for four years indeed can be considered a loss-leading benefit.
 
 However, when your business can no longer be covered by a bunch of micro instances, you really should do the math again carefully: in several key examples, the cost of cloud services is extremely high — whether for large physical machine databases, large NVMe storage, or just the latest and fastest compute. The rental price for such production-grade resources is so high — that a few months' rent could equal the cost of buying it outright. In such cases, you really should just buy the donkey!
-
-
 
 -----------
 

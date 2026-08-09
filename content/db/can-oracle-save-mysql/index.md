@@ -21,7 +21,6 @@ Percona 作为 MySQL 生态的主要扛旗者，开发了一系列用户耳熟�
 >
 > 译者：Vonng，Pigsty 作者，PostgreSQL 专家与布道师。下云倡导者，数据库下云实践者。
 
-
 我之前写了篇文章 [Oracle最终还是杀死了MySQL](/db/oracle-kill-mysql/) ，引发了不少回应 —— 包括 The Register 上的几篇精彩文章（[1](https://www.theregister.com/2024/06/11/early_mysql_engineer_questions_whether/), [2](https://www.theregister.com/2024/06/14/oracles_love_and_hate_relationship/)）。这确实引出了几个值得讨论的问题：
 
 > **AWS和其他云厂商参与竞争，却不回馈任何贡献，那你还指望 Oracle 做啥呢？**
@@ -57,8 +56,6 @@ PostgreSQL 确实是一个出色的数据库，有着活跃的社区，并且近
 PostgreSQL 和 MariaDB 是出色的数据库，如果没有它们，开源社区将被绑死在 Oracle 的贼船上，陷入糟糕的境地，但它们今天都还不能完全替代 MySQL。
 MySQL 社区的最好结果应该是 Oracle 与达成协议，共同努力，尽可能一起建设好 MySQL。如果不行，MySQL 社区需要一个计划B。
 
-
-
 ------
 
 ## 参考阅读
@@ -79,26 +76,23 @@ MySQL 社区的最好结果应该是 Oracle 与达成协议，共同努力，尽
 
 [Perf regressions in MySQL from 5.6.21 to 8.0.36 using sysbench and a small server](https://smalldatum.blogspot.com/2024/02/perf-regressions-in-mysql-from-5621-to.html)
 
-
-
-
 --------
 
 ## 英文原文
 
-I got quite a response to my article on whether [Oracle is Killing MySQL,](https://www.percona.com/blog/is-oracle-finally-killing-mysql/) including a couple of great write-ups on The Register ([1](https://www.theregister.com/2024/06/11/early_mysql_engineer_questions_whether/), [2](https://www.theregister.com/2024/06/14/oracles_love_and_hate_relationship/)) on the topic. There are a few questions in this discussion that I think are worth addressing. 
+I got quite a response to my article on whether [Oracle is Killing MySQL,](https://www.percona.com/blog/is-oracle-finally-killing-mysql/) including a couple of great write-ups on The Register ([1](https://www.theregister.com/2024/06/11/early_mysql_engineer_questions_whether/), [2](https://www.theregister.com/2024/06/14/oracles_love_and_hate_relationship/)) on the topic. There are a few questions in this discussion that I think are worth addressing.
 
 > **AWS and other cloud vendors compete, without giving anything back, what else would you expect Oracle to do ?**
 
 First, yes. I think it would be great if AWS and other cloud providers would contribute more to MySQL. We should note, though, that Oracle is a competitor for many of those companies, and there is no “level playing field” when it comes to MySQL (the fact AWS is willing on this unlevel field is another point). Contributing IP to your competitor, especially considering CLA Oracle requires might not be a great business decision. Until Oracle owns that IP, it is reasonable to expect, for Oracle to have most of the burden to maintain, improve, and promote MySQL, too.
 
-Yes… but what if Oracle is unwilling or unable to be a great MySQL steward anymore and would rather only focus on its cloud version, similar to AWS being solely focused on its RDS and Aurora offerings?  ***There is a solution for that – Oracle should transfer MySQL Community to Linux Foundation, Apache Foundation, or another independent entity, open up the level playing field, and focus on their Cloud (Heatwave) and Enterprise offering.\*** Interestingly enough, there is already a precedent for that with Oracle [transferring OpenOffice to Apache Software Foundation](https://www.zdnet.com/article/oracle-gives-openoffice-to-apache/).
+Yes… but what if Oracle is unwilling or unable to be a great MySQL steward anymore and would rather only focus on its cloud version, similar to AWS being solely focused on its RDS and Aurora offerings?  ***There is a solution for that – Oracle should transfer MySQL Community to Linux Foundation, Apache Foundation, or another independent entity, open up the level playing field, and focus on their Cloud (Heatwave) and Enterprise offering.*** Interestingly enough, there is already a precedent for that with Oracle [transferring OpenOffice to Apache Software Foundation](https://www.zdnet.com/article/oracle-gives-openoffice-to-apache/).
 
-Another great example would be[ LinkerD](https://linkerd.io/) — which [was brought to CNCF](https://linkerd.io/2017/01/24/linkerd-joins-the-cloud-native-computing-foundation/) by Buyant — which continues to build its extended edition[ – Buoyant Enterprise for LinkerD](https://buoyant.io/linkerd-enterprise).
+Another great example would be[LinkerD](https://linkerd.io/) — which [was brought to CNCF](https://linkerd.io/2017/01/24/linkerd-joins-the-cloud-native-computing-foundation/) by Buyant — which continues to build its extended edition[– Buoyant Enterprise for LinkerD](https://buoyant.io/linkerd-enterprise).
 
 In this case, maintaining and growing open source MySQL will become an ecosystem problem and I’m quite sure AWS and other cloud vendors will participate more when they are not contributing to IP owned by their competitors. We can actually see it with PostgreSQL, Linux, or Kubernetes projects which have great participation from cloud vendors.
 
-> **There is PostgreSQL; who needs MySQL anyway?** 
+> **There is PostgreSQL; who needs MySQL anyway?**
 
 Indeed, PostgreSQL is a fantastic database with a great community and has been growing a lot recently. Yet there are still a lot of existing applications on MySQL and many folks who prefer MySQL, and so we need MySQL healthy for many years to come. But there is more; if MySQL were to die, we would essentially have a monopoly with popular open source relational databases, and, in my opinion, monopoly is not a good thing as it leads to stagnation and slows innovation. To have PostgreSQL to be as great as it can be it is very helpful to have healthy competition from MySQL!
 
@@ -106,9 +100,6 @@ Indeed, PostgreSQL is a fantastic database with a great community and has been g
 
 I think MariaDB’s existence has been great at putting pressure on Oracle to invest in MySQL. We can’t know for certain “what would have been,” but chances are we would have seen more MySQL neglect earlier if not for MariaDB. Having said that, while organizationally, MariaDB is not Oracle, it is not as cleanly “community owned and governed” as PostgreSQL and does not have as broad a number of independent corporate contributors as PostgreSQL.I think there are steps MariaDB can do to really take a leadership position in MySQL space… but it deserves another article.
 
-**To sum things up** 
+**To sum things up**
 
 PostgreSQL and MariaDB are fantastic databases, and if not for them, the open source community would be in a very bad bind with Oracle’s current MySQL stewardship. Neither is quite a MySQL replacement today, and the best outcome for the MySQL community would be for Oracle to come to terms and work with the community to build MySQL into the best database it can be. If not, the MySQL community needs to come up with a plan B.
-
-
-

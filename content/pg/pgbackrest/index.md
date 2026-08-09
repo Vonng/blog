@@ -29,8 +29,6 @@ pgBackRest [v2.01](https://github.com/pgbackrest/pgbackrest/releases/tag/release
 
 只有在EOL之前，pgBackRest v1才会收到修复错误。v1的文档可以在[这里](http://www.pgbackrest.org/1)找到。
 
-
-
 ## 0. 特性
 
 * 并行备份和恢复
@@ -52,7 +50,6 @@ pgBackRest [v2.01](https://github.com/pgbackrest/pgbackrest/releases/tag/release
 * 备份完整性
 
   每个文件在备份时都会计算校验和，并在还原过程中重新检查。完成文件复制后，备份会等待所有必须的WAL段进入存储库。存储库中的备份以与标准PostgreSQL集群（包括表空间）相同的格式存储。如果禁用压缩并启用硬链接，则可以在存储库中快照备份，并直接在快照上创建PostgreSQL集群。这对于以传统方式恢复很耗时的TB级数据库是有利的。所有操作都使用文件和目录级别fsync来确保持久性。
-
 
 * 页面校验和
 
@@ -95,8 +92,6 @@ pgBackRest [v2.01](https://github.com/pgbackrest/pgbackrest/releases/tag/release
 
   pgBackRest包含了对8.3以下版本的支持，因为旧版本的PostgreSQL仍然是经常使用的。
 
-
-
 ## 1. 简介
 
 本用户指南旨在从头到尾按顺序进行，每一节依赖上一节。例如“备份”部分依赖“快速入门”部分中执行的设置。
@@ -117,7 +112,7 @@ PostgreSQL的配置信息和文档可以在PostgreSQL手册中找到。
 
 * 全量备份（Full Backup）
 
-  pgBackRest将数据库集簇的全部文件复制到备份服务器。数据库集簇的第一个备份总是全量备份。 
+  pgBackRest将数据库集簇的全部文件复制到备份服务器。数据库集簇的第一个备份总是全量备份。
 
   pgBackRest总能从全量备份直接恢复。全量备份的一致性不依赖任何外部文件。
 
@@ -137,15 +132,13 @@ PostgreSQL的配置信息和文档可以在PostgreSQL手册中找到。
 
 WAL是PostgreSQL用来确保没有提交的更改丢失的机制。将事务顺序写入WAL，并且在将这些写入刷新到磁盘时认为事务被提交。之后，后台进程将更改写入主数据库集群文件（也称为堆）。在发生崩溃的情况下，重播WAL以使数据库保持一致。
 
-WAL在概念上是无限的，但在实践中被分解成单独的16MB文件称为段。 WAL段按照命名约定`0000000100000A1E000000FE`，其中前8个十六进制数字表示时间线，接下来的16个数字是逻辑序列号（LSN）。
+WAL在概念上是无限的，但在实践中被分解成单独的16MB文件称为段。 WAL段按照命名约定 `0000000100000A1E000000FE`，其中前8个十六进制数字表示时间线，接下来的16个数字是逻辑序列号（LSN）。
 
 #### 2.4 加密
 
 加密是将数据转换为无法识别的格式的过程，除非提供了适当的密码（也称为密码短语）。
 
 pgBackRest将根据用户提供的密码加密存储库，从而防止未经授权访问存储库中的数据。
-
-
 
 ## 3. 安装
 
@@ -229,7 +222,7 @@ sudo chmod 640 /etc/pgbackrest.conf
 sudo chown postgres:postgres /etc/pgbackrest.conf
 ```
 
-pgBackRest包含一个可选的伴随C库，可以增强性能并启用`checksum-page`选项和加密。预构建的软件包通常比手动构建C库更好，但为了完整性，下面给出了所需的步骤。根据分布情况，可能需要一些软件包，这里不一一列举。
+pgBackRest包含一个可选的伴随C库，可以增强性能并启用 `checksum-page` 选项和加密。预构建的软件包通常比手动构建C库更好，但为了完整性，下面给出了所需的步骤。根据分布情况，可能需要一些软件包，这里不一一列举。
 
 * db-primary⇒构建并安装C库
 
@@ -309,10 +302,6 @@ sudo chown vonng /etc/pgbackrest.conf /var/log/pgbackrest
 # sudo rm -rf /usr/local/bin/pgbackrest /Library/Perl/5.18/pgBackRest /var/log/pgbackrest /etc/pgbackrest.conf
 ```
 
-
-
-
-
 ## 4. 快速入门
 
 ### 4.1 搭建测试数据库集群
@@ -345,11 +334,11 @@ sed -ie "s/^#log_line_prefix = '%m [%p] '/log_line_prefix = ''/g" /var/lib/pgsql
 
 “Demo”这个名字可以准确地描述这个数据库集簇的目的，所以这里就这么用了。
 
-`pgBackRest`需要知道PostgreSQL集簇的**数据目录**所在的位置。备份的时候PostgreSQL可以使用该目录，但恢复的时候PostgreSQL必须停机。备份期，提供给pgBackRest的值将与PostgreSQL运行的路径比较，如果它们不相等则备份将报错。确保`db-path`与`postgresql.conf`中的`data_directory`完全相同。
+`pgBackRest` 需要知道PostgreSQL集簇的 **数据目录** 所在的位置。备份的时候PostgreSQL可以使用该目录，但恢复的时候PostgreSQL必须停机。备份期，提供给pgBackRest的值将与PostgreSQL运行的路径比较，如果它们不相等则备份将报错。确保 `db-path` 与 `postgresql.conf` 中的 `data_directory` 完全相同。
 
 默认情况下，Debian / Ubuntu在/ var / lib / postgresql / [版本] / [集群]中存储集群，因此很容易确定数据目录的正确路径。
 
-在创建`/etc/pgbackrest.conf`文件时，数据库所有者（通常是postgres）必须被授予读取权限。
+在创建 `/etc/pgbackrest.conf` 文件时，数据库所有者（通常是postgres）必须被授予读取权限。
 
 * db-primary：`/etc/pgbackrest.conf`⇒配置PostgreSQL集群数据目录
 
@@ -358,7 +347,7 @@ sed -ie "s/^#log_line_prefix = '%m [%p] '/log_line_prefix = ''/g" /var/lib/pgsql
 db-path=/var/lib/pgsql/data
 ```
 
-pgBackRest配置文件遵循Windows INI约定。部分用括号中的文字表示，每个部分包含键/值对。以`#`开始的行被忽略，可以用作注释。
+pgBackRest配置文件遵循Windows INI约定。部分用括号中的文字表示，每个部分包含键/值对。以 `#` 开始的行被忽略，可以用作注释。
 
 ### 4.3 创建存储库
 
@@ -388,8 +377,6 @@ db-path=/var/lib/postgresql/9.4/demo
 repo-path=/var/lib/pgbackrest
 ```
 
-
-
 ### 4.4 配置归档
 
 备份正在运行的PostgreSQL集群需要启用WAL归档。请注意，即使没有对群集进行明确写入，在备份过程中也会创建至少一个WAL段。
@@ -405,9 +392,7 @@ max_wal_senders = 3
 wal_level = hot_standby
 ```
 
-wal_level设置必须至少设置为`archive`，但`hot_standby`和`logical`也适用于备份。 在PostgreSQL 10中，相应的wal_level是`replica`。将wal_level设置为hot_standy并增加max_wal_senders是一个好主意，即使您当前没有运行热备用数据库也是一个好主意，因为这样可以在不重新启动主群集的情况下添加它们。在进行这些更改之后和执行备份之前，必须重新启动PostgreSQL群集。
-
-
+wal_level设置必须至少设置为 `archive`，但 `hot_standby` 和 `logical` 也适用于备份。 在PostgreSQL 10中，相应的wal_level是 `replica`。将wal_level设置为hot_standy并增加max_wal_senders是一个好主意，即使您当前没有运行热备用数据库也是一个好主意，因为这样可以在不重新启动主群集的情况下添加它们。在进行这些更改之后和执行备份之前，必须重新启动PostgreSQL群集。
 
 ### 4.5 保留配置（retention）
 
@@ -425,9 +410,7 @@ repo-path=/var/lib/pgbackrest
 retention-full=2
 ```
 
-更多关于保留的信息可以在`Retention`一节找到。
-
-
+更多关于保留的信息可以在 `Retention` 一节找到。
 
 ### 4.6 配置存储库加密
 
@@ -448,11 +431,9 @@ retention-full=2
 
 一旦存储库（repository）配置完成且备份单元创建并检查完毕，存储库加密设置便不能更改。
 
-
-
 ### 4.7 创建存储单元
 
-`stanza-create`命令必须在仓库位于初始化节的主机上运行。建议在`stanza-create`命令之后运行`check`命令，确保归档和备份的配置是否正确。
+`stanza-create` 命令必须在仓库位于初始化节的主机上运行。建议在 `stanza-create` 命令之后运行 `check` 命令，确保归档和备份的配置是否正确。
 
 * db-primary  ⇒ 创建存储单元并检查配置
 
@@ -463,8 +444,6 @@ P00   INFO: stanza-create command begin 1.27: --db1-path=/var/lib/postgresql/9.4
 
 P00   INFO: stanza-create command end: completed successfully
 ```
-
-
 
 ```
 1. Install

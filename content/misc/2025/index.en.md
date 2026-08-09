@@ -10,7 +10,6 @@ summary: |
 Not because it was hard, but because it stood in sharp contrast to the blank, blink-and-you-missed-it feeling of the three pandemic years.
 When a year is dense with new information and keeps expanding the boundaries of what you know, it naturally feels longer in retrospect. Looking back, "turning point" is the best description I can find—for both the industry and myself.
 
-
 ## Productivity, Unleashed
 
 What made the year feel so long and full? Above all, the paradigm shift brought by AI.
@@ -28,8 +27,6 @@ I have not had to keep my head down in the old grind. I have had time to look up
 Back in March, when the Model Context Protocol (MCP) suddenly took off, I wrote [*The Claude Code Leak: What's Really Behind MCP's Boom*](https://mp.weixin.qq.com/s/xaeVafPxUfAgQSzl-n3w2w), arguing that Claude Code was the real killer app behind it.
 The Chinese tech community barely reacted at the time. Now Claude Code is beginning to reshape how programmers work. Seeing that prediction borne out excites me even more than the technical progress itself.
 
-
-
 ## Where the Odds Are
 
 AI may be white-hot, but I did not rush to join the agent gold rush. My reasoning was simple: no matter how capable an agent is, it still needs memory.
@@ -44,8 +41,6 @@ That is the question Pigsty aims to answer.
 
 A few years ago, I might have doubted that one person could build a mainstream database distribution. With AI in the picture, I now think it is entirely feasible.
 The next two years will be critical. Pigsty has both the opportunity and the ability to make a serious run at becoming [a PostgreSQL distribution for the world](https://mp.weixin.qq.com/s/kYl31hRXDvE65i_eewJ68A).
-
-
 
 ## Pigsty's Progress
 
@@ -69,7 +64,6 @@ After v4.0, my focus will shift to database and DBA agents. The logic is straigh
 For the remaining 20%, I plan to turn my documentation and accumulated expertise into Skills for Claude, then automate 90% of what remains.
 [That could make the industry tens of times more productive and finally make expert knowledge scalable](https://mp.weixin.qq.com/s/W1hwbl3qmjC4Dcmadc8uSg).
 
-
 I also made another decision: I moved Pigsty's core—the PostgreSQL high-availability cluster and 440-plus extensions—from AGPLv3 back to the permissive Apache 2.0 license.
 
 Why? Because one thing has become clear to me: in China, selling a "**commercial edition of open-source software**" often does not work—especially when the open-source version is already good enough and you refuse to cripple it just to create product tiers.
@@ -80,9 +74,6 @@ Then I can make an honest living from professional consulting, on the strength o
 
 Pigsty's extension repository, [PGEXT.CLOUD](https://mp.weixin.qq.com/s/oHHzhbbt5suSxnJhyxTwQQ), has also become an upstream source for several peers overseas.
 Being reused and trusted by others in the field is valuable in its own right—and a genuine first step into the global market.
-
-
-
 
 ## Speaking Freely
 
@@ -107,7 +98,6 @@ Good content has a long half-life. Two weeks ago, I merely cleaned up my persona
 In an age obsessed with traffic, it was another reminder that if your work is substantive and sincere, people will find it.
 
 ![vonng-com.png](vonng-com.png)
-
 
 ## Open Source and Life
 

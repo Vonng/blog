@@ -27,7 +27,6 @@ The announcement appeared on GitHub and LinkedIn. It was brief and direct:
 >
 > Again, many thanks to all the pgBackRest contributors over the years. It was a pleasure working with you!
 
-
 --------
 
 ## This Is No Small Matter for PostgreSQL Users
@@ -49,7 +48,6 @@ When version 2.0 first came out, I even translated its documentation by hand. Ju
 ![pgbr-zh-doc.webp](pgbr-zh-doc.webp)
 
 I have relied on this tool for nearly a decade, and I trust it deeply. Now its sole maintainer has archived the repository.
-
 
 --------
 
@@ -99,7 +97,6 @@ it could gain powerful access on nearly every PostgreSQL instance where the prog
 Handing the trust accumulated through thousands of GitHub stars intact to an unknown successor would not be generosity. It would be irresponsible.
 Requiring a fork to adopt a new name forces users to perform a fresh trust assessment. That is a basic requirement of security engineering.
 
-
 --------
 
 ## My Take
@@ -132,7 +129,6 @@ That means Percona's customers will not abruptly lose support for pgBackRest. Cr
 
 Let me be explicit as well: if nobody else maintains pgBackRest, I will take it on.
 If someone else maintains it well, I will be equally happy to treat that project as upstream, validate and package its releases, distribute them, and provide user feedback.
-
 
 --------
 
@@ -168,7 +164,6 @@ More importantly, there is no true peer to migrate to: **no tool currently offer
 So the best move is to sit tight. Unnecessary churn would itself be the greatest risk.
 Keep using pgBackRest, and treat v2.58 as the stable baseline for the foreseeable future.
 At the same time, run rigorous restore drills, watch for a clear successor branch after PGConf.Dev, and decide what to do next only then.
-
 
 --------
 

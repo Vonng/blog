@@ -8,8 +8,6 @@ summary: |
 
 > [Original WeChat Official Account Article](https://mp.weixin.qq.com/s/x0zHL7e2nTpf_UTUHxqLJg)
 
-
-
 Last night, I saw news about WeChat accessing user photo albums in the background, and WeChat responded:
 
 ![Image](640-20231108093248439.png)
@@ -31,11 +29,9 @@ This morning I also quickly created a privacy log analysis application that can 
 
 Code repository: https://github.com/Vonng/pigsty/tree/v1.1/app/applog
 
-Demo program: http://demo.pigsty.cc/d/applog-summary 
+Demo program: http://demo.pigsty.cc/d/applog-summary
 
 Data security and privacy are the best tools for regulating internet companies. Shooting them all might wrongly punish some, but shooting every other one would definitely let some escape. With this new feature, dishonest apps on iOS are probably in for some tough times.
-
-
 
 ## How to View Your Own Privacy Records
 

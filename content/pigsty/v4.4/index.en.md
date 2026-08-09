@@ -20,7 +20,6 @@ At the same time, we reorganized the PostgreSQL kernel forks in the repository: 
 
 This release also updates the self-hosted Supabase template to the latest upstream versions and resolves a batch of compatibility issues. It adds one-click deployment templates for Immich, a self-hosted photo library; JumpServer, a bastion host; and Maybe, a personal finance manager.
 
-
 ------
 
 ## Pig 1.5: One Interface for Operations
@@ -42,7 +41,6 @@ Results and help at every stage can be emitted as human-readable text or as JSON
 
 Enough abstraction. Let's look at a few concrete examples.
 
-
 ------
 
 ### Clone: Branch a Single Database
@@ -57,7 +55,6 @@ pig pg clone meta meta_dev -y       # Create the database copy
 There is an often-overlooked boundary here: `CREATE DATABASE ... TEMPLATE` terminates existing sessions on the source database. In other words, database cloning is fast, but it is not impact-free. The point of `--plan` is to lay out those side effects before you take action.
 
 These cheap branches are extremely useful for development and testing, data analysis, model experiments, and counterfactual reasoning by agents. Production stays untouched while experiments run against the copy. If you break it, delete it and create another branch. For details, see [Instantly Clone a PostgreSQL Database—No Black Magic Required](/en/pg/pg-pig-clone/).
-
 
 ------
 
@@ -74,7 +71,6 @@ pig pg fork stop dev                # Stop a forked instance
 Pig writes metadata for managed forks and provides `list`, `start`, `stop`, and `rm` lifecycle commands. On CoW-capable XFS, a new fork initially consumes virtually no additional space; only newly written or modified blocks use capacity afterward. Pig also assigns a free port automatically, allowing the forked instance to run alongside the original.
 
 This is especially useful in two situations: preserving a low-cost local branch before a large-scale operation that is difficult to roll back, and starting an out-of-band instance during incident recovery to verify a PITR target and inspect data quickly.
-
 
 ------
 
@@ -98,7 +94,6 @@ For managed data directories, `pig pitr` checks the environment, stops Patroni a
 
 The point is not "one-click recovery." It is to codify the SOP most likely to go wrong during an incident: review the plan, execute it, then verify the result.
 
-
 ------
 
 ## PostgreSQL 18.4, 19 Beta, and 531 Extensions
@@ -112,7 +107,6 @@ Pigsty's PostgreSQL extension catalog grows from **510** in v4.3 to **531**. By 
 Meanwhile, OrioleDB expands to PG 16–18 and now defaults to PG 18; pgEdge covers PG 15–18; Babelfish covers PG 17–18; IvorySQL enters the 5.x line; AgensGraph moves to PG 17; and Cloudberry and PolarDB both receive reorganized paths and packages.
 
 These details may look miscellaneous, but this is the work of a distribution: keeping the PostgreSQL mainline, extension ecosystem, and kernel forks simultaneously usable, installable, and upgradeable.
-
 
 ------
 
@@ -140,7 +134,6 @@ Analytics now lives in a dedicated `_supabase` database and `_analytics` schema,
 
 With an application like Supabase, getting one container to start means nothing. The job is done only when more than a dozen components can be upgraded together and still work together. v4.4 fixes exactly these unglamorous issues that determine whether the template is actually usable.
 
-
 ------
 
 ## No More Manually Entering the VIP Interface
@@ -151,7 +144,6 @@ Previously, `vip_interface` and `pg_vip_interface` defaulted to `eth0`. Enabling
 
 v4.4 adds automatic detection and changes the defaults to `auto`: Pigsty takes each node IP from the inventory, resolves the actual network interface that owns it, and passes that result to Keepalived or VIP Manager. Explicit configuration is still supported, but most users no longer need to log in, run `ip addr`, and come back to fill in a parameter. This feature is only a few lines of configuration, yet it directly prevents an entire class of deployment failures. The experience of a distribution is often defined by small details like this.
 
-
 ------
 
 ## Backups Now Default to Zstandard
@@ -159,7 +151,6 @@ v4.4 adds automatic detection and changes the defaults to `auto`: Pigsty takes e
 pgBackRest previously used LZ4 compression by default. LZ4 is fast and offers high throughput, and it remains a good fit for `wal_compression`. Backup repositories, however, care more about compression ratio, so v4.4 changes pgBackRest's default algorithm to Zstandard. In testing, a small increase in decompression overhead improved the compression ratio from 2.x to 3.x and saved roughly another third of the backup space. That is an excellent trade.
 
 The switch also exposed a problem: the official IvorySQL kernel was not built with options such as `--with-lz4` and `--with-zstd`, so it could use neither LZ4 nor Zstandard. That led directly to the next change: standardizing how PostgreSQL kernel forks are built.
-
 
 ------
 
@@ -172,7 +163,6 @@ I was not going to wait that long. Since I already build so many kernel forks my
 To make PolarDB builds reproducible, we also split its PFSD development library into a separate `polarstore` package. The open-source edition also removes the PolarDB Oracle-compatibility kernel and its dedicated monitoring configuration; this closed-source compatibility path is no longer listed as built-in support.
 
 This work also prepares for the next step. Pigsty's 500-plus extensions currently target mainly vanilla PostgreSQL. Next, I want to extend the build matrix—"5 vanilla PG major versions × 16 Linux platforms, including online-only EL8 on both architectures"—to more than a dozen PostgreSQL kernel forks, giving them access to the complete PostgreSQL extension ecosystem instead of leaving each one to bundle a handful of extensions piecemeal in RPMs or Docker images. That is what a Meta Distribution should look like.
-
 
 ------
 
@@ -191,10 +181,6 @@ Pigsty 5.0 will have a dedicated enterprise software artifact repository with a 
 We are also trying a few interesting things. One is rewriting Patroni in Go; for the first phase, at least, we have rewritten Patroni's client tool to provide a better management experience. We call this project Boar—as in a male pig. Together with sow and Pig, it completes the family, right at home in Pigsty.
 
 > [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v4.4.0) | [**Release Note**](https://pigsty.io/docs/about/release/#v440)
-
-
-
-
 
 ------
 

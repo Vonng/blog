@@ -14,7 +14,6 @@ Many users have asked me what operating system is best for running databases. Es
 
 [![](featured.jpg)](https://mp.weixin.qq.com/s/xHG8OURTYlmnQTorFkzioA)
 
-
 ------
 
 ## TL;DR
@@ -26,8 +25,6 @@ Compatibility level: RHEL = Rocky ≈ Anolis > Alma > Oracle >> Euler.
 For EL major versions, EL7 is currently the most stable but will EOL soon, and many software versions are too old, so it's not recommended for new projects. EL9 is the latest but occasionally has software package dependency errors after repository updates, and some software hasn't caught up with EL9 packages yet, like Citus/RedisStack/Greenplum.
 
 Currently, EL8 is the mainstream choice: software versions are new enough and stable enough. For specific versions, I recommend RockyLinux 8.9 (Green Obsidian) or OpenAnolis 8.8 (rhck kernel). Aggressive users can try 9.3, conservative users can stick with CentOS 7.9.
-
-
 
 ------
 
@@ -68,7 +65,6 @@ Test results can basically be divided into three categories: 100% compatible, mi
 
 RockyLinux is 100% compatible, with very smooth software package installation and no issues encountered. OpenAnolis has a user experience basically identical to Rocky. AlmaLinux, OracleLinux, and CentOS Stream have some missing software packages that can be fixed and supplemented. Overall, they have minor errors but can be overcome. Euler belongs in its own tier of major troubles - encountering massive version dependency error crashes, with almost all packages requiring targeted compilation. Some packages are even difficult to compile due to system dependency version conflicts. The adaptation cost as an EL OS distribution is even higher than Ubuntu/Debian.
 
-
 ------------------
 
 ## User Experience
@@ -100,7 +96,6 @@ OpenEuler belongs in the worst tier, claiming EL compatibility but being complet
 We have a major client who had to use this OS, so we had to do compatibility adaptation. Adapting this OS is a nightmare - the workload is greater than supporting Debian/Ubuntu series OS. It truly achieves **world-leading** excellence in tormenting users.
 
 BTW, there's an article on Zhihu that also introduces the pitfalls and comparisons of these OS distributions - worth reading:
-
 
 ------------------
 

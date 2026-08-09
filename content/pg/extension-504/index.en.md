@@ -9,7 +9,6 @@ tags: [PostgreSQL, Ecosystem, Extensions]
 
 A GitHub issue turned into an extension sprint. 32 new additions say a lot about where PostgreSQL is headed.
 
-
 --------
 
 ## It Started with a Chemistry Extension
@@ -33,7 +32,6 @@ This release also fixed the missing InChI support in the PGDG package. In practi
 ![rdkit2-en.webp](rdkit2-en.webp)
 
 Honestly, feedback like that is the best part of doing open source.
-
 
 ---------
 
@@ -61,7 +59,6 @@ Out of these 500-odd extensions, around 70 ship with PostgreSQL itself, roughly 
 To put that in perspective: most managed PostgreSQL cloud RDS expose a few dozen extensions at best.
 Take Supabase, for example. It looks like a long list, but after you subtract the 35 contrib extensions that come with PostgreSQL, you are left with fewer than 30 third-party extensions.
 
-
 ------
 
 ## The New Extensions
@@ -78,13 +75,11 @@ This batch is heavy. Broadly, four groups:
 
 Together they point to a broader trend: the extension layer is pushing PostgreSQL into the space between an application platform and a data platform. Things that used to require separate services increasingly fit inside a single SQL transaction boundary.
 
-
 --------
 
 # A Tour of the New Additions
 
 This release adds 32 new extensions. The summaries below were compiled with help from Claude, Codex, and Gemini to give readers a quick way to understand what each one does, how it works, and where it fits.
-
 
 -------
 
@@ -117,7 +112,6 @@ Use cases center on drug discovery: **lead scaffold search** across million-scal
 
 Settle your index strategy and query templates early — filters that are correct but bypass indexes will be slow. On 1.87M compounds, substructure queries range from ~88 ms to ~1.9 s; with tuning, the cartridge handles **6M+ compounds**. BSD licensed. Docker images (`mcs07/postgres-rdkit`) and conda packages available.
 
-
 -------
 
 ## 2. provsql: Semiring Provenance for Query Results
@@ -147,7 +141,6 @@ Four typical scenarios: **security-label propagation** (results inherit the high
 
 The key property is composability: provenance is not a dead log string but a live object you can keep computing on. Worth enabling on critical paths — core reports, feature pipelines, compliance calculations — not as a blanket switch for the whole database. C/C++ with Boost; provenance circuits live in shared memory. PG 10–18. MIT.
 
-
 -------
 
 ## 3. onesparse: Billion-Edge Graph Algorithms in SQL
@@ -175,7 +168,6 @@ SELECT pagerank(graph) FROM karate;
 On the GAP benchmark, BFS over a **4.3 billion-edge** graph reached **70 billion+ traversed edges per second** (48-core AMD EPYC). Targets: fraud detection on transaction graphs, social-network analysis, Graph RAG. The usual caveat applies: real usability depends on whether your load/serialization formats and the SQL planner play nicely end-to-end. Start small.
 
 Requires **PG 18 Beta or newer**; still alpha. Apache 2.0.
-
 
 -------
 
@@ -205,7 +197,6 @@ FROM pg_datasentinel_wraparound;
 ```
 
 For PostgreSQL on Kubernetes, this gives container-level visibility without a separate monitoring agent. The **XID wraparound warning** is the standout — wraparound can force-shutdown a database, and having a burn-rate ETA turns firefighting into forecasting. 3-Clause BSD. PG 15+.
-
 
 -------
 
@@ -244,7 +235,6 @@ FROM (
 
 Use cases: **real-time UV counting** without storing user IDs, **latency distribution** (p50/p95/p99 over billions of events), **audience overlap** via Theta Sketch intersections ("saw ad A and visited site B"). On 100M rows, CPC distinct counting takes ~20 s vs ~2 min for exact `COUNT(DISTINCT)`, with single-digit percent relative error.
 
-
 -------
 
 ## 6. pghydro: Drainage-Network Analysis from Brazil's National Water Agency
@@ -276,7 +266,6 @@ SELECT pghydro.pghfn_calculatestrahlernumber();
 
 Fits national-scale hydrology databases, basin planning, upstream/downstream pollution analysis, and drainage-network validation. Think of it less as "an extension with GIS functions" and more as a domain-specific ETL pipeline living inside the database — raw terrain and river data in PostGIS, processing automated in SQL, recomputation after source updates far more reliable than ad hoc scripts. QGIS plugin PgHydroTools available for visual interaction. Pure PL/pgSQL. GPLv2.
 
-
 -------
 
 ## 7. pg_stat_ch: PostgreSQL Query Telemetry, Exported to ClickHouse
@@ -304,7 +293,6 @@ GROUP BY query_id ORDER BY p99_ms DESC LIMIT 10;
 On the ClickHouse side it ships four materialized views: `events_recent_1h` for a rolling one-hour copy, `query_stats_5m` for five-minute buckets with TDigest quantiles, `db_app_user_1m` for database/app/user load attribution, and `errors_recent` for a rolling seven-day error window.
 
 Performance: **~5 μs p99 overhead per query**. pgbench at 36.6K TPS / 32 clients captured 7.7M events in 30 s with zero drops and **<1% TPS impact**. Lock contention minimized in three layers: atomic overflow checks → non-blocking LWLock → per-backend local buffers flushed per transaction (~5x fewer lock acquisitions). A clean division of labor: PostgreSQL for transactions, ClickHouse for telemetry. Far more robust than reconstructing the same picture from log files. PG 16–18. Apache 2.0.
-
 
 -------
 
@@ -336,7 +324,6 @@ ORDER BY fused.score DESC LIMIT 20;
 
 Replaces 20+ lines of `FULL OUTER JOIN` / `COALESCE` / hand-rolled score math with one function call. Good fit for **RAG hybrid retrieval**, product search, and multi-signal document ranking. Keeping fusion in the database helps when the fused result still needs to join business tables. `v0.0.3`. MIT.
 
-
 -------
 
 ## 9. pg_kazsearch: Kazakh Full-Text Search, from Zero to One
@@ -360,7 +347,6 @@ LIMIT 10;
 ```
 
 Benchmarks on 2,999 articles: **0.5 ms** query latency (2.8x faster than `pg_trgm`), +25% nDCG@10, +23% Recall@10. Useful for Kazakh news/government-document search, e-commerce, and multilingual systems that need proper search for low-resource languages instead of crude trigram fallback.
-
 
 -------
 
@@ -412,7 +398,6 @@ VALUES ('my_table'::regclass, ARRAY['ADD COLUMN', 'DROP COLUMN']);
 
 Useful for automated DDL sync in logical-replication setups, zero-downtime migrations, and multi-datacenter topologies. DDL propagation becomes an auditable data flow rather than a manual side process. MIT. PGXN available. Constraints, indexes, and defaults not yet supported.
 
-
 -------
 
 ## 12. rdf_fdw: Query the Semantic Web with SQL
@@ -441,7 +426,6 @@ SELECT * FROM dbpedia_query WHERE o = 'some_value' LIMIT 10;
 
 `rdf_fdw_clone_table()` can batch-clone foreign data into local tables. Watch memory: fetched data is loaded before conversion, so large result sets need effective pushdown. Good for linked-data integration (DBpedia, Wikidata) and using SQL/BI tooling on SPARQL endpoints. MIT. PG 9.5–18.
 
-
 -------
 
 ## 13. pgbson: A More Exact Binary Document Type than JSONB
@@ -469,7 +453,6 @@ SELECT (data->'d'->'amt'->>'$numberDecimal')::numeric FROM data_collection;
 
 Use cases: cross-language event pipelines needing exact type preservation, financial data (`decimal128`), and digital-signature workflows relying on deterministic binary representation. MIT. PG 14–18.
 
-
 -------
 
 ## 14. pg_when: Describe Time in Natural Language
@@ -486,7 +469,6 @@ SELECT when_is('December 31, 2026 at evening');
 ```
 
 Also: `seconds_at()`, `millis_at()`, `micros_at()`, `nanos_at()` for Unix epochs at varying precision. A parser, not a scheduler. Fits operator-facing tools that accept human time input, backfill scripts where natural language beats date math, and timezone normalization. MIT.
-
 
 -------
 
@@ -511,7 +493,6 @@ SELECT pgmqtt_add_inbound_mapping(
 
 Natural fit for IoT: push database state changes to edge devices without middleware, or ingest sensor readings from MQTT directly into tables. Also works for lightweight event-driven systems that want less glue code. Elastic License 2.0.
 
-
 -------
 
 ## 16. pg_query_rewrite: Transparent SQL Substitution
@@ -532,7 +513,6 @@ SELECT pgqr_rules();
 ```
 
 A sharp tool with sharp edges: no parameterized statements, max ~32 KB per statement, matching is whitespace/case/semicolon-sensitive, rules do not survive restarts unless reloaded via startup SQL. Still useful for redirecting fixed SQL from legacy systems during migrations, intercepting dangerous queries, and simple query A/B tests. Default max 10 rules. PG 9.5–18.
-
 
 -------
 
@@ -559,7 +539,6 @@ SELECT pgclone_database(
 
 Good for fast dev/test provisioning, sanitized prod-to-staging clones, and cross-database migration — the whole workflow stays inside the database.
 
-
 -------
 
 ## 18. pgproto: Native Protobuf Support
@@ -580,7 +559,6 @@ CREATE INDEX idx_pb ON items ((data #> '{Outer, inner, id}'::text[]));
 ```
 
 100K-row benchmark: **16 MB** storage (vs 46 MB JSONB, 25 MB relational), **5.9 ms** full-document retrieval (vs 33.1 ms relational with multi-table joins). If you want to keep Protobuf for RPC/messaging while making the data indexable inside the database, this delivers. Fits IoT data, microservice event stores, gRPC data layers. PostgreSQL License.
-
 
 -------
 
@@ -605,7 +583,6 @@ SELECT fsql.render('user_count', '{"status":"active"}');
 
 Not "functional SQL" — more a hierarchical template system for generating SQL from JSON request bodies. Reduces conditional branching in the application layer. Fits dynamic reports, ETL orchestration, multi-tenant query generation, and centralized SQL templates stored in tables.
 
-
 -------
 
 ## 20. pg_dispatch: Async SQL Dispatch on Top of pg_cron
@@ -620,7 +597,6 @@ SELECT pgdispatch.snooze('SELECT pg_sleep(20);', '20 seconds');
 ```
 
 Pure PL/pgSQL, runs in sandboxed environments (Supabase, AWS RDS). Requires `pg_cron >= 1.5`. Good for async side effects in triggers/functions — notifications, background rollups, audit writes that should not block the main transaction.
-
 
 -------
 
@@ -644,7 +620,6 @@ ORDER BY ts DESC;
 ```
 
 Useful in multi-tenant or hosted environments, enterprise compliance setups needing centralized audit, and ETL environments where import/export privileges must be tightly separated. The author also maintains a broader command-firewall extension, `pg_command_fw`.
-
 
 -------
 
@@ -690,7 +665,6 @@ SELECT writeEfile(my_bytea_column, efilename('MY_DIR', 'output.bin')) FROM my_ta
 
 Built for Ora2Pg migrations, but also useful for legacy systems with files outside the database and metadata inside, or database-driven batch import/export of external large objects.
 
-
 -------
 
 ## 24. byteamagic: Detect File Types in `bytea`
@@ -709,7 +683,6 @@ FROM uploads GROUP BY 1 ORDER BY 2 DESC;
 
 If you store BLOBs in tables, this identifies what they actually are from SQL. Good for upload governance, real content-type detection, and historical BLOB cleanup.
 
-
 -------
 
 ## 25. pg_text_semver: Native Semantic Versioning
@@ -727,7 +700,6 @@ SELECT semver_parsed('1.0.0-a.1+commit-y');
 ```
 
 Pure SQL. Supports min/max aggregation and PGXN version-range validation. Useful for extension/package version management, dependency checks, and version analytics.
-
 
 -------
 
@@ -749,7 +721,6 @@ SELECT * FROM test_table WHERE val @@> array['%ar%'];
 
 Useful for tag autocomplete, fuzzy tag search, or any case where array partial matching should hit an index. PG 9.1–18.
 
-
 -------
 
 ## 27. pg_slug_gen: Cryptographically Secure Timestamp Slugs
@@ -765,7 +736,6 @@ SELECT gen_random_slug(19);    -- nanosecond precision
 ```
 
 Not a "slugify the title" URL helper — a short, hard-to-guess public identifier. Good for invite codes, short links, and public resource IDs where exposing auto-increment sequences is undesirable. Much less predictable than `base62(sequence)`.
-
 
 -------
 
@@ -787,7 +757,6 @@ SELECT pglock.ttl();
 ```
 
 No Redis or ZooKeeper needed. Fits multi-instance job competition, leader election, idempotent consumers, duplicate-work prevention — lock behavior and business writes stay in the same database. Pure SQL.
-
 
 -------
 
@@ -846,7 +815,6 @@ SELECT pgcalendar.transition_event_schedule(
 
 Infinite projection, schedule transitions, and exception handling show up everywhere — rostering, meetings, billing — and become a mess when every application reimplements them. Putting this in the database centralizes permissions, audit, and consistency.
 
-
 -------
 
 ## 31. pg_variables: Session Variables Faster than Temp Tables
@@ -875,7 +843,6 @@ SELECT * FROM pgv_select('pack', 'employees');
 
 A high-performance temp-table alternative that avoids catalog bloat. Useful for intermediate state in stored procedures/batch jobs, connection-level caching, and as infrastructure for other extensions (`pgelog` uses it to cache `dblink` connections).
 
-
 -------
 
 ## 32. pgelog: Logs That Survive Rollback
@@ -902,7 +869,6 @@ SELECT pgelog_set_param('pgelog_ttl_minutes', '2880');
 ```
 
 On critical paths, losing the diagnostic trail because the business transaction rolled back is exactly the wrong outcome. Also makes staged batch/migration scripts easier to introspect than `RAISE NOTICE`. Depends on `dblink` and `pg_variables`; each session may open an extra connection, so mind `max_connections`.
-
 
 -------
 

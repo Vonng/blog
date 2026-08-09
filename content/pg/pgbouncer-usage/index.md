@@ -125,8 +125,6 @@ $ psql -p 6543 pgbouncer
 
 另外，如果通过Unix套接字登录，并且客户端具有与运行进程相同的Unix用户uid， 允许用户名 **pgbouncer** 不使用密码登录。
 
-
-
 ### SHOW命令
 
 #### `SHOW STATS;`
@@ -151,11 +149,9 @@ $ psql -p 6543 pgbouncer
 | `avg_query_time`    | 平均查询时长（以毫秒计）   |
 | `avg_wait_time`     | 平均等待时长（以毫秒计）   |
 
-两个变体：`SHOW STATS_TOTALS`与`SHOW STATS_AVERAGES`，分别显示整体与平均的统计。
+两个变体：`SHOW STATS_TOTALS` 与 `SHOW STATS_AVERAGES`，分别显示整体与平均的统计。
 
 TOTAL实际上是Counter，而AVG通常是Guage。监控时建议采集TOTAL，查看时建议查看AVG。
-
-
 
 #### `SHOW SERVERS`
 
@@ -174,15 +170,13 @@ TOTAL实际上是Counter，而AVG通常是Guage。监控时建议采集TOTAL，�
 | `link`         | 服务器配对的客户端连接地址。                                 |
 | `remote_pid`   | 后端服务器进程的pid。如果通过unix套接字进行连接， 并且OS支持获取进程ID信息，则为OS pid。 否则它将从服务器发送的取消数据包中提取出来，如果服务器是Postgres， 则应该是PID，但是如果服务器是另一个PgBouncer，则它是一个随机数。 |
 
-
-
 #### `SHOW CLIENTS`
 
 | 字段           | 说明                                                         |
 | -------------- | ------------------------------------------------------------ |
 | `type`         | Client的类型固定为C                                          |
 | `user`         | 客户端用于连接的用户                                         |
-| `state`        | pgbouncer客户端连接的状态，**active**、**used** 、**waiting**或 **idle** 之一。 |
+| `state`        | pgbouncer客户端连接的状态，**active**、**used** 、**waiting** 或 **idle** 之一。 |
 | `addr`         | 客户端的IP地址。                                             |
 | `port`         | 客户端的端口                                                 |
 | `local_addr`   | 本机地址                                                     |
@@ -192,31 +186,6 @@ TOTAL实际上是Counter，而AVG通常是Guage。监控时建议采集TOTAL，�
 | `ptr`          | 该连接内部对象的地址，用作唯一标识符                         |
 | `link`         | 配对的服务器端连接地址。                                     |
 | `remote_pid`   | 如果通过unix套接字进行连接， 并且OS支持获取进程ID信息，则为OS pid。 |
-
-
-
-
-
-#### `SHOW CLIENTS`
-
-| 字段           | 说明                                                         |
-| -------------- | ------------------------------------------------------------ |
-| `type`         | Client的类型固定为C                                          |
-| `user`         | 客户端用于连接的用户                                         |
-| `state`        | pgbouncer客户端连接的状态，**active**、**used** 、**waiting**或 **idle** 之一。 |
-| `addr`         | 客户端的IP地址。                                             |
-| `port`         | 客户端的端口                                                 |
-| `local_addr`   | 本机地址                                                     |
-| `local_port`   | 本机端口                                                     |
-| `connect_time` | 建立连接的时间。                                             |
-| `request_time` | 最后一个请求发出的时间。                                     |
-| `ptr`          | 该连接内部对象的地址，用作唯一标识符                         |
-| `link`         | 配对的服务器端连接地址。                                     |
-| `remote_pid`   | 如果通过unix套接字进行连接， 并且OS支持获取进程ID信息，则为OS pid。 |
-
-
-
-
 
 #### SHOW POOLS;
 
@@ -490,13 +459,9 @@ epoll、kqueue、devpoll、poll或select的支持。
 通过设置环境变量EVENT_SHOW_METHOD，libevent显示它使用的内核通知方法。 
 ```
 
-
-
-
-
 # Pgbouncer参数配置
 
-## 
+##
 
 ## 默认配置
 
@@ -849,5 +814,3 @@ default_pool_size = 20
 ;%include /etc/pgbouncer/pgbouncer-other.ini
 
 ```
-
-

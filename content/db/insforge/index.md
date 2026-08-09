@@ -29,7 +29,6 @@ Apache 2.0 开源，GitHub 约 2000 Star，核心技术栈是 PostgreSQL + Postg
 
 InsForge 想解决的，就是这个“最后一公里”。老冯的 Pigsty 之前其实也有过类似的原型——目录里写好 CLAUDE.md，你用 Claude Code 说“给我做一个应用”，它也会用 PostgreSQL 给你搞出来。现在好了，有个更完整的开源方案出来了，也省老冯的事儿了。
 
-
 --------
 
 ## 它到底是什么？
@@ -49,12 +48,11 @@ InsForge 想解决的，就是这个“最后一公里”。老冯的 Pigsty 之
 
 听起来跟 Supabase 差不多？差别在架构层面。
 
-
 --------
 
 ## 关键差异：语义层
 
-InsForge 的核心设计是在 AI Agent 和后端原语之间加了一层**语义层（Semantic Layer）**，通过 MCP 协议暴露给 Agent：
+InsForge 的核心设计是在 AI Agent 和后端原语之间加了一层 **语义层（Semantic Layer）**，通过 MCP 协议暴露给 Agent：
 
 ```
 AI Coding Agent（Cursor / Claude Code / Copilot / ...）
@@ -74,7 +72,6 @@ InsForge Semantic Layer（MCP Server）
 这层语义层做三件事：**暴露上下文**——Agent 通过 MCP 直接“看到”后端的表结构、Schema、RLS 规则；**操作原语**——Agent 直接通过 MCP 工具调用来建表、配 OAuth、部署函数，不需要你在 Dashboard 上点来点去；**检查状态**——执行完可以查日志、验证结果，形成闭环。
 
 用他们的话说，这叫 **Context Engineering for AI Agents**。
-
 
 --------
 
@@ -103,8 +100,7 @@ npx @insforge/install --client cursor \
 
 ![InsForge 支持的 AI 编辑器](editors.webp)
 
-接下来就可以在编辑器里对 Agent 说：“帮我创建一个用户表，包含 email 和 name 字段，然后搞一个注册登录流程”。Agent 会自动通过 MCP 了解 InsForge 的能力、创建表、配置认证、生成前端代码。整个过程**你不需要打开任何 Dashboard、不需要手动配置任何东西**。
-
+接下来就可以在编辑器里对 Agent 说：“帮我创建一个用户表，包含 email 和 name 字段，然后搞一个注册登录流程”。Agent 会自动通过 MCP 了解 InsForge 的能力、创建表、配置认证、生成前端代码。整个过程 **你不需要打开任何 Dashboard、不需要手动配置任何东西**。
 
 --------
 
@@ -121,7 +117,6 @@ npx @insforge/install --client cursor \
 说到底，它的组件（PostgREST + Deno + JWT）单个来看都不新，核心壁垒是那层 MCP 语义层的工程实现。
 
 但从趋势上看，**“Agent-Native Infrastructure” 这个方向是真实存在的**。当越来越多的代码由 AI Agent 写出来时，后端基础设施如何更好地服务于 Agent，而不是继续要求人类在 Dashboard 上点鼠标，这是一个值得认真思考的问题。
-
 
 --------
 
@@ -144,7 +139,6 @@ Insforge 策略很清楚：砍掉 Supabase 里的重量级组件（GoTrue、Real
 
 最关键的是，**PostgreSQL 仍然是绝对的核心**。所有数据存在 PG 里，所有 API 从 PG Schema 自动生成，认证信息加密存储在 PG 中，RLS 策略在 PG 层面执行。InsForge 本质上就是一个围绕 PostgreSQL 构建的、面向 AI Agent 的薄封装层。
 
-
 --------
 
 ## 纳入 Pigsty 全家桶
@@ -157,6 +151,6 @@ Insforge 策略很清楚：砍掉 Supabase 里的重量级组件（GoTrue、Real
 
 所以，**InsForge 已经被纳入了 Pigsty 全家桶**。（当然，也是 Claude 干的，哈哈）下个版本会作为可选模块一起发布。Pigsty 负责数据库层的高可用与运维，InsForge 负责面向 AI Agent 的应用层接口。当然，你也可以选择独立自建 InsForge，或者只用它的 MCP Server 对接自己的 PG 实例。
 
-本来老冯自己还想糊一个 Pigsty 里面的 Vibe 平台，现在好，有现成的了，那我也很开心的划掉了这一项 TODO。这也是老冯一贯的理念：**PostgreSQL 是数据库世界的 Linux，围绕它的每一个优秀组件都值得被纳入生态、组合使用。** Pigsty 不是要把所有东西都自己写一遍，而是要让所有基于 PG 的好东西都能**用得上、管得住、跑得稳**。
+本来老冯自己还想糊一个 Pigsty 里面的 Vibe 平台，现在好，有现成的了，那我也很开心的划掉了这一项 TODO。这也是老冯一贯的理念：**PostgreSQL 是数据库世界的 Linux，围绕它的每一个优秀组件都值得被纳入生态、组合使用。** Pigsty 不是要把所有东西都自己写一遍，而是要让所有基于 PG 的好东西都能 **用得上、管得住、跑得稳**。
 
 当然，如果你都已经准备用这种产品形态了，用云服务耍一耍也不错。

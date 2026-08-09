@@ -20,7 +20,6 @@ Additionally, we've completely refreshed the Pigsty official website, documentat
 
 Finally, we're officially launching transparently-priced Pigsty Pro and service subscriptions, providing advanced features and support options for users who need them.
 
-
 ------
 
 ## Epic-Level Analytics Enhancement
@@ -40,7 +39,6 @@ And **DuckDB** (**x3.2**) elevates OLAP to an entirely new level — setting asi
 ![duck.jpg](duck.jpg)
 
 Appreciation from ParadeDB's founder and DuckDB FDW's author
-
 
 ------
 
@@ -64,7 +62,6 @@ We've also redesigned the logo, from the sunglasses-wearing pig head to a hexago
 
 ![mascot.jpg](mascot.jpg)
 
-
 ------
 
 ## New Website
@@ -87,7 +84,6 @@ Beyond docs, we've organized recent articles into the Pigsty blog, divided into 
 
 Meanwhile, Pigsty's software repositories now have global mirrors powered by Cloudflare R2, hosted on Cloudflare for smooth access worldwide (China users can continue using pigsty.cc).
 
-
 ------
 
 ## PostgreSQL 16 Becomes Default
@@ -108,7 +104,6 @@ Focusing the open-source edition on one core PG major version and three mainstre
 
 Supporting niche/legacy OSes and outdated major versions isn't needed by the vast majority of users but requires substantial extra effort and cost, so it's included in our paid commercial support.
 
-
 ------
 
 ## Open Source vs Pro Edition
@@ -122,7 +117,6 @@ The specific feature division isn't finalized yet, so 2.6 may be the last fully-
 Going forward, the Pigsty open-source edition will focus on doing one thing well — providing reliable, highly-available, extensible local PostgreSQL RDS services. Practical features like Docker templates may still stay in the open-source edition.
 
 This doesn't mean these features disappear from open-source Pigsty — seasoned open-source veterans can still easily recreate them by modifying config files — but they won't be default components of the open-source version.
-
 
 ------
 
@@ -142,7 +136,6 @@ But database problems are usually big problems. Misusing databases also tends to
 
 Often, turning the ordinary into extraordinary and achieving orders-of-magnitude improvements comes down to one sentence from an expert. This is especially true for PostgreSQL, whose soul is extensibility and whose extension ecosystem is incredibly rich. Our services ensure every dollar you spend is worthwhile and spent on what truly matters.
 
-
 ------
 
 ## Looking Forward
@@ -154,7 +147,6 @@ For monitoring, we'll redesign PostgreSQL monitoring dashboards based on PG 16's
 For infrastructure, we're choosing to abandon "cheap" Tencent Cloud CDN, fully embracing more reliable, faster, and cheaper Cloudflare to serve global users. Tencent Cloud CDN may serve as a domestic mirror for Pro edition acceleration.
 
 Pigsty's product and interfaces will stabilize in v2.6 and v3.0 — it's already doing great on product and technology fronts! Even exceeding RDS in some areas (like extension support and monitoring!). So upcoming work will shift focus to marketing and sales. Sustainable open-source operations require user and customer support. If Pigsty has helped you, please consider sponsoring us or purchasing our service subscriptions.
-
 
 ----------------
 

@@ -27,7 +27,6 @@ Additionally, a new value proposition/feature introduction page was built using 
 
 ![](values.jpg)
 
-
 --------
 
 ## Auto Certificate Issuance
@@ -44,7 +43,6 @@ The Dify, Odoo, Supabase self-hosting templates all use this feature. After inst
 
 v3.4 offers richer Nginx configuration options: use `config` to inject nginx config, use `enforce` to force HTTPS redirect. Self-hosted websites can now completely avoid touching traditional Nginx config files in most scenarios.
 
-
 --------
 
 ## Locale Collation Best Practices
@@ -52,6 +50,7 @@ v3.4 offers richer Nginx configuration options: use `config` to inject nginx con
 Many programmers aren't familiar with Locale/Collation rules, but this is actually an important configuration. Using improper Collation can not only cause several times performance loss but also lead to data inconsistency or even data loss — indexes are closely tied to collation rules. Collation is far from trivial.
 
 Recommended reading:
+
 - [Locale Collation in PG](https://pigsty.cc/blog/pg/collation/)
 - PGCon.Dev 2024: [Collations from A to Z](https://www.pgcon.org/events/pgcondev2024/schedule/session/630/)
 
@@ -70,7 +69,6 @@ Pigsty v3.4 reflects this best practice:
 
 Unless your database works intensively with specific language sorting scenarios, this default is best practice. You can specify other collation rules on queries/indexes/columns using PostgreSQL COLLATION syntax — PG + ICU supports 841 collation rules.
 
-
 --------
 
 ## Point-in-Time Recovery Enhancement
@@ -87,7 +85,6 @@ When executing `pg-restore`, Pigsty automatically pauses the Patroni cluster, sh
 
 For backup monitoring, v3.4 introduces `pgbackrest_exporter` to collect backup monitoring metrics, and the PGSQL PITR dashboard now displays current backup status. Previously, users could only query current status through PGCAT Instance with no history — this improvement greatly helps analyze backup status.
 
-
 --------
 
 ## Extension Updates
@@ -101,7 +98,6 @@ v3.4 adds extension `pgspider_ext` for multi-data-source queries using various F
 **Apache AGE Graph Database Extension**: The project's developers seem to have been laid off, and it's essentially in maintenance limbo. As a distribution, Pigsty does its best to provide support — we recompiled AGE 1.5.0 for PG 13-17 based on Debian patches, filling the gap of missing EL RPMs.
 
 ![](age.jpg)
-
 
 --------
 
@@ -125,7 +121,6 @@ repo_extra_packages: [ ivorysql ]                              # Download IvoryS
 ![](kernels.jpg)
 
 Also updated Supabase template to latest version, updated Citus to 13.0.2. Next steps will focus on OrioleDB (OLTP performance-focused) and OpenHalo (MySQL protocol compatibility) kernels.
-
 
 --------
 
@@ -151,7 +146,6 @@ docker-ce docker-compose-plugin ferretdb2 duckdb restic juicefs vray grafana-inf
 
 Docker usage is indeed high, mainly for running pgAdmin and similar software, so it's now in the default download.
 
-
 --------
 
 ## v3.5 Feature Preview
@@ -164,8 +158,6 @@ v3.5 planned features:
 | Config | Vibe Config Wizard and MCP Server |
 | Docker | Debian 12 x86/ARM Pigsty Docker image |
 | Kernel | OrioleDB and OpenHalo support |
-
-
 
 --------
 
@@ -300,7 +292,6 @@ d0a694f6cd6a7f2111b0971a60c49ad0  pigsty-pkg-v3.4.0.el8.x86_64.tgz
 c927238f0343cde82a4a9ab230ecd2ac  pigsty-pkg-v3.4.0.u24.aarch64.tgz
 14cbcb90693ed5de8116648a1f2c3e34  pigsty-pkg-v3.4.0.u24.x86_64.tgz
 ```
-
 
 --------
 

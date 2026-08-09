@@ -10,7 +10,7 @@ tags: [Database]
 ---
 
 -------------
- 
+
 #### Preface
 
 Tomorrow I'll publish an article criticizing MongoDB, as a response to their recent malicious marketing that provocatively targets PostgreSQL. But before that, I want to share a brilliant article from 2015 that exposes some of MongoDB's dark history.
@@ -43,8 +43,6 @@ Here's how I found clues from press releases, YouTube videos, and source code sc
 
 The story begins on June 1, 2015, at the annual MongoWorld conference in New York City.
 
-
-
 ## MongoWorld 2015
 
 [SlamData](http://slamdata.com/) is my new analytics startup, which sponsored MongoWorld 2015, so I got a rare VIP party ticket for the evening before the conference.
@@ -73,8 +71,6 @@ To our relief, we discovered the next day that MongoDB's big announcement wasn't
 
 --------
 
-
-
 ## MongoDB 3.2 BI Connector
 
 Eliot had the honor of announcing the BI connector. Of all the things he was announcing that day, he seemed least interested in the connector, so it barely got more than a mention.
@@ -85,7 +81,7 @@ However, details soon spread like wildfire through an [official press release](h
 
 According to the press release, the BI connector would allow *any BI software in the world* to interface with MongoDB databases.
 
-This news quickly [spread](https://twitter.com/search?f=tweets&vertical=default&q=mongodb bi connector&src=typd) on Twitter and generated widespread media coverage. [TechCrunch](http://techcrunch.com/2015/06/02/new-mongodb-connector-creates-direct-connection-to-data-visualization-tools/) and many others picked up the story, with each retelling adding new details. Fortune even claimed the BI connector had actually been [released](http://fortune.com/2015/06/03/couchbase-mongodb-embrace-sql/) at MongoWorld!
+This news quickly [spread](https://twitter.com/search?f=tweets&vertical=default&q=mongodb%20bi%20connector&src=typd) on Twitter and generated widespread media coverage. [TechCrunch](http://techcrunch.com/2015/06/02/new-mongodb-connector-creates-direct-connection-to-data-visualization-tools/) and many others picked up the story, with each retelling adding new details. Fortune even claimed the BI connector had actually been [released](http://fortune.com/2015/06/03/couchbase-mongodb-embrace-sql/) at MongoWorld!
 
 Given the nature of the announcement, the media's enthusiastic response seemed justified.
 
@@ -102,8 +98,6 @@ Had MongoDB really achieved the impossible? Had they developed a connector that 
 A few months earlier, I had spoken with Ron Avnur, MongoDB's VP of Products. Ron indicated that all of MongoDB's customers wanted analytics capabilities, but the company hadn't decided whether to build in-house or work with partners.
 
 This meant MongoDB had gone from *nothing* to a *magical solution* in just a few months.
-
-
 
 ### Pulling Back the Curtain
 
@@ -149,10 +143,7 @@ Jeff was speechless. He didn't say a word. But I could tell exactly what he was 
 
 **Shit. This is bad news for MongoDB. Really bad.**
 
-
 --------
-
-
 
 ## PostgreSQL: The MongoDB Killer
 
@@ -176,9 +167,6 @@ The largest company commercializing PostgreSQL is [EnterpriseDB](http://enterpri
 
 Whatever your opinion on this point, one thing is clear: MongoDB and PostgreSQL are locked in a fierce, bloody battle for developer mindshare.
 
-
-
-
 --------
 
 ## From Prototype to Production
@@ -194,7 +182,6 @@ Indeed, Tableau's press release wording even suggested the PostgreSQL driver dep
 Perhaps, I thought, MongoDB 3.2's release would ship with the *real deal*: a BI connector that exposes the rich data structures MongoDB supports (instead of flattening, null-padding, and discarding data), executes all queries 100% within the database, and has no dependencies on competing databases.
 
 In July, more than a month after MongoWorld, I visited MongoDB's Palo Alto offices during a business trip. What I learned was very encouraging.
-
 
 ------
 
@@ -219,8 +206,6 @@ Asya thought MongoDB's BI connector should expose native MongoDB data structures
 I was very encouraged that Asya had independently reached the same conclusion, and I felt confident that MongoDB understood the problem. I thought MongoDB's analytics future looked very bright.
 
 Unfortunately, I couldn't have been more wrong.
-
-
 
 --------
 
@@ -256,8 +241,6 @@ Eliot Horowitz would deliver a keynote, Asya Kamsky would speak, and Ron Avnur w
 
 That would be my best chance to convince MongoDB to abandon the BI connector shenanigans.
 
-
-
 --------
 
 ## MongoDB Days 2015, Silicon Valley
@@ -283,8 +266,6 @@ The keynote started sharply at 5:10. Eliot talked about some 3.0 features, since
 I wondered what Eliot would say about the BI connector. Would he even mention it?
 
 It turns out the BI connector was a leading feature of the keynote, having its own dedicated segment and even a flashy demo.
-
-
 
 ### BI Connector
 
@@ -329,7 +310,6 @@ After my conversation with Dev, it finally sunk in that I wouldn't be able to ch
 I was disappointed, but at the same time, I felt a huge wave of relief. I had talked to everyone I could reach. I had pulled out all the stops. I had given it my all.
 
 As I left the cocktail reception and headed back to my hotel, I couldn't help but speculate on why the company was making decisions I so strongly opposed.
-
 
 --------
 
@@ -379,9 +359,6 @@ The goal should be for MongoDB to drive enough revenue from the database that th
 
 You can judge for yourself, but I think it's pretty clear which is the winning strategy.
 
-
-
-
 --------
 
 ## Goodbye, MongoDB!
@@ -414,14 +391,6 @@ Which is, sadly, *exactly* what MongoDB has done in reverse.
 
 *The "Shame" photo was taken by [Grey World](https://www.flickr.com/photos/greyworld/), copyright Grey World, and licensed under [CC By 2.0](https://creativecommons.org/licenses/by/2.0/).*
 
-
-
-
-
-
-
-
-
 --------
 
 # MongoDB 3.2: Now Powered by PostgreSQL
@@ -429,7 +398,6 @@ Which is, sadly, *exactly* what MongoDB has done in reverse.
 > John De Goes — Challenging the status quo at Ziverge
 
 Published: December 8, 2015
-
 
 *Opinions expressed are solely my own, and do not express the views or opinions of my [employer](http://slamdata.com/).*
 
@@ -448,7 +416,6 @@ I would never hear back from Asya — or anyone else about the matter. My earlie
 This is the story of what I discovered, how I pieced together the clues from press releases, YouTube videos, and source code scattered on Github, and how I ultimately failed to convince MongoDB to change course.
 
 The story begins on June 1st 2015, at the annual MongoWorld conference in New York City.
-
 
 --------
 
@@ -480,8 +447,6 @@ I passed along the tip to my co-founder, Jeff Carr, and we shared a brief moment
 
 Much to our relief, we'd find out the following day that MongoDB's big announcement wasn't an analytics tool. Instead, it was a solution called *MongoDB BI Connector*, a headline feature of the upcoming 3.2 release.
 
-
-
 --------
 
 ## The MongoDB 3.2 BI Connector
@@ -494,7 +459,7 @@ But details soon spread like wildfire thanks to an [official press release](http
 
 According to the press release, the BI connector would allow *any BI software in the world* to interface with the MongoDB database.
 
-News of the connector [caught fire](https://twitter.com/search?f=tweets&vertical=default&q=mongodb bi connector&src=typd) on Twitter, and the media went into a frenzy. The story was picked up by [TechCrunch](http://techcrunch.com/2015/06/02/new-mongodb-connector-creates-direct-connection-to-data-visualization-tools/) and many others. Every retelling added new embellishments, with Fortune even claiming the BI connector had actually been [released at MongoWorld](http://fortune.com/2015/06/03/couchbase-mongodb-embrace-sql/)!
+News of the connector [caught fire](https://twitter.com/search?f=tweets&vertical=default&q=mongodb%20bi%20connector&src=typd) on Twitter, and the media went into a frenzy. The story was picked up by [TechCrunch](http://techcrunch.com/2015/06/02/new-mongodb-connector-creates-direct-connection-to-data-visualization-tools/) and many others. Every retelling added new embellishments, with Fortune even claiming the BI connector had actually been [released at MongoWorld](http://fortune.com/2015/06/03/couchbase-mongodb-embrace-sql/)!
 
 Given the nature of the announcement, the media hoopla was probably justified.
 
@@ -513,8 +478,6 @@ Had MongoDB really done the impossible? Had they developed a connector which sat
 A couple months earlier, I had chatted with Ron Avnur, VP of Products at MongoDB. Ron indicated that all of MongoDB's customers wanted analytics, but that they hadn't decided whether to build something in-house or work with a partner.
 
 This meant that MongoDB had gone from *nothing* to *magic* in just a few months.
-
-
 
 ### Pulling Back the Curtain
 
@@ -560,8 +523,6 @@ Jeff was speechless. He didn't say a word. But I could tell *exactly* what he wa
 
 *Shit. This is bad news for MongoDB. Really bad.*
 
-
-
 --------
 
 ## PostgreSQL: The MongoDB Killer
@@ -586,8 +547,6 @@ The largest company commercializing PostgreSQL is [EnterpriseDB](http://enterpri
 
 Whatever your opinion on that point, one thing is clear: MongoDB and PostgreSQL are locked in a vicious, bloody battle for mind share among developers.
 
-
-
 --------
 
 ## From Prototype to Production
@@ -603,7 +562,6 @@ Indeed, the way Tableau worded their press release even implied the dependency o
 Perhaps, I thought, the 3.2 release of MongoDB would ship with the *real deal*: a BI connector that exposes the rich data structures that MongoDB supports (instead of flattening, null-padding, and throwing away data), executes all queries 100% in-database, and has no dependencies on competing databases.
 
 In July, more than a month after MongoWorld, I dropped by MongoDB's offices in Palo Alto during a business trip. And I was very encouraged by what I learned.
-
 
 --------
 
@@ -631,7 +589,7 @@ Unfortunately, I could not have been more wrong.
 
 --------
 
-## MongoDB: For Giant ~~Ideas~~Mistakes
+## MongoDB: For Giant ~~Ideas~~ Mistakes
 
 Delighted that MongoDB was on the right track, I paid little attention to the BI connector for the next couple of months, though I did exchange a few emails with Asya and Ron.
 
@@ -663,7 +621,6 @@ Eliot Horowitz was delivering a keynote, Asya Kamsky would be speaking, and Ron 
 
 That's when I'd have my best chance of convincing MongoDB to ditch the BI connector shenanigans.
 
-
 --------
 
 ## MongoDB Days 2015, Silicon Valley
@@ -694,7 +651,7 @@ Turns out, the BI connector was a leading feature of the keynote, having its own
 
 Eliot introduced the BI connector by loudly making the proclamation, *"MongoDB has no native analytics tools."*
 
-I found that somewhat amusing, since I wrote a guest post for MongoDB titled [Native Analytics for MongoDB with SlamData](https://www.mongodb.com/blog/post/native-sql-analytics-mongodb-slamdata) *(Edit: MongoDB has taken down the blog post, but as of 15:30 MDT, it's [still in the search index](https://www.mongodb.com/blog?utf8=✓&search=slamdata#))*. SlamData is also a MongoDB partner and sponsored the MongoDB Days conference. 
+I found that somewhat amusing, since I wrote a guest post for MongoDB titled [Native Analytics for MongoDB with SlamData](https://www.mongodb.com/blog/post/native-sql-analytics-mongodb-slamdata) *(Edit: MongoDB has taken down the blog post, but as of 15:30 MDT, it's [still in the search index](https://www.mongodb.com/blog?utf8=✓&search=slamdata#))*. SlamData is also a MongoDB partner and sponsored the MongoDB Days conference.
 
 Eliot seemed to stumble a bit when describing the purpose of the BI connector (getting actions from... actionable insights? *Pesky analytics*!). He looked relieved when he handed the presentation over to Asya Kamsky, who had prepared a nice demo for the event.
 

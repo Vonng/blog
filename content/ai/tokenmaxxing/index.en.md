@@ -28,7 +28,6 @@ Plenty of executives are cheering it on. Jensen Huang said at GTC that every eng
 
 Just like that, a new office-politics movement was born.
 
-
 --------
 
 ## Goodhart Is Never Absent
@@ -47,7 +46,6 @@ How is this any different from measuring programmers by **lines of code**? I can
 
 If you insist on an analogy, this is **measuring drivers by fuel consumption**. A skilled driver uses less fuel and gets there faster. A bad driver floors it and still gets lost. Who has the higher fuel burn?
 
-
 --------
 
 ## Who Benefits When You Burn More?
@@ -64,7 +62,6 @@ To be fair, this kind of performative consumption does amplify the bubble signal
 
 My own view is still that this is a genuine productivity revolution. Tokenmaxxing adds some froth, but the underlying value creation is real. The bubble can deflate. The trend is not reversing.
 
-
 --------
 
 ## What Is Worth Spending Tokens On?
@@ -78,7 +75,6 @@ The common thread is simple: every one of those tasks had a **clear, verifiable 
 Now compare that to what the Tokenmaxxing crowd is doing. They ask an agent to "write an operating system," let it run all night, and wake up to a pile of garbage code. Or they send it off to "do deep research," let it spin for hours, and get back a report nobody will read. The token counter spins fast, and so does `rm -rf`. That is not AI usage. That is energy waste.
 
 Are you using a tool to hit a goal, or using a tool for the sake of using the tool? The first is productivity. The second is performance art.
-
 
 -------
 

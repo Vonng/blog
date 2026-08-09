@@ -25,7 +25,6 @@ This time, its full suite of official apps "**empowered**" a fraud ring. My cous
 
 I doubt the money will ever come back. But publishing the case may at least keep others from falling into the same trap. It may also push the platforms to confront a fact: fraud rings are borrowing their identities, infrastructure, and trust relationships to do harm.
 
-
 --------
 
 ## How It Happened
@@ -49,8 +48,6 @@ The recipient's name looked wrong as soon as the payment went through. She retur
 Even with that receipt in front of them, Alipay support kept stalling instead of solving the problem.
 
 The police also told us that my cousin was not the only victim of this phishing system. This was not a one-off con. It was a reusable, carefully engineered fraud pipeline that was still running. This was not a "secondhand transaction dispute," but an organized transaction system built for telecom and online fraud.
-
-
 
 --------
 
@@ -79,8 +76,6 @@ Before the scam, she could find a seller with an "Excellent" credit rating. Afte
 
 The standard way to blame the victim is to say, "She had no scam awareness; she deserved it." But this was a college-educated young person, fluent with AI tools, with solid common sense and above-average vigilance. She completed the whole process inside official apps and saw nothing but "safety signals"—and was still defrauded.
 Does an ordinary consumer have any realistic chance of spotting and avoiding a trap like this? Can these safety signals still be trusted?
-
-
 
 --------
 
@@ -120,7 +115,6 @@ Ordinary users paid the price.
 
 ![Analysis of the scam method and inferred flow](method-analysis.webp)
 
-
 --------
 
 ## Why the Platforms Deserve the Blame
@@ -138,7 +132,6 @@ Some will defend the platforms: embedded browsers use domain whitelists and deep
 Step back, and this is not simply "someone forgot one validation check." That would be a bug, an oversight, something an overnight patch could fix. The deeper problem is an assumption baked into the architecture's defaults: **our own get a free pass.** They are all in the family, so why defend one sibling from another? In normal times, that is ecosystem integration—highly efficient. But once an attacker enters through any trusted component, the whole chain turns green because it was never designed to distrust its own. It is another vindication of the "amateur hour" theory: pry open many systems that look impregnable, and inside you find a crude rule like "always allow sibling sites."
 
 Ultimately, the ecosystem put a browser inside Alipay and tried to make it do everything, while also letting internal properties pass freely. The former built a door; the latter removed the lock. One product's reputation defeated another product's defenses—the left hand's knife stabbed the right. A scammer entered through one trusted gateway and drove straight through to the user's wallet.
-
 
 --------
 
@@ -161,9 +154,6 @@ The second paragraph of Article 25 goes further: when network-resource services,
 I want to point out one fact: "the duty of reasonable care" is written into the law. Short-link validation, keeping dangerous content off resource domains, and checking the real payee and order source before payment are dirty, expensive, unglamorous jobs. They do not drive growth or look good in financial statements. But every cent saved there is not truly saved; it is merely externalized—
 onto my cousin, and onto every user whose trust in the safety of this payment system has fallen because of cases like hers.
 
-
-
-
 --------
 
 ## There Is Still Time to Close the Barn Door
@@ -183,7 +173,6 @@ The backend died because of police action, not platform enforcement or security.
 "**Make it easy to do business anywhere**" is a fine mission. But when people can borrow a platform's trust to commit fraud, and the door that should have closed remains open—then, at least from the outcome users can see, the company is moving ever farther from its founding purpose.
 
 > **Disclaimer: The redirect chain, domains, certificates, and ownership information described in this article can all be independently verified through public sources. Statements about the case remain subject to information held by the investigating authorities and their final announcements. Please distinguish opinion from fact. My criticism of Alibaba-related entities is limited to negligence—specifically, infrastructure being abused and prevention and control obligations not being fulfilled—and does not allege intent. For readability, this article uses terms such as "Alibaba-affiliated" and "Alibaba ecosystem" to describe the ecosystem trust relationship formed by the products and services users encounter along the chain, including Xianyu, Taobao, Alipay, Qianwen, and Alibaba Cloud. It does not claim that these products necessarily belong to the same legally liable entity.**
-
 
 --------
 

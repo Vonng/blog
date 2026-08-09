@@ -17,7 +17,6 @@ In practice to resist cloud vendor freeloading, changing licenses is the most co
 
 What truly matters has always been software freedom, while "open source" is just one means to achieve software freedom. If the "open source" ideology cannot adapt to the needs of the new stage of contradiction and struggle, and even hinders software freedom, it will also become obsolete and no longer important, eventually being replaced by new ideologies and practices.
 
-
 ------
 
 ## Open-Source Software Changing Licenses
@@ -54,8 +53,6 @@ Including our own PostgreSQL distribution Pigsty, which switched from Apache lic
 
 In practice to resist cloud vendor freeloading, changing licenses is the most common approach: AGPLv3 is a relatively mainstream practice, while the more radical SSPL is not considered open source because it explicitly expresses this enemy-ally discrimination. Using dual licensing for clear boundary distinction is also becoming a mainstream open source commercialization practice. But importantly: **the industry needs a new discriminatory software license that can legitimately distinguish friend from foe and treat them differently — to solve the biggest challenge software freedom faces today — cloud services.**
 
-
-
 -------------------
 
 ## Paradigm Shift in the Software Industry
@@ -77,9 +74,6 @@ Once, **the biggest enemy of software freedom was commercial closed source softw
 **Open source is not a business model; it even strongly violates commercialization logic**. However, any sustainable model needs to acquire resources to pay costs, and open source is no exception. Open source's real model is — creating high-paying technical expert positions through free software. Open source experts distributed across different enterprises and organizations, prosumers, are the core force of (pure-blood) open source software communities — **free open source software attracts users, user demand creates open source expert positions, open source experts collaboratively create better open source software**. Open source experts, as organizational agents, draw strength from open source communities and collective wisdom achievements. Organizations enjoy the benefits of open source software (software freedom, no commercial software licensing fees), while distributed employers can easily cover these experts' salary costs.
 
 However, public cloud, especially cloud software, has destroyed this ecological cycle — a few cloud giants attempt to monopolize open source expert supply, trying to achieve the monopoly that commercial software failed to achieve in the dimension of **using open source software well** (services). Cloud vendors write management software for open source software, form expert pools, capture most of the value in the software lifecycle through providing maintenance, and through freeloading behavior, make the entire open source community bear the biggest cost — **R&D**. More damagingly, [**truly valuable management/monitoring code is never contributed back to open source communities**](/en/cloud/dba-vs-rds/#cloud-database-models-and-new-challenges). The greater harm is — public cloud, like top livestream hosts eliminating many local convenience stores, destroys many open source job opportunities, cutting off talent flow and supply to open source communities.
-
-
-
 
 -------------------
 
@@ -113,15 +107,12 @@ Today, **cloud software, not closed source or commercial software, has become th
 
 **"Open source" versus "closed source" is no longer the core contradiction in the software industry; the focus of struggle has shifted to "cloud" versus "local-first."**
 
-
-
 -------------------
 
 ## How Does the Free World Respond to Challenges?
 
 {{% alert title="What's important has always been software freedom" color="success" %}}
 {{% /alert %}}
-
 
 Where there's force, there's reaction force. The rise of cloud software will trigger new balancing forces. Facing cloud service challenges, many software organizations/companies have already responded, including but not limited to: using discriminatory open source licenses, legal tools and collective action, seizing cloud computing definition rights.
 
@@ -172,7 +163,6 @@ Some users mistakenly think their relationship with maintainers is commercial, t
 **Open source doesn't equal free**, although most open source software provides conditions for users to use freely, free open source software is an unconditional **gift**. As recipients, users only have the right to choose to accept or not; as gift-givers, expecting specific returns is foolish. As open source contributors, please put on your own oxygen mask before helping others. If an open source enterprise can't even support itself, then choosing to generate electricity with love and generously give gifts everywhere is unwise.
 
 Therefore, full-time open source software developers and companies must carefully consider their business models — to keep projects and organizations sustainable, resources are indispensable. Whether creating dedicated enterprise versions, providing service support and subscriptions, setting dual licenses, seeking sponsorships and selling merchandise, or simply using so-called "non-open source" licenses like Redis, **this is all understandable and should be legitimate and confident**. Actually, because open source software provides users with additional "**software freedom**" — therefore charging higher fees than cloud rental software under the same quality is completely moral and reasonable!
-
 
 -------------------
 

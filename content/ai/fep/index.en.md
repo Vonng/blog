@@ -25,7 +25,6 @@ It is an unusually ambitious theory. The claim is that one mathematical framewor
 Today another friend also [wrote a piece about "intelligence"](https://mp.weixin.qq.com/s/PPWSh1M_wuoUNoKxZ7A8wQ), which reminded me of this framework.
 So this post is about the free energy principle, and why it matters if you want to understand AI, agents, and the larger ecosystem of intelligent systems we are now building.
 
-
 ---
 
 ## 1. What It Says

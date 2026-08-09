@@ -10,9 +10,6 @@ I've just spent five days wandering around Montreal. Next up is Vancouver for a 
 
 I will compare the two cities after I get back from Vancouver. For now, here are some loose impressions of Montreal.
 
-
-
-
 ## 1. A Peculiar Kind of Ease
 
 Canada is laid-back in general. That is nothing new. But Montreal felt relaxed in a different way from the rest of Canada I had experienced.
@@ -30,7 +27,6 @@ The waterfront at the Old Port had the same rhythm: the river, the wind, familie
 Several small galleries sit along the old streets, with nobody at the door collecting admission. You walk in, say “Bonjour” or “Hello,” and browse as long as you like. The art is neatly displayed; nobody watches over your shoulder, and nobody pushes you to buy.
 
 These are tiny details, but they make you realize that a city's sense of ease cannot be manufactured in a tourism commercial.
-
 
 ------
 
@@ -66,7 +62,6 @@ On the other hand, Quebec's childcare, healthcare, parental leave, and family be
 
 The bargain here is not “low taxes, low burden.” It is “high taxes, high benefits.”
 
-
 ------
 
 ## 3. Fewer Indians
@@ -82,9 +77,6 @@ That language barrier directly reshapes both the labor market and immigration fl
 In any case, Montreal makes a wonderful impression. The streets are clean, and the old buildings are well maintained. The combination of Old Montreal's stone streets and European façades with modern North American convenience is genuinely appealing. There are, of course, plenty of Chinese residents too, concentrated around Chinatown, the West Island, Brossard, and the South Shore. But they have not formed a parallel society large enough to feel mainstream, as in Richmond in metro Vancouver.
 
 Montreal is not short on immigrants. It simply filters immigration through French.
-
-
-
 
 ## 4. An AI City You May Not Have Heard Of
 
@@ -107,9 +99,6 @@ Bay Area AI is about capital, startups, valuations, compute, and bidding wars fo
 The city has a serious technical base, but it is not a place where everyone seems determined to build a unicorn.
 
 I have also heard that Quebec offers government subsidies for innovative startups of this kind. Apparently there was even a case where the project lost money and only something like 20% had to be repaid...
-
-
-
 
 ## 5. A Blue Ocean—and the Walls You Cannot Move
 
@@ -134,9 +123,6 @@ Chinese business circles talk endlessly about “going global.” But when you a
 The phrase “going global” has been repeated to death. But doing it for real remains difficult. What looks like backwardness from the outside often reflects institutions that do not let you compete by grinding people harder.
 
 The blue ocean is real. So are the walls.
-
-
-
 
 ## 6. On Immigration
 
@@ -167,9 +153,6 @@ That is why some Chinese immigrant families end up trilingual: Chinese, English,
 
 For daily life as a tourist, English is perfectly adequate. During my five days, I usually opened with “Good morning” or “Hello.” Once people realized I spoke English, they automatically switched over. I encountered only two or three people who spoke no English at all. But the fact that a tourist can get by in English does not mean a resident can ignore French. That is Montreal's most important dividing line.
 
-
-
-
 ## 7. Housing and Property Taxes
 
 You cannot talk about middle-class dignity without talking about housing.
@@ -187,9 +170,6 @@ As for property tax, Montreal's bill is based on assessed value, property class,
 That looks substantially higher than in a low-rate city like Vancouver. But detached houses in central Vancouver routinely cost CAD 2–3 million, so the final bill is hardly trivial there either.
 
 Housing in Montreal is not cheap. It simply has not yet broken free of the logic of an ordinary middle-class life.
-
-
-
 
 ## Closing Thoughts
 

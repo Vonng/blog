@@ -13,7 +13,6 @@ tags: [数据库, MySQL, PostgreSQL, 技术对比]
 
 今天我们就来对 MySQL 与 PostgreSQL 进行一个全方位的对比，从功能，性能，质量，生态来全方位反映这几年的生态变化。
 
-
 -------
 
 ## 功能
@@ -141,8 +140,6 @@ MySQL的性能随版本更新而逐步衰减，但在同样的性能回归测试
   * [Postgres 17.4 与大型服务器上的 sysbench](https://smalldatum.blogspot.com/2025/03/postgres-174-vs-sysbench-on-large-server.html)
   * <https://smalldatum.blogspot.com/2025/03/at-what-level-of-concurrency-do-mysql.html>
 
-
-
 -------
 
 ## 质量
@@ -155,9 +152,9 @@ MySQL的性能随版本更新而逐步衰减，但在同样的性能回归测试
 
 例如，Percona 最近刚刚在 MySQL 8.0.38 以上的版本（8.4.x, 9.0.0）中发现了一个 [严重Bug](https://perconadev.atlassian.net/browse/PS-9306) —— 如果数据库里表超过 1万张，那么重启的时候 [MYSQL 服务器会直接崩溃](https://mp.weixin.qq.com/s/LTlR65SY7ZOpPFGH0kUsVg)！ 一个数据库里有1万张表并不常见，但也并不罕见 —— 特别是当用户使用了一些分表方案，或者应用会动态创建表的时候。而直接崩溃显然是可用性故障中最严重的一类情形。
 
-但 MySQL 的问题不仅仅是几个软件 Bug，而是根本性的问题 —— 《[MySQL 糟糕的 ACID 正确性](https://mp.weixin.qq.com/s/gQZ3Q5JKV8gaBNhc1puPcA)》指出，在**正确性** 这个体面数据库产品必须的基本属性上，MySQL 的表现一塌糊涂。
+但 MySQL 的问题不仅仅是几个软件 Bug，而是根本性的问题 —— 《[MySQL 糟糕的 ACID 正确性](https://mp.weixin.qq.com/s/gQZ3Q5JKV8gaBNhc1puPcA)》指出，在 **正确性** 这个体面数据库产品必须的基本属性上，MySQL 的表现一塌糊涂。
 
-权威的分布式事务测试组织 [JEPSEN](https://jepsen.io/analyses/mysql-8.0.34) 研究发现，MySQL 文档声称实现的 **可重复读/RR** 隔离等级，实际提供的正确性保证要弱得多 —— MySQL 8.0.34 默认使用的 RR 隔离等级实际上并不可重复读，甚至既不**原子** 也不**单调** ，连 **单调原子视图/MAV** 的基本水平都不满足。这意味着 MySQL 的 RR 隔离等级实际上还不如绝大多数 DBMS 的 RC 隔离等级（实际 MAV）。
+权威的分布式事务测试组织 [JEPSEN](https://jepsen.io/analyses/mysql-8.0.34) 研究发现，MySQL 文档声称实现的 **可重复读/RR** 隔离等级，实际提供的正确性保证要弱得多 —— MySQL 8.0.34 默认使用的 RR 隔离等级实际上并不可重复读，甚至既不 **原子** 也不 **单调** ，连 **单调原子视图/MAV** 的基本水平都不满足。这意味着 MySQL 的 RR 隔离等级实际上还不如绝大多数 DBMS 的 RC 隔离等级（实际 MAV）。
 
 [![mysql-bad-case.png](mysql-bad-case.png)](/db/bad-mysql/)
 
@@ -175,7 +172,7 @@ MySQL的性能随版本更新而逐步衰减，但在同样的性能回归测试
 
 **做正确的事很重要，而正确性是不应该拿来做利弊权衡的** 。在这一点上，开源关系型数据库两巨头 MySQL 和 PostgreSQL 在早期实现上就选择了两条截然相反的道路： MySQL 追求性能而牺牲正确性；而学院派的 PostgreSQL 追求正确性而牺牲了性能。
 
-在互联网风口上半场中，MySQL 因为性能优势占据先机乘风而起。但当性能不再是核心考量时，正确性就成为了 MySQL 的**致命出血点** 。 更为可悲的是，MySQL 连牺牲正确性换来的性能，都已经不再占优了，这着实让人唏嘘不已。
+在互联网风口上半场中，MySQL 因为性能优势占据先机乘风而起。但当性能不再是核心考量时，正确性就成为了 MySQL 的 **致命出血点** 。 更为可悲的是，MySQL 连牺牲正确性换来的性能，都已经不再占优了，这着实让人唏嘘不已。
 
 -------
 
@@ -189,7 +186,7 @@ SQL 特性与标准支持：PostgreSQL 一直以高度符合 SQL 标准著称，
 
 ## 生态
 
-对一项技术而言，用户的**规模** 直接决定了生态的繁荣程度。瘦死的骆驼比马大，烂船也有三斤钉。 MySQL 曾经搭乘互联网东风扶摇而起，攒下了丰厚的家底，它的 Slogan 就很能说明问题 —— “**世界上最流行的开源关系型数据库** ”。
+对一项技术而言，用户的 **规模** 直接决定了生态的繁荣程度。瘦死的骆驼比马大，烂船也有三斤钉。 MySQL 曾经搭乘互联网东风扶摇而起，攒下了丰厚的家底，它的 Slogan 就很能说明问题 —— “**世界上最流行的开源关系型数据库** ”。
 
 ### 开发者
 
@@ -257,8 +254,6 @@ MySQL 曾经也辉煌过，也曾经是“开源软件”的一杆标杆，但�
 
   * [数据库火星撞地球：当PG爱上DuckDB](https://mp.weixin.qq.com/s/zoxaJBgNLreWc-TkqOJ8BQ)
 
-
-
 [MySQL 的创新版正在逐渐失去它的意义](https://mp.weixin.qq.com/s/LLlOkGHIDhUCkJNLlmtXSQ)，德哥看后写了 [MySQL将保持平庸](https://mp.weixin.qq.com/s/QnfCqVOsSxsnjfUZv9UPsg)。 对于 MySQL 的 “创新版本”，Percona 的老板 Peter Zaitsev 也发三篇《[MySQL将何去何从](/db/sakila-where-are-you-going/)》，《[Oracle最终还是杀死了MySQL](/db/oracle-kill-mysql/)》，《[Oracle还能挽救MySQL吗](/db/can-oracle-save-mysql/)》，公开表达了对 MySQL 的失望与沮丧。沮丧；
 
 与此同时，MySQL 的生态正在不断萎缩，由于 MYSQL 属于 Oracle，其他生态参与者越来越没有兴趣为 Oracle 做贡献，Oracle 也将心思放在 了 MySQL 企业版上，导致 MySQL 的开源社区越来越小，越来越没有活力。 例如，最近的 MySQL 9.x “创新版本” 被社区评价为毫无诚意的平庸之作。
@@ -269,7 +264,7 @@ MySQL 曾经也辉煌过，也曾经是“开源软件”的一杆标杆，但�
 
 ![trend-used-prof.png](trend-used-prof.png)
 
-对一项技术而言，用户的**规模** 直接决定了生态的繁荣程度。瘦死的骆驼比马大，烂船也有三斤钉。 MySQL 曾经搭乘互联网东风扶摇而起，攒下了丰厚的家底，它的 Slogan 就很能说明问题 —— “**世界上最流行的开源关系型数据库** ”。
+对一项技术而言，用户的 **规模** 直接决定了生态的繁荣程度。瘦死的骆驼比马大，烂船也有三斤钉。 MySQL 曾经搭乘互联网东风扶摇而起，攒下了丰厚的家底，它的 Slogan 就很能说明问题 —— “**世界上最流行的开源关系型数据库** ”。
 
 ![so-rank.jpg](so-rank.jpg)
 
@@ -317,8 +312,6 @@ Percona 的 CEO Peter Zaitsev 也表示：
   * [究竟是谁杀死了MySQL](/db/mysql-vs-pgsql/#究竟是谁杀死了mysql)
   * [PG驶向云外，MySQL安魂九霄](/db/mysql-vs-pgsql/#总结)
 
-
-
 -------
 
 ## 空洞无物的创新版本
@@ -351,7 +344,7 @@ MySQL 9.0 的向量数据类型只是 `BLOB` 类型换皮 —— 只加了个数
 
 ## 枯萎收缩的生态规模
 
-对一项技术而言，用户的**规模** 直接决定了生态的繁荣程度。瘦死的骆驼比马大，烂船也有三斤钉。 MySQL 曾经搭乘互联网东风扶摇而起，攒下了丰厚的家底，它的 Slogan 就很能说明问题 —— “**世界上最流行的开源关系型数据库** ”。
+对一项技术而言，用户的 **规模** 直接决定了生态的繁荣程度。瘦死的骆驼比马大，烂船也有三斤钉。 MySQL 曾经搭乘互联网东风扶摇而起，攒下了丰厚的家底，它的 Slogan 就很能说明问题 —— “**世界上最流行的开源关系型数据库** ”。
 
 ![so-rank.jpg](so-rank.jpg)
 
@@ -395,10 +388,7 @@ MySQL 曾经也辉煌过，也曾经是“开源软件”的一杆标杆，但�
 
   * [PostgreSQL取得对MySQL的压倒性优势](https://mp.weixin.qq.com/s/tuzmmkEIOsuq2-8rMbmVLw)
 
-
   * [←上一页](/db/pg-kiss-duckdb/)
   * [下一页→](/db/ai-agent-era/)
-
-
 
 最后修改 2025-04-24: [update extension (c31babc)](https://github.com/pgsty/web.cc/commit/c31babce3d7718b048c5e3d5cdb93a67f63435db)

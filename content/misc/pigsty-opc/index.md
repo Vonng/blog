@@ -58,7 +58,7 @@ Claude 顺手又帮我算了一笔账。按这个流量规模，如果挂个 Goo
 
 区别在于，EDB 是 PostgreSQL 世界的老大哥，CloudNativePG 背后是十几个核心开发者加上一百多号贡献者。
 
-而 Pigsty 这边，就我一个人。字面意义上的**数据库个体户**。现在时髦一点的说法，叫 OPC（One Person Company）。
+而 Pigsty 这边，就我一个人。字面意义上的 **数据库个体户**。现在时髦一点的说法，叫 OPC（One Person Company）。
 
 ------
 

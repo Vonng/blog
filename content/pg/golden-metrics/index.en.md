@@ -31,7 +31,6 @@ Golden metrics are those few critical core data points that need constant attent
 
 Today let's talk about PostgreSQL's core metrics. What are the core metrics for databases?
 
-
 ----------------
 
 ## Database Metrics
@@ -50,8 +49,6 @@ These metrics are all data treasures, and mining and visualization can extract t
 But for daily management, only a few core metrics are needed.
 
 With thousands of available metrics, which ones are the core metrics?
-
-
 
 ----------------
 
@@ -78,8 +75,6 @@ In normal situations: Application perspective golden metrics: QPS and RT
 
 In normal situations: DBA perspective golden metrics: DB saturation (water level)
 
-
-
 ----------------
 
 ## Why These?
@@ -104,8 +99,6 @@ The purpose of metrics is to measure the system's operating state. We also care 
 
 Different focus points - backends (database users) focus on system capability and service quality, DBAs (database administrators) focus more on system load level.
 
-
-
 ### **Traffic Metrics**
 
 Traffic-type metrics have great potential, especially metrics like QPS and TPS which are quite representative.
@@ -116,8 +109,6 @@ This is similar to a speedometer - highway speed limits, city speed limits. Envi
 
 But traffic metrics like TPS and QPS also have problems. Queries on a database instance are often varied and diverse. A query taking 10 microseconds and one taking 10 seconds are both counted as one Q in statistics. **Metrics like QPS cannot be compared horizontally and only have rough reference value**. Even when query types change, they can't be compared vertically with their own historical data. It's also difficult to set utilization targets for metrics like QPS and TPS. The same database executing `SELECT 1` can reach hundreds of thousands of QPS, but when executing complex SQL, it might only reach thousands of QPS. Different load types and machine hardware will significantly impact a database's QPS ceiling. QPS only has reference value when queries on a database are highly homogeneous with no complex changes. Under such strict conditions, you can set a QPS water level target through stress testing.
 
-
-
 ### **Latency Metrics**
 
 Similar to gear levels - slow queries, low gear, slow speed. Low query tier, low TPS water level. High query tier, high TPS water level.
@@ -125,8 +116,6 @@ Similar to gear levels - slow queries, low gear, slow speed. Low query tier, low
 Latency is suitable for measuring system service quality.
 
 Compared to QPS/TPS, metrics like RT (Response Time) actually have more reference value. Because increased response time is often a precursor to system saturation. According to empirical rules, the higher the database load, the higher the average response time for queries and transactions. An advantage of RT over QPS is that **RT can have a utilization target set** - for example, you can set an absolute threshold for RT: not allowing slow queries with RT over 1ms in production OLTP databases. But metrics like QPS are difficult to draw red lines for. However, RT also has its own problems. The first problem is it's still qualitative rather than quantitative - increased latency is just a warning of system saturation but can't be used to precisely measure system saturation. The second problem is that RT statistics available from databases and middleware are usually averages, but what really provides warning effect might be statistics like P99 and P999.
-
-
 
 ### **Saturation Metrics**
 

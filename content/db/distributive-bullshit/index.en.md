@@ -20,11 +20,9 @@ As hardware technology advances, the capacity and performance of standalone data
 - [The Struggles in Confusion](#the-struggles-in-confusion)
 - [References](#references)
 
-
 ----------------
 
 ## TL; DR
-
 
 The core trade-off of distributed databases is: "**quality for quantity**," sacrificing functionality, performance, complexity, and reliability for greater data capacity and throughput. However, "what divides must eventually converge," and hardware innovations have propelled centralized databases to new heights in capacity and throughput, rendering distributed (TP) databases obsolete.
 
@@ -34,11 +32,9 @@ Scenarios truly requiring distributed databases are few and far between, with ty
 
 Top-tier internet companies might have a few genuine use cases, yet these companies have no intention to pay. The market simply cannot sustain so many distributed database cores, and the few products that do survive don't necessarily rely on distribution as their selling point. HATP and the integration of distributed and standalone databases represent the struggles of confused distributed TP database vendors seeking transformation, but they are still far from achieving product-market fit.
 
-
 ----------------
 
 ## The Pull of the Internet
-
 
 "Distributed database" is not a term with a strict definition. In a narrow sense, it highly overlaps with NewSQL databases such as CockroachDB, YugabyteDB, TiDB, OceanBase, and TDSQL; broadly speaking, classic databases like Oracle, PostgreSQL, MySQL, SQL Server, PolarDB, and Aurora, which span multiple physical nodes and use master-slave replication or shared storage, can also be considered distributed databases. **In the context of this article, a distributed database refers to the former, specifically focusing on transactional processing (OLTP) distributed relational databases**.
 
@@ -56,8 +52,6 @@ As an industry solution, distributed databases have successfully met the needs o
 
 **Could distribute OLTP databases be a false necessity?**
 
-
-
 ----------------
 
 ## The Trade-Offs of Distributive
@@ -66,10 +60,9 @@ As an industry solution, distributed databases have successfully met the needs o
 
 ![distributive-bullshit-1.png](distributive-bullshit-1.png)
 
-> [数据库需求层次金字塔](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485399&idx=1&sn=0b7d5a7dc24295afcc56ec688b2c2d06&chksm=fe4b320cc93cbb1a369f9c9a7c50811c6a4f784fd2dd070f6ce5b16378502b8e5c7c76b716e1&scene=21#wechat_redirect)[1]
+> [数据库需求层次金字塔](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485399&idx=1&sn=0b7d5a7dc24295afcc56ec688b2c2d06&chksm=fe4b320cc93cbb1a369f9c9a7c50811c6a4f784fd2dd070f6ce5b16378502b8e5c7c76b716e1&scene=21#wechat_redirect) [1]
 
 **The core trade-off of distributed databases can be summarized as "quality for quantity": sacrificing functionality, performance, complexity, and reliability to gain greater data capacity and request throughput.**
-
 
 NewSQL often markets itself on the concept of "distribution," solving **scalability** issues through "distribution." Architecturally, it typically features multiple peer data nodes and a coordinator, employing distributed consensus protocols like Paxos/Raft for replication, allowing for **horizontal scaling** by adding data nodes.
 
@@ -77,15 +70,13 @@ NewSQL often markets itself on the concept of "distribution," solving **scalabil
 
 ![distributive-bullshit-2.png](distributive-bullshit-2.png)
 
-> [SYSBENCH吞吐对比](https://mp.weixin.qq.com/s/651zXDKGwFy8i0Owrmm-Xg)[2]
+> [SYSBENCH吞吐对比](https://mp.weixin.qq.com/s/651zXDKGwFy8i0Owrmm-Xg) [2]
 
 In the past, the trade-offs of distributed databases were justified: the internet required larger data storage capacities and higher access throughputs—a must-solve problem, and these drawbacks were surmountable. But today, hardware advancements have rendered the "quantity" question obsolete, thus erasing the raison d'être of distributed databases along with the very problem they sought to solve.
 
 ![distributive-bullshit-3.png](distributive-bullshit-3.png)
 
 > Times have changed, My lord!
-
-
 
 ----------------
 
@@ -94,7 +85,6 @@ In the past, the trade-offs of distributed databases were justified: the interne
 Moore's Law posits that every 18 to 24 months, processor performance doubles while costs halve. This principle largely applies to storage as well. From 2013 to 2023, spanning 5 to 6 cycles, we should see performance and cost differences of **dozens of times** compared to a decade ago. Is this the case?
 
 Let's examine the performance metrics of a typical SSD from 2013 and compare them with those of a typical PCI-e Gen4 NVMe SSD from 2022. It's evident that the SSD's 4K random read/write IOPS have jumped from **60K/40K** to **1600K/600K**, with prices plummeting from **2220$/TB** to **40$/TB**. Performance has improved by 15 to 26 times, while prices have dropped 56-fold[3,4,5], certainly validating the rule of thumb at a magnitude level.
-
 
 ![distributive-bullshit-4.png](distributive-bullshit-4.png)
 
@@ -110,7 +100,6 @@ A decade ago, mechanical hard drives dominated the market. A 1TB hard drive cost
 
 > Price per unit of SSD/HDD from 2013 to 2030 with predictions
 
-
 The typical fourth-generation local NVMe disk can reach a maximum capacity of **32TB to 64TB**, offering **70µs/10µs** 4K random read/write latencies, and **1600K/600K** read/write IOPS, with the fifth generation boasting an astonishing bandwidth of **several GB/s** per card.
 
 Equipping a classic Dell 64C / 512G server with such a card, factoring in five years of IDC depreciation, the total cost is under one hundred thousand yuan. Such a server running PostgreSQL **sysbench** can nearly reach one million QPS for single-point writes and two million QPS for point queries without issue.
@@ -120,8 +109,6 @@ What does this mean? For a typical mid-sized internet company/bank, the demand f
 Previously, users might have had to invest millions in high-end storage solutions like exadata, then spend a fortune on Oracle commercial database licenses and original factory services. Now, achieving similar outcomes starts with just a few thousand yuan on an enterprise-grade SSD card; open-source Oracle alternatives like PostgreSQL, capable of smoothly running the largest single tables of 32TB, no longer suffer from the limitations that once forced MySQL into partitioning. High-performance database services, once luxury items restricted to intelligence/banking sectors, have become affordable for all industries[7].
 
 **Cost-effectiveness is the primary product strength**. The cost-effectiveness of high-performance, large-capacity storage has improved by three orders of magnitude over a decade, making the once-highlighted value of distributed databases appear weak in the face of such remarkable hardware evolution.
-
-
 
 ----------------
 
@@ -145,7 +132,6 @@ For large-scale data analytics (OLAP), distributed technology is **indispensable
 
 **OLTP** databases have a history spanning several decades, with existing cores developing to a mature stage. Standards in the TP domain are gradually converging towards three Wire Protocols: PostgreSQL, MySQL, and Oracle. If the discussion is about tinkering with database auto-sharding and adding global transactions as a form of "distribution," it's definitely a dead end. If a "distributed" database manages to break through, it's likely not because of the "pseudo-requirement" of "distribution," but rather due to new features, open-source ecosystems, compatibility, ease of use, domestic innovation, and self-reliance.
 
-
 ----------------
 
 ## The Struggles in Confusion
@@ -166,17 +152,15 @@ There are still many areas within the TP database field worthy of focus: Leverag
 
 Time changes, and a wise man adapts. It is hoped that distributed database vendors will find their Product-Market Fit and focus on what users truly need.
 
-
-
 ----------------
 
 ## References
 
-[1] [数据库需求层次金字塔 ](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485399&idx=1&sn=0b7d5a7dc24295afcc56ec688b2c2d06&chksm=fe4b320cc93cbb1a369f9c9a7c50811c6a4f784fd2dd070f6ce5b16378502b8e5c7c76b716e1&scene=21#wechat_redirect): *https://mp.weixin.qq.com/s/1xR92Z67kvvj2_NpUMie1Q* 
+[1] [数据库需求层次金字塔](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485399&idx=1&sn=0b7d5a7dc24295afcc56ec688b2c2d06&chksm=fe4b320cc93cbb1a369f9c9a7c50811c6a4f784fd2dd070f6ce5b16378502b8e5c7c76b716e1&scene=21#wechat_redirect): *https://mp.weixin.qq.com/s/1xR92Z67kvvj2_NpUMie1Q*
 
-[2] [PostgreSQL到底有多强？](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485240&idx=1&sn=9052f03ae2ef21d9e21037fd7a1fa7fe&chksm=fe4b32e3c93cbbf522616346c1afd49e1e6edbb0898694df224fe2134a69c0c4562aab35587a&scene=21#wechat_redirect) : *https://mp.weixin.qq.com/s/651zXDKGwFy8i0Owrmm-Xg* 
+[2] [PostgreSQL到底有多强？](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485240&idx=1&sn=9052f03ae2ef21d9e21037fd7a1fa7fe&chksm=fe4b32e3c93cbbf522616346c1afd49e1e6edbb0898694df224fe2134a69c0c4562aab35587a&scene=21#wechat_redirect) : *https://mp.weixin.qq.com/s/651zXDKGwFy8i0Owrmm-Xg*
 
-[3] SSD Performence in 2013 : *https://www.snia.org/sites/default/files/SNIASSSI.SSDPerformance-APrimer2013.pdf* 
+[3] SSD Performence in 2013 : *https://www.snia.org/sites/default/files/SNIASSSI.SSDPerformance-APrimer2013.pdf*
 
 [4] 2022 Micron NVMe SSD Spec: *https://media-www.micron.com/-/media/client/global/documents/products/product-flyer/9400_nvme_ssd_product_brief.pdf*
 

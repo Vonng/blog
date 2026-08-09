@@ -30,14 +30,11 @@ Some databases are [eating the DBMS world](/en/pg/pg-eat-db-world/), while other
 - [Who Really Killed MySQL?](#who-really-killed-mysql)
 - [PostgreSQL Ascends as MySQL Rests in Peace](#who-really-killed-mysql)
 
-
-
 ------
 
 ## Hollow Innovations
 
 The official MySQL website's ["What's New in MySQL 9.0"](https://dev.mysql.com/doc/refman/9.0/en/mysql-nutshell.html) introduces a few new features of version 9.0, with six features.
-
 
 **And that's it? That's all there is?**
 
@@ -58,8 +55,6 @@ MySQL 9.0’s vector data types are just an alias of `BLOB` — with a simple ar
 And MySQL’s support for JavaScript stored procedures? It's an **enterprise-only feature**—not available in the open-source version, while PostgreSQL has had this capability since **13 years ago** with version 9.1.
 
 After an eight-year wait, the "innovative update" delivers two "old features," one of which is gated behind an enterprise edition. The term "**innovation**" here seems bitterly ironic and sarcastic.
-
-
 
 ------
 
@@ -85,8 +80,6 @@ Comparing `pgvector` with MySQL 9's "vector" support might seem unfair, as MySQL
 
 [**Vectors are the new JSON**](/en/db/svdb-is-dead/), but the party at the vector database table has ended, and MySQL hasn’t even managed to serve its dish. It has completely missed the growth engine of the next AI decade, just as it missed the JSON document database wave of the internet era in the previous decade.
 
-
-
 ------
 
 ## Belated JavaScript Functions
@@ -107,8 +100,6 @@ Oracle allows stored procedures to be written in C, SQL, PL/SQL, Python, Java, a
 
 Unlike PostgreSQL and Oracle's development philosophy, MySQL's best practices generally discourage using stored procedures—making JavaScript functions a rather superfluous feature for MySQL. Even so, Oracle made JavaScript stored procedures a **MySQL Enterprise Edition exclusive**—considering most MySQL users opt for the open-source community version, this feature essentially went unnoticed.
 
-
-
 --------
 
 ## Falling Behind: Features and Flexibility
@@ -124,7 +115,6 @@ While MySQL remains confined to its "relational OLTP database" niche, PostgreSQL
 [PostgreSQL is devouring the database world](/en/pg/pg-eat-db-world/), internalizing the entire database realm through its plugin architecture. "[Just use Postgres](/en/pg/just-use-pg/)" has moved from being a fringe exploration by elite teams to a mainstream best practice.
 
 In contrast, MySQL shows a lackluster enthusiasm for new functionalities—a major version update that should be rife with innovative 'breaking changes' turns out to be either lackluster features or insubstantial enterprise gimmicks.
-
 
 --------
 
@@ -149,9 +139,6 @@ Peter Zaitsev commented in his post "[Oracle Has Finally Killed MySQL](/db/oracl
 Years ago, the industry consensus was that PostgreSQL and MySQL performed comparably in simple OLTP CRUD scenarios. However, as PostgreSQL has continued to improve, it has vastly outpaced MySQL in performance. PostgreSQL now significantly exceeds MySQL in various read and write scenarios, with throughput improvements ranging from 200% to even 500% in some cases.
 
 **The performance edge that MySQL once prided itself on no longer exists.**
-
-
-
 
 ------
 
@@ -181,8 +168,6 @@ It's clear that the best correctness implementation (no yellow A) is PostgreSQL�
 
 During the early days of the internet boom, MySQL surged ahead due to its performance advantages. However, as performance becomes less of a core concern, correctness has emerged as MySQL’s **fatal flaw**. What's more tragic is that even the performance MySQL sacrificed correctness for is no longer competitive, a fact that's disheartening.
 
-
-
 ------
 
 ## The Shrinking Ecosystem Scale
@@ -207,8 +192,6 @@ In China, due to similar motivations for self-reliance in technology, PostgreSQL
 
 After all, many national databases are built on PostgreSQL—if you’re in the government or enterprise tech industry, chances are you’re already using PostgreSQL.
 
-
-
 ## Who Really Killed MySQL?
 
 Who killed MySQL, was it PostgreSQL? Peter Zaitsev argues in "[Did Oracle Ultimately Kill MySQL?](/db/oracle-kill-mysql/)" that **Oracle’s inaction and misguided directives ultimately doomed MySQL**. He further explains the real root cause in "[Can Oracle Save MySQL?](/db/can-oracle-save-mysql/)":
@@ -228,10 +211,6 @@ Although I am a staunch supporter of PostgreSQL, I agree with Peter Zaitsev's vi
 At least, MySQL can serve as a spur to motivate the PostgreSQL community to maintain cohesion and a sense of urgency, continuously improve its technical level, and continue to promote open, transparent, and fair community governance, thus driving the advancement of database technology.
 
 MySQL had its days of glory and was once a benchmark of "open-source software," but even the best shows must end. MySQL is dying—lagging updates, falling behind in features, degrading performance, quality issues, and a shrinking ecosystem are inevitable, beyond human control. Meanwhile, PostgreSQL, carrying the original spirit and vision of open-source software, will continue to forge ahead—it will continue on the path MySQL could not finish and write the chapters MySQL did not complete.
-
-
-
-
 
 --------
 

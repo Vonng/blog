@@ -137,4 +137,3 @@ $$ LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION audit.notify_change() IS '数据变动事件触发器函数，向`change`信道发送数据变动的表名';
 ---------------------------------------------------------------
 ```
-

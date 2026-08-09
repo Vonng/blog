@@ -11,8 +11,6 @@ tags: [PostgreSQL, PG-Admin, Logging]
 
 It's recommended to configure PostgreSQL's log format as CSV for easy analysis, and it can be directly imported into PostgreSQL data tables.
 
-
-
 ## Log-Related Configuration Items
 
 ```ini
@@ -32,8 +30,6 @@ track_io_timing =on
 track_functions =all
 track_activity_query_size =16384
 ```
-
-
 
 ## Log Collection
 
@@ -73,9 +69,6 @@ topics:
 - topic: 'log.db'
 ```
 
-
-
-
 ## CSV Log Format
 
 Very interesting idea - converting CSV logs into PostgreSQL tables is very convenient for analysis.
@@ -113,8 +106,6 @@ create table postgresql_log
 );
 ```
 
-
-
 ## Importing Logs
 
 Logs are well-structured CSV (CSV allows multi-line records), you can directly use the COPY command to import them.
@@ -122,8 +113,6 @@ Logs are well-structured CSV (CSV allows multi-line records), you can directly u
 ```sql
 COPY postgresql_log FROM '/var/lib/pgsql/data/pg_log/postgresql.log' CSV DELIMITER ',';
 ```
-
-
 
 ## Mapping Logs
 
@@ -180,11 +169,6 @@ CREATE FOREIGN TABLE IF NOT EXISTS monitor.pg_log_sat() INHERITS (monitor.pg_log
 CREATE FOREIGN TABLE IF NOT EXISTS monitor.pg_log_sun() INHERITS (monitor.pg_log) SERVER pg_log OPTIONS (filename '/pg/data/log/postgresql-Sun.csv', format 'csv');
 
 ```
-
-
-
-
-
 
 ## Processing Logs
 

@@ -12,8 +12,6 @@ tags: [数据库, PostgreSQL, MySQL]
 
 其中 result 字段是计算的表达式，只需返回1个解，如果没有解，result 返回null
 
-
-
 1. 24 点的计算规则：只能使用加减乘除四则运算，不能使用阶乘、指数等运算符，每个数字最少使用一次，且只能使用一次，可以使用小括号改变优先级
 
 2. 只能使用一条 SQL ，可以使用数据库内置函数，但是不能使用存储过程/自定义函数和代码块。
@@ -26,7 +24,6 @@ tags: [数据库, PostgreSQL, MySQL]
 
 6. 提交的 SQL 不能超过 10 KB大小
 
-
 作为 MySQL 老司机，NineData 搞的这个比赛暗吹 MySQL 的水平比姜高到不知道哪里去了 —— 为什么这么说呢？
 
 因为 10KB 的大小限制非常猥琐 —— 最快的解法都是质数查表，而这种方式所有解的文本拼接大小大约是 10018 个字符。要想压缩这个表到 10KB 以内，必须要用到一些压缩技巧。
@@ -34,7 +31,6 @@ tags: [数据库, PostgreSQL, MySQL]
 MySQL 是带有 COMPRESS 和 UNCOMPRESS 函数的，而 PostgreSQL 原生是没带的，需要用到 `pgsql-gzip` 扩展，而这个扩展在 NineData 比赛的平台上是不提供的。
 
 下面是使用 PostgreSQL 的解法：
-
 
 -----------
 
@@ -77,7 +73,6 @@ FROM poker24.cards c LEFT JOIN a a ON a.i =
 当然，这里的字符串长度超过了 10000： 10896 个。我们可以用一些手段来压缩，比如把这个巨长的 CASE 弄成一个 inline 函数，然后再把主键从十进制数字字面值换成十六进制，其实长度就在 10KB 以内了。
 不过规则禁止我们使用存储过程，这就要想其他办法了。主要就是如何压缩中间那个长字符串。
 
-
 -----------
 
 ## 压缩优化
@@ -99,8 +94,6 @@ SELECT c.id, c1, c2, c3, c4, result FROM poker24.cards c LEFT JOIN a a ON a.i =
 *CASE c3 WHEN 1 THEN 2 WHEN 2 THEN 3 WHEN 3 THEN 5 WHEN 4 THEN 7 WHEN 5 THEN 11 WHEN 6 THEN 13 WHEN 7 THEN 17 WHEN 8 THEN 19 WHEN 9 THEN 23 WHEN 10 THEN 29 END
 *CASE c4 WHEN 1 THEN 2 WHEN 2 THEN 3 WHEN 3 THEN 5 WHEN 4 THEN 7 WHEN 5 THEN 11 WHEN 6 THEN 13 WHEN 7 THEN 17 WHEN 8 THEN 19 WHEN 9 THEN 23 WHEN 10 THEN 29 END);
 ```
-
-
 
 -----------
 

@@ -14,7 +14,6 @@ tags: [PostgreSQL, PG生态, 性能]
 
 ![](pg-performence-1.jpg)
 
-
 ------
 
 ## 太长不看
@@ -33,8 +32,6 @@ tags: [PostgreSQL, PG生态, 性能]
   c5d.metal 用1年的价格，可以把服务器买下来托管用5年。对应规格云数据库用1年的价格，可以供你买同样的EC2用20年
 
 详细测试过程与原始数据放置于：[github.com/Vonng/pgtpc](https://github.com/Vonng/pgtpc)
-
-
 
 ------
 
@@ -64,8 +61,6 @@ PGBENCH是 PostgreSQL 自带的压测工具，默认使用类 TPC-B 的查询，
 
 > 图：各硬件配置下读写 TPS 曲线
 
-
-
 **Read Only**
 
 ![pg-performence-4.png](pg-performence-4.png)
@@ -76,13 +71,9 @@ PGBENCH是 PostgreSQL 自带的压测工具，默认使用类 TPC-B 的查询，
 
 > 图：各硬件配置下点查 QPS - 并发曲线
 
-
-
 结果相当令人震惊，在 Apple M1 Max 10C 笔记本上，PG 跑出了 32K 读写，240K 点查的性能水平，在 AWS c5d.metal 生产物理机上，PG 跑出了 72K 读写，630K 点查的性能。使用极限优化压榨，最多可以达到 **单机 137K 读写，2M 点查** 的怪兽级性能。
 
 作为一个粗略的规格参考，探探作为一个前部的互联网App，PostgreSQL 全局 TPS 为 40万左右。这意味着十几台这样的新笔记本，或几台顶配服务器（10W内¥）就有潜力支撑起一个大型互联网应用的数据库服务，这对于以前来说是难以想象的。
-
-
 
 ### **关于成本**
 
@@ -104,18 +95,15 @@ PGBENCH是 PostgreSQL 自带的压测工具，默认使用类 TPC-B 的查询，
 
 > AWS价格计算器：[https://calculator.amazonaws.cn/](https://calculator.amazonaws.cn/)
 
-
-
 ------
 
 ## SYSBENCH
 
 PostgreSQL 确实很强，但与其他数据库系统相比则何如？PGBENCH 主要用于评估 PostgreSQL 及其衍生/兼容数据库的性能，但如果需要横向比较不同数据库的性能表现，我们就要用到 sysbench 了。
 
-sysbench 是一款开源、跨平台的多线程数据库性能测试工具，测试结果可以很有代表性地反映一个数据库系统的事务处理能力能力。sysbench 包含了10个典型测试用例，如测试点查性能的 `oltp_point_select`，更新性能的 `oltp_update_index`，综合读写事务性能的 `oltp_read_only` (16条查询一个事务)，`oltp_read_write` （20条混合查询一个事务）与`oltp_write_only` （6条写入SQL）等…。
+sysbench 是一款开源、跨平台的多线程数据库性能测试工具，测试结果可以很有代表性地反映一个数据库系统的事务处理能力能力。sysbench 包含了10个典型测试用例，如测试点查性能的 `oltp_point_select`，更新性能的 `oltp_update_index`，综合读写事务性能的 `oltp_read_only` (16条查询一个事务)，`oltp_read_write` （20条混合查询一个事务）与 `oltp_write_only` （6条写入SQL）等…。
 
 sysbench 既可以用于测试 MySQL 的性能，也可以用来测试 PgSQL 的性能（当然也包括两者的兼容衍生），因此具有良好的横向可比性。让我们先来看一下最为喜闻乐见的对比，开源关系数据库内战：世界上“最流行”的开源关系型数据库 —— MySQL ， 与世界上最先进的开源关系型数据库 —— PostgreSQL 性能横向对比。
-
 
 ### **Dirty Hack**
 
@@ -125,7 +113,7 @@ MySQL 并没有提供一个官方的 sysbench 测试结果，只是在官网上�
 
 > 图：https://www.mysql.com/why-mysql/benchmarks/mysql/
 
-这是相当**不讲武德**的行为。因为如果阅览了连接的评测文章就会发现：这是把所有 MySQL 安全特性关闭得到的结果：关闭Binlog，提交刷盘，FSYNC，性能监控，DoubleWrite，校验和，强制使用 LATIN-1 字符集，这样的数据库根本没法用于生产环境，只是为了刷分而刷分。
+这是相当 **不讲武德** 的行为。因为如果阅览了连接的评测文章就会发现：这是把所有 MySQL 安全特性关闭得到的结果：关闭Binlog，提交刷盘，FSYNC，性能监控，DoubleWrite，校验和，强制使用 LATIN-1 字符集，这样的数据库根本没法用于生产环境，只是为了刷分而刷分。
 
 但反过来说，我们也可以使用这些 Dirty Hack，把对应的 PostgreSQL 安全特性也关闭，也看看 PostgreSQL 的最终极限在哪里？结果相当震撼，PGSQL点查QPS干到了 [233万每秒](/pg/pg-performence/)，峰值远远甩开 MySQL 一倍还多。
 
@@ -175,12 +163,9 @@ MySQL 并没有提供一个官方的 sysbench 测试结果，只是在官网上�
 | CPU                   | 96           | 108                                      | 96                                      | 64         | 108            | 48            |
 | Source                | Vonng        | TiDB 6.1                                 | OceanBase                               | PolarDB    | Cockroach      | YugaByte      |
 
-
-
 ![pg-performence-10.png](pg-performence-10.png)
 
 > 图：sysbench 10项测试结果（QPS，越高越好）
-
 
 ![pg-performence-11.png](pg-performence-11.png)
 
@@ -189,9 +174,6 @@ MySQL 并没有提供一个官方的 sysbench 测试结果，只是在官网上�
 让人感到震惊的是，新一代分布式数据库（NewSQL）全线拉胯。在相近的硬件规格下，与 PostgreSQL 表现出高达数量级的差距，几种新数据库中表现最好的反而是仍然基于经典主从架构的 PolarDB。这样的性能结果，**难免不让人重新审视起分布式数据库与 NewSQL 的理念**。
 
 通常来说，分布式数据库的核心利弊权衡是质量换规模，但让人没想到的是牺牲掉的不仅仅是功能与稳定性，还有如此可观的性能。高德纳曰：“过早优化是万恶之源”，为了不需要的规模（万亿级+，TP百TB+）牺牲如此大的性能（以及功能与稳定性）毫无疑问是过早优化的一种形式，而能有多少业务场景会有 Google 量级的数据非要分布式数据库不可，仍然是一个问号。
-
-
-
 
 -----------------
 
@@ -210,7 +192,7 @@ TPC-H 是一个模拟数仓，包含8张数据表，与22条复杂分析类SQL�
 | 1            | 13.5     | 8   | 8C / 64G    | z1d.2xlarge  |
 | 10           | 133      | 8   | 8C / 64G    | z1d.2xlarge  |
 
-作为横向对比，我们选取了一些其他数据库官网或比较详细的第三方测评结果。不过在对比前，有几点需要注意：一是有一些数据库产品仓数并非100，二来硬件规格也不尽相同，三来并不是所有数据库评测结果都来自原厂，因此只能作为**大致的对照和参考**。
+作为横向对比，我们选取了一些其他数据库官网或比较详细的第三方测评结果。不过在对比前，有几点需要注意：一是有一些数据库产品仓数并非100，二来硬件规格也不尽相同，三来并不是所有数据库评测结果都来自原厂，因此只能作为 **大致的对照和参考**。
 
 | Database   | Time   | S    | CPU | QPH  | Environment          | Source    |
 |------------|--------|------|-----|------|----------------------|-----------|
@@ -244,7 +226,6 @@ TPC-H 是一个模拟数仓，包含8张数据表，与22条复杂分析类SQL�
 
 （注：50C以上已经超过内存，走SWAP与磁盘IO了）。
 
-
 ![pg-performence-13.png](pg-performence-13.png)
 
 > 图：论文《how good is my HTAP system》提出的评测 HTAP系统能力的方法 —— 吞吐量前沿，在AP/TP二维平面上画出混合负载的吞吐量极值。
@@ -253,13 +234,9 @@ TPC-H 是一个模拟数仓，包含8张数据表，与22条复杂分析类SQL�
 
 综上所述，**PostgreSQL 在 TP 领域表现极其亮眼，在 AP 领域表现可圈可点**。这也难怪在最近几年的 StackOverflow 开发者年度调研中， PostgreSQL 成为了 专业开发者最常用，最受喜爱，最想要的[三冠王数据库](/pg/pg-is-no1/)。
 
-
-
 ![pg-performence-14.png](pg-performence-14.png)
 
 > StackOverflow 近六年数据库开发者调研结果
-
-
 
 -----------------
 

@@ -20,7 +20,6 @@ Now I have a second $200 ChatGPT subscription, plus the occasional complimentary
 
 That is why I have been so busy burning tokens lately that I have barely had time to write.
 
-
 --------
 
 ## The Best Arbitrage Right Now Is the Coding Plan
@@ -37,8 +36,6 @@ Even after that haircut, the pricing is clearly unsustainable. This is a transit
 ![Codex usage after the quota reduction](codex-quota.webp)
 
 > Over the past month, maxing out one Codex account yielded only about $4,000 per month in tokens at API list prices.
-
-
 
 --------
 
@@ -61,9 +58,6 @@ With the enterprise tier, the crucial distinction is that your data will *not* b
 
 For someone like me who works in open source, however, this is not a drawback. It is a double win.
 My code is public anyway, so I lose nothing by letting vendors train on it. I also get free GEO in return: the more familiar the models become with my work, the better it is for my open-source projects.
-
-
-
 
 --------
 
@@ -94,8 +88,6 @@ So far, 101 people have subscribed through this link, and I have happily banked 
 GLM does have one annoying limitation: it still does not support OpenAI's new Responses API.
 Connecting through Claude Code or OpenCode works fine. But if you want Codex to use GLM's official service, things get awkward.
 You need to run a protocol-conversion proxy yourself or have a service such as OpenRouter translate for you. GLM should adopt the industry standard and offer an OpenAI-compatible API so Codex users can run against it directly.
-
-
 
 ## The Window Is Narrowing
 

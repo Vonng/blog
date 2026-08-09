@@ -23,7 +23,6 @@ A lot of companies are already doing exactly this. DBA agents, ops agents, suppo
 
 But there is an uncomfortable fact here: **this path has a very hard ceiling, and most people have not hit it yet.**
 
-
 ----
 
 ## 2. The 70% Ceiling
@@ -41,7 +40,6 @@ It is the feeling that something is off after one glance at a Grafana dashboard.
 I cannot write those things down. Not because I do not want to. They do not exist in a form that can be written down. I hit this constantly while writing SOPs: I get to a step where I know that in real life I would make a judgment call based on how the situation feels, but that judgment cannot be turned into a rule. All I can write is "use judgment based on actual conditions." That stock phrase is just the missing 30% hiding in plain sight.
 
 If a junior engineer reads "use judgment based on actual conditions," they just freeze. Because the ability to make that judgment is not in the document.
-
 
 ----
 
@@ -69,7 +67,6 @@ After Polanyi, the Japanese management scholar Ikujiro Nonaka simplified this in
 
 Polanyi's answer would be: **no. You think you are distilling knowledge. In reality you are distilling a by-product of knowledge.**
 
-
 ----
 
 ## 4. A Recipe Is Not the Chef's Feel
@@ -93,7 +90,6 @@ What is that feel? It is the weights. It is the neural circuitry hammered into s
 You can give AI more and more recipes, more SOPs, but that changes what it thinks about, not how it thinks.
 
 **That is the essence of the 70% ceiling: SOPs encode reasoning traces, but expert intuition lives in the weights. You cannot distill the weights.**
-
 
 ----
 
@@ -127,7 +123,6 @@ This used to have a simple name: **apprenticeship**. A master did not just hand 
 
 Polanyi made that point sixty years ago.
 
-
 ----
 
 ## 6. The Ceiling of AI Agents
@@ -145,7 +140,6 @@ That expert intuition, the part no SOP can fully state and only real situations 
 That means: **current agents can remember a past mistake in context, but they do not thereby become the kind of agent that no longer makes that mistake.** Remembering a lesson is a data-layer operation. Growing intuition is a weight-layer change.
 
 An agent can simulate the diligent mid-level engineer who follows the playbook. It cannot yet simulate expert intuition.
-
 
 ----
 
@@ -170,7 +164,6 @@ That is the fundamental gap in current AI architecture. During inference, LLM we
 But even then, the separation of compute and storage in the von Neumann model remains a deep bottleneck. A system where every act of use truly changes the self may need a new hardware paradigm. That might also become the real killer use case for local inference: models that grow wetware feel inside real environments and diverge person by person.
 
 That part is still ahead of us. The direction, though, is clear.
-
 
 ----
 

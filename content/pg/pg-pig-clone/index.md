@@ -64,8 +64,6 @@ tags: [PostgreSQL, Pigsty, 工具]
 
 ![](featured.webp)
 
-
-
 ## 参考阅读
 
 - [Git for Data: 瞬间克隆PG数据库](/pg/pg-clone/)

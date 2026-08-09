@@ -21,7 +21,6 @@ AI isn't "assisting" programmers. It's **redefining** the floor and ceiling of t
 
 This isn't one company's problem. It's a structural reorganization of the entire industry.
 
-
 ---
 
 ## The First Rung Got Yanked Out
@@ -48,7 +47,6 @@ The most gut-wrenching line from that conversation:
 
 > **"People without industry experience no longer have the chance to gain industry experience."**
 
-
 ---
 
 ## Arms Race: The Red Queen Effect
@@ -66,7 +64,6 @@ It's like someone published the secret martial arts manual — everyone can lear
 The irony: skip it and others won't — you're out. Learn it and everyone learns it — everyone's grinding harder.
 
 **Individual rationality, collective trap.**
-
 
 ---
 
@@ -92,7 +89,6 @@ This isn't a gap with regular programmers anymore. This is **speciation**.
 Lines of code isn't a great value metric — but it demonstrates one thing: **the execution bottleneck has been blown wide open.** Previously, even great ideas were throttled by implementation speed. Now, the only limits left are judgment and architectural ability.
 
 Even if AI output quality falls short of a single top-tier programmer, it operates at 10x+ human thinking speed at a fraction of the cost. That's enough to change everything.
-
 
 ---
 
@@ -126,7 +122,6 @@ Domain knowledge is becoming the **weapon of mass destruction** that lets top pr
 
 In an era where everyone wants to be an AI accelerationist, nobody's rice bowl is unbreakable.
 
-
 ---
 
 ## Open Source Changed, Too
@@ -144,7 +139,6 @@ Why? Because **maintainers use AI too now.**
 When maintainers can vibe-code all the implementations themselves, why would they need external PRs? Open-source maintainers were already overloaded. Now they've got a pile of AI-generated garbage PRs to review on top of that. The response? Raise the bar. Get pickier.
 
 "Contributing to open source" used to be a solid path to building experience and reputation. That road is narrowing too.
-
 
 ------
 
@@ -183,7 +177,6 @@ We don't know if "simulated failures" can truly replace "real failures." We don'
 But if you're young, this might be your only chance to leapfrog. The old path is closed — you don't have a decade to slowly grind. Your only bet is that this new path works.
 
 Good news: even if this path ultimately doesn't pan out, the AI collaboration skills, rapid learning ability, and systematic thinking you build along the way are valuable in their own right.
-
 
 ------
 
@@ -263,7 +256,6 @@ What's not worth learning? Process software, SaaS, "translation layer" work, fla
 
 Writing code doesn't matter anymore. In the future there might not even be "programmers" as a job title. Only **software engineers**.
 
-
 ------
 
 ## Final Thoughts
@@ -279,7 +271,6 @@ Remember three things:
 3. **The competition in this era isn't "can you use AI" — it's "do you have something worth amplifying."** Find your IKIGAI, fast.
 
 Time is short. Get moving.
-
 
 ---
 

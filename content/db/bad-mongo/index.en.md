@@ -23,9 +23,6 @@ Currently, MongoDB is lackluster in products and technology; gets crushed by Pos
 
 However, integrity is the foundation of business, "good marketing can't save a rotten mango," and marketing built on lies and deception won't end well. Today I'll show everyone what rotten cotton is stuffed inside MongoDB's marketing silk brocade cover.
 
-
-
-
 ---------
 
 ## Bad Product Rises Through Marketing
@@ -45,8 +42,6 @@ As a MongoDB partner in the analytics field, the author was completely dishearte
 
 Such cases of deliberate fraud and deception are far from isolated. MongoDB also has many records of disparaging competing products to elevate itself. For example, in the official website article "[Migrating from PostgreSQL to MongoDB](https://www.mongodb.com/resources/compare/mongodb-postgresql/dsl-migrating-postgres-to-mongodb)", MongoDB claims to be a "**scalable, flexible, next-generation modern general-purpose database**",
 while PostgreSQL is a "**complex and error-prone legacy monolithic relational database**". This completely ignores the fact that it's actually beaten by PostgreSQL in overall performance, functionality, correctness, and even its own touted big data throughput and scalability.
-
-
 
 -----------
 
@@ -77,8 +72,6 @@ In terms of usability, major cloud vendors all offer ready-to-use PG RDS service
 
 Furthermore, compared to MongoDB's SSPL license (no longer an open source license), PostgreSQL's BSD-like open source license is obviously much friendlier. PG can provide better superior functional replacement without software licensing fees - Do more pay less! Hard not to win.
 
-
-
 -----------
 
 ## Crushed in Correctness and Performance
@@ -90,7 +83,6 @@ Of course, MongoDB's strength is shameless "deception." Despite JEPSEN raising s
 ![](jepsen-mongo.webp)
 
 This example once again demonstrates MongoDB's marketing shamelessness - using extremely refined language arts, carefully selecting an undigested peanut from a pile of bullshit, while glossing over various fatal flaws in correctness/consistency.
-
 
 -------
 
@@ -111,8 +103,6 @@ Another more recent [performance comparison](https://medium.com/@yurexus/can-pos
 Currently, [**single-machine PostgreSQL performance**](/pg/pg-performence/) can easily scale to tens of TB to hundreds of TB, supporting hundreds of thousands of point write QPS and millions of point query QPS. Using only PostgreSQL to support business to millions of daily active users / millions in revenue or even direct IPO is no problem.
 
 Honestly, MongoDB's performance is completely outdated, and its proud "built-in sharding" scalability appears meaningless in the current era of [**rapid software architecture and performance advancement**](/pg/pg-scalability) and [**hardware following Moore's Law exponential development**](/cloud/bonus/).
-
-
 
 --------
 
@@ -136,8 +126,6 @@ The opposite is PostgreSQL, which has much higher usage among professional devel
 Every developer goes through a beginner state. I initially started dealing with databases through MySQL/Mongo, but many people stop there, while ambitious engineers continuously learn and improve, enhancing their taste and technical discrimination, using better and more powerful technologies to update their arsenal.
 
 The trend is: more and more users are migrating from MongoDB and MySQL to the superior replacement PostgreSQL during their improvement process. This has created the new generation of the world's most popular database - PostgreSQL.
-
-
 
 --------
 
@@ -186,9 +174,6 @@ Partners [breaking into curses and whistleblowing](https://mp.weixin.qq.com/s/e3
 
 ![shotgun.webp](shotgun.webp)
 
-
-
-
 --------
 
 ## MongoDB Has No Future
@@ -210,8 +195,6 @@ As a public company, MongoDB's stock price has already experienced a major halvi
 
 ![stock.png](stock.png)
 
-I believe no developer, entrepreneur, or investor should bet on MongoDB 
+I believe no developer, entrepreneur, or investor should bet on MongoDB
+
 - **this is indeed a database without hope or future**.
-
-
-

@@ -20,15 +20,13 @@ tags: [PostgreSQL]
 关于新特性，我先前在 《[PostgreSQL 17 Beta1 发布！牙膏管挤爆了！](/pg/pg-17-beta1)》中已经有过介绍，在此就不再赘述了。
 这个大版本有很多新特性，当然要说最让我印象深刻的是， PG竟然能在[原本就已经非常强悍的性能](/pg/pg-performence) 基础上让写入吞吐再次翻倍 —— **朴实无华的强悍**。
 
-但比起具体的功能特性，我认为 PG 社区最大的转变发生在**心态与精神**上 —— 在这次发布通告中，PostgreSQL 去掉了原本 Slogan “世界上最先进的开源关系型数据库” 中的 “关系型” 三个字定语，直接变成了 “世界上最先进的开源数据库”。
+但比起具体的功能特性，我认为 PG 社区最大的转变发生在 **心态与精神** 上 —— 在这次发布通告中，PostgreSQL 去掉了原本 Slogan “世界上最先进的开源关系型数据库” 中的 “关系型” 三个字定语，直接变成了 “世界上最先进的开源数据库”。
 并且在最后 “关于PostgreSQL” 的部分说到：“PG 的功能集，高级特性，可扩展性，安全性，稳定性已经比肩甚至超越了顶级商业数据库”。所以我想 “开源” 这个定语用不了多久也许就可以一同去掉，变成 “**世界上最先进的数据库**” 了。
 
 PostgreSQL 这头巨兽已经觉醒了 —— 它不再是过去那种佛系与世无争的样子，精神面貌焕然一新，转换为一种积极进取的姿态 —— 它已经做好了接管与征服整个数据库世界的心理建设与动员准备。
 而无数资本也已经涌入 PostgreSQL 生态，[PG 系的 Startup 几乎拿走了数据库领域融资的全部 New Money](https://mp.weixin.qq.com/s/fi_p3tTZTnwP5XDJrkVbQw)。PostgreSQL 势必成为数据库领域一统天下的 “Linux 内核，DBMS 的纷争也许在未来会内化为 PostgreSQL 发行版内战，就让我们拭目以待吧。
 
 ![eco.png](eco.png)
-
-
 
 ----------
 
@@ -46,18 +44,16 @@ PostgreSQL 核心团队成员 Jonathan Katz 表示：“PostgreSQL 17 展现了�
 
 PostgreSQL 是一款以可靠性、稳健性和可扩展性著称的创新型数据管理系统，受益于全球开发者社区超过 25 年的开源开发，**已成为各类组织的首选开源关系型数据库**。
 
-
 --------
 
 ## 系统性能的全面提升
 
 PostgreSQL 的 [`vacuum`](https://www.postgresql.org/docs/17/routine-vacuuming.html) 进程对于系统健康运行至关重要，然而 vacuum 操作是需要消耗服务器实例资源的。PostgreSQL 17 引入了一种新的 vacuum 内部内存结构，内存消耗量降至原本的 1/20。这不仅提高了 vacuum 的速度，还减少了对共享资源的占用，为用户的工作负载释放出更多可用资源。
 
-PostgreSQL 17 也继续在 I/O 层面上不断优化性能。由于对预写日志（[`WAL`](https://www.postgresql.org/docs/17/wal-intro.html)）处理的改进，高并发工作负载的**写入吞吐量可能有高达两倍的提升**。此外，新的流式 I/O 接口加快了顺序扫描（读取表中所有数据）以及 [`ANALYZE`](https://www.postgresql.org/docs/17/sql-analyze.html) 更新 Planner 所需统计信息的速度。
+PostgreSQL 17 也继续在 I/O 层面上不断优化性能。由于对预写日志（[`WAL`](https://www.postgresql.org/docs/17/wal-intro.html)）处理的改进，高并发工作负载的 **写入吞吐量可能有高达两倍的提升**。此外，新的流式 I/O 接口加快了顺序扫描（读取表中所有数据）以及 [`ANALYZE`](https://www.postgresql.org/docs/17/sql-analyze.html) 更新 Planner 所需统计信息的速度。
 
 PostgreSQL 17 也在查询执行方面改善了性能。对于使用 [B-tree](https://www.postgresql.org/docs/17/indexes-types.html#INDEXES-TYPES-BTREE) 索引（PostgreSQL 默认的索引方法）的 `IN` 子句查询，性能有所提高。此外，[BRIN](https://www.postgresql.org/docs/17/brin.html) 索引现在支持并行构建。
 PostgreSQL 17 在查询规划方面进行了多项改进，包括对 `NOT NULL` 约束的优化，以及对 CTE（[`WITH`](https://www.postgresql.org/docs/17/queries-with.html) 查询）处理的改进。本次发布中，使用 SIMD（单指令多数据）加速计算得到了更广泛地应用，例如在 [`bit_count`](https://www.postgresql.org/docs/17/functions-bitstring.html) 函数中使用 `AVX-512` 指令。
-
 
 --------
 
@@ -75,7 +71,6 @@ PostgreSQL 17 为 [`MERGE`](https://www.postgresql.org/docs/17/sql-merge.html) �
 
 PostgreSQL 17 还包含一个内置的、平台无关的、不可变的排序规则提供者，以确保排序规则的不可变性，并提供了类似于 `C` 排序规则的排序语义，但使用 `UTF-8` 编码而非 `SQL_ASCII`。使用这个新的排序规则提供者，可以保证您的文本查询无论在哪里的 PostgreSQL 上运行，都能返回相同的排序结果。
 
-
 --------
 
 ## 针对高可用与大版本升级的逻辑复制改进
@@ -86,7 +81,6 @@ PostgreSQL 17 还包含一个内置的、平台无关的、不可变的排序规
 
 PostgreSQL 17 现在包含了针对逻辑复制的故障切换能力，使其在高可用环境中部署时更为可靠。
 此外，PostgreSQL 17 引入了命令行工具 [`pg_createsubscriber`](https://www.postgresql.org/docs/17/app-pgcreatesubscriber.html)，用于将物理从库转换为一个新的逻辑从库。
-
 
 --------
 
@@ -108,7 +102,6 @@ PostgreSQL 17 现在还会报告 [索引 VACUUM 的进度](https://www.postgresq
 
 PostgreSQL 17 中还添加了许多其他新功能和改进，可能会对您的用例有所帮助。请参阅 [发行注记](https://www.postgresql.org/docs/17/release-17.html) 以查阅新功能和变更的完整列表。
 
-
 --------
 
 ## 关于 PostgreSQL
@@ -117,7 +110,6 @@ PostgreSQL 是全世界最先进的开源数据库，拥有着一个由成千上
 PostgreSQL 以无与伦比的开发速度持续发展：**PostgreSQL 提供成熟的功能集不仅比肩能顶级的专有商业数据库系统，在高级数据库功能、可扩展性、安全性和稳定性方面上甚至超越了它们。**
 
 > 译注：说的就是你呀，Oracle
-
 
 --------
 
@@ -128,7 +120,6 @@ PostgreSQL 以无与伦比的开发速度持续发展：**PostgreSQL 提供成�
 [**Pigsty**](https://pigsty.cc/zh) 是开源免费，本地优先，开箱即用的 PostgreSQL RDS，允许用户在本地一键拉起生产级的 PG 云数据库服务，并带有开箱即用的 390 个PG扩展插件，故障自愈的高可用，顶级监控系统，PITR备份恢复，IaC命令行工具，SOP管理预案的完整解决方案。
 
 ![pigsty-home.webp](pigsty-home.webp)
-
 
 --------
 
@@ -155,7 +146,7 @@ PostgreSQL 以无与伦比的开发速度持续发展：**PostgreSQL 提供成�
 - 《PostgreSQL 17 preview - Add a new slot sync worker to synchronize logical slots》
 - 《PostgreSQL 17 preview - 增加GUC standby_slot_names , 保证这些standby已接收并flush所有逻辑slot向下游发送逻辑数据对应的WAL》
 - 《PostgreSQL 17 preview - pg_createsubscriber支持将物理从库转换为逻辑从库》
-- 《PostgreSQL 17 preview - 跟踪slot断联时间戳`pg_replication_slots.inactive_since`》
+- 《PostgreSQL 17 preview - 跟踪slot断联时间戳 `pg_replication_slots.inactive_since`》
 
 支持COPY错误处理:
 
@@ -206,8 +197,8 @@ index 性能优化:
 - 《PostgreSQL 17 preview - Add GUC: event_triggers . for temporarily disabling event triggers》
 - 《PostgreSQL 17 preview - Allow ALTER SYSTEM to set unrecognized custom GUCs.》
 - 《PostgreSQL 17 preview - XX000 内部错误 backtrace, add GUC backtrace_on_internal_error》
-- 《PostgreSQL 17 preview - allow_alter_system GUC控制 是否允许`alter system `修改`postgresql.auto.conf`》
-- 《PostgreSQL 17 preview - 新增 GUC: or_to_any_transform_limit 控制`OR to ANY`转换》
+- 《PostgreSQL 17 preview - allow_alter_system GUC控制 是否允许 `alter system` 修改 `postgresql.auto.conf`》
+- 《PostgreSQL 17 preview - 新增 GUC: or_to_any_transform_limit 控制 `OR to ANY` 转换》
 - 《PostgreSQL 17 preview - 新增 GUC trace_connection_negotiation : 跟踪客户端 SSLRequest or GSSENCRequest packet》
 
 SQL语法、函数功能增强:
@@ -218,7 +209,7 @@ SQL语法、函数功能增强:
 - 《PostgreSQL 17 preview - 简化exclude约束用法, 对primary key,unique约束增加without overlaps可选项》
 - 《PostgreSQL 17 preview - Add RETURNING support to MERGE》
 - 《PostgreSQL 17 preview - 增加uuid功能函数: 提取UUID值里面的时间戳 和 生成UUID值的函数版本》
-- 《PostgreSQL 17 preview - 新增返回某个范围内的随机数的随机函数`random(min, max)`》
+- 《PostgreSQL 17 preview - 新增返回某个范围内的随机数的随机函数 `random(min, max)`》
 - 《PostgreSQL 17 preview - Add support for `MERGE ... WHEN NOT MATCHED BY SOURCE`》
 - 《PostgreSQL 17 preview - 使用pg_basetype 获得domain类型的基础类型》
 - 《PostgreSQL 17 preview - Implement `ALTER TABLE ... MERGE|SPLIT PARTITION` ... command》
@@ -267,5 +258,4 @@ libpq协议增强:
 
 - 《PostgreSQL 17 preview - libpq: Add support for Close on portals and statements , 释放绑定变量语句入口(prepared statements)》
 - 《PostgreSQL 17 preview - 增加wire protocol头文件》
-- 《PostgreSQL 17 preview - libpq新增`PQchangePassword()`接口, 防止alter user修改密码时明文被记录在SQL活跃会话、log、pg_stat_statements中》
-
+- 《PostgreSQL 17 preview - libpq新增 `PQchangePassword()` 接口, 防止alter user修改密码时明文被记录在SQL活跃会话、log、pg_stat_statements中》

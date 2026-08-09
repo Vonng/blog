@@ -66,8 +66,6 @@ A team led by Xuanhe Zhou at Tsinghua University built a DBA Agent called D-Bot 
 
 One major reason they chose Pigsty was that it offered an open, standardized, production-grade runtime. They could focus on the intelligence instead of rebuilding the infrastructure from scratch: monitoring data was already available, and established command-line primitives could perform the necessary operations. Two years later, model capabilities have improved many times over. What can we build today by pairing this Runtime with state-of-the-art models? **I leave that possibility to everyone in this room.**
 
-
-
 ---
 
 ## Part II: Theory—What Is a Body Made Of?
@@ -225,8 +223,6 @@ That said, let me pour a little cold water on the idea. In a serious production 
 This takes us back to the beginning: AI cannot take the blame for you. Responsibility cannot be transferred, so operations must be confirmed by a human. That is why a DBA Agent should first become a solid copilot instead of leaping straight to aggressive Level 5 autonomy.
 
 Today, a workflow of read-only recommendations from a DBA Copilot, followed by human execution, is mature enough for production. The next step is to make every stage of that workflow more reliable.
-
-
 
 ---
 

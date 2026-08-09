@@ -22,9 +22,6 @@ Pigsty v2.2 发布了 🎉，欢迎大家尝鲜！ 地表最强 PostgreSQL 监�
 
 另外：8月9号晚7点开源中国出品的直播 《 PostgreSQL vs MySQL》以及8月16号的DTCC 2023，我将代表 PG 一方出战与 MySQL 对喷：谁才是数据库一哥，欢迎大家收看。
 
-
-
-
 ---------
 
 ## 监控系统重制：视觉配色
@@ -45,7 +42,6 @@ Pigsty v2.2 中，对监控面板进行了彻底的重制，充分利用 Grafana
 
 ![color-scheme](color-scheme.jpg)
 
-
 ---------
 
 ## 监控系统重制：集群导航
@@ -65,9 +61,6 @@ PGSQL Cluster 的表格式导航
 具体的集群资源表，则是在第二栏中，以备查阅详情。配合后面的 指标栏与日志栏，完整的呈现了一个 PostgreSQL 数据库集群的核心状态。
 
 ![图片](05-pgsql-cluster-metrics.jpg)
-
-
-
 
 ---------
 
@@ -93,10 +86,6 @@ Etcd Overview 则使用 State Timeline 来可视化 DCS 服务的可用性状态
 
 ![图片](10-pg-failsafe.jpg)
 
-
-
-
-
 ---------
 
 ## 监控系统重制：服务
@@ -115,8 +104,6 @@ Etcd Overview 则使用 State Timeline 来可视化 DCS 服务的可用性状态
 
 在全局总览中，可以看到 Pigsty 中所有数据库服务的整体状态时间线与 SLI 指标。
 
-
-
 ---------
 
 ## 监控系统重制：数据库统计
@@ -127,28 +114,21 @@ PGSQL Databases 展示了集群层面的数据库统计指标。例如，在 pg-
 
 ![图片](14-pgsql-databases.jpg)
 
-
-
-用户可以进一步下钻到**单个**数据库实例内部的统计，也就是 PGSQL Database 面板。这个面板提供了一些关于数据库与连接池的关键指标，但最重要的是，PGSQL Database 面板提供了对数据库内最活跃醒目的**表**与**查询**的索引 —— 这是两类最为重要的库内对象。
+用户可以进一步下钻到 **单个** 数据库实例内部的统计，也就是 PGSQL Database 面板。这个面板提供了一些关于数据库与连接池的关键指标，但最重要的是，PGSQL Database 面板提供了对数据库内最活跃醒目的 **表** 与 **查询** 的索引 —— 这是两类最为重要的库内对象。
 
 ![图片](15-pgsql-database.jpg)
 
-
-
-用户可以进一步下钻到**单个**数据库实例内部的统计，也就是 PGSQL Database 面板。这个面板提供了一些关于数据库与连接池的关键指标，但最重要的是，PGSQL Database 面板提供了对数据库内最活跃醒目的**表**与**查询**的索引 —— 这是两类最为重要的库内对象。
+用户可以进一步下钻到 **单个** 数据库实例内部的统计，也就是 PGSQL Database 面板。这个面板提供了一些关于数据库与连接池的关键指标，但最重要的是，PGSQL Database 面板提供了对数据库内最活跃醒目的 **表** 与 **查询** 的索引 —— 这是两类最为重要的库内对象。
 
 ![图片](16-pgsql-database-tables.jpg)
 
 ![图片](17-pgsql-database-queries.jpg)
 
-
-
-
 ---------
 
 ## 监控系统重制：系统目录
 
-在 Pigsty 中，除了使用 pg exporter 采集到的指标数据之外，还会使用另外一类**可选**的重要补充数据 —— 系统目录。这也是 PGCAT 系列 Dashboard 所做的事情。PGCAT Instance 将直接访问数据库系统目录（使用最多8条监控只读连接），获取并呈现所需的信息。
+在 Pigsty 中，除了使用 pg exporter 采集到的指标数据之外，还会使用另外一类 **可选** 的重要补充数据 —— 系统目录。这也是 PGCAT 系列 Dashboard 所做的事情。PGCAT Instance 将直接访问数据库系统目录（使用最多8条监控只读连接），获取并呈现所需的信息。
 
 例如，您可以获取数据库当前正在运行的活动，按照各种指标对数据库中的慢查询，无用索引，全表扫描进行定位与分析。查阅数据库的角色，会话，复制情况，配置修改状态，内存使用详情，备份与持久化的具体细节。
 
@@ -167,9 +147,6 @@ PGSQL Databases 展示了集群层面的数据库统计指标。例如，在 pg-
 数据库内的查询，也按照执行计划进行聚合，便于用户找到问题 SQL，快速定位慢查询问题。
 
 ![图片](22-pgcat-query.jpg)
-
-
-
 
 ---------
 
@@ -191,8 +168,6 @@ PGSQL Databases 展示了集群层面的数据库统计指标。例如，在 pg-
 
 在 Pigsty 中，还有许多关于特定主题的 Dashboard。限于篇幅，关于监控系统的介绍就是这些。最直观的体验方式，就是访问 Pigsty 提供的公开 Demo：http://demo.pigsty.cc ，亲自上手把玩一番。虽然这只是一个4台1C虚拟机的简陋环境，但用来展示Pigsty最基本的监控系统能力已经是足够了。
 
-
-
 ---------
 
 ## 大号仿真环境
@@ -211,10 +186,7 @@ Pigsty v2.2 提供了基于 libvirt 的 Vagrantfile 模板，您只需要调整�
 
 在此之上，还有3套Redis数据库集群与10套规格各异的 PostgreSQL 数据库集群与，其中还包括一套开箱即用的 5 分片的 Citus 12 分布式 PostgreSQL 集群。
 
-![图片](data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate(-249.000000, -126.000000)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E)
-
 这个配置是中大型企业运行管理大规模数据库集群的参考样例，而您可以在单台物理服务器上用半个小时完整一键拉起。
-
 
 ---------
 
@@ -226,9 +198,8 @@ Pigsty v2.2 提供了基于 libvirt 的 Vagrantfile 模板，您只需要调整�
 
 此外， Pigsty 还在 v2.2 中提供了对信创操作系统，统信 UOS 1050e uel20 的支持，满足一些特殊客户的特殊需求。Pigsty 针对这些系统重新编译了 PG相关的 RPM 包，为有需求的客户提供支持。
 
-
-
 ---------
+
 ## 安装
 
 从 v2.2 开始，Pigsty 的安装命令变为：
@@ -248,9 +219,6 @@ http://get.pigsty.cc/v2.2.0/pigsty-pkg-v2.2.0.el9.x86_64.tgz
 
 更多细节，请参考 Pigsty 官方文档：https://vonng.github.io/pigsty/ 与 Github Release Note： https://github.com/Vonng/pigsty/releases/tag/v2.2.0
 
-
-
-
 ----------------
 
 ## v2.2.0
@@ -268,7 +236,7 @@ http://get.pigsty.cc/v2.2.0/pigsty-pkg-v2.2.0.el9.x86_64.tgz
 * Pigsty EL Yum 仓库: 统一收纳零碎 RPM，简化安装构建流程。
 * 操作系统兼容性: 新增信创操作系统 UOS-v20-1050e 支持
 * 新的配置模板：42 节点的生产仿真配置
-* 统一使用官方 PGDG citus 软件包（el7） 
+* 统一使用官方 PGDG citus 软件包（el7）
 
 **软件升级**
 
@@ -279,7 +247,6 @@ http://get.pigsty.cc/v2.2.0/pigsty-pkg-v2.2.0.el9.x86_64.tgz
 * etcd 3.5.9 / haproxy v2.8.1 / redis v7.0.12
 * minio 20230711212934 / mcli 20230711233044
 
-
 **Bug修复**
 
 * 修复了 Docker 组权限的问题 [29434bd]https://github.com/Vonng/pigsty/commit/29434bdd39548d95d80a236de9099874ed564f9b
@@ -287,8 +254,7 @@ http://get.pigsty.cc/v2.2.0/pigsty-pkg-v2.2.0.el9.x86_64.tgz
 * 修复了 Redis Sentinel Systemd 服务的自动启用状态 [5c96feb](https://github.com/Vonng/pigsty/commit/5c96feb598ad6e44daa7a595e34c87e67952777b)
 * 放宽了 `bootstrap` & `configure` 的检查，特别是当 `/etc/redhat-release` 不存在的时候。
 * 升级到 Grafana 10，修复了 Grafana 9.x [CVE-2023-1410](https://grafana.com/blog/2023/03/22/grafana-security-release-new-versions-with-security-fixes-for-cve-2023-1410/)
-* 在 CMDB `pglog` 模式中添加了 PG 14 - 16 的 command tags 与 错误代码。 
-
+* 在 CMDB `pglog` 模式中添加了 PG 14 - 16 的 command tags 与 错误代码。
 
 **API变化**
 

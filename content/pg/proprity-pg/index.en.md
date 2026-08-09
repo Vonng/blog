@@ -13,7 +13,6 @@ Of course, Percona is mainly trying to advertise itself, but that's fine - this 
 
 > [The growing dominance of PostgreSQL and the emergence of propriety solutions](https://experience.percona.com/postgresql/postgresql-market-in-2025/the-growing-dominance-of-postgresql-and-the-emergence-of-proprietary-solutions)
 
-
 ## PostgreSQL's Growing Dominance and the Emergence of Proprietary Solutions
 
 As of 2025, PostgreSQL holds a 16.85% market share in the relational database market, making it the second-largest open-source database after MySQL. It has become the database of choice for major data-intensive institutions like Instagram, Reddit, Spotify, and even NASA. Currently, approximately 11.9% of companies with annual revenues exceeding $200 million use PostgreSQL in production.
@@ -42,7 +41,6 @@ For example, Redis recently changed its license to Redis Source Available Licens
 
 > Author's note: And the fresh case of [KubeSphere Supply Cut Rugpull](/cloud/kubesphere-rugpull/)
 
-
 ## Can MongoDB Tell Us Where PostgreSQL Is Heading?
 
 Looking at MongoDB might provide some insights. MongoDB was once hailed as an open-source alternative to relational databases, just like PostgreSQL today, but its development trajectory clearly turned toward proprietary solutions.
@@ -58,7 +56,7 @@ MongoDB, once an open-source champion, now resembles Oracle more than open sourc
 
 Today, discussions about MongoDB mostly focus on how to migrate away from this enterprise platform rather than continuing to adopt it.
 One of the most telling examples is a blog post published by Infisical in December 2024 (Infisical is a "one-stop platform for securely managing application secrets, certificates, SSH keys, and configurations") titled "[The Great Migration from MongoDB to PostgreSQL](https://infisical.com/blog/postgresql-migration-technical)."
-The post explains that while MongoDB performed well during their startup phase, as they grew, they and their customers **"encountered MongoDB's limitations in functionality and usability."** 
+The post explains that while MongoDB performed well during their startup phase, as they grew, they and their customers **"encountered MongoDB's limitations in functionality and usability."**
 The article also mentions that switching the database to open-source PostgreSQL reduced database costs by 50%.
 
 This is undoubtedly a cautionary tale for organizations adopting proprietary PostgreSQL solutions.
@@ -67,7 +65,6 @@ Major cloud providers' PostgreSQL managed services come with proprietary enhance
 Enterprise-focused PostgreSQL vendors are also introducing proprietary extensions and value-added services that, while convenient, create barriers to true database portability.
 **The same forces that led MongoDB (and earlier Oracle) toward closure are now at work in the PostgreSQL ecosystem.**
 
-
 ## Business Risks of Relying on Proprietary PostgreSQL
 
 For IT decision-makers, the risks brought by PostgreSQL commercialization extend far beyond the database architecture itself — they can even affect the entire technology landscape.
@@ -75,7 +72,6 @@ Proprietary PostgreSQL services might provide temporary convenience but often at
 When cloud costs rise and licensing models evolve, today's decisions can become costly traps tomorrow.
 Limited portability can disrupt cloud migration plans, complicate multi-cloud strategies, and hinder disaster recovery.
 As vendors continue introducing proprietary add-ons or aggressive product strategies (like MongoDB's heavy promotion of Atlas), no one can predict what new restrictions might emerge.
-
 
 ### Vendor Lock-in
 
@@ -89,7 +85,6 @@ The deeper the investment, the harder the escape. If you've deeply embedded a ve
 
 Notably, as one of the largest proprietary PostgreSQL vendors, EDB even published a blog post defending vendor lock-in, claiming it's "not necessarily a bad thing."
 The author used the specialized skills required to build and maintain internal PostgreSQL as justification for choosing proprietary solutions (we'll address this point later). But ask yourself, who benefits from this argument?
-
 
 ### Slow Response to Market Changes
 
@@ -122,9 +117,8 @@ But the reality is: even if you want to avoid these risks, building and operatin
 Perhaps your team lacks sufficient time, deep expertise, or manpower to design high-availability architectures, tune performance at scale, keep up with version upgrades, and manage compliance in complex infrastructure. But this doesn't mean you must submit to proprietary or cloud-managed solutions.
 
 Percona for PostgreSQL points to a clear path forward for organizations wanting to avoid proprietary solution risks while lacking the capability to fully self-build PostgreSQL operations.
-Percona provides a fully open-source, enterprise-grade PostgreSQL solution — including comprehensive high availability, security, observability, and performance optimization tool support — 
+Percona provides a fully open-source, enterprise-grade PostgreSQL solution — including comprehensive high availability, security, observability, and performance optimization tool support —
 without any proprietary constraints or unexpected licensing fees. You still maintain full control over where and how your database runs, with flexible deployment in on-premise, cloud, hybrid cloud, or Kubernetes environments.
-
 
 ## Author's Commentary
 
@@ -133,7 +127,7 @@ Regarding this issue, I've repeatedly criticized cloud vendors' RDS / cloud data
 
 ### Percona Distribution
 
-Percona is among the early vendors to explicitly propose the ["PostgreSQL distribution"](https://docs.percona.com/postgresql/17/third-party.html) concept. They have two very good extensions — 
+Percona is among the early vendors to explicitly propose the ["PostgreSQL distribution"](https://docs.percona.com/postgresql/17/third-party.html) concept. They have two very good extensions —
 [`pg_stat_monitor`](https://pgext.cloud/e/pg_stat_monitor) and [`pg_tde`](https://pgext.cloud/e/pg_tde), the former providing advanced observability metrics in PostgreSQL, the latter providing transparent encryption functionality.
 Percona also has a PMM monitoring tool, an excellent monitoring platform built for the MySQL ecosystem that recently added some PostgreSQL support.
 Of course, because the patches required by pg_tde haven't been merged into the PG mainline, Percona had to create their own patched PostgreSQL kernel packages to work with their pg_tde transparent encryption extension.
@@ -159,7 +153,6 @@ curl -fsSL https://repo.pigsty.io/get | bash; cd ~/pigsty;
 Therefore, I provide mirrors of Percona repositories and ensure that when users install 10 types of PG kernels including Percona PG distribution using Pigsty, they have complete installation packages and system dependencies locally, automatically generating a YUM/APT software repository.
 This allows users to easily deploy identical environments and nodes in offline environments, achieving independent operation until the end of time. Even the complete instructions and tools for building these RPM/DEB packages are fully open-sourced on GitHub.
 More importantly, compared to giving you RPM/DEB packages, the experience of assembling these packages into enterprise-grade services is more crucial. This experience is crystallized into Ansible Playbooks and SOPs, delivered in one-click deployment, ready-to-use format, making it easy even for novices to get started.
-
 
 ### Pigsty Meta-Distribution
 
@@ -189,15 +182,12 @@ With Percona's TDE kernel, we currently support several flavors of PG kernels. I
 |   [Supabase](https://pigsty.io/docs/pgsql/kernel/supabase)   |      **Backend as a Service**      | PostgreSQL-based BaaS, Firebase alternative                    |
 | [Cloudberry](https://pigsty.io/docs/pgsql/kernel/cloudberry/) | **MPP Data Warehouse & Analytics** | Massively parallel processing data warehouse (awaiting 2.0 GA) |
 
-
-
 Previously, you needed to spend big money on AWS or various DBaaS platforms for such services, and you'd still be constrained with various feature limitations and performance humiliation from budget cloud disks (PlanetScale just mocked this too).
 If you wanted to self-build, experienced PostgreSQL DBAs are so scarce that even [top unicorns like OpenAI pay high failure costs to train their own people](/db/openai-pg/).
 
 Freedom is the most expensive luxury — I deeply understand the beauty of software freedom and its costly price.
 But I hope more people can have the opportunity to enjoy it — letting everyone easily afford reliable, stable, worry-free enterprise-grade PostgreSQL services and enjoy the fun of the PostgreSQL ecosystem.
 This is what Pigsty does — a truly open-source PostgreSQL distribution representing "software freedom" values, freeing you from vendor, license, internet, software repository, and even technical expert "lock-in," achieving ultimate autonomy, control, and software freedom.
-
 
 ## Further Reading
 

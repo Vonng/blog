@@ -11,7 +11,6 @@ When GIN indexes are used to search with very long keyword lists, performance de
 
 Here is the detail of why that query have O(N^2) inside GIN implementation.
 
-
 ----------
 
 ## Details
@@ -173,7 +172,7 @@ oprrest      | arraycontsel
 oprjoin      | arraycontjoinsel
 ```
 
-The underlying C function to judge arrayoverlap is `arrayoverlap` in [here](https://github.com/postgres/postgres/blob/master/src/backend/utils/adt/arrayfuncs.c) 
+The underlying C function to judge arrayoverlap is `arrayoverlap` in [here](https://github.com/postgres/postgres/blob/master/src/backend/utils/adt/arrayfuncs.c)
 
 ```c
 Datum

@@ -32,9 +32,6 @@ Dify “支持” 了一堆花里胡哨的向量数据库，但你既然已经�
 - [GitHub: langgenius/Dify](https://github.com/langgenius/dify/)
 - [Pigsty: Dify Docker Compose Template](https://github.com/Vonng/pigsty/tree/master/app/dify)
 
-
-
-
 ------
 
 ## Pigsty的准备工作
@@ -87,8 +84,6 @@ redis-cli -u redis://redis.dify@10.10.10.10:6379/0 ping
 
 当然，上面的部分是假设你已经是 Pigsty 用户，了解如何部署 PostgreSQL 与 Redis 集群。你可以直接跳过下一节，查看 [Dify 如何配置](#dify的配置工作)。
 
-
-
 ------
 
 ## 从零开始的一些说明
@@ -123,7 +118,6 @@ Pigsty 默认不会安装 Redis，所以您需要使用 [`redis.yml`](https://pi
 ./redis.yml
 ```
 
-
 **Docker安装问题**
 
 Pigsty 默认不会在当前节点安装 Docker，所以您需要使用 [`docker.yml`](https://pigsty.cc/docs/docker/playbook/#dockeryml) 剧本安装 Docker。
@@ -131,7 +125,6 @@ Pigsty 默认不会在当前节点安装 Docker，所以您需要使用 [`docker
 ```bash
 ./docker.yml
 ```
-
 
 **Docker Hub 被墙问题**
 
@@ -162,7 +155,6 @@ $ docker compose pull
 ```
 
 配置代理后，镜像都可以成功拉取了。当然您也可以使用其他可用的镜像站点，例如 quay.io 等。
-
 
 ------
 
@@ -207,15 +199,13 @@ S3_REGION='us-east-1'
 cd pigsty/app/dify && make up
 ```
 
-
-
 ------
 
 ## 使用Nginx暴露Web服务
 
 Dify 的 Docker Compose 模板里面已经包含了一个 Nginx Server，占据了宿主机的 80 端口。如果你的这台机器就是拿来专门跑 Dify 的那没问题。如果你用的是 Pigsty 单机安装，那么这台宿主机上的 80 端口已经被 Pigsty 部署的 Nginx Web Portal 占据了。
 
-所以，Pigsty 提供的模板中，`DIFY_PORT` 默认使用了 `8001`，并通过宿主机上 Pigsty 部署的 Nginx 转发至此端口。当然我们也提供选项B，你也可以直接在 `/etc/nginx/conf.d/dify.conf` 里使用样例配置，直接指向 Dify 的 `web` 与 `api` 端口。 
+所以，Pigsty 提供的模板中，`DIFY_PORT` 默认使用了 `8001`，并通过宿主机上 Pigsty 部署的 Nginx 转发至此端口。当然我们也提供选项B，你也可以直接在 `/etc/nginx/conf.d/dify.conf` 里使用样例配置，直接指向 Dify 的 `web` 与 `api` 端口。
 
 在 `pigsty.yml` 配置文件中的 `infra_portal` 参数中新增一行 Dify 的配置
 

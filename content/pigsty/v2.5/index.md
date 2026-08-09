@@ -20,7 +20,6 @@ tags: [Pigsty]
 
 在监控上，Pigsty 优化了 PostgreSQL 监控面板体验，新增了 Patroni & Exporter 监控面板，根据查询宏观优化方法论重新设计了 PGSQL Query 监控面板。
 
-
 ------
 
 ### 关于Pigsty
@@ -29,15 +28,13 @@ tags: [Pigsty]
 
 ![intro](intro.webp)
 
-
-
 ------
 
 ## Ubuntu/Debian支持
 
 在《[临水照花看Ubuntu与Debian：Pigsty v2.5](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486263&idx=1&sn=4288450c04a6fdbaf5e4fae385d42bd9&chksm=fe4b3eecc93cb7faf32a8c30ab78870f8ca607ad572e9d6725ac9f64c1549071c3d33a802019&scene=21#wechat_redirect)》中，我们已经预告了对 Ubuntu / Debian 系操作系统的支持（以下简称 Deb 支持）。从两年前 0.x 版本的时代，就有用户提出想要 Ubuntu 和 Debian 操作系统支持了，所以我觉得这是一件非常正确且重要的事情。
 
-作为一个选择构建于**裸操作系统上**的数据库发行版，支持一种新操作系统并不像容器化数据库打个镜像那么简单。有许多的适配工作需要去做。首当其冲的就是包不齐的问题，好比 Prometheus 就没有官方提供的 DEB 源，不得不自己维护打包并提供一个软件仓库。
+作为一个选择构建于 **裸操作系统上** 的数据库发行版，支持一种新操作系统并不像容器化数据库打个镜像那么简单。有许多的适配工作需要去做。首当其冲的就是包不齐的问题，好比 Prometheus 就没有官方提供的 DEB 源，不得不自己维护打包并提供一个软件仓库。
 
 ![apt-yum-repo](apt-yum-repo.webp)
 
@@ -59,8 +56,6 @@ Pigsty 在自动配置过程中添加了 Debian / Ubuntu 系统的识别，单�
 
 这些参数通常都不需要用户来调整，所以在 Pigsty 使用流程上，Deb系可以说几乎没有任何区别了：实际上 Pigsty 的离线软件包构建模版就是这么工作的：一次性在七种不同的操作系统上完成完整的 Pigsty 安装，无需任何特殊处理。
 
-
-
 ------
 
 ## 新的扩展插件
@@ -71,7 +66,7 @@ Pigsty v2.5 收纳了几款用户呼声比较高的扩展插件。首当其冲�
 
 ![postgresml](postgresml.webp)
 
-第二个值得一提的扩展插件是 `pointcloud`[1]。因为地理空间扩展 PostGIS 的存在，PostgreSQL 一直是自动驾驶/电车公司的心头好。而 PointCloud 则将 PostgreSQL 与 PostGIS 的力量推广到一个新的边界。激光雷达会不断扫描周围并生成所谓 “点云” 数据。`pointcloud`插件提供了 PcPoint & PcPatch 两种数据类型与四十个功能函数，允许您对超高维度的点集进行高效存储、检索与运算。这个插件在 PGDG APT 源中原生提供，而 Pigsty 将其移植到了 EL 系统上，让所有系统的用户都可以用上。
+第二个值得一提的扩展插件是 `pointcloud`[1]。因为地理空间扩展 PostGIS 的存在，PostgreSQL 一直是自动驾驶/电车公司的心头好。而 PointCloud 则将 PostgreSQL 与 PostGIS 的力量推广到一个新的边界。激光雷达会不断扫描周围并生成所谓 “点云” 数据。`pointcloud` 插件提供了 PcPoint & PcPatch 两种数据类型与四十个功能函数，允许您对超高维度的点集进行高效存储、检索与运算。这个插件在 PGDG APT 源中原生提供，而 Pigsty 将其移植到了 EL 系统上，让所有系统的用户都可以用上。
 
 ![pointcloud](pointcloud.webp)
 
@@ -87,8 +82,7 @@ Pigsty v2.5 收纳了几款用户呼声比较高的扩展插件。首当其冲�
 
 除此之外，我们还将 Supabase 的支持更新到最新版本：`20231013070755`。您可以在 EL8/EL9 系统上使用 Pigsty 提供的 PostgreSQL 数据库来自托管 Supabase。
 
-算上 PostgreSQL 自带的扩展，Pigsty 2.5 支持的扩展插件已经达到了 150+。尽管有这么多的插件，但请注意，它们全都是**选装项**。Pigsty 为所有 PostgreSQL 大版本都提供了 `pg_repack`，`wal2json`，`passwordcheck_cracklib` （EL）这几个重要的扩展，默认安装的三方扩展只有在线治理膨胀的 `pg_repack`。其他的扩展如果不安装，对现有系统不会产生任何额外的影响和负担。
-
+算上 PostgreSQL 自带的扩展，Pigsty 2.5 支持的扩展插件已经达到了 150+。尽管有这么多的插件，但请注意，它们全都是 **选装项**。Pigsty 为所有 PostgreSQL 大版本都提供了 `pg_repack`，`wal2json`，`passwordcheck_cracklib` （EL）这几个重要的扩展，默认安装的三方扩展只有在线治理膨胀的 `pg_repack`。其他的扩展如果不安装，对现有系统不会产生任何额外的影响和负担。
 
 ------
 
@@ -112,7 +106,7 @@ PGSQL Query 监控面板现在分为五栏：Overview 概览， 核心指标 QPS
 
 **减少资源消耗**：降低资源饱和的风险，优化CPU/内存/IO，通常以查询总耗时/总IO作为优化目标。使用 `dM/dt` ：指标 `M` 基于时间的微分，即每秒的增量。
 
-**改善用户体验**：最常见的优化目标，在OLTP系统中，通常以降低查询平均响应时间作为优化目标。使用`dM/dc`：指标 `M` 基于调用次数的微分，即每次调用的增量。
+**改善用户体验**：最常见的优化目标，在OLTP系统中，通常以降低查询平均响应时间作为优化目标。使用 `dM/dc`：指标 `M` 基于调用次数的微分，即每次调用的增量。
 
 **平衡工作负载**：确保不同查询组之间的资源使用/性能表现的比例关系得当。使用 `M%`，即某一类查询指标占总数的比例。
 
@@ -120,7 +114,7 @@ PGSQL 首屏是最核心的查询性能指标：QPS 与 RT —— 以及它们�
 
 ![query-qps-rt](query-qps-rt.webp)
 
-接下来，便是用于优化用户体验的 `dM/dc`类指标，这里的M指标包括：
+接下来，便是用于优化用户体验的 `dM/dc` 类指标，这里的M指标包括：
 
 - 每次查询平均返回的行数
 - 每次查询的平均执行时长
@@ -131,7 +125,7 @@ PGSQL 首屏是最核心的查询性能指标：QPS 与 RT —— 以及它们�
 
 ![query-dmc](query-dmc.webp)
 
-随后是用于**减少资源消耗**的 `dM/dt`类指标，这里的M指标基本同上，不同之处在于它是针对时间的微分而不是针对调用次数的微分：
+随后是用于 **减少资源消耗** 的 `dM/dt` 类指标，这里的M指标基本同上，不同之处在于它是针对时间的微分而不是针对调用次数的微分：
 
 ![query-dmt](query-dmt.webp)
 
@@ -140,8 +134,6 @@ PGSQL 首屏是最核心的查询性能指标：QPS 与 RT —— 以及它们�
 ![query-percent](query-percent.webp)
 
 除了上面三个 Dashboard 之外，Pigsty 也对许多其他面板进行了优化改进与问题修复。许多面板的信息栏现在会提供更详细的信息：这个面板展现了什么指标，用于解决什么问题，等等等。我们也引入了三个新的 Grafana 插件用于支持 CSV/JSON 数据源，以及变量面板。
-
-
 
 ------
 
@@ -152,9 +144,6 @@ Pigsty 的下一个版本是 v2.6.0 ，除了进一步巩固 Ubuntu/Debian 的�
 Pigsty 将提供基本的（主从，但没有HA） MySQL 安装部署支持，并提供基于 Grafana / Prometheus / MysqldExporter 的监控。因为 MySQL 5.7 将于本月 EOL，相信这样的能力会让更多的 MySQL 用户接触 PostgreSQL 并方便地迁移上来。
 
 此外，我们还会进一步探索 Infra 组件容器化，调研使用 VictoriaMetrics 默认替换 Prometheus，或者使用 Vector 与 VictoriaLogs 替代 Loki与Promtail 的可行性。并设计一个更加好用的管控命令行工具 pigsty-cli，对 Greenplum 7.0 的部署提供正式支持，当这些任务都完成后，Pigsty 就将迎来第三个大版本 v3 了。
-
-
-
 
 ------
 
@@ -206,8 +195,6 @@ Pigsty 将提供基本的（主从，但没有HA） MySQL 安装部署支持，�
 
 [Pigsty v1正式发布：开箱即用的PostgreSQL开源发行版](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484729&idx=1&sn=179c470fe4a80b22a8c2e96a3e191e6e&chksm=fe4b30e2c93cb9f4db6bb5e379b6fd5a489539e8e5db1e0080a1e7946d6f4eb83ad7647ce11d&scene=21#wechat_redirect)
 
-
-
 ### References
 
 `[1]` `pointcloud`: *https://github.com/pgpointcloud/pointcloud*
@@ -216,8 +203,6 @@ Pigsty 将提供基本的（主从，但没有HA） MySQL 安装部署支持，�
 `[4]` Ubuntu: *https://github.com/Vonng/pigsty/blob/master/files/pigsty/ubuntu.yml*
 `[5]` Debian: *https://github.com/Vonng/pigsty/blob/master/files/pigsty/debian.yml*
 `[6]` `ubuntu.yml`: *https://github.com/Vonng/pigsty/blob/master/files/pigsty/ubuntu.yml*
-
-
 
 ----------------
 
@@ -258,7 +243,6 @@ curl https://get.pigsty.cc/latest | bash
     - ferretdb 更新至 v0.12.1
     - sealos 更新至 4.3.5
     - Supabase 支持更新至 `20231013070755`
-
 
 **Ubuntu 支持说明**
 
@@ -305,9 +289,6 @@ e3f548a6c7961af6107ffeee3eabc9a7  pigsty-pkg-v2.5.0.debian11.x86_64.tgz
 cc3af3b7c12f98969d3c6962f7c4bd8f  pigsty-pkg-v2.5.0.ubuntu20.x86_64.tgz
 c5b2b1a4867eee624e57aed58ac65a80  pigsty-pkg-v2.5.0.ubuntu22.x86_64.tgz
 ```
-
-
-
 
 ----------------
 

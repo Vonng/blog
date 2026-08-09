@@ -20,23 +20,15 @@ tags: [Pigsty]
 
 明人不说暗话，这是一个很有野心的目标：**推翻云数据库垄断，砸烂 RDS 的饭碗！详见：《[云数据库是不是智商税？](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485269&idx=1&sn=a46b8b218331ece956c336b5c2a8df79&chksm=fe4b328ec93cbb98434b258ed1bfa6c63aecd0f3675002db75520edd21456eb39e97455fe995&scene=21#wechat_redirect)》**
 
-
-
-
-
-
-
 ![intro](intro.webp)
-
-
 
 # 2.0 新特性
 
-Pigsty 是一个**更好的、本地优先**的，**开源** **RDS for PostgreSQL** **替代。**
+Pigsty 是一个 **更好的、本地优先** 的，**开源** **RDS for PostgreSQL** **替代。**
 
 ![features](features.webp)
 
-## 强力的发行版 
+## 强力的发行版
 
 **彻底释放世界上最先进的关系型数据库的力量!**
 
@@ -47,8 +39,6 @@ Pigsty 深度整合了 PostgreSQL 生态的三大核心扩展插件 **PostGIS**�
 在 Pigsty 中功能组件被抽象 **模块**，可以自由组合以应对多变的需求场景。**`INFRA`** 模块带有完整的现代监控技术栈，而 `NODE` 模块则将节点调谐至指定状态并纳入监控。在多个节点上安装 **`PGSQL`** 模块会自动组建出一个基于主从复制的高可用数据库集群，而同样的 **`ETCD`** 模块则为数据库高可用提供共识与元数据存储。可选的 **`MINIO`** 模块可以用作图像视频等大文件存储并可选用为数据库备份仓库。与 PG 有着极佳相性的 **`REDIS`** 亦为 Pigsty 所支持，更多的模块（如 **`GPSQL`**, **`MYSQL`**, **`KAFKA`**）将会在后续加入，你也可以开发自己的模块并自行扩展 Pigsty 的能力。
 
 ![modules](modules.webp)
-
-
 
 ## 惊艳的观测能力
 
@@ -122,13 +112,7 @@ Pigsty 是完全开源免费的自由软件，它允许您在缺乏数据库专�
 
 Pigsty 本身旨在用数据库自动驾驶软件，替代大量无趣的人肉数据库运维工作，但再好的软件也没法解决所有的问题。总会有一些的冷门低频疑难杂症需要专家介入处理。这也是为什么我们也提供专业的订阅服务，来为有需要的企业级用户使用 PostgreSQL 提供兜底。几万块的订阅咨询费不到顶尖 DBA 每年工资的几十分之一，让您彻底免除后顾之忧，把成本真正花在刀刃上。当然对于社区用户，我们亦用爱发电，提供免费的支持与日常答疑。
 
-
-
 ![opensource](opensource.webp)
-
-##  
-
-
 
 # 2.0 快速上手
 
@@ -141,8 +125,6 @@ curl -fsSL http://download.pigsty.cc/get) | bash
 如果互联网访问受限，您可以提前从 Github 或 CDN 下载对应操作系统的离线软件包进行离线安装。监控系统部分提供公开的 Demo：**http://demo.pigsty.cc 。**
 
 ![demo](demo.webp)
-
-
 
 ----------------
 
@@ -177,19 +159,17 @@ curl -L https://github.com/Vonng/pigsty/releases/download/v2.0.0/pigsty-pkg-v2.0
 
 </details>
 
-
 ## 亮点
 
 * 完美整合 PostgreSQL 15, PostGIS 3.3, Citus 11.2, TimescaleDB 2.10，分布式地理时序超融合数据库。
 * OS兼容性大幅增强：支持 EL7，8，9，以及 RHEL, CentOS, Rocky, OracleLinux, AlmaLinux等兼容发行版。
 * 安全性改进：自签名CA，全局网络流量SSL加密，密码scram-sha-256认证，备份采用AES加密，重制的HBA规则系统。
 * Patroni升级至3.0，提供原生的高可用 Citus 分布式集群支持，默认启用FailSafe模式，无惧DCS故障致全局主库瘫痪。
-* 提供基于 pgBackRest 的开箱即用的时间点恢复 PITR 支持，默认支持本地文件系统与专用MinIO/S3集群备份。 
+* 提供基于 pgBackRest 的开箱即用的时间点恢复 PITR 支持，默认支持本地文件系统与专用MinIO/S3集群备份。
 * 新模块 `ETCD`，可独立部署，简易扩缩容，自带监控高可用，彻底取代 Consul 作为高可用 PG 的 DCS。
 * 新模块 `MINIO`，可独立部署，支持多盘多节点部署，用作S3本地替代，亦用于集中式 PostgreSQL 备份仓库。
 * 大幅精简配置文件参数，无需默认值即可使用；模板自动根据机器规格调整主机与PG参数，HBA/服务的定义更简洁泛用。
 * 受 Grafana 与 MinIO 影响，软件协议由 Apache License 2.0 变更为 AGPL 3.0
-
 
 ## 兼容性
 
@@ -203,7 +183,7 @@ curl -L https://github.com/Vonng/pigsty/releases/download/v2.0.0/pigsty-pkg-v2.0
   * 提供原生的高可用 Citus 分布式集群支持。使用完全开源所有功能的 Citus 11.2。
   * 默认启用FailSafe模式，无惧DCS故障致全局主库瘫痪。
 * `PGSQL`: 引入 pgBackrest v2.44 提供开箱即用的 PostgreSQL 时间点恢复 PITR 功能
-  * 默认使用主库上的备份目录创建备份仓库，滚动保留两天的恢复窗口。 
+  * 默认使用主库上的备份目录创建备份仓库，滚动保留两天的恢复窗口。
   * 默认备选备份仓库为专用 MinIO/S3 集群，滚动保留两周的恢复窗口，本地使用需要启用 MinIO 模块。
 * `ETCD` 现在作为一个独立部署的模块，带有完整的扩容/缩容方案与监控。
 * `MINIO` 现在成为一个独立部署的模块，支持多盘多节点部署，用作S3本地替代，亦可用作集中式备份仓库。
@@ -222,15 +202,14 @@ curl -L https://github.com/Vonng/pigsty/releases/download/v2.0.0/pigsty-pkg-v2.0
   * HAProxy 2.7 / Etcd 3.5 / MinIO 20230131022419 / mcli 20230128202938
   * Prometheus 2.42 / Grafana 9.3 / Loki & Promtail 2.7 / Node Exporter 1.5
 
-
 ## 安全性
 
 * 启用了一个完整的本地自签名CA：`pigsty-ca`，用于签发内网组件所使用的证书。
 * 创建用户/修改密码的操作将不再会在日志文件中留下痕迹。
-* Nginx 默认启用 SSL 支持（如需HTTPS，您需要在系统中信任`pigsty-ca`，或使用Chrome `thisisunsafe`）
+* Nginx 默认启用 SSL 支持（如需HTTPS，您需要在系统中信任 `pigsty-ca`，或使用Chrome `thisisunsafe`）
 * ETCD 全面启用 SSL 加密客户端与服务端对等通信
 * PostgreSQL 添加并默认启用了 SSL 支持，管理链接默认都使用SSL访问。
-* Pgbouncer 添加了 SSL 支持，出于性能考虑默认不启用。 
+* Pgbouncer 添加了 SSL 支持，出于性能考虑默认不启用。
 * Patroni 添加了 SSL 支持，并默认限制了管理 API 只能从本机与管理节点使用密码认证方可访问。
 * PostgreSQL 的默认密码认证方式由 `md5` 改为 `scram-sha-256`。
 * Pgbouncer添加了认证查询支持，可以动态管理连接池用户。
@@ -238,11 +217,10 @@ curl -L https://github.com/Vonng/pigsty/releases/download/v2.0.0/pigsty-pkg-v2.0
 * 提供高安全等级配置模板：强制使用全局 SSL，并要求使用管理员证书登陆。
 * 所有默认HBA规则现在全部在配置文件中显式定义。
 
-
 ## 可维护性
 
 * 现有的配置模板可根据机器规格（CPU/内存/存储）自动调整优化。
-* 现在可以动态配置 Postgres/Pgbouncer/Patroni/pgBackRest 的日志目录：默认为：`/pg/log/<type>/` 
+* 现在可以动态配置 Postgres/Pgbouncer/Patroni/pgBackRest 的日志目录：默认为：`/pg/log/<type>/`
 * 原有的 IP 地址占位符 `10.10.10.10` 被替换为一个专用变量：`${admin_ip}`，可在多处引用，便于切换备用管理节点。
 * 您可以指定 `region` 来使用不同地区的上游镜像源，以加快软件包的下载速度。
 * 现在允许用户定义更细粒度的上游源地址，您可以根据不同的EL版本、架构，以及地区，使用不同的上游源。
@@ -253,7 +231,6 @@ curl -L https://github.com/Vonng/pigsty/releases/download/v2.0.0/pigsty-pkg-v2.0
 * 添加了一系列专用 Shell 实用命令，封装常见运维操作，方便用户使用。
 * 优化了所有 Ansible Role 的实现，使其更加简洁、易读、易维护，无需默认参数即可使用。
 * 允许在业务数据库/用户的层次上定义额外的 Pgbouncer 参数。
-
 
 ## API变更
 
@@ -362,7 +339,6 @@ Pigsty v2.0 进行了大量变更，新增64个参数，移除13个参数，重�
 - `node_packages_meta_pip`    -> `infra_packages_pip`
 - `node_data_dir`             -> `node_data`
 
-
 **Checksums**
 
 ```
@@ -372,9 +348,6 @@ MD5 (pigsty-pkg-v2.0.0-rc1.el9.x86_64.tgz) = 1362e2a5680fc1a3a014cc4f304100bd
 ```
 
 特别感谢意大利用户 @alemacci 在 SSL加密，备份，多操作系统发行版适配与自适应参数模版上的贡献！
-
-
-
 
 ----------------
 
@@ -405,17 +378,15 @@ https://github.com/Vonng/pigsty/releases/tag/v2.0.1
 - 将 Aliyun terraform 镜像从 centos 7.9 提升到 rocky Linux 9
 - 将 bytebase 版本升级到 v1.14.0
 
-
 **BUG修复**
 
 * 为 alertmanager 添加缺失的 advertise 地址。
-* 解决使用 `bin/pgsql-user` 创建数据库用户时，`pg_mode` 变量缺失问题。 
+* 解决使用 `bin/pgsql-user` 创建数据库用户时，`pg_mode` 变量缺失问题。
 * 在 `redis.yml` 中为 Redis 集群加入任务添加 `-a password` 选项。
 * 在 `infra-rm.yml`.`remove infra data` 任务中补充缺失的默认值。
 * 修复 prometheus 监控对象定义文件的属主为 `prometheus` 用户。
 * 使用 管理员用户 而不是 root 去删除 DCS 中的元数据。
 * 修复了由 grafana 9.4 bug 导致的问题：Meta数据源缺失。
-
 
 **注意事项**
 
@@ -438,9 +409,6 @@ MD5 (pigsty-pkg-v2.0.1.el9.x86_64.tgz) = 055057cebd93c473a67fb63bcde22d33
 ```
 
 特别感谢 [@cocoonkid](https://github.com/cocoonkid) 提供的反馈。
-
-
-
 
 ----------------
 
@@ -466,7 +434,7 @@ https://github.com/Vonng/pigsty/releases/tag/v2.0.2
 * 更新 bytebase 版本至 v1.15.0
 * 更新监控面板并修复死链接
 * 更新了阿里云 Terraform 模板，默认使用 RockyLinux 9
-* 使用 Grafana v9.4 的 Provisioning API 
+* 使用 Grafana v9.4 的 Provisioning API
 * 为众多管理任务添加了 asciinema 视频
 * 修复了 EL8 PostgreSQL 的破损依赖：移除 anonymizer_15 faker_15 pgloader
 

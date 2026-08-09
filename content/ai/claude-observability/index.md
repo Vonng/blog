@@ -44,9 +44,7 @@ export OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE=cumulative
 
 > 你可以放在 `.bash_profile` / `/etc/profile.d/claude.sh` 或者直接写入 `~/.claude/settings.json` 的 `env` 字段。
 
-
 难点在于：我去哪找这么一个监控系统和 Grafana 呢？后来我看见这么多人都有需求，就干脆做了一个开箱即用的配置模板。
-
 
 --------
 
@@ -59,7 +57,6 @@ export OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE=cumulative
 实际上，如果你已经会用 Claude Code，并不需要了解太多细节。你只要告诉它有这么个东西、能干这么个事，并给它准备一台虚拟机，剩下的事它都能帮你自动搞定。我看有人评论留言就是这么说的，哈哈！
 
 ![用户部署反馈](tweet-user-feedback.webp)
-
 
 ## 监控事件说明
 
@@ -96,7 +93,7 @@ API Request 事件有几个核心字段：Cost 是开销，然后是四个 Token
 
 ## 沙箱环境
 
-当然，老冯也知道「授人以**鱼**不如授人以**渔**」，但光说原理没用，干脆直接把东西做好给你算了。所以我做了一个开箱即用的沙箱环境，里面包含了一套完整的 Victoria 监控系统与 Grafana 监控大盘，随便找台 1C2G 的 Linux 虚拟机几分钟就能装好。
+当然，老冯也知道「授人以 **鱼** 不如授人以 **渔**」，但光说原理没用，干脆直接把东西做好给你算了。所以我做了一个开箱即用的沙箱环境，里面包含了一套完整的 Victoria 监控系统与 Grafana 监控大盘，随便找台 1C2G 的 Linux 虚拟机几分钟就能装好。
 
 这个沙箱除了监控 Claude Code，还可以干很多有趣的事情。最主要的是，它已经替你配置好了常用的 Web Coding 工具：Claude Code、VS Code、Open Code。里面自带 PostgreSQL 和 Nginx，所以如果你需要一个云服务器开发环境，也可以试试。
 

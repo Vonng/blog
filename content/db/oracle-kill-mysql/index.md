@@ -17,7 +17,6 @@ tags: [数据库, MySQL, Oracle, 技术评论, 翻译]
 >
 > 译者：Vonng，Pigsty 作者，PostgreSQL 专家与布道师。下云倡导者，数据库下云实践者。
 
-
 然而实际上，Oracle 最终把 MySQL 管理得还不错。MySQL 团队基本都保留下来了，由 MySQL 老司机 Tomas Ulin 掌舵。MySQL 也变得更稳定、更安全。许多技术债务也解决了，许多现代开发者想要的功能也有了，例如 JSON支持和高级 SQL 标准功能的支持。
 
 虽然确实有 [“MySQL企业版”](https://www.mysql.com/products/enterprise/) 这么个东西，但它实际上关注的是开发者不太在乎的企业需求：可插拔认证、审计、防火墙等等。虽然也有专有的 GUI 图形界面、监控与备份工具（例如 MySQL 企业监控），但业内同样有许多开源和商业软件竞争者，因此也说不上有特别大的供应商锁定。
@@ -52,8 +51,6 @@ MySQL Heatwave 引入了许多 MySQL 社区版或企业版中没有的功能，�
 
 无论如何，除非甲骨文转变其关注点，顾及现代开发者对关系数据库的需求，否则 MySQL 迟早要完 —— 无论是被 Oracle 的行为杀死，还是被 Oracle 的不作为杀死。
 
-
-
 --------
 
 ## 参考阅读
@@ -71,4 +68,3 @@ MySQL Heatwave 引入了许多 MySQL 社区版或企业版中没有的功能，�
 [Postgres vs MySQL: the impact of CPU overhead on performance](https://smalldatum.blogspot.com/2023/10/postgres-vs-mysql-impact-of-cpu.html)
 
 [Perf regressions in MySQL from 5.6.21 to 8.0.36 using sysbench and a small server](https://smalldatum.blogspot.com/2024/02/perf-regressions-in-mysql-from-5621-to.html)
-

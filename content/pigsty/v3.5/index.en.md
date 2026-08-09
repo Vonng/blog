@@ -20,7 +20,6 @@ Pigsty v3.5 is officially released. The project has crossed the **4,000+ Star** 
 
 This version brings a brand-new documentation website, full-platform support for OrioleDB and OpenHalo kernels, Supabase self-hosting optimizations, monitoring system and architecture improvements, PostgreSQL 18 Beta support, routine PG minor version updates, and Apple ARM Vagrant support.
 
-
 --------
 
 ## What is Pigsty?
@@ -31,7 +30,6 @@ Pigsty is a batteries-included PostgreSQL distribution that works like "self-dri
 
 ![](arch-2.jpg)
 
-
 --------
 
 ## PostgreSQL 18 Support
@@ -41,7 +39,6 @@ PostgreSQL 18 Beta1 has been released, with the stable version coming in Septemb
 ![](pg18.jpg)
 
 Pigsty provides a new `pg18` configuration template for spinning up highly available RDS based on the PostgreSQL 18 Beta1 kernel. [pg_exporter](https://github.com/pgsty/pg_exporter) has just released version 1.0, with complete coverage of PG 18's new monitoring metrics. Users can also use the `pig` package manager to install PG 18 and corresponding PGDG extensions with a single command.
-
 
 --------
 
@@ -57,7 +54,6 @@ Pigsty's "enterprise-grade" Supabase self-hosting capability has been well-recei
 
 Supabase-related extension versions and Docker image versions have also been updated.
 
-
 --------
 
 ## OpenHalo and OrioleDB Full-Platform Support
@@ -65,7 +61,6 @@ Supabase-related extension versions and Docker image versions have also been upd
 The [OpenHalo](https://github.com/HaloTech-Co-Ltd/openHalo) kernel provides MySQL compatibility on top of PG 14, while the [OrioleDB](https://github.com/orioledb/orioledb) kernel provides a cloud-native, bloat-free PostgreSQL version. In v3.4, only RPM packages were provided — now they're fully available across all ten supported Linux systems.
 
 OrioleDB has been acquired by Supabase and recently released its 11th Beta version. Although it hasn't yet become Supabase's default PG kernel fork, Pigsty is prepared in advance — ensuring seamless follow-up once Supabase decides to switch from vanilla PG to OrioleDB.
-
 
 --------
 
@@ -81,7 +76,6 @@ The new extension encyclopedia website is now live, more beautiful and comprehen
 
 ![](ext-site.jpg)
 
-
 --------
 
 ## New Documentation Site
@@ -91,7 +85,6 @@ The Pigsty documentation site has been rebuilt with Next.js, stepping from stati
 ![](doc-site.jpg)
 
 Not only has the form been completely renovated, but the content has been thoroughly rewritten and reorganized for version 3.5, with extensive outdated information cleaned up. Currently only available in English — Simplified Chinese support coming soon.
-
 
 --------
 
@@ -115,7 +108,6 @@ Refactored pgsql-rm.yml playbook tasks:
 
 ![](pgsql-rm-tasks.jpg)
 
-
 --------
 
 ## CLI Improvements
@@ -125,7 +117,6 @@ The `pig` command-line tool adds a new `do` subcommand, which can replace the wr
 ![](pig-cli.jpg)
 
 Currently in pilot phase with API not yet finalized — documentation planned after a period of refinement.
-
 
 --------
 
@@ -139,7 +130,6 @@ Analysis was performed on AWR requirements from Oracle DBA users: most metrics a
 
 The PG kernel itself only provides current active wait states, with no historical wait event records. This can only be achieved through extensions — both `pg_wait_sampling` and `pgsentinel` provide this functionality, and monitoring dashboards now support wait event analysis.
 
-
 --------
 
 ## Apple Vagrant Support
@@ -149,7 +139,6 @@ Pigsty provides Vagrant/Terraform sandbox templates, allowing users to easily sp
 ![](vagrant.jpg)
 
 While not all Vagrant Boxes provide ARM64 on VirtualBox support, the main EL9 and Ubuntu 24.04 are supported. This means users can smoothly spin up virtual machines and run Pigsty on Apple MacBook (whether Intel or M-series ARM architecture).
-
 
 --------
 
@@ -167,8 +156,6 @@ The next version may be v3.6 or v4.0. Pigsty v4.0 is expected to release alongsi
 | License | Consider releasing an Apache-licensed lightweight version |
 
 ![](featured.jpg)
-
-
 
 --------
 --------

@@ -9,7 +9,6 @@ tags: [PostgreSQL, PG生态, 扩展]
 
 一个 Issue ，引发扩展马拉松；32 个新扩展告诉你，PostgreSQL 正在变成什么；504 个扩展，PostgreSQL 生态的天花板在哪？
 
-
 --------
 
 ## 从一个化学扩展说起
@@ -31,7 +30,6 @@ tags: [PostgreSQL, PG生态, 扩展]
 ![rdkit2.webp](rdkit2.webp)
 
 说实话，看到这种反馈挺开心的。做开源最爽的就是这个时候。
-
 
 ---------
 
@@ -59,7 +57,6 @@ tags: [PostgreSQL, PG生态, 扩展]
 
 这是啥概念？一般 RDS PG 上也就是几十个扩展。比如最近火爆的 Supabase 上，去掉 PG 自带的的 35 个 Contrib 扩展，实际上也就提供了 30 个不到的第三方 PG 扩展。
 
-
 ------
 
 ## 新扩展
@@ -78,13 +75,11 @@ tags: [PostgreSQL, PG生态, 扩展]
 
 这就是 PostgreSQL 极致可扩展性的魅力所在。
 
-
 --------
 
 # 新扩展大观园
 
 这次新加入了 32 个新扩展，下面的部分是请 Claude/Codex/Gemini 三剑客进行研究汇总摘要，用于帮助读者快速了解每个扩展的核心功能、技术实现和适用场景。
-
 
 -------
 
@@ -94,7 +89,7 @@ tags: [PostgreSQL, PG生态, 扩展]
 
 RDKit 是开源化学信息学领域的事实标准库，由 Greg Landrum 发起（最初在 Novartis，现属 T5 Informatics），其 PostgreSQL cartridge 模块将分子结构存储、子结构检索和相似性计算直接带入关系数据库。对于制药公司和化学研究机构而言，这意味着可以用标准 SQL 查询数百万化合物，无需借助外部工具链。
 
-RDKit cartridge 引入了两组核心数据类型：**`mol`**（分子）和 **`qmol`**（查询分子，即 SMARTS 模式），以及 `bfp`/`sfp`（位指纹/稀疏指纹）。操作符方面，`@>` 用于子结构匹配，`%` 用于 Tanimoto 相似性判断，`<%>` 作为距离运算符。所有这些操作都可以通过 **GiST 索引**加速——索引内部基于指纹筛选进行快速预过滤，再做精确匹配。关键函数包括 `mol_from_smiles()`、`morganbv_fp()`（Morgan 指纹）、`tanimoto_sml()` 等，配合 `rdkit.tanimoto_threshold` 等 GUC 参数可以调节检索灵敏度。
+RDKit cartridge 引入了两组核心数据类型：**`mol`**（分子）和 **`qmol`**（查询分子，即 SMARTS 模式），以及 `bfp`/`sfp`（位指纹/稀疏指纹）。操作符方面，`@>` 用于子结构匹配，`%` 用于 Tanimoto 相似性判断，`<%>` 作为距离运算符。所有这些操作都可以通过 **GiST 索引** 加速——索引内部基于指纹筛选进行快速预过滤，再做精确匹配。关键函数包括 `mol_from_smiles()`、`morganbv_fp()`（Morgan 指纹）、`tanimoto_sml()` 等，配合 `rdkit.tanimoto_threshold` 等 GUC 参数可以调节检索灵敏度。
 
 以 ChEMBL 数据库（187 万化合物）为例：
 
@@ -113,10 +108,9 @@ ORDER BY morganbv_fp(mol_from_smiles('c1ccccc1C(=O)NC'::cstring)) <%> mfp2;
 SELECT * FROM rdk.mols WHERE m @> 'c1[o,s]ncn1'::qmol LIMIT 500;
 ```
 
-应用场景集中在药物研发的几个关键环节：**先导化合物骨架搜索**（在百万级化合物库中做子结构匹配）、**SAR 分析**（通过相似性检索寻找活性类似物）、**化合物注册系统**（利用结构指纹做重复性检查）、以及**商业化合物目录检索**（如 eMolecules 的 600 万+化合物数据集）。
+应用场景集中在药物研发的几个关键环节：**先导化合物骨架搜索**（在百万级化合物库中做子结构匹配）、**SAR 分析**（通过相似性检索寻找活性类似物）、**化合物注册系统**（利用结构指纹做重复性检查）、以及 **商业化合物目录检索**（如 eMolecules 的 600 万+化合物数据集）。
 
-工程落地时需要注意：cartridge 的重点不在"能不能算"，而在"能不能被索引、能不能被 planner 正确利用"。索引策略与查询模板需要提前固定下来，否则很容易写出正确但慢的结构过滤。在 187 万化合物上子结构检索耗时在 88ms 至 1900ms 之间，经过优化可以处理 **600 万+化合物**规模的数据集。BSD 许可证，Docker 镜像（如 `mcs07/postgres-rdkit`）和 conda 安装均已就绪。
-
+工程落地时需要注意：cartridge 的重点不在"能不能算"，而在"能不能被索引、能不能被 planner 正确利用"。索引策略与查询模板需要提前固定下来，否则很容易写出正确但慢的结构过滤。在 187 万化合物上子结构检索耗时在 88ms 至 1900ms 之间，经过优化可以处理 **600 万+化合物** 规模的数据集。BSD 许可证，Docker 镜像（如 `mcs07/postgres-rdkit`）和 conda 安装均已就绪。
 
 -------
 
@@ -147,14 +141,13 @@ ProvSQL 适合四类场景：**安全分级传播**——查询结果自动继�
 
 ProvSQL 的价值往往体现在"可组合性"：溯源结果不是字符串日志，而是可以继续被函数处理的对象。建议用于关键链路（核心报表/模型特征/合规计算），而非全库无差别开启。C/C++ 实现（依赖 Boost 库），溯源电路存储在共享内存中。支持 PG 10–18，MIT 许可证。
 
-
 -------
 
 ## 3. one_sparse: 在 SQL 里跑十亿边级图算法
 
 > [**`one_sparse`**](https://pigsty.cc/ext/e/onesparse) | [**GitHub**](https://github.com/OneSparse/OneSparse)
 
-OneSparse 将高性能稀疏线性代数带入 PostgreSQL，封装了 SuiteSparse:GraphBLAS 库。开发者 Michel Pelletier 是 GraphBLAS C API 委员会成员，顾问团队包括 SuiteSparse 作者 Timothy A. Davis 教授（SIAM/ACM/IEEE Fellow）。核心理念是**将图表示为稀疏矩阵**，用矩阵乘法实现 BFS、PageRank、三角中心性等图算法——而这一切都在 SQL 中完成。
+OneSparse 将高性能稀疏线性代数带入 PostgreSQL，封装了 SuiteSparse:GraphBLAS 库。开发者 Michel Pelletier 是 GraphBLAS C API 委员会成员，顾问团队包括 SuiteSparse 作者 Timothy A. Davis 教授（SIAM/ACM/IEEE Fellow）。核心理念是 **将图表示为稀疏矩阵**，用矩阵乘法实现 BFS、PageRank、三角中心性等图算法——而这一切都在 SQL 中完成。
 
 扩展引入了 `matrix`（稀疏矩阵）、`vector`（稀疏向量）、`scalar`、`semiring`、`monoid` 等数据类型，以及 `@`（矩阵乘法/plus_times 半环）等操作符。图算法方面内置了 BFS（层级和父节点两种模式）、PageRank、三角中心性、度中心性、单源最短路径等，均来自 LAGraph 库。技术上，它将 GraphBLAS 的不透明句柄封装在 PostgreSQL 的 Expanded Object Header 结构中，小图（<1GB）使用 TOAST 存储，大图支持 Large Object 或文件系统。内置 JIT 编译器支持 **NVIDIA CUDA GPU 加速**。
 
@@ -172,10 +165,9 @@ SELECT reduce_cols(cast_to(graph, 'int32')) AS degree FROM karate;
 SELECT pagerank(graph) FROM karate;
 ```
 
-在 GAP benchmark 上，对 **43 亿边**的图执行 BFS 时达到了 **每秒 70 亿+边**的吞吐量（48 核 AMD EPYC 服务器）。应用场景包括金融反欺诈（交易网络环检测）、社交网络分析、Graph RAG 等。不过，这类扩展是否"真好用"，取决于数据装载/序列化格式是否与现有管道匹配，以及算子能否与 SQL Planner/并行执行相处融洽——建议先用小规模样例把端到端链路跑通。
+在 GAP benchmark 上，对 **43 亿边** 的图执行 BFS 时达到了 **每秒 70 亿+边** 的吞吐量（48 核 AMD EPYC 服务器）。应用场景包括金融反欺诈（交易网络环检测）、社交网络分析、Graph RAG 等。不过，这类扩展是否"真好用"，取决于数据装载/序列化格式是否与现有管道匹配，以及算子能否与 SQL Planner/并行执行相处融洽——建议先用小规模样例把端到端链路跑通。
 
 OneSparse 要求 **PG 18 Beta 或更新版本**，当前处于 Alpha 阶段。Apache 2.0 许可证。
-
 
 -------
 
@@ -185,7 +177,7 @@ OneSparse 要求 **PG 18 Beta 或更新版本**，当前处于 Alpha 阶段。Ap
 
 pg_datasentinel 由 Datasentinel 公司的 Christophe Reveillère 开发，于 2026 年 4 月 10 日发布 1.0 版本。它为 PostgreSQL 添加了四大可观测性能力，填补了原生监控视图在容器化环境和运维预警方面的空白。
 
-第一，**扩展活动监控**：在 `pg_stat_activity` 基础上增加每个后端进程的内存使用量、实时临时文件字节数，以及在 PG 18+ 上显示当前执行计划 ID。第二，**容器资源可见性**：报告 CPU 配额、内存限制、当前内存使用和 CPU 压力，适用于 Docker、Kubernetes、OpenShift 或任何 cgroup 管理的环境。第三，**事务回卷风险预估**：追踪 XID 和 MXID 消耗速率，提供到 aggressive-vacuum 和回卷限制的**实时 ETA**。第四，**日志捕获视图**：将 vacuum、analyze、临时文件、checkpoint 事件记录到共享内存环形缓冲区，解析为结构化计数和计时信息，支持实时 SQL 查询。
+第一，**扩展活动监控**：在 `pg_stat_activity` 基础上增加每个后端进程的内存使用量、实时临时文件字节数，以及在 PG 18+ 上显示当前执行计划 ID。第二，**容器资源可见性**：报告 CPU 配额、内存限制、当前内存使用和 CPU 压力，适用于 Docker、Kubernetes、OpenShift 或任何 cgroup 管理的环境。第三，**事务回卷风险预估**：追踪 XID 和 MXID 消耗速率，提供到 aggressive-vacuum 和回卷限制的 **实时 ETA**。第四，**日志捕获视图**：将 vacuum、analyze、临时文件、checkpoint 事件记录到共享内存环形缓冲区，解析为结构化计数和计时信息，支持实时 SQL 查询。
 
 ```sql
 -- 查看每个后端的内存使用（扩展 pg_stat_activity）
@@ -201,8 +193,7 @@ SELECT xid_current, xid_limit, xid_eta_aggressive_vacuum, xid_eta_wraparound
 FROM pg_datasentinel_wraparound;
 ```
 
-对于在 Kubernetes 上运行 PostgreSQL 的团队，pg_datasentinel 提供了无需外部监控代理即可获得的容器级资源可见性。**XID 回卷预警**功能对运维尤为关键——众所周知，XID 回卷会导致数据库强制关闭，而 pg_datasentinel 通过追踪消耗速率提供预测性告警，将"救火"变为"防火"。3-Clause BSD 许可证，要求 PG 15+。
-
+对于在 Kubernetes 上运行 PostgreSQL 的团队，pg_datasentinel 提供了无需外部监控代理即可获得的容器级资源可见性。**XID 回卷预警** 功能对运维尤为关键——众所周知，XID 回卷会导致数据库强制关闭，而 pg_datasentinel 通过追踪消耗速率提供预测性告警，将"救火"变为"防火"。3-Clause BSD 许可证，要求 PG 15+。
 
 -------
 
@@ -210,11 +201,11 @@ FROM pg_datasentinel_wraparound;
 
 > [**`datasketches`**](https://pigsty.cc/ext/e/datasketches) | [**GitHub**](https://github.com/apache/datasketches-postgresql)
 
-Apache DataSketches 是 Apache 基金会项目（源自 Yahoo/Verizon Media），其 PostgreSQL 扩展将多种**近似分析数据结构（Sketch）** 引入 SQL 世界。核心问题很明确：在海量数据上做精确的 COUNT(DISTINCT)、分位数计算和频繁项统计太慢或太耗内存。
+Apache DataSketches 是 Apache 基金会项目（源自 Yahoo/Verizon Media），其 PostgreSQL 扩展将多种 **近似分析数据结构（Sketch）** 引入 SQL 世界。核心问题很明确：在海量数据上做精确的 COUNT(DISTINCT)、分位数计算和频繁项统计太慢或太耗内存。
 
 扩展提供七种 Sketch 类型：**`cpc_sketch`**（Compressed Probabilistic Counting）、**`hll_sketch`**（HyperLogLog）、**`theta_sketch`**（支持集合交并差运算的去重计数）、`aod_sketch`（Tuple sketch）、**`kll_float_sketch`/`kll_double_sketch`**（分位数估算）、`req_float_sketch`（尾部高精度分位数）、`frequent_strings_sketch`（频繁项）。每种 Sketch 都提供 `*_sketch_build()`、`*_sketch_union()`、`*_sketch_get_estimate()` 等标准接口。
 
-关键点不是"有个函数返回估计值"，而是 Sketch 作为**可序列化对象可以被聚合合并**，因此特别适合数据立方体式的近似指标：按维度切片预聚合 Sketch，查询时按任意维度组合做 union 即可得到去重数。Sketch 在内存中是**亚线性**的，且可跨语言（Java、C++、Python、Rust、Go）做二进制兼容序列化。
+关键点不是"有个函数返回估计值"，而是 Sketch 作为 **可序列化对象可以被聚合合并**，因此特别适合数据立方体式的近似指标：按维度切片预聚合 Sketch，查询时按任意维度组合做 union 即可得到去重数。Sketch 在内存中是 **亚线性** 的，且可跨语言（Java、C++、Python、Rust、Go）做二进制兼容序列化。
 
 ```sql
 -- 近似去重计数：比精确 COUNT(DISTINCT) 快约 6 倍
@@ -240,7 +231,6 @@ FROM (
 ```
 
 典型应用：**实时 UV 统计**——不存储用户 ID 即可跨时间窗口合并去重；**分布分析**——在数十亿事件上计算 p50/p95/p99 延迟而无需排序；**受众重叠分析**——用 Theta Sketch 的交集运算计算"看过广告 A 且访问过网站 B"的用户数。在 1 亿行数据上，CPC Sketch 的去重计数约 20 秒完成（精确 COUNT(DISTINCT) 约 2 分钟），相对误差在个位数百分比范围内。
-
 
 -------
 
@@ -273,14 +263,13 @@ SELECT pghydro.pghfn_calculatestrahlernumber();
 
 适用于国家级水文数据库管理、流域规划与编码、上下游污染影响分析（如确定某污染源上游的所有河段）、以及排水网络拓扑一致性验证。它更像一套专业领域的数据库内 ETL/分析流水线——数据在 PostGIS 中管理，分析过程可在 SQL 里自动化，当原始地形/河网数据更新时，按函数流水线重算比手动脚本更可靠。配合 QGIS 的 PgHydroTools 插件可实现可视化操作。完全用 PL/pgSQL 编写，GPLv2 许可证。
 
-
 -------
 
 ## 7. pg_stat_ch: ClickHouse 官方出品的 PostgreSQL 查询遥测
 
 > [**`pg_stat_ch`**](https://pigsty.cc/ext/e/pg_stat_ch) | [**GitHub**](https://github.com/ClickHouse/pg_stat_ch)
 
-pg_stat_ch 由 ClickHouse 公司开发并开源（2025 年 2 月，"Postgres Week at ClickHouse"活动），作者是 Kaushik Iska。与 pg_stat_statements 在 PostgreSQL 内部做聚合统计不同，pg_stat_ch 将**每条查询的原始执行事件**（包含 45 个字段、固定 4.6KB）实时流式导出到 ClickHouse，让所有聚合分析（p50/p95/p99、Top 查询、错误分析）在 ClickHouse 的分析引擎中完成。
+pg_stat_ch 由 ClickHouse 公司开发并开源（2025 年 2 月，"Postgres Week at ClickHouse"活动），作者是 Kaushik Iska。与 pg_stat_statements 在 PostgreSQL 内部做聚合统计不同，pg_stat_ch 将 **每条查询的原始执行事件**（包含 45 个字段、固定 4.6KB）实时流式导出到 ClickHouse，让所有聚合分析（p50/p95/p99、Top 查询、错误分析）在 ClickHouse 的分析引擎中完成。
 
 数据管道架构为：**PostgreSQL Hooks（前台）→ 共享内存环形缓冲区 → 后台 Worker → ClickHouse**。45 个遥测字段覆盖查询计时、行数、缓冲区使用、WAL 使用、CPU 时间、JIT 指标（PG15+）、并行 Worker 统计（PG18+）、客户端上下文（应用名、IP）、错误捕获（SQLSTATE 码）等。扩展使用 ClickHouse 原生二进制协议加 **LZ4 压缩**，静态链接 clickhouse-cpp 库。为避免对 PostgreSQL 造成背压，队列溢出时丢弃事件（计数器记录丢弃数）而非减慢数据库——与 StatsD 的设计哲学一致。
 
@@ -301,7 +290,6 @@ GROUP BY query_id ORDER BY p99_ms DESC LIMIT 10;
 ClickHouse 侧预置了四个物化视图：`events_recent_1h`（滚动 1 小时副本）、`query_stats_5m`（5 分钟桶 + TDigest 分位数）、`db_app_user_1m`（按数据库/应用/用户的负载归因）、`errors_recent`（7 天滚动错误窗口）。
 
 性能令人印象深刻：**p99 开销约 5μs/条**，在 pgbench 32 客户端 36.6K TPS 下，30 秒内捕获 770 万事件且零丢弃，对 TPS 影响 **<1%**（36,658 vs 36,913 基线）。三层锁争用最小化策略：原子溢出检查 → 非阻塞 LWLock 尝试 → 每后端本地缓冲区（每事务刷新，减少约 5 倍锁获取次数）。把 PostgreSQL 做成"事务系统"，ClickHouse 做成"遥测仓库"，职责分离，比从日志文件逆向解析稳定得多。支持 PG 16–18，Apache 2.0 许可证。
-
 
 -------
 
@@ -329,7 +317,6 @@ ORDER BY fused.score DESC LIMIT 20;
 
 这将原本需要 FULL OUTER JOIN + COALESCE 链 + 手动评分公式的 20+ 行 CTE 压缩为一个函数调用。应用场景覆盖 **RAG 混合检索**（语义搜索 + 全文搜索融合）、电商产品搜索、多信号文档排序等。把融合逻辑移到数据库侧，尤其当结果要继续 JOIN 业务表时，减少了应用层拼接与排序的开销。当前 v0.0.3，MIT 许可证。
 
-
 -------
 
 ## 9. pg_kazsearch: 哈萨克语全文检索的"从无到有"
@@ -338,7 +325,7 @@ ORDER BY fused.score DESC LIMIT 20;
 
 pg_kazsearch 是首个 PostgreSQL 哈萨克语全文检索扩展。哈萨克语是高度黏着语（agglutinative），一个词如 `мектептерімізде` 承载了复数、领属、位格等多层后缀，必须全部剥离才能到达词根 `мектеп`。现有的 PostgreSQL 或 Elasticsearch 分析器都无法处理这一点。
 
-扩展用 Rust（pgrx）实现，提供 `kazakh_cfg` 文本搜索配置和 `pg_kazsearch_dict` 词典。词干提取算法采用 **BFS 后缀剥离**，配合元音和谐验证和基于 Apertium-kaz 的 **21,863 个词性标注词根词典**防止过度词干化。运行时可通过 `ALTER TEXT SEARCH DICTIONARY` 调整权重参数。
+扩展用 Rust（pgrx）实现，提供 `kazakh_cfg` 文本搜索配置和 `pg_kazsearch_dict` 词典。词干提取算法采用 **BFS 后缀剥离**，配合元音和谐验证和基于 Apertium-kaz 的 **21,863 个词性标注词根词典** 防止过度词干化。运行时可通过 `ALTER TEXT SEARCH DICTIONARY` 调整权重参数。
 
 ```sql
 -- 词干提取
@@ -353,7 +340,6 @@ LIMIT 10;
 ```
 
 在 2,999 篇文章上的基准测试显示：查询延迟 **0.5ms**（比 pg_trgm 快 2.8 倍），nDCG@10 提升 25%，Recall@10 提升 23%。适用于哈萨克语新闻/政府文档检索、电商搜索等场景——在多语种系统里把"低资源语言"检索能力补齐，避免回退到粗糙的 trigram 模糊匹配。
-
 
 -------
 
@@ -380,14 +366,13 @@ ORDER BY 1;
 
 它还支持把本体谓词定义（如 `DefPred`）与 compound（如 `OntologyClaim@(...)`）结合，用 compound 携带溯源/置信信息，靠规则做 subclass closure 等推理。适合知识图谱查询、层级数据遍历（组织架构、分类树）、基于规则的业务逻辑系统等场景——当你不想引入独立图引擎时，用扩展把最关键的递归查询补上。完全用 PL/pgSQL 实现，无外部依赖，项目处于早期阶段。
 
-
 -------
 
 ## 11. logical_ddl: 让逻辑复制也能同步 DDL
 
 > [**`logical_ddl`**](https://pigsty.cc/ext/e/logical_ddl) | [**GitHub**](https://github.com/samedyildirim/logical_ddl)
 
-PostgreSQL 的逻辑复制只处理 DML（INSERT/UPDATE/DELETE），不处理 DDL（ALTER TABLE 等），这是运维中的一大痛点——表结构不同步会直接中断复制。logical_ddl 由 Samed Yildirim 开发，通过**事件触发器**拦截 DDL 命令，将其反解析并保存到可被逻辑复制传播的表中，订阅端接收后生成等效 SQL 并执行。
+PostgreSQL 的逻辑复制只处理 DML（INSERT/UPDATE/DELETE），不处理 DDL（ALTER TABLE 等），这是运维中的一大痛点——表结构不同步会直接中断复制。logical_ddl 由 Samed Yildirim 开发，通过 **事件触发器** 拦截 DDL 命令，将其反解析并保存到可被逻辑复制传播的表中，订阅端接收后生成等效 SQL 并执行。
 
 支持的 DDL 操作包括：ALTER TABLE RENAME TO/RENAME COLUMN/ADD COLUMN/ALTER COLUMN TYPE/DROP COLUMN。数据类型兼容性方面：内建类型、数组、复合/域/枚举类型可用，但这些类型的"定义复制"（如 CREATE TYPE）不在覆盖范围内。可通过 `logical_ddl.publish_tablelist` 按表和命令类型精细控制捕获范围。
 
@@ -405,7 +390,6 @@ VALUES ('my_table'::regclass, ARRAY['ADD COLUMN', 'DROP COLUMN']);
 ```
 
 适用于逻辑复制环境的自动化 DDL 同步、零停机迁移、多数据中心 PostgreSQL 架构等。把"DDL 同步"从流程管理变成可审计的数据流，降低复制事故概率。MIT 许可证，PGXN 可用。约束、索引、默认值等尚未实现。
-
 
 -------
 
@@ -435,16 +419,15 @@ SELECT * FROM dbpedia_query WHERE o = 'some_value' LIMIT 10;
 
 `rdf_fdw_clone_table()` 存储过程支持将外部表数据分批克隆到本地表。需要注意的是，实现层面会把拉取到的数据加载到内存再转换，面对大体量数据要谨慎评估内存与下推效果。适合关联数据集成（DBpedia、Wikidata）、用 SQL/BI 工具链直接消费 SPARQL 端点等场景。MIT 许可证，支持 PG 9.5–18。
 
-
 -------
 
 ## 13. pgbson: 比 JSONB 更精确的二进制文档类型
 
 > [**`pgbson`**](https://pigsty.cc/ext/e/pgbson) | [**GitHub**](https://github.com/buzzm/postgresbson)
 
-pgbson（postgresbson）由 buzzm 开发，为 PostgreSQL 引入原生 **BSON（Binary JSON）数据类型**。BSON 相比 JSON 提供了一等公民的 datetime、decimal128、int32/int64、binary 等类型，解决了 JSON 在分布式系统数据交换中的精度丢失和类型模糊问题，保证**二进制完美往返**（BSON in = BSON out）。
+pgbson（postgresbson）由 buzzm 开发，为 PostgreSQL 引入原生 **BSON（Binary JSON）数据类型**。BSON 相比 JSON 提供了一等公民的 datetime、decimal128、int32/int64、binary 等类型，解决了 JSON 在分布式系统数据交换中的精度丢失和类型模糊问题，保证 **二进制完美往返**（BSON in = BSON out）。
 
-核心 API 是两类访问方式：一类是高性能的 **dotpath 函数**——`bson_get_string(bson, 'd.recordId')`、`bson_get_datetime()`、`bson_get_decimal128()` 等，直接在底层结构上行走，只在终点分配内存；另一类是类似 JSON 的 `->` / `->>` 链式操作符，但每一步都要构造中间子结构，深层路径会放大成本。两者配合 B-Tree 和 HASH 索引，函数索引可实现 **10,000 倍**的查询加速（相对于顺序扫描）。输入端支持 EJSON 格式。
+核心 API 是两类访问方式：一类是高性能的 **dotpath 函数**——`bson_get_string(bson, 'd.recordId')`、`bson_get_datetime()`、`bson_get_decimal128()` 等，直接在底层结构上行走，只在终点分配内存；另一类是类似 JSON 的 `->` / `->>` 链式操作符，但每一步都要构造中间子结构，深层路径会放大成本。两者配合 B-Tree 和 HASH 索引，函数索引可实现 **10,000 倍** 的查询加速（相对于顺序扫描）。输入端支持 EJSON 格式。
 
 ```sql
 -- 插入带丰富类型的 EJSON 文档
@@ -463,7 +446,6 @@ SELECT (data->'d'->'amt'->>'$numberDecimal')::numeric FROM data_collection;
 
 典型场景包括跨语言事件/文档管道（Java → Kafka → Python → PostgreSQL）的精确类型保持、金融数据（decimal128 精确到分）、数字签名（BSON 的确定性二进制格式支持可靠哈希）等。MIT 许可证，支持 PG 14–18。
 
-
 -------
 
 ## 14. pg_when: 用自然语言描述时间
@@ -480,7 +462,6 @@ SELECT when_is('December 31, 2026 at evening');
 ```
 
 另有 `seconds_at()`、`millis_at()`、`micros_at()`、`nanos_at()` 返回 UNIX 时间戳的不同精度。这不是调度器，而是解析器。适用于面向运营/客服的"人类时间输入"落库、数据修复/回填脚本中用自然语言代替拼日期函数、以及统一时区处理等场景。MIT 许可证。
-
 
 -------
 
@@ -505,14 +486,13 @@ SELECT pgmqtt_add_inbound_mapping(
 
 IoT 场景尤其合适——无需外部中间件即可将数据库状态变化推送到边缘设备，或将传感器数据通过 MQTT 协议直接写入表。也适用于事件驱动架构中的轻量消息分发，减少应用层的 glue code。Elastic License 2.0。
 
-
 -------
 
 ## 16. pg_query_rewrite: 透明地偷梁换柱
 
 > [**`pg_query_rewrite`**](https://pigsty.cc/ext/e/pg_query_rewrite) | [**GitHub**](https://github.com/pierreforstmann/pg_query_rewrite)
 
-pg_query_rewrite 由 Pierre Forstmann 开发，利用 ProcessUtility hook 实现 SQL 语句的运行时透明替换。规则基于**精确字符串匹配**（大小写和空格敏感）存储在共享内存中。
+pg_query_rewrite 由 Pierre Forstmann 开发，利用 ProcessUtility hook 实现 SQL 语句的运行时透明替换。规则基于 **精确字符串匹配**（大小写和空格敏感）存储在共享内存中。
 
 ```sql
 -- 添加重写规则
@@ -526,7 +506,6 @@ SELECT pgqr_rules();
 ```
 
 这是一个"很锋利"的工具：不支持带参数的语句、最大长度约 32KB、匹配对大小写/空格/分号敏感、规则不持久化（重启丢失，需借助启动 SQL 机制恢复）。适用于数据库迁移期间对历史系统发出的固定 SQL 做透明重定向、危险查询临时拦截、查询 A/B 测试等。默认最多 10 条规则，支持 PG 9.5–18。
-
 
 -------
 
@@ -553,7 +532,6 @@ SELECT pgclone_database(
 
 适用于开发/测试环境快速搭建（含 DDL、索引）、生产到预发的"带脱敏克隆"、多库迁移与验证等。相比 pg_dump/pg_restore，它完全在数据库内部完成，简化了 DevOps 流程。
 
-
 -------
 
 ## 18. pgproto: 原生 Protobuf 支持
@@ -574,7 +552,6 @@ CREATE INDEX idx_pb ON items ((data #> '{Outer, inner, id}'::text[]));
 ```
 
 在 10 万行基准测试中，pgproto 存储仅 **16 MB**（JSONB 46 MB，原生关系 25 MB），全文档检索 **5.9ms**（关系模型 33.1ms 需多表 JOIN）。想保留 Protobuf 生态（RPC/消息）又希望数据库侧可索引可过滤时，这是一个有吸引力的选择。适合 IoT 数据存储、微服务事件仓库、gRPC 数据层等。PostgreSQL License。
-
 
 -------
 
@@ -599,7 +576,6 @@ SELECT fsql.render('user_count', '{"status":"active"}');
 
 这不是函数式 SQL，而是层次化模板引擎：目标是让你用 JSON 请求体驱动 SQL 生成，减少应用层代码分支。适用于动态报表生成、ETL 管道编排、多租户查询生成、以及把差异化 SQL 固化在模板表中配合权限管理等场景。
 
-
 -------
 
 ## 20. pg_dispatch: 基于 pg_cron 的异步 SQL 分发
@@ -614,7 +590,6 @@ SELECT pgdispatch.snooze('SELECT pg_sleep(20);', '20 seconds');
 ```
 
 TLE 兼容（纯 PL/pgSQL），可在 Supabase 和 AWS RDS 等沙盒环境使用。依赖 pg_cron >= 1.5。适合触发器/函数内的异步副作用（通知、异步汇总、写审计表等），避免长事务占用连接。
-
 
 -------
 
@@ -639,7 +614,6 @@ ORDER BY ts DESC;
 
 适用于托管/共享环境（防止租户用 COPY 导数据）、企业合规（统一拦截与审计）、ETL 权限收敛（通过 GUC/角色配置精确允许导入、阻断导出）。作者还维护了更全面的命令防火墙扩展 `pg_command_fw`。
 
-
 -------
 
 ## 22. pg_isok: 数据质量的"软告警"系统
@@ -663,7 +637,6 @@ INSERT INTO isok.isok_queries (query) VALUES (
 
 与硬约束（拒绝数据）不同，它允许存在可疑数据但持续追踪和管理——通过 `isok_queries` 和 `isok_results` 等表组织工作流，`run_isok_queries` 函数执行检查，逐行接受或延迟告警。适合"脏数据导入后逐步清理""业务规则模糊、需要人工裁决"的场景。能写 SQL 就能上线一套"告警 + 去重 + 延期"机制。
 
-
 -------
 
 ## 23. external_file: PostgreSQL 版的 Oracle BFILE
@@ -685,7 +658,6 @@ SELECT writeEfile(my_bytea_column, efilename('MY_DIR', 'output.bin')) FROM my_ta
 
 为 Ora2Pg 迁移场景量身定制，也适合"文件在库外、元数据在库内"的遗留系统，以及数据库侧管理外部大对象的批处理导入导出。
 
-
 -------
 
 ## 24. pg_byteamagic: 检测 bytea 的文件类型
@@ -704,14 +676,13 @@ FROM uploads GROUP BY 1 ORDER BY 2 DESC;
 
 当你不得不在表里存 bytea/BLOB 时，可以在 SQL 里识别这段二进制到底是 PDF、PNG 还是其它格式。适合附件/上传内容治理（识别真实类型、防止伪装）、Content-Type 自动识别、历史 BLOB 数据清理等。
 
-
 -------
 
 ## 25. pg_text_semver: 语义版本号的原生支持
 
 > [**`pg_text_semver`**](https://pigsty.cc/ext/e/pg_text_semver) | [**GitHub**](https://github.com/bigsmoke/pg_text_semver)
 
-pg_text_semver 由 Rowan Rodrik van der Molen 开发，基于 `text` DOMAIN 实现完全符合 Semantic Versioning 2.0.0 规范的版本类型。与 C 实现的 `semver` 扩展不同，它对版本号各部分**没有 32 位整数的大小限制**。
+pg_text_semver 由 Rowan Rodrik van der Molen 开发，基于 `text` DOMAIN 实现完全符合 Semantic Versioning 2.0.0 规范的版本类型。与 C 实现的 `semver` 扩展不同，它对版本号各部分 **没有 32 位整数的大小限制**。
 
 ```sql
 SELECT '0.9.3'::semver < '0.11.2'::semver;  -- true（语义比较，非字典序）
@@ -723,14 +694,13 @@ SELECT semver_parsed('1.0.0-a.1+commit-y');
 
 纯 SQL 实现，支持 min/max 聚合和 PGXN Version Range 检查。适用于扩展/包版本管理、依赖约束校验、版本分布统计等。
 
-
 -------
 
 ## 26. parray_gin: text[] 的子串匹配索引
 
 > [**`parray_gin`**](https://pigsty.cc/ext/e/parray_gin) | [**GitHub**](https://github.com/theirix/parray_gin)
 
-parray_gin 由 Eugene Seliverstov 开发，为 `text[]` 数组列提供基于 GIN 索引的**部分匹配**操作符。标准 PostgreSQL 的 GIN 数组操作符只支持精确元素匹配，parray_gin 新增的 `@@>` 操作符支持子串包含判断，底层基于 trigram 分解（复用 pg_trgm 的实现），并通过 recheck 处理 false positive。
+parray_gin 由 Eugene Seliverstov 开发，为 `text[]` 数组列提供基于 GIN 索引的 **部分匹配** 操作符。标准 PostgreSQL 的 GIN 数组操作符只支持精确元素匹配，parray_gin 新增的 `@@>` 操作符支持子串包含判断，底层基于 trigram 分解（复用 pg_trgm 的实现），并通过 recheck 处理 false positive。
 
 ```sql
 CREATE INDEX ON test_table USING gin (val parray_gin_ops);
@@ -743,7 +713,6 @@ SELECT * FROM test_table WHERE val @@> array['%ar%'];
 ```
 
 适合标签系统自动补全、模糊标签搜索等场景——让数组模糊匹配进入索引路径，替代应用层扫描。支持 PG 9.1–18。
-
 
 -------
 
@@ -760,7 +729,6 @@ SELECT gen_random_slug(19);    -- 纳秒精度
 ```
 
 注意这不是 URL slug 生成器（从标题转写），而是面向"安全短 ID"的方案。适合邀请码/短链接/公开资源 ID（避免自增 ID 暴露业务规模）、分布式写入（用时间戳维度做可控的无碰撞窗口）等。比 `base62(序列)` 更难预测。
-
 
 -------
 
@@ -782,7 +750,6 @@ SELECT pglock.ttl();
 ```
 
 无需外部依赖（Redis、ZooKeeper 等），适用于多实例应用抢占任务/资源（定时任务、幂等消费者）、Leader 选举、防止重复任务执行等场景。锁行为与业务写入可在同一数据库生态里治理。纯 SQL 实现。
-
 
 -------
 
@@ -841,7 +808,6 @@ SELECT pgcalendar.transition_event_schedule(
 
 "无限投影""多段 schedule 配置切换""例外处理"这类能力在排班、会议、计费周期等场景很常见，但靠应用层自己拼往往细节爆炸。把日程逻辑放数据库后，权限、审计与一致性约束更容易统一。
 
-
 -------
 
 ## 31. pg_variables: 比临时表更快的会话变量
@@ -870,14 +836,13 @@ SELECT * FROM pgv_select('pack', 'employees');
 
 作为临时表的高性能替代，避免了目录膨胀（catalog bloat）。适合复杂存储过程/批处理中保存中间状态、连接级信息缓存，也作为其它扩展的基础设施（如 pgelog 用它缓存 dblink 连接）。
 
-
 -------
 
 ## 32. pgelog: 回滚也丢不掉的日志
 
 > [**`pgelog`**](https://pigsty.cc/ext/e/pgelog) | [**GitHub**](https://github.com/anfiau/pgelog)
 
-pgelog 由 anfiau 开发，通过 dblink 实现**伪自治事务**，使日志记录在调用事务回滚时依然存活。这解决了 PL/pgSQL EXCEPTION 块中的日志在 ROLLBACK 后丢失的经典问题。dblink 连接通过 pg_variables 做会话级缓存优化。
+pgelog 由 anfiau 开发，通过 dblink 实现 **伪自治事务**，使日志记录在调用事务回滚时依然存活。这解决了 PL/pgSQL EXCEPTION 块中的日志在 ROLLBACK 后丢失的经典问题。dblink 连接通过 pg_variables 做会话级缓存优化。
 
 ```sql
 -- 即使外层事务回滚，日志依然保留
@@ -897,7 +862,6 @@ SELECT pgelog_set_param('pgelog_ttl_minutes', '2880');
 ```
 
 关键流程审计时，你不想因为业务事务回滚就丢失诊断线索。批处理/迁移脚本中，阶段性日志比单纯 RAISE NOTICE 更可查询。依赖 dblink 和 pg_variables 扩展，每个会话可能额外打开一个连接，需评估 `max_connections`。
-
 
 -------
 

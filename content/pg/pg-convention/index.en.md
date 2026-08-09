@@ -30,7 +30,6 @@ This article has compiled a development/operation and maintenance protocol based
 
 The first version of this article is mainly for PostgreSQL 9.4 - PostgreSQL 10. The latest version has been updated and adjusted for PostgreSQL 15/16.
 
-
 ------------
 
 ## 0x01 naming convention
@@ -137,14 +136,6 @@ The first version of this article is mainly for PostgreSQL 9.4 - PostgreSQL 10. 
 
 - Try your best to provide comments ( `COMMENT`) for various objects. Comments should be in English, concise and concise, and one line should be used.
 - When the object's schema or content semantics change, be sure to update the annotations to keep them in sync with the actual situation.
-
-
-
-
-
-
-
-
 
 ------
 
@@ -322,12 +313,6 @@ The first version of this article is mainly for PostgreSQL 9.4 - PostgreSQL 10. 
 - If a field to be indexed in a query has only a limited number of values, several corresponding partial indexes can also be established.
 - If the columns in some indexes are frequently updated, please pay attention to the expansion of these indexes.
 
-
-
-
-
-
-
 ------
 
 ## 0x03 Query Convention
@@ -346,7 +331,6 @@ The first version of this article is mainly for PostgreSQL 9.4 - PostgreSQL 10. 
 - Internet business scenario: Write requests must go through the main library and be accessed through the Primary service.
 - In principle, read requests go from the slave library and are accessed through the Replica service.
 - Exceptions: If you need "Read Your Write" consistency guarantees, and significant replication delays are detected, read requests can access the main library; or apply to the DBA to provide Standby services.
-
 
 **Separation of speed and slowness**
 
@@ -431,7 +415,7 @@ The first version of this article is mainly for PostgreSQL 9.4 - PostgreSQL 10. 
 
 - The result of logical judgment between null value and **any value** is null value, for example, `NULL=NULL`the return result is `NULL`not `TRUE/FALSE`.
 
-- For equality comparisons involving null values and non-null values, please use ``IS DISTINCT FROM ` `for comparison to ensure that the comparison result is not null.
+- For equality comparisons involving null and non-null values, use `IS DISTINCT FROM` to ensure the comparison result is not null.
 
 - NULL values and aggregate functions: When **all** input values are NULL, the aggregate function returns NULL.
 
@@ -485,17 +469,6 @@ rh 09 **Do not use count when judging the existence of a result.**
 **Use arrays instead of temporary tables**
 
 - Consider using an array instead of a temporary table, for example when obtaining corresponding records for a series of IDs. `=ANY(ARRAY[1,2,3])`Better than temporary table JOIN.
-
-
-
-
-
-
-
-
-
-
-
 
 ------
 

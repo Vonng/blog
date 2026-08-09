@@ -23,7 +23,6 @@ or if you're slightly more careful, you might pull a specific version like 17.6 
 Unless your image tag explicitly includes the Debian version number (like `17.6-bookworm`), recent minor version updates actually **smuggled in a major OS upgrade**.
 You think you're upgrading from 17.6 to 17.7, but you're also upgrading the underlying OS from Debian 12 to 13! This unplanned in-place upgrade will render your database indexes instantly obsolete! (Or worse!)
 
-
 ## What Actually Happened
 
 Docker's official PostgreSQL images are primarily based on Debian (they also offer Alpine versions, but most people use Debian).
@@ -42,10 +41,9 @@ Worst case? It could affect database constraints, data consistency, partitioned 
 The impact is massive. On DockerHub, the postgres image is one of the most downloaded — over a billion pulls total, about 17 million in the past week alone.
 Many users just `docker pull postgres` and call it a day. Even if you specified a PG version like 17.6, without the Debian version, you're still toast.
 
-
 ## Emergency Mitigation
 
-For those running Docker's "official" postgres containers in production, 
+For those running Docker's "official" postgres containers in production,
 my advice: immediately switch to images with locked PG + Debian versions (like 17.6-bookworm),
 at least before your next minor upgrade or re-pull. When upgrading, always use version tags like 17.7-bookworm.
 
@@ -58,8 +56,6 @@ I've covered this in ["Is running postgres in docker a good idea?"](/en/db/db-in
 ["Is Putting Databases in Docker a Good Idea?"](/en/db/pg-in-docker) — **The more complex your architectural juggling act, the harder you'll fall when things go wrong!**
 
 If you absolutely must use containers, find a decent third-party Docker Postgres image. Even that's better than this "official" amateur hour.
-
-
 
 ## Why Collation Matters
 
@@ -115,8 +111,6 @@ For pre-17 versions, we use the OS's C.UTF-8 collation, falling back to C if the
 
 The benefit: with built-in collation, no matter how the OS messes around, PostgreSQL sorting remains unaffected. Even if you upgrade the underlying OS, no index rebuilding or data corruption worries.
 
-
-
 ## "Official" ≠ "Reliable"
 
 What PostgreSQL experts consider "common sense best practices" clearly isn't that common.
@@ -129,7 +123,6 @@ This "official" refers to Docker's "official," not the PostgreSQL community. It'
 
 Ultimately, this so-called official image is an extremely crude wrapper: install via apt from PGDG APT repo, then run a hacky init script.
 This image works for POC, development, testing, and learning, but it's light-years away from production readiness.
-
 
 ## Production Databases Shouldn't Use Containers
 
@@ -150,8 +143,6 @@ For database veterans, it really feels like scratching an itch through a boot.
 Docker is indeed convenient. I use it for stateless services, batch compilation tasks, sometimes as cheap VMs for testing, or quick database feature testing.
 **But when it comes to production, I firmly say "no" to running databases in containers** (— Redis might be the only exception).
 
-
-
 ## How Should You Install PostgreSQL?
 
 So if not containers, how should you deploy PostgreSQL?
@@ -170,9 +161,9 @@ cd ~/pigsty && ./configure
 ./install.yml
 ```
 
-Currently, I provide native PostgreSQL kernels (6 major versions from PG 13-18) on Debian 12/13, Ubuntu 22/24, EL 8/9/10, ARM/x86 — 
+Currently, I provide native PostgreSQL kernels (6 major versions from PG 13-18) on Debian 12/13, Ubuntu 22/24, EL 8/9/10, ARM/x86 —
 14 mainstream Linux distributions, 8 different PG kernel flavors, nearly 100 ecosystem tools and 430 extensions.
-All packaged into one-click deployment with built-in monitoring, high availability, and PITR 
+All packaged into one-click deployment with built-in monitoring, high availability, and PITR
 — a production-grade solution. Plus, I maintain a China mirror of the official PGDG repository.
 
 [![platform.jpg](platform.jpg)](https://pgext.cloud/os)
@@ -191,7 +182,6 @@ OK, commercial's over. This post covered why you **shouldn't run PostgreSQL in c
 Next time, I'll detail PostgreSQL installation practices — **If not containers, how should I install PG!**
 
 ![featured.jpg](featured.jpg)
-
 
 ------
 

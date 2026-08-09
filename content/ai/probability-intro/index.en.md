@@ -29,8 +29,6 @@ Event: An event is a **set** of sample points.
 
 * $A\subset B$ is called A implies B, meaning every point of A is in B.
 
-
-
 ## 2. Foundations of Probability Theory
 
 Here we use an axiomatic method to **define** probability. As for how to **interpret** probability, such as "frequency of event occurrence" (frequentist school) or "belief in event occurrence" (Bayesian school), we don't concern ourselves with that here.
@@ -61,8 +59,6 @@ Non-negativity of probability, normalization of probability, countable additivit
 
 (PS: Statisticians usually don't accept the countable additivity axiom, only accepting its corollary: finite additivity axiom $P(A\cup B)=P(A)+P(B)$)
 
-
-
 ### 2.2 Probability Calculus
 
 Theorem: Let P be a probability function, $A,B \in \mathcal{B}$, then
@@ -77,9 +73,6 @@ Theorem: Let P be a probability function, $A,B \in \mathcal{B}$, then
 * For any partition $C_1,C_2,\cdots$, we have $\displaystyle P(A)= \sum_{i=1}^{\infty}{P(A \cap C_i)}$
 * For any sets $A_1,A_2,\cdots$ we have $\displaystyle P(\bigcup_{i=1}^{\infty}{A_i})  \le \sum_{i=1}^{\infty}{P(A_i)}$, Boole inequality.
 
-
-
-
 ### 2.3 Counting
 
 Counting involves much combinatorial analysis knowledge, all based on this theorem:
@@ -90,14 +83,10 @@ If a task consists of k mutually independent subtasks, where the i-th task can b
 
 The proof of this theorem can be derived from the definition and properties of Cartesian product operations.
 
-
-
 Two basic counting problems include:
 
 * Are samples ordered?
 * Is sampling with replacement?
-
-
 
 ##### Definition: Population/Subpopulation/Ordered sample
 
@@ -108,8 +97,6 @@ Two basic counting problems include:
 * Subpopulation: Selecting r elements from a population of size n constitutes a subpopulation of size r.
 
 * Numbering elements in a subpopulation gives an **ordered sample** of size r. There are $r!$ total ways.
-
-
 
 ##### Number of ways to select r objects from n objects
 
@@ -122,8 +109,6 @@ Two basic counting problems include:
 * Ordered without replacement: selecting ordered samples of size r from n populations, so $\binom n r \cdot r! = \frac {n!}{(n-r)!}$
 * Unordered without replacement is similar to ordered without replacement, except what's drawn is a subpopulation of size r rather than ordered sample
 * With replacement unordered sampling is most complex. Can be understood as placing r marks on n elements. Treating element boundaries as elements, n boxes have n+1 boundaries total, with r marks. Excluding the two side boundaries, there are n-1+r positions total. Choose r from these positions to place marks. So it's $\binom {n-1+r} r$
-
-
 
 ##### Common combinatorial problems
 
@@ -151,8 +136,6 @@ Two basic counting problems include:
 
   $\displaystyle \frac{\binom{m}{k} \binom{n-m}{r-k}}{\binom{n}{r}}$
 
-
-
 ## 3. Conditional Probability and Independence
 
 ##### Definition: Conditional probability
@@ -168,8 +151,6 @@ Intuitively this is easy to understand: the probability of AB occurring together
 
 Naturally, the probability of A occurring given B is: probability of AB occurring together divided by probability of B occurring. Here the sample points of event B constitute the new sample space, and P(A|B) must satisfy the three probability axioms, forming a probability function on the new sample space.
 
-
-
 ##### Theorem: Bayes' formula
 
 Let $A_1,A_2,\cdots$ be a partition of the sample space, B be any set, then for $i=1,2,\cdots$:
@@ -181,7 +162,6 @@ P(A_i | B) = \frac
 {\sum_{j=1}^{\infty}{P(B|A_j)P(A_j)}}
 $$
 
-
 ##### Definition: Statistical independence
 
 Events A and B are called statistically independent if $P(A \cap B) = P(A)P(B)$
@@ -192,7 +172,6 @@ $$
 \displaystyle
 P( \bigcap_{j=1}^{k}{A_{i_j}}) = \prod_{j=1}^{k}P(A_{i_j})
 $$
-
 
 ## 4. Random Variables
 
@@ -232,8 +211,6 @@ The cumulative distribution function of random variable X, denoted $F_X(x)$, rep
 
 The distribution of X is $F_X$, which can be abbreviated as: $X \sim  F_X(x)$, where "~" reads as "is distributed as."
 
-
-
 ##### Example: Coin toss
 
 Simultaneously toss three coins, let X = number of heads up, then X's cumulative distribution function is a step function:
@@ -253,8 +230,6 @@ $$
 
 From the definition of cumulative distribution function, $F_X(x)$ is **right-continuous**.
 
-
-
 ##### Properties: Cumulative distribution function
 
 Function $F(x)$ is a cumulative distribution function if and only if it simultaneously satisfies the following three conditions:
@@ -263,17 +238,11 @@ Function $F(x)$ is a cumulative distribution function if and only if it simultan
 * $F(x)$ is a monotonically increasing function of $x$
 * $F(x)$ is right-continuous: $\displaystyle  \forall x_0 ( \lim_{x\rightarrow x_0^+}{F(x) } = F(x_0) )$
 
-
-
 ##### Definition: Discrete/continuous random variables
 
 Let X be a random variable. If $F_X(x)$ is a continuous function of x, then X is called **continuous**; if $F_X(x)$ is a step function of x, then X is called **discrete**.
 
-
-
 The cumulative distribution function $F_X$ can completely determine the probability distribution of random variable X. This leads to the concept of identically distributed random variables.
-
-
 
 ##### Definition: Identically distributed random variables
 
@@ -281,20 +250,13 @@ Random variables X and Y are called **identically distributed** if for any set $
 
 Note that two identically distributed random variables don't mean $X=Y$. For example, let X and Y respectively be the number of heads and tails when tossing three coins.
 
-
-
 ##### Theorem: Properties of identically distributed random variables
 
 Random variables X and Y are identically distributed if and only if $\forall x ( F_X(x) = F_Y(x))$
 
-
-
-
 ## 6. Probability Density Function and Probability Mass Function
 
 Related to random variable X and cumulative distribution function $F_X$ is another function: if X is a continuous random variable, this function is called probability density function; if X is a discrete random variable, this function is called probability mass function. Both focus on the "point probability" of random variables.
-
-
 
 ##### Definition: Probability mass function (pmf)
 
@@ -306,8 +268,6 @@ $$
 $$
 
 Set interpretation of probability mass function: $P_X(X=x)$, i.e., $f_X(x)$ equals the jump height of the cumulative distribution function at x.
-
-
 
 Extending to continuous variables:
 
@@ -324,7 +284,6 @@ $$
 \displaystyle
 F_X(x) = \int_{-\infty}^{x}{f_X(t)dt}, \text{ for any } x
 $$
-
 
 ##### Theorem: Properties of PDF/PMF
 

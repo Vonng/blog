@@ -4,7 +4,7 @@ date: 2019-11-12
 author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: >
-  PostgreSQL actually has only two transaction isolation levels: **Read Committed** and **Serializable**
+  PostgreSQL actually has only two transaction isolation levels: Read Committed and Serializable.
 tags: [PostgreSQL,PG-Development]
 ---
 
@@ -19,8 +19,6 @@ The SQL standard defines four isolation levels, but PostgreSQL actually has only
 
 The SQL standard defines four isolation levels, but actually this is a rather crude classification. For details, please refer to [Concurrency Anomalies](/db/concurrent-control/).
 
-
-
 ## Viewing/Setting Transaction Isolation Levels
 
 You can view the current transaction isolation level by executing: `SELECT current_setting('transaction_isolation');`
@@ -31,14 +29,11 @@ Or set the transaction isolation level for the current session lifetime:
 
 `SET SESSION CHARACTERISTICS AS TRANSACTION transaction_mode`
 
-
-
 | Actual isolation level     | P4 | G-single | G2-item | G2 |
 |----------------------------|----|----------|---------|----|
 | RC（monotonic atomic views） | -  | -        | -       | -  |
 | RR（snapshot isolation）     | ✓  | ✓        | -       | -  |
 | Serializable               | ✓  | ✓        | ✓       | ✓  |
-
 
 ## Isolation Levels and Concurrency Issues
 
@@ -48,8 +43,6 @@ Create test table `t` and insert two rows of test data.
 CREATE TABLE t (k INTEGER PRIMARY KEY, v int);
 TRUNCATE t; INSERT INTO t VALUES (1,10), (2,20);
 ```
-
-
 
 ## Lost Update (P4)
 
@@ -62,11 +55,11 @@ Under the read committed isolation level, lost update problems cannot be prevent
 |                 T1                  |                 T2                  | Comment  |
 |:-----------------------------------:|:-----------------------------------:|:--------:|
 |             ` begin; `              |                                     |          |
-|                                     |              ` begin;`              |          |
+|                                     |              `begin;`              |          |
 |    `SELECT v FROM t WHERE k = 1`    |                                     |   T1 reads    |
 |                                     |    `SELECT v FROM t WHERE k = 1`    |   T2 reads    |
-| `update t set v = 11 where k = 1; ` |                                     |   T1 writes    |
-|                                     | ` update t set v = 11 where k = 1;` | T2 blocked by T1  |
+| `update t set v = 11 where k = 1;` |                                     |   T1 writes    |
+|                                     | `update t set v = 11 where k = 1;` | T2 blocked by T1  |
 |              `COMMIT`               |                                     | T2 resumes, writes  |
 |                                     |              `COMMIT`               | T2 write overwrites T1 |
 
@@ -77,18 +70,15 @@ Using atomic operations:
 |                  T1                  |                   T2                   | Comment  |
 |:------------------------------------:|:--------------------------------------:|:--------:|
 |              ` begin; `              |                                        |          |
-|                                      |               ` begin;`                |          |
-| `update t set v = v+1 where k = 1; ` |                                        |   T1 writes    |
-|                                      | ` update t set v = v + 1 where k = 1;` | T2 blocked by T1  |
+|                                      |               `begin;`                |          |
+| `update t set v = v+1 where k = 1;` |                                        |   T1 writes    |
+|                                      | `update t set v = v + 1 where k = 1;` | T2 blocked by T1  |
 |               `COMMIT`               |                                        | T2 resumes, writes  |
 |                                      |                `COMMIT`                | T2 write overwrites T1 |
 
 There are two ways to solve this problem: use atomic operations, or execute transactions at the repeatable read isolation level.
 
 At the repeatable read isolation level
-
-
-
 
 ## Read Committed (RC)
 
@@ -109,24 +99,20 @@ commit; -- T2
 select * from test; -- either. Shows 1 => 12, 2 => 22
 ```
 
-
-
 |                            T1                             |                            T2                             |     Comment     |
 |:---------------------------------------------------------:|:---------------------------------------------------------:|:---------------:|
-| ` begin; set transaction isolation level read committed;` |                                                           |                 |
-|                                                           | ` begin; set transaction isolation level read committed;` |                 |
-|            `update t set v = 11 where k = 1; `            |                                                           |                 |
-|                                                           |            ` update t set v = 12 where k = 1;`            |   T2 waits for T1's lock   |
+| `begin; set transaction isolation level read committed;` |                                                           |                 |
+|                                                           | `begin; set transaction isolation level read committed;` |                 |
+|            `update t set v = 11 where k = 1;`            |                                                           |                 |
+|                                                           |            `update t set v = 12 where k = 1;`            |   T2 waits for T1's lock   |
 |                     `SELECT * FROM t`                     |                                                           |   2:20, 1:11    |
-|          ` update pair set v = 21 where k = 2;`           |                                                           |                 |
-|                        ` commit;`                         |                                                           |      T2 unlocks       |
-|                                                           |                  ` select * from pair;`                   | T2 sees T1's results and its own changes |
-|                                                           |            ` update t set v = 22 where k = 2`             |                 |
+|          `update pair set v = 21 where k = 2;`           |                                                           |                 |
+|                        `commit;`                         |                                                           |      T2 unlocks       |
+|                                                           |                  `select * from pair;`                   | T2 sees T1's results and its own changes |
+|                                                           |            `update t set v = 22 where k = 2`             |                 |
 |                                                           |                         `commit`                          |                 |
 
 Result after commit
-
-
 
 1
 
@@ -156,9 +142,6 @@ Result after commit
  t       | relation | 6/494              | 37672 | RowExclusiveLock | t       | t
  t       | tuple    | 6/494              | 37672 | ExclusiveLock    | t       | f
 ```
-
-
-
 
 # Testing PostgreSQL transaction isolation levels
 

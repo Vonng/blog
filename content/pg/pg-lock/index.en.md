@@ -4,7 +4,7 @@ date: 2019-06-11
 author: |
   [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: >
-  Snapshot isolation does most of the heavy lifting in PG, but locks still matter. Here’s a practical guide to table locks, row locks, intention locks, and `pg_locks`.
+  Snapshot isolation does most of the heavy lifting in PG, but locks still matter. Here’s a practical guide to table locks, row locks, intention locks, and pg_locks.
 tags: [PostgreSQL, PG-Development, Lock]
 ---
 

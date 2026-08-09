@@ -26,13 +26,7 @@ Pigsty v2.3 新增了为主机节点集群绑定一个 **L2 VIP** 的功能，�
 
 在监控系统上，Pigsty v2.3 在 v2.2 的基础上进行了打磨优化：新增了 VIP 监控，VIP 与节点 PING 指标被加入到 NODE / PGSQL 监控的醒目位置；PGSQL 监控新增了锁等待树视图；REDIS 监控进行了风格优化；MinIO 监控适配的新的监控指标名称；MySQL / MongoDB 监控新增了实现存根，为后续实现奠定基础。
 
-
-
 顺带一提，PGSQL x Pigsty 交流群新开3群了，对 PostgreSQL 与 Pigsty 感兴趣的朋友可以直接扫码加入（仅限前200人），如果加入不了请微信搜索 pigsty-cc 小助手加入。
-
-
-
-
 
 ## MongoDB 支持？
 
@@ -85,8 +79,6 @@ NocoDB 可以让各种关系型数据库变身成为 Excel ，运行你自己的
 cd ~/pigsty/app/nocodb; make up
 ```
 
-
-
 ## Node VIP 支持
 
 Pigsty v2.3 新增了为主机节点集群绑定一个 **L2 VIP** 的功能，使用 VRRP 协议确保全链路上没有单点，并提供了完整的监控。
@@ -97,15 +89,11 @@ Pigsty v2.3 新增了为主机节点集群绑定一个 **L2 VIP** 的功能，�
 
 想要为集群绑定一个 L2 VIP 其实很简单，只需要启用 vip_enabled，分配一个 VLAN 中唯一的 VirtualRouterID 号与 VIP 地址就可以了。默认情况下，所有集群成员使用 BACKUP 初始状态以非抢占模式工作。你可以通过设置 vip_role 与 vip_preempt 来改变这一行为。
 
-
-
 ![vip-config](vip-config.webp)
 
 L2 VIP 会自动被纳入监控中。当 MASTER 宕机后， BACKUP 会立即进行接管。
 
 ![vip-failover](vip-failover.webp)
-
-
 
 ## 监控系统改进
 
@@ -153,8 +141,6 @@ Pigsty v2.2 提供了官方 Yum 源，在 v2.3 中则默认启用了全站 HTTPS
 
 ## 安装
 
-
-
 Pigsty v2.3 的安装命令为：
 
 **bash -c "$(curl -fsSL https://get.pigsty.cc/latest)"**
@@ -168,14 +154,9 @@ https://get.pigsty.cc/v2.3.0/pigsty-pkg-v2.3.0.el7.x86_64.tgz
 https://get.pigsty.cc/v2.3.0/pigsty-pkg-v2.3.0.el8.x86_64.tgz
 https://get.pigsty.cc/v2.3.0/pigsty-pkg-v2.3.0.el9.x86_64.tgz
 
-
-
 以上，就是 Pigsty v2.3 带来的变化。
 
 更多细节，请参考 Pigsty 官方文档：https://vonng.github.io/pigsty/ 与 Github Release Note： https://github.com/Vonng/pigsty/releases/tag/v2.3.0
-
-
-
 
 ----------------
 
@@ -211,16 +192,11 @@ https://get.pigsty.cc/v2.3.0/pigsty-pkg-v2.3.0.el9.x86_64.tgz
 - `NODE`.`VIP`.`vip_dns_suffix`：节点 vip dns 名称后缀，默认为 .vip
 - `NODE`.`VIP`.`vip_exporter_port`：keepalived 导出器监听端口，默认为 9650
 
-
 ```
 MD5 (pigsty-pkg-v2.3.0.el7.x86_64.tgz) = 81db95f1c591008725175d280ad23615
 MD5 (pigsty-pkg-v2.3.0.el8.x86_64.tgz) = 6f4d169b36f6ec4aa33bfd5901c9abbe
 MD5 (pigsty-pkg-v2.3.0.el9.x86_64.tgz) = 4bc9ae920e7de6dd8988ca7ee681459d
 ```
-
-
-
-
 
 ----------------
 

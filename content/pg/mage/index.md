@@ -71,7 +71,6 @@ tags: [PostgreSQL]
 - [SQL实现ItemCF推荐系统](/pg/pg-recsys/)
 - [UUID性质原理与应用](/pg/uuid/)
 
-
 ## 管理
 
 - [PostgreSQL 逻辑复制详解](/pg/logical-replication/)

@@ -18,7 +18,6 @@ PostgreSQL released its new major version 16 today, bringing a series of improve
 
 ![banner](banner.jpg)
 
-
 -------
 
 ## Highlights
@@ -39,7 +38,6 @@ PostgreSQL released its new major version 16 today, bringing a series of improve
 
 * New parameter: `REDIS`.`redis_sentinel_monitor` — specify list of primaries monitored by Sentinel cluster
 
-
 -------
 
 ## PostgreSQL 16 Support
@@ -49,7 +47,6 @@ Pigsty is probably the first distribution to provide PostgreSQL 16 support — w
 PostgreSQL 16 brings practical new features: logical decoding and logical replication from standbys, new I/O statistics views, parallel execution of full joins, better freezing performance, new SQL/JSON standard function set, and regular expressions in HBA authentication.
 
 Note that the official PGDG repository has decided to drop EL7 support for PostgreSQL 16, so PG16 is only available on EL8 and EL9 and compatible OS distributions.
-
 
 -------
 
@@ -69,7 +66,6 @@ Pigsty v2.4 provides RDS monitoring support with special attention to PolarDB cl
 
 ![PGRDS Dashboard 2](pgrds-dashboard-2.jpg)
 
-
 -------
 
 ## Commercial Support
@@ -80,7 +76,6 @@ Pigsty v2.4 is the first LTS version, providing 3 years of long-term support for
 
 ![Support Page](support-page.jpg)
 
-
 -------
 
 ## Redis High Availability
@@ -90,7 +85,6 @@ In Pigsty v2.4, we provide a new parameter `redis_sentinel_monitor` for automati
 ![Redis Sentinel](redis-sentinel.jpg)
 
 Meanwhile, we've added Sentinel-related metrics and panels to Redis monitoring, adapted for Redis 7.x's new features.
-
 
 -------
 
@@ -119,7 +113,6 @@ You can also use roaringbitmap to efficiently perform counting statistics with m
 ![roaringbitmap](roaringbitmap.jpg)
 
 We won't go into all the details here — we'll publish dedicated articles introducing how to use these powerful extensions.
-
 
 ----------------
 

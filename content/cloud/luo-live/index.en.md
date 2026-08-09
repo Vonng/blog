@@ -14,7 +14,6 @@ Luo Yonghao was once a brilliant digital product manager with decent IT industry
 
 > This toothpaste is actually pretty good, but these cloud servers...
 
-
 ---------------
 
 ## Can Cloud Computing Go B2C?
@@ -30,7 +29,6 @@ Another typical B2C scenario involves students and individual webmasters. In the
 ![](luo-live-3.jpg)
 
 On one side of the IT scale spectrum — individual webmasters and small businesses — new-generation cloud services/SaaS (CF, Neon, Vercel, Supabase), these cyber bodhisattvas' free tiers, are clearly displacing and impacting public clouds. On the other side — medium and large enterprises — the emerging IDC 2.0 and open-source management software alternatives work together to bypass public cloud middlemen, leveraging [hardware Moore's law](https://mp.weixin.qq.com/s/1OSRcBfd58s0tgZTUZHB9g) accumulated advantages, becoming the [ultimate FinOps practice](https://mp.weixin.qq.com/s/Yp_PU8nmyK-NVq0clD98RQ), achieving [astonishing cost reduction capabilities](https://mp.weixin.qq.com/s/CicctyvV1xk5B-AsKfzPjw).
-
 
 ---------------
 

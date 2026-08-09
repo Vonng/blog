@@ -14,7 +14,6 @@ tags: [数据库, PostgreSQL]
 >
 > 作者：Andy Pavlo，翻译与评论：冯若航
 
-
 # 2025 数据库世界年度回顾
 
 **作者**: Andy Pavlo - 卡内基梅隆大学  
@@ -292,7 +291,6 @@ Parquet 的主要问题不在于格式本身，规范可以而且已经在演进
 
 最后，虽然不是商业公司，但我不得不提一下 [IBM Research Almaden](https://en.wikipedia.org/wiki/IBM_Research#Almaden_in_Silicon_Valley) 的[关闭](https://www.siliconvalley.com/2025/07/10/ibm-san-jose-tech-data-ai-internet-property-real-estate-economy-web/)。IBM 于 1986 年建造了这个园区，几十年来一直是数据库研究的圣地。我 [2013 年在 Almaden 面试](https://twitter.com/andy_pavlo/status/306455280823177216)时，发现那里的风景很美。IBM Research 数据库组已不是[当年的样子](https://dl.acm.org/doi/10.1145/126482.126493)了。但这片神圣的数据库土地的校友名单令人印象深刻：[Rakesh Agrawal](https://en.wikipedia.org/wiki/Rakesh_Agrawal_(computer_scientist))、[Donald Chamberlin](https://en.wikipedia.org/wiki/Donald_D._Chamberlin)、[Ronald Fagin](https://en.wikipedia.org/wiki/Ronald_Fagin)、[Laura Haas](https://en.wikipedia.org/wiki/Laura_M._Haas)、[Mohan](https://en.wikipedia.org/wiki/C._Mohan)、[Pat Selinger](https://en.wikipedia.org/wiki/Patricia_Selinger)、[Moshe Vardi](https://en.wikipedia.org/wiki/Moshe_Vardi)、[Jennifer Widom](https://en.wikipedia.org/wiki/Jennifer_Widom) 和 [Guy Lohman](https://scholar.google.com/citations?user=wUkamYwAAAAJ&hl=en)。
 
-
 ### Andy 的看法
 
 有人[声称](https://news.ycombinator.com/item?id=42571405)我根据支持公司筹集的资金多少来判断数据库的质量。这显然不对。我追踪这些动态是因为数据库研究领域竞争激烈、能量充沛。我不仅要与其他大学的学者"竞争"，大科技公司和小型创业公司也在推出我需要关注的有趣系统。除了 Microsoft Research 仍在积极招聘顶尖人才并做出令人难以置信的工作外，行业研究实验室已不是当年的样子了。
@@ -337,8 +335,6 @@ Larry 年初时是全球第三富有的人。比 Mark Zuckerberg 身价低这件
 
 *原文链接：https://www.cs.cmu.edu/~pavlo/blog/2026/01/2025-databases-retrospective.html*
 
-
-
 --------
 
 ## 老冯评论
@@ -348,7 +344,6 @@ Andy Pavlo 这篇年终总结写得确实精彩，嘻哈梗玩得飞起，
 他的信息量、洞察力和文笔都是顶级的。
 
 作为一个在战壕里的前沿创业者，老冯也从不同的角度来聊聊两个主要问题。
-
 
 ### 一、PostgreSQL 赢了，然后呢？
 
@@ -370,7 +365,6 @@ PostgreSQL 生态里需要一个真正体现自由软件精神的发行版立起
 不是又一个 DBaaS，不是又一个被 VC 催着变现的创业公司，而是一个像 Debian 之于 Linux 那样的存在——坚持开放、坚持可自托管、坚持用户对自己数据的完全掌控权。
 当所有人都被云厂商赶进围墙花园的时候，这样的项目就是那扇还没上锁的门。而老冯的 Pigsty，要做的就是这样的事情。
 
-
 ### 二、分布式的 PG 是伪需求吗？
 
 Andy 花了不少笔墨写 Multigres 和 Neki 的对决，但他没有触及一个更根本的问题：为什么之前所有的分布式 PostgreSQL 尝试都 “失败了”？
@@ -386,27 +380,3 @@ Postgres-XC/XL 烂尾了，Citus 被微软收购后创新停滞，YugabyteDB 作
 
 分布式不是死路，但它的生态位比很多人想象的小得多。 真正需要分布式的场景确实存在，但那是极少数的头部玩家 —— 人家大概率自己也就直接应用层分片搞了。
 对于绝大多数企业来说，与其折腾分布式，不如把一套 PostgreSQL 用好、调好、管好。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

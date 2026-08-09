@@ -14,7 +14,6 @@ tags: [Database, PostgreSQL, SQLite, DuckDB, ClickHouse]
 
 https://matt.blwt.io/post/7-databases-in-7-weeks-for-2025/
 
-
 For a long time, I've been running Databases-as-a-Service, and there's always something new to keep up with in this field — new technologies, different approaches to solving problems, not to mention the constant stream of research coming out of universities. Looking ahead to 2025, consider spending a week diving deep into each of the following database technologies.
 
 ![A line drawing of a bookshelf, with the books labelled for each database covered - PostgreSQL, SQLite, DuckDB, ClickHouse, FoundationDB, TigerBeetle and CockroachDB](https://matt.blwt.io/7-databases-in-7-weeks-for-2025/header.webp)
@@ -24,7 +23,6 @@ For a long time, I've been running Databases-as-a-Service, and there's always so
 ## Foreword
 
 This isn't a "7 Best Databases" type of article, nor is it laying groundwork for a menu-style list of books — these are simply seven databases I think are worth spending about a week seriously studying. You might ask, "Why not Neo4j, MongoDB, MySQL/Vitess, or other databases?" The answer is mostly: I don't find them interesting. Also, I won't be covering Kafka or other similar streaming data services — they're definitely worth your time to learn, but they're outside the scope of this article.
-
 
 --------
 
@@ -38,7 +36,6 @@ This isn't a "7 Best Databases" type of article, nor is it laying groundwork for
 6. [TigerBeetle](#6-tigerbeetle)
 7. [CockroachDB](#7-cockroachdb)
 8. [Wrap-up](https://matt.blwt.io/post/7-databases-in-7-weeks-for-2025/#wrap-up)
-
 
 --------
 
@@ -54,8 +51,6 @@ Because of this, Postgres shines as an excellent "default" database, and we're s
 
 Spend a week exploring the various possibilities of Postgres, while also understanding some of its limitations — [MVCC](https://www.geeksforgeeks.org/multiversion-concurrency-control-mvcc-in-postgresql/) can be somewhat temperamental. Implement a simple CRUD application in your favorite programming language, or even try building a Postgres extension.
 
-
-
 --------
 
 ## 2. SQLite
@@ -70,7 +65,6 @@ Thanks to [Ruby on Rails 8.0](https://rubyonrails.org/2024/9/27/rails-8-beta1-no
 
 Spend a week using SQLite, exploring local-first architecture, and you might even research whether you can migrate from a Postgres client-server model to a SQLite-only pattern.
 
-
 --------
 
 ## 3. DuckDB
@@ -84,7 +78,6 @@ DuckDB's highlight is as a "universal query" database, using SQL as the preferre
 Like Postgres, DuckDB also has [extensions](https://duckdb.org/docs/extensions/overview), though the ecosystem isn't as rich — after all, DuckDB is relatively young. Many community-contributed extensions can be found in the [community extensions list](https://duckdb.org/community_extensions/list_of_extensions), and I particularly like [`gsheets`](https://duckdb.org/community_extensions/extensions/gsheets.html).
 
 Spend a week using DuckDB for data analysis and processing — whether through Python Notebooks, tools like [Evidence](https://evidence.dev/), or even see how it combines with SQLite's "local-first" approach, offloading analytical queries from SQLite databases to DuckDB, since DuckDB can also [read SQLite data](https://duckdb.org/docs/guides/database_integration/sqlite.html).
-
 
 --------
 
@@ -101,7 +94,6 @@ ClickHouse has advantages when you need to run analytical queries on large datas
 Another reason I recommend learning ClickHouse is its excellent operational experience — deployment, scaling, backup, etc. all have [detailed documentation](https://clickhouse.com/docs/en/architecture/cluster-deployment) — even including setting up [appropriate CPU Governors](https://clickhouse.com/docs/en/operations/tips).
 
 Spend a week exploring larger analytical datasets, or converting the DuckDB analysis above to ClickHouse deployment. ClickHouse also has an embedded version — [chDB](https://clickhouse.com/docs/en/chdb) — which can provide more direct comparisons.
-
 
 --------
 
@@ -121,7 +113,6 @@ But why is it a "layered" database? Because it proposes the [concept of layers](
 
 Spend a week going through the [tutorials](https://apple.github.io/foundationdb/tutorials.html), thinking about how to use FoundationDB as a replacement for databases like [RocksDB](https://rocksdb.org/). Maybe look at some [design patterns](https://apple.github.io/foundationdb/design-recipes.html) and read the [paper](https://www.foundationdb.org/files/fdb-paper.pdf).
 
-
 --------
 
 ## 6. TigerBeetle
@@ -135,7 +126,6 @@ Why is it worth looking at? Single-purpose databases are rare, and databases as 
 Another interesting point is that TigerBeetle is written in [Zig](https://ziglang.org/) — a relatively new systems programming language, but apparently very aligned with the TigerBeetle team's goals.
 
 Spend a week modeling your financial accounts in a locally deployed TigerBeetle — follow the [quick start](https://docs.tigerbeetle.com/quick-start) and look at the [system architecture](https://docs.tigerbeetle.com/coding/system-architecture) documentation to understand how to combine it with the more general-purpose databases mentioned above.
-
 
 --------
 
@@ -151,15 +141,11 @@ CockroachDB achieves database scaling across multiple geographic regions, with a
 
 Another interesting feature of CockroachDB is how it uses [multi-region configuration](https://www.cockroachlabs.com/docs/stable/multiregion-overview), including [table localities](https://www.cockroachlabs.com/docs/stable/table-localities), providing different options based on your desired read-write trade-offs. Spend a week reimplementing the [`movr`](https://www.cockroachlabs.com/docs/v24.3/movr) example in your language and framework of choice.
 
-
 --------
 
 ## Summary
 
 We've explored many different databases, all used in production by some of the world's largest companies. Hopefully, this exposes you to some technologies you weren't familiar with before. Armed with this knowledge, go solve interesting problems!
-
-
-
 
 --------
 
@@ -167,21 +153,14 @@ We've explored many different databases, all used in production by some of the w
 
 In 2013, there was a book called "Seven Databases in Seven Weeks." That book introduced 7 "new (or reborn)" database technologies of the time, leaving an impression on me. Twelve years later, this series is getting updated again.
 
-
-
 Looking back at the seven databases from that year, except for the original "hammer" PostgreSQL which is still around, all the other databases have changed completely. And PostgreSQL has evolved from a "hammer" to the "king of boring databases" — becoming the "default database" that won't flip over.
 
 The databases on this list are basically all ones I've practiced with or am interested in/have good feelings about. Except for ClickHouse — CK is good, but I think DuckDB and its combination with PostgreSQL has the potential to overturn CK, plus it's MySQL protocol compatible ecosystem, so I really have no interest in it. If I were to design this list, I'd probably replace CK with either Supabase or Neon.
-
-
 
 I think the author has very precisely grasped the trends in database technology development, and I highly agree with his choice of database technologies. Actually, among these seven databases, I've already deeply explored three of them. Pigsty itself is a high-availability PostgreSQL distribution that also integrates DuckDB, as well as DuckDB-grafted PG extensions. I've also made RPM/DEB packages for TigerBeetle as a dedicated financial transaction database for default download in the professional edition.
 
 The other two databases are on my integration TODO list: for SQLite, besides FDW, the next step is to integrate ElectricSQL; providing sync capabilities between local PG and remote SQLite/PGLite; CockroachDB has always been on my TODO list, ready to add deployment support whenever I have spare time. FoundationDB is an object of my interest, and the next database I'm willing to spend time deeply researching will likely be this one.
 
-
-
 Overall, I believe these technologies represent cutting-edge development trends in the field. If I were to envision the landscape ten years from now, it would probably look like this: FoundationDB, TigerBeetle, and CockroachDB will have their own niche ecosystem positions. DuckDB will likely shine in the analytical field, SQLite will continue to conquer territory on the local-first client side, and PostgreSQL will evolve from the "default database" to the ubiquitous "Linux kernel" of the database world. The main theme of the database field will become a battlefield of PostgreSQL distribution competition between Neon, Supabase, Vercel, RDS, and Pigsty.
 
 After all, PostgreSQL devouring the database world isn't just talk — PostgreSQL ecosystem companies have taken almost all the money in the database field's capital market these past two years, with countless real money already voting with their feet by betting on it. Of course, how the future actually unfolds, let's wait and see.
-

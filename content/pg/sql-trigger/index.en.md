@@ -128,7 +128,7 @@ SELECT pg_get_triggerdef(oid) FROM pg_trigger; -- WHERE xxx
 | `tgname`         | `name`         |                       | Trigger name, unique within table-level namespace |
 | `tgfoid`         | `oid`          | `pg_proc.oid`         | Function called by the trigger                     |
 | `tgtype`         | `int2`         |                       | Trigger type, trigger conditions, see comments    |
-| `tgenabled`      | `char`         |                       | Trigger mode, see below. `O|R|A|D`                |
+| `tgenabled`      | `char`         |                       | Trigger mode, see below. `O\|R\|A\|D`          |
 | `tgisinternal`   | `bool`         |                       | True if internal trigger for constraints          |
 | `tgconstrrelid`  | `oid`          | `pg_class.oid`        | Referenced table in referential integrity constraint, 0 if none |
 | `tgconstrindid`  | `oid`          | `pg_class.oid`        | Related index supporting constraint, 0 if none    |

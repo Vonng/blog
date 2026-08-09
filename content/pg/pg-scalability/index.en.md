@@ -9,7 +9,7 @@ summary: >
 tags: [PostgreSQL,Performance]
 ---
 
-> Source: [How Cloudflare Supports 55M QPS with 15 PostgreSQL Clusters](https://newsletter.systemdesign.one/p/postgresql-scalability) 
+> Source: [How Cloudflare Supports 55M QPS with 15 PostgreSQL Clusters](https://newsletter.systemdesign.one/p/postgresql-scalability)
 
 In July 2009, in California, USA, a startup team created a Content Delivery Network (CDN) called Cloudflare to accelerate internet requests, making network access more stable and faster. They faced various challenges during their early development, yet their growth rate was remarkably impressive.
 
@@ -164,4 +164,3 @@ For example, in Pigsty, by default, all PostgreSQL instances are 1:1 deployed wi
 Of course, for non-internet scenario applications, PgBouncer isn't essential. And while default Transaction Pooling performs excellently, it sacrifices some session-level functionality. So you can completely configure Primary/Replica services to directly connect to Postgres, bypassing PgBouncer; or use Session Pooling mode with the best compatibility.
 
 Overall, PgBouncer is indeed a very practical PostgreSQL ecosystem tool. If your system has high requirements for PostgreSQL client concurrent connections, be sure to try this middleware when testing performance.
-

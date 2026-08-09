@@ -15,13 +15,11 @@ tags: [开源, 许可证, GPL, 本地优先, 翻译]
 
 本文的导火索是Richard Stallman[恢复原职](https://www.fsf.org/news/statement-of-fsf-board-on-election-of-richard-stallman)，对于[自由软件基金会](https://www.fsf.org/)（FSF）的董事会而言，这是一位[充满争议的人物](https://rms-open-letter.github.io/)。我对此感到震惊，并与其他人一起呼吁将他撤职。这次事件让我重新评估了自由软件基金会在计算机领域的地位 —— 它是GNU项目（[宽泛地说](https://www.gnu.org/gnu/incorrect-quotation.en.html)它属于Linux发行版的一部分）和以[GNU通用公共许可证](https://en.wikipedia.org/wiki/GNU_General_Public_License)（GPL）为中心的软件许可证系列的管理者。这些努力不幸被Stallman的行为所玷污。**然而这并不是我今天真正想谈的内容**。
 
-在本文中，我认为**我们应该远离GPL和相关的许可证**（LGPL、AGPL），原因与Stallman无关，只是因为，我认为它们未能实现其目的，而且它们造成的麻烦比它们产生的价值要更大。
+在本文中，我认为 **我们应该远离GPL和相关的许可证**（LGPL、AGPL），原因与Stallman无关，只是因为，我认为它们未能实现其目的，而且它们造成的麻烦比它们产生的价值要更大。
 
 首先简单介绍一下背景：GPL系列许可证的定义性特征是 [copyleft](https://en.wikipedia.org/wiki/Copyleft) 的概念，它指出，如果你用了一些GPL许可的代码并对其进行修改或构建，你也必须在同一许可证下免费提供你的修改/扩展（被称为"[衍生作品](https://en.wikipedia.org/wiki/Derivative_work)"）（大致意思）。这样一来，GPL的源代码就不能被纳入闭源软件中。乍看之下，这似乎是个好主意。那么问题在哪里？
 
 [![featured.jpg](featured.jpg)](https://mp.weixin.qq.com/s/DJsDRO18saZaxe3oyzzYrA)
-
-
 
 ------
 
@@ -43,8 +41,6 @@ tags: [开源, 许可证, GPL, 本地优先, 翻译]
 
 如果所有的软件都是免费和开源的，这些问题就都解决了。然而，开源实际上并不是解决云软件问题的必要条件；即使是闭源软件也可以避免上述问题，只要它运行在你自己的电脑上，而不是供应商的云服务器上。请注意，互联网档案馆能够在没有源代码的情况下维持历史软件的正常运行：如果只是出于存档的目的，在模拟器中运行编译后的机器代码就够了。也许拥有源码会让事情更容易一些，但这并不是不关键，最重要的事情，还是要有一份软件的副本。
 
-
-
 ------
 
 ## 本地优先的软件
@@ -52,9 +48,6 @@ tags: [开源, 许可证, GPL, 本地优先, 翻译]
 我和我的合作者们以前曾主张过[本地优先软件](https://www.inkandswitch.com/local-first.html)的概念，这是对云软件的这些问题的一种回应。本地优先的软件在你自己的电脑上运行，将其数据存储在你的本地硬盘上，同时也保留了云计算软件的便利性，比如，实时协作，和在你所有的设备上同步数据。开源的本地优先的软件当然非常好，但这并不是必须的，本地优先软件90%的优点同样适用于闭源的软件。
 
 云软件，而不是闭源软件，才是对软件自由的真正威胁，原因在于：云厂商能够突然心血来潮随心所欲地锁定你的所有数据，其危害要比无法查看和修改你的软件源码的危害大得多。因此，普及本地优先的软件显得更为重要和紧迫。如果在这一过程中，我们也能让更多的软件开放源代码，那也很不错，但这并没有那么关键。我们要聚焦在最重要与最紧迫的挑战上。
-
-
-
 
 ------
 
@@ -66,10 +59,9 @@ Copyleft软件许可证是一种法律工具，它试图迫使更多的软件供
 
 对于促进软件自由而言，我相信更有前景的法律工具是政府监管。例如，GDPR提出了[数据可移植权](https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/individual-rights/right-to-data-portability/)，这意味着用户必须可以能将他们的数据从一个服务转移到其它的服务中。现有的可移植性的实现，例如[谷歌Takeout](https://en.wikipedia.org/wiki/Google_Takeout)，是相当初级的（你真的能用一堆JSON压缩档案做点什么吗？），但我们可以游说监管机构[推动更好的可移植性/互操作性](https://interoperability.news/)，例如，要求相互竞争的两个供应商在它们的两个应用程序之间，实时双向同步你的数据。
 
-另一条有希望的途径是，推动[公共部门的采购倾向于开源、本地优先的软件](https://joinup.ec.europa.eu/sites/default/files/document/2011-12/OSS-procurement-guideline -final.pdf)，而不是闭源的云软件。这为企业开发和维护高质量的开源软件创造了积极的激励机制，而版权条款却没有这样做。
+另一条有希望的途径是，推动[公共部门的采购倾向于开源、本地优先的软件](https://joinup.ec.europa.eu/sites/default/files/document/2011-12/OSS-procurement-guideline%20-final.pdf)，而不是闭源的云软件。这为企业开发和维护高质量的开源软件创造了积极的激励机制，而版权条款却没有这样做。
 
 你可能会争论说，软件许可证是开发者个人可以控制的东西，而政府监管和公共政策是一个更大的问题，不在任何一个个体权力范围之内。是的，但你选择一个软件许可证能产生多大的影响？任何不喜欢你的许可证的人可以简单地选择不使用你的软件，在这种情况下，你的力量是零。有效的改变来自于对大问题的集体行动，而不是来自于一个人的小开源项目选择一种许可证而不是另一种。
-
 
 ------
 
@@ -80,7 +72,6 @@ Copyleft软件许可证是一种法律工具，它试图迫使更多的软件供
 我们需要人们成为优秀的开源社区贡献者，而这是通过保持开放欢迎的态度，建立正确的激励机制来实现的，而不是通过软件许可证。
 
 最后，GPL许可证家族在实际使用中的一个问题是，它们[与其他广泛使用的许可证不兼容](http://gplv3.fsf.org/wiki/index.php/Compatible_licenses)，这使得在同一个项目中使用某些库的组合变得更为困难，且不必要地分裂了开源生态。如果GPL许可证有其他强大的优势，也许这个问题还值得忍受。但正如上面所述，我不认为这些优势存在。
-
 
 ------
 
@@ -93,8 +84,6 @@ GPL和其他 copyleft 许可证并不坏，我只是认为它们毫无意义。�
 基于所有这些原因，我认为抓着GPL和 copyleft 已经没有意义了，放手吧。相反，我会鼓励你为你的项目采用一种宽容的许可协议（例如[MIT](https://opensource.org/licenses/MIT)， [BSD](https://opensource.org/licenses/BSD-2-Clause)， [Apache 2.0](https://opensource.org/licenses/Apache-2.0)），然后把你的精力放在真正能对软件自由产生影响的事情上。[抵制](https://www.inkandswitch.com/local-first.html)云软件的垄断效应，发展可持续的商业模式，让开源软件茁壮成长，并推动监管，将软件用户的利益置于供应商的利益之上。
 
 * 感谢[Rob McQueen](https://ramcq.net/)对本帖草稿的反馈。
-
-
 
 ------
 

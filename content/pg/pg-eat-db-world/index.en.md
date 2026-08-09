@@ -13,7 +13,6 @@ tags: [PostgreSQL,PG-Ecosystem]
 
 PostgreSQL isn’t just a simple relational database; it’s a data management framework with the potential to engulf the entire database realm. The trend of “Using Postgres for Everything” is no longer limited to a few elite teams but is becoming a mainstream best practice.
 
-
 ------
 
 ## OLAP's New Challenger
@@ -35,8 +34,6 @@ However, the arrival of [**ParadeDB**](https://www.paradedb.com/) and [**DuckDB*
 **DuckDB** focuses on pure OLAP, pushing analysis performance to the extreme (**x3.2**) — excluding the academically focused, closed-source database Umbra, DuckDB is arguably the fastest for practical OLAP performance. It’s not a PG extension, but PostgreSQL can fully leverage DuckDB’s analysis performance boost as an embedded file database through projects like [**DuckDB FDW**](https://github.com/alitrack/duckdb_fdw) and [**pg_quack**](https://github.com/hydradatabase/pg_quack).
 
 The emergence of ParadeDB and DuckDB propels PostgreSQL's analysis capabilities to the top tier of OLAP, filling the last crucial gap in its analytic performance.
-
-
 
 ------
 
@@ -63,8 +60,6 @@ As DuckDB's manifesto ["**Big Data is Dead**"](https://motherduck.com/blog/big-d
 If 99% of use cases can now be handled on a single machine with standalone DuckDB or PostgreSQL (and its replicas), what's the point of using dedicated analytics components? If every smartphone can send and receive texts freely, what's the point of pagers? (With the caveat that North American hospitals still use pagers, indicating that maybe less than 1% of scenarios might genuinely need "big data.")
 
 The shift in fundamental assumptions is steering the database world from a phase of diversification back to convergence, from a big bang to a mass extinction. In this process, a new era of unified, multi-modeled, super-converged databases will emerge, reuniting OLTP and OLAP. But who will lead this monumental task of reconsolidating the database field?
-
-
 
 ------
 
@@ -112,9 +107,6 @@ What’s more powerful is that extensions **evolve independently**, without the 
 
 PostgreSQL achieves both foundational **reliability** and **agile functionality** through the magic of extreme extensibility, making it an outlier in the database world and changing the game rules of the database landscape.
 
-
-
-
 ------
 
 ## Game Changer in the DB Arena
@@ -139,8 +131,6 @@ PostgreSQL has long been the favorite database in HackerNews & StackOverflow. Ma
 
 As “[**Radical Simplicity: Just Use Postgres**](https://www.amazingcto.com/postgres-for-everything/)” says, Simplifying tech stacks, reducing components, accelerating development, lowering risks, and adding more features can be achieved by **“Just Use Postgres.”** Postgres can replace many backend technologies, including MySQL, Kafka, RabbitMQ, ElasticSearch, Mongo, and Redis, effortlessly serving millions of users. **Just Use Postgres** is no longer limited to a few elite teams but becoming a mainstream best practice.
 
-
-
 ------
 
 ## What Else Can Be Done?
@@ -156,7 +146,6 @@ Accordingly, the main conflict is no longer the database kernel itself but two d
 Kernel remains lukewarm, with MariaDB, the fork of MySQL’s parent, nearing delisting, while AWS, profiting from offering services and extensions on top of the free kernel, thrives. Investment has flowed into numerous PG ecosystem extensions and service distributions: Citus, TimescaleDB, Hydra, PostgresML, ParadeDB, FerretDB, StackGres, Aiven, Neon, Supabase, Tembo, PostgresAI, and our own PG distro — — [Pigsty](https://pigsty.io/).
 
 ![](https://pigsty.io/img/pigsty/players.png)
-
 
 ------
 
@@ -191,8 +180,6 @@ Extensions are the soul of PostgreSQL. A Postgres without the freedom to use ext
 
 Addressing this issue is one of our primary goals.
 
-
-
 ------
 
 ## Our Resolution: Pigsty
@@ -209,7 +196,7 @@ Thus, I created [**Pigsty**](https://pigsty.io/), a battery-included, local-firs
 
 > Pigsty stands for **P**ostgreSQL **i**n **G**reat **STY**le, representing the zenith of PostgreSQL.
 
-We’ve defined six core propositions addressing the central issues in PostgreSQL database services: 
+We’ve defined six core propositions addressing the central issues in PostgreSQL database services:
 
 **Extensible Postgres**, **Reliable Infras**, **Observable Graphics**, **Available Services**, **Maintainable Toolbox**, and **Composable Modules**.
 

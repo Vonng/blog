@@ -10,7 +10,6 @@ tags: [PostgreSQL, PG生态, 扩展]
 
 > 在线幻灯片：[人人都能用上的 PostgreSQL 扩展](https://vonng.com/work/extensions-for-everyone/index.html)
 
-
 --------
 
 ## 第一部分：引言

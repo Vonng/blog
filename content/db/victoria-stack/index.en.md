@@ -11,7 +11,6 @@ tags: [Victoria,Observability]
 
 I’ve spent the last few weeks preparing Pigsty v4.0. The headliner: ripping out Prometheus + Loki and dropping in the full Victoria stack. **VictoriaMetrics is no-frills brute force**—it just works and it’s ridiculous. The observability portion is done, so here’s a beta for early testers.
 
-
 --------
 
 ## First impressions
@@ -36,9 +35,8 @@ Victoria is a full suite: metrics, logs, traces. So Pigsty v4 rewrites the infra
 Before performance, let’s talk about the man behind it — Aliaksandr Valialkin (@valyala). Before Victoria he was CTO at ad-tech shop VertaMedia. In Go circles he’s legendary.
 His **fasthttp** has 23k stars and is **10×** faster than net/http (150M concurrent connections, 200k RPS). His **quicktemplate** is **20×** faster than html/template; **fastjson** beats encoding/json by **15×**.
 
-Common thread: **zero allocations on the hot path**. That philosophy permeates Victoria. No third-party deps, ruthless memory management, 
+Common thread: **zero allocations on the hot path**. That philosophy permeates Victoria. No third-party deps, ruthless memory management,
 simple architecture with AK‑47 reliability. He also has the swagger to back it up: he publishes benchmarks that faceplant competitors and never blinks.
-
 
 --------
 
@@ -56,7 +54,6 @@ For comparison, Pigsty v3.7 on the same ten nodes with Prometheus + Loki ate abo
 
 Victoria won’t just sip resources—it’s faster queries, better compression, higher cardinality tolerance, and effortless clustering.
 
-
 --------
 
 ## Architecture
@@ -70,7 +67,6 @@ Even self-monitoring is wired up, and adding your own app metrics is a matter of
 ![self-monitoring-dashboard.png](self-monitoring-dashboard.png)
 
 Pigsty is no longer just a PostgreSQL distro—it’s now an observability distro too.
-
 
 --------
 
@@ -99,7 +95,6 @@ A three-node install gives three independent replicas out of the box:
 Pigsty v4 is still beta, but the Victoria portion is rock solid. Remaining work is dashboard polish and docs. If you want the easiest way to try Victoria, this is it.
 
 v4.0 stable ships January 2026 with full docs and additional features, including Victoria’s native distributed mode.
-
 
 --------
 

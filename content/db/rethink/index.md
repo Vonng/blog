@@ -46,7 +46,6 @@ featured: true
 - [RDS阉掉了PostgreSQL的灵魂](https://mp.weixin.qq.com/s/EH7RPB6ImfMHXhOMU7P5Qg)
 - [技术极简主义：一切皆用Postgres](https://mp.weixin.qq.com/s/yI06zdqnW5uWnqvKmgM-9g)
 
-
 [![](rethink.jpg)](https://mp.weixin.qq.com/s/Q0OtrpEhF24XN7gwMjbSRA)
 
 ----------------
@@ -108,7 +107,5 @@ featured: true
 《 [炮打 RDS —— 我的一张大字报](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485349&idx=1&sn=96fde26dd9efd399ef7ae11e52e05843&chksm=fe4b327ec93cbb688e2708ff4e709a7ba32eee2be9d8637e9b941f47e6600dc7fcd2710a42c4&scene=21#wechat_redirect) 》
 
 《[为什么 PostgreSQL 是最成功的数据库？](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485216&idx=1&sn=1b59c7dda5f347145c2f39d2679a274d&chksm=fe4b32fbc93cbbed574358a3bcf127dd2e4f458638b46efaee1a885a5702a66a5d9ca18e3f90&scene=21#wechat_redirect)》
-
-
 
 如果您有任何认为值得讨论的话题，也欢迎在评论区中留言提出，我将视情况加入列表中。

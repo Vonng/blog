@@ -20,7 +20,6 @@ This version deeply optimizes and refactors deployment tasks for PostgreSQL, Min
 
 The installation process has been further simplified: from four steps to three steps (download, configure, install), now defaulting to online installation mode which skips local software repository construction.
 
-
 --------
 
 ## New Kernel Support: Percona PG TDE
@@ -37,7 +36,6 @@ With this, the number of PostgreSQL kernels supported by Pigsty has reached **10
 
 Pigsty has become a distribution of PostgreSQL distributions — a "**meta-distribution**." Various PostgreSQL fork kernels can be transformed into "enterprise-grade database services" with high availability, monitoring, IaC, and PITR capabilities under Pigsty's umbrella.
 
-
 --------
 
 ## Extension Ecosystem Continues to Strengthen
@@ -53,7 +51,6 @@ Available extensions have reached **423**. PG18 beta2, OrioleDB, TimescaleDB, Ci
 The extension catalog site has also been completely revamped using Next.js reconstruction, with significantly improved appearance. New address: [https://pgext.cloud](https://pgext.cloud)
 
 ![](ext-catalog.jpg)
-
 
 --------
 
@@ -73,7 +70,6 @@ Additionally, Pigsty now defaults to using Docker Registry mirror sites provided
 
 Currently, Pigsty and StackGres are the only two open-source vendors providing Supabase self-hosting solutions: Pigsty delivers on bare Linux systems, StackGres delivers on Kubernetes.
 
-
 --------
 
 ## PITR Recovery Enhancement
@@ -92,7 +88,6 @@ This playbook automatically performs the following operations:
 
 Supports fast retry (in-place incremental) for precise recovery point targeting. Also adds a new use case: performing PITR recovery on newly started instances (or detached replicas) to avoid affecting existing business, then extracting data from the new instance for manual import.
 
-
 --------
 
 ## ETCD Management Simplified
@@ -109,7 +104,6 @@ bin/etcd-rm 10.10.10.11   # Remove specified member from cluster
 ```
 
 The `etcd.yml` playbook **no longer cleans existing ETCD clusters** — cleanup is now handled by dedicated roles and playbooks, making maintenance simpler and clearer.
-
 
 --------
 
@@ -131,7 +125,6 @@ Default bucket configuration has also been adjusted:
 
 Dedicated users `s3user_meta` and `s3user_data` have been created for `meta` and `data` buckets, with same-named policies for each bucket. With this design, applications like Supabase and Dify can directly use these two buckets without manual creation.
 
-
 --------
 
 ## Installation Process Simplified
@@ -150,7 +143,6 @@ curl -fsSL https://repo.pigsty.io/get | bash; cd ~/pigsty; ./configure; ./instal
 
 ![](install-1.jpg)
 
-
 --------
 
 ## Online Installation by Default
@@ -167,7 +159,6 @@ This change brings significant benefits:
 
 A large proportion of users install Pigsty on single-node Linux and "don't need" the multi-node consistency provided by local software repositories. Users who need local repos can re-enable via simple configuration (`repo_enabled`, `node_repo_modules`) or directly use the `rich` / `full` templates that enable local repos by default.
 
-
 --------
 
 ## New Documentation Site
@@ -178,7 +169,6 @@ The new documentation site is now live: [https://pigsty.io/docs/](https://pigsty
 
 This site is built with Next.js and Fumadocs modern frontend stack — thanks to Lantian You and Claude Code for the strong assist. The English version is mostly complete; Chinese version is under translation. Contributions via GitHub PR or Issues are welcome.
 
-
 --------
 
 ## Other Improvements
@@ -186,7 +176,6 @@ This site is built with Next.js and Fumadocs modern frontend stack — thanks to
 - **tuned module optimization**: Optimized for modern hardware and NVMe disks, removed outdated configuration parameters, added NVMe/virtualized SSD scheduling/readahead parameter optimizations
 - **MCP Toolbox integration**: Integrated Google's newly released MCP Toolbox (database MCP toolbox), with preset template SQL solving some database security issues
 - **Configuration template adjustments**: All configuration templates adjusted to **single-node** mode for quicker onboarding
-
 
 --------
 
@@ -204,8 +193,6 @@ PostgreSQL 18 will be released in September — Pigsty plans to officially relea
 The main theme of v4.x will be **DBA Agent**. Pigsty already has the complete context needed for a DBA Agent — the core being this industry-leading PG monitoring system. Once the domain knowledge accumulated in documentation is rich enough, wrapping MCP around the Pig CLI tool will birth a capable fully self-driving database DBA Agent.
 
 ![](dba-agent.jpg)
-
-
 
 --------
 --------
@@ -298,7 +285,6 @@ New Victoria Metrics / Victoria Logs related packages:
 - documentdb 0.103.0 -> 0.105.0
 - pg_search 0.17.0
 
-
 ### API Changes
 
 * `pg_fs_backup`: Renamed to `pg_fs_backup`, default value `/data/backups`.
@@ -332,10 +318,7 @@ c4fadf1645c8bbe3e83d5a01497fa9ca  pigsty-pkg-v3.6.0.u22.aarch64.tgz
 dbe5c1e8a242a62fe6f6e1f6e6b6c281  pigsty-pkg-v3.6.0.u24.x86_64.tgz
 ```
 
-
 See [GitHub Release](https://github.com/pgsty/pigsty/releases/tag/v3.6.0) for more details.
-
-
 
 --------
 
@@ -347,14 +330,12 @@ Pigsty v3.6.1 released with PostgreSQL minor version updates!
 curl https://repo.pigsty.cc/get | bash -s v3.6.1
 ```
 
-
 ### Highlights
 
 - PostgreSQL 17.6, 16.10, 15.14, 14.19, 13.22, and 18 Beta 3 support
 - Using Pigsty-provided PGDG APT/YUM mirrors in mainland China to resolve update supply issues
 - New website homepage: https://pigsty.io
 - Added el10, debian 13 implementation stubs, and el10 Terraform images
-
 
 ### Infrastructure Package Updates
 
@@ -374,7 +355,6 @@ curl https://repo.pigsty.cc/get | bash -s v3.6.1
 - tigerbeetle 0.16.54
 - genai-toolbox 0.12.0
 
-
 ### Database Package Updates
 
 - pg_search 0.17.3
@@ -383,7 +363,6 @@ curl https://repo.pigsty.cc/get | bash -s v3.6.1
 
 - Removed `br_filter` kernel module from `node_kernel_modules` default value.
 - Uses OS major version number when adding PGDG YUM source, no longer uses minor version number.
-
 
 ### Checksums
 
@@ -400,7 +379,6 @@ c25ccfb98840c01eb7a6e18803de55bb  pigsty-pkg-v3.6.1.u22.x86_64.tgz
 4fbbab1f8465166f494110c5ec448937  pigsty-pkg-v3.6.1.u24.x86_64.tgz
 083d8680fa48e9fec3c3fcf481d25d2f  pigsty-v3.6.1.tgz
 ```
-
 
 See [GitHub Release](https://github.com/pgsty/pigsty/releases/tag/v3.6.1) for more details.
 

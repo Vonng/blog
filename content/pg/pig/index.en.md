@@ -21,7 +21,6 @@ Ready to give your Postgres superpowers without the usual hassle? Check out **[G
 
 [PIG v0.1 Release](https://github.com/pgsty/pig) | [GitHub Repo](https://github.com/pgsty/pig) | Blog: [The Idea Way to deliver PG Extensions](https://medium.com/@fengruohang/the-idea-way-to-deliver-postgresql-extensions-35646464bb71)
 
-
 -------
 
 ## Get Started
@@ -34,7 +33,6 @@ curl -fsSL https://repo.pigsty.io/pig | bash
 
 Then it's ready to use; assume you want to install the [`pg_duckdb`](https://pgext.cloud/e/pg_duckdb) extension:
 
-
 ```bash
 $ pig repo add pigsty pgdg -u  # add pgdg & pigsty repo, update cache
 $ pig repo set -u              # overwrite all existing repos, brute but effective
@@ -44,7 +42,6 @@ $ pig ext install pg_duckdb    # install the pg_duckdb extension (for current pg
 ```
 
 ### **Extension Management**
-
 
 ```bash
 pig ext list    [query]      # list & search extension      
@@ -60,7 +57,6 @@ pig ext build   [ext...]     # setup building env for extension
 
 ### **Repo Management**
 
-
 ```bash
 pig repo list                    # available repo list             (info)
 pig repo info   [repo|module...] # show repo info                  (info)
@@ -72,4 +68,3 @@ pig repo create                  # create repo on current system   (root)
 pig repo boot                    # boot repo from offline package  (root)
 pig repo cache                   # cache repo as offline package   (root)
 ```
-

@@ -28,7 +28,6 @@ This is part of the broader data-sovereignty story. But I do not want to do the 
 
 My answer is: **2027.**
 
-
 --------
 
 ## The Sweet Trap of the Subsidy Era
@@ -46,7 +45,6 @@ For me personally, my monthly AI usage already comes out to around $20,000 in AP
 
 So the optimal strategy right now is obvious: **milk the subsidy while it lasts.**
 But you should also plan ahead. When the subsidy tide goes out, what is your fallback?
-
 
 --------
 
@@ -90,7 +88,6 @@ First, memory capacity. A 400B dense model needs about 800 GB in FP16, or still 
 
 Right now, only one product shape can realistically deliver that: **DGX Station.**
 
-
 --------
 
 ## 2027: Where Three Curves Meet
@@ -122,7 +119,6 @@ This is the most important curve. Strong hardware is useless without strong mode
 The pace of open-model progress over the last two years has been startling. In mid-2024, Llama 3 70B was roughly GPT-3.5 class. In early 2025, DeepSeek V3 approached GPT-4. By late 2025, Llama 4 Maverick and the Qwen family were already close to GPT-4o. Extrapolate that trend, and it is more likely than not that by 2027 the open-source frontier reaches something like today's Claude Sonnet 4.6.
 
 What would that mean? It would mean one Rubin DGX Station running a 2027 frontier open model could cover 80%-90% of your daily AI workload: coding assistant, document analysis, RAG, data processing, translation, summarization. Only the most cutting-edge reasoning and agentic tasks would still need proprietary APIs.
-
 
 --------
 
@@ -172,7 +168,6 @@ If you buy the argument above, the roadmap is straightforward:
 - Deploy local inference services to cover 80%-90% of routine demand
 - Keep lightweight API subscriptions for frontier tasks
 - Enjoy the freedom of AI autonomy: effectively unlimited use, less censorship, lower latency, and no billing anxiety
-
 
 --------
 

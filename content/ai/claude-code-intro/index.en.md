@@ -21,7 +21,6 @@ A few months ago, a recent graduate asked me for job hunting advice. My only sug
 Today's tutorial shows you how to get up and running with Claude Code quickly.
 (Plus how to swap in alternative models at 1/10 the cost of Claude Opus)
 
-
 --------
 
 ## What is Claude Code?
@@ -39,7 +38,6 @@ For example: the Pigsty homepage at pigsty.cc was generated with a single comman
 Can beginners use it? Yes. CC isn't just for programmers. You don't need to know how to code—just type and describe your needs.
 "Theoretically" anything you can do with a computer, CC can do too.
 
-
 ### A Key Distinction
 
 Note: CC is not a large language model—CC is an application that uses LLMs for coding, an intelligent Agent.
@@ -55,8 +53,6 @@ By default, CC connects to Anthropic's own Claude models, but CC also supports s
 This is the core idea of today's tutorial:
 
 > Use the best cockpit (Claude Code), but swap in cheaper alternative engines.
-
-
 
 --------
 
@@ -85,8 +81,6 @@ So if you ask me whether GLM 4.7 can beat Claude Opus 4.5 in capability—defini
 I use it myself as a backup when my Claude quota runs out.
 I'm planning to use openCode with GLM in Pigsty as a DBA Agent—scanning logs and monitoring dashboards. At this price, using it for grunt work doesn't hurt at all.
 
-
-
 --------
 
 ## Quick Start
@@ -100,8 +94,6 @@ glm                                                # Start CC (GLM mode)
 ```
 
 Works on Linux/macOS. Let me walk you through the details.
-
-
 
 ### Step 1: Open Terminal and Run the Command
 
@@ -135,8 +127,6 @@ Wait a few seconds and installation is complete. I've hosted the Claude Code bin
 Once CC is installed, if you launch it directly (`claude`), it will connect to Claude's official models by default.
 To use an alternative model like GLM 4.7, you need to configure it.
 
-
-
 ### Step 2: Get an API Key
 
 Since we're using GLM as the engine, you'll need an API key from Zhipu.
@@ -158,7 +148,6 @@ ccm set glm 46b1axxxxxxxxxxxxxceYVVV # Replace with your API KEY
 
 This script is adapted from a Claude Code switching script [ccm](https://github.com/foreveryh/claude-code-switch) that makes it easy to switch between different models.
 You can also use other providers like Kimi, Qwen, MiniMax, DeepSeek, etc.
-
 
 ### Step 3: Run Claude Code
 
@@ -182,11 +171,6 @@ If you see the model showing `GLM-4.7`, you've configured it correctly.
 
 ![configure-key.jpg](configure-key.jpg)
 
-
-
-
-
-
 --------
 
 ## What's Next?
@@ -203,8 +187,6 @@ It will figure out how to solve the problem itself.
 ![process-excel.jpg](process-excel.jpg)
 
 You can try the free tier first to see how it works. Once you're satisfied, consider a subscription.
-
-
 
 --------
 
@@ -228,8 +210,6 @@ claude mcp add -s user -t http zread https://open.bigmodel.cn/api/mcp/zread/mcp 
 
 With these capabilities, your CC can search the web in real-time, read web content, and process images.
 Various MCP marketplaces also offer all kinds of fancy capabilities. Add them as needed.
-
-
 
 --------
 

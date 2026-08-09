@@ -13,16 +13,14 @@ tags: [PostgreSQL, PG管理, 扩展]
 
 PipelineDB可以直接通过官方rpm包安装。
 
-加载PipelineDB需要添加动态链接库，在`postgresql.conf`中修改配置项并重启：
+加载PipelineDB需要添加动态链接库，在 `postgresql.conf` 中修改配置项并重启：
 
 ````ini
 shared_preload_libraries = 'pipelinedb'
 max_worker_processes = 128
 ````
 
-注意如果不修改`max_worker_processes`会报错。其他配置都参照标准的PostgreSQL
-
-
+注意如果不修改 `max_worker_processes` 会报错。其他配置都参照标准的PostgreSQL
 
 ## PipelineDB使用样例 —— 维基PV数据
 
@@ -58,9 +56,6 @@ curl -sL http://pipelinedb.com/data/wiki-pagecounts | gunzip | \
         COPY wiki_stream (hour, project, title, view_count, size) FROM STDIN"
 ```
 
-
-
 ## 基本概念
 
 PipelineDB中的基本抽象被称之为：**连续视图（Continuous View）**。
-

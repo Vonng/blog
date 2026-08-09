@@ -18,9 +18,6 @@ PostgreSQL has always been my favorite database, but my second favorite database
 
 Just like the vector database extension race two years ago, the current PostgreSQL ecosystem extension competition has begun revolving around DuckDB — "***Whoever better integrates DuckDB in PostgreSQL wins the future of the OLAP world***." Although many players are already gearing up, DuckDB's official entry into the game undoubtedly announces that this competition is about to enter white-hot territory.
 
-
-
-
 --------
 
 ## DuckDB: The Rising OLAP Challenger
@@ -45,8 +42,6 @@ Meanwhile, DuckDB has also earned excellent reputation among users, with its pop
 
 ![db-engine-duckdb.png](db-engine-duckdb.png)
 
-
-
 --------
 
 ## DuckDB's Shortcomings and Opportunities Within
@@ -59,8 +54,6 @@ After the vector retrieval library hnswlib went open-source, countless "speciali
 ![ecosystem.jpg](ecosystem.jpg)
 
 Actually, this has already happened in the PostgreSQL ecosystem. Before other database products and companies could react, the PostgreSQL ecosystem already has five players in the race, including ParadeDB's `pg_lakehouse`, domestic individual developer Li Hongyan's `duckdb_fdw`, CrunchyData's `crunchy_bridge`, Hydra's `pg_quack`; and now MotherDuck's original factory has also come to make PostgreSQL extensions — `pg_duckdb`.
-
-
 
 --------
 
@@ -81,7 +74,6 @@ Similarly, YC-funded startup database company ParadeDB (YC S23), after trying to
 Domestic individual developer Li Hongyan's [`duckdb_fdw`](https://pgext.cloud/e/duckdb_fdw) is another path taking a different approach. Instead of directly using PostgreSQL's storage engine interface, it uses the Foreign Data Wrapper (FDW) infrastructure to connect PostgreSQL and DuckDB. This triggered official criticism, using it as a negative example, perhaps motivating MotherDuck to enter the field personally: "I'm still conceiving great blueprints on how to merge PostgreSQL and DuckDB's power, but you're moving too fast — let me show you some official shock."
 
 As for CrunchyData's `crunchy_bridge` or other database companies' closed-source wrapper extensions, I personally feel they're unlikely to succeed.
-
 
 --------
 

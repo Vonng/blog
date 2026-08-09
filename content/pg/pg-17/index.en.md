@@ -29,8 +29,6 @@ Countless capital has also flooded into the PostgreSQL ecosystem, with [PostgreS
 
 ![eco.png](eco.png)
 
-
-
 ----------
 
 ## Original: PostgreSQL 17 Release Announcement
@@ -47,7 +45,6 @@ PostgreSQL core team member Jonathan Katz stated: "PostgreSQL 17 demonstrates ho
 
 PostgreSQL is an innovative data management system known for reliability, robustness, and extensibility. Benefiting from over 25 years of open-source development by the global developer community, **it has become the preferred open-source relational database for organizations of all types**.
 
-
 --------
 
 ## Comprehensive System Performance Improvements
@@ -58,7 +55,6 @@ PostgreSQL 17 also continues optimizing performance at the I/O layer. Due to imp
 
 PostgreSQL 17 also improves query execution performance. For `IN` clause queries using [B-tree](https://www.postgresql.org/docs/17/indexes-types.html#INDEXES-TYPES-BTREE) indexes (PostgreSQL's default index method), performance has improved. Additionally, [BRIN](https://www.postgresql.org/docs/17/brin.html) indexes now support parallel construction.
 PostgreSQL 17 made several query planning improvements, including optimizations for `NOT NULL` constraints and improved handling of CTEs ([`WITH`](https://www.postgresql.org/docs/17/queries-with.html) queries). In this release, SIMD (Single Instruction Multiple Data) acceleration is more widely applied, such as using `AVX-512` instructions in the [`bit_count`](https://www.postgresql.org/docs/17/functions-bitstring.html) function.
-
 
 --------
 
@@ -76,7 +72,6 @@ The PostgreSQL foreign data wrapper ([`postgres_fdw`](https://www.postgresql.org
 
 PostgreSQL 17 also includes a built-in, platform-independent, immutable collation provider to ensure collation immutability and provides sorting semantics similar to the `C` collation but using `UTF-8` encoding instead of `SQL_ASCII`. Using this new collation provider ensures your text queries return the same sorting results regardless of where PostgreSQL runs.
 
-
 --------
 
 ## Logical Replication Improvements for High Availability and Major Version Upgrades
@@ -87,7 +82,6 @@ Starting with PostgreSQL 17, users no longer need to drop logical replication sl
 
 PostgreSQL 17 now includes failover capabilities for logical replication, making it more reliable when deployed in high-availability environments.
 Additionally, PostgreSQL 17 introduces the command-line tool [`pg_createsubscriber`](https://www.postgresql.org/docs/17/app-pgcreatesubscriber.html) for converting physical standby servers to new logical standby servers.
-
 
 --------
 
@@ -109,7 +103,6 @@ and adds the new system view [`pg_wait_events`](https://www.postgresql.org/docs/
 
 PostgreSQL 17 adds many other new features and improvements that may benefit your use cases. Please refer to the [release notes](https://www.postgresql.org/docs/17/release-17.html) for a complete list of new features and changes.
 
-
 --------
 
 ## About PostgreSQL
@@ -118,7 +111,6 @@ PostgreSQL is the world's most advanced open-source database, with a global comm
 PostgreSQL continues to develop at an unparalleled pace: **PostgreSQL provides a mature feature set that not only matches top proprietary commercial database systems but exceeds them in advanced database functionality, extensibility, security, and stability.**
 
 > Translator's note: Yes, they're talking about you, Oracle
-
 
 --------
 
@@ -129,7 +121,6 @@ Incidentally, Pigsty v3.0.3, which closely follows PostgreSQL 17's release, now 
 [**Pigsty**](https://pigsty.cc/en) is open-source, free, local-first, ready-to-use PostgreSQL RDS that allows users to locally deploy production-grade PostgreSQL cloud database services with one click, complete with 390 ready-to-use PostgreSQL extensions, self-healing high availability, top-tier monitoring systems, PITR backup and recovery, IaC command-line tools, and SOP management procedures.
 
 ![pigsty-home.webp](pigsty-home.webp)
-
 
 --------
 

@@ -18,8 +18,7 @@ tags: [Pigsty]
 
 ## v0.8.0
 
-v0.8 针对 **服务（Service）** 接入部分进行了彻底的重做。现在除了默认的`primary`, `replica`服务外，用户可以自行定义新的服务。服务的接口可以支持多种不同的实现，例如L4 DPKG VIP可作为Haproxy的替代品与Pigsty集成。同时，针对用户反馈的一些问题进行了集中处理与改进。
-
+v0.8 针对 **服务（Service）** 接入部分进行了彻底的重做。现在除了默认的 `primary`, `replica` 服务外，用户可以自行定义新的服务。服务的接口可以支持多种不同的实现，例如L4 DPKG VIP可作为Haproxy的替代品与Pigsty集成。同时，针对用户反馈的一些问题进行了集中处理与改进。
 
 ### 改动内容
 
@@ -27,7 +26,7 @@ v0.8是供给方案定稿版本，此后供给系统的API将保持稳定。
 
 #### API变更
 
-原有`vip`与`haproxy`角色的所有配置项，现在迁移至`service`角色中。
+原有 `vip` 与 `haproxy` 角色的所有配置项，现在迁移至 `service` 角色中。
 
 ```yaml
 #------------------------------------------------------------------------------
@@ -125,21 +124,19 @@ haproxy_weight_fallback
 vip_enabled                                   # vip_enabled参数被vip_mode覆盖
 ```
 
-
-
 #### 服务管理
 
-`pg_services` 与 `pg_services_extra` 定义了集群中的**服务**，每一个服务的定义结构如下例所示：
+`pg_services` 与 `pg_services_extra` 定义了集群中的 **服务**，每一个服务的定义结构如下例所示：
 
 一个服务必须指定以下内容：
 
-* **名称**：服务的完整名称以数据库集群名为前缀，以`service.name`为后缀，通过`-`连接。例如在`pg-test`集群中`name=primary`的服务，其完整服务名称为`pg-test-primary`。
+* **名称**：服务的完整名称以数据库集群名为前缀，以 `service.name` 为后缀，通过 `-` 连接。例如在 `pg-test` 集群中 `name=primary` 的服务，其完整服务名称为 `pg-test-primary`。
 
 * **端口**：在Pigsty中，服务默认采用NodePort的形式对外暴露，因此暴露端口为必选项。但如果使用外部负载均衡服务接入方案，您也可以通过其他的方式区分服务。
 
-* **选择器**：选择器指定了服务的成员，采用JMESPath的形式，从所有集群实例成员中筛选变量。默认的`[]`选择器会选取所有的集群成员。
+* **选择器**：选择器指定了服务的成员，采用JMESPath的形式，从所有集群实例成员中筛选变量。默认的 `[]` 选择器会选取所有的集群成员。
 
-  此外`selector_backup`会选择或标记用于backup的实例列表（当集群中所有其他成员失效时方才接管服务）
+  此外 `selector_backup` 会选择或标记用于backup的实例列表（当集群中所有其他成员失效时方才接管服务）
 
 ```yaml
   # default service will route {ip|name}:5436 to primary postgres (5436->5432 primary)
@@ -158,15 +155,9 @@ vip_enabled                                   # vip_enabled参数被vip_mode覆�
       default_server_options: 'inter 3s fastinter 1s downinter 5s rise 3 fall 3 on-marked-down shutdown-sessions slowstart 30s maxconn 3000 maxqueue 128 weight 100'
 ```
 
-
-
-
-
-
-
 ### 数据库管理
 
-数据库现在可以对locale的细分选项：`lc_ctype`与`lc_collate`分别进行指定。支持这一功能的主要原因是PG的扩展插件`pg_trgm`需要在`lc_ctype!=C`的环境中才能正常支持中文。
+数据库现在可以对locale的细分选项：`lc_ctype` 与 `lc_collate` 分别进行指定。支持这一功能的主要原因是PG的扩展插件 `pg_trgm` 需要在 `lc_ctype!=C` 的环境中才能正常支持中文。
 
 #### 旧接口定义
 
@@ -211,7 +202,3 @@ pg_databases:
     pgbouncer: true                 # optional, add this database to pgbouncer list? true by default
     comment: pigsty meta database   # optional, comment string for database
 ```
-
-
-
-

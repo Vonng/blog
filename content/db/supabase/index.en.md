@@ -16,7 +16,6 @@ Pigsty helps you build enterprise-grade Supabase on your own servers (physical/v
 
 > Pigsty is one of the three 3rd party self-hosting tutorials listed in the [official Supabase docs](https://supabase.com/docs/guides/self-hosting#third-party-guides)
 
-
 --------
 
 ## Quick Start [#short-version]
@@ -102,7 +101,6 @@ Additionally, Pigsty handles the automatic setup of underlying [high availabilit
 In this self-hosting deployment architecture, you gain the freedom to use different kernels (PostgreSQL 15-17, OrioleDB), the freedom to install [**440**](https://pgext.cloud/list/) extensions, the freedom to scale Supabase/Postgres/MinIO,
 the freedom from database operational chores, and the freedom from vendor lock-in to run locally indefinitely. Compared to the cost of using cloud services, the price is just preparing servers and typing a few more commands.
 
-
 ------
 
 ## Single Node Quick Start
@@ -145,15 +143,11 @@ The default username and password are: `supabase` and `pigsty`.
 
 </Callout>
 
-
 <Callout title="Please change passwords for production deployment!" type="warning">
 
     For serious production deployments, **must** change all default passwords!
 
 </Callout>
-
-
-
 
 ------
 
@@ -174,7 +168,6 @@ Some Supabase functionality requires sending emails, so SMTP services are needed
 If your service is directly exposed to the public network, we strongly recommend using real domains and HTTPS certificates and accessing through [Nginx Portal](https://pigsty.io/docs/infra/admin/portal/).
 
 Next, we'll discuss some advanced topics in sequence: how to further improve Supabase security, availability, and performance based on single-node deployment.
-
 
 ------
 
@@ -219,10 +212,10 @@ After modifying Supabase credentials, you can restart Docker Compose containers 
 ```bash tab="Playbook"
 ./app.yml -t app_config,app_launch
 ```
+
 ```bash tab="Manual"
 cd /opt/supabase; make up
 ```
-
 
 ------
 
@@ -272,8 +265,6 @@ all:
 Complete domain/HTTPS configuration can refer to the [Certificate Management](https://pigsty.io/docs/infra/admin/cert/) tutorial. You can also use Pigsty's built-in local static resolution and self-signed HTTPS certificates as fallback.
 
 [![asciicast](https://asciinema.org/a/731211.svg)](https://asciinema.org/a/731211)
-
-
 
 ------
 
@@ -336,8 +327,6 @@ Then specify using the `aliyun` backup repository in `all.vars.pgbackrest_method
 
 Pigsty will switch the backup repository to external object storage. More backup configurations can refer to [PostgreSQL Backup](https://pigsty.io/docs/pgsql/backup) documentation.
 
-
-
 ------
 
 ## Advanced Topic: Using SMTP
@@ -362,7 +351,6 @@ all:
 ```
 
 Don't forget to use `app.yml` to reload the configuration
-
 
 ------
 

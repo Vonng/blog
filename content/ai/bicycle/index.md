@@ -94,7 +94,7 @@ ai: true
 
 在重置还没这么密集之前，我的日常节奏是：给 Claude 和 Codex 派一组大活，它们差不多要跑半个小时。这半小时里，我可以上网冲浪、写文章、看小说、打把王者，或者躺一会儿。半小时后回来验收，再派下一波任务。
 
-老冯一个人维护 Pigsty 这么一个巨型 PostgreSQL 发行版——几万个 RPM 包，无数组件要在 16 个 Linux 平台上协调、集成、测试。面对这种超大规模的工程，我居然还能做到时间有余，可以搞搞副业，甚至去[**接盘个 MinIO** ](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247491187&idx=1&sn=005af2d12f6f4d258040efbe4faf08bb&scene=21#wechat_redirect)什么的，说起来，Claude 和 Codex 功不可没。
+老冯一个人维护 Pigsty 这么一个巨型 PostgreSQL 发行版——几万个 RPM 包，无数组件要在 16 个 Linux 平台上协调、集成、测试。面对这种超大规模的工程，我居然还能做到时间有余，可以搞搞副业，甚至去[**接盘个 MinIO**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247491187&idx=1&sn=005af2d12f6f4d258040efbe4faf08bb&scene=21#wechat_redirect)什么的，说起来，Claude 和 Codex 功不可没。
 
 但我也清楚，这套模式多半没法直接外推到团队。一个人干活是不需要沟通的，零 communication 成本；而在大公司里，沟通对齐才是最大的摩擦。个人、一人团队、或者像我这样的 OPC（One Person Company），完全没有这个问题——所以很多打法未必能照搬到 B 端去。
 

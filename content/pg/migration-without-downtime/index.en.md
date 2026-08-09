@@ -41,10 +41,12 @@ Several logical replication methods each have their advantages and disadvantages
 - When problems occur, simply clear corresponding tables in the new database.
 
 #### 3. Read Migration
+
 - Application modified to read data from new database.
 - When problems occur, rollback to version that reads from old database.
 
 #### 4. Single Write
+
 - After observing for some time without issues, application modified to write only to new database.
 - When problems occur, rollback to dual-write version.
 

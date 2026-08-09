@@ -17,9 +17,6 @@ PostgreSQL 一直以来都是我最喜欢的数据库，然而我第二喜欢的
 
 正如两年前开展的向量数据库扩展插件赛马一样，当下 PG 生态进行的扩展竞赛已经开始围绕 DuckDB 进行 —— “***谁更好地在PG中整合DuckDB，谁就赢得OLAP世界的未来***”。尽管已经有许多玩家在摩拳擦掌，但 DuckDB 官方亲自下场，毫无疑问宣告着这场竞争即将进入白热化。
 
-
-
-
 --------
 
 ## DuckDB：OLAP的新兴挑战者
@@ -44,8 +41,6 @@ DuckDB 整个数据库软件源代码就是一个头文件一个c++文件，编�
 
 ![db-engine-duckdb.png](db-engine-duckdb.png)
 
-
-
 --------
 
 ## DuckDB的短板与其中的机遇
@@ -58,8 +53,6 @@ DuckDB 是一个可以独立使用的数据库，但更是一个嵌入式的分�
 ![ecosystem.jpg](ecosystem.jpg)
 
 实际上，这样的事情已经在 PostgreSQL 生态中发生了。在其他数据库产品和公司还没来得及反应之前，PG 生态已经有五个玩家下场赛马了，包括 ParadeDB 的 `pg_lakehouse`，国内个人开发者李红艳编写的 `duckdb_fdw`，CrunchyData 的 `crunchy_bridge`， Hydra 出品的 `pg_quack`；以及目前 MotherDuck 原厂也跑过来做 PG 扩展了 —— `pg_duckdb`。
-
-
 
 --------
 
@@ -80,7 +73,6 @@ DuckDB 是一个可以独立使用的数据库，但更是一个嵌入式的分�
 国内个人开发者李红艳开发的 [`duckdb_fdw`](https://pgext.cloud/e/duckdb_fdw) 是另一条另辟蹊径的道路。不是直接利用 PG的存储引擎接口，而是直接用外部数据源包装器（FDW）的基础设施，将 PG 和 DuckDB 对接到了一起。这引发了官方亲自下场吐槽，将其作为反例批判，也许是 MotherDuck 亲自下场的一个动机：“我还在构思伟大蓝图，如何融合PG与Duck的力量，你小子动作也太快了，得给你一点官方震撼看看”。
 
 至于 CrunchyData 搞的 `cunchy_bridge` ，或者其他数据库公司搞的闭源套壳扩展，我个人感觉是很难有出息的。
-
 
 --------
 

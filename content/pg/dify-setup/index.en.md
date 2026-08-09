@@ -11,7 +11,7 @@ aliases: ["/ai/dify-setup/"]
 ---
 
 
-[**Dify**](https://dify.ai/) -- The Innovation Engine for GenAI Applications 
+[**Dify**](https://dify.ai/) -- The Innovation Engine for GenAI Applications
 
 Dify is an open-source LLM app development platform. Orchestrate LLM apps from agents to complex AI workflows, with an RAG engine.
 Which claims to be more production-ready than LangChain.
@@ -39,9 +39,6 @@ Reference:
 
 - [GitHub: langgenius/Dify](https://github.com/langgenius/dify/)
 - [Pigsty: Dify Docker Compose Template](https://github.com/Vonng/pigsty/tree/master/app/dify)
-
-
-
 
 ------
 
@@ -87,7 +84,6 @@ bin/pgsql-db   pg-meta dify           # create dify biz database
 
 You should be able to access PostgreSQL and Redis with the following connection strings, adjusting the connection information as needed:
 
-
 ```bash
 psql postgres://dbuser_dify:DBUser.Dify@10.10.10.10:5432/dify -c 'SELECT 1'
 redis-cli -u redis://redis.dify@10.10.10.10:6379/0 ping
@@ -98,9 +94,6 @@ Once you confirm these connection strings are working, you're all set to start d
 For demonstration purposes, we're using direct IP connections. For a multi-node high availability PG cluster, please refer to the [service access](https://pigsty.cc/docs/concept/svc) section.
 
 The above assumes you are already a Pigsty user familiar with deploying PostgreSQL and Redis clusters. You can skip the next section and proceed to see [how to configure Dify](#dify-configuration).
-
-
-
 
 ------
 
@@ -143,8 +136,6 @@ Pigsty will not deploy Docker by default, so you need to install Docker with the
 ```bash
 ./docker.yml
 ```
-
-
 
 ------
 
@@ -190,8 +181,6 @@ Now we can pull up dify with docker compose:
 ```bash
 cd pigsty/app/dify && make up
 ```
-
-
 
 ------
 

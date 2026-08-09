@@ -18,15 +18,14 @@ tags: [开源, 供应链, 信任, 运维]
 老冯看到评论之后也做了回复：
 
 > 感谢 [回复与评论](https://vonng.com/pg/pg-mirror-pigsty/)，也感谢这些年 TUNA 以及国内各高校镜像站为开源镜像生态投入的时间和精力。我看到最近几天 TUNA 的 PostgreSQL 仓库已经 [恢复了和上游的同步](https://mirrors.tuna.tsinghua.edu.cn/postgresql/repos/yum/18/)，这一点先点个赞。
-> 
+>
 > 最初发现问题时，我用的是阿里云的 PostgreSQL 镜像。后来注意到 TUNA 上也存在同样的情况，就纯粹出于开源道义在 [向 TUNA 邮件列表反馈问题](https://groups.google.com/g/tuna-general/c/BU8P7X3y4sI)，得到的是一句（本邮件列表是 TUNA 的邮件列表，与阿里云无关）与长期的沉默，这样的感受会体现在文章的情绪中。
-> 
+>
 > 回头看原文，用“躺平”“没有担当”这样带有明显的情绪色彩的字眼，放在 **贵站身上** 已经不准确，也容易被误解为在给志愿者贴道德标签，这并非我本意。如果这段措辞让一线维护同学感到不舒服，我在这里先说声抱歉。我已经 [修改措辞](https://github.com/Vonng/blog/commit/916697a88f143679d658dc52338827ce603444fd) 为更中性的说法，比如“长期未更新” / “不再维护”，避免伤到真正干活的人。
-> 
+>
 > 对于你提到的一点我是认同的：高校镜像站本质上是志愿者项目，没有法律或合同意义上的承诺。不再维护这件事无法在法律和道德上苛责什么，这一点在文章里也多次强调过。但从下游用户的角度看，PGDG 切断 rsync 之后，国内主流镜像在相当长一段时间里停留在几个月前的版本，对很多只会照着“推荐镜像源”配置的用户来说，客观效果就是供应链中断，这是实实在在的风险，缺乏维护损耗的是用户对镜像站的信任。
-> 
+>
 > 我的感想是：在没有服务承诺的前提下，把高校镜像当成关键生产基础设施，是一种错误的依赖方式。我自己的做法是不再把别人的开源镜像站当成上游，而是自建 PGDG 镜像，自己掌握软件供应链；再次感谢你把维护者的视角和感受说出来。这次讨论至少能帮更多用户搞清楚：**开源软件镜像站能做什么、不能指望它做什么，这本身就是有价值的。**
-
 
 ## 老冯的感想
 
@@ -56,10 +55,8 @@ tags: [开源, 供应链, 信任, 运维]
 移除了对阿里云 PostgreSQL 镜像站的上游依赖，至少在 PostgreSQL 制成品分发上，实现了完整的自主可控供应链。
 老实说，如果不是因为国内镜像站在这件事上的整体表现，老冯可能也不会这么快去做这件事。
 
-老冯嘴臭惯了，对云厂商说话一向不太客气，但这不意味着我不理解志愿者的难处 —— 
+老冯嘴臭惯了，对云厂商说话一向不太客气，但这不意味着我不理解志愿者的难处 ——
 尤其是对于高校开源志愿者，整体上我觉得应该多一点呵护，少一点道德化的指责，这也是我后来主动调整措辞的原因。
-
-
 
 ## 开源与信任
 
@@ -81,8 +78,6 @@ tags: [开源, 供应链, 信任, 运维]
 将心比心，当我发现我所依赖的上游镜像站出现问题，而你反馈了也没人理、没人修时，我自己也会有这位用户一样的感受：
 
 > “**我不愿把希望和信任寄托在一个维护者缺席的项目上**”。
-
-
 
 ## 软件供应链
 
@@ -115,7 +110,6 @@ tags: [开源, 供应链, 信任, 运维]
 
 所以，这篇文章不是要去指责镜像站 “没有担当”，而是要提醒下游用户 —— **在严肃的生产环境里，你不能依赖一个明确说“我不提供任何保证”的上游。**
 
-
 ## 质量与承诺
 
 清华 TUNA 提供的很多镜像服务是有价值的。比如 pypi 和 homebrew 镜像，我个人电脑上就一直在用，它们完全胜任“加速访问”的角色。
@@ -135,7 +129,6 @@ tags: [开源, 供应链, 信任, 运维]
 
 当高校镜像站把丑话说在前面，下游又应当如何自处？当别人告诉你“别指望我”，最稳妥的回应永远是“那我自己来”。
 
-
 --------
 
 ## 广告时间
@@ -144,12 +137,10 @@ tags: [开源, 供应链, 信任, 运维]
 这些仓库提供 Cloudflare 全球版本与国内云墙内版本，可以方便的使用 pig / apt / dnf 启用。
 更详细的介绍请参考 https://pgext.cloud/repo .
 
-
 ### PGDG镜像
 
 定期同步全球 PostgreSQL 开发组官方软件仓库（el 7-10, debian 11-13, ubuntu 20-24）
 最近同步于今天，每周更新，中国大陆区域镜像地址： https://repo.pigsty.cc/apt/pgdg / https://repo.pigsty.cc/yum/pgdg
-
 
 ### PIGSTY PGSQL
 
@@ -177,17 +168,10 @@ PIGSTY PGSQL 仓库：提供 [几款不同风味的 PG 内核分支](https://pig
 |         [ferretdb](https://github.com/FerretDB/FerretDB)          |     2.7.0      |             [pg_exporter](https://github.com/Vonng/pg_exporter)             |  1.0.3  | [grafana-vmetrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) | 0.19.6 |
 |     [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle)     |    0.16.60     |     [pgbackrest_ex...](https://github.com/woblerr/pgbackrest_exporter)      | 0.21.0  |     [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/noarch/grafana-plugins)     | 12.0.0 |
 |          [juicefs](https://github.com/juicedata/juicefs)          |     1.3.0      |        [node_exporter](https://github.com/prometheus/node_exporter)         | 1.10.2  |                                                                                                |        |
-|           [dblab](https://github.com/danvergara/dblab)            |     0.34.2     |      [keepalived_exp...](https://github.com/mehdy/keepalived-exporter)      |  1.7.0  |                                              **UTILS**                                         |        |                            
+|           [dblab](https://github.com/danvergara/dblab)            |     0.34.2     |      [keepalived_exp...](https://github.com/mehdy/keepalived-exporter)      |  1.7.0  |                                              **UTILS**                                         |        |
 |            [vray](https://github.com/v2fly/v2ray-core)            |     5.28.0     |   [nginx_exporter](https://github.com/nginxinc/nginx-prometheus-exporter)   |  1.5.1  |                          [sealos](https://github.com/labring/sealos)                           | 5.1.1  |
 |                [pig](https://github.com/pgsty/pig)                |     0.7.2      |    [zfs_exporter](https://github.com/waitingsong/zfs_exporter/releases/)    |  3.8.1  |                      [rclone](https://github.com/rclone/rclone/releases/)                      | 1.71.2 |
 | [vip-manager](https://github.com/cybertec-postgresql/vip-manager) |     4.0.0      |      [mysqld_exporter](https://github.com/prometheus/mysqld_exporter)       | 0.18.0  |                           [restic](https://github.com/restic/restic)                           | 0.18.1 |
 | [pev2](https://github.com/pgsty/infra-pkg/tree/main/noarch/pev2)  |     1.17.0     |        [redis_exporter](https://github.com/oliver006/redis_exporter)        | 1.80.0  |                            [mtail](https://github.com/google/mtail)                            | 3.0.8  |  
 |    [promscale](https://github.com/timescale/promscale)            |     0.17.0     |            [kafka_exporter](https://github.com/danielqsj/kafka_exporter)    |  1.9.0  |                  [genai-toolbox](https://github.com/googleapis/genai-toolbox)                  | 0.18.0 |
 |         [pgschema](https://github.com/pgschema/pgschema)          |   1.4.2        |       [mongodb_exporter](https://github.com/percona/mongodb_exporter)       | 0.47.1  |                        [sqlcmd](https://github.com/microsoft/go-sqlcmd)                        | 1.8.0  |
-|         
-
-
-
-
-
-

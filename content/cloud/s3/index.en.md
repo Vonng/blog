@@ -13,8 +13,6 @@ Object storage (S3) has been a defining service of cloud computing, once hailed 
 
 [![](featured.webp)](https://mp.weixin.qq.com/s/HathxpQ_KUuqxyrtyCDzWw)
 
-
-
 ------------
 
 ## From Cost Reduction to Cash Cow
@@ -41,18 +39,11 @@ However, the field of computer hardware is quite unique—with a Moore's Law tha
 
 It's not hard to see that the unit price of S3's standard tier dropped from **$0.15/GB·month** in 2006 to **$0.023/GB·month** in 2023, a reduction to **15%** of the original or a **6-fold** decrease, which sounds good. However, when you consider that the price of the underlying HDDs for S3 dropped to **3.7%** of their original, a whopping **26-fold** decrease, the trickery becomes apparent.
 
-
-
 **The resource premium multiple of S3 increased from 7 times in 2006 to 30 times today!**
-
-
 
 In 2023, when we re-calculate the costs, it's clear that the value for money of storage services like S3/EBS has changed dramatically—cloud computing power EC2 compared to building one's own servers has a 5 – 10 times premium, while cloud block storage EBS has a several dozen to a hundred times premium compared to local SSDs. Cloud-based S3 compared to ordinary HDDs also has about a thirty times resource premium. And as the anchor of cloud services, the prices of S3/EBS/EC2 are passed on to almost all cloud services—completely stripping cloud services of their cost-effectiveness.
 
 The core issue here is: **The price of hardware resources drops exponentially according to Moore's Law, but the savings are not passed through the cloud providers' intermediary layer to the end-user service prices.** **To not advance is to go back; failing to reduce prices at the pace of Moore's Law is effectively a price increase**. Taking S3 as an example, over the past decade, cloud providers' S3 has nominally reduced prices by 6-fold, but hardware resources have become 26 times cheaper, so how should we view this pricing now?
-
-
-
 
 ---------------
 
@@ -79,15 +70,11 @@ The gap in performance is just one aspect; the cost is even more crucial. The pr
 
 e local NVMe SSD example used here is the Shannon DirectIO G5i 3.2TB MLC particle enterprise-level SSD, extensively used by us. Brand new, disassembled retail pieces are priced at ¥2788 (available on Xianyu!), translating to a monthly cost per TB of 14.5 RMB over 60 months (5 years). Even if we calculate using the Inspur list price of ¥4388, the cost per TB·month is only 22.8. If this example is not convincing enough, we can refer to the 12 TB Gen4 NVMe enterprise-level SSDs purchased by DHH in ["Is It Time to Give Up on Cloud Computing?"](https://mp.weixin.qq.com/s/CicctyvV1xk5B-AsKfzPjw), priced at $2390 each, with a cost per TB·month of exactly **23** RMB.
 
-
 So, why are NVMe SSDs, which outperform by several orders of magnitude, priced an order of magnitude cheaper than standard tier S3 (161 vs 23) and two orders of magnitude cheaper than S3 Express (1120 vs 23 x3)? If I were to use such hardware (even accounting for triple replication) + open-source software to build an object storage service, could I achieve a three orders of magnitude improvement in cost-effectiveness? (This doesn't even account for the reliability advantages of SSDs over HDDs.)
 
 It's worth noting that the comparison above focuses solely on the cost of storage space. The cost of data transfer in and out of object storage is also a significant expense, with some tiers charging not for storage but for retrieval traffic. Additionally, there are issues of SSD reliability compared to HDD, data sovereignty in the cloud, etc., which will not be elaborated further here.
 
 Of course, cloud providers might argue that their S3 service is not just about storage hardware resources but an out-of-the-box **service**. This includes software intellectual property and maintenance labor costs. They may claim that self-hosting has a higher failure rate, is riskier, and incurs significant operational labor costs. Unfortunately, these arguments might have been valid in 2006 or 2013, but they seem rather ludicrous today.
-
-
-
 
 -----------
 
@@ -109,10 +96,6 @@ For object storage services, the cloud's three core value propositions: "cheaper
 
 Therefore, for object storage services, among the cloud's three core value propositions: "cheaper, simpler, faster", the "simpler" part may not hold, and "cheaper" has gone in the opposite direction, probably only leaving "faster" — indeed, no one can beat the cloud on this point. You can indeed apply for PB-level storage services across all regions of the world in less than a minute on the cloud, which is amazing! However, you also have to pay a high premium for this privilege, several to dozens of times over. For enterprises of a certain scale, compared to the cost of operations increasing several times, waiting a couple of weeks or making a one-time capital investment is not a big deal.
 
-
-
-
-
 -----------
 
 ## Summary
@@ -121,10 +104,7 @@ The exponential decline in hardware costs has not been fully reflected in the se
 
 However, the tide is turning. Hardware is becoming interesting again, and cloud providers can no longer indefinitely hide this advantage. The savvy are starting to crunch the numbers, and the bold have already taken action. Pioneers like Elon Musk and DHH have fully realized this, moving away from the cloud to reap millions in financial benefits, enjoy performance gains, and gain more operational independence. More and more people are beginning to notice this, following in the footsteps of these pioneers to make the wise choice and reclaim their hardware dividends.
 
-
-
 ### References
-
 
 `[1]` 2006: *https://aws.amazon.com/cn/blogs/aws/amazon_s3/*
 
@@ -147,4 +127,3 @@ However, the tide is turning. Hardware is becoming interesting again, and cloud 
 `[10]` Aliyun RDS SLA: *https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud201910310944_35008.html?spm=a2c4g.11186623.0.0.270e6e37n8Exh5*
 
 `[11]` Amazon RDS SLA: *https://d1.awsstatic.com/legal/amazonrdsservice/Amazon-RDS-Service-Level-Agreement-Chinese.pdf*
-

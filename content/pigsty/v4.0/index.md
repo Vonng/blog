@@ -44,7 +44,6 @@ v4.0 是一次重大的架构升级，由 320 个 Commit 组成，有着将近 4
 * [完工软件：质量达到满意状态](#finished)
 * [进入 AI 时代：为 Agent 而生](#ai-era)
 
-
 ------
 
 ## 协议变更：回归 Apache 2.0 {#license}
@@ -54,8 +53,6 @@ Pigsty v4.0 重新从 AGPLv3 许可证改回了 Apache 2.0 宽松许可证。
 如果你想做一个自己的定制 PG 发行版，也完全可以在 Pigsty 的基础上进行，避免重复造轮子。
 
 关于变更的细节，这里就不展开讨论了，老冯专门写了一篇文章讨论这个事。《[从AGPL到Apache：Pigsty 协议变更的思考](/pg/pigsty-relicense)》。
-
-
 
 ----
 
@@ -83,8 +80,6 @@ VictoriaMetrics 是 Prometheus 的上位替代品，我们几年前在探探就�
 从整体上来看，当下的 [INFRA 模块](https://pigsty.cc/docs/infra)，就像是一个 Victoria 发行版，Metrics + Logs + Trace + Alert + 统一 UI 入口。
 配上开箱即用的 Grafana，就能让你轻松拥有一个企业级的可观测性平台。
 
-
-
 ------
 
 ## 容器支持：Docker 党的福音 {#docker}
@@ -105,8 +100,6 @@ cd ~/pigsty/docker; make launch	# 一键启动单机容器版 Pigsty
 
 部署完成后，你就可以正常使用了，默认使用本地的 8080 端口提供 web 服务；2222 端口提供 ssh 访问；5432 端口提供数据库访问。
 无论是 Windows，MacOS 还是 Linux，都可以轻松拉起，快速尝鲜。
-
-
 
 ------
 
@@ -141,8 +134,6 @@ PG 17/18 的新增参数和之前的老参数，我们都认真仔细地重新�
 总而言之，PG 18 的主要扩展都已经正式就位，参数也已经充分利用并优化完毕，监控指标也完整收集处理。
 Pigsty 中的 PG 18 已经可以以全盛状态，进入严苛的生产环境使用！
 
-
-
 ------
 
 ## 安全加固：密码，防火墙，SELinux {#security}
@@ -166,14 +157,12 @@ Pigsty v4 也在安全方面做了大量工作，对照等保，SOC2 等合规�
 最后，这些安全策略都是渐进式的：默认配置下只要随机生成了强密码，就已经足够安全了。
 而更多高级安全选项，则供企业用户根据自己的实际情况进行利弊权衡与选用。
 
-
-
 --------
 
 ## JUICE 模块：把数据库当文件系统 {#juice}
 
 v4 新增的 JUICE 模块集成了 JuiceFS，可以把对象存储和 PostgreSQL 挂载成本地文件系统。
-最厉害的玩法是把数据和元数据都放到同一个 PG 里，实现**文件系统和数据库的一致性 PITR**，
+最厉害的玩法是把数据和元数据都放到同一个 PG 里，实现 **文件系统和数据库的一致性 PITR**，
 详见《[PGFS：将数据库作为文件系统](/pg/pgfs)》。
 
 这解决了一个实际痛点：一个应用既有文件系统（存放知识库文件），又用了数据库。
@@ -209,8 +198,6 @@ VIBE 模块还可以和 Juice 模块配合使用，例如在 PIGLET.RUN 沙箱�
 这个模块是给 [PIGLET.RUN](https://piglet.run) 准备的，也是老冯自己在云端写代码开发时使用的环境。
 装好之后，你等于有了一个完整的云上开发环境，足够安全，而且工具齐备。
 
-
-
 ------
 
 ## DBA Agent：Skills 与命令行 {#dba-agent}
@@ -233,8 +220,6 @@ Pigsty 从第一天就坚持 **IaC（基础设施即代码）** + **CLI（命令
 
 而一个简单易用的 AgentNative CLI，更是会让 DBA 和 DBA Agent 如虎添翼。
 这次跟着 Pigsty v4 一起发布的 [pig v1.0](https://www.postgresql.org/about/news/pig-v10-released-with-pgextcloud-444-pg-extensions-on-14-linux-3214/)，就提供了许多这样的能力封装，将原本复杂的命令与操作序列，组织为傻瓜 / Agent 都会用的命令，后面将专门写文章介绍。
-
-
 
 ------
 
@@ -262,7 +247,6 @@ Pigsty 用户的场景很广泛：同机柜部署、跨机房容灾、跨大洲�
 
 > 用理论拆解的方式，将四组参数的 RTO 上限控制在 30/45/90/150s 内
 
-
 ------
 
 ## 瞬间克隆：瞬间复刻数据库与实例 {#pitr}
@@ -287,13 +271,11 @@ pg-meta:
 ```
 
 如果使用 XFS 文件系统（Linux 主流默认），还能获得实例级别的瞬间克隆能力：瞬间克隆出一个大实例，不占用额外存储，不影响线上业务。
-再加上经典的集群 PITR 能力，总结起来，你可以在**实例、数据库、集群**三个层面快速克隆 PostgreSQL，并回滚到保留期内的任意时间点。
+再加上经典的集群 PITR 能力，总结起来，你可以在 **实例、数据库、集群** 三个层面快速克隆 PostgreSQL，并回滚到保留期内的任意时间点。
 
 为了进一步降低 PITR 的门槛，我们还把 PITR 能力做到了 `pig` 命令行工具里：运行 `pig pitr`，它自动帮你傻瓜式地处理一切。
 将数据库集群以原地/增量/快速高效的方式，恢复到你指定的目标点。
 这样，无论是新手还是 AI Agent 都能轻松利用起来，门槛就得做到这种程度才够劲。
-
-
 
 ------
 
@@ -317,8 +299,6 @@ PG 有了自己专门的 Crontab 列表，与系统的全局定时任务区别�
 从数据库，用户，继承关系，权限，HBA，服务，到扩展，模式，一步到位，拉起可以直接供业务生产就绪的数据库集群。
 而且这种 IaC 配置文件定义的方式，对于 DBA 与 DBA Agent 来说，都非常自然友好。
 
-
-
 ------
 
 ## Vibe 实战：品味与验收是护城河 {#vibe-coding}
@@ -341,7 +321,6 @@ Claude Code 像一个聪明但略缺领域经验的天才实习生。
 通常确定设计方案之后，CC 的一次出活率能到 90%+，剩下 10% 就要多次迭代优化拉扯了。
 特别是对于 RDS 这种几乎没有公开资料的领域，需要各种人工指导才能达到最终的满意效果。
 
-
 Claude Code 有两件事情做得还不太理想：
 一是 API 设计，这个还是需要品位来把关，CC 只能提供一些思路与建议；
 二是验证效率，目前瓶颈在于人工验证的速度（卡在我身上），因为执行冒烟测试 SOP 太慢。
@@ -353,8 +332,6 @@ Claude Code 有两件事情做得还不太理想：
 这让我想到 SQLite 的模式：源代码公开在 public domain，但核心测试套件 TH3 是专有的。
 在 AI 助手加持下，一个超级个体就能顶一个满编团队，引入外部贡献反而会拖慢节奏。
 所以，Pigsty 也将采用类似路线：**Open Source, but not Open Collaboration** —— 只接受 Issue、特性请求与反馈，不再接受 PR。
-
-
 
 -----
 
@@ -370,7 +347,6 @@ SOTA AI 给出的结论也基本差不多：在 PostgreSQL 服务质量上，免
 剩下的 10 分，留给生态、产品、商业服务去生长。
 
 而我的精力，终于可以腾出手来，正式转向那个三年前就埋下的伏笔。
-
 
 ------
 
@@ -414,10 +390,6 @@ Agent 正在成为新的生命形式。它们会思考、会行动、会犯错�
 
 欢迎入局。
 
-
-
-
-
 ---------
 
 # v4.0.0 发行注记
@@ -447,9 +419,7 @@ curl https://pigsty.cc/get | bash -s v4.0.0
 - **多云 Terraform**: AWS、Azure、GCP、Hetzner、DigitalOcean、Linode、Vultr、腾讯云模板
 - **许可证变更**: AGPL-3.0 → Apache-2.0
 
-
 [![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v4.0.0)
-
 
 ---
 
@@ -477,19 +447,19 @@ MinIO 开始使用 [**pgsty/minio**](https://github.com/pgsty/minio) fork RPM/DE
 
 ## Docker 支持
 
-Pigsty 现在支持在 **Docker 容器**中运行，完整支持 systemd，兼容 macOS (Docker Desktop) 与 Linux。
+Pigsty 现在支持在 **Docker 容器** 中运行，完整支持 systemd，兼容 macOS (Docker Desktop) 与 Linux。
 
 **快速开始**：
+
 ```bash
 cd ~/pigsty/docker; make launch    # = make up config deploy
 ```
-
 
 ---
 
 ## 新增模块
 
-v4.0.0 新增两个**可选模块**，不影响 Pigsty 核心功能，按需安装即可：
+v4.0.0 新增两个 **可选模块**，不影响 Pigsty 核心功能，按需安装即可：
 
 **JUICE 模块**：JuiceFS 分布式文件系统
 
@@ -538,6 +508,7 @@ v4.0.0 新增两个**可选模块**，不影响 Pigsty 核心功能，按需安�
 主要扩展添加 PG 18 支持：age, citus, documentdb, pg_search, timescaledb, pg_bulkload, rum 等
 
 **新增扩展**：
+
 - [pg_textsearch](https://github.com/timescale/pg_textsearch) 0.4.0 - TimescaleDB 全文搜索
 - [pg_clickhouse](https://github.com/clickhouse/pg_clickhouse/) 0.1.3 - ClickHouse FDW
 - [pg_ai_query](https://github.com/benodiwal/pg_ai_query) 0.1.1 - AI 查询扩展
@@ -577,7 +548,6 @@ v4.0.0 新增两个**可选模块**，不影响 Pigsty 核心功能，按需安�
 
 pgBackRest 更新至 2.58，支持 HTTP。
 
-
 ---
 
 ## 可观测性
@@ -609,10 +579,12 @@ pgBackRest 更新至 2.58，支持 HTTP。
 ## 接口改进
 
 **剧本重命名**
+
 - `install.yml` 剧本现在重命名为 `deploy.yml` 以更符合语义
 - 新增 `vibe.yml` 剧本，用于部署 VIBE AI 编程沙箱环境
 
 **pg_databases 数据库制备功能改进**
+
 - 添加删库能力：可以使用 `state` 字段指定 `create`, `absent`, `recreate` 三种状态
 - 添加克隆能力：数据库定义中使用 `strategy` 参数指定克隆方法
 - 支持较新版本引入的 locale 配置参数：`locale_provider`，`icu_locale`，`icu_rules`，`builtin_locale`
@@ -621,15 +593,18 @@ pgBackRest 更新至 2.58，支持 HTTP。
 - 允许在 extension 中指定 `state: absent` 以删除扩展
 
 **pg_users 用户制备功能改进**
+
 - 新增参数 `admin`，类似 `roles`，但是带有 `ADMIN OPTION` 权限可以转授
 - 新增 `set` 和 `inherit` 选项定制用户角色属性
 
 **pg_hba 访问控制改进**
+
 - 支持 `order` 字段，允许指定 HBA 规则的排序优先级
 - 支持 IPv6 的 localhost 访问
 - 允许通过 `node_firewall_intranet` 指定 HBA 信任的 "内网网段"
 
 **其他改进**
+
 - 新增 Supabase 角色的默认权限配置
 - `node_crontab` 在 `node-rm` 时会自动恢复原始 crontab
 - 新增 `infra_extra_services` 参数用于首页额外服务入口导航
@@ -639,18 +614,21 @@ pgBackRest 更新至 2.58，支持 HTTP。
 ## 参数优化
 
 **I/O 参数**
+
 - `pg_io_method` 参数：auto, sync, worker, io_uring 四种方式可选，默认 worker
 - `maintenance_io_concurrency` 设置为 100（如果使用 SSD）
 - `effective_io_concurrency` 从 1000 减小为 200
 - `file_copy_method` 参数为 PG18 默认设置为 `clone`，提供瞬间克隆数据库的能力
 
 **复制槽与日志参数**
+
 - `idle_replication_slot_timeout` 默认 7d，crit 模板 3d
 - `log_lock_failures`：oltp, crit 模版开启
 - `track_cost_delay_timing`：olap, crit 模版开启
 - `log_connections`：oltp/olap 开启认证日志，crit 开启全部日志
 
 **高可用参数**
+
 - 新增 `pg_rto_plan` 参数，整合 Patroni 与 HAProxy 的 RTO 相关配置
   - `fast`: 最快故障转移（~15s），适合对可用性要求极高的场景
   - `norm`: 标准模式（~30s），平衡可用性与稳定性（默认）
@@ -661,10 +639,12 @@ pgBackRest 更新至 2.58，支持 HTTP。
 - Crit 模板启用 Patroni 严格同步模式
 
 **备份恢复参数**
+
 - PITR 默认 `archive_mode` 改为 `preserve`，确保恢复后保留归档能力
 - `pg-pitr` 支持恢复前自动备份数据
 
 **其他改进**
+
 - 修复了 `duckdb.allow_community_extensions` 总是生效的问题
 - 现在 pg_hba 与 pgbouncer_hba 支持 IPv6 的 localhost 访问
 
@@ -673,6 +653,7 @@ pgBackRest 更新至 2.58，支持 HTTP。
 ## 架构改进
 
 **目录与门户**
+
 - 在 Infra 节点上，设置固定的 `/infra` 软连接指向 Infra 数据目录 `/data/infra`
 - 现在 Infra 的数据默认放置于 `/data/infra` 目录下，这使得在容器中使用更为便利
 - 本地软件仓库现在放置于 `/data/nginx/pigsty`，`/www` 现在作为软链接指向 `/data/nginx` 确保兼容
@@ -680,6 +661,7 @@ pgBackRest 更新至 2.58，支持 HTTP。
 - 默认首页域名从 `h.pigsty` 更名为 `i.pigsty`，新增中文首页支持
 
 **运维脚本**
+
 - 新增了 `/pg/bin/pg-fork` 脚本，用于快速创建 CoW 副本数据库实例
 - 调整 `/pg/bin/pg-pitr` 脚本，现在可以用于实例级别的 PITR 恢复，支持恢复前自动备份
 - 新增 `/pg/bin/pg-drop-role` 脚本，用于安全删除用户角色
@@ -687,10 +669,12 @@ pgBackRest 更新至 2.58，支持 HTTP。
 - 恢复 `pg-vacuum` 和 `pg-repack` 脚本
 
 **新增剧本**
+
 - `juice.yml`：部署 JuiceFS 分布式文件系统实例
 - `vibe.yml`：部署 VIBE AI 编程沙箱环境（含 Code-Server、JupyterLab、Node.js、Claude Code）
 
 **模块改进**
+
 - 显式安装 cron/cronie 包，确保定时任务功能在最小化安装的系统上可用
 - UV Python 包管理器从 `infra` 模块迁移至 `node` 模块，新增 `node_uv_env` 参数指定虚拟环境路径
 - `pg_remove`/`pg_pitr` 移除 etcd 元数据的任务，现在不再依赖 admin_ip 管理节点，而在 etcd 集群上执行
@@ -704,12 +688,14 @@ pgBackRest 更新至 2.58，支持 HTTP。
 - 恢复 EL7 系统兼容性支持
 
 **系统调优**
+
 - 基于实际工作负载调整 systemd 服务的 NOFILE 限制
 - 修复 tuned profile 激活问题（通过重启 tuned 服务）
 - 添加 PostgreSQL systemd 服务运行时目录
 - 修复 `ip_local_port_range` 起止值奇偶对齐问题
 
 **多云支持**
+
 - 多云 Terraform 模板：AWS、Azure、GCP、Hetzner、DigitalOcean、Linode、Vultr、腾讯云
 
 ---
@@ -722,11 +708,13 @@ pgBackRest 更新至 2.58，支持 HTTP。
 - 更改了 MinIO 模块的默认密码，避免与众所周知的默认密码冲突
 
 **防火墙与 SELinux**
+
 - 移除 `node_disable_firewall`，新增 `node_firewall_mode`，支持 off, none, zone 三种模式
 - 移除 `node_disable_selinux`，新增 `node_selinux_mode`，支持 disabled, permissive, enforcing 三种模式
 - 为 HAProxy、Nginx、DNSMasq、Redis 等组件配置了正确的 SELinux 上下文
 
 **访问控制**
+
 - 启用了针对 etcd 的 RBAC，每个集群现在只能管理自己的 PostgreSQL 数据库集群
 - etcd root 密码现在放置于 `/etc/etcd/etcd.pass` 文件中，仅对管理员可读
 - 将 `admin_ip` 添加到 Patroni API 允许访问的 IP 列表白名单中
@@ -735,15 +723,16 @@ pgBackRest 更新至 2.58，支持 HTTP。
 - 收回了所有非 root 用户对可执行脚本的拥有权限
 
 **证书与认证**
+
 - 新增 Nginx Basic Auth 支持，可以为 Nginx Server 设置可选的 HTTP Basic Auth
 - 修复 ownca 证书有效期问题，确保了 Chrome 可以识别自签名证书
 - 新增 `vip_auth_pass` 参数用于 VRRP 认证
 
 **其他**
+
 - 修复了若干 `ansible copy content` 字段为空时报错的问题
 - 修复了 `pg_pitr` 中遗留的一些问题，确保 Patroni 集群恢复时没有竞态条件
 - 使用 `mode 0700` 保护 `files/pki/ca` 目录
-
 
 ---
 
@@ -777,7 +766,6 @@ pgBackRest 更新至 2.58，支持 HTTP。
 | etcd/MinIO 移除时清理不完整                      | 修复 systemd 服务和 DNS 条目清理       |
 | IvorySql 18 file_copy_method             | 修复 IvorySql 18 不支持 clone 方法问题 |
 | tuned profile 激活                         | 通过重启 tuned 服务修复激活问题           |
-
 
 ---
 
@@ -838,7 +826,6 @@ pgBackRest 更新至 2.58，支持 HTTP。
 | `effective_io_concurrency` | 1000 → 200               | 更合理的默认值    |
 | `node_firewall_mode`       | zone → none              | 默认不启用防火墙规则 |
 | `install.yml`              | 重命名为 `deploy.yml`        | 更符合语义      |
-
 
 ---
 

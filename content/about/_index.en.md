@@ -17,5 +17,4 @@ Database KOL, Tech Influencer, Cloud(-Exit) Evangelist.
 This blog is open under [**CC BY 4.0**](https://github.com/Vonng/blog/blob/main/LICENSE).
 Powered by [hugo](https://github.com/gohugoio/hugo) and [**Blowfish**](https://blowfish.page/) theme.
 
-
 --------

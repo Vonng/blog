@@ -20,8 +20,6 @@ Snapchat、Roblox、Coinbase、Signal、Reddit、Robinhood 等热门应用离线
 
 ![affected-service.jpg](affected-service.jpg)
 
-
-
 ## 赛博地震：数十亿美元在半天内蒸发
 
 这场持续15小时的故障，在全球数字经济中掀起了一场"赛博地震"。Catchpoint CEO 预估经济损失达"数十亿到数千亿美元"。
@@ -40,7 +38,6 @@ Epic Games 的 Fortnite、任天堂的 Pokémon GO、育碧的彩虹六号集体
 
 ![down-dectector.jpg](down-dectector.jpg)
 
-
 ## 故障根因：DNS失效引发的蝴蝶效应
 
 太平洋夏令时2025年10月19日晚11:49，us-east-1 区域的多个服务错误率突然攀升。
@@ -55,11 +52,9 @@ AWS 花了三个半小时修复 DNS，以为万事大吉，却没想到积压的
 EC2、负载均衡器、Lambda 与 DynamoDB 之间的循环依赖让系统陷入死局。
 AWS 被迫采用手工限流的方式，通过限制启动 EC2 实例，限流 Lambda/SQS 轮询来缓解压力，直到下午才逐渐恢复。
 
-
-
 ## 级联放大：互联网的阿喀琉斯之踵
 
-us-east-1 不是普通的数据中心，它是 AWS 全球基础设施的**中枢神经系统**。
+us-east-1 不是普通的数据中心，它是 AWS 全球基础设施的 **中枢神经系统**。
 除了独立运营的国区、美国政务云和欧盟主权云，其他所有 AWS 区域的全局性控制平面都在这个区域里。
 
 ![deps.jpg](deps.jpg)
@@ -70,10 +65,6 @@ us-east-1 不是普通的数据中心，它是 AWS 全球基础设施的**中枢
 us-east-1 的特殊地位源于历史 —— 作为 AWS 的第一个区域，19年的演进让它积累了大量技术债务。
 重构它？数百万行代码、数千个微服务、难以计数的客户依赖，任何改动都可能引发更大灾难。
 于是 AWS 选择了维持现状，直到故障再次提醒我们这个选择的代价。
-
-
-
-
 
 ## 技术解剖：小故障如何演变为大灾难
 
@@ -89,7 +80,6 @@ us-east-1 的特殊地位源于历史 —— 作为 AWS 的第一个区域，19�
 | **监控失明** | Service Health Dashboard宕机 | CloudWatch 降级                                        | CloudWatch 和 服务健康看板受影响                                 |
 | **全局影响** | US-EAST-1,但影响依赖服务          | US-EAST-1区域                                          | 全球(IAM、全局表依赖)                                          |
 | **经济影响** | $1.5亿(S&P 500公司)           | 未公开估计                                                | 数十亿～数千亿美元                                              |
-
 
 **循环依赖的死亡螺旋**
 : AWS 各项基础服务深度耦合，各项基础服务（IAM，EC2管理，ELB）依赖 DynamoDB，DynamoDB 又依赖这些服务 —— 这种循环依赖会导致架构复杂度指数增长，
@@ -111,8 +101,6 @@ us-east-1 的特殊地位源于历史 —— 作为 AWS 的第一个区域，19�
 断路器本应在检测到下游服务故障时自动"熔断"，停止发送请求，避免雪崩。但实际情况是，当 DynamoDB 出现问题，所有依赖服务继续疯狂重试，形成"重试风暴"。
 AWS 最终被迫手动介入，通过人工限流来控制局面 —— 这种原始的应对方式，与其宣扬的"自动化一切"理念形成鲜明对比。
 
-
-
 ## 知识流失：组织功能障碍的技术表现
 
 在运维圈里有句名言 —— “***It’s always DNS***” 。任何经验丰富的 SRE 遇到这种事都会优先检查 DNS。
@@ -128,8 +116,6 @@ AWS 最终被迫手动介入，通过人工限流来控制局面 —— 这种�
 
 云经济学家 Corey Quinn 在《[亚马逊人才流失终于导致 AWS 走向衰落](https://www.theregister.com/2025/10/20/aws_outage_amazon_brain_drain_corey_quinn/)》中辛辣评论道：
 “当你炒掉最优秀的工程师时，就别惊讶云厂商会忘记 DNS 是怎么工作的” —— "**下一次大故障已经在酝酿中，只是哪个人手不足的团队率先被哪个边缘案例绊倒的问题而已**。"
-
-
 
 ## 冷峻未来：应对云计算带来的脆弱性
 
@@ -166,7 +152,6 @@ Dropbox 更是在 2016 年便开始逐步减少对 AWS 的依赖，重返自建�
 **在脆弱性中构建韧性，在依赖与集中化中保持独立自主** —— 这不是技术选择，而是生存哲学。
 us-east-1 还会再次故障 —— 不是是否，而是何时。所以真正的问题是：下一次故障发生时，你是否已经准备好了？
 
-
 ## 参考阅读
 
 [AWS: Update - AWS services operating normally](https://www.aboutamazon.com/news/aws/aws-service-disruptions-outage-update)
@@ -180,8 +165,6 @@ us-east-1 还会再次故障 —— 不是是否，而是何时。所以真正�
 [Register: Today is when the Amazon brain drain finally sent AWS down the spout](https://www.theregister.com/2025/10/20/aws_outage_amazon_brain_drain_corey_quinn/)
 
 [Converge: DNS Failure Triggers Multi-Service AWS Disruption in US-EAST-1](https://convergedigest.com/aws-reports-major-outage-in-us-east-1-region/)
-
-
 
 --------
 
@@ -265,7 +248,6 @@ US‑EAST‑1 区域新建 EC2 实例启动问题的恢复取得进展，现已�
 3:53 PM PDT
 在 10 月 19 日 11:49 PM 至 10 月 20 日 2:24 AM（均为 PDT）期间，US‑EAST‑1 区域的 AWS 服务出现错误率和时延升高。此期间，依赖 US‑EAST‑1 端点的服务或功能（如 IAM、DynamoDB 全局表）也受到影响。我们于 10 月 20 日 12:26 AM 将事件触发因素定位为区域内 DynamoDB 服务端点的 DNS 解析问题。2:24 AM 解决该 DNS 问题后，各服务开始恢复，但由于 EC2 的相关内部子系统依赖 DynamoDB，我们随后在负责启动 EC2 实例的内部子系统上出现新的受损。随着我们继续处理 EC2 启动受损问题，网络负载均衡器（NLB）健康检查也出现受损，导致多项服务（如 Lambda、DynamoDB、CloudWatch）出现网络连通性问题。我们于 9:38 AM 恢复了 NLB 健康检查。作为恢复的一部分，我们临时对部分操作实施限流（如 EC2 实例启动、通过 Lambda 事件源映射处理 SQS 队列、以及异步 Lambda 调用）。随后我们逐步降低限流，并并行解决网络连通性问题，直至服务完全恢复。到 3:01 PM，所有 AWS 服务已恢复至正常运行状态。AWS Config、Redshift、Connect 等少数服务仍有消息积压，将在接下来的数小时内处理完毕。我们将分享更为详尽的事件后总结。
 
-
 --------
 
 ## 相关专栏
@@ -309,7 +291,6 @@ US‑EAST‑1 区域新建 EC2 实例启动问题的恢复取得进展，现已�
 - [我们能从阿里云史诗级故障中学到什么](https://mp.weixin.qq.com/s/OIlR0rolEQff9YfCpj3wIQ)
 - [【阿里】云计算史诗级大翻车来了](https://mp.weixin.qq.com/s/cTge3xOlIQCALQc8Mi-P8w)
 
-
 ### **云资源**
 
 - [花钱买罪受的大冤种：逃离云计算妙瓦底](https://mp.weixin.qq.com/s/zwJ2T2Vh_R7xD8IKPso31Q)
@@ -325,7 +306,6 @@ US‑EAST‑1 区域新建 EC2 实例启动问题的恢复取得进展，现已�
 - [云SLA是不是安慰剂？](https://mp.weixin.qq.com/s/LC5jAhuVObRcrTLxI1FUQA)
 - [范式转移：从云到本地优先](https://mp.weixin.qq.com/s/Yp6L0hh4b4HuJQRPD3aJYw)
 
-
 ### **下云记**
 
 - [花钱买罪受的大冤种：逃离云计算妙瓦底](https://mp.weixin.qq.com/s/zwJ2T2Vh_R7xD8IKPso31Q)
@@ -338,4 +318,3 @@ US‑EAST‑1 区域新建 EC2 实例启动问题的恢复取得进展，现已�
 - [半年下云省千万：DHH下云FAQ答疑](https://mp.weixin.qq.com/s/xaa079P4DRCz0hzNovGoOA)
 - [是时候放弃云计算了吗？](https://mp.weixin.qq.com/s/CicctyvV1xk5B-AsKfzPjw)
 - [下云奥德赛](https://mp.weixin.qq.com/s/H2S3TV-AsqS43A5Hh-XMhQ)
-

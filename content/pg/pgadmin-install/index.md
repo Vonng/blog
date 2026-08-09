@@ -31,8 +31,6 @@ git clone git://git.postgresql.org/git/pgadmin4.git
 cd pgadmin4
 ```
 
-
-
 ### 安装依赖
 
 首先，需要安装Python，2或者3都可以。这里使用管理员权限安装Anaconda3发行版作为示例。
@@ -49,26 +47,22 @@ conda create -n pgadmin python=3 anaconda
 sudo pip install -r requirements_py3.txt
 ```
 
-
-
 ### 配置选项
 
 首先执行初始化脚本，创立PgAdmin的管理员用户。
+
 ```bash
 python web/setup.py
 ```
+
 按照提示输入Email和密码即可。
 
-
-编辑`web/config.py`，修改默认配置，主要是改监听地址和端口。
+编辑 `web/config.py`，修改默认配置，主要是改监听地址和端口。
 
 ```python
 DEFAULT_SERVER = 'localhost'
 DEFAULT_SERVER_PORT = 5050
 ```
-修改监听地址为`0.0.0.0`以便从任意IP访问。
+
+修改监听地址为 `0.0.0.0` 以便从任意IP访问。
 按需修改端口。
-
-
-
-

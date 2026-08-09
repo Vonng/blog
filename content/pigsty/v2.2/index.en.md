@@ -18,7 +18,6 @@ Pigsty v2.2 is here! The world's most powerful PostgreSQL monitoring system rece
 
 This release also introduces a **42-node** production simulation sandbox template, adds support for Citus 12 and PG 16 beta2, provides KVM-based Vagrant templates, establishes dedicated Pigsty Yum repos for scattered/hard-to-reach RPM packages, and adds compatibility with UOS20 (a domestic Chinese Linux distribution).
 
-
 ---------
 
 ## Monitoring Overhaul: Visual Design
@@ -39,7 +38,6 @@ The v2.2 monitoring dashboards use PG Blue, Nginx Green, Redis Red, Python Yello
 
 ![color-scheme](color-scheme.jpg)
 
-
 ---------
 
 ## Monitoring Overhaul: Cluster Navigation
@@ -59,7 +57,6 @@ Table-style navigation in PGSQL Cluster
 The detailed cluster resource tables appear in the second section for reference. Combined with the metrics and logs sections that follow, it presents a complete picture of a PostgreSQL cluster's core state.
 
 ![PGSQL Cluster Metrics](05-pgsql-cluster-metrics.jpg)
-
 
 ---------
 
@@ -85,7 +82,6 @@ When DCS fails, PostgreSQL clusters relying on ETCD for high availability enable
 
 ![PG FailSafe](10-pg-failsafe.jpg)
 
-
 ---------
 
 ## Monitoring Overhaul: Services
@@ -104,7 +100,6 @@ This shows the monitoring dashboard for pg-test cluster's HAProxy #1 load balanc
 
 The global overview shows the overall status timeline and SLI metrics for all database services in Pigsty.
 
-
 ---------
 
 ## Monitoring Overhaul: Database Statistics
@@ -122,7 +117,6 @@ Users can drill down into statistics within a **single** database instance via t
 ![PGSQL Database Tables](16-pgsql-database-tables.jpg)
 
 ![PGSQL Database Queries](17-pgsql-database-queries.jpg)
-
 
 ---------
 
@@ -148,7 +142,6 @@ Database queries are also aggregated by execution plan, making it easy to find p
 
 ![PGCAT Query](22-pgcat-query.jpg)
 
-
 ---------
 
 ## Monitoring Overhaul: Tables and Queries
@@ -168,7 +161,6 @@ Similarly, you can get detailed information about SQL queries (grouped by identi
 ![PGSQL Query 2](26-pgsql-query-2.jpg)
 
 Pigsty includes many more topic-specific dashboards. Due to space constraints, this covers the monitoring system overview. The best way to experience it is to visit the public Pigsty demo: http://demo.pigsty.cc and explore it yourself. While it's just a modest 4-node environment with 1-core VMs, it's sufficient to demonstrate Pigsty's core monitoring capabilities.
-
 
 ---------
 
@@ -190,7 +182,6 @@ On top of this, there are 3 Redis clusters and 10 PostgreSQL clusters of various
 
 This configuration serves as a reference for medium-to-large enterprises managing large-scale database clusters — and you can spin it up completely in half an hour on a single physical server.
 
-
 ---------
 
 ## Smoother Build Process
@@ -200,7 +191,6 @@ When downloading Pigsty software directly from the internet, you might encounter
 Pigsty v2.2 solves this problem. Pigsty now provides an official Yum repo: http://get.pigsty.cc, configured as one of the default upstream sources. All scattered RPMs and packages requiring VPN access are hosted there, significantly speeding up online installation/build processes.
 
 Additionally, v2.2 adds support for the domestic Chinese operating system UOS 1050e uel20, meeting special requirements for certain customers. Pigsty has recompiled PG-related RPM packages for these systems.
-
 
 ---------
 
@@ -222,7 +212,6 @@ http://get.pigsty.cc/v2.2.0/pigsty-pkg-v2.2.0.el9.x86_64.tgz
 That's what Pigsty v2.2 brings to the table.
 
 For more details, check out the official Pigsty documentation: https://pigsty.io and the GitHub Release Notes: https://github.com/pgsty/pigsty/releases/tag/v2.2.0
-
 
 ----------------
 

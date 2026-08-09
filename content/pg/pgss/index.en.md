@@ -8,7 +8,7 @@ author: |
 
   February 13, 2024 | Translation by [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat](https://mp.weixin.qq.com/s/VXkpDlUdnKlK3DKtoyg2wA)
 summary: >
-  **Query optimization** is one of the core responsibilities of DBAs. This article introduces how to use metrics provided by `pg_stat_statements` for macro-level PostgreSQL query optimization.
+  Query optimization is one of the core responsibilities of DBAs. This article introduces how to use metrics provided by pg_stat_statements for macro-level PostgreSQL query optimization.
 tags: [PostgreSQL,PG-Admin,Performance]
 ---
 
@@ -34,7 +34,6 @@ The key to achieving these goals lies in **data support**. But where does the da
 —— **pg_stat_statements**！
 
 ![pgss-1.png](pgss-1.png)
-
 
 -------------------
 
@@ -100,13 +99,9 @@ CREATE TABLE pg_stat_statements
 
 PGSS view SQL definition (PG 15+ version)
 
-
-
 **PGSS** also has some limitations: First, **currently executing** query statements are not included in these statistics and need to be obtained from **pg_stat_activity**. Second, failed queries (e.g., statements canceled due to statement_timeout) are also not counted in these statistics — this is a problem for **error analysis** to solve, not a concern for **query optimization**.
 
 Finally, the stability of query identifier **queryid** needs special attention: when the database binary version and system data directory are identical, the same type of query will have the same **queryid** (i.e., on physical replication master-slave, same-type queries have the same **queryid** by default), but this doesn't apply to logical replication. However, users should not rely too heavily on this assumption.
-
-
 
 -------------------
 
@@ -120,15 +115,11 @@ Columns in the **PGSS** view can be divided into three categories:
 
 **Cumulative Metrics (Counter)**: **Other metrics** besides the above eight columns and label columns, such as calls, rows, etc. The most important and useful metrics are in this category.
 
-
-
 First, let's explain queryid: queryid is a hash value generated from the normalized query after parsing the query statement and stripping constants, so it can be used to identify **the same type of query**. Different query statements may have the same queryid (same structure after normalization), and the same query statement may have different queryids (e.g., due to different search_path, resulting in different actual tables being queried).
 
 The same query may be executed by different users in different databases. Therefore, in the PGSS view, the four label columns queryid, dbid, userid, toplevel together form the "primary key" that uniquely identifies a record.
 
 For metric columns, **measurement-type metrics (GAUGE)** are mainly the eight statistics related to execution time and planning time, but users have no good way to control the statistical range of these statistics, so their practical value is limited.
-
-
 
 The really important metrics are **cumulative metrics (Counter)**, such as:
 
@@ -168,7 +159,6 @@ Fortunately, tools like [Pigsty](https://pigsty.cc) monitoring system periodical
 
 These three types of metrics correspond exactly to the three types of macro optimization goals. The time derivative **dM/dt** reveals **resource usage per second**, typically used for resource consumption reduction optimization goals. The call count derivative **dM/dc** reveals **resource usage per call**, typically used for user experience improvement optimization goals. The percentage metric **%M** shows the percentage a query group occupies in the overall workload, typically used for workload balancing optimization goals.
 
-
 -------------------
 
 ## Time Derivatives
@@ -185,8 +175,6 @@ Calculating these metrics is actually quite simple, we just need to:
 - Then calculate the time difference between two snapshots: **t2 - t1**
 - Finally calculate **(M2 - M1) / (t2 - t1)**
 
-
-
 Production environments typically use data sampling intervals like 5s, 10s, 15s, 30s, 60s. For load analysis, we typically use 1m, 5m, 15m as common analysis window sizes.
 
 For example, when we calculate QPS, we would calculate QPS for the last 1 minute, 5 minutes, and 15 minutes respectively. Longer windows provide smoother curves that better reflect long-term trends, but hide short-term fluctuation details and are not conducive to discovering momentary anomalies, so metrics of different granularities need to be viewed together.
@@ -195,9 +183,7 @@ For example, when we calculate QPS, we would calculate QPS for the last 1 minute
 
 > Showing QPS for a specific query group in 1/5/15 minute windows
 
-If you use Pigsty / Prometheus to collect monitoring data, you can use PromQL to easily complete these calculations. For example, to calculate QPS for all queries in the last minute, use: rate(pg_query_calls{}[1m]) 
-
-
+If you use Pigsty / Prometheus to collect monitoring data, you can use PromQL to easily complete these calculations. For example, to calculate QPS for all queries in the last minute, use: rate(pg_query_calls{}[1m])
 
 **QPS**
 
@@ -210,8 +196,6 @@ When M is calls, the result of time differentiation is QPS, with units of querie
 If we sum up all query groups' QPS metrics (without exceeding PGSS collection range), we get the so-called "global QPS." Another way to obtain global QPS is through client-side instrumentation, collection at connection pool middleware like Pgbouncer, or using eBPF probes. But none are as convenient as PGSS.
 
 Note that QPS metrics don't have load-wise **horizontal comparability**. Different query groups may have the same QPS but vastly different per-query execution times. Even the same query group may produce dramatically different load levels at different times due to different execution plans. Execution time per second is a better metric for measuring load.
-
-
 
 **Execution Time Per Second**
 
@@ -227,8 +211,6 @@ Therefore, this value can also be understood as a percentage: it can exceed 100%
 
 However, we need to note that execution time includes time waiting for locks and I/O. So it's possible that query execution time is very long but has no impact on CPU load. For precise slow query analysis, we need to refer to **wait events** for further analysis.
 
-
-
 **Rows Per Second**
 
 When M is rows, we get the number of rows returned by this query group per second, with units of rows per second (rows/s). For example, 10000 rows/s means this type of query spits out 10,000 rows of data to clients every second. Returned rows consume client processing resources, making this a very meaningful metric when examining application client data processing pressure.
@@ -236,8 +218,6 @@ When M is rows, we get the number of rows returned by this query group per secon
 ![pgss-8.png](pgss-8.png)
 
 > Rows returned per second: 1/5/15 minute averages
-
-
 
 **Shared Buffer Access Bandwidth**
 
@@ -250,8 +230,6 @@ For example, if a certain query type accesses 500,000 shared buffers per second,
 > Shared buffer access bandwidth and buffer hit rate
 
 Another valuable derived metric is buffer hit rate: hit / (hit + read). It can be used to analyze possible causes of performance changes — cache misses. Of course, repeatedly accessing the same blocks in the shared buffer pool doesn't actually re-read, and even real reads might be from memory's FS Cache rather than disk. So this is just a reference value, but it's indeed a very important macro query optimization reference metric.
-
-
 
 **WAL Volume**
 
@@ -275,23 +253,15 @@ There's even this possibility: if read load is very large, it has a high probabi
 
 For versions below 13, shared buffer dirty/writeback bandwidth metrics can serve as an approximate lower substitute for analyzing query group write load characteristics.
 
-
-
 **I/O Time**
 
 When M is blks_read_time + blks_write_time, we get the proportion of time query groups spend on block I/O, with units of "seconds per second", like the execution time per second metric, also reflecting the time proportion occupied by operations.
-
-
 
 > I/O time is very helpful for analyzing query spike causes
 
 Because PostgreSQL uses the operating system's FS Cache, even if block reads/writes are executed here, they might still be buffer operations occurring in memory at the filesystem level. So it can only serve as a reference metric and should be used cautiously, needing cross-reference with host node disk I/O monitoring.
 
-
-
 **Time derivative metrics** **dM/dt** can show the overall workload inside a database instance/cluster, especially useful for resource usage optimization scenarios. But if your optimization goal is improving user experience, then another group of metrics — **call count derivatives dM/dc** — might be more meaningful.
-
-
 
 -------------------
 
@@ -317,12 +287,9 @@ rate(pg_query_exec_time{}[1m]) / rate(pg_query_calls{}[1m])
 
 > dM/dt can be used to calculate dM/dc
 
-
 **Call Count**
 
 When M is calls, differentiating with respect to itself is meaningless (result will always be 1).
-
-
 
 **Average Latency/Response Time/RT**
 
@@ -350,8 +317,6 @@ RT is so important that it spawns many downstream metrics: 1/5/15 minute mean µ
 
 RT is the core metric for evaluating OLTP workloads. No amount of emphasis on its importance is excessive.
 
-
-
 **Average Returned Rows**
 
 When M is rows, we get the **average number of rows returned** per query, with units of rows per query. For OLTP workloads, typical query patterns are point queries, returning a few records per query.
@@ -361,7 +326,6 @@ When M is rows, we get the **average number of rows returned** per query, with u
 > Point queries by primary key, average returned rows stable at 1
 
 If a query group returns hundreds or even thousands of rows to clients per query, it should be examined. If this is intentional design, such as batch loading tasks/data dumps, then no action is needed. If these are requests initiated by applications/clients, there might be errors, such as statements lacking LIMIT restrictions or queries lacking pagination design. Such queries should be adjusted and fixed.
-
 
 **Average Shared Buffer Read/Hit**
 
@@ -377,8 +341,6 @@ Of course, don't forget PostgreSQL's double caching issue — so-called "read" d
 
 Another pattern worth attention is sudden changes in this metric, which usually means this query group's **execution plan might have flipped/degraded**, very worthy of attention and further study.
 
-
-
 **Average WAL Volume**
 
 When M is wal_bytes, we get the average WAL size generated per query. This is a field newly introduced in PostgreSQL 13. This metric can measure query change footprint size and calculate read/write ratios and other important evaluation parameters.
@@ -392,8 +354,6 @@ Another use is checkpoint optimization: if you observe periodic fluctuations in 
 **Call count derivative metrics dM/dc** can show the workload characteristics of a query type, very useful for optimizing user experience. Especially RT is the golden metric for performance optimization — no amount of emphasis on its importance is excessive.
 
 **dM/dc** metrics like these provide important absolute value metrics, but to find which queries have the greatest potential optimization benefits, you need **%M percentage metrics**.
-
-
 
 -------------------
 
@@ -431,13 +391,11 @@ We can also directly analyze current PGSS snapshots, sort by different concerns,
 
 I/O time is very helpful for analyzing query spike causes
 
-
 -------------------
 
 ## Summary
 
 Finally, let's summarize the content above.
-
 
 PGSS provides rich metrics, among which the most important cumulative metrics can be processed in three ways:
 
@@ -450,9 +408,6 @@ PGSS provides rich metrics, among which the most important cumulative metrics ca
 Usually, we select high-value candidate optimization queries based on **%M**: percentage metric Top queries, and use **dM/dt** and **dM/dc** metrics for further evaluation, confirming whether there's optimization space and feasibility, and evaluating post-optimization effects. This cycles continuously.
 
 After understanding macro optimization methodology, we can use this approach to locate and optimize slow queries. Here's a specific example of [Using Monitoring Systems to Diagnose PG Slow Queries](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484478&idx=1&sn=ea44675df79b60a12273e78b358bb557&chksm=fe4b31e5c93cb8f325ba1e4389874112bd5441280492c87e259a32aa67e00c7e0028e7dc51eb&scene=21#wechat_redirect). In the next article, we'll introduce experience and techniques for PostgreSQL query **micro optimization**.
-
-
-
 
 -------------------
 

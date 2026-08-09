@@ -471,4 +471,4 @@ Because transactions guarantee queries executed on them are all executed by the 
 
 ## 10. Others
 
-This article is mainly based on [[Go database/sql tutorial]]([Go database/sql tutorial]), translated and modified by me with some additions, deletions, and corrections of outdated and incorrect content. Reprints should retain attribution.
+This article is mainly based on the [Go `database/sql` tutorial](https://go-database-sql.org/), translated and modified by me with some additions, deletions, and corrections of outdated and incorrect content. Reprints should retain attribution.

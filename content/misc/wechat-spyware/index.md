@@ -12,8 +12,6 @@ menu:
 
 > [微信公众号原文](https://mp.weixin.qq.com/s/x0zHL7e2nTpf_UTUHxqLJg)
 
-
-
 昨天晚上，看到一个新闻说微信在后台读用户相册，然后微信还回复了
 
 ![图片](640-20231108093248439.png)
@@ -25,7 +23,7 @@ menu:
 {"accessor":{"identifier":"com.tencent.xin","identifierType":"bundleID"},"category":"photos","identifier":"B0848F17-B581-42C4-AF98-EC5CB2181A61","kind":"intervalEnd","timeStamp":"2021-10-09T06:45:03.813+08:00","type":"access"}
 ```
 
-原始日志：**表示`com.tencent.xin`（也就是微信），在`6:41` 到`6:45` 期间，`access（`访问）了 `photos`（相册），长达4分钟。**
+原始日志：**表示 `com.tencent.xin`（也就是微信），在 `6:41` 到 `6:45` 期间，`access（` 访问）了 `photos`（相册），长达4分钟。**
 
 机器四分钟能干的事可是相当不少，比如，把你的相册完整过一遍，全部回传图片是不太可能，但在本地计算发现一些特征关键词，拉取EXIF信息，去过哪里，对什么东西感兴趣，那还是绰绰有余的。
 
@@ -35,11 +33,9 @@ menu:
 
 代码地址：https://github.com/Vonng/pigsty/tree/v1.1/app/applog
 
-演示程序：http://demo.pigsty.cc/d/applog-summary 
+演示程序：http://demo.pigsty.cc/d/applog-summary
 
 数据安全与隐私是收拾互联网公司的最佳抓手，全拉出去枪毙可能有冤枉的，但是隔一个枪毙一个肯定有漏网的。这个新功能一出，估计iOS上不老实的应用要有一波难过的日子了。
-
-
 
 ## 如何查看你自己的隐私记录
 
@@ -59,17 +55,15 @@ menu:
 
 ![图片](640-20231108093256077.png)
 
-
-
 ![图片](640-20231108093300030.png)
 
-然后，打开iPhone设置页面，进入“隐私”，拉到最下方进入“记录App活动”页，有一个开关“记录App活动”，打开即可。然后你的iPhone就会**开始**自动记录最近7天应用访问隐私的详情。
+然后，打开iPhone设置页面，进入“隐私”，拉到最下方进入“记录App活动”页，有一个开关“记录App活动”，打开即可。然后你的iPhone就会 **开始** 自动记录最近7天应用访问隐私的详情。
 
 ![图片](640-20231108093301424.png)
 
 > 存储App活动会生成日志文件。
 
-访问记录并不能直接查阅，在该页面中点击 “存储App活动” 可以导出并保存记录的应用隐私活动。这是一个`.ndjson`文件，每行是一条JSON数据。`accessor`字段是应用名称，例如`com.tencent.xin`就是微信。`category`是隐私项的类别，例如`photos`，`contacts`, `camera`, `microphone`,`location`, `mediaLibrary`分别是照片，通讯录，相机，麦克风，位置，媒体库。
+访问记录并不能直接查阅，在该页面中点击 “存储App活动” 可以导出并保存记录的应用隐私活动。这是一个 `.ndjson` 文件，每行是一条JSON数据。`accessor` 字段是应用名称，例如 `com.tencent.xin` 就是微信。`category` 是隐私项的类别，例如 `photos`，`contacts`, `camera`, `microphone`,`location`, `mediaLibrary` 分别是照片，通讯录，相机，麦克风，位置，媒体库。
 
 解析这样的日志也很简单，连Python都用不上，只需要使用SQL即可。
 

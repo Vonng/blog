@@ -21,8 +21,6 @@ Recently, DHH (David Heinemeier Hansson), co-founder of Basecamp and HEY, publis
 
 [![](featured.jpg)](https://mp.weixin.qq.com/s/YKqH324Qtg0mj6WfSMb66w)
 
-
-
 ---------
 
 ## Absurd Pricing
@@ -38,7 +36,6 @@ This calculation does not include the cost of DBA (Database Administrator) salar
 If you directly purchase a cloud database of this specification, what would the cost be? Let's look at the pricing from Alibaba-Cloud in China. Since the basic version is practically unusable for production (for reference, see: "Cloud Database: From Deletion to Desertion"), we'll choose the high-availability version, which usually involves two to three instances. Opting for a yearly or monthly subscription, for an exclusive use of a 64-core, 256GB instance with PostgreSQL 15 on x86 in East China 1 availability zone, and adding a 3.2TB ESSD PL3 cloud disk, the annual cost ranges from 250,000 (for a 3-year contract) to 750,000 (on-demand), with storage costs accounting for about a third.
 
 ![](rds-1.png)
-
 
 Let's also consider AWS, the leading public cloud provider. The closest equivalent on AWS is the db.m5.16xlarge, also with 64 cores and 256GB across multiple availability zones. Similarly, we add a 3.2TB io1 SSD disk with up to 80,000 IOPS, and review the global and China-specific pricing from AWS. The overall cost ranges from 1.6 million to 2.17 million yuan per year, with storage costs accounting for about half. The table below summarizes the costs:
 
@@ -64,7 +61,6 @@ Comparing the costs of self-hosting versus using a cloud database:
 So, the question arises, **if the cost of using a cloud database for one year is enough to buy several or even more than a dozen better-performing servers, what then is the real benefit of using a cloud database?** Of course, large public cloud customers can usually receive business discounts, but even with discounts, the magnitude of the cost difference is hard to ignore.
 
 **Is using a cloud database essentially paying a "tax" for lack of better judgment?**
-
 
 ---------
 
@@ -93,8 +89,6 @@ Thus, the money cloud vendors make comes either from VC-funded tech startups see
 
 **If your business fits within the suitable spectrum for the public cloud, that's fantastic; but paying several times or even more than a tenfold premium for unnecessary flexibility and elasticity is purely a tax on lack of intelligence**.
 
-
-
 ---------
 
 ## The Cost Assassin
@@ -114,7 +108,6 @@ At my next stop, the situation was entirely different. We managed a PostgreSQL a
 ![](rds-31.png)
 
 Here, we can calculate the unit cost in a simple way: the comprehensive cost of using one core (including memory/disk) for a month, termed as **core·month**. We have calculated the costs of self-built server types and compared them with the quotes from cloud providers, with the following rough results:
-
 
 |               硬件算力                |  单价   |
 |:---------------------------------:|:-----:|
@@ -145,8 +138,6 @@ A common response is: ***Databases are the crown jewels of foundational software
 
 But for cloud databases (RDS for PostgreSQL/MySQL/...) on public clouds, which are essentially rebranded and modified open-source database kernels with added control software and shared DBA services, this markup is absurd: the database kernel is free. **Is your control software made of gold, or are your DBAs made of gold?**
 
-
-
 The secret of public clouds lies here: **they acquire customers with 'cheap' S3 and EC2, then "slaughter the pig" with RDS**.
 
 Although nearly half of the revenue of domestic public cloud IaaS (storage, computing, network) comes with only a 15% to 20% gross margin, the revenue from public cloud PaaS may be lower, but its gross margin can reach 50%, utterly outperforming the resource-selling IaaS. **And the most representative of PaaS services is the cloud database**.
@@ -156,8 +147,6 @@ Normally, if you're not using public cloud as just an IDC 2.0 or CDN provider, t
 However, cloud databases are outrageously expensive, with the price for the same computing power per month being several times to over ten times higher than the corresponding hardware. For the cheaper Alibaba-Cloud, the price per core·month ranges from two hundred to four hundred units, and for the more expensive AWS, it can reach seven to eight hundred or even more than a thousand.
 
 If you're only using one or two cores of RDS, then it might not be worth the hassle to switch, just consider it a tax. But if your business scales up and you're still not moving away from the cloud, then you're really paying a tax on intelligence.
-
-
 
 ------------------
 
@@ -189,7 +178,6 @@ Indeed, sometimes cloud providers do offer sufficiently good local NVMe SSDs, bu
 
 **Observability is another example where no RDS monitoring can be considered "good"**. Just looking at the number of monitoring metrics, while knowing whether a service is dead or alive may require only a few metrics, fault root cause analysis benefits from as many monitoring metrics as possible to build a good context. Most RDS services only provide basic monitoring metrics and rudimentary dashboards. For example, Alibaba-Cloud RDS PG【7】's so-called "enhanced monitoring" includes only a few pitiful metrics. AWS and PG database-related metrics are also less than 100, while our own monitoring system includes over 800 types of host metrics, 610 types for PGSQL database, 257 types for REDIS, totaling around three thousand metrics, dwarfing those of RDS.
 
-
 ![](rds-6.png)
 
 ![](https://pigsty.io/img/pigsty/dashboard.jpg)
@@ -203,8 +191,6 @@ Of course, this is not to say that self-hosting would not have these issues, but
 **Another widespread criticism of cloud databases is their extensibility**. RDS does not grant users dbsu permissions, meaning users cannot install extension plugins in the database. PostgreSQL's charm lies in its extensions; without extensions, PostgreSQL is like cola without ice, yogurt without sugar. A more severe issue is that **in some failure scenarios, users even lose the ability to help themselves**, as seen in the real case of "[Cloud Database: From Deleting Databases to Running Away](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485093&idx=1&sn=5815f71f1d832101d35a75f5aa4acd3c&chksm=fe4b337ec93cba68fbf30eb0ed50d052c6e8972d42cf506051b5016668f4555edaa0756688dc&scene=21#wechat_redirect)": WAL archiving and PITR, basic functionalities, are charged features in RDS. Regarding maintainability, some say cloud databases are convenient as they can be created and destroyed with just a few clicks, but those people have likely never experienced the ordeal of receiving SMS verification codes for restarting each database. **With Database as Code style management tools, true engineers would never resort to such "ClickOps"**.
 
 However, everything has its rationale for existence, and cloud databases are not entirely without merit. In terms of **scalability**, cloud databases have indeed reached new heights, such as various Serverless offerings, but this is more about saving money and overselling for cloud providers, offering little real benefit to users.
-
-
 
 ------------------
 
@@ -232,7 +218,6 @@ Whether it's public cloud vendors, cloud-native/private clouds represented by Ku
 
 **DBAs won't become obsolete; they will just be monopolized by cloud vendors to provide services.**
 
-
 ------------------
 
 ## The Shadow of Monopoly
@@ -240,7 +225,6 @@ Whether it's public cloud vendors, cloud-native/private clouds represented by Ku
 > In 2020, the adversary of computing freedom was cloud computing software.
 
 **Beyond the "obsolescence of DBAs," the emergence of the cloud harbors a larger threat**. We should be concerned about a scenario where public clouds (or "Fruit Clouds") grow dominant, controlling both hardware and operators up and down the stream, monopolizing computation, storage, networking, and top-tier expert resources to become the de facto standards. If all top-tier DBAs are poached by cloud vendors to provide centralized shared expert services, ordinary business organizations will completely lose the capability to utilize databases effectively, eventually left with no choice but to be "taxed" by public clouds. Ultimately, all IT resources would be concentrated in the hands of cloud vendors, who, by controlling a critical few, could control the entire internet. This is undeniably contrary to the original intent behind the creation of the internet.
-
 
 Let me reference Martin Kelppmann:
 
@@ -261,14 +245,11 @@ Let me reference Martin Kelppmann:
 > Cloud software, not closed-source software, is the real threat to software freedom, because the harm from being suddenly locked out of all of your data at the whim of a cloud provider is much greater than the harm from not being able to view and modify the source code of your software. For that reason, it is much more important and pressing that we make local-first software ubiquitous. If, in that process, we can also make more software open-source, then that would be nice, but that is less critical. Focus on the biggest and most urgent challenges first.
 >
 
-
 However, where there is action, there is reaction; local-first software began to emerge as a countermeasure to cloud software. For instance, the Cloud Native movement, represented by Kubernetes, is a prime example. "Cloud Native," as interpreted by cloud vendors, means "software that is natively developed in a public cloud environment"; but its real significance should be "local," as in the opposite of "Cloud" — "Local" cloud / private cloud / proprietary cloud / native cloud, the name doesn't matter. What matters is that it can run anywhere the user desires (including on cloud servers), not just exclusively in public clouds!
 
 Open-source projects, like Kubernetes, have democratized resource scheduling/smart operations capabilities previously unique to public clouds, enabling enterprises to run 'cloud'-like capabilities locally. For stateless applications, it already serves as a sufficiently robust "cloud operating system" kernel. Open-source alternatives like Ceph/Minio offer S3 object storage solutions, leaving only one question unanswered: how to manage and deploy stateful, production-grade database services?
 
 The era is calling for an open-source alternative to RDS.
-
-
 
 ------------------
 
@@ -298,11 +279,9 @@ Pigsty is a comprehensive complement to PostgreSQL, **and a spicy critique of cl
 
 **Extensibility is like a lake; as a lake reflects beauty, a gentleman should discuss and practice with friends**; Pigsty deeply integrates core PostgreSQL ecosystem extensions like PostGIS, TimescaleDB, Citus, PGVector, and numerous extension plugins. It offers a modular design of the Prometheus/Grafana observability tech stack, and high-availability deployment of MINIO, ETCD, Redis, Greenplum, etc., in combination with PostgreSQL.
 
-
 ![](rds-8.png)
 
 **More importantly, Pigsty is entirely open-source and free software**, licensed under AGPL v3.0. Powered by passion, you can run a fully functional, even superior RDS service at the cost of mere hardware expenses per month. Whether you are a beginner or a seasoned DBA, managing a massive cluster or a small setup, whether you're already using RDS or have set up databases locally, if you are a PostgreSQL user, Pigsty will be beneficial to you, completely free. **You can focus on the most interesting or valuable parts of your business and leave the routine tasks to the software**.
-
 
 ![](rds-9.png)
 

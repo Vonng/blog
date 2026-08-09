@@ -23,7 +23,7 @@ tags: [Pigsty]
 * 对默认[访问控制](https://pigsty.cc/docs/setup/security)模型进行了改进
 * 重构了HBA管理的逻辑，现在将由Pigsty替代Patroni直接负责生成HBA
 * 将Grafana监控系统的供给方案从sqlite改为JSON文件静态Provision
-* 将`pg-cluster-replication`面板加入Pigsty开源免费套餐。
+* 将 `pg-cluster-replication` 面板加入Pigsty开源免费套餐。
 * 最新的经过测试的离线安装包：[pkg.tgz](https://github.com/Vonng/pigsty/releases/download/v0.5.0/pkg.tgz) (v0.5)
 
 ### 定制数据库
@@ -207,25 +207,22 @@ pgbouncer_hba_rules_extra: []
 
 ```
 
-
 ### 数据库模板
 
-* [pg-init-template.sql](https://github.com/Vonng/pigsty/blob/master/roles/postgres/templates/pg-init-template.sql) 用于初始化`template1`数据的脚本模板
+* [pg-init-template.sql](https://github.com/Vonng/pigsty/blob/master/roles/postgres/templates/pg-init-template.sql) 用于初始化 `template1` 数据的脚本模板
 * [pg-init-business.sql](https://github.com/Vonng/pigsty/blob/master/roles/postgres/templates/pg-init-business.sql) 用于初始化其他业务数据库的脚本模板
-
 
 ### 权限模型
 
 v0.5 改善了默认的权限模型，主要是针对单实例多租户的场景进行优化，并收紧权限控制。
 
-* 撤回了普通业务用户对非所属数据库的默认`CONNECT`权限
-* 撤回了非管理员用户对所属数据库的默认`CREATE`权限
-* 撤回了所有用户在`public`模式下的默认创建权限。
-
+* 撤回了普通业务用户对非所属数据库的默认 `CONNECT` 权限
+* 撤回了非管理员用户对所属数据库的默认 `CREATE` 权限
+* 撤回了所有用户在 `public` 模式下的默认创建权限。
 
 ## 供给方式
 
 原先Pigsty采用直接拷贝Grafana自带的grafana.db的方式完成监控系统的初始化。
 这种方式虽然简单粗暴管用，但不适合进行精细化的版本控制管理。在v0.5中，Pigsty采用了Grafana API完成了监控系统面板供给的工作。
-您所需的就是在`grafana_url`中填入带有用户名密码的Grafana URL。
+您所需的就是在 `grafana_url` 中填入带有用户名密码的Grafana URL。
 因此，监控系统可以背方便地添加至已有的Grafana中。

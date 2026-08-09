@@ -12,8 +12,6 @@ aliases: ["/ai/ai-dba-job/"]
 
 The day before yesterday at the HOW 2025 conference roundtable, Chairman Xiao asked some interesting questions about AI, databases, and DBAs. Here are Feng's views, organized and published.
 
-
-
 ## OLTP / OLAP: Who Gets Revolutionized First?
 
 **Question**: **In OLTP/OLAP domains, which field is AI more likely to bring "revolutionary" changes to first, and how should DBAs, data analysts, and architects respond to these changes?**
@@ -31,9 +29,6 @@ A vivid example is OpenAI founding member (author of "Software 3.0 Era, Paradigm
 ![karpathy.webp](karpathy.webp)
 
 Nevertheless, Agent replacing DBAs is only a matter of time. Maybe three years, maybe five years, eventually DBA work in the OLTP domain will be conquered by AI within a few years. Cloud computing and local management software will automate 70%-90% of the work, while AI Agents will handle the remaining 9%, possibly leaving less than 1% or even one-thousandth of difficult problems for top-tier DBAs to handle.
-
-
-
 
 ## Integration vs Specialization: How to Choose?
 
@@ -56,9 +51,6 @@ I believe that currently, [object storage, APM, and OLAP are a few fields](https
 ![pyramid.webp](pyramid.webp)
 
 Premature optimization is the root of all evil - paying the cost in complexity, expense, manpower, and consistency maintenance for attributes you don't need is meaningless. When enterprises are choosing databases, they must keep their eyes open and not busy themselves with things they don't need - and PostgreSQL is undoubtedly the default safe choice in the database field.
-
-
-
 
 ## AI Era DBAs: Where to Go?
 
@@ -89,8 +81,6 @@ Best practice is usually to cobble together a frontend with Next.js hosted on Ve
 This is a huge positive for DBAs - because Claude Code has brought everyone's programming abilities to the same level, what matters now is general integration capabilities and scarce database/DBA experience. The PG DBA community already possesses the latter, giving them an inherent advantage over other engineers at the same level.
 
 PG DBAs should fully leverage this current advantage, arm themselves with Code Agents (and open-source PostgreSQL database management Pigsty), transforming themselves into new-generation full-stack architects + managers, striking first to occupy ecological high ground while others are still struggling with database hard bones.
-
-
 
 ### Advertisement Time
 

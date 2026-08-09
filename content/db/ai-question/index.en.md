@@ -33,7 +33,6 @@ As early as 1968, Picasso, with an artist's intuition, foresaw all of this. Faci
 
 Defining the shape of the void, pointing to where the blanks are—this remains humanity's exclusive privilege.
 
-
 -------
 
 ## Why Good Questions Are Scarce
@@ -49,7 +48,6 @@ Good questions are rare for three reasons.
 There's something even more fundamental: **Asking questions is essentially expressing values.** What you choose to pursue reveals what matters to you. Someone focused only on efficiency asks "how to finish faster"; someone focused on meaning first asks "is this worth doing?"
 
 This is also why AI cannot truly replace human questioning—AI has no genuine concern. It can generate questions, but it won't be troubled by them. Truly powerful questions often come from those kept awake at night, tormented by their inquiries.
-
 
 -------
 
@@ -86,7 +84,6 @@ When AI can generate hundreds of versions of copy, logos, or melodies, the act o
 Having taste in questions means: knowing what questions aren't worth asking—this isn't avoidance, it's resource allocation; life is finite, you can't pursue everything; knowing what questions are worth protecting—when everyone asks "how to grow," you might feel the better question is "why grow at all"; knowing when to keep asking and when to accept—some questions derive their value precisely from keeping you perpetually puzzled; "who am I" might not be meant to be answered, but to be lived and experienced.
 
 Where does taste come from? Not from books, not from asking AI. Taste is the judgment that precipitates after you've personally pursued questions, hit walls, and received feedback from reality. This is also why AI can't truly have "taste"—AI can give you all the options, but it doesn't know which option truly matters to you. Because it hasn't lived your life.
-
 
 -------
 

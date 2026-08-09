@@ -12,7 +12,6 @@ tags: [AI]
 A friend recently wrote an essay titled "[Vision Is the Foundation of the World, Not a Plugin for Language](https://mp.weixin.qq.com/s/pQXCE1RdsHA73qQxTuyG2w)."
 It prompted a conversation with Claude, which I have edited into the Socratic dialogue below.
 
-
 ## Language as the Foundation, Vision as an Add-On?
 
 **Q:** The industry is debating the future of multimodal AI: will language dominate, or will vision? What do you think?
@@ -47,8 +46,6 @@ It prompted a conversation with Claude, which I have edited into the Socratic di
 
 **A:** They may not be the same kind of thing at all.
 
-
-
 ## Transformer and Diffusion
 
 **Q:** What does this have to do with AI?
@@ -81,7 +78,6 @@ It prompted a conversation with Claude, which I have edited into the Socratic di
 
 > Strictly speaking, it is the distinction between **autoregression** and **field-state evolution**.
 
-
 ## Don't Merge Them; Preserve the Tension
 
 **Q:** Are you saying the next generation of AI should combine these two architectures?
@@ -100,10 +96,7 @@ It prompted a conversation with Claude, which I have edited into the Socratic di
 
 **A:** I do. A purely symbolic account of intelligence misses its field-state half. A purely field-state account misses its symbolic half. Both must coexist, and the **tension between them** must be preserved.
 
-
 ![dual.webp](dual.webp)
-
-
 
 ## MoE Is Not a Two-Hemisphere Brain
 
@@ -346,6 +339,5 @@ It prompted a conversation with Claude, which I have edited into the Socratic di
 **A:** Real intelligence does not grow out of integration. It grows out of **disciplined differentiation**.
 
 **The corpus callosum is not a connection. It is a boundary.**
-
 
 This is Part I—the right-brain thesis. Part II—the cerebellum thesis—is coming soon.

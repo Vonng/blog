@@ -16,7 +16,6 @@ tags: [Pigsty]
 
 Pigsty v1.1 正式发布，新增全新首页设计、Jupyter Lab、PGWeb、PEV2、PgBadger 等实用工具支持。
 
-
 ----------------
 
 ## 全新首页
@@ -27,11 +26,9 @@ Grafana 监控系统中的 Home Dashboard 一直扮演着 Pigsty "主页"的角�
 
 这个首页是一个本地版的文档站，由默认的 Nginx 提供服务。
 
-
 ### 服务导航
 
 首页提供前往 Pigsty 各个服务组件的导航，包括 Consul、Grafana、Prometheus、AlertManager，以及 v1.1 新引入的 **PGWeb** 与 **Jupyter Lab**。可直接点击首页正中的组件名称/URL，或通过导航栏右上角的 `Service` 下拉菜单进入。
-
 
 ### 监控导航
 
@@ -39,20 +36,17 @@ Grafana 监控系统中的 Home Dashboard 一直扮演着 Pigsty "主页"的角�
 
 ![monitor-nav](monitor-nav.jpg)
 
-
 ### 应用导航
 
 右上角的 App 下拉选单是 Pigsty 扩展功能的入口。在 v1.1 中，Pigsty 自带了几个实用而有趣的应用，均可通过配置选项添加。
 
 ![app-nav](app-nav.jpg)
 
-
 ### 本地文档
 
 在 Pigsty v1.1 中，可直接从首页访问本地离线文档，包括中英双语。
 
 ![local-docs](local-docs.jpg)
-
 
 ----------------
 
@@ -68,7 +62,6 @@ Grafana 监控系统中的 Home Dashboard 一直扮演着 Pigsty "主页"的角�
 
 强大与便利往往也蕴含风险。Jupyter 执行任意代码的能力对于生产环境过于冒险，因此默认不在生产环境配置模板中启用。
 
-
 ----------------
 
 ## PGWeb
@@ -83,7 +76,6 @@ Grafana 监控系统中的 Home Dashboard 一直扮演着 Pigsty "主页"的角�
 
 用户可以浏览数据库中的模式、对象，快速浏览表中的数据，执行查询等。
 
-
 ----------------
 
 ## PEV2
@@ -93,7 +85,6 @@ PEV2 是一个实用的执行计划分析器，可将 PostgreSQL 查询 EXPLAIN 
 ![pev2](pev2.jpg)
 
 这个工具对于优化慢查询、分析 auto_explain 结果非常好用。
-
 
 ----------------
 
@@ -106,7 +97,6 @@ PgBadger 是一个优秀的 PostgreSQL 日志分析组件，可从 CSV 日志中
 ![pgbadger](pgbadger.jpg)
 
 为该命令添加 Crontab，即可每天或准实时地自动生成数据库运行报表。
-
 
 ----------------
 
@@ -131,7 +121,6 @@ Pigsty 将于 **v1.2** 进行默认 PG 版本升级，将默认数据库版本�
 | Consul | v1.10.2 |
 | vip-manager | v1.0.1 |
 
-
 ----------------
 
 ## 数据库迁移剧本
@@ -144,7 +133,6 @@ Pigsty 内置了一个数据库在线迁移辅助脚本：`pgsql-migration.yml`�
 
 ![migration-2](migration-2.jpg)
 
-
 ----------------
 
 ## 示例应用：隐私日志可视化
@@ -154,7 +142,6 @@ Pigsty 自带的默认演示应用新增一个：苹果应用隐私日志可视�
 ![applog-1](applog-1.jpg)
 
 ![applog-2](applog-2.jpg)
-
 
 ----------------
 
@@ -167,7 +154,6 @@ v1.1 加入了一个数据库实例上的新特性：Dummy File。原理很简�
 **Promscale 支持**
 
 v1.1 添加了 Promscale 安装包，这是一个有趣的组件，可将 Prometheus 的时序数据存储替换为 TimescaleDB（PostgreSQL）。
-
 
 ----------------
 
@@ -209,7 +195,6 @@ v1.1 添加了 Promscale 安装包，这是一个有趣的组件，可将 Promet
 - 将内部标记 `repo_exist` 重命名为 `repo_exists`
 - `repo_address` 默认值改为 `pigsty` 而非 `yum.pigsty`
 - HAProxy 访问点改为 `http://pigsty` 而非 `http://h.pigsty`
-
 
 ----------------
 

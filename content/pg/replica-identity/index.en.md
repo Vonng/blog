@@ -49,9 +49,6 @@ For production-grade logical replication solutions, namely PostgreSQL's logical 
 
 Thus, the concept of **Replica Identity** emerged. Replica identity is a further generalization and abstraction of the working assumption like `OLD.id`, used to tell the logical replication system **which information can be used to uniquely locate a record in a table**.
 
-
-
-
 ## Replica Identity
 
 For logical replication, `INSERT` events don't need special handling, but to replicate `DELETE|UPDATE` to subscribers, a way to identify rows must be provided, namely **Replica Identity**. Replica identity is a **set of columns** that can uniquely identify a record. In concept, this definition is essentially **the set of columns forming a primary key**. Of course, non-null unique index columns (**candidate keys**) can also serve the same purpose.
@@ -95,8 +92,6 @@ ALTER TABLE t_normal REPLICA IDENTITY FULL;                       -- Use entire 
 ALTER TABLE t_normal REPLICA IDENTITY USING INDEX t_normal_v_key; -- Use unique index
 ALTER TABLE t_normal REPLICA IDENTITY NOTHING;                    -- Don't set replica identity
 ```
-
-
 
 ## Replica Identity Examples
 
@@ -176,8 +171,6 @@ table public.test: DELETE: (no-tuple-data)
 ```
 
 Such logical change logs are completely useless for subscribers. In actual usage, executing `DELETE|UPDATE` on tables without replica identity in logical replication will directly error.
-
-
 
 ## Replica Identity Details
 
@@ -270,8 +263,6 @@ The requirement for NOT NULL is because NULL values cannot be compared for equal
 ```ini
 [42809] ERROR: index "t_normal_v_key" cannot be used as replica identity because column "v" is nullable
 ```
-
-
 
 ### Using FULL Replica Identity
 

@@ -17,10 +17,9 @@ aliases: ["/ai/qwen-leave/"]
 
 [![林俊旸宣布离开 Qwen 的推文](farewell.webp)](https://x.com/JustinLin610/status/2028865835373359513)
 
-> “我要卸任了。再见，我亲爱的 qwen。” (@JustinLin610)[1]
+> “我要卸任了。再见，我亲爱的 qwen。” (@JustinLin610) [1]
 
 寥寥数语，中国最成功的开源大模型项目之一的核心人物，出局了。
-
 
 ------
 
@@ -41,8 +40,6 @@ aliases: ["/ai/qwen-leave/"]
 ![李凯新离职告别与新加坡计划说明](signoff.webp)
 
 一天之内，技术领军人与数位核心骨干集体流失。这不是普通的人才流动，而是系统性的人才流失，或者说，一场组织层面的 “清洗”。
-
-
 
 ------
 
@@ -73,8 +70,6 @@ aliases: ["/ai/qwen-leave/"]
 ![关于周浩接任的社区讨论](rumors.webp)
 
 ![关于阿里内部考核与算力分配的讨论](backlash.webp)
-
-
 
 ------
 

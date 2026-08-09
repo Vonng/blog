@@ -26,6 +26,7 @@ Local environment (Mac OS X 10.11.5 + PostgreSQL9.5.3 + clang-703.0.31)
 Generally speaking, problems that can be solved with package management should be solved with package management.
 [mongo_fdw](https://github.com/EnterpriseDB/mongo_fdw "mongo_fdw") is the package we ultimately want to install
 It has three direct dependencies:
+
 * [json-c 0.12](https://github.com/json-c/json-c/tree/json-c-0.12 "json-c 0.12")
 * [libmongoc-1.3.1](https://github.com/mongodb/mongo-c-driver/tree/r1.3 "libmongoc-1.3.1")
 * [libbson-1.3.1](https://github.com/mongodb/libbson/tree/r1.3 "libbson-1.3.1")

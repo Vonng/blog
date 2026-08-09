@@ -89,6 +89,7 @@ yum install postgis24_10-client postgis24_10
 > Error: Package: postgis24_10-2.4.2-1.rhel7.x86_64 (pgdg10)
 >           Requires: gdal-libs >= 1.9.0
 > ```
+>
 > You can try to resolve it with: `yum -y install epel-release`
 
 ### 4. FDW Installation
@@ -122,7 +123,7 @@ These tools are generally included with the system.
 
 * GCC and G++, version at least `4.x`.
 * GNU Make, CMake, Autotools
-* Git 
+* Git
 
 On CentOS, install directly with `sudo yum install gcc gcc-c++ git autoconf automake libtool m4`.
 

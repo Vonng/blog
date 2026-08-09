@@ -13,8 +13,6 @@ In daily development, we often encounter requirements for fuzzy search. Today, l
 
 Of course, the fuzzy search I'm talking about here isn't the old-fashioned `LIKE` expressions with prefix, suffix, or bilateral fuzzy matching. Let's start directly with a concrete example.
 
-
-
 ## Problem
 
 Now, suppose we've built an app store and want to provide **search functionality** for users. Users can input anything, and we find all applications matching the input content, rank them, and return them to users.
@@ -51,8 +49,6 @@ Of course, as a production-level application, it must also respond promptly. Ful
 
 So, how do we solve this type of problem?
 
-
-
 ## Solution Approaches
 
 There are three solution approaches for this problem:
@@ -60,8 +56,6 @@ There are three solution approaches for this problem:
 * Pattern matching based on `LIKE`
 * String similarity matching based on `pg_trgm`
 * Fuzzy search based on custom tokenization and inverted indexes
-
-
 
 ## LIKE Pattern Matching
 
@@ -86,8 +80,6 @@ If user input is very **precise and clear**, this approach is acceptable. Respon
 * No distance measurement. We don't have a suitable metric to rank returned results. If several hundred results are returned without ranking, it's hard to satisfy users.
 
 * Sometimes accuracy is still insufficient. For example, some apps do SEO by embedding various top app names into their own names to improve search rankings.
-
-
 
 ## PG TRGM
 
@@ -146,10 +138,6 @@ Execution Time: 252.011 ms
 The biggest problem with `pg_trgm` is that it cannot be used for Chinese on instances with `LC_CTYPE = C`. Because `LC_CTYPE=C` lacks some character classification definitions. Unfortunately, once `LC_CTYPE` is set, **there's basically no way to change it except rebuilding the database**.
 
 Generally speaking, PostgreSQL's Locale should be set to `C`, or at least set the collation rule `LC_COLLATE` in localization rules to C, to avoid huge performance losses and functional deficiencies. But because of this "problem" with `pg_trgm`, you need to specify `LC_CTYPE = <non-C-locale>` when creating the database. LOCALEs based on `i18n` should theoretically all work. Common `en_US` and `zh_CN` are both usable. But note that macOS has issues with Locale support. Behaviors that rely too heavily on LOCALE reduce code portability.
-
-
-
-
 
 ## Advanced Fuzzy Search
 
@@ -362,8 +350,6 @@ SELECT * from app where to_tsvector123(name) @@ '学英语 & 雅思'::tsquery;
 -- All apps about 'BTC' but not containing '钱包' '交易'
 SELECT * from app where to_tsvector123(name) @@ 'BTC &! 钱包 & ! 交易 '::tsquery;
 ```
-
-
 
 ## Reference Articles:
 

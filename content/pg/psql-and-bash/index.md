@@ -11,8 +11,6 @@ tags: [PostgreSQL, PG管理, 工具]
 
 一些PostgreSQL与Bash交互的技巧。
 
-
-
 ## 使用严格模式编写Bash脚本
 
 使用[Bash严格模式](http://redsymbol.net/articles/unofficial-bash-strict-mode/)，可以避免很多无谓的错误。在Bash脚本开始的地方放上这一行很有用：
@@ -25,9 +23,7 @@ set -euo pipefail
 - `-u`：使用未初始化的变量时报错，而不是当成NULL
 - `-o pipefail`：使用Pipe中出错命令的状态码（而不是最后一个）作为整个Pipe的状态码[^i]。
 
-[^i]: 管道程序的退出状态放置在环境变量数组`PIPESTATUS`中
-
-
+[^i]: 管道程序的退出状态放置在环境变量数组 `PIPESTATUS` 中
 
 ## 执行SQL脚本的Bash包装脚本
 
@@ -75,13 +71,13 @@ exit 0
 
 一些要点：
 
-- 参数`TSTUFF`会传入SQL脚本中，同时作为一个裸值和一个单引号包围的值，因此，裸值可以当成表名，模式名，引用值可以当成字符串值。
-- 使用`-X`选项确保当前用户的`.psqlrc`文件不会被自动加载
+- 参数 `TSTUFF` 会传入SQL脚本中，同时作为一个裸值和一个单引号包围的值，因此，裸值可以当成表名，模式名，引用值可以当成字符串值。
+- 使用 `-X` 选项确保当前用户的 `.psqlrc` 文件不会被自动加载
 - 将所有消息打印到控制台，这样可以知道脚本的执行情况。(失效的时候很管用)
-- 使用`ON_ERROR_STOP`选项，当出问题时立即终止。
-- 关闭`AUTOCOMMIT`，所以SQL脚本文件不会每一行都提交一次。取而代之的是SQL脚本中出现`COMMIT`时才提交。如果希望整个脚本作为一个事务提交，在sql脚本最后一行加上`COMMIT`（其它地方不要加），否则整个脚本就会成功运行却什么也没提交（自动回滚）。也可以使用`--single-transaction`标记来实现。
+- 使用 `ON_ERROR_STOP` 选项，当出问题时立即终止。
+- 关闭 `AUTOCOMMIT`，所以SQL脚本文件不会每一行都提交一次。取而代之的是SQL脚本中出现 `COMMIT` 时才提交。如果希望整个脚本作为一个事务提交，在sql脚本最后一行加上 `COMMIT`（其它地方不要加），否则整个脚本就会成功运行却什么也没提交（自动回滚）。也可以使用 `--single-transaction` 标记来实现。
 
-`/path/to/sql/file.sql`的内容如下:
+`/path/to/sql/file.sql` 的内容如下:
 
 ```sql
 begin;
@@ -99,11 +95,9 @@ values ('Hello from table ' || :QTSUFF);
 commit;
 ```
 
-
-
 ## 使用PG环境变量让脚本更简练
 
-使用PG环境变量非常方便，例如用`PGUSER`替代`-U <user>`，用`PGHOST`替代`-h <host>`，用户可以通过修改环境变量来切换数据源。还可以通过Bash为这些环境变量提供默认值。
+使用PG环境变量非常方便，例如用 `PGUSER` 替代 `-U <user>`，用 `PGHOST` 替代 `-h <host>`，用户可以通过修改环境变量来切换数据源。还可以通过Bash为这些环境变量提供默认值。
 
 ```bash
 #!/bin/bash
@@ -128,11 +122,9 @@ rollback;
 SQL
 ```
 
-
-
 ## 在单个事务中执行一系列SQL命令
 
-你有一个写满SQL的脚本，希望将整个脚本作为单个事务执行。一种经常出现的情况是在最后忘记加一行`COMMIT`。一种解决办法是使用`—single-transaction`标记：
+你有一个写满SQL的脚本，希望将整个脚本作为单个事务执行。一种经常出现的情况是在最后忘记加一行 `COMMIT`。一种解决办法是使用 `—single-transaction` 标记：
 
 ```bash
 psql \
@@ -147,16 +139,14 @@ psql \
     mydatabase
 ```
 
-`file.sql`的内容变为：
+`file.sql` 的内容变为：
 
 ```bash
 insert into foo (bar) values ('baz');
 insert into yikes (mycol) values ('hello');
 ```
 
-两条插入都会被包裹在同一对`BEGIN/COMMIT`中。
-
-
+两条插入都会被包裹在同一对 `BEGIN/COMMIT` 中。
 
 ## 让多行SQL语句更美观
 
@@ -200,8 +190,6 @@ commit;
 SQL
 ```
 
-
-
 ## 如何将单个SELECT标量结果赋值给Bash变量
 
 ```bash
@@ -212,8 +200,6 @@ echo "next user.id is $NEXT_ID"
 echo "about to reset user id sequence on other database"
 $PSQL -X -U $DEV_USER $DEV_DB -c "alter sequence user_ids restart with $NEXT_ID"
 ```
-
-
 
 ## 如何将单行结果赋给Bash变量
 
@@ -262,8 +248,6 @@ last_name=${ROW[2]}
 
 echo "username: $username, first_name: $first_name, last_name: $last_name"
 ```
-
-
 
 ## 如何在Bash脚本中迭代查询结果集
 
@@ -329,8 +313,6 @@ $PSQL \
 done
 ```
 
-
-
 ## 如何使用状态表来控制多个PG任务
 
 假设你有一份如此之大的工作，以至于你一次只想做一件事。 您决定一次可以完成一项任务，而这对数据库来说更容易，而不是执行一个长时间运行的查询。 您创建一个名为my_schema.items_to_process的表，其中包含要处理的每个项目的item_id，并且您将一列添加到名为done的items_to_process表中，该表默认为false。 然后，您可以使用脚本从items_to_process中获取每个未完成项目，对其进行处理，然后在items_to_process中将该项目更新为done = true。 一个bash脚本可以这样做：
@@ -362,11 +344,9 @@ while [ -n "$item_id" ]; do
 done
 ```
 
-
-
 ## 跨数据库拷贝表
 
-有很多方式可以实现这一点，利用`psql`的`\copy`命令可能是最简单的方式。假设你有两个数据库`olddb`与`newdb`，有一张`users`表需要从老库同步到新库。如何用一条命令实现：
+有很多方式可以实现这一点，利用 `psql` 的 `\copy` 命令可能是最简单的方式。假设你有两个数据库 `olddb` 与 `newdb`，有一张 `users` 表需要从老库同步到新库。如何用一条命令实现：
 
 ```bash
 psql \
@@ -406,8 +386,6 @@ psql \
 
 ```
 
-
-
 ## 获取表定义的方式
 
 ```bash
@@ -419,11 +397,9 @@ pg_dump \
     --schema-only my_db
 ```
 
-
-
 ## 将bytea列中的二进制数据导出到文件
 
-注意`bytea`列，在PostgreSQL 9.0 以上是使用十六进制表示的，带有一个恼人的前缀`\x`，可以用`substring`去除。
+注意 `bytea` 列，在PostgreSQL 9.0 以上是使用十六进制表示的，带有一个恼人的前缀 `\x`，可以用 `substring` 去除。
 
 ```bash
 #!/usr/bin/env bash
@@ -458,8 +434,6 @@ psql <<SQL
 INSERT INTO sample VALUES(\'${filename}\',:'content')
 SQL
 ```
-
-
 
 ## 显示特定数据库中特定表的统计信息
 
@@ -523,8 +497,6 @@ select '-----------' as \"-------------\",
 ```bash
 ./table-stats.sh mytable myotherdb
 ```
-
-
 
 ## 将psql的默认输出转换为Markdown表格
 

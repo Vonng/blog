@@ -11,13 +11,9 @@ tags: [PostgreSQL, PG开发, SQL]
 
 Distinct On是PostgreSQL提供的特有语法，可以高效解决一些典型查询问题，例如，快速找出分组内具有最大最小值的记录。
 
-
-
 ## 前言
 
 找出分组内具有最大最小值的记录，这是一个非常常见的需求。用传统SQL当然有办法解决，但是都不够优雅，PostgreSQL的SQL扩展语法Distinct ON能一步到位解决这一类问题。
-
-
 
 ## DISTINCT ON 语法
 
@@ -27,11 +23,9 @@ SELECT DISTINCT ON (expression [, expression ...]) select_list ...
 
 Here *expression* is an arbitrary value expression that is evaluated for all rows. A set of rows for which all the expressions are equal are considered duplicates, and only the first row of the set is kept in the output. Note that the “first row” of a set is unpredictable unless the query is sorted on enough columns to guarantee a unique ordering of the rows arriving at the `DISTINCT` filter. (`DISTINCT ON` processing occurs after `ORDER BY` sorting.)
 
-
-
 ## Distinct On应用案例
 
-例如，找出每台机器的最新日志在日志表中，取出按照机器node_id分组，时间戳`ts`最大的的日志记录。
+例如，找出每台机器的最新日志在日志表中，取出按照机器node_id分组，时间戳 `ts` 最大的的日志记录。
 
 ```sql
 CREATE TABLE nodes(node_id INTEGER, ts TIMESTAMP);
@@ -68,8 +62,6 @@ FROM generate_series('2019-01-01'::TIMESTAMP, '2019-05-01'::TIMESTAMP, '1h'::INT
 4	2019-01-01 21:00:00.000000
 ```
 
-
-
 现在使用DistinctON，这里Distinct On后面的括号里代表了记录需要按哪一个键进行除重，在括号内的表达式列表上有着相同取值的记录会只保留一条记录。（当然保留哪一条是随机的，因为分组内哪一条记录先返回是不确定的）
 
 ```sql
@@ -105,8 +97,6 @@ SELECT DISTINCT ON (node_id) * FROM test_data ORDER BY node_id, ts DESC NULLS LA
 9	2019-04-30 21:00:00.000000
 10	2019-04-29 18:00:00.000000
 ```
-
-
 
 ## 使用索引加速Distinct On查询
 

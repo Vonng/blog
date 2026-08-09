@@ -120,7 +120,7 @@ As a seasoned data hand, I’m bundling all the PG+DuckDB integration [**extensi
 | [**pg_mooncake**](https://pigsty.io/ext/olap/pg_mooncake/)       | PIGSTY  | Columnstore Table in Postgres                                  |
 | [**duckdb_fdw**](https://pigsty.io/ext/olap/duckdb_fdw/)         | PIGSTY  | DuckDB Foreign Data Wrapper                                    |
 | [**pg_parquet**](https://pigsty.io/ext/olap/pg_parquet/)         | PIGSTY  | copy data between Postgres and Parquet                         |
-| [**pg_fkpart**](https://pigsty.io/ext/olap/pg_fkpart/)           |  *IXED  | Table partitioning by foreign key utility                      |
+| [**pg_fkpart**](https://pigsty.io/ext/olap/pg_fkpart/)           |  MIXED  | Table partitioning by foreign key utility                      |
 | [**pg_partman**](https://pigsty.io/ext/olap/pg_partman/)         |  PGDG   | Extension to manage partitioned tables by time or ID           |
 | [**plproxy**](https://pigsty.io/ext/olap/plproxy/)               |  PGDG   | Database partitioning implemented as procedural language       |
 | [**pg_strom**](https://pigsty.io/ext/olap/pg_strom/)             |  PGDG   | PG-Strom - big-data processing acceleration using GPU and NVME |

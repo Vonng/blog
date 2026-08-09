@@ -4,7 +4,7 @@ date: 2026-07-03
 author: |
   [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 summary: >
-  File systems and databases have spent fifty years fighting and borrowing from each other. The agent era may seem to put file systems back on top, but the real winner may be databases that learn to speak the file system's dialect: models provide understanding, databases provide guarantees, and discovery comes from a protocol layer where `ls` works on everything.
+  File systems and databases have spent fifty years fighting and borrowing from each other. The agent era may seem to put file systems back on top, but the real winner may be databases that learn to speak the file system's dialect: models provide understanding, databases provide guarantees, and discovery comes from a protocol layer where ls works on everything.
 tags: [AI, Agent, Database, File System, PostgreSQL]
 ai: true
 ---
@@ -24,8 +24,6 @@ But dissect these projects and every heart inside is a database. TigerFS project
 This is nothing new. It is the latest round in a war that has lasted more than fifty years. File systems and databases share an ancestor, went their separate ways, learned to despise each other, and then repeatedly proposed marriage. Every high-profile attempt at union failed. Quietly stealing each other's techniques, however, has never stopped.
 
 To judge how this round will end in the agent era, we first need to reopen the books on the earlier rounds. I want to do two things here: tell those fifty years of conflict as one continuous story, then extend that line into a few predictions about agent-era storage that are specific enough to be proven wrong.
-
-
 
 ## I. One Root: Files Were the First Databases
 
@@ -49,8 +47,6 @@ The database world had its revolution. The file system preserved the old regime.
 
 And the question of whose business content structure should be became the fuse for the next fifty years of war.
 
-
-
 ## II. The Split: Who Owns Semantics?
 
 After the 1970s, the two camps separated completely. Each raised its own flag, but the flags carried two different answers to the same question: **who owns the meaning of data?**
@@ -70,8 +66,6 @@ The file-system camp had equal contempt for databases: a semi-closed world with 
 In fairness, both were right because they defended different territory. Shared, contended data that cannot be wrong is worth the tax of schemas and transactions. Charging that tax for casually stored bytes is absurd.
 
 The problem is that ambitious people keep refusing to accept the divide. Someone always wants to unify both sides.
-
-
 
 ## III. Precedent: Three Proposals, Three Rejections
 
@@ -111,8 +105,6 @@ All three marriages reached the same conclusion: **interfaces can imitate each o
 
 That is the first reproducible law of this fifty-year war.
 
-
-
 ## IV. The Secret Convergence: Separate Interfaces, Converging Engines
 
 None of the public marriages worked. Behind the scenes, both sides spent decades stealing techniques from each other.
@@ -141,8 +133,6 @@ This is the second law of the fifty-year war: **engines converge; semantics rema
 
 Whoever tries to force unification at the semantic layer dies.
 
-
-
 ## V. The Fourth Proposal: Do Agents Really Love Files?
 
 In 2026, the war reignited. This time the spark was not a traditional operating system or desktop search. It was the coding agent. These agents quickly converged on files: project instructions are files, Skill entry points are files, configuration comes in JSON or YAML, patches are diffs, and logs, test results, and temporary reports are all files. Agents roam repositories with `ls`, `cat`, `grep`, and `edit`, like tireless interns rummaging through a directory tree. The meme followed: **agents love file systems.**
@@ -167,8 +157,6 @@ At this point, an astute reader may pound the table: **databases do not have a m
 
 Once an agent starts changing reality, then, the question is no longer whether it can understand files. It is whether it can **commit facts safely**. That is the real dividing line between file systems and databases in the agent era.
 
-
-
 ## VI. The Workspace Can Be Files; the Ledger Is a Database
 
 File systems excel as workspaces. They are cheap, intuitive, readable, editable, diffable, forkable, and disposable. Agents can experiment comfortably inside them, and humans can inspect the results. Code, drafts, intermediate results, tool output, patches, test logs, and generated artifacts all fit naturally into file-shaped space.
@@ -190,10 +178,6 @@ What is happening in this round is not a file-system restoration. It is a databa
 This follows the same script as SQLite. SQLite's achievement was not inventing a new file system. It was disguising a database as an ordinary file and taking over local application storage. The agent era pushes that script one step further: the database is no longer disguised as one file, but as a file tree that an agent can explore, fork, audit, and roll back—and that can take over the agent workspace.
 
 The file system wins the interface and the entry point. The database wins the endgame.
-
-
-
-
 
 ## Epilogue: Workspaces Belong to Files; Facts Belong to Databases
 

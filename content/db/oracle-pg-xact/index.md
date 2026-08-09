@@ -25,8 +25,6 @@ tags: [数据库, PostgreSQL, Oracle, 事务系统, 迁移]
   * **I** solation（隔离性）：保证并发运行的事务不会导致某些“异常”（即数据库中一些不可由串行执行的事务产生的可见状态）。
   * **D** urability（持久性）：保证一旦数据库事务提交（完成），即使发生系统崩溃或硬件故障，事务也无法被撤销。
 
-
-
 接下来，我们将详细讨论这些类别。
 
 -------
@@ -40,8 +38,6 @@ tags: [数据库, PostgreSQL, Oracle, 事务系统, 迁移]
   * 两个数据库系统都将 [行锁](https://www.cybertec-postgresql.com/en/row-locks-in-postgresql/) 保存在行本身，而不是在锁表中。因此，锁定一行可能会导致额外的磁盘写入，但不需要进行 _锁升级_ 。
   * 两个数据库系统都支持 `SELECT ... FOR UPDATE` 进行显式的并发控制。更多关于差异的讨论，后面会说。
   * 两个数据库系统都使用 `READ COMMITTED` 作为默认的事务隔离级别，这在两个系统中的行为非常相似。
-
-
 
 -------
 
@@ -69,7 +65,7 @@ tags: [数据库, PostgreSQL, Oracle, 事务系统, 迁移]
 
 在 Oracle 数据库中，任何 [DDL](https://en.wikipedia.org/wiki/Data_definition_language) 语句会自动执行 `COMMIT`，因此 **无法回滚 DDL 语句** 。
 
-在 PostgreSQL 中则没有这种限制。除了少数例外（如 `VACUUM`、`CREATE DATABASE`、`CREATE INDEX CONCURRENTLY`等），您可以 **回滚任何 SQL 语句** 。
+在 PostgreSQL 中则没有这种限制。除了少数例外（如 `VACUUM`、`CREATE DATABASE`、`CREATE INDEX CONCURRENTLY` 等），您可以 **回滚任何 SQL 语句** 。
 
 -------
 
@@ -82,7 +78,7 @@ tags: [数据库, PostgreSQL, Oracle, 事务系统, 迁移]
 ### 主键和唯一约束在 Oracle 和 PostgreSQL 中的验证时机
 
 以下 SQL 脚本在 Oracle 中不会报错：
-    
+
     ```sql
     CREATE TABLE tab (id NUMBER PRIMARY KEY);
     INSERT INTO tab (id) VALUES (1);
@@ -94,8 +90,7 @@ tags: [数据库, PostgreSQL, Oracle, 事务系统, 迁移]
     
 
 在 PostgreSQL 中，同样的脚本会报错：
-    
-    
+
     CREATE TABLE tab (id numeric PRIMARY KEY);
     INSERT INTO tab (id) VALUES (1);
     INSERT INTO tab (id) VALUES (2);
@@ -117,8 +112,7 @@ tags: [数据库, PostgreSQL, Oracle, 事务系统, 迁移]
 SQL 标准定义了四个事务隔离级别：`READ UNCOMMITTED`、`READ COMMITTED`、`REPEATABLE READ` 和 `SERIALIZABLE`。 但与标准的详细程度相比，单独的级别定义得比较模糊。例如，标准提到，“脏读”（读取其他事务未提交的数据）在 `READ UNCOMMITTED` 隔离级别下是“可能”的，但并没有明确指出这是否为必需。
 
 Oracle 只提供 `READ COMMITTED` 和 `SERIALIZABLE` 隔离级别。然而后者其实并不完全准确；Oracle 提供的是快照隔离。例如，以下并发事务均会成功（第二个会话如下所示）：
-    
-    
+
     CREATE TABLE tab (name VARCHAR2(50), is_highlander NUMBER(1) NOT NULL);
     
     -- start a new serializable transaction
@@ -166,14 +160,10 @@ PostgreSQL 支持所有四个隔离级别，但它会默默地将 `READ UNCOMMIT
   * 第二个事务执行了一个锁定行的语句（例如 `SELECT ... FOR UPDATE`），并且挂起
   * 第一个事务提交
 
-
-
 在这种情况下，两个数据库系统会有什么结果？在 Oracle 和 PostgreSQL 中，您都能看到最新提交的数据，但细节有所不同：
 
   * PostgreSQL 只重新评估被锁定的行，操作较快，但可能会导致不一致的结果
   * Oracle 会 **重新执行完整查询** ，尽管速度较慢，但能够提供一致的结果
-
-
 
 -------
 
@@ -227,7 +217,5 @@ PostgreSQL 支持所有四个隔离级别，但它会默默地将 `READ UNCOMMIT
 
   * [←上一页](/db/db-is-the-arch/)
   * [下一页→](/db/pg-kiss-duckdb/)
-
-
 
 最后修改 2025-02-27: [optimize image (7cb69ff)](https://github.com/pgsty/web.cc/commit/7cb69ff32df80eba158e90dfd39b124ff85b79ab)

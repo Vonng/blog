@@ -26,10 +26,8 @@ tags: [数据库, PostgreSQL, OpenTelemetry, Iceberg, 数据标准]
 我逐渐悟到，开发者判断一个项目“开源味”浓不浓，大致看三点：
 
   1. **许可证** ：是否为 [OSI 核准](https://opensource.org/licenses) 的开源协议。
-  2. **自托管** ：能否把**完整产品** 端到端地自己部署。
+  2. **自托管** ：能否把 **完整产品** 端到端地自己部署。
   3. **商业化** ：有没有商业中立、无厂商绑架；更妙的是，有 **多家** 公司背书而非一家独大。
-
-
 
 第三点我领悟得最慢 —— 是的，Postgres 赢在产品力，但更赢在 **“谁也控不住”** 。 治理结构与社区文化决定了它不可能被任何公司收编。它就像国际空间站，多家公司只能合作，因为谁都没本事说 “这就是我的”。
 
@@ -45,8 +43,6 @@ Postgres 点满了 “开源” 技能点，但它也并非在所有数据场景
   2. **遥测 / 观测** ：**SRE** 运维基建、调优应用用。
   3. **OLAP / 数仓** ：**数据工程师 / 科学家** 挖掘洞见用。
 
-
-
 数据生命周期通常是 `1 → 2 → 3`：先有应用，再加点基础遥测（很多时候直接塞进 OLTP 系统），等表长到塞不下，就得上数仓了。
 
 三类角色各玩各的，但行业正整体“左移”：工具越发友好，观测与数仓也慢慢被开发者收编。SRE 和数据岗并非故意让贤，只是数据库本身越来越能打，创业团队能撑更久再招专家。
@@ -61,8 +57,6 @@ Postgres 点满了 “开源” 技能点，但它也并非在所有数据场景
   2. **遥测** ： Open Telemetry
   3. **OLAP** ： Iceberg
 
-
-
 后两者更像“标准”而非“工具”，类似 HTML 与浏览器：大家约好格式，其他工具要么跟进要么淘汰。
 
 ![open-standard.png](open-standard.png)
@@ -71,8 +65,6 @@ Postgres 点满了 “开源” 技能点，但它也并非在所有数据场景
 
   * **不跟** ？潮流跑了，错过增长趋势。
   * **跟了** ？自家产品锁定度变低。
-
-
 
 对开发者而言，这简直不能更香了 —— [我们坚信](https://supabase.com/docs/guides/getting-started/architecture#everything-is-portable)：**可迁移性会逼着厂商拼体验** 。
 
@@ -113,8 +105,6 @@ AWS S3 团队连环上新，把 “S3 当数据库” 的幻想推向现实。�
   * **OLTP** ：性能要命，S3 与 NVMe 永远隔着物理网线。因此重点是 Zero ETL & 分层存储：冷热数据自由搬迁。Postgres 现有多种读 Iceberg 的方式，如 [pg_mooncake](https://github.com/Mooncake-Labs/pg_mooncake)、[pg_duckdb](https://github.com/duckdb/pg_duckdb) 及 [Iceberg FDW](https://github.com/supabase/wrappers/pull/462)。
   * **遥测 / 数仓** ：关键字是“基数”。S3 越便宜，大家越把海量数据往里倒，催生“存算分离”的架构。于是出现一堆以计算层自居的嵌入式数据库：如 [DuckDB](https://duckdb.org/2021/10/29/duckdb-wasm.html)（OLAP）、SQLite 的[云后端存储](https://sqlite.org/cloudsqlite/doc/trunk/www/index.wiki)、[turbopuffer](https://turbopuffer.com/)（向量）、[SlateDB](https://slatedb.io/)（KV）、[Tonbo](https://tonbo.io/)（Arrow）。它们既可嵌入应用，也能单飞。
 
-
-
 -------
 
 ## Supabase 的数据蓝图
@@ -129,8 +119,6 @@ AWS S3 团队连环上新，把 “S3 当数据库” 的幻想推向现实。�
   * 在 Supabase Storage 引入 Iceberg。
   * 在 [Supabase ETL](https://github.com/supabase/supabase_etl) 里打通 Postgres ↔ Iceberg 零 ETL。
   * 通过扩展和 FDW，让 Postgres 能读能写 Iceberg。
-
-
 
 接下来，我们押注三大开放数据标准：**Postgres、OTel、Iceberg** 。敬请期待。
 
@@ -149,8 +137,6 @@ YC S20 的项目走过五年发展到今天，已经是估值 2B 的独角兽了
   * 遥测
   * 海量分析
   * 对象存储
-
-
 
 所以如果你想要提供一个真正 “完全覆盖” 的数据基础设施，那么光有 PostgreSQL 是不行的。
 
@@ -182,7 +168,5 @@ Supabase 还在想其他方法构建壁垒，例如他们去年收购了 OrioleD
 
   * [←上一页](/db/guru/)
   * 下一页→
-
-
 
 最后修改 2025-05-27: [add new blog (18509bc)](https://github.com/pgsty/web.cc/commit/18509bc1c1af9bf2f3005fb5c8e1f82a4b399c25)

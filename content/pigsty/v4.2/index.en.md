@@ -186,7 +186,6 @@ Each cluster gets its own monitoring dashboards, high availability, and backup r
 
 This is not an architecture diagram on a slide deck. It is running code.
 
-
 ------
 
 ## Other Improvements
@@ -218,7 +217,6 @@ As an open-source project, I think Pigsty has reached a fairly mature state. The
 **DBA Agent** work has also progressed — I have recently written some Claude Skills and prompt templates that make the Pigsty environment perceptible to AI tools. This way you can drop Claude Code into a Pigsty environment and let it work for you.
 
 Pigsty itself will continue to follow the PG minor release cadence. The next version may officially include the Cloudberry deployment playbook, plus local SMTP server support (maddy / stalwart). No rush for big new features — the current architecture running stably is just fine.
-
 
 --------
 
@@ -352,9 +350,6 @@ c98972fe9226657ac1faa7b72a22498b  pigsty-pkg-v4.2.0.u22.aarch64.tgz
 143e404f4681c7d0bbd78ef7982cd652  pigsty-pkg-v4.2.0.u24.aarch64.tgz
 00dfa86f477f3adff984906211ab3190  pigsty-pkg-v4.2.0.u24.x86_64.tgz
 ```
-
-
-
 
 ## v4.2.1
 

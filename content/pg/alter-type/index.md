@@ -21,8 +21,6 @@ ALTER TABLE pgbench_accounts ALTER COLUMN aid SET DATA TYPE BIGINT;
 
 但这种方式对于访问频繁的生产大表是不可行的
 
-
-
 ------------------
 
 ## 太长；不看
@@ -65,8 +63,6 @@ DROP FUNCTION IF EXISTS sync_pgbench_accounts_abalance();
 DROP TRIGGER tg_sync_pgbench_accounts_abalance ON pgbench_accounts;
 ```
 
-
-
 ------------------
 
 ## 外键
@@ -92,9 +88,6 @@ alter table my_table rename column new_id to id;
 commit;
 ```
 
-
-
-
 ------------------
 
 ## 以pgbench为例
@@ -112,15 +105,13 @@ Indexes:
     "pgbench_accounts_pkey" PRIMARY KEY, btree (aid)
 ```
 
-升级`abalance`列为BIGINT
+升级 `abalance` 列为BIGINT
 
 会锁表，在表大小非常小，访问量非常小的的情况下可用。
 
 ```sql
 ALTER TABLE pgbench_accounts ALTER COLUMN abalance SET DATA TYPE bigint;
 ```
-
-
 
 ------------------
 
@@ -129,13 +120,11 @@ ALTER TABLE pgbench_accounts ALTER COLUMN abalance SET DATA TYPE bigint;
 1. 添加新列
 2. 更新数据
 3. 在新列上创建相关索引（如果没有也可以单列创建，加快第四步的速度）
-4. 执行切换**事务**
+4. 执行切换 **事务**
    1. 排他锁表
    2. UPDATE更新空列（也可以使用触发器）
    3. 删旧列
    4. 重命名新列
-
-
 
 ```sql
 -- Step 1 : 创建新列
@@ -153,8 +142,6 @@ UPDATE pgbench_accounts SET abalance_new = abalance WHERE ;
 -- Step 4 :
 ```
 
-
-
 ```sql
 -- 同步更新对应列
 CREATE OR REPLACE FUNCTION public.sync_abalance() RETURNS TRIGGER AS $$
@@ -163,14 +150,6 @@ $$ LANGUAGE 'plpgsql';
 
 CREATE TRIGGER pgbench_accounts_sync_abalance BEFORE INSERT OR UPDATE ON pgbench_accounts EXECUTE FUNCTION sync_abalance();
 ```
-
-
-
-
-
-
-
-
 
 ```sql
 alter table my_table add column new_id bigint;
@@ -192,12 +171,6 @@ alter table my_table drop column id;
 alter table my_table rename column new_id to id;
 commit;
 ```
-
-
-
-
-
-
 
 ------------------
 
@@ -263,8 +236,6 @@ psql ${DATNAME} -qAXwtc "${SQL}"
  UPDATE signup_users SET app_type = '' WHERE app_type != '';
 ```
 
-
-
 ------------------
 
 ## 优化与改进
@@ -297,8 +268,6 @@ psql ${DATNAME} -qAXwtc "ANALYZE ${RELNAME};"
 psql ${DATNAME} -qAXwtc "${SQL}"
 ```
 
-
-
 ```sql
 BEGIN;UPDATE pgbench_accounts SET abalance_new = abalance WHERE aid BETWEEN 397 AND 103196;COMMIT;SELECT pg_sleep(0.5);VACUUM pgbench_accounts;
 BEGIN;UPDATE pgbench_accounts SET abalance_new = abalance WHERE aid BETWEEN 103196 AND 213490;COMMIT;SELECT pg_sleep(0.5);VACUUM pgbench_accounts;
@@ -307,9 +276,3 @@ BEGIN;UPDATE pgbench_accounts SET abalance_new = abalance WHERE aid BETWEEN 3018
 BEGIN;UPDATE pgbench_accounts SET abalance_new = abalance WHERE aid BETWEEN 400003 AND 511931;COMMIT;SELECT pg_sleep(0.5);VACUUM pgbench_accounts;
 BEGIN;UPDATE pgbench_accounts SET abalance_new = abalance WHERE aid BETWEEN 511931 AND 613890;COMMIT;SELECT pg_sleep(0.5);VACUUM pgbench_accounts;
 ```
-
-
-
-
-
-

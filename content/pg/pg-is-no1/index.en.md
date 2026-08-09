@@ -27,13 +27,11 @@ Popularity, the `used` reflects the past, the `loved` indicates the present, and
 
 As a dedicated user, community member, expert, evangelist, and contributor to PostgreSQL, witnessing this moment is profoundly moving. Let's delve into the "Why" and "What" behind this phenomenon.
 
-
-
 ------
 
 ## Source: Community Survey
 
-Developers define the success of databases, and StackOverflow's survey, with popularity, love, and demand metrics, captures this directly. 
+Developers define the success of databases, and StackOverflow's survey, with popularity, love, and demand metrics, captures this directly.
 
 > “Which **database environments** have you done extensive development work in over the past year, and which do you want to work in over the next year? If you both worked with the database and want to continue to do so, please check both boxes in that row.”
 
@@ -57,9 +55,6 @@ Trends indicate PostgreSQL's growing popularity and love; MySQL's love remains f
 
 The takeaway: PostgreSQL's standing in the database realm, akin to Linux in server OS, seems unshakeable for the foreseeable future.
 
-
-
-
 ------
 
 ## Historical Accumulation: Popularity
@@ -77,7 +72,6 @@ The key trend to note is that among the top-ranked databases, only PostgreSQL ha
 Notably, the "domestic database" TiDB has entered the StackOverflow rankings for the first time, securing the 32nd spot with a 0.2% usage rate.
 
 Popularity reflects the current scale and potential of a database, while love indicates its future growth potential.
-
 
 ------
 
@@ -99,8 +93,6 @@ Redis, known for its simplicity and ease of use as a data structure cache server
 
 Not all **potential** can be converted into kinetic energy. While user affection is significant, it doesn't always translate into action, leading to the third metric of interest – demand.
 
-
-
 ------
 
 ## Future Trends: Demand
@@ -112,7 +104,6 @@ The demand rate, or the level of desire, represents the percentage of users who 
 ![](pg-is-no1-8.png)
 
 In 2023, some databases saw notable demand increases, likely driven by the surge in large language model AI, spearheaded by OpenAI's ChatGPT. This demand for intelligence has, in turn, fueled the need for robust data infrastructure. A decade ago, support for NoSQL features like JSONB/GIN laid the groundwork for PostgreSQL's explosive growth during the internet boom. Today, the introduction of pgvector, the first vector extension built on a mature database, grants PostgreSQL a ticket into the AI era, setting the stage for growth in the next decade.
-
 
 ------
 
@@ -130,7 +121,6 @@ MySQL, popular yet beleaguered, lags in stringent transaction processing and dat
 
 Oracle, no doubt skilled, lacks integrity, hence "talented but unprincipled." MySQL, despite its open-source merit, is limited in capability and sophistication, hence "limited talent, weak ethics." PostgreSQL, embodying both capability and integrity, aligns with the open-source rise, popular demand, and advanced stability, epitomizing "talented and principled."
 
-
 ------
 
 ## Open-Source & Advanced
@@ -142,9 +132,6 @@ Broadly, aspects like extensibility, ecosystem, community, and protocols fall un
 ![](pg-is-no1-10.png)
 
 > https://www.timescale.com/state-of-postgres/2022
-
-
-
 
 ------
 
@@ -174,7 +161,6 @@ Oracle is advanced, but PostgreSQL holds its own. It's the most Oracle-compatibl
 
 PostgreSQL is like an open-source "Oracle," the only real threat to Oracle's dominance. As a leader in the "de-Oracle" movement, PG has spawned numerous "domestically controllable" database companies. According to CITIC, 36% of "domestic databases" are based on PG modifications or rebranding, with Huawei's openGauss and GaussDB as prime examples. Crucially, PostgreSQL uses a BSD-Like license, permitting such adaptations — you can rebrand and sell without deceit. This open attitude is something Oracle-acquired, GPL-licensed MySQL can't match.
 
-
 ------
 
 ## The advanced in Talent
@@ -190,7 +176,6 @@ PostgreSQL is not just a traditional OLTP "relational database" but a multi-moda
 The superiority of PostgreSQL is not only in its acclaimed **kernel stability** but also in its powerful **extensibility**. The plugin system transforms PostgreSQL from a single-threaded evolving database kernel to a platform with countless parallel-evolving extensions, exploring all possibilities simultaneously like quantum computing. PostgreSQL is omnipresent in every niche of data processing.
 
 For instance, PostGIS for geospatial databases, TimescaleDB for time-series, Citus for distributed/columnar/HTAP databases, PGVector for AI vector databases, AGE for graph databases, PipelineDB for stream processing, and the ultimate trick — using Foreign Data Wrappers (FDW) for unified SQL access to all heterogeneous external databases. Thus, PG is a true full-stack database platform, far more advanced than a simple OLTP system like MySQL.
-
 
 ![](pg-is-no1-14.png)
 
@@ -220,9 +205,6 @@ MySQL allows partial transaction commits by default, revealing a gap between "po
 
 **Advancement** and **open-source** are PostgreSQL's success secrets. While Oracle is advanced and MySQL is open-source, PostgreSQL boasts both. With the right conditions, success is inevitable.
 
-
-
-
 --------------
 
 ## Looking Ahead
@@ -234,9 +216,6 @@ However, users need more than an engine; they need the complete car, driving cap
 This is why we created **[Pigsty](https://pigsty.io/)** — to develop an battery-included, open-source, local-first PostgreSQL distribution, making it easy for everyone to access and utilize a **quality database service**.
 
 ![](pg-is-no1-18.webp)
-
-
-
 
 --------------
 
