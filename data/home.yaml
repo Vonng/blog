@@ -76,49 +76,49 @@ zh-cn:
     items:
       - title: Pigsty
         meta: 开源 PG RDS 发行版
-        image: img/works/pigsty.jpg
+        image: img/works/pigsty.cc.webp
         desc: 开箱即用的 PostgreSQL 数据库发行版，本地优先的 FLOSS RDS。
         url: 'https://pigsty.cc'
         external: true
       - title: SILO
         meta: S3 兼容对象存储
-        image: img/works/silo.jpg
+        image: img/works/silo.pgsty.com.webp
         desc: 社区维护的 MinIO 分支，延续 S3 兼容对象存储的开源版本。
         url: 'https://silo.pgsty.com'
         external: true
       - title: OINK
         meta: Hugo 文档主题
-        image: img/works/oink.jpg
+        image: img/works/oink.pgsty.com.webp
         desc: 本地优先的 Hugo 工程文档主题，也就是这个站点用的框架。
         url: 'https://oink.pgsty.com'
         external: true
       - title: PIG
         meta: PG 包管理器
-        image: img/works/pig.jpg
+        image: img/works/pig.pgsty.com.webp
         desc: 一条命令装上任意 PostgreSQL 扩展，覆盖 EL / Debian / Ubuntu。
         url: 'https://pig.pgsty.com'
         external: true
       - title: SOW
         meta: 软件仓库管理器
-        image: img/works/sow.jpg
+        image: img/works/sow.pgsty.com.webp
         desc: 一次入库，处处分发 —— APT 与 YUM 软件仓库的构建与镜像。
         url: 'https://sow.pgsty.com'
         external: true
       - title: PG Exporter
         meta: 监控指标采集
-        image: img/works/pg-exporter.jpg
+        image: img/works/exp.pgsty.com.webp
         desc: 用 SQL 表达的 PostgreSQL 可观测性，600+ 指标，声明式采集器。
         url: 'https://exp.pgsty.com'
         external: true
       - title: CapsLock 补完计划
         meta: 键盘改造
-        image: img/works/capslock.jpg
+        image: img/works/caps.vonng.com.webp
         desc: 把没什么用的大写锁定键，变成第五个修饰键。
         url: 'https://caps.vonng.com/zh'
         external: true
       - title: PGEXT.CLOUD
         meta: PostgreSQL 扩展目录
-        image: img/works/pgext.jpg
+        image: img/works/pgext.cloud.webp
         desc: 2200+ PostgreSQL 扩展的索引、目录与元数据，以及 570+ 扩展的下载、安装与构建矩阵。
         url: 'https://pgext.cloud/zh/'
         external: true
@@ -129,13 +129,13 @@ zh-cn:
     items:
       - title: DDIA
         meta: 中文翻译本
-        image: img/works/ddia.jpg
+        image: img/works/ddia.vonng.com.webp
         desc: 《设计数据密集型应用》中文版，分布式系统的必读经典。
         url: 'https://ddia.vonng.com'
         external: true
       - title: PostgreSQL 内幕探索
         meta: 中文翻译本
-        image: img/works/pg-internal.jpg
+        image: img/works/pgint.vonng.com.webp
         desc: 《PostgreSQL Internals》中文版，讲述 PostgreSQL 内核原理。
         url: 'https://pgint.vonng.com'
         external: true
@@ -147,19 +147,19 @@ zh-cn:
         external: true
       - title: 产品思维工程师
         meta: 中文翻译本
-        image: img/works/tpme.jpg
+        image: img/works/tpme.vonng.com.webp
         desc: 《The Product-Minded Engineer》中文版。
         url: 'https://tpme.vonng.com'
         external: true
       - title: pg.center
         meta: PostgreSQL 官网中文版
-        image: img/works/pg-center.jpg
+        image: img/works/pg.center.webp
         desc: postgresql.org 的完整中文镜像，含 PG 18 中文文档。
         url: 'https://pg.center'
         external: true
       - title: pgsql.cc
         meta: PG 运维文库
-        image: img/works/pgsql-cc.jpg
+        image: img/works/pgsql.cc.webp
         desc: PostgreSQL 与周边组件的中英文运维文档聚合站。
         url: 'https://pgsql.cc'
         external: true
@@ -170,10 +170,10 @@ zh-cn:
         url: 'https://www.vldb.org/pvldb/vol17/p2514-li.pdf'
         external: true
       - title: hbase_fdw
-        meta: PostgreSQL 外部数据包装器
-        image: img/works/hbase-fdw.jpg
-        desc: 把 HBase 表当作 PostgreSQL 关系来查询。
-        url: 'https://github.com/Vonng/hbase_fdw'
+        meta: NPC 2017 论文
+        image: img/works/hbase_fdw.webp
+        desc: 用 PostgreSQL FDW 为异构数据库构建统一访问层。
+        url: 'https://dl.acm.org/doi/10.1007/978-3-319-68210-5_14'
         external: true
       - title: Empire of AI
         meta: 中文翻译本
@@ -259,49 +259,49 @@ en:
     items:
       - title: Pigsty
         meta: FOSS PostgreSQL RDS
-        image: img/works/pigsty.jpg
+        image: img/works/pigsty.io.webp
         desc: A battery-included PostgreSQL distribution — the local-first, free and open source RDS.
         url: 'https://pigsty.io'
         external: true
       - title: SILO
         meta: S3-compatible object storage
-        image: img/works/silo.jpg
+        image: img/works/silo.pgsty.com.webp
         desc: The community-maintained MinIO fork that keeps S3-compatible storage open source.
         url: 'https://silo.pgsty.com'
         external: true
       - title: OINK
         meta: Hugo documentation theme
-        image: img/works/oink.jpg
+        image: img/works/oink.pgsty.com.webp
         desc: A local-first Hugo theme for engineering docs — the one this site runs on.
         url: 'https://oink.pgsty.com'
         external: true
       - title: PIG
         meta: PostgreSQL package manager
-        image: img/works/pig.jpg
+        image: img/works/pig.pgsty.com.webp
         desc: One command, any extension — across EL, Debian and Ubuntu.
         url: 'https://pig.pgsty.com'
         external: true
       - title: SOW
         meta: Repository manager
-        image: img/works/sow.jpg
+        image: img/works/sow.pgsty.com.webp
         desc: Store once, serve everywhere — building and mirroring APT and YUM repositories.
         url: 'https://sow.pgsty.com'
         external: true
       - title: PG Exporter
         meta: Monitoring
-        image: img/works/pg-exporter.jpg
+        image: img/works/exp.pgsty.com.webp
         desc: PostgreSQL observability expressed in SQL — 600+ metrics, declarative collectors.
         url: 'https://exp.pgsty.com'
         external: true
       - title: Capslock Enhancement
         meta: Keyboard tooling
-        image: img/works/capslock.jpg
+        image: img/works/caps.vonng.com.webp
         desc: Turn the mostly useless CapsLock key into a fifth modifier.
         url: 'https://caps.vonng.com'
         external: true
       - title: PGEXT.CLOUD
         meta: Extension catalog
-        image: img/works/pgext.jpg
+        image: img/works/pgext.cloud.webp
         desc: An index, catalog and metadata for 2200+ PostgreSQL extensions, plus download, install and build matrices for 570+ of them.
         url: 'https://pgext.cloud'
         external: true
@@ -312,13 +312,13 @@ en:
     items:
       - title: DDIA
         meta: Chinese translation
-        image: img/works/ddia.jpg
+        image: img/works/ddia.vonng.com.webp
         desc: Designing Data-Intensive Applications, translated into Chinese.
         url: 'https://ddia.vonng.com'
         external: true
       - title: PostgreSQL Internals
         meta: Chinese translation
-        image: img/works/pg-internal.jpg
+        image: img/works/pgint.vonng.com.webp
         desc: PostgreSQL Internals, translated into Chinese.
         url: 'https://pgint.vonng.com'
         external: true
@@ -330,19 +330,19 @@ en:
         external: true
       - title: The Product-Minded Engineer
         meta: Chinese translation
-        image: img/works/tpme.jpg
+        image: img/works/tpme.vonng.com.webp
         desc: A book on engineering with a product mind, translated into Chinese.
         url: 'https://tpme.vonng.com'
         external: true
       - title: pg.center
         meta: postgresql.org in Chinese
-        image: img/works/pg-center.jpg
+        image: img/works/pg.center.webp
         desc: A complete Chinese mirror of postgresql.org, including the PG 18 manual.
         url: 'https://pg.center'
         external: true
       - title: pgsql.cc
         meta: PG operations library
-        image: img/works/pgsql-cc.jpg
+        image: img/works/pgsql.cc.webp
         desc: An aggregate operations library for PostgreSQL and the components around it.
         url: 'https://pgsql.cc'
         external: true
@@ -353,10 +353,10 @@ en:
         url: 'https://www.vldb.org/pvldb/vol17/p2514-li.pdf'
         external: true
       - title: hbase_fdw
-        meta: PostgreSQL foreign data wrapper
-        image: img/works/hbase-fdw.jpg
-        desc: Query HBase tables as ordinary PostgreSQL relations.
-        url: 'https://github.com/Vonng/hbase_fdw'
+        meta: NPC 2017 paper
+        image: img/works/hbase_fdw.webp
+        desc: A unified access layer over heterogeneous databases through PostgreSQL FDW.
+        url: 'https://dl.acm.org/doi/10.1007/978-3-319-68210-5_14'
         external: true
       - title: Empire of AI
         meta: Chinese translation
