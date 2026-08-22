@@ -118,9 +118,9 @@ zh-cn:
         external: true
       - title: PGEXT.CLOUD
         meta: PostgreSQL 扩展目录
-        image: img/works/pgext.cloud.webp
+        image: img/works/ext.pgsty.com.webp
         desc: 2200+ PostgreSQL 扩展的索引、目录与元数据，以及 570+ 扩展的下载、安装与构建矩阵。
-        url: 'https://pgext.cloud/zh/'
+        url: 'https://ext.pgsty.com'
         external: true
       - title: PGSTY
         meta: 公司主页
@@ -306,9 +306,9 @@ en:
         external: true
       - title: PGEXT.CLOUD
         meta: Extension catalog
-        image: img/works/pgext.cloud.webp
+        image: img/works/ext.pgsty.com.webp
         desc: An index, catalog and metadata for 2200+ PostgreSQL extensions, plus download, install and build matrices for 570+ of them.
-        url: 'https://pgext.cloud'
+        url: 'https://ext.pgsty.com'
         external: true
       - title: PGSTY
         meta: Company site
