@@ -88,7 +88,7 @@ works:
     - title: pig
       meta: PG 包管理器
       image: img/about/pig.jpg
-      desc: 在 Linux 上一键安装 400+ PostgreSQL 扩展。
+      desc: 在 Linux 上一键安装 570+ PostgreSQL 扩展。
       url: 'https://pgext.cloud/zh'
       external: true
     - title: pg_exporter

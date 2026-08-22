@@ -20,11 +20,11 @@ By the time you look up again, you are maintaining a frontend project: Node.js, 
 
 That is why I built [OINK](https://oink.pgsty.com/zh/).
 
-![OINK Chinese documentation homepage](oink-docs.png)
+![OINK Chinese documentation homepage](oink-docs.webp)
 
-![OINK project homepage](oink-home.png)
+![OINK project homepage](oink-home.webp)
 
-![OINK blog](oink-blog.png)
+![OINK blog](oink-blog.webp)
 
 
 ## 1. Six Years, Eight Approaches, Not One I Liked
@@ -40,7 +40,7 @@ The list of options I tried reads like an archaeological record:
 - **Documentation SaaS products such as Mintlify**: polished, well designed, and convenient—but hardly cheap. Your documentation also lives in someone else's hands, with no option for offline delivery.
 - **[Next.js + Fumadocs](https://fumadocs.dev/)**: excellent frontend polish, close to Mintlify. But full-text search is slow, builds are slow, content uses MDX rather than plain Markdown, producing a purely static site takes considerable effort, and the whole thing depends on a large Node.js and Next.js stack.
 
-![Pigsty documentation built with Fumadocs](fumadocs.png)
+![Pigsty documentation built with Fumadocs](fumadocs.webp)
 
 I tried plenty of other options too: Jekyll in Ruby, Sphinx and Pelican in Python, and even a homegrown version built with Editor.js. Many had distinctive strengths, but none truly satisfied me. I went around in circles and burned a great deal of time with little to show for it.
 
@@ -48,7 +48,7 @@ After several laps, I ended up back where I started: Docsy. It has the most comp
 
 But it also has two drawbacks: it is ugly, and it has far too many dependencies.
 
-![The old Pigsty documentation site built with Docsy](docsy.png)
+![The old Pigsty documentation site built with Docsy](docsy.webp)
 
 To support all those features on Hugo, Docsy bolts on an entire frontend toolchain: npm, the whole `node_modules` universe, PostCSS to preprocess SCSS, and Autoprefixer. Hugo's original appeal is that one binary is all you need. Add this stack, and building, previewing, and maintaining the site all become more complicated.
 
@@ -99,7 +99,7 @@ For a more serious explanation, the four letters even make a respectable acronym
 >
 > Open, indexed, navigable knowledge.
 
-![OINK tools and components](toolkit.png)
+![OINK tools and components](toolkit.webp)
 
 
 ## 4. What I Cut: Downstream Sites Need Only Hugo
@@ -138,7 +138,7 @@ This boundary matters: **configuration should express what a site wants, not exp
 
 One optimization deserves a special mention. Once a site grows large, its full-text search index can reach tens of megabytes. One of my sites used to transfer more than 800 GB a month, and the index accounted for more than half of it. The homepage no longer downloads it; the index is first loaded only when a user actually opens search. The bandwidth bill and the user experience, for once, improve in the same direction.
 
-![Building an OINK bilingual site with Hugo](build.png)
+![Building an OINK bilingual site with Hugo](build.webp)
 
 
 ## 6. Engineering Content Should Not Be Reduced to Screenshots
@@ -151,7 +151,7 @@ OINK turns the components that have proved broadly useful into stable authoring 
 
 - **Asciinema** terminal recordings;
 
-![OINK's Asciinema terminal recording component](terminal.png)
+![OINK's Asciinema terminal recording component](terminal.webp)
 
 - **Apache ECharts** data visualizations and **AntV Infographic** diagrams;
 - **Mermaid**, **KaTeX**, **Markmap**, PlantUML, and Diagrams.net;
@@ -161,13 +161,13 @@ OINK turns the components that have proved broadly useful into stable authoring 
 
 The comment system also lets readers sign in with a GitHub account.
 
-![Comments with GitHub sign-in](comments.png)
+![Comments with GitHub sign-in](comments.webp)
 
 The key point is that **OINK does not stuff an entire frontend runtime into every page.** When a shortcode renders, it records its presence in Hugo's page state, and the asset assembly stage checks that marker. Only pages that use ECharts load ECharts, and ten charts on one page still load it only once. A prose-only article does not load every runtime merely because the theme "supports many features."
 
 That is also what I mean by "feature-rich": authors can reach for any capability when they need it, while readers pay the download cost only for what the current page actually uses.
 
-![OINK documentation navigation on mobile](mobile.png)
+![OINK documentation navigation on mobile](mobile.webp)
 
 
 ## 7. Multilingual Does Not Mean Copying a `/zh` Directory
@@ -178,7 +178,7 @@ With only one language, the language selector hides itself. With two or more, th
 
 Each language gets an independent local search index, so English results do not leak into Chinese searches. HTML `lang`, text direction, canonical, `hreflang`, and Open Graph locale values all come from the same set of translation objects. This prevents the interface from switching to Chinese while the SEO metadata still claims the page is English.
 
-![OINK Chinese full-text search](search.png)
+![OINK Chinese full-text search](search.webp)
 
 
 ## 8. Eating My Own Dog Food
@@ -189,37 +189,37 @@ So I quickly moved all my sites onto OINK:
 
 - **pigsty.io / pigsty.cc** — the English and Chinese sites for Pigsty, a PostgreSQL distribution, and currently the largest use case.
 
-![Pigsty Chinese documentation built with OINK](pigsty.png)
+![Pigsty Chinese documentation built with OINK](pigsty.webp)
 
 - **silo.pgsty.com** — the newly released Silo, a community fork of MinIO.
 
-![Silo project site built with OINK](silo.png)
+![Silo project site built with OINK](silo.webp)
 
 - **pig.pgsty.com** — the PostgreSQL package manager for installing extensions.
 
-![Pig project site built with OINK](pig.png)
+![Pig project site built with OINK](pig.webp)
 
 - **sow.pgsty.com** — the APT / DNF repository manager, naturally paired with Pig.
 
-![Sow project site built with OINK](sow.png)
+![Sow project site built with OINK](sow.webp)
 
 - **exp.pgsty.com** — PG Exporter, a project I built long ago that finally has a site of its own.
 
-![PG Exporter project site built with OINK](exporter.png)
+![PG Exporter project site built with OINK](exporter.webp)
 
 - **pgsty.com** — the homepage for the GitHub organization and company.
 
-![The PGSTY homepage built with OINK](pgsty.png)
+![The PGSTY homepage built with OINK](pgsty.webp)
 
 - **oink.pgsty.com** — OINK's own documentation site, naturally built with its own theme.
 
-![Features on the OINK project site](oink-features.png)
+![Features on the OINK project site](oink-features.webp)
 
 OINK was designed for open-source projects and engineering documentation, but it works elsewhere too. The books I have translated—six or seven of them—are now gradually moving to the same framework.
 
-![A book site built with OINK](book-design.png)
+![A book site built with OINK](book-design.webp)
 
-![A data systems book site built with OINK](book-data.png)
+![A data systems book site built with OINK](book-data.webp)
 
 
 ## 9. Get Started in Three Minutes

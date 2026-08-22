@@ -31,7 +31,6 @@ zh-cn:
   hero:
     eyebrow: 冯若航 · 数据库老司机 · 云计算泥石流
     title: 老冯云数
-    # 第二行的四个称号分别链接到对应专栏。
     lead: >-
       [冯若航](/about/)（[@Vonng](https://github.com/Vonng)）：[Pigsty](https://pigsty.cc/) 作者，
       [PGSTY](https://pgsty.com/zh) 创始人，[活跃](https://committers.top/china)[开源贡献者](https://gitstar-ranking.com/Vonng)。<br>
@@ -51,17 +50,17 @@ zh-cn:
         title: 云计算泥石流
         desc: 云计算、下云与基础设施自建的深度思考与成本分析。
       - page: /ai
-        title: AI Agent 探路者
+        title: Agent 探路者
         desc: 关于 AI、Agent、LLM，以及 AI 与数据库之间的一切。
       - page: /pg
         title: Postgres 大法师
         desc: PostgreSQL 生态进展，以及开发、运维、诊断与调优的经验。
       - page: /trip
         title: 行万里路
-        desc: 旅行、徒步与见闻 —— 山川湖海，风物人情。
+        desc: 旅行、徒步与、游记与见闻。山川湖海，风物人情。
       - page: /misc
         title: 人生旅途
-        desc: 与技术无关，或不完全有关的那些事：随笔与杂谈。
+        desc: 随笔与杂谈，闲杂记录，也许与技术有关，或者完全无关。
 
   recent:
     eyebrow: 最新文章
@@ -120,7 +119,7 @@ zh-cn:
       - title: PGEXT.CLOUD
         meta: PostgreSQL 扩展目录
         image: img/works/pgext.jpg
-        desc: 400+ PostgreSQL 扩展的索引、目录与元数据。
+        desc: 2200+ PostgreSQL 扩展的索引、目录与元数据，以及 570+ 扩展的下载、安装与构建矩阵。
         url: 'https://pgext.cloud/zh/'
         external: true
 
@@ -303,7 +302,7 @@ en:
       - title: PGEXT.CLOUD
         meta: Extension catalog
         image: img/works/pgext.jpg
-        desc: An index of 400+ PostgreSQL extensions, with metadata for every one.
+        desc: An index, catalog and metadata for 2200+ PostgreSQL extensions, plus download, install and build matrices for 570+ of them.
         url: 'https://pgext.cloud'
         external: true
 

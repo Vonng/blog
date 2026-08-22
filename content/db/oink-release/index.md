@@ -20,11 +20,11 @@ tags: [Codex, 文档, 开源]
 
 这就是我做 [Oink](https://oink.pgsty.com/zh/) 的原因。
 
-![OINK 中文文档首页](oink-docs.png)
+![OINK 中文文档首页](oink-docs.webp)
 
-![OINK 项目首页](oink-home.png)
+![OINK 项目首页](oink-home.webp)
 
-![OINK 博客页面](oink-blog.png)
+![OINK 博客页面](oink-blog.webp)
 
 
 ## 一、六年，八个方案，没一个满意的
@@ -38,7 +38,7 @@ tags: [Codex, 文档, 开源]
 - **Mintlify 等 SaaS**：审美与设计拉满而且省事，但是要钱也不便宜，而且你的文档从此托在别人手里，没法离线交付。
 - **[Next.js + Fumadocs](https://fumadocs.dev/)**：极佳的前端审美，接近 Mintlify。但问题是全文检索慢，构建慢，内容使用 MDX 而不是纯 Markdown，想做成纯静态站也颇费周折，还依赖一大坨 Node.js 和 Next.js 的东西。
 
-![采用 Fumadocs 的 Pigsty 文档站](fumadocs.png)
+![采用 Fumadocs 的 Pigsty 文档站](fumadocs.webp)
 
 其他很多方案，我也都尝试过，Ruby 的 jekyll，Python 的 sphinx，还有 Pelican，甚至是用 editor.js 自己糊的版本。很多方案都有自己独特的优点，但是没有一个让我真正感到满意。折腾来，折腾去，大把时间花在了没用的地方。
 
@@ -46,7 +46,7 @@ tags: [Codex, 文档, 开源]
 
 然而，它也有缺点 —— 太丑了，而且依赖繁多。
 
-![采用 Docsy 的旧版 Pigsty 文档站](docsy.png)
+![采用 Docsy 的旧版 Pigsty 文档站](docsy.webp)
 
 为了在 Hugo 上支持这么多功能，Docsy 硬生生塞进了一整套前端工具链：npm、`node_modules` 全家桶、用 PostCSS 预处理 SCSS，还有 Autoprefixer。Hugo 本来主打的是 “一个二进制就能跑”，被这么一套下来，构建、预览和维护全都变得复杂了 —— 甚至你都没法用 Cloudflare Pages 来自动构建，得先在 GitHub Actions 里跑一遍 CD 构建完才行 —— 就为了一个静态文档站。
 
@@ -97,7 +97,7 @@ OINK 在英语里是猪叫声。
 >
 > 开放、可索引、可导航的知识。
 
-![OINK 的工具与组件展示](toolkit.png)
+![OINK 的工具与组件展示](toolkit.webp)
 
 
 ## 四、砍掉的部分：消费端只依赖 Hugo
@@ -136,7 +136,7 @@ Bootstrap、Font Awesome、字体、Lunr 搜索、Mermaid、KaTeX、Markmap、Sw
 
 顺便说一个我特别在意的优化。站点变大后，全文检索索引可能有十几兆。以前，我有一个网站每月产生八百多 GB 流量，其中一大半就是被这个索引吃掉的。现在，首页加载时不再下载索引，只有等用户真正按下搜索框时才首次加载。流量账单和用户体验，居然成了同一个方向的优化。
 
-![使用 Hugo 构建 OINK 双语站点](build.png)
+![使用 Hugo 构建 OINK 双语站点](build.webp)
 
 
 ## 六、工程内容，不该退化成截图
@@ -149,7 +149,7 @@ OINK 把已经证明通用的组件整理成了稳定的创作接口：
 
 - **Asciinema** 终端录像；
 
-![OINK 的 Asciinema 终端录像组件](terminal.png)
+![OINK 的 Asciinema 终端录像组件](terminal.webp)
 
 - **Apache ECharts** 数据图表与 **AntV Infographic** 信息图；
 - **Mermaid**、**KaTeX**、**Markmap**、PlantUML 和 Diagrams.net；
@@ -159,13 +159,13 @@ OINK 把已经证明通用的组件整理成了稳定的创作接口：
 
 评论系统还支持读者使用 GitHub 账号登录。
 
-![使用 GitHub 账号登录的评论区](comments.png)
+![使用 GitHub 账号登录的评论区](comments.webp)
 
 关键在于：**这不是把一整套前端运行时塞进每个页面。** 短代码渲染时会在 Hugo 的页面状态中标记自己，资源组装阶段再检查标记。只有用到 ECharts 的页面才加载 ECharts，同一页出现十张图也只加载一次。一篇纯文字文章，不会因为主题“支持很多功能”就背上所有运行时。
 
 这也是我对“功能丰富”的理解：不是让每个页面都携带全部能力，而是让作者随时可用，让读者只为当前页面真正需要的能力付出下载成本。
 
-![OINK 在移动端的文档导航](mobile.png)
+![OINK 在移动端的文档导航](mobile.webp)
 
 
 ## 七、多语言不是复制一个 `/zh` 目录
@@ -176,7 +176,7 @@ OINK 的语言模型直接建立在 Hugo 的多语言页面对象上，不从域
 
 每种语言拥有独立的本地检索索引，英文结果不会混入中文搜索。HTML `lang`、书写方向、canonical、`hreflang` 和 Open Graph locale 都来自同一组翻译对象，避免“界面已经切成中文，SEO 还说自己是英文”的漂移。
 
-![OINK 的中文全文检索](search.png)
+![OINK 的中文全文检索](search.webp)
 
 
 ## 八、自产自用
@@ -187,37 +187,37 @@ OINK 的语言模型直接建立在 Hugo 的多语言页面对象上，不从域
 
 - **pigsty.io / pigsty.cc** —— Pigsty 这个 PostgreSQL 发行版的英文站与中文站，也是目前最大的用例。
 
-![采用 OINK 的 Pigsty 中文文档](pigsty.png)
+![采用 OINK 的 Pigsty 中文文档](pigsty.webp)
 
 - **silo.pgsty.com** —— 刚刚发布的 Silo，也就是 MinIO 的社区分支。
 
-![采用 OINK 的 Silo 项目站](silo.png)
+![采用 OINK 的 Silo 项目站](silo.webp)
 
 - **pig.pgsty.com** —— PostgreSQL 包管理器，用来安装扩展。
 
-![采用 OINK 的 Pig 项目站](pig.png)
+![采用 OINK 的 Pig 项目站](pig.webp)
 
 - **sow.pgsty.com** —— APT / DNF 仓库管理器，正好和 Pig 凑成一对。
 
-![采用 OINK 的 Sow 项目站](sow.png)
+![采用 OINK 的 Sow 项目站](sow.webp)
 
 - **exp.pgsty.com** —— 很早以前做的 PG Exporter，现在终于有了自己的网站。
 
-![采用 OINK 的 PG Exporter 项目站](exporter.png)
+![采用 OINK 的 PG Exporter 项目站](exporter.webp)
 
 - **pgsty.com** —— GitHub 组织与公司官网主页。
 
-![采用 OINK 的 PGSTY 官网](pgsty.png)
+![采用 OINK 的 PGSTY 官网](pgsty.webp)
 
 - **oink.pgsty.com** —— OINK 自己的文档站，当然也使用自己的主题。
 
-![OINK 项目站的功能介绍](oink-features.png)
+![OINK 项目站的功能介绍](oink-features.webp)
 
 虽然 OINK 是为开源项目和工程文档设计的，但拿来做别的也没问题。我翻译的那几本书，现在也在陆续迁移到这个框架，大概有六七本。
 
-![采用 OINK 的书籍站点](book-design.png)
+![采用 OINK 的书籍站点](book-design.webp)
 
-![采用 OINK 的数据系统书籍站点](book-data.png)
+![采用 OINK 的数据系统书籍站点](book-data.webp)
 
 
 ## 九、三分钟开始使用

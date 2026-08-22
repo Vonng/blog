@@ -95,7 +95,7 @@ works:
     - title: pig
       meta: PG package manager
       image: img/about/pig.jpg
-      desc: Install 400+ PostgreSQL extensions on Linux with a single command.
+      desc: Install 570+ PostgreSQL extensions on Linux with a single command.
       url: 'https://pgext.cloud'
       external: true
     - title: pg_exporter
