@@ -180,6 +180,13 @@ zh-cn:
         image: img/works/aiempire.vonng.com.webp
         desc: Karen Hao《Empire of AI》中文版，山姆·奥特曼的 OpenAI：梦想与梦魇。
         url: 'https://aiempire.vonng.com'
+        external: true
+      - title: 产品思维工程师
+        meta: 中文翻译本
+        image: img/works/tpme.vonng.com.webp
+        desc: 《The Product-Minded Engineer》中文版。
+        url: 'https://tpme.vonng.com'
+        external: true
 
   cta:
     title: 有问题，或者想聊聊？
@@ -213,10 +220,9 @@ en:
     title: Vonng's Blog
     # The four titles on the second line each link to their column.
     lead: >-
-      [Ruohang Feng](/en/about/) ([@Vonng](https://github.com/Vonng)): author of
-      [Pigsty](https://pigsty.io/), founder of [PGSTY](https://pgsty.com/),
-      [active](https://committers.top/china) [open source contributor](https://gitstar-ranking.com/Vonng).<br>
-      [Database Guru](/en/db/), [Cloud Exiter](/en/cloud/), [PostgreSQL Mage](/en/pg/), [AI Agent Explorer](/en/ai/).
+      [Ruohang Feng](/en/about/) ([@Vonng](https://github.com/Vonng)): [Pigsty](https://pigsty.io/) author, [PGSTY](https://pgsty.com/) founder,
+      [OSS contributor](https://gitstar-ranking.com/Vonng).<br>
+      [Database Guru](/en/db/), [Cloud Exiter](/en/cloud/), [PostgreSQL Mage](/en/pg/), and [AI Agent Explorer](/en/ai/).
     portrait: img/about/vonng.jpg
     portrait_alt: Ruohang Feng
 
@@ -235,7 +241,7 @@ en:
         title: AI Agent Explorer
         desc: Agents, LLMs, and everything between AI and databases.
       - page: /pg
-        title: PostgreSQL Mage
+        title: Postgres Mage
         desc: PostgreSQL ecosystem news, plus development, operations and tuning.
       - page: /trip
         title: Travel Notes
@@ -339,14 +345,14 @@ en:
         desc: An aggregate operations library for PostgreSQL and the components around it.
         url: 'https://pgsql.cc'
         external: true
-      - title: D-Bot
+      - title: "Paper: D-Bot Diagnosis with LLMs"
         meta: VLDB paper
         image: img/works/dbot.jpg
         desc: Database Diagnosis System using Large Language Models, VLDB 2024.
         url: 'https://www.vldb.org/pvldb/vol17/p2514-li.pdf'
         external: true
-      - title: hbase_fdw
-        meta: NPC 2017 paper
+      - title: "Paper : Unified Access Layer"
+        meta: NPC 2017 paper - hbase_fdw
         image: img/works/hbase_fdw.webp
         desc: A unified access layer over heterogeneous databases through PostgreSQL FDW.
         url: 'https://dl.acm.org/doi/10.1007/978-3-319-68210-5_14'
@@ -362,6 +368,13 @@ en:
         image: img/works/aiempire.vonng.com.webp
         desc: Dreams and nightmares inside OpenAI, translated into Chinese.
         url: 'https://aiempire.vonng.com'
+        external: true
+      - title: The Product-Minded Engineer
+        meta: Chinese translation
+        image: img/works/tpme.vonng.com.webp
+        desc: A book on engineering with a product mind, translated into Chinese.
+        url: 'https://tpme.vonng.com'
+        external: true
 
   cta:
     title: Questions, or just want to talk?
