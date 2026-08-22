@@ -175,10 +175,10 @@ zh-cn:
         desc: 用 PostgreSQL FDW 为异构数据库构建统一访问层。
         url: 'https://dl.acm.org/doi/10.1007/978-3-319-68210-5_14'
         external: true
-      - title: Empire of AI
+      - title: 人工智能帝国
         meta: 中文翻译本
-        image: img/works/aiempire.jpg
-        desc: 《AI 帝国》中文版，关于 OpenAI 的梦想与梦魇。
+        image: img/works/aiempire.vonng.com.webp
+        desc: Karen Hao《Empire of AI》中文版，山姆·奥特曼的 OpenAI：梦想与梦魇。
         url: 'https://aiempire.vonng.com'
         external: true
 
@@ -360,7 +360,7 @@ en:
         external: true
       - title: Empire of AI
         meta: Chinese translation
-        image: img/works/aiempire.jpg
+        image: img/works/aiempire.vonng.com.webp
         desc: Dreams and nightmares inside OpenAI, translated into Chinese.
         url: 'https://aiempire.vonng.com'
         external: true
