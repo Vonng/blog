@@ -1,9 +1,10 @@
 ---
 title: "Shangri-La: Luoke Line Trekking Journal"
 date: 2017-09-28
-author: vonng
+authors: [vonng]
 summary: |
   Solo heavy trekking on the Luoke Line, completing a 6-day route in three and a half days - nearly died on the mountain.
+tags: [Travel]
 ---
 
 > Solo heavy trekking on the Luoke Line, completing a 6-day route in three and a half days - nearly died on the mountain.

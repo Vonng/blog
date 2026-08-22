@@ -2,8 +2,7 @@
 title: "Pigsty v2.4: Monitor Cloud RDS"
 linkTitle: "Pigsty v2.4 Release"
 date: 2023-09-14
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v2.4.0))
+authors: [vonng]
 summary: >
   Pigsty v2.4 delivers PostgreSQL 16 GA support, RDS/PolarDB monitoring, Redis Sentinel HA, and a wave of new extensions including Apache AGE, zhparser, and pg_embedding.
 series: [Pigsty]

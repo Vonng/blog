@@ -1,10 +1,10 @@
 ---
 title: "Distinct On: Remove Duplicate Data"
 date: 2018-04-06
-author: "vonng"
+authors: [vonng]
 summary: >
   Use Distinct On extension clause to quickly find records with maximum/minimum values within groups
-tags: [PostgreSQL, PG-Development, SQL]
+tags: [PostgreSQL, PG Development]
 ---
 
 Distinct On is a unique syntax provided by PostgreSQL that can efficiently solve typical query problems, for example, quickly finding records with maximum/minimum values within groups.

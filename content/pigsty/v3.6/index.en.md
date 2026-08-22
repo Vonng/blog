@@ -2,8 +2,7 @@
 title: "Pigsty v3.6: The Ultimate PostgreSQL Distribution"
 linkTitle: "Pigsty v3.6 Release"
 date: 2025-07-25
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v3.6.0))
+authors: [vonng]
 summary: >
   New doc site, PITR playbook, Percona PG TDE kernel support, and Supabase self-hosting optimization make v3.6 the last major release before 4.0.
 series: [Pigsty]

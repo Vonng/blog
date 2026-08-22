@@ -1,8 +1,7 @@
 ---
 title: "Why 'Vibe Coding' Should Be Translated as 'Xieyi Programming'"
 date: 2026-03-16
-author: |
-  [Ruohang Feng](https://vonng.com)
+authors: [vonng]
 summary: >
   The best Chinese translation of "Vibe Coding" is not a literal one. "Xieyi Programming" captures the shift from line-by-line control to intent-first coding, where AI handles the details.
 tags: [AI, Translation]

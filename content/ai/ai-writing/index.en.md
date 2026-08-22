@@ -1,10 +1,10 @@
 ---
 title: "Yes, I Use AI to Write"
 date: 2026-04-07
-author: vonng
+authors: [vonng]
 summary: >
   AI is a multiplier. It amplifies depth and mediocrity alike. In an age where answers are cheap, questions are the real currency. There is nothing to hide about writing with AI.
-tags: [AI, Writing]
+tags: [AI, Documentation]
 ai: true
 aliases: ["/misc/ai-writing/"]
 ---

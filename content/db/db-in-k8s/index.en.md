@@ -1,11 +1,10 @@
 ---
 title: "Database in K8S: Pros & Cons"
 date: 2023-12-06
-author: vonng
-  [Ruohang Feng](https://vonng.com/en/) ([@Vonng](https://vonng.com/en/)) | 
+authors: [vonng]
 summary: >
   Whether databases should be housed in Kubernetes/Docker remains highly controversial. It has fundamental drawbacks with stateful services.
-tags: [Database,Kubernetes]
+tags: [Database, Containers, Architecture]
 ---
 
 > [Medium](https://medium.com/@fengruohang/database-in-kubernetes-is-that-a-good-idea-daf5775b5c1f) ｜[Wechat](https://mp.weixin.qq.com/s/4a8Qy4O80xqsnytC4l9lRg)

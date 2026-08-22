@@ -1,11 +1,10 @@
 ---
 title: "I Asked AI to Prove That Eating Garlic Prevents Middle Ear Infections"
 date: 2026-05-06
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   I asked AI to find real papers supporting the absurd claim that eating garlic prevents middle ear infections. The result shows how AI is degrading citations as a credibility signal at scale.
-tags: [AI, Trust, Hallucination, Academic Citations]
+tags: [AI, LLM, Documentation, Open Source]
 ai: true
 ---
 

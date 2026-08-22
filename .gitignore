@@ -1,19 +1,15 @@
-.code/
-.claude/
+# Editor and agent state
 .idea/
-
-.hugo_build.lock
+.claude/
 .DS_Store
+
+# Hugo build output and caches
 public/
-tmp/
-invest/
-
-node_modules/
-themes/blowfish/
-CLAUDE.md
 resources/
-bin/prompt.md
+.hugo_build.lock
+node_modules/
 
-wxmp/
-bin/
+# Local working notes, not part of the site
 review/
+bin/prompt.md
+__pycache__/

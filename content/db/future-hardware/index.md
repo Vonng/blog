@@ -5,7 +5,7 @@ authors: [alex-miller]
 origin: "https://transactional.blog/blog/2024-modern-database-hardware"
 summary: >
   本文是一篇关于硬件发展如何影响数据库设计的综述，介绍了网络、存储、计算三个领域的关键硬件进展。充分利用好新硬件而非折腾分布式，才是数据库内核发展的正路。
-tags: [数据库, 硬件, 性能优化, 翻译]
+tags: [数据库, 硬件, 性能, 翻译]
 ---
 
 

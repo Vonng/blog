@@ -2,7 +2,7 @@
 title: "Postgres Extension Day，咱们不见不散"
 linkTitle: "PGEXT.DAY：扩展日不见不散"
 date: 2025-04-09
-author: 冯若航
+authors: [vonng]
 summary: >
   一年一度的 PostgreSQL 开发者大会即将在五月于蒙特利尔举办。同上次第一届 PG Con.Dev 一样，这次也有一天的额外的专场活动 —— Postgres Extensions Day。
 tags: [PostgreSQL, 扩展]

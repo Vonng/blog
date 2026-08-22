@@ -1,9 +1,10 @@
 ---
 title: "In Praise of Mathematics"
 date: 2014-04-15
-author: vonng
+authors: [vonng]
 summary: |
   What a wonderful subject mathematics is
+tags: [Essay]
 ---
 
 In the very center of humanity's rational world

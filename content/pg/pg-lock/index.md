@@ -1,10 +1,10 @@
 ---
 title: "PostgreSQL中的锁"
 date: 2019-06-11
-author: 冯若航
+authors: [vonng]
 summary: >
   详细介绍PostgreSQL中的各种锁：表级锁、行级锁、页级锁、咨询锁等。
-tags: [PostgreSQL, PG开发, 锁]
+tags: [PostgreSQL, PG开发, PG管理]
 ---
 
 PostgreSQL的并发控制以 **快照隔离（SI）** 为主，以 **两阶段锁定（2PL）** 机制为辅。PostgreSQL对DML（`SELECT, UPDATE, INSERT, DELETE` 等命令）使用SSI，对DDL（`CREATE TABLE` 等命令）使用2PL。

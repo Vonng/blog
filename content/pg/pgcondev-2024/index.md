@@ -2,7 +2,7 @@
 title: "让PG停摆一周的大会：PGCon.Dev 2024 参会记"
 linkTitle: "PGCon.Dev 2024 参会记"
 date: 2024-06-17
-author: 冯若航
+authors: [vonng]
 summary: >
   大会议程与主题分享，酒吧社交，自组织会议，PG仓库是如何维护的，社区参与度，一些中国特色问题。
 tags: [PostgreSQL, PG生态]

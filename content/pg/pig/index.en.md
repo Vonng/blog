@@ -2,10 +2,9 @@
 title: Pig, The Postgres Extension Wizard
 linkTitle: "Pig - The Postgres Extension Wizard"
 date: 2024-12-29
-author: |
-  [RuohangFeng](https://vonng.com)([@Vonng](https://vonng.com/en/))| [WeChat](https://mp.weixin.qq.com/s/8zxeDQ7p5tPNGYED_1Bugg)
+authors: [vonng]
 summary: Why would we need yet another package manager for PostgreSQL & extensions?
-tags: [PostgreSQL,Tool]
+tags: [PostgreSQL, Tools]
 ---
 
 

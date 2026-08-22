@@ -2,8 +2,7 @@
 title: "Pigsty v4.3：510扩展与Ubuntu26"
 linkTitle: "Pigsty v4.3 510扩展与Ubuntu26"
 date: 2026-05-04
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/pgsty/pigsty/releases/tag/v4.3.0)）
+authors: [vonng]
 summary: >
   Pigsty v4.3 新增 50 个 PostgreSQL 扩展，可用扩展总数达到 510。新增 Ubuntu 26.04 x86_64/arm64 支持，更新 Supabase、pgEdge、PolarDB、Grafana、MinIO 与一批基础设施软件包。
 series: [Pigsty]

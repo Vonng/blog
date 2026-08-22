@@ -1,20 +1,9 @@
 ---
-title: "Ruohang Feng"
-author: vonng
-showAuthor: true
+title: About Ruohang Feng
+linkTitle: About
+description: >
+  Pigsty founder, PostgreSQL mage, database guru, cloud-exit evangelist, AI explorer.
+layout: landing
+landing: about
+icon: fa-solid fa-circle-user
 ---
-
-Ruohang Feng，[@Vonng](https://github.com/Vonng)：[Pigsty](https://pigsty.io) Founder, [Active](https://committers.top/china) [OSS Contributor](https://gitstar-ranking.com/Vonng).
-
-[PostgreSQL Expert](/en/pg), [Database Pro](/en/db), [Cloud-Exit Han Solo](/en/cloud).
-
-Architect, DBA, Full-Stack Expert @ Alibaba, TanTan, Apple.
-
-Database KOL, Tech Influencer, Cloud(-Exit) Evangelist.
-
-![](img/vonng.jpg)
-
-This blog is open under [**CC BY 4.0**](https://github.com/Vonng/blog/blob/main/LICENSE).
-Powered by [hugo](https://github.com/gohugoio/hugo) and [**Blowfish**](https://blowfish.page/) theme.
-
---------

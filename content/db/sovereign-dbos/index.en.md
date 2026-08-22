@@ -1,12 +1,12 @@
 ---
 title: "What Kind of Self-Reliance Do Infra Software Need?"
 date: 2023-08-31
-author: vonng
+authors: [vonng]
 summary: >
   When we talk about self-reliance and control, what are we really talking about? Operational self-reliance vs. R&D self-reliance - what nations/users truly need is the former, not flashy "self-research".
 series: ["信创国产化"]
-series_order: 1
-tags: [Database, Domestic-Database]
+series_weight: 1
+tags: [Domestic Database, Database]
 ---
 
 > [WeChat](https://mp.weixin.qq.com/s/hWbcc9cMM9qTjPJ0m6G0Kg) | [Zhihu Original](https://zhuanlan.zhihu.com/p/653583260)

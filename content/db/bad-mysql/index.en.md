@@ -1,14 +1,10 @@
 ---
 title: "MySQL's ACID is a real mess"
 date: 2023-12-28
-author: |
-  [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat Official Account](https://mp.weixin.qq.com/s/gQZ3Q5JKV8gaBNhc1puPcA)
+authors: [vonng]
 summary: >
   MySQL's transaction ACID has flaws and doesn't match documentation promises. This may lead to serious correctness issues - use with caution.
-menu:
-  sidebar:
-    parent: db
-tags: [Database,MySQL]
+tags: [MySQL, Database, Transactions]
 ---
 
 MySQL **was once** the world's most popular open-source relational database. However, popularity doesn't mean advanced, and popular things can have big problems. [JEPSEN's](https://jepsen.io/analyses/mysql-8.0.34) evaluation of MySQL's isolation levels pierced through this veneer — in **correctness**, the basic attribute any respectable database product must have, MySQL's performance is a complete mess.

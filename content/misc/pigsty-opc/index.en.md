@@ -1,11 +1,10 @@
 ---
 title: "Pigsty Goes Global: 1.44M Visitors, Zero Ad Revenue"
 date: 2026-03-19
-author: |
-  [Ruohang Feng](https://vonng.com)
+authors: [vonng]
 summary: >
   Over the last 30 days, pigsty.io served 1.44 million unique visitors, 18.11 million page views, and 1.1 TB of traffic. For a one-person open source project, the real asset here is not ad inventory. It is trust.
-tags: [Open Source, Startup, Pigsty]
+tags: [Pigsty, Open Source, Business]
 ---
 
 Traffic on `pigsty.io` jumped by roughly an order of magnitude over the last month. I opened the Cloudflare dashboard today and had to stare at it for a second.

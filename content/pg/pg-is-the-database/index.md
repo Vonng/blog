@@ -1,7 +1,7 @@
 ---
 title: "PostgreSQL 吞噬数据库世界"
 date: 2026-01-03
-author: 冯若航
+authors: [vonng]
 draft: true
 toc_hide: true
 summary: >

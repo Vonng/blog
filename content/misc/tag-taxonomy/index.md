@@ -3,9 +3,7 @@ title: "标签分类理论"
 date: 2016-11-03
 summary: |
   最近在某业务中需要设计一套标签管理系统。在对现有标签进行整理的过程中，倒腾出了这套理论。
-menu:
-  sidebar:
-    parent: note
+tags: [随笔]
 ---
 
 

@@ -7,7 +7,7 @@ origin: "https://www.percona.com/blog/can-mysql-catch-up-with-postgresql/"
 summary: >
   Percona创始人Peter Zaitsev讨论MySQL是否还能跟上PostgreSQL的脚步。作为MySQL生态的主要扛旗者，Percona的看法在相当程度上代表了MySQL社区的想法，这篇文章值得每个关注数据库发展的人阅读。
 series: ["MySQL走好"]
-tags: [数据库, MySQL, PostgreSQL, 技术评论, 翻译]
+tags: [MySQL, PostgreSQL, 数据库, 技术评论]
 ---
 
 > 作者：[Peter Zaitsev](https://www.percona.com/blog/author/pz/) | 译：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信公众号](https://mp.weixin.qq.com/s/xveP91NMYF4NFlIX_JcpYA)

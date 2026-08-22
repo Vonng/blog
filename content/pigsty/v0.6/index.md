@@ -2,8 +2,7 @@
 title: "Pigsty v0.6：架构增强"
 linkTitle: "Pigsty v0.6 发布注记"
 date: 2021-02-19
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v0.6.0)）
+authors: [vonng]
 summary: >
   Pigsty v0.6 对数据库供给方案进行了大量改进
 series: [Pigsty]

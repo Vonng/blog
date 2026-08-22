@@ -1,11 +1,10 @@
 ---
 title: Forging a China-Rooted, Global PostgreSQL Distro
 date: 2025-11-27
-author: |
-  [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   PostgreSQL already won. The real battle is the distro layer. Will Chinese developers watch from the sideline or craft a PG “Ubuntu” for the world?
-tags: [PostgreSQL,Pigsty]
+tags: [PostgreSQL, Pigsty]
 ---
 
 Hi, I’m Feng Ruohang, author of Pigsty and an independent open-source contributor. Let’s talk about **how to build a PostgreSQL distribution that is rooted in China and useful to the whole world.**

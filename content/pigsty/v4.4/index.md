@@ -2,8 +2,7 @@
 title: "Pigsty v4.4：从集成到发行"
 linkTitle: "Pigsty v4.4 从集成到发行"
 date: 2026-07-11
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/pgsty/pigsty/releases/tag/v4.4.0)）
+authors: [vonng]
 summary: >
   Pigsty v4.4 新增 Immich 与 JumpServer 应用模板，更新 Supabase 与 VIP 使用体验，并开始统一发行 PolarDB、IvorySQL 等 PostgreSQL 分支内核的软件包与文件系统布局。
 series: [Pigsty]

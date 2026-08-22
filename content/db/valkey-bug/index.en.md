@@ -1,12 +1,12 @@
 ---
 title: "A Packaging Patch Has Been Corrupting Valkey's Memory Accounting Since 2017"
 date: 2026-08-09
-author: Ruohang Feng
+authors: [vonng]
 summary: >
   Codex found an old Valkey bug affecting Debian's packages and every official Valkey .deb.
   One line in a packaging patch releases a glibc allocation with Valkey's own deallocator, so the
   server either segfaults or silently stops accepting writes until you restart it.
-tags: [Valkey, Redis, Debian, Packaging, Open Source]
+tags: [Redis, Linux, Repository, Open Source]
 ---
 
 I was updating the Redis module in Pigsty recently, adding Valkey as an alternative engine, and hit an upstream bug while packaging it.

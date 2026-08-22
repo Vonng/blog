@@ -2,8 +2,7 @@
 title: "Pigsty v0.5：数据库定制模板"
 linkTitle: "Pigsty v0.5 发布注记"
 date: 2020-12-26
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v0.5.0)）
+authors: [vonng]
 summary: >
   Pigsty v0.5.0 对数据库内部的定制模板进行了大幅改进，允许您用声明式的方法管理用户，角色，数据库，权限，扩展以及模式。
 series: [Pigsty]

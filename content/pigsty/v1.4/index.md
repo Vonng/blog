@@ -2,8 +2,7 @@
 title: "Pigsty v1.4：模块化架构，MatrixDB数据仓库支持"
 linkTitle: "Pigsty v1.4 发布注记"
 date: 2022-03-31
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v1.4.0)）
+authors: [vonng]
 summary: >
   全新模块化架构，四大内置模块自由组合，新增MatrixDB时序数据仓库支持，全球CDN加速下载。
 series: [Pigsty]

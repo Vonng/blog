@@ -1,11 +1,11 @@
 ---
 title: "MinIO Is Dead, Long Live MinIO"
 date: 2026-02-14
-author: Ruohang Feng
+authors: [vonng]
 summary: >
   MinIO's repo is officially archived and abandoned. And how AI Agents helped bring it back from the dead.
   This post explains how a community fork restores the admin console and ships binaries via CI/CD pipeline.
-tags: [MinIO, S3, Open-Source]
+tags: [Object Storage, Open Source]
 ---
 
 MinIO's open-source repo has been officially archived. No more maintenance.

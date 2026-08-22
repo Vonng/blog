@@ -2,8 +2,7 @@
 title: "Pigsty v0.4：PG13 与文档站"
 linkTitle: "Pigsty v0.4 发布注记"
 date: 2020-12-14
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v0.4.0)）
+authors: [vonng]
 summary: >
   Pigsty 第二个公开测试版 v0.4 现已正式发行，支持 PG13，并对监控系统进行了整体升级改造。
 series: [Pigsty]

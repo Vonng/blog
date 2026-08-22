@@ -1,7 +1,7 @@
 ---
 title: "PostgreSQL荣获2024年度数据库之王！（第五次）"
 date: 2024-01-05
-author: 冯若航
+authors: [vonng]
 summary: >
   DB-Engines今日正式宣布PostgreSQL再度加冕为"年度数据库"，最近七年里这已经是PG第五次获得此荣誉头衔。
 tags: [PostgreSQL, PG生态]

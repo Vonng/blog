@@ -1,8 +1,9 @@
 ---
 title: "满洲里的山岗上"
 date: 2021-06-13
-author: vonng
+authors: [vonng]
 summary: 站在满洲里的山岗上，呼伦贝尔的草原上。
+tags: [旅行]
 ---
 
 

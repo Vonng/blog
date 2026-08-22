@@ -2,8 +2,7 @@
 title: "Pigsty v3.4: PITR Enhancement, Locale Best Practices, Auto Certificates"
 linkTitle: "Pigsty v3.4 Release"
 date: 2025-03-15
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v3.4.0))
+authors: [vonng]
 summary: >
   Pigsty v3.4 adds pgBackRest backup monitoring, cross-cluster PITR restore, automated HTTPS certificates, locale best practices, and full-platform IvorySQL and Apache AGE support.
 series: [Pigsty]

@@ -1,12 +1,10 @@
 ---
 title: "Technical Minimalism: Just Use PostgreSQL for Everything"
 date: 2024-02-19
-showAuthor: false
-author: |
-  [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat Official Account](https://mp.weixin.qq.com/s/bx2dRxlrtLcM6AD2qsplQQ)
+authors: [vonng]
 summary: >
   Whether production databases should be containerized remains a controversial topic. From a DBA's perspective, I believe that currently, putting production databases in Docker is still a bad idea.
-tags: [PostgreSQL,PG-Ecosystem]
+tags: [PostgreSQL, PG Ecosystem, Translation]
 ---
 
 This article was **published by Stephan Schmidt @ KingOfCoders on Hacker News and sparked heated discussion**: Using PostgreSQL to replace Kafka, RabbitMQ, ElasticSearch, MongoDB, and Redis is a viable approach that can dramatically reduce system complexity and maximize agility.

@@ -2,8 +2,7 @@
 title: "Pigsty v4.2：12内核齐开花"
 linkTitle: "Pigsty v4.2 12内核齐开花"
 date: 2026-02-28
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/pgsty/pigsty/releases/tag/v4.2.0)）
+authors: [vonng]
 summary: >
   Pigsty v4.2 把一套配置变成 12 种企业级 PostgreSQL 风味：图数据库、多主复制、MPP 数仓与多种兼容内核统一纳入 Pigsty
 series: [Pigsty]

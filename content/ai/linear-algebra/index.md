@@ -1,14 +1,12 @@
 ---
 title: "线性代数基本概念"
 date: 2012-11-04
-math: true
 summary: |
   用一条主线将线性代数中的所有概念串联起来
 ai: true
 aliases: ["/misc/linear-algebra/"]
+tags: [AI]
 ---
-
-{{< katex >}}
 
 > 用一条主线将线性代数中的所有概念串联起来
 

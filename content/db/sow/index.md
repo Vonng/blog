@@ -2,10 +2,10 @@
 title: "SOW：论母猪的产后护理"
 linkTitle: "SOW：十万个包，如何只存一份"
 date: 2026-08-11
-author: 冯若航
+authors: [vonng]
 summary: >
   维护一个 PostgreSQL 发行版，真正让人头大的是十万级制品背后的去重、索引、快照、原子切换与增量发布。SOW 用一个自包含二进制，把 RPM / DEB 仓库从目录脚本变成可恢复、可审计的状态系统。
-tags: [PostgreSQL, Pigsty, SOW, 软件仓库, 发行版]
+tags: [PostgreSQL, Pigsty, 软件仓库]
 ---
 
 今天老冯来和大家聊一聊《母猪的产后护理》。俺做的新开源项目 SOW，翻译成中文就是“老母猪”。
@@ -249,7 +249,7 @@ SOW 0.3 已经能创建仓库、管理成员与快照、计算变更集，并发
 
 SOW 是 Pigsty “猪圈宇宙”的一部分，而且这个命名体系已经越来越离谱，也越来越完整：
 
-- [**Pigsty**](/about/pigsty/)：猪圈，负责安装和管理 PostgreSQL 生态；
+- [**Pigsty**](https://pigsty.cc)：猪圈，负责安装和管理 PostgreSQL 生态；
 - **SOW**：母猪，负责组织、构建和发布软件仓库；
 - **Boar**：公猪，开发中的 PIGSTY GUI 管控平台；
 - [**Silo**](/db/long-live-silo/)：筒仓，负责 S3 兼容对象存储；

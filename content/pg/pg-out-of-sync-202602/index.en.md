@@ -1,11 +1,11 @@
 ---
 title: "Urgent Advisory: Pause PostgreSQL Minor-Release Installs and Upgrades"
 date: 2026-02-19
-author: Ruohang Feng
+authors: [vonng]
 summary: >
   The PostgreSQL 18.2 minor-release train introduced regressions in substring() and WAL replay.
   Hold off on fresh deployments and upgrades, then update promptly after the out-of-cycle releases ship on 2026-02-26.
-tags: [PostgreSQL, Administration]
+tags: [PostgreSQL, PG Admin]
 ---
 
 > The 18.2 minor-release train introduced two bugs. Hold off on fresh deployments and upgrades, then update promptly after 18.3 ships next week.

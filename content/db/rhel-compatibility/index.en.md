@@ -1,13 +1,12 @@
 ---
 title: Which EL-Series OS Distribution Is Best?
 date: 2023-10-09
-author: |
-  [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat](https://mp.weixin.qq.com/s/xHG8OURTYlmnQTorFkzioA) | [Zhihu](https://zhuanlan.zhihu.com/p/660166371)
+authors: [vonng]
 summary: >
   RHEL-series OS distribution compatibility level: RHEL = Rocky ≈ Anolis > Alma > Oracle >> Euler. Recommend using RockyLinux 8.8, or Anolis 8.8 for domestic requirements.
 series: ["信创国产化"]
-series_order: 2
-tags: [Database,Operating-System]
+series_weight: 2
+tags: [Domestic Database, Linux, PG Admin, Database]
 ---
 
 Many users have asked me what operating system is best for running databases. Especially considering that CentOS 7.9 will reach EOL next year, many users should need to upgrade their OS, so today I'm sharing some experience.

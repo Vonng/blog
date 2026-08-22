@@ -1,7 +1,7 @@
 ---
 title: "在线修改PG字段类型"
 date: 2020-01-30
-author: 冯若航
+authors: [vonng]
 summary: >
   如何在线修改PostgreSQL中的字段类型？一种通用方法。
 tags: [PostgreSQL, PG管理, 迁移]

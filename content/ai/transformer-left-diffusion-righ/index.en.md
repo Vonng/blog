@@ -1,8 +1,7 @@
 ---
 title: "Two Hemispheres: Transformer, Diffusion, and the Boundary of Intelligence"
 date: 2026-04-18
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   A dialogue about intelligence: its foundations may lie not in language or vision, but in two irreducible computational paradigms—symbolic reasoning and field-state intuition—kept distinct and mutually calibrated across a bandwidth-constrained boundary.
 tags: [AI]

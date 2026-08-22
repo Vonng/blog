@@ -2,8 +2,7 @@
 title: "Pigsty v2.6: PostgreSQL Crashes the OLAP Party"
 linkTitle: "Pigsty v2.6 Release"
 date: 2024-02-27
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v2.6.0))
+authors: [vonng]
 summary: >
   Pigsty v2.6 makes PostgreSQL 16.2 the default, introduces ParadeDB and DuckDB support, and brings epic-level OLAP improvements.
 series: [Pigsty]

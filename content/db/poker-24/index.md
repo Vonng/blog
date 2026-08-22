@@ -3,7 +3,7 @@ title: "使用一条 SQL 计算扑克24点"
 date: 2024-12-03
 summary: >
   虽然有趣，但是很鸡贼的题目，用 SQL 计算扑克24点。PostgreSQL 的正解。
-tags: [数据库, PostgreSQL, MySQL]
+tags: [PostgreSQL, MySQL, 数据库]
 ---
 
 题目如下： 《[数据库编程大赛：一条SQL计算扑克牌24点](https://www.ninedata.cloud/sql_poker24)》

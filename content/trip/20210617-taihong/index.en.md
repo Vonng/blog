@@ -1,8 +1,9 @@
 ---
 title: "Majestic Southern Taihang"
 date: 2021-06-17
-author: vonng
+authors: [vonng]
 summary: From Xinxiang, Henan, crossing the Taihang Mountains to Shanxi
+tags: [Travel]
 ---
 
 ![01.jpg](01.jpg)

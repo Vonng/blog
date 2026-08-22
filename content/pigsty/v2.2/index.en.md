@@ -2,8 +2,7 @@
 title: "Pigsty v2.2: Monitoring System Reborn"
 linkTitle: "Pigsty v2.2 Release"
 date: 2023-08-04
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v2.2.0))
+authors: [vonng]
 summary: >
   Pigsty v2.2 delivers a complete monitoring dashboard overhaul built on Grafana 10, a 42-node production simulation sandbox, Pigsty's own RPM repos, and UOS compatibility.
 series: [Pigsty]

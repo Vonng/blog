@@ -2,8 +2,7 @@
 title: "Pigsty v4.2: 12 Kernels in Bloom"
 linkTitle: "Pigsty v4.2: 12 Kernels in Bloom"
 date: 2026-02-28
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v4.2.0))
+authors: [vonng]
 summary: >
   Pigsty v4.2 turns one stack into 12 enterprise-grade PostgreSQL flavors: multi-master pgEdge, graph-native AgensGraph, MPP Cloudberry, rebuilt compatibility kernels, 461 extensions, infrastructure upgrades
 series: [Pigsty]

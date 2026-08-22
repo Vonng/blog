@@ -1,12 +1,12 @@
 ---
 title: "MySQL 9.7: Same Old Leftovers, Reheated"
 date: 2026-04-21
-author: Ruohang Feng
+authors: [vonng]
 summary: >
   MySQL 9.7 is the first LTS release in the 9.x line. Its vector support is still all show, its years-late optimizer is disabled by default,
   and three years of Innovation Releases have produced remarkably little.
 series: ["MySQL走好"]
-tags: [Database, MySQL, PostgreSQL, Tech Commentary]
+tags: [MySQL, PostgreSQL, Database, Commentary]
 ---
 
 Two years ago, I wrote [**MySQL Is Dead, Long Live PostgreSQL**](/db/mysql-is-dead/). MySQL 9.0 had just shipped, and Oracle had unveiled a `VECTOR` data type with great fanfare, billing it as "MySQL for the AI era." One look was enough: **it was a `BLOB` in a cheap disguise**. No distance functions, no vector indexes—nothing beyond storing a bunch of floating-point numbers in a column.

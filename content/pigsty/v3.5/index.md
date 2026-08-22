@@ -2,8 +2,7 @@
 title: "Pigsty v3.5：4K Star，PG18支持，421个扩展"
 linkTitle: "Pigsty v3.5 发布注记"
 date: 2025-06-22
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v3.5.0)）
+authors: [vonng]
 summary: >
   支持PG18 Beta，扩展总数达421个，Grafana 12大版本更新，OrioleDB与OpenHalo全平台可用。
 series: [Pigsty]

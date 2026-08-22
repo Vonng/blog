@@ -1,13 +1,11 @@
 ---
 title: "What Exactly Are Natural Numbers?"
 date: 2013-04-26
-author: vonng
-math: true
+authors: [vonng]
 summary: |
   The concept of natural numbers should have been learned in elementary school. The foundation of all elementary mathematics begins with such a definition. However, when I entered university, I encountered this question again in discrete mathematics.
+tags: [Essay]
 ---
-
-{{< katex >}}
 
 The concept of natural numbers should have been learned in elementary school. The foundation of all elementary mathematics begins with such a definition. However, when I entered university, I encountered this question again in discrete mathematics.
 
@@ -16,7 +14,7 @@ The concept of natural numbers should have been learned in elementary school. Th
 In one sentence, it can be expressed as:
 
 $$
-0=∅ ∧ n+1=n∪\{n\}
+0=\emptyset \land n+1=n∪\{n\}
 $$
 
 People who haven't studied discrete mathematics probably wouldn't answer this way. So how would normal people answer this seemingly simple question?

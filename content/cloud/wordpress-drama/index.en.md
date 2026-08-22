@@ -1,11 +1,10 @@
 ---
 title: "WordPress Community Civil War: On Community Boundary Demarcation"
 date: 2024-10-17
-author: |
-  [Vonng (Feng Ruohang)](https://vonng.com/en/) | [WeChat Public Account](https://vonng.com/en/)
+authors: [vonng]
 summary: >
   When open source ideals meet commercial conflicts, what insights can this conflict between open source software communities and cloud vendors bring? On the importance of community boundary demarcation.
-tags: [Open-Source]
+tags: [Open Source]
 ---
 
 "**I want to be blunt: for years, we've been like fools while they made a fortune off what we developed**." — This famous quote from Redis Labs CEO Ofer Bengal has become a vivid footnote to the WordPress community civil war and the conflict between open source communities and commercial interests.

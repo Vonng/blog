@@ -1,7 +1,7 @@
 ---
 title: "Can You Distill an Expert?"
 date: 2026-04-08
-author: vonng
+authors: [vonng]
 summary: >
   Polanyi's tacit knowledge explains the 70% ceiling of AI agents: real intuition, feel, and judgment do not serialize cleanly. They grow, if at all, through practice.
 tags: [AI]

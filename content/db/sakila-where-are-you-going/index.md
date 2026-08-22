@@ -7,7 +7,7 @@ origin: "https://www.percona.com/blog/sakila-where-are-you-going/"
 summary: >
   MySQL版本越高性能反而越差？Percona监控发现从5.7迁移到8.x的步伐明显缓慢。在PostgreSQL高歌猛进吞噬数据库世界的同时，MySQL的性能和功能被甩开越来越远。云厂商白嫖是主要原因之一。
 series: ["MySQL走好"]
-tags: [数据库, MySQL, 性能, 技术评论, 翻译]
+tags: [MySQL, 数据库, 性能, 技术评论]
 ---
 
 > 作者： [Marco Tusa](https://www.percona.com/blog/author/tusa) | 译：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信原文](https://mp.weixin.qq.com/s/nKD00j84R-EcOU1VPL1ibA) | [Percona's Blog](https://www.percona.com/blog/sakila-where-are-you-going/)

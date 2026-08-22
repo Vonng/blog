@@ -2,8 +2,7 @@
 title: "Pigsty v0.9：GUI/CLI与日志集成"
 linkTitle: "Pigsty v0.9 发布注记"
 date: 2021-05-01
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v0.9.0)）
+authors: [vonng]
 summary: >
   Pigsty v0.9极大简化了安装流程，进行了大量日志相关改进，开发了命令行工具（Beta），并修复了一系列问题。
 series: [Pigsty]

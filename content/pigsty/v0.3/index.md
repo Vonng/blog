@@ -2,8 +2,7 @@
 title: "Pigsty v0.3：首个公开测试版"
 linkTitle: "Pigsty v0.3 发布注记"
 date: 2020-10-24
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v0.3.0)）
+authors: [vonng]
 summary: >
   Pigsty v0.3.0 第一个公开的试用版本现已释出！包含 8 个监控面板以及离线软件安装包。
 series: [Pigsty]

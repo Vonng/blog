@@ -2,8 +2,7 @@
 title: "Pigsty v2.0: Open-Source RDS PostgreSQL Alternative"
 linkTitle: "Pigsty v2.0 Release"
 date: 2023-02-26
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v2.0.0))
+authors: [vonng]
 summary: >
   Pigsty v2.0 delivers major improvements in security, compatibility, and feature integration — truly becoming a local open-source RDS alternative.
 series: [Pigsty]

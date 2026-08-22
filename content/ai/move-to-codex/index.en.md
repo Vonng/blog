@@ -1,8 +1,7 @@
 ---
 title: "Cancel Claude, Switch to Codex"
 date: 2026-05-08
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   When my $200 Claude Code Max subscription expired, I canceled it and moved my primary workflow to Codex. The only way to know which one is better is to put it to work.
 tags: [AI, Codex, Claude, Agent]

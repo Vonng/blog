@@ -1,12 +1,11 @@
 ---
 title: "pg.center: A Chinese Mirror of the PostgreSQL Website"
 date: 2026-03-26
+authors: [vonng]
 draft: true
-author: |
-  [Ruohang Feng](https://vonng.com)
 summary: >
   pg.center is a full Chinese mirror of postgresql.org, including the homepage, docs, news, community pages, and developer resources, plus a newly translated PostgreSQL 18 manual.
-tags: [PostgreSQL, Website, Documentation, Community]
+tags: [PostgreSQL, Documentation, PG Ecosystem]
 ---
 
 One thing has always bothered me after all these years using PostgreSQL:

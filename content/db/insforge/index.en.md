@@ -1,7 +1,7 @@
 ---
 title: "InsForge: A Supabase Built for Vibe Coding"
 date: 2026-03-11
-author: vonng
+authors: [vonng]
 summary: >
   InsForge tries to package PostgreSQL, auth, storage, deployment, and an MCP-facing semantic layer into a backend stack designed for AI agents. It feels like a Supabase rebuilt for the vibe-coding era.
 tags: [AI, PostgreSQL, Open Source]

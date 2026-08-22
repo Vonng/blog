@@ -2,10 +2,10 @@
 title: "Git for Data: Instant PostgreSQL Database Cloning"
 linkTitle: "Git for Data: Instant PostgreSQL Database Cloning"
 date: 2025-12-27
-author: Ruohang Feng
+authors: [vonng]
 summary: >
   How to instantly clone a massive PostgreSQL database without consuming extra storage? PostgreSQL 18 and XFS can spark some serious magic.
-tags: [PostgreSQL, Development]
+tags: [PostgreSQL, PG Development, GIS]
 ---
 
 Every programmer has used `git clone`. Hit enter, wait a few seconds, and a complete code repository appears on your disk.

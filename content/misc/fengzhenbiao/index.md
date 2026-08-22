@@ -2,11 +2,7 @@
 title: "冯振彪自传"
 date: 2018-04-09
 summary: 这是一份很有趣的自传
-menu:
-  sidebar:
-    name: 冯振彪自传
-    identifier: fengzhenbiao
-    parent: life
+tags: [随笔]
 ---
 
 在书房收拾时，发现了先父的自传。本应是档案中的党八股，未想其中却包含这多精彩内容。

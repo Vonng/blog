@@ -1,0 +1,268 @@
+# Vonng.com — Hugo site configuration
+#
+# Theme: OINK v0.6.0 (github.com/pgsty/oink)
+# Structure: top-level sections are blog columns; `/` is a landing page.
+
+baseURL: https://vonng.com
+title: VONNG
+defaultContentLanguage: zh-cn
+enableRobotsTXT: true
+# `hugo server` only: lets an iframe-hosted giscus theme load during previews.
+server:
+  headers:
+    - for: /**
+      values:
+        Access-Control-Allow-Origin: '*'
+enableEmoji: true
+enableGitInfo: false
+hasCJKLanguage: true
+summaryLength: 30
+buildDrafts: false
+buildFuture: false
+
+# Blowfish rendered author pages from data/authors/*.json; OINK renders them
+# from the `authors` taxonomy, so the profile page and the byline can never
+# disagree. `series` likewise drives the reading-order strip.
+taxonomies:
+  tag: tags
+  category: categories
+  author: authors
+  series: series
+
+# `markdown` powers Copy text / View source; `LLMS` emits llms.txt.
+outputs:
+  home: [HTML, RSS, markdown, LLMS]
+  page: [HTML, markdown]
+  section: [HTML, RSS, markdown]
+
+pagination:
+  pagerSize: 24
+
+imaging:
+  anchor: Center
+  resampleFilter: CatmullRom
+
+sitemap:
+  changefreq: weekly
+  filename: sitemap.xml
+  priority: 0.5
+
+services:
+  googleAnalytics:
+    id: G-KTPE9LDZ2W
+  rss:
+    limit: 50
+
+# Hugo does not merge a theme module's markup configuration, so OINK's three
+# required Goldmark settings are written here.
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+    parser:
+      wrapStandAloneImageWithinParagraph: false
+      attribute:
+        block: true
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block: [['\[', '\]'], ['$$', '$$']]
+          inline: [['\(', '\)']]
+  highlight:
+    noClasses: false
+  tableOfContents:
+    startLevel: 2
+    endLevel: 4
+    ordered: false
+
+related:
+  threshold: 0
+  toLower: false
+  includeNewer: true
+  indices:
+    - { name: tags, weight: 100 }
+    - { name: categories, weight: 100 }
+    - { name: series, weight: 50 }
+    - { name: authors, weight: 20 }
+    - { name: date, weight: 10 }
+
+module:
+  imports:
+    - path: github.com/pgsty/oink
+  hugoVersion:
+    extended: true
+    min: 0.160.1
+
+params:
+  # -- Identity --------------------------------------------------------------
+  logo: img/vonng-logo.svg
+  images: [img/wusu.jpg]
+  github_repo: https://github.com/Vonng/vonng.com
+  github_project_repo: https://github.com/Vonng
+  github_branch: main
+  github_subdir: ''
+  version: ''
+
+  # -- Reading ---------------------------------------------------------------
+  page_width: wide
+  reading_width: normal
+  time_format_blog: 2006-01-02
+  time_format_default: 2006-01-02
+
+  # -- Local search ----------------------------------------------------------
+  offline_search: true
+  offline_search_on_serve: true
+  offline_search_index: summary
+  offline_search_summary_length: 80
+  offline_search_max_results: 12
+
+  # -- Comments (ported from the Blowfish giscus partial) --------------------
+  comments:
+    enable: true
+    type: giscus
+    giscus:
+      repo: Vonng/vonng.com
+      repoId: MDEwOlJlcG9zaXRvcnkxMTQwNzczNjI=
+      category: Announcements
+      categoryId: DIC_kwDOBsyuss4CtpY7
+      mapping: pathname
+      strict: 0
+      reactionsEnabled: 1
+      emitMetadata: 0
+      inputPosition: bottom
+      # giscus built-ins rather than OINK's own palettes: the iframe loads from
+      # giscus.app, so a stylesheet served from vonng.com would need a CORS
+      # header on the production host to be readable at all.
+      theme: auto
+      lightTheme: light
+      darkTheme: transparent_dark
+      loading: lazy
+
+  print:
+    toc: true
+
+  ui:
+    typography: technical
+    dark_mode: true
+    navbar_autohide: false
+    footer_style: fat
+    landing_search: true
+
+    # -- Blog columns ------------------------------------------------------
+    # Every top-level section of this site is a blog column, so the column
+    # recipe is the site default rather than seven identical cascades:
+    # a full-bleed Hero from the post's own featured image, a card grid for
+    # the index, an in-flow outline rail, and no sidebar.
+    featured_image: hero
+    blog_index: cards
+    blog_index_columns: 3
+    blog_index_toggle: true
+    blog_index_size: 24
+    toc_style: flow
+    toc_taxonomies: false
+    sidebar_enabled: false
+    section_index: cards
+    section_index_columns: 3
+
+    reading_time: true
+    image_zoom: true
+    annotation: true
+    lastmod_commit: none
+    keyboard_nav: true
+    scroll_spy: true
+    code_copy: true
+
+    share: [x, telegram, linkedin, reddit, weibo, email, copy]
+
+    taxonomy_icons:
+      categories: fa-solid fa-folder
+      tags: fa-solid fa-tags
+      authors: fa-solid fa-user-pen
+      series: fa-solid fa-layer-group
+
+    quick_links: [db, pg]
+
+    page_context_menu:
+      enable: true
+      assistant_links: true
+
+    feedback:
+      enable: false
+
+languages:
+  zh-cn:
+    label: 简体中文
+    locale: zh-CN
+    weight: 1
+    title: VONNG
+    hasCJKLanguage: true
+    params:
+      description: 老冯云数，数据库老司机，云计算泥石流，PGSQL大法师
+      copyright:
+        authors: '[冯若航](https://vonng.com/) ([@Vonng](https://github.com/Vonng))，[CC BY 4.0](https://github.com/Vonng/vonng.com/blob/main/LICENSE)'
+        from_year: 2018
+        to_year: present
+      footer_center_info: '[浙ICP备15016890-3号](https://beian.miit.gov.cn/) · Powered by [OINK](https://oink.pgsty.com)'
+      time_format_blog: 2006-01-02
+    menus:
+      main:
+        # Four columns stand on their own; the rest live under 专栏.
+        - { identifier: db, name: 数据库, pageRef: /db, weight: 10, params: { icon: 'fa-solid fa-database' } }
+        - { identifier: cloud, name: 云计算, pageRef: /cloud, weight: 20, params: { icon: 'fa-solid fa-cloud-bolt' } }
+        - { identifier: pg, name: PG, pageRef: /pg, weight: 30, params: { icon: 'fa-solid fa-hat-wizard' } }
+        - { identifier: ai, name: AI, pageRef: /ai, weight: 40, params: { icon: 'fa-solid fa-robot' } }
+
+        - identifier: column
+          name: 专栏
+          pageRef: /
+          weight: 50
+          params: { icon: 'fa-solid fa-layer-group' }
+        - { identifier: column-db, parent: column, name: 数据库老司机, pageRef: /db, weight: 10, params: { icon: 'fa-solid fa-database', description: 数据库行业的动态、新闻、调查、理念与最佳实践 } }
+        - { identifier: column-cloud, parent: column, name: 云计算泥石流, pageRef: /cloud, weight: 20, params: { icon: 'fa-solid fa-cloud-bolt', description: 云计算、下云与基础设施自建的深度思考 } }
+        - { identifier: column-pg, parent: column, name: PostgreSQL 大法师, pageRef: /pg, weight: 30, params: { icon: 'fa-solid fa-hat-wizard', description: PostgreSQL 开发、使用、运维、管理、诊断、调优 } }
+        - { identifier: column-ai, parent: column, name: AI 探路者, pageRef: /ai, weight: 40, params: { icon: 'fa-solid fa-robot', description: AI、Agent、LLM，以及 AI 与数据库 } }
+        - { identifier: column-pigsty, parent: column, name: Pigsty 发行版, pageRef: /pigsty, weight: 50, params: { icon: 'fa-solid fa-rocket', description: 开源 PostgreSQL RDS 发行版的版本发布记录 } }
+        - { identifier: column-trip, parent: column, name: 行万里路, pageRef: /trip, weight: 60, params: { icon: 'fa-solid fa-person-hiking', description: 旅行、徒步与见闻 } }
+        - { identifier: column-misc, parent: column, name: 人生旅途, pageRef: /misc, weight: 70, params: { icon: 'fa-solid fa-feather', description: 随笔、杂谈与个人写作 } }
+        - { identifier: column-tags, parent: column, name: 标签, pageRef: /tags, weight: 80, params: { icon: 'fa-solid fa-tags', description: 按标签浏览全站文章 } }
+        - { identifier: column-authors, parent: column, name: 作者, pageRef: /authors, weight: 90, params: { icon: 'fa-solid fa-user-pen', description: 本站原创与译介文章的作者们 } }
+
+        - { identifier: about, name: 关于, pageRef: /about, weight: 60, params: { icon: 'fa-solid fa-circle-user' } }
+  en:
+    label: English
+    locale: en-US
+    weight: 2
+    title: VONNG
+    params:
+      description: Ruohang Feng, Vonng's blog on PostgreSQL, databases, cloud-exit and AI
+      copyright:
+        authors: '[Ruohang Feng](https://vonng.com/en/) ([@Vonng](https://github.com/Vonng)), [CC BY 4.0](https://github.com/Vonng/vonng.com/blob/main/LICENSE)'
+        from_year: 2018
+        to_year: present
+      footer_center_info: 'Powered by [OINK](https://oink.pgsty.com)'
+      time_format_blog: 2006-01-02
+    menus:
+      main:
+        # Four columns stand on their own; the rest live under Columns.
+        - { identifier: db, name: DB, pageRef: /db, weight: 10, params: { icon: 'fa-solid fa-database' } }
+        - { identifier: cloud, name: Cloud, pageRef: /cloud, weight: 20, params: { icon: 'fa-solid fa-cloud-bolt' } }
+        - { identifier: pg, name: PG, pageRef: /pg, weight: 30, params: { icon: 'fa-solid fa-hat-wizard' } }
+        - { identifier: ai, name: AI, pageRef: /ai, weight: 40, params: { icon: 'fa-solid fa-robot' } }
+
+        - identifier: column
+          name: Columns
+          pageRef: /
+          weight: 50
+          params: { icon: 'fa-solid fa-layer-group' }
+        - { identifier: column-db, parent: column, name: Database Guru, pageRef: /db, weight: 10, params: { icon: 'fa-solid fa-database', description: 'News, reports and best practices from the database industry' } }
+        - { identifier: column-cloud, parent: column, name: Cloud-Exiter, pageRef: /cloud, weight: 20, params: { icon: 'fa-solid fa-cloud-bolt', description: 'Cloud economics, cloud-exit and self-hosting like a pro' } }
+        - { identifier: column-pg, parent: column, name: PostgreSQL Mage, pageRef: /pg, weight: 30, params: { icon: 'fa-solid fa-hat-wizard', description: 'PostgreSQL development, operations, internals and tuning' } }
+        - { identifier: column-ai, parent: column, name: AI Explorer, pageRef: /ai, weight: 40, params: { icon: 'fa-solid fa-robot', description: 'Agents, LLMs, AI coding, AI4DB and DB4AI' } }
+        - { identifier: column-pigsty, parent: column, name: Pigsty Releases, pageRef: /pigsty, weight: 50, params: { icon: 'fa-solid fa-rocket', description: 'Release notes for the open-source PostgreSQL RDS distribution' } }
+        - { identifier: column-trip, parent: column, name: Travel Notes, pageRef: /trip, weight: 60, params: { icon: 'fa-solid fa-person-hiking', description: 'Trips, hikes and things seen along the way' } }
+        - { identifier: column-misc, parent: column, name: Miscellaneous, pageRef: /misc, weight: 70, params: { icon: 'fa-solid fa-feather', description: 'Essays, notes and miscellaneous writing' } }
+        - { identifier: column-tags, parent: column, name: Tags, pageRef: /tags, weight: 80, params: { icon: 'fa-solid fa-tags', description: 'Browse every article by tag' } }
+        - { identifier: column-authors, parent: column, name: Authors, pageRef: /authors, weight: 90, params: { icon: 'fa-solid fa-user-pen', description: 'The writers behind the originals and the translations' } }
+
+        - { identifier: about, name: About, pageRef: /about, weight: 60, params: { icon: 'fa-solid fa-circle-user' } }

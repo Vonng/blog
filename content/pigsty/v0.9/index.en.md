@@ -2,8 +2,7 @@
 title: "Pigsty v0.9: CLI + Logs"
 linkTitle: "Pigsty v0.9 Release Notes"
 date: 2021-05-01
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [Release Notes](https://github.com/pgsty/pigsty/releases/tag/v0.9.0)）
+authors: [vonng]
 summary: >
   One-click installs, a beta CLI, and Loki-based logging make Pigsty easier to land.
 series: [Pigsty]

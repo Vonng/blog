@@ -2,8 +2,7 @@
 title: "Pigsty v2.5：Ubuntu & PG16"
 linkTitle: "Pigsty v2.5 发布注记"
 date: 2023-10-24
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v2.5.0)）
+authors: [vonng]
 summary: >
   Pigsty v2.5 提供了 Ubuntu/Debian 支持：bullseye, bookworm, jammy, focal，新扩展，监控改进
 series: [Pigsty]

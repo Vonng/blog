@@ -1,7 +1,7 @@
 ---
 title: "InsForge：为 Vibe Coding 而生的 Supabase"
 date: 2026-03-11
-author: 冯若航
+authors: [vonng]
 summary: >
   InsForge 试图把数据库、认证、文件存储和语义层一起打包成一个更适合 AI Agent 的后端底座，像一个专为 Vibe Coding 设计的 Supabase。
 tags: [AI, PostgreSQL, 开源]

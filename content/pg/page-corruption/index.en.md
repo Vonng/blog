@@ -2,9 +2,9 @@
 title: "PostgreSQL Data Page Corruption Repair"
 linkTitle: "Incident-Report: Data Page Corruption"
 date: 2018-11-29
-author: "vonng"
+authors: [vonng]
 summary: "Using binary editing to repair PostgreSQL data pages, and how to make a primary key query return two records."
-tags: ["PostgreSQL","PG-Admin","Data-Corruption","Incident-Report"]
+tags: [PostgreSQL, PG Admin, Incident]
 ---
 
 PostgreSQL is a very reliable database, but even the most reliable database will struggle when faced with unreliable hardware. This article introduces methods for dealing with data page corruption in PostgreSQL.

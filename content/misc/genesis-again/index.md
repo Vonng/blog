@@ -1,10 +1,10 @@
 ---
 title: "创世纪 2.0"
 date: 2026-03-09
-author: 冯若航
+authors: [vonng]
 summary: >
   让 Claude 写了个关于意识上传与飞升的小故事，我觉得在有生之年说不定可以看到。
-tags: [AI, Claude, 故事 ]
+tags: [AI, Claude, 商业]
 ---
 
 > 作者，Claude 。提示词：讲个简短干练、有趣的半现实半魔幻小故事， 梗概： AI 技术飞速发展，脑机接口与意识上传技术有了突破。

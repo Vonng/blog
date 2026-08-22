@@ -4,7 +4,7 @@ date: 2026-02-18
 summary: >
   McLuhan's "the medium is the message," extension and amputation, hot and cool media, rear-view mirror effect, and four laws of media offer a way to dissect AI and its deeper effects on our cognitive habits, capacity for understanding, and social structures.
 categories: [BB]
-tags: [AI, Marshall McLuhan, Media Theory, Cognition]
+tags: [AI, Philosophy]
 ai: true
 aliases: ["/db/macluhan-on-ai/"]
 ---

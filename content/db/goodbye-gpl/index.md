@@ -5,7 +5,7 @@ authors: [martin-kleppmann]
 origin: "https://martin.kleppmann.com/2021/04/14/goodbye-gpl.html"
 summary: >
   DDIA作者Martin Kleppmann认为应远离GPL及相关许可证，因为它们未能实现其目的，造成的麻烦比产生的价值更大。在2020年代，计算自由的敌人是云软件，本文倡导本地优先软件的概念。
-tags: [开源, 许可证, GPL, 本地优先, 翻译]
+tags: [本地优先, 开源, 翻译]
 ---
 
 

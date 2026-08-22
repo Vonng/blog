@@ -1,8 +1,7 @@
 ---
 title: Why Isn't Cloud Computing More Profitable Than Sand Mining?
 date: 2023-06-14
-author: |
-  [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   Public cloud margins worse than sand mining—why are pig-butchering schemes losing money? Resource-selling models heading toward price wars, open source alternatives breaking monopoly dreams! Service competitiveness gradually neutralized—where is the cloud computing industry heading? How did domestic cloud vendors make a business with 30-40% pure profit less profitable than sand mining?
 tags: [Cloud-Exit, Business]

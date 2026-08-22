@@ -1,8 +1,8 @@
 ---
 title: 老冯云数
 summary: "冯若航的博客，关于 AI、数据库、PostgreSQL，以及下云"
+images: [img/wusu.jpg]
+# Pairs with the image above: the blog shell's hero treatment lifts the
+# navbar over the picture and softens its lower edge into a gradient.
+body_class: td-shell-chrome--hero
 ---
-
-[冯若航](/about) ([@Vonng](https://github.com/Vonng))：[Pigsty创始人](https://pigsty.cc)，[活跃](https://committers.top/china)[开源贡献者](https://gitstar-ranking.com/Vonng)
-
-[PostgreSQL大法师](/pg)，[数据库老司机](/db)，[云计算泥石流](/cloud)，[AI 探路者](/ai)

@@ -1,11 +1,11 @@
 ---
 title: "Silo: A Maintained, MinIO-Compatible Object Store"
 date: 2026-08-06
-author: Ruohang Feng
+authors: [vonng]
 summary: >
   Six months after forking MinIO, Silo has completed its rebrand, fixed 14 security issues,
   restored and improved the console, and grown from an emergency fork into an independent open-source project.
-tags: [Object Storage, MinIO, Silo, S3, Open Source]
+tags: [Object Storage, Open Source]
 ---
 
 Several months ago, I forked MinIO for a simple reason: [Pigsty](https://pigsty.io) depended on it, and upstream had abandoned the open-source project. I said I would keep packages and security fixes flowing. Here is the recent report:

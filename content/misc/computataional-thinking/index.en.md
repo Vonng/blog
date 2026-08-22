@@ -1,12 +1,10 @@
 ---
 title: "On Computational Thinking"
 date: 2014-05-11
-author: vonng
+authors: [vonng]
 summary: A paper for "History of Secrecy and Secrecy Systems" course, discussing computational thinking and its significance in undergraduate education, as well as methods for cultivating computational thinking among undergraduates.
-math: true
+tags: [Essay]
 ---
-
-{{< katex >}}
 
 A paper for "History of Secrecy and Secrecy Systems" course, discussing computational thinking and its significance in undergraduate education. I guess this was the teacher's own assignment.
 

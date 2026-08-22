@@ -1,14 +1,12 @@
 ---
 title: "Fundamentals of Information Theory: Entropy"
 date: 2016-05-18
-author: "vonng"
-math: true
+authors: [vonng]
 summary: "Reading notes on 'Elements of Information Theory': What is entropy? Entropy is a measure of the uncertainty of random variables, and also a measure of the information needed to describe random variables on average."
 ai: true
 aliases: ["/misc/info-entropy/"]
+tags: [AI]
 ---
-
-{{< katex >}}
 
 Information theory answers two fundamental questions in communication theory:
 

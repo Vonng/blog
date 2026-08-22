@@ -3,8 +3,7 @@ title: "OpenHalo: MySQL Wire-Compatible PostgreSQL is Here!"
 linkTitle: "OpenHalo: MySQL-Compatible PG-Kernel"
 date: 2025-04-03
 summary: What? PostgreSQL can now be accessed using MySQL clients? That's right, openHalo, which was open-sourced on April Fool's Day, provides exactly this capability and has now joined the Pigsty kernel family.
-showAuthor: true
-tags: [PostgreSQL,MySQL]
+tags: [PostgreSQL, MySQL]
 ---
 
 What? PostgreSQL can now be accessed using MySQL clients? That's right, openHalo, which was open-sourced on April Fool's Day, provides exactly this capability — allowing users to simultaneously access and manage the same database using both MySQL and PostgreSQL clients for read and write operations, based on PG 14.10 providing MySQL 5.7 compatibility.

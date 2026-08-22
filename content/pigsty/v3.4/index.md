@@ -2,8 +2,7 @@
 title: "Pigsty v3.4：备份恢复增强，本地化排序，自动证书"
 linkTitle: "Pigsty v3.4 发布注记"
 date: 2025-03-15
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v3.4.0)）
+authors: [vonng]
 summary: >
   新增pgBackRest备份监控，IvorySQL全平台支持，Apache AGE图数据库扩展，以及一系列增强。
 series: [Pigsty]

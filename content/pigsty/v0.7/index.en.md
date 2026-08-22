@@ -2,8 +2,7 @@
 title: "Pigsty v0.7: Monitor-Only Deployments"
 linkTitle: "Pigsty v0.7 Release Notes"
 date: 2021-03-01
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [Release Notes](https://github.com/pgsty/pigsty/releases/tag/v0.7.0)）
+authors: [vonng]
 summary: >
   Monitor-only deployments unlock hybrid fleets, while DB/user provisioning APIs get a serious cleanup.
 series: [Pigsty]

@@ -1,11 +1,10 @@
 ---
 title: Refuting "Why You Still Shouldn't Hire a DBA"
 date: 2023-03-01
-author: |
-  [Feng Ruohang](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [WeChat Official Account](https://mp.weixin.qq.com/s/CMRrqI2yBWlNbACHpNgL1g)
+authors: [vonng]
 summary: >
   Guo Degang has a comedy routine: "Say I tell a rocket scientist, your rocket is no good, the fuel is wrong. I think it should burn wood, better yet coal, and it has to be premium coal, not washed coal. If that scientist takes me seriously, he loses."
-tags: [Cloud-Exit,RDS,DBA]
+tags: [Cloud-Exit, RDS, PG Admin]
 ---
 
 > *Guo Degang has a comedy routine: "Say I tell a rocket scientist, your rocket is no good, the fuel is wrong. I think it should burn wood, better yet coal, and it has to be premium coal, not washed coal. If that scientist takes me seriously, he loses."*

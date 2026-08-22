@@ -1,15 +1,18 @@
 ---
-title: AI
-weight: 15
-summary: A chronological index of essays about AI, agents, LLMs, AI coding, and the relationship between AI and databases.
-showSummary: true
-showLayoutSwitch: false
-showSectionPages: true
-sectionHero:
-  show: true
-  title: "AI Explorer"
-  headline: "Ruohang Feng @Vonng / Agent, LLM, Database"
-  description: "Everything about AI, agents, LLMs, Vibe coding, and AI4DB & DB4AI"
+title: AI Explorer
+linkTitle: AI
+description: >
+  Everything about AI, agents, LLMs, vibe coding, AI4DB and DB4AI.
+summary: >
+  Everything about AI, agents, LLMs, vibe coding, AI4DB and DB4AI.
+weight: 40
+icon: fa-solid fa-robot
+type: blog
+page_width: wide
+comments: false
+profile:
+  headline: Ruohang Feng @Vonng / Agent, LLM, Database
+cascade:
+  type: blog
+  page_width: normal
 ---
-
-{{< column_index param="ai" >}}

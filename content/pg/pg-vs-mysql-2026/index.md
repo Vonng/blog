@@ -1,7 +1,7 @@
 ---
 title: "PostgreSQL vs MySQL 2026"
 date: 2026-04-03
-author: 冯若航
+authors: [vonng]
 summary: >
   2026 年，PostgreSQL 已经赢得数据库增量世界，并在开发者采用率、厂商战略、  资本市场与社区治理上全面压过 MySQL。存量仍属 MySQL，增量已归 PG。
 tags: [PostgreSQL, MySQL, PG生态]

@@ -3,7 +3,7 @@ title: "New Programmers in the AI Era: Where Do You Go?"
 date: 2026-02-01
 summary: >
   Should we still hire fresh grads? Squeezed between AI and senior devs, what's the play for new programmers? Master the right tools, take initiative, find the right mentor.
-tags: [AI, Industry, Database]
+tags: [AI, Database, Commentary]
 ai: true
 aliases: ["/db/ai-survival/"]
 ---

@@ -2,8 +2,7 @@
 title: "Pigsty v0.8：服务供给"
 linkTitle: "Pigsty v0.8 发布注记"
 date: 2021-03-16
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v0.8.0)）
+authors: [vonng]
 summary: >
   Pigsty v0.8 重做了服务供给部分，提供了集成外部负载均衡器的扩展接口。
 series: [Pigsty]

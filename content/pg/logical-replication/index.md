@@ -1,7 +1,7 @@
 ---
 title: "PostgreSQL 逻辑复制详解"
 date: 2021-03-03
-author: 冯若航
+authors: [vonng]
 summary: >
   本文介绍PostgreSQL中逻辑复制的相关原理，以及最佳实践。
 tags: [PostgreSQL, PG管理]

@@ -1,11 +1,10 @@
 ---
 title: "AI Was the Excuse for 4,000 Layoffs. Software Engineer Hiring Rose 11%"
 date: 2026-02-27
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   AI is becoming the story companies tell when they lay people off, but total demand for software engineering has not disappeared. It is spreading across the wider economy, driven by second-order demand unleashed as barriers fall.
-tags: [AI, Programmers, Software Engineering, Careers, Tech Commentary]
+tags: [AI, Software Engineering, Career, Commentary]
 ai: true
 aliases: ["/db/ai-sack/"]
 ---

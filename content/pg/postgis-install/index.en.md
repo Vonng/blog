@@ -1,9 +1,9 @@
 ---
 title: "Installing PostGIS from Source"
 date: 2017-09-07
-author: "vonng"
+authors: [vonng]
 summary: "PostGIS is PostgreSQL's killer extension, but compiling and installing it isn't easy."
-tags: [PostgreSQL, PG-Admin, Extension]
+tags: [PostgreSQL, PG Admin, Extension]
 ---
 
 ----------

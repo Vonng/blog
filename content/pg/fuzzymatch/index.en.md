@@ -1,11 +1,10 @@
 ---
 title: "Implementing Advanced Fuzzy Search"
 date: 2021-03-05
-author: |
-  [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   How to implement relatively complex fuzzy search logic in PostgreSQL?
-tags: [PostgreSQL,PG-Development,Full-Text-Search]
+tags: [PostgreSQL, PG Development]
 ---
 
 

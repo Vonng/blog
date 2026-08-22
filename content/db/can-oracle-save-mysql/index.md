@@ -6,7 +6,7 @@ origin: "https://www.percona.com/blog/can-oracle-save-mysql/"
 summary: >
   Percona创始人Peter Zaitsev在官方博客上公开表达了对MySQL及其知识产权属主Oracle的失望，以及对版本越高性能越差的不满。作为MySQL生态的主要扛旗者，Percona的公开表态是一个值得关注的信号。
 series: ["MySQL走好"]
-tags: [数据库, MySQL, Oracle, 技术评论, 翻译]
+tags: [MySQL, Oracle, 数据库, 技术评论]
 ---
 
 > 作者：[Peter Zaitsev](https://www.percona.com/blog/author/pz/) | 译：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信原文](https://mp.weixin.qq.com/s/0OgcduKvmprBcECgtn73Cg) | [Percona's Blog](https://www.percona.com/blog/can-oracle-save-mysql/)

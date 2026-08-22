@@ -1,7 +1,7 @@
 ---
 title: "为什么PostgreSQL前途无量？"
 date: 2021-05-08
-author: 冯若航
+authors: [vonng]
 summary: >
   数据库是信息系统的核心组件，关系型数据库是数据库中的绝对主力，而PostgreSQL是世界上最先进的开源关系型数据库。占据天时地利，何愁大业不成？
 tags: [PostgreSQL, PG生态]

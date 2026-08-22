@@ -1,10 +1,10 @@
 ---
 title: "OPC 一个月烧 1000 刀订阅，能有多少产出？"
 date: 2026-08-12
-author: 冯若航
+authors: [vonng]
 summary: >
   过去一个多月，我同时蹬着 7 个每月 200 美元的 AI 订阅，盘点 Silo、Pigsty、PGEXT、SOW、OINK 等项目，看看上千亿 Token 最后变成了哪些代码、产品与长期资产。
-tags: [AI, Agent ]
+tags: [AI, Agent]
 ai: true
 ---
 

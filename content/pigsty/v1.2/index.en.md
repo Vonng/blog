@@ -2,8 +2,7 @@
 title: "Pigsty v1.2: PG14 Default, Monitor Existing PG"
 linkTitle: "Pigsty v1.2 Release"
 date: 2021-11-03
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v1.2.0))
+authors: [vonng]
 summary: >
   Pigsty v1.2 makes PostgreSQL 14 the default version and adds support for monitoring existing database instances independently.
 series: [Pigsty]

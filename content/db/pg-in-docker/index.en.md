@@ -2,10 +2,9 @@
 title: Is running postgres in docker a good idea?
 linkTitle: "PG in Docker: Good or Bad?"
 date: 2019-01-13
-author: |
-  [Ruohang Feng](https://vonng.com/en/) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: Thou shalt not run a prod database inside a container
-tags: [Database,Docker]
+tags: [Database, Containers, Architecture]
 ---
 
 For stateless app services, containers are an almost perfect devops solution. However, for stateful services like databases, it's not so straightforward. Whether production databases should be containerized remains controversial.

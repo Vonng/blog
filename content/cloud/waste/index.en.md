@@ -1,10 +1,10 @@
 ---
 title: "Why Are People Who Leave Big Tech So Useless?"
 date: 2026-08-14
-author: Ruohang Feng
+authors: [vonng]
 summary: >
   People who leave Big Tech are not stupid. They have simply spent too long using a rented mental map. Only after leaving the platform do they discover that the map has to be returned.
-tags: [Big Tech, Mental Maps, Software Engineering, Complexity, Cloud Computing]
+tags: [Cloud, Software Engineering, Architecture, Career]
 ---
 
 A cutting remark supposedly from Sam Altman has been making the rounds online: by the time people leave a big company, their ambition, aspiration, and capacity to think have withered to almost nothing. Tell one of them about something that could change an industry, and their first question is who has to approve it.

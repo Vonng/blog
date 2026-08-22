@@ -2,7 +2,7 @@
 title: MySQL vs. PostgreSQL @ 2025
 summary: "A 2025 reality check on where PostgreSQL stands relative to MySQL across features, performance, quality, and ecosystem."
 date: 2025-04-17
-tags: [Database, MySQL, PostgreSQL]
+tags: [MySQL, PostgreSQL, Database, Software Engineering]
 series: [MySQL走好]
 ---
 

@@ -1,13 +1,10 @@
 ---
 title: "理解字符编码"
 date: 2018-07-01
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+authors: [vonng]
 summary: >
   程序员，是与Code（代码/编码）打交道的，而字符编码又是最为基础的编码。如何使用二进制数来表示字符，这个字符编码问题并没有看上去那么简单，本文希望能讲清楚这个问题。
-menu:
-  sidebar:
-    parent: note
+tags: [随笔]
 ---
 
 > [微信公众号原文](https://mp.weixin.qq.com/s/Yzd64oCjjlk4brERhKBuKA)

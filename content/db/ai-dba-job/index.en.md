@@ -1,10 +1,10 @@
 ---
 title: Where Will Databases and DBAs Go in the AI Era?
 date: 2025-06-30
+authors: [vonng]
 summary: |
   Who will be revolutionized first - OLTP or OLAP? Integration vs specialization, how to choose? Where will DBAs go in the AI era? Feng's views from the HOW 2025 conference roundtable, organized and published.
-author: vonng
-tags: [Database,AI,DBA]
+tags: [AI, Database, PG Admin, Career]
 ai: true
 aliases: ["/ai/ai-dba-job/"]
 ---

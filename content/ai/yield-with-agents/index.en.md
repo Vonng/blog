@@ -1,8 +1,7 @@
 ---
 title: "What Can a One-Person Company Ship with $1,000 a Month in AI Subscriptions?"
 date: 2026-08-12
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   Over the past month, I kept seven $200 AI subscriptions spinning—five paid, two comped—and burned through more than 100 billion tokens. Here is what came out: Silo, Pigsty, PGEXT, SOW, OINK, and a pile of code, packages, documentation, releases, products, and durable assets.
 tags: [AI, Agent]

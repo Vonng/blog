@@ -1,8 +1,9 @@
 ---
 title: "巍巍南太行"
 date: 2021-06-17
-author: vonng
+authors: [vonng]
 summary: 从河南新乡翻过太行山前往山西
+tags: [旅行]
 ---
 
 

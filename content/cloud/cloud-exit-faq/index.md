@@ -5,7 +5,7 @@ authors: [dhh]
 origin: "https://world.hey.com/dhh/cloud-exit-faq-5c3b15e8"
 summary: >
   DHH的下云旅程到了新阶段，下云已省下近百万美元，未来五年还可省下近千万美元。本文跟进他们下云的最新进展，对准备上云或云上的企业都有参考价值。
-tags: [下云, DHH, 翻译]
+tags: [下云, 翻译]
 ---
 
 一年前我们宣布了[下云的计划](https://world.hey.com/dhh/why-we-re-leaving-the-cloud-654b47e0)，随后披露了[2022年320万美元的云账单细节](https://dev.37signals.com/our-cloud-spend-in-2022/)，并决定不依赖[昂贵的企业级服务](https://world.hey.com/dhh/the-only-thing-worse-than-cloud-pricing-is-the-enterprisey-alternatives-854e98f3)而是自行构建工具来下云，使命已定！

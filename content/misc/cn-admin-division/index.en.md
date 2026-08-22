@@ -1,8 +1,9 @@
 ---
 title: "Knowledge of China's Administrative Divisions"
 date: 2018-12-09
-author: vonng
+authors: [vonng]
 summary: Information about administrative division levels, numbers, the meaning of administrative division codes, urban-rural classification, etc.
+tags: [Essay]
 ---
 
 China's administrative divisions are divided into several levels. The constitution stipulates three levels, but there are actually five levels: the four-tier system of "province—region—county (district)—township," which becomes five tiers when including the central level.

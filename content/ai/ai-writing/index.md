@@ -1,10 +1,10 @@
 ---
 title: 是的，我用 AI 写文章
 date: 2026-04-07
-author: 冯若航
+authors: [vonng]
 summary: >
   AI是倍乘器，比例放大人的深刻与平庸。答案廉价的时代，问题才是货币。用 AI 写作没什么好遮遮掩掩的。
-tags: [AI, 写作]
+tags: [AI, 文档]
 ai: true
 aliases: ["/misc/ai-writing/"]
 ---

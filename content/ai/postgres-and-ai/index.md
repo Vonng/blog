@@ -1,10 +1,10 @@
 ---
 title: "AI 时代，PostgreSQL 凭什么赢了？"
 date: 2026-04-11
-author: 冯若航
+authors: [vonng]
 summary: >
   无聊的技术，赢得了最疯狂的时代。聊聊可扩展性、Agent 选型权、数据库克隆，以及DBA的未来。
-tags: [AI, PostgreSQL, 数据库, Agent]
+tags: [AI, PostgreSQL, Agent, 数据库]
 ---
 
 最近做了一场直(录) 播，聊了聊 PostgreSQL 与 AI 这个话题。直播里主持人问了很多好问题，老冯也做了些回答。

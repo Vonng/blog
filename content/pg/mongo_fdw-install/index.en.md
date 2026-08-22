@@ -2,9 +2,9 @@
 title: "PostgreSQL MongoFDW Installation and Deployment"
 linkTitle: "MongoFDW Installation and Deployment"
 date: 2016-05-28
-author: "vonng"
+authors: [vonng]
 summary: "Recently had business requirements to access MongoDB through PostgreSQL FDW, but compiling MongoDB FDW is really a nightmare."
-tags: ["PostgreSQL","PG-Admin","Extension"]
+tags: [PostgreSQL, PG Admin, Extension]
 ---
 
 > Update: Recently MongoFDW has been taken over by Cybertech for maintenance, so maybe it's not as bad anymore.

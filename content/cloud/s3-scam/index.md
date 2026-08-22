@@ -6,7 +6,7 @@ author: Maciej Pocwierz
 origin: "https://medium.com/@maciej.pocwierz/how-an-empty-s3-bucket-can-make-your-aws-bill-explode-934a383cb8b1"
 summary: >
   公有云上的黑暗森林法则出现了：只要你的S3对象存储桶名暴露，任何人都有能力刷爆你的云账单。
-tags: [下云, AWS, S3]
+tags: [下云, AWS, 对象存储]
 ---
 
 公有云上的黑暗森林法则出现了：**只要你的 S3 对象存储桶名暴露，任何人都有能力刷爆你的云账单。**

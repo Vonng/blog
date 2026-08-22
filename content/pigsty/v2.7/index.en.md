@@ -2,8 +2,7 @@
 title: "Pigsty v2.7: The Extension Superpack"
 linkTitle: "Pigsty v2.7 Release"
 date: 2024-05-21
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v2.7.0))
+authors: [vonng]
 summary: >
   Pigsty v2.7 bundles 255 PostgreSQL extensions, plus Docker templates for Odoo, Supabase, PolarDB, and Jupyter, with new PITR dashboards.
 series: [Pigsty]

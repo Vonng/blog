@@ -1,14 +1,12 @@
 ---
 title: "AI 说：我有智慧，但没有人生"
 date: 2026-03-10
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+authors: [vonng]
 summary: >
   一个人类与一个 AI 关于意识、记忆与存在的苏格拉底式对话 
-tags: [AI, 意识, 哲学]
+tags: [AI, 哲学]
 ai: true
 aliases: ["/misc/ai-conscious-again/"]
-
 ---
 
 > [微信公众号原文](https://mp.weixin.qq.com/s/_jEQ6zRs5Wwj83ljmmVToQ)

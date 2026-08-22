@@ -2,8 +2,7 @@
 title: "Pigsty v4.4: From Integration to Distribution"
 linkTitle: "Pigsty v4.4: From Integration to Distribution"
 date: 2026-07-11
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v4.4.0))
+authors: [vonng]
 summary: >
   Pigsty v4.4 adds Immich and JumpServer application templates, improves the Supabase and VIP experience, and begins standardizing the packages and filesystem layouts used to distribute PostgreSQL forks such as PolarDB and IvorySQL.
 series: [Pigsty]

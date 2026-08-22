@@ -1,8 +1,9 @@
 ---
 title: "On the Hills of Manchuria"
 date: 2021-06-13
-author: vonng
+authors: [vonng]
 summary: Standing on the hills of Manchuria, on the grasslands of Hulunbuir.
+tags: [Travel]
 ---
 
 The Dragon Boat Festival holiday coincided with college entrance exams. Not wanting to see crowds everywhere, I discussed with two colleagues and decided to find a weekend for early off-peak travel.

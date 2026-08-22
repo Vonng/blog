@@ -1,0 +1,12 @@
+// Site variables, compiled before Bootstrap and the OINK defaults.
+//
+// The palette follows the Blowfish scheme this site used before: Tailwind blue
+// as the primary, Tailwind cyan as the secondary. Bootstrap's semantic colours
+// decide buttons, callout accents and focus rings.
+
+$primary: #1d4ed8; // blue-700
+$secondary: #0891b2; // cyan-600
+$success: #15803d; // green-700
+$info: #0284c7; // sky-600
+$warning: #b45309; // amber-700
+$danger: #b91c1c; // red-700

@@ -2,12 +2,11 @@
 title: "From AGPL to Apache: Why I Changed Pigsty's License"
 linkTitle: "From AGPL to Apache: Pigsty License Change"
 date: 2026-01-29
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   Pigsty switched from AGPLv3 to Apache 2.0. Aren't you worried about freeloaders?
   Freeloaders welcome — if you want to become the Debian of databases, a permissive license is table stakes.
-tags: [Pigsty, OpenSource]
+tags: [Pigsty, Open Source]
 ---
 
 [Pigsty](https://pigsty.io) is a batteries-included, local-first PostgreSQL distribution. With the v4.0 release, I finally did something I'd been considering for a while: switching from AGPLv3 back to Apache 2.0.

@@ -1,18 +1,19 @@
 ---
 title: Database Guru
+linkTitle: Database
+description: >
+  News, reports, surveys and best practices from the database industry — cutting through the marketing.
+summary: >
+  News, reports, surveys and best practices from the database industry — cutting through the marketing.
 weight: 10
-showSummary: true
-tags: []
-showLayoutSwitch: true
-sectionHero:
-  show: true
-  image: "img/hero-db.jpg"
-  title: "Database Guru"
-  headline: "Ruohang Feng @Vonng / Pigsty"
-  description: "News, report, comment and best practices in the database industry"
+icon: fa-solid fa-database
+type: blog
+page_width: wide
+comments: false
+profile:
+  avatar: img/hero-db.jpg
+  headline: Ruohang Feng @Vonng / Pigsty
+cascade:
+  type: blog
+  page_width: normal
 ---
-A chronological index of database essays, commentary, and case studies.
-
-## Timeline
-
-{{< section_index section="db" exclude="guru" >}}

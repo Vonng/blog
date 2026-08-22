@@ -1,7 +1,7 @@
 ---
 title: 号外：暂缓 PG 最新小版本安装与升级
 date: 2026-02-19
-author: 冯若航
+authors: [vonng]
 summary: >
   PostgreSQL 18.2 系列小版本引入了 substring 与 WAL 回放相关回归问题，建议暂缓新建与升级，并在 2026-02-26 号外版本发布后尽快更新。
 tags: [PostgreSQL, PG管理]

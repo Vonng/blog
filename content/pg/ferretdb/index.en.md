@@ -1,11 +1,10 @@
 ---
 title: "FerretDB: PostgreSQL Disguised as MongoDB"
 date: 2023-10-08
-author: |
-  [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat Official Account](https://mp.weixin.qq.com/s/gfs8pBJuYjE_wfAvjcak8Q)
+authors: [vonng]
 summary: >
   FerretDB aims to provide a truly open-source MongoDB alternative based on PostgreSQL.
-tags: [PostgreSQL,PG-Ecosystem,MongoDB,Extension]
+tags: [PostgreSQL, MongoDB, PG Ecosystem, Extension]
 ---
 
 

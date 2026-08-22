@@ -1,11 +1,10 @@
 ---
 title: "PostgreSQL Dominates Database World, but Who Will Devour PG?"
 date: 2025-08-05
-author: vonng
-showAuthor: false
+authors: [vonng]
 summary: |
   The same forces that once led MongoDB and MySQL toward closure are now at work in the PostgreSQL ecosystem. The PG world needs a distribution that represents "software freedom" values.
-tags: [PostgreSQL,PG-Ecosystem]
+tags: [PostgreSQL, PG Ecosystem]
 ---
 
 Percona is a banner-bearer and major third-party vendor in the MySQL ecosystem, and has been advancing into the PostgreSQL space in recent years. The English original of this article was published on the Percona blog this morning.

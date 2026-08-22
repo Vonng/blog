@@ -1,10 +1,10 @@
 ---
 title: "FastJSON 又炸了，糙猛快是要还的"
 date: 2026-07-31
-author: 冯若航
+authors: [vonng]
 summary: >
   阿里的 FastJSON 又双叒叕翻车了，“糙猛快”何时是合理的权宜之计，又如何变成需要后来者偿还的工程习惯。
-tags: [阿里云, Cloud]
+tags: [云计算, 阿里云]
 ---
 
 7 月 21 日，[阿里巴巴的 FastJSON 发布了一份安全公告](https://github.com/alibaba/fastjson2/wiki/Security-Advisory%3A-Remote-Code-Execution-in-fastjson-1.2.68%E2%80%931.2.83)：`CVE-2026-16723`，CNA 评分 9.0，影响 1.2.68 至 1.2.83。

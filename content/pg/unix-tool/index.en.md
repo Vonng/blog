@@ -1,10 +1,10 @@
 ---
 title: "Common Linux Statistics CLI Tools"
 date: 2017-09-07
-author: "vonng"
+authors: [vonng]
 summary: >
   top, free, vmstat, iostat: Quick reference for four commonly used CLI tools
-tags: [PostgreSQL, PG-Admin, Tools]
+tags: [PostgreSQL, PG Admin, Tools]
 ---
 
 - [`top`](#top)

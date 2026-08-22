@@ -2,8 +2,7 @@
 title: "Pigsty v2.2：监控全面翻新"
 linkTitle: "Pigsty v2.2 发布注记"
 date: 2023-08-04
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v2.2.0)）
+authors: [vonng]
 summary: >
   监控面板 & 沙箱置备重做，构建流程优化，UOS兼容性
 series: [Pigsty]

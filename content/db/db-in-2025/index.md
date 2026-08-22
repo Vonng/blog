@@ -1,12 +1,11 @@
 ---
 title: "Andy Pavlo：2025 数据库世界年度总结"
 date: 2026-01-05
-showAuthor: false
 authors: [andy-pavlo, vonng]
 original: https://www.cs.cmu.edu/~pavlo/blog/2026/01/2025-databases-retrospective.html
 summary: >
   图灵奖得主 + CMU 教授：2025 数据库圈最犀利的一场对话。关于数据库，LLM，Agent，AI 落地的实际效果，程序员的职业生涯……
-tags: [数据库, PostgreSQL]
+tags: [PostgreSQL, 数据库]
 ---
 
 

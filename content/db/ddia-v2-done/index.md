@@ -1,10 +1,10 @@
 ---
 title: DDIA 第二版翻完了：一个跨越八年的 AI 寓言
 date: 2026-02-15
-author: 冯若航
+authors: [vonng]
 summary: >
   一个上午用 codex 翻译完 DDIAv2，相比八年前三个月手工精翻，AI 的能力，在同一本书上形成了鲜明的对照。
-tags: [DDIA, 分布式系统, 数据库, 翻译]
+tags: [分布式系统, 数据库, 翻译]
 ---
 
 今天上午，我开了 10 路 Codex 并行，用不到半天的时间，

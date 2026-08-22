@@ -1,10 +1,10 @@
 ---
 title: "PGDG Cuts Off Mirror Sync Channel"
 date: 2025-07-07
-author: vonng
+authors: [vonng]
 summary: >
   PGDG cuts off FTP rsync sync channels, global mirror sites universally disconnected - this time they really strangled global users' supply chain.
-tags: [PostgreSQL, PG-Admin]
+tags: [PostgreSQL, PG Admin]
 ---
 
 Recently, while building Pigsty offline packages, I discovered that the PostgreSQL version installed during local testing wasn't quite right - 17.4 was behind the latest 17.5 by one minor version. Also, when testing on EL10,

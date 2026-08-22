@@ -1,9 +1,10 @@
 ---
 title: "Urban Wandering: Guangzhou Observations"
 date: 2021-01-17
-author: vonng
+authors: [vonng]
 summary: |
   Taking advantage of attending the 2020 PostgreSQL China Conference, I toured Guangzhou for a day. A quite interesting place.
+tags: [Travel]
 ---
 
 Taking advantage of attending the 2020 PostgreSQL China Conference, I toured Guangzhou for a day. A quite interesting place.

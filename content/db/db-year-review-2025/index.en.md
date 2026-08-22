@@ -1,12 +1,11 @@
 ---
 title: "Data 2025: The year in review with Mike Stonebraker"
 date: 2025-12-24
-showAuthor: false
 authors: [andy-pavlo, mike-stonebraker, vonng]
 original: "https://www.dbos.dev/webcast-2025-in-review-with-mike-stonebraker-and-andy-pavlo"
 summary: >
   A conversation between Mike Stonebraker (MIT CSAIL, Turing Award Winner, Creator of PostgreSQL), Andy Pavlo (Carnegie Mellon University), and the DBOS team.
-tags: [Database, DBOS, PostgreSQL]
+tags: [PostgreSQL, Database, PG Ecosystem]
 ---
 
 Transcription of [Data 2025:  The year in review with Mike Stonebraker](https://www.dbos.dev/webcast-2025-in-review-with-mike-stonebraker-and-andy-pavlo)

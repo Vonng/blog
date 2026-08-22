@@ -2,8 +2,7 @@
 title: "Pigsty v1.3：PGCAT大修，PGSQL增强，Redis支持"
 linkTitle: "Pigsty v1.3 发布注记"
 date: 2021-11-30
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v1.3.0)）
+authors: [vonng]
 summary: >
   Pigsty v1.3.0 更新了 PGCAT 重整 & PGSQL 增强 & Redis Beta支持
 series: [Pigsty]

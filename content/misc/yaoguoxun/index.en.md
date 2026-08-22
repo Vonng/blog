@@ -1,9 +1,10 @@
 ---
 title: "Farewell to Grandfather"
 date: 2021-01-02
-author: vonng
+authors: [vonng]
 summary: |
   Grandfather has passed away. I am beyond grief, but I should still write something in his memory.
+tags: [Essay]
 ---
 
 

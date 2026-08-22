@@ -2,11 +2,10 @@
 title: Redis Going Non-Open-Source is a Disgrace to "Open-Source" and Public Cloud
 linkTitle: Redis Non-Open-Source is a Disgrace
 date: 2024-03-25
-author: |
-  [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat](https://mp.weixin.qq.com/s/W5kOLxeJCIHjnWbIHc1Pzw)
+authors: [vonng]
 summary: >
   Redis "going non-open source" is not a disgrace to Redis, but a disgrace to "open source/OSI" and even more so to public cloud. What truly matters has always been software freedom, while open source is just one means to achieve software freedom.
-tags: [Database, Open-Source, Redis]
+tags: [Redis, Cloud, Database, Open Source]
 ---
 
 Recently, Redis changed its license, causing controversy: starting from version 7.4, it uses RSALv2 and SSPLv1, no longer meeting OSI's definition of "open source software." But don't get it wrong: **Redis "going non-open source" is not a disgrace to Redis, but a disgrace to "open source/OSI"** — it reflects the obsolescence of open source [**organizations**](https://opensource.org/) and ideologies.
@@ -89,8 +88,7 @@ However, as time passed, this former dragon-slaying hero gradually became the dr
 
 Unfortunately, for confusion purposes, both cloud software and cloud hardware use the name "cloud." Therefore, the cloud story mixes idealistic glory of bringing computing power to thousands of households with greed for achieving monopoly and extracting unjust profits.
 
-{{% alert title="In 2024, the real enemy of software freedom is cloud service software!" color="danger" %}}
-{{% /alert %}}
+> [!DANGER] In 2024, the real enemy of software freedom is cloud service software!
 
 Cloud software — software that runs primarily on vendors' servers, where all your data is also stored on these servers. PaaS represented by cloud databases, and various SaaS that can only provide services through rental all belong to this category. These "cloud software" may have a client component (mobile apps, web consoles, JavaScript running in your browser), but they can only work with the vendor's server-side.
 
@@ -111,8 +109,7 @@ Today, **cloud software, not closed source or commercial software, has become th
 
 ## How Does the Free World Respond to Challenges?
 
-{{% alert title="What's important has always been software freedom" color="success" %}}
-{{% /alert %}}
+> [!SUCCESS] What's important has always been software freedom
 
 Where there's force, there's reaction force. The rise of cloud software will trigger new balancing forces. Facing cloud service challenges, many software organizations/companies have already responded, including but not limited to: using discriminatory open source licenses, legal tools and collective action, seizing cloud computing definition rights.
 

@@ -1,0 +1,49 @@
+{{- /* A landing section that lists the newest blog posts as OINK blog cards.
+
+     Registered through a section entry's `partial` key, so the home page keeps
+     the recent-articles grid the Blowfish home page had without inventing a
+     second card design:
+
+       - type: cards
+         key: recent
+         partial: landing/sections/recent-posts.html
+
+     Data keys: eyebrow / title / text / limit / columns / more{label,url}. */ -}}
+{{- $page := .page -}}
+{{- $data := .data -}}
+{{- $id := .id -}}
+{{- $limit := int ($data.limit | default 12) -}}
+{{- $columns := $data.columns | default 3 -}}
+{{- /* Every top-level column of this site is a blog section, so "recent" is
+     simply the newest dated post in any of them. */ -}}
+{{- $posts := where $page.Site.RegularPages "Type" "blog" -}}
+{{- $posts = where $posts "Date" "ne" nil -}}
+{{- $posts = first $limit ($posts.ByDate.Reverse) -}}
+<section id="{{ $id }}" class="td-landing-section td-landing-cards-section td-landing-recent{{ with $data.class }} {{ . }}{{ end }}"{{ with $data.title }} aria-labelledby="{{ $id }}-title"{{ end }}>
+  <div class="td-site-container">
+    {{- partial "landing/heading.html" (dict "page" $page "data" $data "id" $id) }}
+    {{- with $posts }}
+    <div class="td-content-cards td-blog-cards" style="--td-card-columns: {{ $columns }}">
+      {{- range . }}
+      {{- partial "shell/blog-card.html" . }}
+      {{- end }}
+    </div>
+    {{- end }}
+    {{- /* Ways out of the feed: one button per taxonomy the site wants to
+         offer, set apart from the grid rather than tucked under it. */ -}}
+    {{- with $data.more }}
+    <p class="td-landing-recent__more">
+      {{- range . }}
+      {{- $item := . -}}
+      {{- with (.url | default .href) }}
+      <a class="td-landing-button td-landing-button--ghost" href="{{ . | relLangURL }}">
+        {{- with $item.icon }}<i class="{{ . }}" aria-hidden="true"></i>{{ end }}
+        <span>{{ $item.label }}</span>
+        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+      </a>
+      {{- end }}
+      {{- end }}
+    </p>
+    {{- end }}
+  </div>
+</section>

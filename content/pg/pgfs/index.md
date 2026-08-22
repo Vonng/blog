@@ -1,10 +1,10 @@
 ---
 title: "PGFS：将数据库作为文件系统"
 date: 2025-03-21
-author: 冯若航
+authors: [vonng]
 summary: >
   利用 JuiceFS，将 PostgreSQL 变为一个带 PITR 的文件系统！
-tags: [PostgreSQL, JuiceFS]
+tags: [PostgreSQL, 对象存储]
 aliases: ["/ai/pgfs/", "/db/pgfs/"]
 ---
 

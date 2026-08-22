@@ -1,7 +1,7 @@
 ---
 title: "The pgBackRest Rescue and Open Source's Forced Price Discovery"
 date: 2026-05-05
-author: Ruohang Feng
+authors: [vonng]
 summary: >
   Seven days after pgBackRest was archived, David Steele said a coalition of sponsors was nearly in place and the project would probably live on. This was not just a heartwarming community story. It was a remarkably clean exercise in forcing the market to price an open-source commons.
 tags: [PostgreSQL, PG Ecosystem, Open Source]

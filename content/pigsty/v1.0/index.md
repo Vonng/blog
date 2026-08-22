@@ -2,8 +2,7 @@
 title: "Pigsty v1.0：正式发布，监控大修"
 linkTitle: "Pigsty v1.0 发布注记"
 date: 2021-07-26
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v1.0.0)）
+authors: [vonng]
 summary: >
   Pigsty v1.0.0 正式发布，开箱即用的开源 PostgreSQL 数据库发行版
 series: [Pigsty]

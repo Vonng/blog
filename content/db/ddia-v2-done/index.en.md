@@ -1,12 +1,12 @@
 ---
 title: "I Finished Translating the Second Edition of DDIA: An Eight-Year Parable About AI"
 date: 2026-02-15
-author: Ruohang Feng
+authors: [vonng]
 summary: >
   Codex translated DDIA's second edition in a single morning. Eight years ago,
   I spent three months translating the first edition by hand. The contrast
   reveals just how far AI has come.
-tags: [DDIA, Distributed Systems, Database, Translation]
+tags: [Distributed Systems, Database, Translation]
 ---
 
 This morning, I ran ten Codex sessions in parallel and, in less than half a day,

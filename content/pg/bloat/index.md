@@ -1,7 +1,7 @@
 ---
 title: "关系膨胀的监控与治理"
 date: 2018-10-06
-author: 冯若航
+authors: [vonng]
 summary: >
   PostgreSQL使用了MVCC作为主要并发控制技术，它有很多好处，但也会带来一些其他的影响，例如关系膨胀。
 tags: [PostgreSQL, PG管理]

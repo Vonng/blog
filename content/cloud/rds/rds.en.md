@@ -1,12 +1,11 @@
 ---
 title: "RDS: The Idiot Tax"
 date: 2023-01-30
-author: |
-  [Ruohang Feng](https://vonng.com/en/) ([@Vonng](https://vonng.com/en/)) | [WeChat](https://mp.weixin.qq.com/s/LefEAXTcBH-KBJNhXNoc7A)
+authors: [vonng]
 summary: >
   RDS pricing is absurd and insulting for large scale database & storage,
   when the open source alternatives arise, it will turn RDS into the idiot tax.
-tags: [Cloud, Cloud-Exit, RDS, DBA]
+tags: [Cloud, Cloud-Exit, RDS, PG Admin]
 ---
 
 As the season of layoffs hits big tech companies, cost-cutting and efficiency are top of mind. Public cloud databases, often referred to as the "slaughterhouse knives" of the cloud, are under increasing scrutiny. The question now is: *Can their dominance continue?*

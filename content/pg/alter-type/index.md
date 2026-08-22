@@ -1,7 +1,7 @@
 ---
 title: "在线修改主键列类型"
 date: 2021-01-15
-author: 冯若航
+authors: [vonng]
 summary: >
   如何在线修改表中列的类型，例如从INT升级为BIGINT？
 tags: [PostgreSQL, PG管理]

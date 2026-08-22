@@ -1,7 +1,7 @@
 ---
 title: "使用FIO测试磁盘性能"
 date: 2018-02-06
-author: 冯若航
+authors: [vonng]
 summary: >
   FIO可以很方便地测试磁盘IO性能。
 tags: [PostgreSQL, PG管理, 性能]

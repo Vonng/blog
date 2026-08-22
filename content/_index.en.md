@@ -1,9 +1,8 @@
 ---
-title: "Vonng"
-summary: "AI, PostgreSQL, Database, Cloud-Exit, Ruohang Feng's Blog"
+title: Vonng's Blog
+summary: "AI, PostgreSQL, databases and cloud-exit — Ruohang Feng's blog"
+images: [img/wusu.jpg]
+# Pairs with the image above: the blog shell's hero treatment lifts the
+# navbar over the picture and softens its lower edge into a gradient.
+body_class: td-shell-chrome--hero
 ---
-
-
-[Ruohang Feng](/en/about) [@Vonng](https://github.com/Vonng): [Pigsty Founder](https://pigsty.io), [FOSS Contributor](https://gitstar-ranking.com/Vonng)
-
-[PostgreSQL Mage](/en/pg), [Database Guru](/en/db), [Cloud-Exit Han Solo](/en/cloud), [AI Explorer](/en/ai)

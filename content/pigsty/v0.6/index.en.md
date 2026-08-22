@@ -2,8 +2,7 @@
 title: "Pigsty v0.6: Provisioning Upgrades"
 linkTitle: "Pigsty v0.6 Release Notes"
 date: 2021-02-19
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [Release Notes](https://github.com/pgsty/pigsty/releases/tag/v0.6.0)）
+authors: [vonng]
 summary: >
   v0.6 reworks the provisioning flow, adds exporter toggles, and makes the monitoring stack portable across environments.
 series: [Pigsty]

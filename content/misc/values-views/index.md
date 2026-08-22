@@ -1,9 +1,7 @@
 ---
 title: "世界观、价值观、人生观"
 date: 2013-06-04
-menu:
-  sidebar:
-    parent: life
+tags: [随笔]
 ---
 
 > 人难免有一天会追溯到世界本源的问题，对这些问题的回答，则是确立自己cornerstone的过程。

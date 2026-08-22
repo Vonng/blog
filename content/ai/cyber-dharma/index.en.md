@@ -3,7 +3,7 @@ title: "Cyber Dharma: A New Engineering Answer to Ancient Questions"
 date: 2026-04-16
 summary: >
   A project manifesto: why build Cyber Dharma, and what it is not.
-tags: [AI, Agent, Religion, Philosophy, Alignment]
+tags: [AI, Agent, LLM, Philosophy]
 ai: true
 ---
 

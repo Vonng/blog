@@ -2,8 +2,7 @@
 title: "Pigsty v4.5：575扩展、Silo、Valkey、Kafka与MySQL"
 linkTitle: "Pigsty v4.5 发布"
 date: 2026-08-15
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/pgsty/pigsty/releases/tag/v4.5.0)）
+authors: [vonng]
 summary: >
   Pigsty v4.5 正式发布：PostgreSQL 扩展总数来到 575 个，对象存储正式切换到 Silo，Redis 模块新增 Valkey 引擎，并带来 Kafka 与 MySQL 两个全新试点模块，外加一大批编排安全与可观测性改进。
 series: [Pigsty]

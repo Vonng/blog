@@ -2,8 +2,7 @@
 title: "Pigsty v3.0: Pluggable Kernels & 340 Extensions"
 linkTitle: "Pigsty v3.0 Release"
 date: 2024-08-25
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v3.0.0))
+authors: [vonng]
 summary: >
   Pigsty v3.0 ships 340 extensions across EL/Deb with full parity, adds pluggable kernels (Babelfish, IvorySQL, PolarDB) for MSSQL/Oracle compatibility, and delivers a local-first state-of-the-art RDS experience.
 series: [Pigsty]

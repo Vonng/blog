@@ -1,8 +1,9 @@
 ---
 title: "Modb Interviews Industry Leaders - Feng Ruohang"
 date: 2023-09-08
-author: vonng
+authors: [vonng]
 summary: Recently, a historic debate in the database industry has sparked heated discussion. The post-90s entrepreneur Feng Ruohang, known as the "ace debater" in the database community, has come into public view. Why did he participate in such technical debates that could potentially "start flame wars"? What are his views on the future development of databases? In this exclusive interview, we invite him to discuss his technical journey and hot topics in the database field!
+tags: [Essay]
 ---
 
 

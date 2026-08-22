@@ -5,9 +5,7 @@ summary: |
   神经网络受人脑启发而出现，人类社会的运作机制与神经网络训练也有着各种相似关联。读维纳《人有人的用途——控制论与社会》的一些感想。
 ai: true
 aliases: ["/misc/nn-and-society/"]
-menu:
-  sidebar:
-    parent: misc
+tags: [AI]
 ---
 
 > 神经网络受人脑启发而出现，因此人类社会的运作机制与神经网络训练也有着各种相似和关联。

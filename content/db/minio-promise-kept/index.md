@@ -1,10 +1,10 @@
 ---
 title: "续命 MinIO：承诺兑现"
 date: 2026-04-17
-author: 冯若航
+authors: [vonng]
 summary: >
   pgsty/minio 在三天内修复并发布多项高危漏洞补丁。兑现了“继续维护开源 MinIO 分支”的承诺。
-tags: [对象存储, MinIO, 安全, 开源]
+tags: [对象存储, 安全, 开源]
 ---
 
 两个月前，我在《[MinIO 已死，MinIO 复生](/db/minio-resurrect)》里立了一个 flag，承接上游的烂摊子，跟 CVE、修 Bug。

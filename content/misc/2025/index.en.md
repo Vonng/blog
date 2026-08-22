@@ -3,6 +3,7 @@ title: "2025 Year in Review: A Turning Point"
 date: 2025-12-31
 summary: |
   2025 felt unusually long. AI gave me a twentyfold productivity boost and gave Pigsty a real shot at competing with world-class distributions. From an independent open-source project growing against the odds to the practical reality of a one-person company, this is my review of the year.
+tags: [Essay]
 ---
 
 2025 felt unusually long.

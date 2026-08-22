@@ -1,14 +1,12 @@
 ---
 title: "概率论基本概念"
 date: 2017-03-27
-math: true
 summary: |
   概率论基础知识笔记，公理化基础，概率演算，计数，条件概率，随机变量与分布函数
 ai: true
 aliases: ["/misc/probability-intro/"]
+tags: [AI]
 ---
-
-{{< katex >}}
 
 ## 1. 集合论
 
@@ -281,7 +279,7 @@ $$
 
 $$
 \displaystyle
-F_X(x) = \int_{-\infty}^{x}{f_X(t)dt}, x任意
+F_X(x) = \int_{-\infty}^{x}{f_X(t)dt}, \quad \text{对任意 } x
 $$
 
 ##### 定理：PDF/PMF的性质

@@ -1,10 +1,10 @@
 ---
 title: "FastJSON Broke Again. Why?"
 date: 2026-07-31
-author: Ruohang Feng
+authors: [vonng]
 summary: >
   FastJSON has failed again. When is “ship rough, scale hard, move fast” a defensible shortcut, and when does it become an engineering habit whose bill falls to whoever comes next?
-tags: [Alibaba Cloud, Cloud]
+tags: [Cloud, Alibaba Cloud]
 ---
 
 On July 21, [Alibaba published a FastJSON security advisory](https://github.com/alibaba/fastjson2/wiki/Security-Advisory%3A-Remote-Code-Execution-in-fastjson-1.2.68%E2%80%931.2.83) for `CVE-2026-16723`, rated 9.0 by its CNA and affecting versions 1.2.68 through 1.2.83.

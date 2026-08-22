@@ -2,11 +2,10 @@
 title: AWS’s Official DynamoDB Outage Postmortem
 linkTitle: AWS’s Official DynamoDB Outage Postmortem
 date: 2025-10-24
-author: |
-  [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat](https://mp.weixin.qq.com/s/csopt3H5ZSh60vvcO-28hQ)
+authors: [vonng]
 summary: >
   AWS finally published the Oct 20 us-east-1 postmortem. I translated the key parts and added commentary on how one DNS bug toppled half the internet.
-tags: [Cloud-Outage, AWS]
+tags: [Cloud-Exit, AWS, Incident]
 ---
 
 AWS just released the official postmortem for the [Oct 20 us-east-1 meltdown](https://mp.weixin.qq.com/s/sCAOwNva__0L_iMP1QHngQ). It’s one of the rare times we get first-hand detail, so I translated it to Chinese and sprinkled in commentary. Here’s the English recap with my notes.

@@ -1,11 +1,10 @@
 ---
 title: Analyzing Alibaba-Cloud Server Computing Cost
 date: 2024-03-10
-author: |
-  [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat Official Account](https://mp.weixin.qq.com/s/rp8Dtvyo9cItBJSsvfrKjw)
+authors: [vonng]
 summary: >
   Alibaba-Cloud claimed major price cuts, but a detailed analysis of cloud server costs reveals that cloud computing and storage remain outrageously expensive. 
-tags: [Cloud-Exit, ECS]
+tags: [Cloud-Exit, Alibaba Cloud]
 ---
 
 On Crazy Thursday, February 29, 2024, Alibaba-Cloud staged a **major price cut**, with [**promotional content**](https://mp.weixin.qq.com/s/CXkqD_d-pIpTl9sM_3iHoA) flying everywhere. As the **cloud computing mudslide**, many followers asked me to comment. The flashy 20%, 50% off banners look impressive, but outsiders see the spectacle while insiders see the real deal: [**the major cost driver in cloud services is storage**](/cloud/ebs).
@@ -57,9 +56,8 @@ As shown in the table, the standard price for unit computing (1C4G) is the month
 We can use DHH's 2023 cloud exit self-built case and my personal experience with Tantan's off-cloud IDC self-built case as comparisons.
 Excluding NVMe storage, DHH's self-built pure computing unit price is **22 RMB**, Tantan's self-built unit price is **18 RMB**.
 
-{{% alert title="Self-built prices already include labor/operations costs!" color="danger" %}}
-**Please note, these cost figures already include server costs plus allocated costs for switches/racks/network/power/maintenance/operations personnel. DHH's unit price includes 50% non-server costs, while Tantan's includes 20%. If only counting server costs, self-built unit prices can drop to 10 RMB. If calculated with container platform 500% oversell ratios...**
-{{% /alert %}}
+> [!DANGER] Self-built prices already include labor/operations costs!
+> **Please note, these cost figures already include server costs plus allocated costs for switches/racks/network/power/maintenance/operations personnel. DHH's unit price includes 50% non-server costs, while Tantan's includes 20%. If only counting server costs, self-built unit prices can drop to 10 RMB. If calculated with container platform 500% oversell ratios...**
 
 Therefore, it's clear that cloud pure computing prices are 2-9 times self-built! To achieve the "ultimate elasticity" and "pay-as-you-go" touted by cloud providers, you need to pay an additional **8x** cost. If you don't care about elasticity at all and use it like normal server procurement with 5-year amortization, you still need to pay an additional **1x** cost.
 

@@ -2,8 +2,7 @@
 title: "Pigsty v2.0：开源RDS PG替代"
 linkTitle: "Pigsty v2.0 发布注记"
 date: 2023-02-26
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v2.0.0)）
+authors: [vonng]
 summary: >
   Pigsty v2.0 在安全性，兼容性，功能整合上进行了大量工作，真正成为 RDS 的本地开源替代品。
 series: [Pigsty]

@@ -1,10 +1,10 @@
 ---
 title: "CDC Change Data Capture Mechanisms"
 date: 2019-06-12
-author: "vonng"
+authors: [vonng]
 summary: >
   Change Data Capture is an interesting ETL alternative solution.
-tags: [PostgreSQL, PG-Development, CDC]
+tags: [PostgreSQL, PG Development]
 ---
 
 In actual production, we often need to synchronize database states to other places, such as synchronizing to data warehouses for analysis, to message queues for downstream consumption, or to caches to accelerate queries. Generally speaking, there are two major methods for moving state: ETL and CDC.

@@ -2,10 +2,9 @@
 title: Self-Hosting Supabase on PostgreSQL
 linkTitle: "Self-Hosting Supabase"
 date: 2024-11-25
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: Supabase is great, own your own Supabase is even better. A tutorial for self-hosting production-grade supabase on local/cloud/ VM/BMs.
-tags: [Database,Supabase]
+tags: [Database, PG Ecosystem]
 ---
 
 

@@ -2,8 +2,7 @@
 title: "Pigsty v3.2: The pig CLI, Full ARM Support, Supabase & Grafana Enhancements"
 linkTitle: "Pigsty v3.2 Release"
 date: 2024-12-29
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v3.2.0))
+authors: [vonng]
 summary: >
   Pigsty v3.2 introduces the pig CLI for PostgreSQL package management, complete ARM64 extension repository support, and Supabase & Grafana enhancements.
 series: [Pigsty]

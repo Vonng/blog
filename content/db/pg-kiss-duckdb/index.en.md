@@ -1,10 +1,10 @@
 ---
 title: "Database Planet Collision: When PG Falls for DuckDB"
 date: 2025-03-12
+authors: [vonng]
 summary: |
    If you ask me, we’re on the brink of a cosmic collision in database-land, and Postgres + DuckDB is the meteor we should all be watching.
-author: vonng
-tags: [PostgreSQL,DuckDB,Database]
+tags: [PostgreSQL, OLAP, Database]
 ---
 
 

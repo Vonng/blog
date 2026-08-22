@@ -2,8 +2,7 @@
 title: "Pigsty v2.3：丰富应用生态"
 linkTitle: "Pigsty v2.3 发布注记"
 date: 2023-08-20
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v2.3.0)）
+authors: [vonng]
 summary: >
   PGSQL/REDIS升级，NODE集群可绑VIP，Mongo初步支持与MySQL存根
 series: [Pigsty]

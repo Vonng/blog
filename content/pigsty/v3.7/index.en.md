@@ -2,8 +2,7 @@
 title: "Pigsty v3.7: Magneto Award and PG18 Ready"
 linkTitle: "Pigsty v3.7 Release"
 date: 2025-12-03
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v3.7.0))
+authors: [vonng]
 summary: >
   PostgreSQL 18 becomes the default version, EL10 and Debian 13 support added, extensions reach 437, and Pigsty wins the PostgreSQL Magneto Award.
 series: [Pigsty]

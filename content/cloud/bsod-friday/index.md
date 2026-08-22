@@ -1,10 +1,10 @@
 ---
 title: "蓝屏星期五：甲乙双方都是草台班子"
 date: 2024-07-23
-author: 冯若航
+authors: [vonng]
 summary: >
   甲乙双方都没有做好爆炸半径的控制，导致了这次史诗级的全球安全事件，这次事件将极大利好本地优先的软件理念。
-tags: [下云, CrowdStrike, 云故障]
+tags: [下云, 故障复盘, Cloudflare]
 ---
 
 

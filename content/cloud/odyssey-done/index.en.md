@@ -1,11 +1,10 @@
 ---
 title: "DHH: Cloud-Exit Saves Over Ten Million, More Than Expected!"
 date: 2023-07-07
-author: |
-  [DHH](https://world.hey.com/dhh) | Trans: [Feng Ruohang](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [WeChat Official Account](https://mp.weixin.qq.com/s/mknFXO5DSfxw7st8hhxjBQ)
+authors: [vonng]
 summary: >
   DHH migrated their seven cloud applications from AWS to their own hardware. 2024 is the first year of full savings realization. They're delighted to find the savings exceed initial estimates.
-tags: [Cloud-Exit,DHH]
+tags: [Cloud-Exit, Translation]
 ---
 
 

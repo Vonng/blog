@@ -3,7 +3,7 @@ title: "Solving the 24-Point Card Game with a Single SQL Query"
 date: 2024-12-03
 summary: >
   A fun but devious challenge: solve the 24-point card game in SQL. Here is the PostgreSQL answer.
-tags: [Database, PostgreSQL, MySQL]
+tags: [PostgreSQL, MySQL, Database]
 ---
 
 Here is the challenge: [Database Programming Contest: Solve the 24-Point Card Game with One SQL Query](https://www.ninedata.cloud/sql_poker24), hosted by the database tooling platform NineData.

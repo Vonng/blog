@@ -1,7 +1,7 @@
 ---
 title: "PipelineDB快速上手"
 date: 2018-09-07
-author: 冯若航
+authors: [vonng]
 summary: >
   PipelineDB是PostgreSQL的一个扩展插件，提供流式数据处理的相关功能。
 tags: [PostgreSQL, PG管理, 扩展]

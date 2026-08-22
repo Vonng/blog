@@ -2,8 +2,7 @@
 title: "Pigsty v1.0: GA Release with Monitoring Overhaul"
 linkTitle: "Pigsty v1.0 Release"
 date: 2021-07-26
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v1.0.0))
+authors: [vonng]
 summary: >
   Pigsty v1.0.0 GA is here — a batteries-included, open-source PostgreSQL distribution ready for production.
 series: [Pigsty]

@@ -2,7 +2,7 @@
 title: "瞬间克隆 PostgreSQL 数据库，无需黑魔法"
 linkTitle: "瞬间克隆 PG 数据库，无需黑魔法"
 date: 2026-07-06
-author: 冯若航
+authors: [vonng]
 summary: >
   pig v1.5 新增 pig pg clone 与 pig pg fork，把 PostgreSQL 18 的瞬间克隆能力封装成 Agent Native CLI。
 tags: [PostgreSQL, Pigsty, 工具]

@@ -1,11 +1,10 @@
 ---
 title: "The World in Ten Years: What Gets Cheap, What Gets Expensive"
 date: 2026-08-16
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   Starting with the price curve of AI inference, this essay projects how the world will be repriced by 2036: intelligence will become as cheap and ubiquitous as electricity, while electricity itself, trust, accountability, attention, physical presence, and judgment become the truly scarce goods.
-tags: [AI, Future]
+tags: [AI, Society]
 ai_generated: 99
 ---
 

@@ -1,11 +1,10 @@
 ---
 title: "Claude Fable First Impressions: The Pendulum Swings Back"
 date: 2026-06-10
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   Claude Fable is genuinely insightful and deserves to be called the new SOTA. But its high price, dynamic downgrades, limited subscription window, and mandatory data retention badly undermine the experience.
-tags: [AI, Claude, Anthropic, Fable, Agent]
+tags: [AI, Claude, Agent]
 ai: true
 ---
 

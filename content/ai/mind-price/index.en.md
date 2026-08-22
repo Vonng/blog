@@ -1,11 +1,10 @@
 ---
 title: "The Cognitive Price Revolution: AI's Impact on the Economy and the Future"
 date: 2026-06-11
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   AI's economic significance is not merely that it has become smarter, but that the price of average cognition is collapsing. A productivity explosion is almost certain; whether it becomes broad prosperity depends on whether distribution catches up.
-tags: [AI, Economics, Employment, Productivity, Distribution]
+tags: [AI, Cost, Performance, Repository]
 ai: true
 ---
 

@@ -3,9 +3,7 @@ title: "新年随想"
 date: 2018-12-10
 summary: |
   前途是不一定是光明的，道路肯定是曲折的。新年难得有闲暇独处，写下此篇随笔，想到哪儿就写到哪。
-menu:
-  sidebar:
-    parent: misc
+tags: [随笔]
 ---
 
 

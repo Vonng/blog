@@ -1,10 +1,9 @@
 ---
 title: Alicloud “Borrowed” Supabase, the giant free loader
 date: 2025-11-06
-author: |
-  [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: "Founders here get asked the same question over and over: what if Alibaba builds the same thing? Alicloud RDS just launched Supabase as a managed service. Exhibit A."
-tags: [Alibaba-Cloud, Open-Source, Supabase]
+tags: [Alibaba Cloud, PG Ecosystem, Open Source]
 ---
 
 Chinese founders hear the nightmare scenario constantly: “What happens when Alibaba shows up?” Well, Alicloud RDS just shipped Supabase as a first-party feature. This is what it looks like when a hyperscaler parachutes into your niche.

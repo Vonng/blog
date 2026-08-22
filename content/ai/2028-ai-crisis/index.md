@@ -4,7 +4,7 @@ date: 2026-02-24
 author: Citrini Research
 summary: >
   这是一篇从 2028 年回望当下的思想实验，试图建模 AI 导致人类智能溢价坍塌后，劳动力、信用与金融系统可能出现的连锁冲击。
-tags: [AI, 金融, 翻译]
+tags: [AI, 成本, 翻译]
 ai: true
 aliases: ["/misc/2028-ai-crisis/"]
 ---

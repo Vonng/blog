@@ -1,11 +1,10 @@
 ---
 title: "Fifty Years of Love and War: File Systems, Databases, and the Agent-Era Storage Endgame"
 date: 2026-07-03
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   File systems and databases have spent fifty years fighting and borrowing from each other. The agent era may seem to put file systems back on top, but the real winner may be databases that learn to speak the file system's dialect: models provide understanding, databases provide guarantees, and discovery comes from a protocol layer where ls works on everything.
-tags: [AI, Agent, Database, File System, PostgreSQL]
+tags: [AI, Agent, PostgreSQL, Database]
 ai: true
 ---
 

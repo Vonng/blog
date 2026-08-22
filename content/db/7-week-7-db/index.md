@@ -5,7 +5,7 @@ authors: [matt-blewitt]
 origin: "https://matt.blwt.io/post/7-databases-in-7-weeks-for-2025/"
 summary: >
   PostgreSQL是无聊数据库之王？2025年值得深入学习的七个数据库：PostgreSQL、SQLite、DuckDB、ClickHouse、FoundationDB、TigerBeetle、CockroachDB，每个都值得花一周时间研究。
-tags: [数据库, PostgreSQL, SQLite, DuckDB, ClickHouse, 翻译]
+tags: [PostgreSQL, OLAP, 数据库, 翻译]
 ---
 
 > 作者：Matt Blewitt，原文：七周七数据库（2025年）

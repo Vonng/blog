@@ -2,8 +2,7 @@
 title: "Pigsty v0.3: First Public Beta"
 linkTitle: "Pigsty v0.3 Release Notes"
 date: 2020-10-24
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [Release Notes](https://github.com/pgsty/pigsty/releases/tag/v0.3.0)）
+authors: [vonng]
 summary: >
   Pigsty v0.3.0, the first public beta, lands with eight battle-tested dashboards and an offline bundle.
 series: [Pigsty]

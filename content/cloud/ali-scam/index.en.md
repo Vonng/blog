@@ -1,10 +1,10 @@
 ---
 title: "Xianyu, Qianwen, Alipay: Platform Trust 'Empowers' a Scam"
 date: 2026-06-15
-author: Ruohang Feng
+authors: [vonng]
 summary: >
   Scammers hijacked Qianwen's trusted identity, then used a single Xianyu QR code to run a seamless phishing scam through official apps and trusted domains across Alibaba's ecosystem. I hope this case helps more people avoid the same trap.
-tags: [Alibaba-Cloud, Alipay, Xianyu, Security]
+tags: [Alibaba Cloud, Security, Business]
 ---
 
 My cousin messaged me today: she had been scammed on Xianyu, Alibaba's secondhand marketplace, while trying to buy a Switch 2. She lost RMB 2,300. My first instinct was to laugh. Your mother is a police detective—so much for anti-scam education at home. How did you still fall for one? Counterfeit goods? An off-platform payment? Let me see what happened.

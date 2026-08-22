@@ -2,8 +2,7 @@
 title: "Pigsty v3.1: One-Click Supabase, PG17 Default, ARM & Ubuntu 24"
 linkTitle: "Pigsty v3.1 Release"
 date: 2024-11-24
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v3.1.0))
+authors: [vonng]
 summary: >
   Pigsty v3.1 makes PostgreSQL 17 the default, delivers one-click Supabase self-hosting, adds ARM64 and Ubuntu 24.04 support, and simplifies configuration management.
 series: [Pigsty]

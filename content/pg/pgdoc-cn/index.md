@@ -1,7 +1,7 @@
 ---
 title: "PG 五大版本中文文档已就绪，欢迎查阅！"
 date: 2026-03-27
-author: 冯若航
+authors: [vonng]
 summary: >
   PG.center 现已正式上线 PostgreSQL 18、17、16、15、14 五个生命周期内大版本的中文文档，欢迎查阅与反馈。
 tags: [PostgreSQL, 文档, 翻译]

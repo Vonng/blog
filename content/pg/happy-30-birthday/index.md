@@ -2,7 +2,7 @@
 title: "PostgreSQL 三十岁生日快乐"
 linkTitle: "PG 三十岁生日快乐"
 date: 2026-07-08
-author: 冯若航
+authors: [vonng]
 summary: >
   1996 年 7 月 8 日，PostgreSQL 社区接过 Postgres95 的代码火种。三十年后，它已经从伯克利实验室走成了全球数据库生态的默认底座。
 tags: [PostgreSQL, PG生态, 开源]

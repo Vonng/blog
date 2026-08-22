@@ -1,9 +1,10 @@
 ---
 title: "The WeChat Photo Album Access Issue"
 date: 2021-10-09
-author: vonng
+authors: [vonng]
 summary: |
   I saw news about WeChat accessing user photo albums in the background. While such shady behavior from Chinese apps doesn't surprise me, in the spirit of seeking truth, I got up this morning to investigate whether WeChat is actually doing something malicious.
+tags: [Essay]
 ---
 
 > [Original WeChat Official Account Article](https://mp.weixin.qq.com/s/x0zHL7e2nTpf_UTUHxqLJg)

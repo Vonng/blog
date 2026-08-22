@@ -1,0 +1,41 @@
+{{- /* The home page's opening: the page's own featured image painted
+     full-bleed behind the copy, the way `featured_image: hero` opens a blog
+     article, with one eyebrow, one title and one paragraph over it.
+
+       - type: hero
+         partial: landing/sections/hero-featured.html
+
+     The image comes from `images` in content/_index.md through the theme's
+     own resolver, so the backdrop and the share card are always the same
+     file. Data keys: eyebrow / title / lead / portrait / portrait_alt. */ -}}
+{{- $page := .page -}}
+{{- $data := .data -}}
+{{- $id := .id -}}
+{{- $featured := partial "featured-image-mode.html" $page -}}
+<section id="{{ $id }}" class="td-landing-section td-hero-featured{{ if $featured }} td-hero-featured--with-image{{ end }}" aria-labelledby="{{ $id }}-title">
+  {{- if $featured }}{{ partial "featured-image-article.html" (dict "page" $page "mode" "hero") }}{{ end }}
+  <div class="td-site-container td-hero-featured__grid">
+    <div class="td-hero-featured__copy">
+      {{- with $data.eyebrow }}
+      <p class="td-hero-featured__eyebrow">
+        <span class="td-landing-status-dot" aria-hidden="true"></span>
+        <span>{{ partial "landing/markdown.html" (dict "page" $page "value" .) }}</span>
+      </p>
+      {{- end }}
+      <h1 class="td-hero-featured__title" id="{{ $id }}-title">
+        {{- partial "landing/markdown.html" (dict "page" $page "value" ($data.title | default $page.Site.Title)) -}}
+      </h1>
+      {{- with $data.lead }}
+      <div class="td-hero-featured__lead">{{ partial "landing/markdown-block.html" (dict "page" $page "value" .) }}</div>
+      {{- end }}
+    </div>
+    {{- with $data.portrait }}
+    {{- $src := partial "content/url.html" (dict
+      "name" "hero-featured" "parameter" "portrait" "position" $page.Path
+      "value" (printf "%v" .) "kind" "image") }}
+    <div class="td-hero-featured__portrait">
+      <img src="{{ $src.href }}" alt="{{ $data.portrait_alt | default "" }}" width="320" height="320" decoding="async">
+    </div>
+    {{- end }}
+  </div>
+</section>

@@ -1,9 +1,10 @@
 ---
 title: "New Year Reflections"
 date: 2018-12-10
-author: vonng
+authors: [vonng]
 summary: |
   The future is not necessarily bright, but the path is definitely winding. During this rare leisure time alone in the New Year, I write these random thoughts, writing wherever my mind wanders.
+tags: [Essay]
 ---
 
 

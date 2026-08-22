@@ -2,8 +2,7 @@
 title: "Pigsty v4.3: 510 Extensions & Ubuntu 26"
 linkTitle: "Pigsty v4.3: 510 Extensions & Ubuntu 26"
 date: 2026-05-04
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v4.3.0))
+authors: [vonng]
 summary: >
   Pigsty v4.3 adds 50 PostgreSQL extensions, bringing the total to 510. It also adds Ubuntu 26.04 x86_64/arm64 support, refreshes Supabase, pgEdge, PolarDB, Grafana, MinIO, and a batch of infra packages.
 series: [Pigsty]

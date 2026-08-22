@@ -2,8 +2,7 @@
 title: "Pigsty v3.6：全能PG发行版的关键一步"
 linkTitle: "Pigsty v3.6 发布注记"
 date: 2025-07-25
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v3.6.0)）
+authors: [vonng]
 summary: >
   全新文档站上线，新增PITR剧本与备份恢复教程，Percona PG TDE内核支持，Supabase自建体验优化。
 series: [Pigsty]

@@ -2,7 +2,6 @@
 title: "Column: Cloud-Exit"
 date: 2025-08-08
 summary: A whole generation of developers has been told “cloud-first.” This column collects data, case studies, and commentary on the real economics—and traps—of public cloud rental models.
-showAuthor: true
 tags: [Cloud-Exit]
 ---
 

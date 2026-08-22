@@ -1,0 +1,29 @@
+brand:
+  name: VONNG
+  tagline: '**Ruohang Feng** · database guru, cloud-exit evangelist'
+  slogan: On PostgreSQL, databases, cloud-exit and AI
+columns:
+  - title: Columns
+    links:
+      - { label: Database Guru, url: db/ }
+      - { label: Cloud-Exiter, url: cloud/ }
+      - { label: PostgreSQL Mage, url: pg/ }
+      - { label: AI Explorer, url: ai/ }
+  - title: More
+    links:
+      - { label: Pigsty releases, url: pigsty/ }
+      - { label: Miscellaneous, url: misc/ }
+      - { label: Travel notes, url: trip/ }
+      - { label: About, url: about/ }
+  - title: Indexes
+    links:
+      - { label: Tags, url: tags/ }
+      - { label: Categories, url: categories/ }
+      - { label: Authors, url: authors/ }
+      - { label: Series, url: series/ }
+  - title: Portfolio
+    links:
+      - { label: Pigsty, url: 'https://pigsty.io', external: true }
+      - { label: PGEXT CLOUD, url: 'https://pgext.cloud', external: true }
+      - { label: DDIA in Chinese, url: 'https://ddia.vonng.com', external: true }
+      - { label: GitHub, url: 'https://github.com/Vonng', external: true }

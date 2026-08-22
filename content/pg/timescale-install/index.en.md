@@ -1,10 +1,10 @@
 ---
 title: "TimescaleDB Quick Start"
 date: 2018-09-07
-author: "vonng"
+authors: [vonng]
 summary: >
   TimescaleDB is a PostgreSQL extension plugin that provides time-series database functionality.
-tags: [PostgreSQL, PG-Admin, Extension]
+tags: [PostgreSQL, PG Admin, Extension]
 ---
 
 * Official website: https://www.timescale.com

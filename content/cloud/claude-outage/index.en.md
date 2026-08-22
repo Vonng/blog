@@ -1,10 +1,10 @@
 ---
 title: "Claude's Global Outage: Missiles or a Success Tax?"
 date: 2026-03-03
-author: vonng
+authors: [vonng]
 summary: >
   Claude went down globally on March 2, 2026. The cinematic theory blamed drone strikes on AWS in the Middle East, but the failure pattern points much more strongly to a front-end and authentication crunch triggered by explosive user growth.
-tags: [AI, Cloud Outage, Claude]
+tags: [AI, Claude, Incident]
 ai: true
 aliases: ["/ai/claude-outage/"]
 ---

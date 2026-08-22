@@ -1,9 +1,10 @@
 ---
 title: "Post-90s, Quit Job to Start Business, Says Will Crush Cloud Databases"
 date: 2022-07-07
-author: "vonng"
+authors: [vonng]
 summary: |
   Recently gave an interview to OSC Open-Source China, discussing the motivation behind quitting my full-time job to start a business with Pigsty: making PostgreSQL easy to use for everyone, and crushing cloud databases!
+tags: [Essay]
 ---
 
 > [Original WeChat Article](https://mp.weixin.qq.com/s/I7OA0thv9Dwvj4zoxIOhJQ) | [Open-Source China Article](https://my.oschina.net/oscpyaqxylk/blog/5548404)

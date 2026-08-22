@@ -2,8 +2,7 @@
 title: "Pigsty v1.5：Docker应用支持，基础设施自监控"
 linkTitle: "Pigsty v1.5 发布注记"
 date: 2022-05-17
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v1.5.0)）
+authors: [vonng]
 summary: >
   完善的Docker支持，基础设施自我监控，ETCD作为DCS，更好的冷备份支持，CMDB改进。
 series: [Pigsty]

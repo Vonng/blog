@@ -4,7 +4,7 @@ linkTitle: "Claude Code 免翻上手教程"
 date: 2026-01-04
 summary: >
   如何不翻墙下载安装使用 Claude Code？如何用 Claude 十分之一的成本实现近似的效果？一行命令免翻装好 CC！以及 GLM 4.7 到底能不能吊打 Claude？
-tags: [AI,Agent]
+tags: [AI, Agent]
 ai: true
 aliases: ["/db/claude-code-intro/"]
 ---

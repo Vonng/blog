@@ -1,9 +1,10 @@
 ---
 title: "New Year Pilgrimage: Yubeng Mountain Circuit"
 date: 2021-01-05
-author: vonng
+authors: [vonng]
 summary: |
   The disaster-filled year 2020 required proper blessings. Completed the Meili inner circuit in 3 days - Sacred Waterfall, Sacred Lake, Ice Lake.
+tags: [Travel]
 ---
 
 The disaster-filled year 2020 required proper blessings. Completed the Meili inner circuit in 3 days - Sacred Waterfall, Sacred Lake, Ice Lake.

@@ -1,11 +1,10 @@
 ---
 title: "PostgreSQL Logical Replication Deep Dive"
 date: 2021-03-03
-author: |
-  [Vonng](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+authors: [vonng]
 summary: >
   This article introduces the principles and best practices of logical replication in PostgreSQL 13.
-tags: [PostgreSQL,PG-Admin]
+tags: [PostgreSQL, PG Admin]
 ---
 
 ------

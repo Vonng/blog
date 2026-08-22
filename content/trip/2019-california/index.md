@@ -3,9 +3,7 @@ title: "山巅之城：加州自驾"
 date: 2019-03-31
 summary: |
   自驾一周，库比蒂诺，洛杉矶，旧金山，优胜美地
-menu:
-  sidebar:
-    parent: trip
+tags: [旅行]
 ---
 
 

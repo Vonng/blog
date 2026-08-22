@@ -4,7 +4,7 @@ date: 2026-02-17
 summary: >
   AI 正在以远超历史经验的速度重塑知识工作。真正的挑战不是“会不会用 AI”，而是能否在缓冲期结束前完成认知与能力迁移。
 categories: [BB]
-tags: [AI, 技术变革, 职业发展, 社会观察]
+tags: [AI, 社会观察, 职业]
 ai: true
 aliases: ["/db/new-year-ai-change/"]
 ---

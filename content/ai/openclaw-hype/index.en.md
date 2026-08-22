@@ -1,10 +1,10 @@
 ---
 title: "OpenClaw Hype: Foam on Top of the Productivity Revolution"
 date: 2026-03-09
-author: vonng
+authors: [vonng]
 summary: >
   OpenClaw looks exciting because it turns agents into a chat-style experience. But the real productivity gains come from high-capability subscription agents and disciplined workflows, not from lobster-flavored wrappers.
-tags: [AI, Agent, Security, Cost, Claude Code, Codex]
+tags: [AI, Agent, Codex, Security]
 ai: true
 aliases: ["/db/openclaw-hype/"]
 ---

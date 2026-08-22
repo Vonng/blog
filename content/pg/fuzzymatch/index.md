@@ -1,10 +1,10 @@
 ---
 title: "高级模糊查询的实现"
 date: 2021-03-05
-author: 冯若航
+authors: [vonng]
 summary: >
   如何在PostgreSQL中实现比较复杂的模糊查询逻辑？
-tags: [PostgreSQL, PG开发, 全文检索]
+tags: [PostgreSQL, PG开发]
 ---
 
 

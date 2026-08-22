@@ -2,7 +2,7 @@
 title: "Instantly Clone PostgreSQL Databases—No Black Magic Required"
 linkTitle: "Instantly Clone PG Databases—No Black Magic Required"
 date: 2026-07-06
-author: Ruohang Feng
+authors: [vonng]
 summary: >
   Pig v1.5 adds pig pg clone and pig pg fork, wrapping PostgreSQL 18's instant cloning capabilities in an agent-native CLI.
 tags: [PostgreSQL, Pigsty, Tools]

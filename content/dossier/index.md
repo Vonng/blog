@@ -4,12 +4,10 @@ summary: "本文档的英文版本可在 /en/dossier/ 查看。"
 description: "PostgreSQL Contributor Dossier 的中文占位页，指向英文原文。"
 date: 2026-04-26
 layout: dossier
-showDate: false
-showAuthor: false
-showReadingTime: false
-showWordCount: false
-showTableOfContents: false
-showComments: false
+reading_time: false
+notoc: true
+comments: false
+tags: []
 ---
 
 <article class="dossier" aria-labelledby="dossier-title">

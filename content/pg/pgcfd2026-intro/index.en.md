@@ -2,10 +2,10 @@
 title: "PGConf.Dev 2026 Opens Today in Vancouver"
 linkTitle: "PGConf.Dev 2026 Opens"
 date: 2026-05-19
-author: Ruohang Feng
+authors: [vonng]
 summary: >
   PGConf.Dev 2026 opens in Vancouver as the PostgreSQL project marks its 30th anniversary. I will also be speaking on Extensions for Everyone.
-tags: [PostgreSQL, PG Ecosystem, Conference]
+tags: [PostgreSQL, PG Ecosystem]
 ---
 
 On May 19, Vancouver time, [PGConf.Dev 2026](https://2026.pgconf.dev/) officially gets underway. This year's venue is Simon Fraser University's downtown campus, SFU Vancouver Harbour Centre. The conference has returned to Vancouver, host city of the inaugural PGConf.Dev.

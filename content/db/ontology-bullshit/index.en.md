@@ -4,7 +4,7 @@ date: 2026-02-21
 summary: >
   Ontology is largely a data-modeling method. In enterprise practice, much of it overlaps with familiar
   database concepts, while the framing can make it feel newer and more differentiated than it really is.
-tags: [ontology, databases, industry]
+tags: [Database, Philosophy, Commentary]
 ---
 
 

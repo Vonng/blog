@@ -1,15 +1,12 @@
 ---
 title: "AI 会有自我意识吗？"
 date: 2023-04-10
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+authors: [vonng]
 summary: >
   AI大模型可以有意识，但不一定有自我意识。“意识”这个词到底是从哪里的来的，我们可以从认知心理学，神经网络与佛教唯识论三个角度去展开。看完《万神殿》后的一点感想。 
 ai: true
 aliases: ["/misc/ai-conscious/"]
-menu:
-  sidebar:
-    parent: misc
+tags: [AI]
 ---
 
 > [微信公众号原文](https://mp.weixin.qq.com/s/clM2f2f2-EPa4EVBIpznfw)

@@ -1,10 +1,10 @@
 ---
 title: Stop Arguing, The AI Era Database Has Been Settled
 date: 2025-06-03
+authors: [vonng]
 summary: |
   The database for the AI era has been settled. Capital markets are making intensive moves on PostgreSQL targets, with PG having become the default database for the AI era.
-author: vonng
-tags: [Database, AI, PostgreSQL]
+tags: [AI, PostgreSQL, Database, Open Source]
 ai: true
 aliases: ["/ai/db-for-ai/"]
 ---

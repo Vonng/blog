@@ -1,14 +1,12 @@
 ---
 title: "神经网络基本原理"
 date: 2017-05-11
-math: true
 summary: |
   神经网络从大脑的工作原理得到启发，可用于解决通用的学习问题。本文介绍神经网络的基本原理与实践
 ai: true
 aliases: ["/misc/neuron-network/"]
+tags: [AI]
 ---
-
-{{< katex >}}
 
 > 神经网络从大脑的工作原理得到启发，可用于解决通用的学习问题。本文介绍神经网络的基本原理与实践
 
@@ -46,7 +44,7 @@ a
      \left[ \begin{matrix}
          w_{1} & ⋯  & w_{n} \\
      \end{matrix}\right]  ·
-     \left[ \begin{array}{x} x_1 \\ ⋮ \\ ⋮ \\ x_n \end{array}\right] +
+     \left[ \begin{array}{c} x_1 \\ ⋮ \\ ⋮ \\ x_n \end{array}\right] +
      b
 )
 $$
@@ -82,15 +80,15 @@ $$
 
 <div>
 $$
-\left[ \begin{array}{a} a_1 \\ ⋮ \\ a_s \end{array}\right]
+\left[ \begin{array}{c} a_1 \\ ⋮ \\ a_s \end{array}\right]
 = \sigma(
      \left[ \begin{matrix}
          w_{1,1} & ⋯  & w_{1,n} \\
          ⋮ & ⋱  & ⋮  \\
          w_{s,1} & ⋯  & w_{s,n} \\
      \end{matrix}\right]  ·
-     \left[ \begin{array}{x} x_1 \\ ⋮ \\ ⋮ \\ x_n \end{array}\right] +
-     \left[ \begin{array}{b} b_1 \\ ⋮ \\ b_s \end{array}\right]
+     \left[ \begin{array}{c} x_1 \\ ⋮ \\ ⋮ \\ x_n \end{array}\right] +
+     \left[ \begin{array}{c} b_1 \\ ⋮ \\ b_s \end{array}\right]
 )
 $$
 </div>
@@ -117,15 +115,15 @@ $$
 ##### 激活函数矩阵表达式
 
 $$
-\left[ \begin{array}{a} a^l_1 \\ ⋮ \\ a^l_{d_l} \end{array}\right]
+\left[ \begin{array}{c} a^l_1 \\ ⋮ \\ a^l_{d_l} \end{array}\right]
 = \sigma(
      \left[ \begin{matrix}
          w^l_{1,1} & ⋯  & w^l_{1,d_{l-1}} \\
          ⋮ & ⋱  & ⋮  \\
          w^l_{d_l,1} & ⋯  & w^l_{d_l,d_{l-1}} \\
      \end{matrix}\right]  ·
-     \left[ \begin{array}{x} a^{l-1}_1 \\ ⋮ \\ ⋮ \\ a^{l-1}_{d_{l-1}} \end{array}\right] +
-     \left[ \begin{array}{b} b^l_1 \\ ⋮ \\ b^l_{d_l} \end{array}\right])
+     \left[ \begin{array}{c} a^{l-1}_1 \\ ⋮ \\ ⋮ \\ a^{l-1}_{d_{l-1}} \end{array}\right] +
+     \left[ \begin{array}{c} b^l_1 \\ ⋮ \\ b^l_{d_l} \end{array}\right])
 $$
 
 #### 权值矩阵的涵义

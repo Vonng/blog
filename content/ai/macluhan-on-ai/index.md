@@ -4,7 +4,7 @@ date: 2026-02-18
 summary: >
   用麦克卢汉的“媒介即讯息”“延伸与截肢”“冷热媒介”“后视镜效应”“媒介四定律”解剖 AI，讨论其对人类认知习惯、理解能力与社会结构的深层影响。
 categories: [BB]
-tags: [AI, 麦克卢汉, 媒介理论, 认知]
+tags: [AI, 哲学]
 ai: true
 aliases: ["/db/macluhan-on-ai/"]
 ---

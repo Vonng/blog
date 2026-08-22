@@ -1,10 +1,10 @@
 ---
 title: "小脑：智能的另一半，最强的 AI 还没碰到"
 date: 2026-06-10
-author: 冯若航
+authors: [vonng]
 summary: >
   小脑这条线，让我重新看待 AI 的边界：大模型已经吃下人类显性知识，也开始通过 agentic RL 获得干预数据；但它还缺少个体化历史的容器。
-tags: [AI, 小脑, 默会知识, Agent, 强化学习]
+tags: [AI, Agent, 机器学习, 哲学]
 ai: true
 ---
 

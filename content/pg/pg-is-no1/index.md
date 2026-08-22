@@ -1,7 +1,7 @@
 ---
 title: "PostgreSQL：最成功的数据库"
 date: 2023-06-28
-author: 冯若航
+authors: [vonng]
 summary: >
   数据库终局已现，PostgreSQL称王。PG在SF2023开发者调研中拿下大满贯，占住了Linux之于服务器操作系统的生态位。
 tags: [PostgreSQL, PG生态]

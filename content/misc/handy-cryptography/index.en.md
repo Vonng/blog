@@ -1,8 +1,9 @@
 ---
 title: "Practical Cryptography Made Simple"
 date: 2020-03-12
-author: "vonng"
+authors: [vonng]
 summary: "A classic problem in cryptography is how to transmit data securely and reliably through insecure channels. Protecting your chats and communications from surveillance and monitoring - easily achievable with just a computer."
+tags: [Essay]
 ---
 
 > [Original WeChat Article](https://mp.weixin.qq.com/s/zUu5PlN_Kzd2-RS10R7wMw)

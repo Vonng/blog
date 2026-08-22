@@ -1,14 +1,12 @@
 ---
 title: "信息论基础知识：熵"
 date: 2016-05-18
-math: true
 summary: |
   《信息论基础》读书笔记：什么是熵？熵是随机变量不确定度的度量，也是平均意义上描述随机变量所需的信息的度量。
 ai: true
 aliases: ["/misc/info-entropy/"]
+tags: [AI]
 ---
-
-{{< katex >}}
 
 信息论回答了通信理论中的两个基本问题：
 

@@ -3,7 +3,7 @@ title: "When Coding Becomes Cheap, What Still Matters?"
 date: 2026-02-10
 summary: >
   Codex 5.3 xHigh pushed my workflow past a tipping point: writing code is no longer the scarce resource. The real leverage is design quality and engineering acceptance. This is the practical loop I use to ship reliable software with AI agents.
-tags: [AI, Agent, Codex, Claude, Software Engineering]
+tags: [AI, Agent, Codex, Claude]
 ai: true
 aliases: ["/db/try-codex/"]
 ---

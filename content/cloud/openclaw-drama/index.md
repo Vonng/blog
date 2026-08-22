@@ -1,11 +1,11 @@
 ---
 title: 'OpenClaw 小龙虾翻车：不测就发的后果'
 date: 2026-03-25
-author: 冯若航
+authors: [vonng]
 summary: >
   OpenClaw v2026.3.22 发布到 npm 时漏掉了控制台前端和相关构建资源。
   这次翻车暴露出的，不只是一个打包事故，而是发布流程里缺少最基本的安装后验证。
-tags: [开源, AI, Agent]
+tags: [AI, Agent, 开源]
 ai: true
 aliases: ["/ai/openclaw-drama/"]
 ---

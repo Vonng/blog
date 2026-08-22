@@ -2,10 +2,10 @@
 title: "Incident: PostgreSQL Extension Installation Causes Connection Failure"
 linkTitle: "Incident: Extension Causes Connection Denial"
 date: 2019-06-13
-author: vonng
+authors: [vonng]
 summary: >
   Today encountered an interesting case where a customer reported database connection issues caused by extensions.
-tags: [PostgreSQL, PG-Admin, Extension, Incident-Report]
+tags: [PostgreSQL, PG Admin, Extension, Incident]
 ---
 
 > Author: [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))

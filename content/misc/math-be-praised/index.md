@@ -3,9 +3,7 @@ title: "赞美数学"
 date: 2014-04-15
 summary: |
   数学是多么美妙的一门学问啊
-menu:
-  sidebar:
-    parent: note
+tags: [随笔]
 ---
 
 人类理性世界正中央

@@ -1,7 +1,7 @@
 ---
 title: "What Is a PostgreSQL Distribution?"
 date: 2026-07-04
-author: Ruohang Feng
+authors: [vonng]
 summary: >
   Starting with Linux distributions, this essay explains what a “PostgreSQL distribution” actually is: three layers, two paths, and one core idea.
 tags: [PostgreSQL, Pigsty]

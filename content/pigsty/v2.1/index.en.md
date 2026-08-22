@@ -2,8 +2,7 @@
 title: "Pigsty v2.1: Vector + Full PG Version Support!"
 linkTitle: "Pigsty v2.1 Release"
 date: 2023-06-09
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v2.1.0))
+authors: [vonng]
 summary: >
   Pigsty v2.1 provides support for PostgreSQL 12 through 16, with PGVector for AI embeddings.
 series: [Pigsty]

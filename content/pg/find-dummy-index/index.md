@@ -1,7 +1,7 @@
 ---
 title: "找出没用过的索引"
 date: 2018-02-04
-author: 冯若航
+authors: [vonng]
 summary: >
   索引很有用，但不是免费的。没用到的索引是一种浪费，使用这里的方法找出未使用的索引。
 tags: [PostgreSQL, PG管理]

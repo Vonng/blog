@@ -1,8 +1,9 @@
 ---
 title: "2013 Year-End Summary"
 date: 2014-01-01
-author: vonng
+authors: [vonng]
 summary: In the final half hour of 2013, reflecting on my experiences this year fills me with deep emotion.
+tags: [Essay]
 ---
 
 In the final half hour of 2013, reflecting on my experiences this year fills me with deep emotion.

@@ -1,13 +1,11 @@
 ---
 title: "FinOps: Endgame Cloud-Exit"
 date: 2023-07-06
-author: |
-  [Ruohang Feng](https://vonng.com/en/) ([@Vonng](https://vonng.com/en/)) | [WeChat](https://mp.weixin.qq.com/s/Yp_PU8nmyK-NVq0clD98RQ)
+authors: [vonng]
 summary: |
   At the SACC 2023 FinOps session, I fiercely criticized cloud vendors. This is a transcript of my speech, introducing the ultimate FinOps concept — Cloud-Exit and its implementation path.
-module: []
 categories: [Cloud]
-tags: [Cloud, Cloud-Exit, FinOps]
+tags: [Cloud-Exit, Cloud, Cost]
 ---
 
 At the SACC 2023 FinOps session, I fiercely criticized cloud vendors. This is a transcript of my speech, introducing the ultimate FinOps concept — **Cloud-Exit** and its best practice.

@@ -2,8 +2,7 @@
 title: "Pigsty v2.4：监控云数据库"
 linkTitle: "Pigsty v2.4 发布注记"
 date: 2023-09-14
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v2.4.0)）
+authors: [vonng]
 summary: >
   PG16，监控RDS，服务咨询支持，新扩展：中文分词全文检索/图/HTTP/嵌入等
 series: [Pigsty]

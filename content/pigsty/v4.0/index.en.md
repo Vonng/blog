@@ -2,8 +2,7 @@
 title: "Pigsty v4.0: Into the AI Era"
 linkTitle: "Pigsty v4.0: Into the AI Era"
 date: 2026-01-31
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v4.0.0))
+authors: [vonng]
 summary: >
   Pigsty v4.0 is a milestone release — what I'd call "Finished Software." The real theme: Built for AI Agents and enabling the DBA Agent. 
 series: [Pigsty]

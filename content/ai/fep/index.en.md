@@ -1,17 +1,13 @@
 ---
 title: "The Nature of Intelligence: The Free Energy Principle"
 date: 2026-03-28
-math: true
-author: |
-  [Ruohang Feng](https://vonng.com)
+authors: [vonng]
 summary: >
   The free energy principle tries to explain life, perception, learning, action, and intelligence within one mathematical framework. It also offers a deeper lens for understanding LLMs, agents, and the next generation of AI systems.
 tags: [AI, Agent, Philosophy]
 ai: true
 aliases: ["/misc/fep/"]
 ---
-
-{{< katex >}}
 
 I saw someone say the other day: "The point of life is to predict the future."
 

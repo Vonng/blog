@@ -1,11 +1,11 @@
 ---
 title: 'PostgreSQL 官网中文版：pg.center'
 date: 2026-03-26
-author: 冯若航
+authors: [vonng]
 summary: >
   pg.center 是 postgresql.org 的完整中文镜像，首页、文档、新闻、社区与开发者资源全面汉化，
   并同步发布 PostgreSQL 18 中文文档。
-tags: [PostgreSQL, 官网, 文档, 社区]
+tags: [PostgreSQL, 文档, PG生态]
 ---
 
 用 PostgreSQL 这么多年，有一件事一直让我觉得遗憾：`postgresql.org` 官网一直没有中文版。

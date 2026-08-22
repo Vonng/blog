@@ -1,11 +1,10 @@
 ---
 title: "Is Oracle-Compatible Postgres Actually Useful?"
 date: 2026-02-22
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   A migration case with only a JAR and no source code shows why Oracle syntax compatibility is not always a fake requirement, and how IvorySQL + Pigsty can absorb legacy debt at low cost.
-tags: [PostgreSQL, Oracle, IvorySQL]
+tags: [PostgreSQL, Oracle, Domestic Database]
 ---
 
 I used to roll my eyes at "Oracle compatibility" in PostgreSQL forks.

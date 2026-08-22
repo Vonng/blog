@@ -1,8 +1,9 @@
 ---
 title: "ISD Dataset: Analyzing 120 Years of Global Climate Change"
 date: 2023-06-27
-author: "vonng"
+authors: [vonng]
 summary: "ISD stands for Integrated Surface Dataset, a dataset published by NOAA (National Oceanic and Atmospheric Administration). I recently reorganized this dataset and provided related analysis tools."
+tags: [Essay]
 ---
 
 > [Original WeChat Article](https://mp.weixin.qq.com/s/TH-exGEpt4ZZrlz8fLGLLA)

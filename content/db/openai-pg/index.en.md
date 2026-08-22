@@ -3,7 +3,7 @@ title: "Scaling Postgres to the next level at OpenAI"
 date: 2025-05-19
 authors: [bohan-zhang]
 summary: "At PGConf.Dev 2025, Bohan Zhang from OpenAI shared a session titled Scaling Postgres to the next level at OpenAI, giving us a peek into the database usage of a top-tier unicorn."
-tags: [PostgreSQL,OpenAI]
+tags: [PostgreSQL, Codex, Performance, Architecture]
 ai: true
 aliases: ["/ai/openai-pg/"]
 ---

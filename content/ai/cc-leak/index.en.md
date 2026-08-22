@@ -1,10 +1,10 @@
 ---
 title: "Good News: Claude Code Got \"Open-Sourced\" Yet Again"
 date: 2026-03-31
-author: vonng
+authors: [vonng]
 summary: >
   SOTA coding agent Claude Code leaked its source again, after falling into the same hole twice. The whole codebase is out in public. Performance art at its finest.
-tags: [Open Source, AI, Agent, Claude Code]
+tags: [AI, Agent, Open Source]
 ai: true
 aliases: ["/cloud/cc-leak/"]
 ---

@@ -1,12 +1,10 @@
 ---
 title: "Starting from /0: Understanding Errors and Exceptions"
 date: 2016-11-09
-author: vonng
+authors: [vonng]
 summary: What happens when you divide by 0 in a computer? The answer isn't fixed - it can differ across different operating systems, programming languages, and even different compilers.
-math: true
+tags: [Essay]
 ---
-
-{{< katex >}}
 
 > What happens when you divide by 0 in a computer? Errors are errors, exceptions are exceptions. The distinction here is quite subtle.
 

@@ -1,11 +1,10 @@
 ---
 title: 一个人春节，能用 AI 干多少事？
 date: 2026-02-24
-author: |
-  [冯若航](https://vonng.com)
+authors: [vonng]
 summary: >
   在 AI 加持下，一个人用 AI 一周能完成多少工作？
-tags: [AI, Claude Code, Codex]
+tags: [AI, Agent, Codex]
 ai: true
 aliases: ["/misc/how-much-ai-can-do/"]
 ---

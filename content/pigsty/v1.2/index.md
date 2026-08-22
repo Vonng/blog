@@ -2,8 +2,7 @@
 title: "Pigsty v1.2：PG14默认，监控现有PG"
 linkTitle: "Pigsty v1.2 发布注记"
 date: 2021-11-03
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v1.2.0)）
+authors: [vonng]
 summary: >
   Pigsty v1.2 将 PostgreSQL 14 作为默认版本，并支持独立监控现有数据库实例
 series: [Pigsty]

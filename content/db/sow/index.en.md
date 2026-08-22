@@ -2,10 +2,10 @@
 title: "SOW: Postpartum Care for 100,000 Packages"
 linkTitle: "SOW: 100,000 Packages, One Copy Each"
 date: 2026-08-11
-author: Ruohang Feng
+authors: [vonng]
 summary: >
   The hard part of maintaining a PostgreSQL distribution is not compiling packages. At 100,000 artifacts, deduplication, indexing, snapshots, atomic cutovers, and incremental publishing become the real challenge. SOW puts all of that into one self-contained binary, turning RPM and DEB repository management from ad hoc directory scripts into a recoverable, auditable state system.
-tags: [PostgreSQL, Pigsty, SOW, Package Repository, Software Distribution]
+tags: [PostgreSQL, Pigsty, Repository]
 ---
 
 Today, let's talk about *Postpartum Care for Sows*—a Chinese meme for the sort of absurdly specialized practical topic nobody expects to discuss. This time, the sow in question is my new open-source project, SOW.
@@ -249,7 +249,7 @@ No more disappearing to build the grand design in one shot. Ship small, complete
 
 SOW is part of Pigsty's increasingly elaborate porcine universe. The naming scheme keeps getting more ridiculous—and more complete:
 
-- [**Pigsty**](/en/about/pigsty/): the sty, responsible for installing and managing the PostgreSQL ecosystem;
+- [**Pigsty**](https://pigsty.io): the sty, responsible for installing and managing the PostgreSQL ecosystem;
 - **SOW**: the mother pig, responsible for organizing, building, and publishing software repositories;
 - **Boar**: the male pig, a graphical control plane for Pigsty now under development;
 - [**Silo**](/en/db/long-live-silo/): the grain bin, responsible for S3-compatible object storage;

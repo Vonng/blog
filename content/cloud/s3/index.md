@@ -1,10 +1,10 @@
 ---
 title: "扒皮云对象存储：从降本到杀猪"
 date: 2023-12-26
-author: 冯若航
+authors: [vonng]
 summary: >
   对象存储是云计算的定义性服务，曾被视为云上降本的典范。不幸的是随着硬件的发展，资源云与开源平替的出现，曾经物美价廉的对象存储服务和EBS一样成为了杀猪盘。
-tags: [下云, S3, AWS, 阿里云]
+tags: [下云, 云计算, 对象存储, AWS]
 ---
 
 > [微信公众号](https://mp.weixin.qq.com/s/HathxpQ_KUuqxyrtyCDzWw)

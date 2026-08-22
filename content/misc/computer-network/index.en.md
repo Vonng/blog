@@ -1,12 +1,10 @@
 ---
 title: "Computer Networks and Logistics Systems"
 date: 2013-09-14
-author: vonng
+authors: [vonng]
 summary: Computer networks are like a logistics system, with the only difference being that logistics systems transmit material entities like mail and packages, while computer networks transmit intangible information.
-math: true
+tags: [Essay]
 ---
-
-{{< katex >}}
 
 Computer networks are like a logistics system, with the difference being that logistics systems transmit material entities like mail and packages, while computer networks transmit intangible information.
 

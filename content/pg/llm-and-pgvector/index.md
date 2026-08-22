@@ -2,7 +2,7 @@
 title: "AI大模型与向量库 PGVector"
 linkTitle: "AI大模型与PGVector"
 date: 2023-05-10
-author: 冯若航
+authors: [vonng]
 summary: >
   本文聚焦被 AI 炒火了的向量数据库，介绍了AI嵌入与向量存储检索的基本原理，并用一个具体的知识库检索案例来介绍向量数据库插件 PGVECTOR 的功能与应用。
 tags: [PostgreSQL, PG开发, 扩展, 向量]

@@ -1,10 +1,9 @@
 ---
 title: "Alibaba-Cloud: High Availability Disaster Recovery Myth Shattered"
 date: 2024-09-17
-author: |
-  [Ruohang Feng](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+authors: [vonng]
 summary: "Seven days after Singapore Zone C failure, availability not even reaching 8, let alone multiple 9s. But compared to data loss, availability is just a minor issue"
-tags: [Cloud-Exit,Alibaba-Cloud,Cloud-Outage]
+tags: [Cloud-Exit, Alibaba Cloud, Incident]
 ---
 
 On September 10, 2024, Alibaba-Cloud's Singapore Availability Zone C data center experienced a fire caused by lithium battery explosion. It's been a week now and services have not been fully restored yet.

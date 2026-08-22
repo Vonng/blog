@@ -1,11 +1,10 @@
 ---
 title: "Paradigm Shift: From Cloud to Local-First"
 date: 2023-02-03
-author: |
-  [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   Cloud databases' exorbitant markups—sometimes 10x or more—are undoubtedly a scam for users outside the applicable spectrum. But we can dig deeper: why are public clouds, especially cloud databases, like this? And based on their underlying logic, make predictions about the industry's future.
-tags: [Cloud-Exit, Open-Source]
+tags: [Cloud-Exit, Open Source]
 ---
 
 In the previous article, we used data to answer "[Are Cloud Databases an Intelligence Tax?](/cloud/rds/)"—**the exorbitant markups of several to over ten times are undoubtedly a scam for users outside the applicable spectrum**. But we can dig deeper: why are public clouds, especially cloud databases, like this? And based on their underlying logic, make predictions and judgments about the industry's future.

@@ -2,10 +2,10 @@
 title: "PG Replica Identity Explained"
 linkTitle: "PG Replica Identity Explained"
 date: 2021-03-03
-author: |
-  [Vonng](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+authors: [vonng]
 summary: >
   Replica identity is important - it determines the success or failure of logical replication
+tags: [PostgreSQL, PG Admin, PG Development]
 ---
 
 

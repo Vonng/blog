@@ -1,11 +1,11 @@
 ---
 title: "Two months into maintaining a MinIO fork"
 date: 2026-04-17
-author: Ruohang Feng
+authors: [vonng]
 summary: >
   Two months after forking MinIO, pgsty/minio ships patches for four CVEs and related security issues. 
   No new features — just working builds, a restored console, and timely security fixes.
-tags: [MinIO, S3, Security, OSS]
+tags: [Object Storage, Security, Open Source]
 ---
 
 Two months ago in ["MinIO is Dead, Long Live MinIO,"](/en/db/minio-resurrect) I promised I'd keep the MinIO fork patched.

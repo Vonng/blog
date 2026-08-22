@@ -1,10 +1,10 @@
 ---
 title: "Claude 全球大宕机复盘：导弹还是成功税？"
 date: 2026-03-03
-author: 冯若航
+authors: [vonng]
 summary: >
   北京时间 3 月 2 日晚 19:49，Claude 崩了。不是数据中心被炸了，而是被用户挤爆了。
-tags: [AI, 云故障, Claude]
+tags: [AI, Claude, 故障复盘]
 ai: true
 aliases: ["/ai/claude-outage/"]
 ---

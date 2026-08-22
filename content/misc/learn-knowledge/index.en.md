@@ -1,9 +1,10 @@
 ---
 title: "Several Levels of Learning Knowledge"
 date: 2018-07-18
-author: vonng
+authors: [vonng]
 summary: |
   Through observation and contemplation, we can divide the process of deepening understanding in the mind from accepting knowledge to the highest level of "intuition" into four stages: knowledge, understanding, consciousness, and intuition.
+tags: [Essay]
 ---
 
 > [Original WeChat Article](https://mp.weixin.qq.com/s/47b9NCLOKoqgx9cfP2EDhA)

@@ -1,15 +1,12 @@
 ---
 title: Will AI Have Self-Awareness?
 date: 2023-04-10
-author: |
-  [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   Large models can feel “aware,” but self-awareness is another matter. We explore the term from Buddhism, cognitive psychology, and neural nets, then riff on a possible AI religion after bingeing *Pantheon*.
 ai: true
 aliases: ["/misc/ai-conscious/"]
-menu:
-  sidebar:
-    parent: misc
+tags: [AI]
 ---
 
 > [WeChat original](https://mp.weixin.qq.com/s/clM2f2f2-EPa4EVBIpznfw)

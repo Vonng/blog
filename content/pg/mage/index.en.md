@@ -2,7 +2,6 @@
 title: "Column: Postgres Mage"
 date: 2025-08-08
 summary: Navigation of articles about PostgreSQL development, administration, principles, ecosystem, tools, architecture design, performance optimization, troubleshooting, and more.
-showAuthor: true
 tags: [PostgreSQL]
 ---
 

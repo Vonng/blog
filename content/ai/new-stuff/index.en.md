@@ -1,11 +1,10 @@
 ---
 title: "A Busy Few Days in Infrastructure and AI"
 date: 2026-04-23
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   Ubuntu 26.04 LTS, Qwen3.6-27B, ChatGPT Images 2.0, Privacy Filter, Anthropic Mythos, and the Claude Pro controversy all landed in quick succession. Here are the infrastructure and AI developments worth watching.
-tags: [AI, Ubuntu, Qwen, OpenAI, Anthropic]
+tags: [AI, LLM, Codex, Claude]
 ai: true
 ---
 

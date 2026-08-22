@@ -1,15 +1,13 @@
 ---
 title: "Basic Principles of Neural Networks"
 date: 2017-05-11
-author: vonng
-math: true
+authors: [vonng]
 summary: |
   Neural networks are inspired by how the brain works and can be used to solve general learning problems. This article introduces the basic principles and practice of neural networks.
 ai: true
 aliases: ["/misc/neuron-network/"]
+tags: [AI]
 ---
-
-{{< katex >}}
 
 > Neural networks are inspired by how the brain works and can be used to solve general learning problems. This article introduces the basic principles and practice of neural networks.
 
@@ -47,7 +45,7 @@ a
      \left[ \begin{matrix}
          w_{1} & ⋯  & w_{n} \\
      \end{matrix}\right]  ·
-     \left[ \begin{array}{x} x_1 \\ ⋮ \\ ⋮ \\ x_n \end{array}\right] +
+     \left[ \begin{array}{c} x_1 \\ ⋮ \\ ⋮ \\ x_n \end{array}\right] +
      b
 )
 $$
@@ -83,15 +81,15 @@ Now consider a single-layer neural network with $n$ inputs and $s$ neurons (outp
 
 <div>
 $$
-\left[ \begin{array}{a} a_1 \\ ⋮ \\ a_s \end{array}\right]
+\left[ \begin{array}{c} a_1 \\ ⋮ \\ a_s \end{array}\right]
 = \sigma(
      \left[ \begin{matrix}
          w_{1,1} & ⋯  & w_{1,n} \\
          ⋮ & ⋱  & ⋮  \\
          w_{s,1} & ⋯  & w_{s,n} \\
      \end{matrix}\right]  ·
-     \left[ \begin{array}{x} x_1 \\ ⋮ \\ ⋮ \\ x_n \end{array}\right] +
-     \left[ \begin{array}{b} b_1 \\ ⋮ \\ b_s \end{array}\right]
+     \left[ \begin{array}{c} x_1 \\ ⋮ \\ ⋮ \\ x_n \end{array}\right] +
+     \left[ \begin{array}{c} b_1 \\ ⋮ \\ b_s \end{array}\right]
 )
 $$
 </div>
@@ -118,15 +116,15 @@ Now consider an $L$-layer neural network with layer sizes: $d_1,d_2,⋯,d_L$. Th
 ##### Activation Function Matrix Expression
 
 $$
-\left[ \begin{array}{a} a^l_1 \\ ⋮ \\ a^l_{d_l} \end{array}\right]
+\left[ \begin{array}{c} a^l_1 \\ ⋮ \\ a^l_{d_l} \end{array}\right]
 = \sigma(
      \left[ \begin{matrix}
          w^l_{1,1} & ⋯  & w^l_{1,d_{l-1}} \\
          ⋮ & ⋱  & ⋮  \\
          w^l_{d_l,1} & ⋯  & w^l_{d_l,d_{l-1}} \\
      \end{matrix}\right]  ·
-     \left[ \begin{array}{x} a^{l-1}_1 \\ ⋮ \\ ⋮ \\ a^{l-1}_{d_{l-1}} \end{array}\right] +
-     \left[ \begin{array}{b} b^l_1 \\ ⋮ \\ b^l_{d_l} \end{array}\right])
+     \left[ \begin{array}{c} a^{l-1}_1 \\ ⋮ \\ ⋮ \\ a^{l-1}_{d_{l-1}} \end{array}\right] +
+     \left[ \begin{array}{c} b^l_1 \\ ⋮ \\ b^l_{d_l} \end{array}\right])
 $$
 
 #### Meaning of Weight Matrices

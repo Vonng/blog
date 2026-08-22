@@ -1,10 +1,10 @@
 ---
 title: "Incident-Report: Patroni Failure Due to Time Travel"
 date: 2021-02-22
-author: "vonng"
+authors: [vonng]
 summary: >
   Machine restarted due to failure, NTP service corrected PG time after PG startup, causing Patroni to fail to start.
-tags: [PostgreSQL, PG-Admin, Incident-Report]
+tags: [PostgreSQL, PG Admin, Incident]
 ---
 
 Summary: Machine restarted due to failure, NTP service corrected PG time after PG startup, causing Patroni to fail to start.

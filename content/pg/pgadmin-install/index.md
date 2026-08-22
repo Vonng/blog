@@ -1,7 +1,7 @@
 ---
 title: "PgAdmin安装配置"
 date: 2018-04-14
-author: 冯若航
+authors: [vonng]
 summary: >
   PgAdmin是一个管理PostgreSQL的GUI程序，用python写成，但实在是过于古早，需要一些额外配置。
 tags: [PostgreSQL, PG管理, 工具]

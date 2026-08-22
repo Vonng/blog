@@ -2,8 +2,7 @@
 title: "Pigsty v3.7：PG万磁王，PG18深度支持"
 linkTitle: "Pigsty v3.7 发布注记"
 date: 2025-12-03
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v3.7.0)）
+authors: [vonng]
 summary: >
   PostgreSQL 18深度支持成为默认版本，新增EL10和Debian 13支持，扩展总数达437个，荣获PG万磁王奖。
 series: [Pigsty]

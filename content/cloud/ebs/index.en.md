@@ -1,13 +1,11 @@
 ---
 title: "EBS: Pig Slaughter Scam"
 date: 2023-03-15
-author: |
-  [Ruohang Feng](https://vonng.com/en/) ([@Vonng](https://vonng.com/en/)) | [WeChat](https://mp.weixin.qq.com/s/UxjiUBTpb1pRUfGtR9V3ag)
+authors: [vonng]
 summary: >
   The real business model of cloud: "Cheap" EC2/S3 to attract customers, and fleece with "Expensive" EBS/RDS.
-module: []
 categories: [Cloud]
-tags: [Cloud, Cloud-Exit, EBS]
+tags: [Cloud-Exit, Cloud]
 ---
 
 We already answer the question: [Is RDS an Idiot Tax?](/cloud/rds/).

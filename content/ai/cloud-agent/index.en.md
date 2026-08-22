@@ -4,7 +4,7 @@ date: 2026-01-30
 description: >
   When launch clawdbot on the cloud, you're handing over cognitive data to the vendor. There's a reason why people by Mac mini rather than running clawdbot on the cloud.
 categories: ["CLOUD"]
-tags: ["AI", "Data", "Privacy", "Cloud"]
+tags: [AI, Cloud, Software Engineering, Security]
 ai: true
 aliases: ["/cloud/cloud-agent/"]
 ---

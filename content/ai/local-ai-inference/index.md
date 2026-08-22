@@ -1,10 +1,10 @@
 ---
 title: 本地 AI 的关键时刻：2027
 date: 2026-04-07
-author: 冯若航
+authors: [vonng]
 description: >
   当补贴退潮、硬件就绪、模型成熟三条线在 2027 年交汇，“自建 AI” 将从理念变为现实。
-tags: [AI, 开源, 硬件, 本地优先]
+tags: [AI, 硬件, 本地优先, 开源]
 ai: true
 ---
 

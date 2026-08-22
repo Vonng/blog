@@ -2,8 +2,7 @@
 title: "Pigsty v2.5: Ubuntu & PG16"
 linkTitle: "Pigsty v2.5 Release"
 date: 2023-10-24
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v2.5.0))
+authors: [vonng]
 summary: >
   Pigsty v2.5 adds Ubuntu/Debian support (bullseye, bookworm, jammy, focal), new extensions including pointcloud and imgsmlr, and redesigned monitoring dashboards.
 series: [Pigsty]

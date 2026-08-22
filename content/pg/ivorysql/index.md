@@ -1,10 +1,10 @@
 ---
 title: "Oracle 兼容的 PG 真的有用吗？"
 date: 2026-02-22
-author: 冯若航
+authors: [vonng]
 summary: >
   从一个“只有 JAR 没有源码”的迁移案例出发，解释为什么 Oracle 语法兼容并非伪需求，以及如何用 IvorySQL + Pigsty 低成本接住历史包袱。
-tags: [PostgreSQL, Oracle, IvorySQL]
+tags: [PostgreSQL, Oracle, 国产数据库]
 ---
 
 很多国产数据库都以 “兼容 Oracle” 作为卖点，说实话，老冯一直都对这件事不感冒。有时候我也会怀疑，PG 去兼容 Oracle 到底是不是一个伪需求—— 改改业务代码能死吗？但是最近我真的碰到了一个极端情况，让我略微改了看法。

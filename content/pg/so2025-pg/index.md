@@ -2,7 +2,7 @@
 title: "PostgreSQL 已主宰数据库世界"
 linkTitle: "SO2025调研：PostgreSQL已经主宰数据库世界"
 date: 2025-07-31
-author: 冯若航
+authors: [vonng]
 summary: >
   2025 年的 SO 全球开发者调研结果新鲜出炉，PostgreSQL 连续第三年成为全球最流行，最受喜爱，需求量最高的数据库。
 tags: [PostgreSQL, PG生态]

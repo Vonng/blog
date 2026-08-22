@@ -2,11 +2,10 @@
 title: Can PostgreSQL Replace Microsoft SQL Server?
 linkTitle: Can PG Replace MSSQL?
 date: 2024-09-02
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   PostgreSQL can directly replace Oracle, SQL Server, and MongoDB at the kernel level. Of course, the most thorough replacement is SQL Server - AWS's Babelfish provides wire-protocol-level compatibility.
-tags: [PostgreSQL,PG-Ecosystem,MSSQL]
+tags: [PostgreSQL, MySQL, PG Ecosystem]
 ---
 
 Many people don't have an intuitive impression of how far PostgreSQL's ecosystem has developed. Beyond [devouring the database world](/pg/pg-eat-db-world) and its all-encompassing extension ecosystem, PostgreSQL can directly replace Oracle, SQL Server, and MongoDB at the kernel level. MySQL is naturally even less of a concern.

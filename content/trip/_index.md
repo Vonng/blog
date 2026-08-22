@@ -1,10 +1,18 @@
 ---
 title: 行万里路
-summary: 旅行、徒步与见闻索引，按发布时间倒序整理。
+linkTitle: 行万里路
+description: >
+  旅行、徒步与见闻 —— 山川湖海，风物人情。
+summary: >
+  旅行、徒步与见闻 —— 山川湖海，风物人情。
+weight: 60
+icon: fa-solid fa-person-hiking
+type: blog
+page_width: wide
+comments: false
+profile:
+  headline: 冯若航 @Vonng / 读万卷书，行万里路
+cascade:
+  type: blog
+  page_width: normal
 ---
-
-按发布时间整理的旅行与徒步索引，新的在前，旧文在后。
-
-## 时间索引
-
-{{< section_index section="trip" >}}

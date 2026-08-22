@@ -6,7 +6,7 @@ author: John De Goes
 origin: "https://www.linkedin.com/pulse/mongodb-32-now-powered-postgresql-john-de-goes"
 summary: >
   MongoDB 3.2的分析子系统竟然是一个嵌入式的PostgreSQL数据库？由MongoDB的合作伙伴发出的血泪控诉与吹哨故事，揭露了MongoDB对待生态伙伴的态度和一些黑历史。
-tags: [数据库, MongoDB, PostgreSQL, 技术评论]
+tags: [MongoDB, PostgreSQL, 数据库, 技术评论]
 ---
 
 -------------

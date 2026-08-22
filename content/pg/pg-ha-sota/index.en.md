@@ -2,10 +2,10 @@
 title: "How to Actually Do PostgreSQL High Availability"
 linkTitle: "How to Actually Do PostgreSQL High Availability"
 date: 2026-01-23
-author: Feng Ruohang
+authors: [vonng]
 summary: >
   A deep dive into the SOTA approach for PostgreSQL HA. RTO/RPO breakdown, from theory to production. If you're still wrestling with PG HA, this might save you years.
-tags: [PostgreSQL, Administration]
+tags: [PostgreSQL, PG Admin]
 ---
 
 Seven or eight years ago, I was managing a hundred large-scale PostgreSQL clusters across 200+ beefy bare-metal servers, and I started evaluating HA solutions. I went through every option with a name: Patroni, Corosync + Pacemaker, repmgr, Stolon, PAF, pgpool-II...

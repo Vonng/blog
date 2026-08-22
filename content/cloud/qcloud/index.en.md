@@ -1,11 +1,10 @@
 ---
 title: What Can We Learn from Tencent Cloud's Major Outage?
 date: 2024-04-14
-author: |
-  [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   Tencent Cloud's epic global outage after Double 11 set industry records. How should we evaluate and view this failure, and what lessons can we learn from it?
-tags: [Cloud-Exit, Tencent-Cloud, Cloud-Outage]
+tags: [Cloud-Exit, Cloud, Incident]
 ---
 
 Eight days after the outage, Tencent Cloud published a [**postmortem report**](https://mp.weixin.qq.com/s/2e2ovuwDrmwlu-vW0cKqcA) for the April 8th major outage. I think this is a good thing, because Alibaba-Cloud's [Double 11 major outage](https://mp.weixin.qq.com/s/cTge3xOlIQCALQc8Mi-P8w) official postmortem is still overdue. If public cloud vendors want to truly become **providers of water and electricity-like public infrastructure**, they need to take responsibility and accept public oversight—cloud vendors have an obligation to disclose their outage causes and propose concrete reliability improvement plans and measures.

@@ -1,10 +1,10 @@
 ---
 title: "Cloudflare 11-18 故障复盘报告"
 date: 2025-11-19
-author: 冯若航
+authors: [vonng]
 summary: >
   ClickHouse权限配置失当，导致了Cloudflare最近六年以来的最严重故障——核心流量分发停摆六个小时。
-tags: [Cloudflare, 云故障]
+tags: [Cloudflare, 故障复盘]
 ---
 
 就在昨天，有 “赛博佛祖” 之称的 Cloudflare 遭遇自 2019 年以来的最严重故障 —— 正常的核心网络流量无法传输，长达六个小时。

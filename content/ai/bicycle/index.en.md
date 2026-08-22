@@ -1,8 +1,7 @@
 ---
 title: "Pedaling the Codex/Claude Bike Until the Wheels Smoke"
 date: 2026-07-10
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   Claude Fable and GPT-5.6 have arrived back to back, followed by repeated quota resets. How do you turn a fleeting Coding Plan windfall into real output? Here is my playbook for model specialization, adversarial review, spec-driven design, closed-loop verification, context management, and one person leading a crew of AIs.
 tags: [AI, Agent, Codex, Claude]

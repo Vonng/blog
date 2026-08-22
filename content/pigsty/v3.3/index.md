@@ -2,8 +2,7 @@
 title: "Pigsty v3.3：扩展突破400，丝滑建站，应用模板"
 linkTitle: "Pigsty v3.3 发布注记"
 date: 2025-02-20
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v3.3.0)）
+authors: [vonng]
 summary: >
   可用扩展总数增加到404个，新增Certbot支持，新主页设计，以及一系列改进。
 series: [Pigsty]

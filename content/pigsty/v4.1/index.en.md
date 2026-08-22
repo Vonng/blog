@@ -2,8 +2,7 @@
 title: "Pigsty v4.1: Speed Is the Moat"
 linkTitle: "Speed Is the Moat"
 date: 2026-02-12
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v4.1.0))
+authors: [vonng]
 summary: >
   Same-day production support for PG 18.2 is the core message of Pigsty v4.1.
   In this cycle, very few vendors shipped day-zero readiness: AWS RDS, EDB, and Pigsty were among them.

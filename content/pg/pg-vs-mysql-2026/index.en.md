@@ -1,7 +1,7 @@
 ---
 title: "PostgreSQL vs. MySQL in 2026"
 date: 2026-04-03
-author: Ruohang Feng
+authors: [vonng]
 summary: >
   By 2026, PostgreSQL has won the market for new database adoption, outperforming MySQL across developer adoption,
   vendor strategy, capital markets, and community governance. MySQL still owns the installed base; Postgres owns the growth.

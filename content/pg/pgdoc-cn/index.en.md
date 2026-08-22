@@ -1,9 +1,8 @@
 ---
 title: "Chinese Docs for Five PostgreSQL Versions Are Now Live"
 date: 2026-03-27
+authors: [vonng]
 draft: true
-author: |
-  [Ruohang Feng](https://vonng.com)
 summary: >
   PG.center now provides Chinese documentation for PostgreSQL 18, 17, 16, 15, and 14, covering every major version still in active support.
 tags: [PostgreSQL, Documentation, Translation]

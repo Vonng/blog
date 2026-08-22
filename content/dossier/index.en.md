@@ -4,12 +4,10 @@ summary: "Nomination dossier for PostgreSQL Recognized Contributor: code, packag
 description: "Ruohang Feng's PostgreSQL Contributor Dossier, updated from the May 2026 DOCX source and presented as a static HTML page."
 date: 2026-05-01
 layout: dossier
-showDate: false
-showAuthor: false
-showReadingTime: false
-showWordCount: false
-showTableOfContents: false
-showComments: false
+reading_time: false
+notoc: true
+comments: false
+tags: []
 ---
 
 <article class="dossier" aria-labelledby="dossier-title">

@@ -2,8 +2,7 @@
 title: "Pigsty v1.3: Redis Support, PGCAT Overhaul, PGSQL Enhancements"
 linkTitle: "Pigsty v1.3 Release"
 date: 2021-11-30
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v1.3.0))
+authors: [vonng]
 summary: >
   Pigsty v1.3 adds Redis support with three deployment modes, rebuilds the PGCAT catalog explorer, and enhances PGSQL monitoring dashboards.
 series: [Pigsty]

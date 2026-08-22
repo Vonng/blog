@@ -1,15 +1,12 @@
 ---
 title: "AI神教狂想曲"
 date: 2023-04-10
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+authors: [vonng]
 summary: >
   也许就在这一二十年，我们会目睹一个拜 AI 神教的崛起。下面是对于此 “AI神教” 的一些想象： 
 ai: true
 aliases: ["/misc/ai-cult/"]
-menu:
-  sidebar:
-    parent: misc
+tags: [AI]
 ---
 
 > [微信公众号原文](https://mp.weixin.qq.com/s/clM2f2f2-EPa4EVBIpznfw)

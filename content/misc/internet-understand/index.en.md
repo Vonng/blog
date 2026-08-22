@@ -1,8 +1,9 @@
 ---
 title: "Understanding the Internet"
 date: 2018-10-17
-author: "vonng"
+authors: [vonng]
 summary: "The world trends flow mightily. Those who follow prosper; those who resist perish. This article discusses the essence of the internet, the world under internet rule, the transfer of power, and future impacts."
+tags: [Essay]
 ---
 
 I used to think that the essence of the internet, the development of the internet industry, and the strategies of internet companies—these "lofty" matters should be pondered by government officials and corporate executives. As an internet practitioner, a software engineer, being able to thoroughly master the technology in one's field would be good enough. But now I've changed my mind: a person's destiny naturally depends on individual effort, but we must also consider the course of history.

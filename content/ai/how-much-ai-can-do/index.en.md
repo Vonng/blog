@@ -1,10 +1,10 @@
 ---
 title: "How Much Can One Person Get Done with AI over Spring Festival?"
 date: 2026-02-24
-author: vonng
+authors: [vonng]
 summary: >
   Over roughly ten days during Spring Festival, I used Claude Code, Codex, and a pile of workflows to translate books, ship releases, package software, refresh websites, and keep publishing daily. This is what solo output looks like when agent leverage really lands.
-tags: [AI, Claude Code, Codex]
+tags: [AI, Agent, Codex]
 ai: true
 aliases: ["/misc/how-much-ai-can-do/"]
 ---

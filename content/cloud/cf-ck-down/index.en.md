@@ -1,11 +1,10 @@
 ---
 title: Cloudflare’s Nov 18 Outage, Translated and Dissected
 date: 2025-11-19
-author: |
-  [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat](https://mp.weixin.qq.com/s/mss2hRqAxCF7N3kPLQ8_7g)
+authors: [vonng]
 summary: >
   A ClickHouse permission tweak doubled a feature file, tripped a Rust hard limit, and froze Cloudflare’s core traffic for six hours—their worst outage since 2019. Here’s the full translation plus commentary.
-tags: [Cloudflare, Cloud-Outage]
+tags: [Cloudflare, Incident]
 ---
 
 Yesterday the “cyber Bodhisattva” Cloudflare suffered its worst incident since 2019. For six hours, core network traffic couldn’t be delivered. ChatGPT, X, Spotify, Uber—everyone felt it.

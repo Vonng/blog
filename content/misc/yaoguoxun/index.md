@@ -2,9 +2,7 @@
 title: "与外公的告别"
 date: 2021-01-02
 summary: 外公去世了，实在是出离了悲痛，还是应当写点什么纪念一下。
-menu:
-  sidebar:
-    parent: life
+tags: [随笔]
 ---
 
 

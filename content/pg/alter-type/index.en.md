@@ -2,10 +2,10 @@
 title: "Online Primary Key Column Type Change"
 linkTitle: "Online Primary Key Column Type Change"
 date: 2021-01-15
-author: vonng
+authors: [vonng]
 summary: >
   How to change column types online, such as upgrading from INT to BIGINT?
-tags: [PostgreSQL,PG-Admin]
+tags: [PostgreSQL, PG Admin]
 ---
 
 > Author: [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))

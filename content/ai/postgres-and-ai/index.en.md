@@ -1,10 +1,10 @@
 ---
 title: "Why PostgreSQL Won in the AI Era"
 date: 2026-04-11
-author: vonng
+authors: [vonng]
 summary: >
   Boring technology won the wildest era. A look at extensibility, agent choice, database cloning, and the future of the DBA.
-tags: [AI, PostgreSQL, Database, Agent]
+tags: [AI, PostgreSQL, Agent, Database]
 ---
 
 I recently did a recorded livestream on PostgreSQL and AI. The host asked a lot of good questions, and I gave some answers.

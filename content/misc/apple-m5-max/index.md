@@ -1,10 +1,10 @@
 ---
 title: "M5 Max 顶配拉满，六万块的电脑长啥样"
 date: 2026-03-05
-author: 冯若航
+authors: [vonng]
 summary: >
   M5 Max 开放预购，看看这台六万块的性能怪兽到底长啥样，以及它为何可能成为 AI 时代最顺手的个人工作站。
-tags: [Apple, AI, 硬件]
+tags: [AI, 硬件]
 ---
 
 前天苹果发布 MacBook Pro M5 Max，昨晚开放预购。

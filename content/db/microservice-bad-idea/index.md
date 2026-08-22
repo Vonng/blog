@@ -6,7 +6,7 @@ origin: "https://world.hey.com/dhh/microservices-are-a-bad-idea-7a8dbddc"
 summary: >
   连SOA典范亚马逊自己都觉得微服务和Serverless拉胯了。Prime Video团队放弃微服务改用单体架构，运营成本节省了惊人的90%。微服务就像塞壬歌声一样诱惑你为系统添加毫无必要的复杂度。
 series: ["正本清源"]
-tags: [架构设计, 微服务, Serverless, 技术评论, 翻译]
+tags: [云计算, 架构, 容器化, 技术评论]
 ---
 
 亚马逊的Prime Video团队发表了一篇非常引人注目的案例研究[2] ，讲述了他们为什么放弃了微服务与Serverless架构而改用单体架构。这一举措让他们在运营成本上节省了惊人的 90%，还简化了系统复杂度，堪称一个巨大的胜利。

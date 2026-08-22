@@ -4,7 +4,7 @@ date: 2026-02-17
 summary: >
   AI is reshaping knowledge work far faster than historical experience would suggest. The real challenge is not whether you know how to use AI, but whether you can retool your thinking and skills before the adjustment window closes.
 categories: [BB]
-tags: [AI, Technological Change, Careers, Society]
+tags: [AI, Society, Career]
 ai: true
 aliases: ["/db/new-year-ai-change/"]
 ---

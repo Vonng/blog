@@ -2,10 +2,10 @@
 title: "PostgreSQL 高可用到底怎么做？"
 linkTitle: "PostgreSQL 高可用到底怎么做？"
 date: 2026-01-23
-author: 冯若航
+authors: [vonng]
 summary: >
   详细介绍 PG 高可用 SOTA 方案，RTO / RPO 拆解，从原理到实战，一步到位。如果你还在折腾 PG HA，希望能帮你少走几年弯路。
-tags: [PostgreSQL, 管理]
+tags: [PostgreSQL, PG管理]
 ---
 
 七八年前，老冯手里维护着一百套大规模 PostgreSQL 集群，两百多台顶配物理机，开始做高可用方案选型。

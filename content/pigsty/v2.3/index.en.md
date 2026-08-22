@@ -2,8 +2,7 @@
 title: "Pigsty v2.3: Richer App Ecosystem"
 linkTitle: "Pigsty v2.3 Release"
 date: 2023-08-20
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v2.3.0))
+authors: [vonng]
 summary: >
   Pigsty v2.3 adds FerretDB MongoDB support, NocoDB integration, L2 VIP for node clusters, PostgreSQL security patches, and Redis 7.2.
 series: [Pigsty]

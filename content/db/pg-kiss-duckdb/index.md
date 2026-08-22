@@ -1,10 +1,10 @@
 ---
 title: "数据库火星撞地球：当PG爱上DuckDB"
 date: 2025-03-12
-author: 冯若航
+authors: [vonng]
 summary: >
   老冯很看好"DuckDB + PostgreSQL深度融合"这条路径，它可能会引爆数据库世界下一场"火星撞地球"式的变革。相比折腾分布式DuckDB，这才是更有前景的方向。
-tags: [数据库, PostgreSQL, DuckDB, OLAP]
+tags: [PostgreSQL, OLAP, 数据库]
 ---
 
 

@@ -1,11 +1,10 @@
 ---
 title: "Blue Screen Friday: Amateur Hour on Both Sides"
 date: 2024-07-23
+authors: [vonng]
 summary: |
   Both client and vendor failed to control blast radius, leading to this epic global security incident that will greatly benefit local-first software philosophy.
-author: |
-  [Vonng](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [WeChat](https://mp.weixin.qq.com/s/s7i7bSYzNY8mrcpfkHPjOg)
-tags: [Cloud-Exit,Cloudflare]
+tags: [Cloud-Exit, Incident, Cloudflare]
 ---
 
 Recently, due to a configuration update released by cybersecurity company CrowdStrike, countless Windows computers worldwide fell into blue screen death, causing endless chaos — airlines grounded flights, hospitals canceled surgeries, supermarkets, theme parks, and industries across the board shut down.

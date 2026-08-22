@@ -1,10 +1,10 @@
 ---
 title: "SQL实现ItemCF推荐系统"
 date: 2017-04-05
-author: 冯若航
+authors: [vonng]
 summary: >
   用PostgreSQL 5分钟实现一个最简单ItemCF推荐系统。
-tags: [PostgreSQL, PG开发, 推荐系统]
+tags: [PostgreSQL, PG开发, 机器学习]
 ---
 
 

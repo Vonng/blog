@@ -3,7 +3,7 @@ title: 一场辩论之后，认真聊聊“本体论”
 date: 2026-03-15
 summary: >
   Palantir 的 Ontology 在技术上就是数据建模，但更值得认真讨论的是：它如何借“本体论”的哲学光环包装系统集成与数据建模，以及为什么这套叙事在中国技术生态中极易演化为新一轮概念泡沫。
-tags: [本体论, Palantir, 数据建模, 数据中台, 行业洞察]
+tags: [OLAP, 数据主权, 哲学, 技术评论]
 ---
 
 上个月我写了一篇文章叫《[Palantir 的“本体论”骗局](https://vonng.com/db/ontology-bullshit/)》，用一张“罗塞塔石碑”对照表说了一件事：Palantir 的 Ontology 在技术上就是数据库建模。Object Type 是表，Property 是列，Link 是外键，Action 是存储过程。

@@ -1,15 +1,12 @@
 ---
 title: AI Cult Rhapsody
 date: 2023-04-10
-author: |
-  [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   A tongue-in-cheek vision of an AI-worshipping religion: scriptures, sects, philosopher-king machines, and the Book of AGI.
 ai: true
 aliases: ["/misc/ai-cult/"]
-menu:
-  sidebar:
-    parent: misc
+tags: [AI]
 ---
 
 > [WeChat original](https://mp.weixin.qq.com/s/clM2f2f2-EPa4EVBIpznfw)

@@ -2,8 +2,7 @@
 title: "Pigsty v0.7：仅监控部署"
 linkTitle: "Pigsty v0.7 发布注记"
 date: 2021-03-01
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v0.7.0)）
+authors: [vonng]
 summary: >
   Pigsty v0.7 新增了仅监控部署模式，改进了数据库与用户的供给接口。
 series: [Pigsty]

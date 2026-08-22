@@ -1,13 +1,10 @@
 ---
 title: "简明实用密码学"
 date: 2020-03-12
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+authors: [vonng]
 summary: >
   密码学里有一个经典的问题，就是如何在不安全的信道中安全可靠地传输数据。避免自己的聊天与通信遭到偷窥，监控与河蟹。只要你手头有电脑，就可以轻易做到这一点。
-menu:
-  sidebar:
-    parent: note
+tags: [随笔]
 ---
 
 > [微信公众号原文](https://mp.weixin.qq.com/s/zUu5PlN_Kzd2-RS10R7wMw)

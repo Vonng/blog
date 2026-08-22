@@ -2,8 +2,7 @@
 title: "Pigsty v0.8: Service Provisioning"
 linkTitle: "Pigsty v0.8 Release Notes"
 date: 2021-03-16
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [Release Notes](https://github.com/pgsty/pigsty/releases/tag/v0.8.0)）
+authors: [vonng]
 summary: >
   Services are now first-class objects, so you can define any routing policy—built-in HAProxy, L4 VIPs, or your own balancer.
 series: [Pigsty]

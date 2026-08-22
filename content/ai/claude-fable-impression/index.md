@@ -1,10 +1,10 @@
 ---
 title: Claude 新模型 Fable 体验：风水轮流转
 date: 2026-06-10
-author: 冯若航
+authors: [vonng]
 summary: >
   Claude Fable 确实有洞察力，是当之无愧的新 SOTA；但价格昂贵，动态降级、限时订阅与强制留档也让体验大打折扣。
-tags: [AI, Claude, Anthropic, Fable, Agent]
+tags: [AI, Claude, Agent]
 ai: true
 ---
 

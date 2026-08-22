@@ -1,10 +1,10 @@
 ---
 title: "如无影响，请忽略"
 date: 2026-07-31
-author: 冯若航
+authors: [vonng]
 summary: >
   一位读者的 RDS MySQL 实例在五天内两次触发主备切换：云厂商自己的后台监控查询拖垮实例，承诺关闭后却再次复发。
-tags: [下云, 阿里云, RDS, MySQL, 云故障]
+tags: [下云, MySQL, 阿里云, RDS]
 ---
 
 一位读者投稿：他的 RDS MySQL 实例在五天里被主备切换了两次。

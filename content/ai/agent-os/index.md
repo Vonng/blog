@@ -4,7 +4,7 @@ date: 2026-01-26
 summary: >
   我们正在见证一个"AI 操作系统"的诞生。LLM 是新 CPU，Context 是新内存，Agent 是新应用。那么 OS 会是什么？
   理解这个类比，也许能帮助我们预测未来 2-3 年基础设施的演化路径 —— 以及找到真正的机会所在。
-tags: [AI, OS, Agent, PostgreSQL]
+tags: [AI, Agent, PostgreSQL, Linux]
 ai: true
 aliases: ["/db/agent-os/"]
 ---

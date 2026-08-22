@@ -1,0 +1,138 @@
+sections:
+  - hero
+  - metrics
+  - type: markdown
+    key: bio
+  - type: cards
+    key: works
+  - type: cards
+    key: columns
+  - cta
+
+hero:
+  eyebrow: 关于 · Ruohang Feng
+  title_lines:
+    - words:
+        - { text: 冯若航 }
+    - words:
+        - { text: '@Vonng' }
+  lead: >-
+    [Pigsty](https://pigsty.cc) 创始人，[活跃](https://committers.top/china)的[开源贡献者](https://gitstar-ranking.com/Vonng)。<br>
+    架构师，DBA，全栈工程师 @ Alibaba、TanTan、Apple。<br>
+    数据库 KOL，下云布道师，资深驴友，骨灰级玩家。
+  note: 本站文章以 CC BY 4.0 协议开放，欢迎转载与引用
+  note_icon: fa-brands fa-creative-commons
+  image:
+    light: img/about/vonng.jpg
+    dark: img/about/vonng.jpg
+    alt: 冯若航
+  media:
+    ratio: '1fr 340px'
+    max_width: 340px
+    hide_below: md
+  actions:
+    - { label: GitHub, url: 'https://github.com/Vonng', icon: fa-brands fa-github, external: true, style: primary }
+    - { label: 写封邮件, url: 'mailto:rh@vonng.com', icon: fa-solid fa-envelope, style: ghost }
+  detail: { label: 全部文章都收录在作者主页, url: authors/vonng/ }
+
+metrics:
+  eyebrow: 一些数字
+  columns: 3
+  items:
+    - value: 2018
+      label: Pigsty 起始年份
+      desc: 从一套 PostgreSQL 自动化方案，做成开源发行版
+    - value: 585
+      label: GitStar Ranking
+      desc: 全球开源贡献者排名
+      source: { label: gitstar-ranking.com, url: 'https://gitstar-ranking.com/Vonng' }
+    - value: Top 20
+      label: 中国区活跃贡献者
+      desc: GitHub 中国区活跃度排名
+      source: { label: committers.top/china, url: 'https://committers.top/china' }
+
+bio:
+  eyebrow: 简介
+  title: 我是谁，我在做什么
+  body: |
+    我叫**冯若航**，在网上一般叫 **Vonng**。我做数据库，写数据库，也写关于数据库的文章。
+
+    2018 年我开始做 [**Pigsty**](https://pigsty.cc) —— 一个开箱即用的开源 PostgreSQL 发行版。
+    它把高可用、时间点恢复、连接池、监控系统与四百多个扩展插件打包成一套可以自己跑起来的
+    RDS，让任何人都能在自己的服务器上获得云数据库级别的能力，而不必支付云上的溢价。
+
+    在此之前，我是架构师、DBA 与全栈工程师，先后在 **Alibaba**、**TanTan** 与 **Apple**
+    工作，管理过数百套 PostgreSQL 集群，也踩过足够多的坑。
+
+    工作之外，我翻译了 [**DDIA**](https://ddia.vonng.com)（《设计数据密集型应用》）与
+    [**PostgreSQL 内幕探索**](https://pgint.vonng.com) 的中文版，维护
+    [**pg_exporter**](https://pigsty.io/docs/pg_exporter) 等一系列开源工具，
+    并在公众号《老冯云数》与这个博客上持续写作。
+
+    我也徒步、旅行、打游戏。这些东西同样会出现在[行万里路](trip/)与[闲言随笔](misc/)里。
+
+works:
+  class: td-work-cards
+  eyebrow: 作品
+  title: 写代码
+  text: 开源项目、工具与翻译。
+  columns: 3
+  link_label: 访问
+  items:
+    - title: Pigsty
+      meta: 开源 PG RDS 发行版
+      image: img/about/pigsty.jpg
+      desc: 开箱即用的 PostgreSQL 数据库发行版，本地优先的 FLOSS RDS。
+      url: 'https://pigsty.cc'
+      external: true
+    - title: pig
+      meta: PG 包管理器
+      image: img/about/pig.jpg
+      desc: 在 Linux 上一键安装 400+ PostgreSQL 扩展。
+      url: 'https://pgext.cloud/zh'
+      external: true
+    - title: pg_exporter
+      meta: 监控指标采集
+      image: img/about/pg_exporter.jpg
+      desc: Postgres / Pgbouncer 的 Prometheus 监控指标导出器。
+      url: 'https://pigsty.cc/docs/pg_exporter'
+      external: true
+    - title: DDIA
+      meta: 中文翻译本
+      image: img/about/ddia.jpg
+      desc: 《设计数据密集型应用》中文版，分布式系统的必读经典。
+      url: 'https://ddia.vonng.com'
+      external: true
+    - title: PostgreSQL 技术内幕
+      meta: 中文翻译本
+      image: img/about/pg-internal.jpg
+      desc: 《PostgreSQL Internals》中文版，讲述 PostgreSQL 内核原理。
+      url: 'https://pgint.vonng.com'
+      external: true
+    - title: CapsLock 补完计划
+      meta: 键盘改造
+      image: img/about/capslock.jpg
+      desc: 把没什么用的大写锁定键，变成第五个修饰键。
+      url: 'https://capslock.vonng.com/zh'
+      external: true
+
+columns:
+  eyebrow: 专栏
+  title: 也写文章
+  text: 本站的文章按主题分成几个专栏，各自有独立的 RSS 订阅。
+  columns: 4
+  link_label: 进入
+  items:
+    - { title: 数据库老司机, icon: fa-solid fa-database, desc: 数据库行业的动态、新闻、调查与最佳实践。, url: db/ }
+    - { title: 云计算泥石流, icon: fa-solid fa-cloud-bolt, desc: 云计算、下云与基础设施自建的深度思考。, url: cloud/ }
+    - { title: PostgreSQL 大法师, icon: fa-solid fa-hat-wizard, desc: PG 的开发、运维、内核与生态。, url: pg/ }
+    - { title: AI 探路者, icon: fa-solid fa-robot, desc: AI、Agent、LLM，以及 AI 与数据库。, url: ai/ }
+
+cta:
+  title: 有问题，或者想聊聊？
+  text: 欢迎在任何一篇文章下留言，或者直接找我。
+  actions:
+    - { label: 发邮件, url: 'mailto:rh@vonng.com', icon: fa-solid fa-envelope, style: primary }
+    - { label: GitHub, url: 'https://github.com/Vonng', icon: fa-brands fa-github, external: true, style: ghost }
+    - { label: X / Twitter, url: 'https://x.com/RonVonng', icon: fa-brands fa-x-twitter, external: true, style: ghost }
+    - { label: LinkedIn, url: 'https://www.linkedin.com/in/vonng/', icon: fa-brands fa-linkedin, external: true, style: ghost }

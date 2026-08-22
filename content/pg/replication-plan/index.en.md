@@ -1,10 +1,10 @@
 ---
 title: "PostgreSQL Common Replication Topology Plans"
 date: 2019-03-29
-author: "vonng"
+authors: [vonng]
 summary: >
   Replication is one of the core issues in system architecture.
-tags: [PostgreSQL, PG-Admin, Architecture]
+tags: [PostgreSQL, PG Admin, Architecture]
 ---
 
 Replication is one of the core issues in system architecture.

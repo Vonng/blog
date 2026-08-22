@@ -6,7 +6,7 @@ authors: [dhh]
 origin: "https://world.hey.com/dhh/optimize-for-bio-cores-first-silicon-cores-second-112a6c3f"
 summary: >
   程序员是昂贵稀缺的生物计算核心，是软件成本的锚钉。硅制计算内核丰富而成本不断下降，而生物核却日益稀缺昂贵。因此优化CPU核之前，请优先考虑优化生物核——这正是Ruby on Rails的设计哲学。
-tags: [软件工程, 研发效能, Ruby, 翻译]
+tags: [软件工程, 性能, 数据库, 翻译]
 ---
 
 

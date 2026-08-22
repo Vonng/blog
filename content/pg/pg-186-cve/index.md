@@ -1,7 +1,7 @@
 ---
 title: "井喷：修了 28 个 CVE、110 个 BUG，PG 最新小版本发布"
 date: 2026-08-14
-author: 冯若航
+authors: [vonng]
 origin: "https://www.postgresql.org/about/news/postgresql-186-1711-1615-1519-1424-and-19-beta-3-released-3365/"
 summary: >
   PostgreSQL 18.6、17.11、16.15、15.19 与 14.24 正式发布，修复了 28 个安全漏洞和 110 多个 Bug；PostgreSQL 19 Beta 3 也同步亮相。

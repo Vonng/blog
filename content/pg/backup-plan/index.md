@@ -1,7 +1,7 @@
 ---
 title: "温备：使用pg_receivewal"
 date: 2019-03-02
-author: 冯若航
+authors: [vonng]
 summary: >
   备份有各种各样的策略，物理备份通常可以分为四种。
 tags: [PostgreSQL, PG管理, 备份]

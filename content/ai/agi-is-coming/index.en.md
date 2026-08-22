@@ -1,7 +1,7 @@
 ---
 title: "AGI Is Here. Do You Have a Ticket?"
 date: 2026-04-09
-author: vonng
+authors: [vonng]
 summary: >
   When the strongest AI is not expensive but simply unavailable, the world starts converging on digital feudalism. And the window to act is narrowing.
 tags: [AI, Claude]

@@ -1,9 +1,10 @@
 ---
 title: "Life at 28"
 date: 2021-09-20
-author: vonng
+authors: [vonng]
 summary: |
   My solar birthday falling on Mid-Autumn Festival is something that will only happen three times in my lifetime. Theoretically, this should be a memorable day, but the events of this year have left me numb.
+tags: [Essay]
 ---
 
 

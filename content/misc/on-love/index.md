@@ -2,9 +2,7 @@
 title: "爱情观"
 date: 2012-08-12
 summary: 决定恋爱与婚姻的到底是什么？
-menu:
-  sidebar:
-    parent: life
+tags: [随笔]
 ---
 
 

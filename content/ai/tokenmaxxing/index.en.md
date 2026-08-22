@@ -1,7 +1,7 @@
 ---
 title: "Burning Hundreds of Millions of Tokens a Day. Then What?"
 date: 2026-04-13
-author: vonng
+authors: [vonng]
 summary: >
   Once token burn turns from usage exhaust into a KPI and leaderboard, it quickly mutates into theater. Don't post fuel burn. Post where you got to.
 tags: [AI, Agent]

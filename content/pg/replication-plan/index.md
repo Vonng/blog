@@ -2,7 +2,7 @@
 title: "PostgreSQL 常见复制拓扑方案"
 linkTitle: "常见复制拓扑方案"
 date: 2019-03-29
-author: 冯若航
+authors: [vonng]
 summary: >
   复制是系统架构中的核心问题之一。
 tags: [PostgreSQL, PG管理, 架构]

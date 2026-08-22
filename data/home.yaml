@@ -1,0 +1,376 @@
+# The home page, both languages in one file.
+#
+# Everything the home page shows is configured here — the hero copy, the column
+# cards, the project and publication grids, and the closing call to action.
+# The one exception is the `recent` section, which lists the newest posts
+# straight from the content tree; only its heading and its two taxonomy
+# buttons are data.
+#
+# Section entries name a partial under layouts/_partials/landing/sections/ when
+# the theme has no section of that shape. Everything else is an OINK landing
+# section: https://oink.pgsty.com/docs/customize/home/
+
+zh-cn:
+  sections:
+    - type: hero
+      partial: landing/sections/hero-featured.html
+    - type: cards
+      key: columns
+      partial: landing/sections/column-cards.html
+    - type: cards
+      key: recent
+      partial: landing/sections/recent-posts.html
+    - type: cards
+      key: project
+      partial: landing/sections/link-cards.html
+    - type: cards
+      key: publication
+      partial: landing/sections/link-cards.html
+    - cta
+
+  hero:
+    eyebrow: 冯若航 · 数据库老司机 · 云计算泥石流
+    title: 老冯云数
+    # 第二行的四个称号分别链接到对应专栏。
+    lead: >-
+      [冯若航](/about/)（[@Vonng](https://github.com/Vonng)）：[Pigsty](https://pigsty.cc/) 作者，
+      [PGSTY](https://pgsty.com/zh) 创始人，[活跃](https://committers.top/china)[开源贡献者](https://gitstar-ranking.com/Vonng)。<br>
+      [数据库老司机](/db/)，[云计算泥石流](/cloud/)，[PostgreSQL 大法师](/pg/)，[AI Agent 探路者](/ai/)。
+    portrait: img/about/vonng.jpg
+    portrait_alt: 冯若航
+
+  columns:
+    eyebrow: 专栏
+    columns: 3
+    unit: 篇
+    items:
+      - page: /db
+        title: 数据库老司机
+        desc: 数据库行业的动态、新闻、调查、理念与最佳实践。
+      - page: /cloud
+        title: 云计算泥石流
+        desc: 云计算、下云与基础设施自建的深度思考与成本分析。
+      - page: /ai
+        title: AI Agent 探路者
+        desc: 关于 AI、Agent、LLM，以及 AI 与数据库之间的一切。
+      - page: /pg
+        title: Postgres 大法师
+        desc: PostgreSQL 生态进展，以及开发、运维、诊断与调优的经验。
+      - page: /trip
+        title: 行万里路
+        desc: 旅行、徒步与见闻 —— 山川湖海，风物人情。
+      - page: /misc
+        title: 人生旅途
+        desc: 与技术无关，或不完全有关的那些事：随笔与杂谈。
+
+  recent:
+    eyebrow: 最新文章
+    limit: 12
+    columns: 3
+    more:
+      - { label: 按标签浏览, url: tags/, icon: fa-solid fa-tags }
+      - { label: 按作者浏览, url: authors/, icon: fa-solid fa-user-pen }
+
+  project:
+    eyebrow: 开源项目
+    columns: 3
+    items:
+      - title: Pigsty
+        meta: 开源 PG RDS 发行版
+        image: img/works/pigsty.jpg
+        desc: 开箱即用的 PostgreSQL 数据库发行版，本地优先的 FLOSS RDS。
+        url: 'https://pigsty.cc'
+        external: true
+      - title: SILO
+        meta: S3 兼容对象存储
+        image: img/works/silo.jpg
+        desc: 社区维护的 MinIO 分支，延续 S3 兼容对象存储的开源版本。
+        url: 'https://silo.pgsty.com'
+        external: true
+      - title: OINK
+        meta: Hugo 文档主题
+        image: img/works/oink.jpg
+        desc: 本地优先的 Hugo 工程文档主题，也就是这个站点用的框架。
+        url: 'https://oink.pgsty.com'
+        external: true
+      - title: PIG
+        meta: PG 包管理器
+        image: img/works/pig.jpg
+        desc: 一条命令装上任意 PostgreSQL 扩展，覆盖 EL / Debian / Ubuntu。
+        url: 'https://pig.pgsty.com'
+        external: true
+      - title: SOW
+        meta: 软件仓库管理器
+        image: img/works/sow.jpg
+        desc: 一次入库，处处分发 —— APT 与 YUM 软件仓库的构建与镜像。
+        url: 'https://sow.pgsty.com'
+        external: true
+      - title: PG Exporter
+        meta: 监控指标采集
+        image: img/works/pg-exporter.jpg
+        desc: 用 SQL 表达的 PostgreSQL 可观测性，600+ 指标，声明式采集器。
+        url: 'https://exp.pgsty.com'
+        external: true
+      - title: CapsLock 补完计划
+        meta: 键盘改造
+        image: img/works/capslock.jpg
+        desc: 把没什么用的大写锁定键，变成第五个修饰键。
+        url: 'https://caps.vonng.com/zh'
+        external: true
+      - title: PGEXT.CLOUD
+        meta: PostgreSQL 扩展目录
+        image: img/works/pgext.jpg
+        desc: 400+ PostgreSQL 扩展的索引、目录与元数据。
+        url: 'https://pgext.cloud/zh/'
+        external: true
+
+  publication:
+    eyebrow: 译作与著述
+    columns: 3
+    items:
+      - title: DDIA
+        meta: 中文翻译本
+        image: img/works/ddia.jpg
+        desc: 《设计数据密集型应用》中文版，分布式系统的必读经典。
+        url: 'https://ddia.vonng.com'
+        external: true
+      - title: PostgreSQL 内幕探索
+        meta: 中文翻译本
+        image: img/works/pg-internal.jpg
+        desc: 《PostgreSQL Internals》中文版，讲述 PostgreSQL 内核原理。
+        url: 'https://pgint.vonng.com'
+        external: true
+      - title: 赛博经藏
+        meta: Cyber Dharma
+        image: img/works/dharma.jpg
+        desc: 七种传统绕着一台机器旋转 —— 关于技术与信仰的札记。
+        url: 'https://dharma.vonng.com'
+        external: true
+      - title: 产品思维工程师
+        meta: 中文翻译本
+        image: img/works/tpme.jpg
+        desc: 《The Product-Minded Engineer》中文版。
+        url: 'https://tpme.vonng.com'
+        external: true
+      - title: pg.center
+        meta: PostgreSQL 官网中文版
+        image: img/works/pg-center.jpg
+        desc: postgresql.org 的完整中文镜像，含 PG 18 中文文档。
+        url: 'https://pg.center'
+        external: true
+      - title: pgsql.cc
+        meta: PG 运维文库
+        image: img/works/pgsql-cc.jpg
+        desc: PostgreSQL 与周边组件的中英文运维文档聚合站。
+        url: 'https://pgsql.cc'
+        external: true
+      - title: D-Bot
+        meta: VLDB 论文
+        image: img/works/dbot.jpg
+        desc: Database Diagnosis System using Large Language Models，VLDB 2024。
+        url: 'https://www.vldb.org/pvldb/vol17/p2514-li.pdf'
+        external: true
+      - title: hbase_fdw
+        meta: PostgreSQL 外部数据包装器
+        image: img/works/hbase-fdw.jpg
+        desc: 把 HBase 表当作 PostgreSQL 关系来查询。
+        url: 'https://github.com/Vonng/hbase_fdw'
+        external: true
+      - title: Empire of AI
+        meta: 中文翻译本
+        image: img/works/aiempire.jpg
+        desc: 《AI 帝国》中文版，关于 OpenAI 的梦想与梦魇。
+        url: 'https://aiempire.vonng.com'
+        external: true
+
+  cta:
+    title: 有问题，或者想聊聊？
+    text: 欢迎在任何一篇文章下留言，也可以订阅 RSS，或者直接找我。
+    actions:
+      - { label: 关于我, url: about/, icon: fa-solid fa-circle-user, style: primary }
+      - { label: 订阅 RSS, url: index.xml, icon: fa-solid fa-rss, style: ghost }
+      - { label: GitHub, url: 'https://github.com/Vonng', icon: fa-brands fa-github, external: true, style: ghost }
+      - { label: 写封邮件, url: 'mailto:rh@vonng.com', icon: fa-solid fa-envelope, style: ghost }
+
+en:
+  sections:
+    - type: hero
+      partial: landing/sections/hero-featured.html
+    - type: cards
+      key: columns
+      partial: landing/sections/column-cards.html
+    - type: cards
+      key: recent
+      partial: landing/sections/recent-posts.html
+    - type: cards
+      key: project
+      partial: landing/sections/link-cards.html
+    - type: cards
+      key: publication
+      partial: landing/sections/link-cards.html
+    - cta
+
+  hero:
+    eyebrow: Ruohang Feng · Database Guru · Cloud Exiter
+    title: Vonng's Blog
+    # The four titles on the second line each link to their column.
+    lead: >-
+      [Ruohang Feng](/en/about/) ([@Vonng](https://github.com/Vonng)): author of
+      [Pigsty](https://pigsty.io/), founder of [PGSTY](https://pgsty.com/),
+      [active](https://committers.top/china) [open source contributor](https://gitstar-ranking.com/Vonng).<br>
+      [Database Guru](/en/db/), [Cloud Exiter](/en/cloud/), [PostgreSQL Mage](/en/pg/), [AI Agent Explorer](/en/ai/).
+    portrait: img/about/vonng.jpg
+    portrait_alt: Ruohang Feng
+
+  columns:
+    eyebrow: Columns
+    columns: 3
+    unit: posts
+    items:
+      - page: /db
+        title: Database Guru
+        desc: News, reports, surveys and best practices from the database industry.
+      - page: /cloud
+        title: Cloud-Exiter
+        desc: Cloud economics, cloud-exit and self-hosting — deep dives and cost analyses.
+      - page: /ai
+        title: AI Agent Explorer
+        desc: Agents, LLMs, and everything between AI and databases.
+      - page: /pg
+        title: PostgreSQL Mage
+        desc: PostgreSQL ecosystem news, plus development, operations and tuning.
+      - page: /trip
+        title: Travel Notes
+        desc: Trips, hikes and the things seen along the way.
+      - page: /misc
+        title: Miscellaneous
+        desc: The things that are not about technology, or not only about it.
+
+  recent:
+    eyebrow: Latest Posts
+    limit: 12
+    columns: 3
+    more:
+      - { label: Browse by tag, url: tags/, icon: fa-solid fa-tags }
+      - { label: Browse by author, url: authors/, icon: fa-solid fa-user-pen }
+
+  project:
+    eyebrow: Projects
+    columns: 3
+    items:
+      - title: Pigsty
+        meta: FOSS PostgreSQL RDS
+        image: img/works/pigsty.jpg
+        desc: A battery-included PostgreSQL distribution — the local-first, free and open source RDS.
+        url: 'https://pigsty.io'
+        external: true
+      - title: SILO
+        meta: S3-compatible object storage
+        image: img/works/silo.jpg
+        desc: The community-maintained MinIO fork that keeps S3-compatible storage open source.
+        url: 'https://silo.pgsty.com'
+        external: true
+      - title: OINK
+        meta: Hugo documentation theme
+        image: img/works/oink.jpg
+        desc: A local-first Hugo theme for engineering docs — the one this site runs on.
+        url: 'https://oink.pgsty.com'
+        external: true
+      - title: PIG
+        meta: PostgreSQL package manager
+        image: img/works/pig.jpg
+        desc: One command, any extension — across EL, Debian and Ubuntu.
+        url: 'https://pig.pgsty.com'
+        external: true
+      - title: SOW
+        meta: Repository manager
+        image: img/works/sow.jpg
+        desc: Store once, serve everywhere — building and mirroring APT and YUM repositories.
+        url: 'https://sow.pgsty.com'
+        external: true
+      - title: PG Exporter
+        meta: Monitoring
+        image: img/works/pg-exporter.jpg
+        desc: PostgreSQL observability expressed in SQL — 600+ metrics, declarative collectors.
+        url: 'https://exp.pgsty.com'
+        external: true
+      - title: Capslock Enhancement
+        meta: Keyboard tooling
+        image: img/works/capslock.jpg
+        desc: Turn the mostly useless CapsLock key into a fifth modifier.
+        url: 'https://caps.vonng.com'
+        external: true
+      - title: PGEXT.CLOUD
+        meta: Extension catalog
+        image: img/works/pgext.jpg
+        desc: An index of 400+ PostgreSQL extensions, with metadata for every one.
+        url: 'https://pgext.cloud'
+        external: true
+
+  publication:
+    eyebrow: Publications
+    columns: 3
+    items:
+      - title: DDIA
+        meta: Chinese translation
+        image: img/works/ddia.jpg
+        desc: Designing Data-Intensive Applications, translated into Chinese.
+        url: 'https://ddia.vonng.com'
+        external: true
+      - title: PostgreSQL Internals
+        meta: Chinese translation
+        image: img/works/pg-internal.jpg
+        desc: PostgreSQL Internals, translated into Chinese.
+        url: 'https://pgint.vonng.com'
+        external: true
+      - title: Cyber Dharma
+        meta: 赛博经藏
+        image: img/works/dharma.jpg
+        desc: Seven traditions orbiting one machine — notes on technology and belief.
+        url: 'https://dharma.vonng.com'
+        external: true
+      - title: The Product-Minded Engineer
+        meta: Chinese translation
+        image: img/works/tpme.jpg
+        desc: A book on engineering with a product mind, translated into Chinese.
+        url: 'https://tpme.vonng.com'
+        external: true
+      - title: pg.center
+        meta: postgresql.org in Chinese
+        image: img/works/pg-center.jpg
+        desc: A complete Chinese mirror of postgresql.org, including the PG 18 manual.
+        url: 'https://pg.center'
+        external: true
+      - title: pgsql.cc
+        meta: PG operations library
+        image: img/works/pgsql-cc.jpg
+        desc: An aggregate operations library for PostgreSQL and the components around it.
+        url: 'https://pgsql.cc'
+        external: true
+      - title: D-Bot
+        meta: VLDB paper
+        image: img/works/dbot.jpg
+        desc: Database Diagnosis System using Large Language Models, VLDB 2024.
+        url: 'https://www.vldb.org/pvldb/vol17/p2514-li.pdf'
+        external: true
+      - title: hbase_fdw
+        meta: PostgreSQL foreign data wrapper
+        image: img/works/hbase-fdw.jpg
+        desc: Query HBase tables as ordinary PostgreSQL relations.
+        url: 'https://github.com/Vonng/hbase_fdw'
+        external: true
+      - title: Empire of AI
+        meta: Chinese translation
+        image: img/works/aiempire.jpg
+        desc: Dreams and nightmares inside OpenAI, translated into Chinese.
+        url: 'https://aiempire.vonng.com'
+        external: true
+
+  cta:
+    title: Questions, or just want to talk?
+    text: Leave a comment under any article, subscribe by RSS, or reach me directly.
+    actions:
+      - { label: About me, url: about/, icon: fa-solid fa-circle-user, style: primary }
+      - { label: Subscribe, url: index.xml, icon: fa-solid fa-rss, style: ghost }
+      - { label: GitHub, url: 'https://github.com/Vonng', icon: fa-brands fa-github, external: true, style: ghost }
+      - { label: Email, url: 'mailto:rh@vonng.com', icon: fa-solid fa-envelope, style: ghost }

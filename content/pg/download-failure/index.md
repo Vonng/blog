@@ -1,10 +1,10 @@
 ---
 title: "故障档案：快慢不匀雪崩"
 date: 2018-04-08
-author: 冯若航
+authors: [vonng]
 summary: >
   最近发生了一起匪夷所思的故障，某数据库切走了一半的数据量和负载，结果却因为负载变大被打挂了。
-tags: [PostgreSQL, PG管理, 故障档案]
+tags: [PostgreSQL, PG管理, 故障复盘]
 ---
 
 

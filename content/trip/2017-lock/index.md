@@ -3,9 +3,7 @@ title: "香格里拉：洛克线游记"
 date: 2017-09-28
 summary: |
   单人重装洛克线，用三天半的时间走完了6天的路，真是差点死在山上啊。
-menu:
-  sidebar:
-    parent: trip
+tags: [旅行]
 ---
 
 

@@ -1,10 +1,10 @@
 ---
 title: "阿里千问巨震，灵魂人物离场"
 date: 2026-03-04
-author: 冯若航
+authors: [vonng]
 summary: >
   通义千问（Qwen）技术负责人林俊旸（Justin Lin）在 X 上发布了一条简短的推文宣布离开 Qwen。
-tags: [阿里云, AI, Qwen]
+tags: [AI, 大模型, 阿里云]
 ai: true
 aliases: ["/ai/qwen-leave/"]
 ---

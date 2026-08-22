@@ -5,8 +5,7 @@ date: 2024-09-07
 authors: ["dhh"]
 summary: >
   Programmers are expensive, scarce biological computing cores, the anchor point of software costs — please prioritize optimizing biological cores before optimizing CPU cores.
-module: []
-tags: [Database]
+tags: [Software Engineering, Performance, Database, Translation]
 ---
 
 

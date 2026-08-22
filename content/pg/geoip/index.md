@@ -1,7 +1,7 @@
 ---
 title: "GeoIP 地理逆查询优化"
 date: 2018-07-07
-author: 冯若航
+authors: [vonng]
 summary: >
   在应用开发中，一个很常见的需求就是GeoIP转换：将请求的来源IP转换为相应的地理坐标，或者行政区划。
 tags: [PostgreSQL, PG开发, 扩展, GIS]

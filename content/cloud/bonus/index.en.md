@@ -2,11 +2,10 @@
 title: Reclaim Hardware Bonus from the Cloud
 linkTitle: Reclaim Hardware Bonus
 date: 2023-11-16
-author: |
-  [Ruohang Feng](https://vonng.com/en/) ([@Vonng](https://vonng.com/en/)) | [WeChat](https://mp.weixin.qq.com/s/1OSRcBfd58s0tgZTUZHB9g)
+authors: [vonng]
 summary: >
   Hardware is interesting again, developments in CPUs and SSDs remain largely unnoticed by the majority of devs. A whole generation of developers is obscured by cloud hype and marketing noise. 
-tags: [Cloud, Cloud-Exit, Hardware]
+tags: [Cloud-Exit, Cloud, Hardware]
 ---
 
 

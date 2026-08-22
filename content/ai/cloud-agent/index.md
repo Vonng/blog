@@ -3,7 +3,7 @@ title: "隐私换便利？云上AI助理意味着什么？"
 date: 2026-01-30
 description: "避免将隐私交到对你有直接影响力的平台中 —— 利用数据避风港原则，可以在享受 AI 便利的同时，大幅降低隐私风险。"
 categories: ["CLOUD"]
-tags: ["AI", "Data", "Privacy", "Cloud"]
+tags: [AI, 云计算, 软件工程, 安全]
 ai: true
 aliases: ["/cloud/cloud-agent/"]
 ---

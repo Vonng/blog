@@ -1,10 +1,10 @@
 ---
 title: "Those Who Left the Cloud Made a Killing"
 date: 2026-08-15
-author: Ruohang Feng
+authors: [vonng]
 summary: >
   I spent years urging people to leave the cloud. Those who listened two years ago made a killing. Leaving has never been just about savings; it is about buying back your freedom. Cost curves move. Sovereignty does not.
-tags: [Cloud-Exit, Cloud Computing, DHH, Data Sovereignty]
+tags: [Cloud-Exit, Cloud, Data Sovereignty]
 ---
 
 Leaving the cloud has never been just about saving money. It is about buying back your freedom. Cost curves move; sovereignty does not. I have spent years urging people to get out. Friends who listened two years ago made a killing.

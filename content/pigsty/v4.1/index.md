@@ -2,8 +2,7 @@
 title: "Pigsty v4.1：天下武功，唯快不破"
 linkTitle: "天下武功，唯快不破"
 date: 2026-02-12
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/pgsty/pigsty/releases/tag/v4.1.0)）
+authors: [vonng]
 summary: >
   PG 18.2 小版本发布当天即可生产支持，是 Pigsty v4.1 的核心竞争力。除了 Pigsty 与 AWS RDS，几乎没有发行版能在这个速度上长期稳定兑现。
 series: [Pigsty]

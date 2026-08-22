@@ -2,10 +2,10 @@
 title: "小红书究竟有没有下云？"
 linkTitle: "小红书究竟有没有下云？"
 date: 2025-12-26
-author: 冯若航
+authors: [vonng]
 summary: >
   当一家"原生长在云上"的公司开始"自建优先"，这算不算下云？文章被删，重发一篇，聊聊中国互联网企业的基础设施成人礼。
-tags: [下云, 阿里云, 小红书]
+tags: [下云, 阿里云, 商业]
 ---
 
 > [微信公众号原文](https://mp.weixin.qq.com/s/Dr6zsb8aBJ9CMuei2Bd0VA)

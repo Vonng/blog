@@ -1,11 +1,10 @@
 ---
 title: "Jensen Huang's First-Ever Tweet Backs Open-Weight Models"
 date: 2026-07-25
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   Jensen Huang used his first-ever tweet to back open weights. This is not a battle of faith. It is the compute and application layers pushing back against rent extraction by the model layer. The truly scarce technical asset is the right to exit—one no one else can unilaterally revoke.
-tags: [AI, Open Weights, Open Source, NVIDIA, Data Sovereignty]
+tags: [AI, LLM, Data Sovereignty, Open Source]
 ai: true
 ---
 

@@ -2,8 +2,7 @@
 title: "Pigsty v2.6：PG 踢馆 OLAP"
 linkTitle: "Pigsty v2.6 发布注记"
 date: 2024-02-27
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v2.6.0)）
+authors: [vonng]
 summary: >
   Pigsty v2.6 使用 PostgreSQL 16.2 作为了默认主版本，并引入了 ParadeDB 与 DuckDB 支持。
 series: [Pigsty]

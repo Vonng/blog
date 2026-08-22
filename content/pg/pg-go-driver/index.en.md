@@ -1,9 +1,9 @@
 ---
 title: "Go Database Tutorial: database/sql"
 date: 2017-08-24
-author: "vonng"
+authors: [vonng]
 summary: "Similar to JDBC, Go also has a standard database access interface. This article details how to use database/sql in Go and important considerations."
-tags: ["PostgreSQL","Go"]
+tags: [PostgreSQL, Software Engineering]
 ---
 
 The conventional way Go uses SQL and SQL-like databases is through the standard library [database/sql](http://golang.org/pkg/database/sql/). This is a generic abstraction for relational databases that provides a standard, lightweight, row-oriented interface. However, the documentation for the `database/sql` package only explains what it does, without mentioning how to use it. Quick guides are far more useful than piling up facts. This article explains how to use `database/sql` and its considerations.

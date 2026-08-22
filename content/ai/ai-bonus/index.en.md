@@ -1,7 +1,7 @@
 ---
 title: "AI Survival Guide: Where the Biggest Arbitrage Really Is"
 date: 2026-03-10
-author: vonng
+authors: [vonng]
 summary: >
   The biggest AI arbitrage available to ordinary users is not some obscure token play. It is the heavily subsidized max-tier subscription plans from frontier model vendors, provided you can convert that quota into real output.
 tags: [AI, Claude, Codex]

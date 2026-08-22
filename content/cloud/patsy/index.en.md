@@ -1,8 +1,7 @@
 ---
 title: "Escaping Cloud Computing Scam Mills: The Big Fool Paying for Pain"
 date: 2025-01-13
-author: |
-  [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   A user consulted about distributed databases, but he wasn't dealing with data bursting through server cabinet doors—rather, he'd fallen into another cloud computing pig-butchering scam.
 tags: [Cloud-Exit]

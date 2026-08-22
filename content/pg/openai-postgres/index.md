@@ -5,7 +5,7 @@ authors: [bohan-zhang]
 origin: "https://www.pgevents.ca/events/pgconfdev2025/schedule/session/433-scaling-postgres-to-the-next-level-at-openai/"
 summary: >
   PostgreSQL 的标杆案例，他们使用1主50从的经典主从PG，支撑了8亿ChatGPT用户。附上老冯的评论与看法。
-tags: [PostgreSQL, OpenAI]
+tags: [PostgreSQL, Codex]
 ai: true
 aliases: ["/ai/openai-postgres/", "/db/openai-postgres/"]
 ---

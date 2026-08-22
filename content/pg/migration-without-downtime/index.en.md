@@ -2,9 +2,9 @@
 title: "Changing Engines Mid-Flight — PostgreSQL Zero-Downtime Data Migration"
 linkTitle: "Zero-Downtime Data Migration Basic Principles"
 date: 2018-02-06
-author: "vonng"
+authors: [vonng]
 summary: "Data migration typically involves stopping services for updates. Zero-downtime data migration is a relatively advanced operation."
-tags: ["PostgreSQL","PG-Admin","Migration"]
+tags: [PostgreSQL, PG Admin, Migration]
 ---
 
 Data migration typically involves stopping services for updates. Zero-downtime data migration is a relatively advanced operation.

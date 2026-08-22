@@ -1,10 +1,10 @@
 ---
 title: "S3: Elite to Mediocre"
 date: 2023-12-26
-author: vonng 
+authors: [vonng]
 summary: |
   S3 is no longer "cheap" with the evolution of hardware, and other challengers such as cloudflare R2.
-tags: [Cloud, Cloud-Exit, S3, MinIO]
+tags: [Cloud-Exit, Cloud, Object Storage, AWS]
 ---
 
 > [WeChat](https://mp.weixin.qq.com/s/HathxpQ_KUuqxyrtyCDzWw)

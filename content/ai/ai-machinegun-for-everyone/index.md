@@ -1,12 +1,12 @@
 ---
 title: "AGI 机关枪发下来了"
 date: 2026-08-20
-author: 冯若航
+authors: [vonng]
 summary: >
   我的朋友蒋老板一个月糊出四个数据库、一套操作系统、一门编程语言、一个编译器和一颗 CPU，成了当下 AI 狂欢的缩影。
 tags: [AI, Agent, 软件工程, 开源]
 ai: true
-featureimage: apes.webp
+images: [apes.webp]
 ---
 
 > 我的朋友蒋老板一个月糊出四个数据库、一套操作系统、一门编程语言、一个编译器和一颗 CPU，成了当下 AI 狂欢的缩影。

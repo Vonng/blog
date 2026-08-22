@@ -1,10 +1,10 @@
 ---
 title: AI正在让信任的脚手架塌陷
 date: 2026-05-05
-author: 冯若航
+authors: [vonng]
 summary: >
   AI 时代最危险的变化，不是机器会写文章、画图片、生成视频，而是内容本身正在失去作为证据的资格。
-tags: [AI, 信任, 社会资本, Agent]
+tags: [AI, Agent, 开源, 社会观察]
 ai: true
 ---
 

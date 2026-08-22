@@ -2,8 +2,7 @@
 title: "Pigsty v2.7：集异璧之大成"
 linkTitle: "Pigsty v2.7 发布注记"
 date: 2024-05-21
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v2.7.0)）
+authors: [vonng]
 summary: >
   收录255个PG扩展插件，PG扩展尽入吾彀中矣！提供Odoo, PolarDB, Supabase支持，专业版，以及"国产化支持"。
 series: [Pigsty]

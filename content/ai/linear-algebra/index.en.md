@@ -1,15 +1,13 @@
 ---
 title: "Fundamental Concepts of Linear Algebra"
 date: 2012-11-04
-author: vonng
-math: true
+authors: [vonng]
 summary: |
   Connecting all concepts in linear algebra through one main thread
 ai: true
 aliases: ["/misc/linear-algebra/"]
+tags: [AI]
 ---
-
-{{< katex >}}
 
 > Connecting all concepts in linear algebra through one main thread
 

@@ -1,10 +1,9 @@
 ---
 title: MySQL is dead, Long live PostgreSQL!
 date: 2024-07-08
-author: |
-  [Ruohang Feng](https://vonng.com/en/) ([@Vonng](https://vonng.com/en/)) | [Wechat Column](https://mp.weixin.qq.com/s/JgGCn9o2-DNPNqazPZXTtA)
+authors: [vonng]
 draft: true  
-tags: [Database,MySQL,PostgreSQL]
+tags: [MySQL, PostgreSQL, Database, Commentary]
 ---
 
 This July, MySQL 9.0 was finally released—a full eight years after its last major version, 8.0 ([@2016-09](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-0.html)). Yet, this hollow "innovation" release feels like a bad joke, signaling that **MySQL is on its deathbed**.

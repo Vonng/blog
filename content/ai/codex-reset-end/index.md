@@ -1,10 +1,10 @@
 ---
 title: "Codex Reset 狂欢结束，免费的鸡蛋没了"
 date: 2026-08-08
-author: 冯若航
+authors: [vonng]
 summary: >
   OpenAI 的 Codex Reset 狂欢告一段落。免费的鸡蛋发完了，但这一个月里，七个 AI 订阅、三台电脑和两款 AGI 级模型，到底换出了什么？
-tags: [AI, Codex, OpenAI, Claude]
+tags: [AI, Codex, Claude]
 ai: true
 ---
 

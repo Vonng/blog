@@ -1,7 +1,7 @@
 ---
 title: "重置：Codex／Claude 第 N 轮大战启动"
 date: 2026-07-13
-author: 冯若航
+authors: [vonng]
 summary: >
   早上 Codex 又重置了，还取消了5小时限额，Claude 马上宣布 Fable 访问延期到 17 号。鹬蚌相争，用户得利，千万不要错过。
 tags: [AI, Agent, Codex, Claude]

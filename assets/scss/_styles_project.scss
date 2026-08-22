@@ -1,0 +1,562 @@
+// Site styles, compiled after the OINK component and brand layers.
+//
+// The brand layer is a set of CSS custom properties, and light and dark have
+// to be overridden in pairs or one mode keeps the theme's own navy/copper.
+// The values below restate the Blowfish palette this site used before: blue
+// links, a cyan accent, and a blue-to-cyan brand gradient.
+
+:root,
+[data-bs-theme='light'] {
+  // PostgreSQL's own slate blue at rest; hover brightens toward azure. The
+  // sitewide colors transition the theme puts on every anchor carries it.
+  --bs-link-color: #336791; // the PostgreSQL blue
+  --bs-link-color-rgb: 51, 103, 145;
+  --bs-link-hover-color: #1f8fd6; // bright azure
+  --bs-link-hover-color-rgb: 31, 143, 214;
+  --bs-code-color: #0e7490; // cyan-700
+
+  --td-brand-copper: #0891b2; // cyan-600 — the accent rule and eyebrow colour
+  --td-brand-copper-dim: rgba(8, 145, 178, 0.6);
+  // --td-brand-mark-* is deliberately left alone: the wordmark in the navbar
+  // and the footer keeps OINK's own gradient.
+}
+
+[data-bs-theme='dark'] {
+  // The same pair lifted for a dark ground: a muted slate blue at rest, the
+  // same azure on hover.
+  --bs-link-color: #8fb4d4;
+  --bs-link-color-rgb: 143, 180, 212;
+  --bs-link-hover-color: #5cc2f5;
+  --bs-link-hover-color-rgb: 92, 194, 245;
+  --bs-code-color: #67e8f9; // cyan-300
+
+  --td-brand-copper: #22d3ee; // cyan-400
+  --td-brand-copper-dim: rgba(34, 211, 238, 0.55);
+}
+
+// The about page's portrait reads as a photograph rather than a diagram: give
+// it the same rounded plate the content cards use.
+.td-blog .td-figure img,
+body.td-section .td-figure img {
+  border-radius: var(--bs-border-radius-lg, 0.5rem);
+}
+
+// -- Column cards ---------------------------------------------------------
+//
+// Card thumbnails are 2:1 rather than 16:9. Hugo crops the images it can
+// process in layouts/_partials/shell/blog-card.html; this imposes the same
+// frame on SVG, static and remote images, which it cannot.
+.td-blog-card__image {
+  // The `height` attribute is a presentational hint, and a definite height
+  // makes the browser ignore `aspect-ratio` altogether. Release the height
+  // first, then the ratio decides the frame.
+  height: auto;
+  aspect-ratio: 2 / 1;
+}
+
+// -- Column profile -------------------------------------------------------
+//
+// The opening of a blog column index: a round portrait, the column name, the
+// byline line and one line of description, centred over the section's Hero.
+// Rendered by layouts/_partials/page-title.html for pages with a `profile`.
+.td-column-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.35rem;
+
+  &__avatar {
+    width: 9rem;
+    height: 9rem;
+    margin-block-end: 0.35rem;
+    border-radius: 50%;
+    border: 3px solid var(--td-brand-elev);
+    box-shadow: var(--td-brand-shadow-md);
+    object-fit: cover;
+    background: var(--bs-secondary-bg);
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  &__headline {
+    margin: 0;
+    color: var(--bs-secondary-color);
+    font-family: var(--td-meta-font-family);
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+  }
+
+  &__description {
+    max-width: 44rem;
+    margin: 0.15rem auto 0;
+    color: var(--bs-secondary-color);
+  }
+
+  @media (max-width: 575.98px) {
+    &__avatar {
+      width: 7rem;
+      height: 7rem;
+    }
+  }
+}
+
+// The Hero pushes the opening down; the profile is that opening, so the card
+// grid needs the breathing room the plain title row did not.
+.td-blog-posts {
+  margin-block-start: 2rem;
+}
+
+// -- Landing cards carrying a photograph ----------------------------------
+//
+// `.td-landing-card__media` is a 48px icon plate, which turns a screenshot
+// into a thumbnail. The About page's portfolio cards ask for the same
+// cinemascope banner the column cards use, so the section declares
+// `class: td-work-cards` and the plate becomes a full-width image.
+.td-work-cards .td-landing-card__media {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2.35 / 1;
+  overflow: hidden;
+  background: var(--bs-secondary-bg);
+
+  img {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
+  }
+}
+
+
+// -- Home: the column cards ------------------------------------------------
+//
+// One card per blog column, the whole card a link. Round logo on the left,
+// title / subtitle / description in the middle, the live post count and a
+// travelling arrow on the right. Rendered by
+// layouts/_partials/landing/sections/column-cards.html.
+.td-column-card-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--td-columns, 2), minmax(0, 1fr));
+  gap: 16px;
+
+  // A logo-beside-text card needs roughly 440px to hold three lines without
+  // breaking words, so the grid collapses to one column well before the
+  // generic card grids do.
+  @media (max-width: 991.98px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.td-column-card {
+  display: grid;
+  // Two columns, not three: the post count rides on the title's own line, so
+  // the description gets the whole body width and breaks late.
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(0.85rem, 1.7vw, 1.2rem);
+  padding: clamp(1.1rem, 2.4vw, 1.6rem);
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius-lg, 0.75rem);
+  background: var(--td-brand-elev);
+  color: inherit;
+  text-decoration: none;
+  box-shadow: var(--td-brand-shadow-sm);
+  position: relative;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+
+  &__logo {
+    display: block;
+    position: relative;
+    flex: none;
+
+    img {
+      display: block;
+      width: clamp(3.75rem, 7vw, 5rem);
+      height: clamp(3.75rem, 7vw, 5rem);
+      border-radius: 50%;
+      border: 2px solid var(--bs-body-bg);
+      box-shadow: var(--td-brand-shadow-sm);
+      object-fit: cover;
+      background: var(--bs-secondary-bg);
+      transition: transform 220ms ease;
+    }
+  }
+
+  &__body {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+  }
+
+  &__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  &__title {
+    color: var(--bs-emphasis-color);
+    font-size: clamp(1.05rem, calc(0.95rem + 0.35vw), 1.25rem);
+    font-weight: 700;
+    line-height: 1.25;
+    transition: color 180ms var(--td-shell-ease-color, ease);
+  }
+
+  &__desc {
+    margin-block-start: 0.4rem;
+    color: var(--bs-secondary-color);
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  &__count {
+    flex: none;
+    color: var(--bs-tertiary-color);
+    font-family: var(--td-meta-font-family);
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1;
+
+    small {
+      margin-inline-start: 0.15em;
+      font-size: 0.62em;
+      font-weight: 500;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    inset-block-end: clamp(1.1rem, 2.4vw, 1.6rem);
+    inset-inline-end: clamp(1.1rem, 2.4vw, 1.6rem);
+    color: var(--td-brand-copper);
+    font-size: 0.85rem;
+    opacity: 0;
+    transform: translateX(-0.35rem);
+    transition:
+      opacity 180ms ease,
+      transform 180ms ease;
+  }
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--td-brand-copper-dim);
+    box-shadow: var(--td-brand-shadow-md);
+    transform: translateY(-3px);
+
+    .td-column-card__logo img {
+      transform: scale(1.06);
+    }
+
+    .td-column-card__title {
+      color: var(--bs-link-color);
+    }
+
+    .td-column-card__arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--bs-link-color);
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 767.98px) {
+    &__count {
+      display: none;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .td-column-card,
+  .td-column-card__logo img,
+  .td-column-card__arrow {
+    transition: none;
+  }
+
+  .td-column-card:hover,
+  .td-column-card:focus-visible {
+    transform: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .td-column-card:hover,
+  .td-column-card:focus-visible {
+    outline: 2px solid Highlight;
+  }
+}
+
+// Ways out of the recent-posts feed sit apart from the grid rather than
+// tucked under it, and read as a pair of equal choices.
+.td-landing-recent__more {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block-start: clamp(2rem, 4vw, 3rem);
+}
+
+// -- Home: the featured hero ----------------------------------------------
+//
+// The same treatment `featured_image: hero` gives a blog article: the image
+// full-bleed behind the opening, masked away before the text. `.td-featured-hero`
+// is the theme's own element and styling; all this adds is the containing
+// block it needs on a landing page, and room for the copy to clear the image.
+// Docsy's `.td-default main section { padding: 5rem 0 }` is (0,1,2) and uses
+// the padding shorthand, so it outranks a lone `.td-hero-featured--with-image`
+// and silently flattened this opening. Nesting under `.td-landing-landing`
+// puts these rules at (0,2,0)/(0,3,0), which wins on class count.
+.td-landing-landing {
+  .td-hero-featured {
+    position: relative;
+    isolation: isolate;
+    padding-block: clamp(40px, 6vw, 72px) clamp(56px, 7vw, 104px);
+
+    // The navbar overlays the picture, so the copy has to clear both the bar
+    // and enough of the image to sit in it rather than against it.
+    &--with-image {
+      padding-block-start: clamp(180px, 30vh, 320px);
+
+      @media (max-width: 767.98px) {
+        padding-block-start: clamp(120px, 24vh, 220px);
+      }
+    }
+
+    // Copy on the left, portrait in the space the picture leaves on the right.
+    &__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: clamp(2rem, 5vw, 4.5rem);
+    }
+
+    &__portrait {
+      justify-self: end;
+      // Inset from the container edge so the portrait sits inside the
+      // composition rather than against its right margin.
+      margin-inline-end: clamp(0rem, 4vw, 4rem);
+
+      img {
+        display: block;
+        width: clamp(10rem, 19vw, 17rem);
+        height: clamp(10rem, 19vw, 17rem);
+        border-radius: 50%;
+        border: 4px solid var(--td-brand-elev);
+        box-shadow: var(--td-brand-shadow-md);
+        object-fit: cover;
+        background: var(--bs-secondary-bg);
+      }
+
+      @media (max-width: 991.98px) {
+        display: none;
+      }
+    }
+
+    &__eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin: 0 0 0.9rem;
+      color: var(--bs-secondary-color);
+      font-family: var(--td-meta-font-family);
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+    }
+
+    &__title {
+      margin: 0;
+      color: var(--bs-emphasis-color);
+      font-family: var(--td-display-font-family);
+      font-size: clamp(2.75rem, calc(1.6rem + 4.5vw), 5.25rem);
+      font-weight: 700;
+      line-height: 1.02;
+      letter-spacing: -0.015em;
+    }
+
+    &__lead {
+      max-width: 54rem;
+      margin-block-start: clamp(1rem, 2vw, 1.6rem);
+      color: var(--bs-body-color);
+      font-size: clamp(1.02rem, calc(0.95rem + 0.3vw), 1.2rem);
+      line-height: 1.75;
+
+      p {
+        margin: 0;
+      }
+
+      // The landing layer bolds its links; in a paragraph of running prose
+      // that reads as emphasis rather than as a link, so colour does the work.
+      a {
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+// -- Works: image-led link cards -------------------------------------------
+//
+// A 2:1 image fills the top of the card and the whole card is the link, so
+// there is no separate call to action to click.
+.td-link-card-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--td-columns, 3), minmax(0, 1fr));
+  gap: 18px;
+
+  @media (max-width: 991.98px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (max-width: 575.98px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.td-link-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius-lg, 0.75rem);
+  background: var(--td-brand-elev);
+  color: inherit;
+  text-decoration: none;
+  box-shadow: var(--td-brand-shadow-sm);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+
+  &__media {
+    display: block;
+    overflow: hidden;
+    background: var(--bs-secondary-bg);
+    border-block-end: 1px solid var(--bs-border-color);
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      // 5:3 — close enough to what the source social cards and cover art are
+      // actually drawn at that the crop takes almost nothing off them.
+      aspect-ratio: 5 / 3;
+      object-fit: cover;
+      transition: transform 320ms ease;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: clamp(0.95rem, 2vw, 1.3rem);
+  }
+
+  &__title {
+    color: var(--bs-emphasis-color);
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.3;
+    transition: color 180ms var(--td-shell-ease-color, ease);
+  }
+
+  &__meta {
+    color: var(--td-brand-copper);
+    font-family: var(--td-meta-font-family);
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  &__desc {
+    margin-block-start: 0.4rem;
+    color: var(--bs-secondary-color);
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--td-brand-copper-dim);
+    box-shadow: var(--td-brand-shadow-md);
+    transform: translateY(-3px);
+
+    .td-link-card__media img {
+      transform: scale(1.04);
+    }
+
+    .td-link-card__title {
+      color: var(--bs-link-color);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--bs-link-color);
+    outline-offset: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .td-link-card,
+  .td-link-card__media img {
+    transition: none;
+  }
+
+  .td-link-card:hover,
+  .td-link-card:focus-visible {
+    transform: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .td-link-card:hover,
+  .td-link-card:focus-visible {
+    outline: 2px solid Highlight;
+  }
+}
+
+// The wordmark reads at a larger size than the theme's 22px default.
+.td-nav-logo {
+  width: 30px;
+  height: 30px;
+}
+
+// The landing layer rules a 44px grid across its own background. With a
+// photograph already carrying the opening, that grid is noise, so the lines
+// are made invisible rather than the theme's element removed.
+.td-landing-landing,
+[data-bs-theme='dark'] .td-landing-landing {
+  --td-grid: transparent;
+}
+
+// Each landing section opens with a hairline rule. The eyebrow above every
+// section already marks where one begins, and the space between them does the
+// rest, so the rules only add ledger lines to a page that has none elsewhere.
+//
+// With the rules gone, the theme's clamp(64px, 7vw, 104px) of padding reads as
+// a gap rather than as separation, so the sections close up. The hero is
+// excluded by name: it sets its own, much larger opening, and this selector
+// outranks it.
+.td-landing-landing .td-landing-section {
+  border-top: 0;
+}
+
+.td-landing-landing .td-landing-section:not(.td-hero-featured) {
+  padding-block: clamp(30px, 3.4vw, 54px);
+}
+
+.td-landing-landing .td-landing-section__head {
+  margin-bottom: clamp(24px, 3vw, 40px);
+}

@@ -5,7 +5,7 @@ authors: [dhh]
 origin: "https://world.hey.com/dhh/our-cloud-exit-savings-will-now-top-ten-million-over-five-years-c7d9b5bd"
 summary: >
   DHH将他们的七个云上应用从AWS迁移到自己的硬件上，2024年是第一个完全实现节省的年份。他们欣喜地发现，节省的费用比最初估计的还要多。
-tags: [下云, DHH, 翻译]
+tags: [下云, 翻译]
 ---
 
 

@@ -6,7 +6,7 @@ origin: "https://www.percona.com/blog/is-oracle-finally-killing-mysql/"
 summary: >
   Peter Zaitsev是MySQL生态重要公司Percona的创始人，他撰文痛批Oracle的作为与不作为杀死了MySQL。约15年前Oracle收购了Sun从而拥有了MySQL，当时关于Oracle何时会"扼杀MySQL"的讨论此起彼伏，如今一语成谶。
 series: ["MySQL走好"]
-tags: [数据库, MySQL, Oracle, 技术评论, 翻译]
+tags: [MySQL, Oracle, 数据库, 技术评论]
 ---
 
 > [Peter Zaitsev](https://www.percona.com/blog/author/pz/) | 译：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信原文](https://mp.weixin.qq.com/s/1zlDPie_bVvP7eO6_uTkSw) | [Percona's Blog](https://www.percona.com/blog/is-oracle-finally-killing-mysql/)

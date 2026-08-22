@@ -2,11 +2,10 @@
 title: How Ahrefs Saved US$400M by NOT Going to the Cloud
 linkTitle: Ahrefs Saved $400M by NOT Going to Cloud
 date: 2024-05-22
-author: |
-  [Efim Mirochnik](https://medium.com/@mirochnik) Translator: [Ruohang Feng](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [WeChat](https://mp.weixin.qq.com/s/csQmMrSGg5ukDgS06h8xXw)
+authors: [vonng]
 summary: >
   After Alibaba-Cloud's epic global outage on Double 11, setting industry records, how should we evaluate this incident and what lessons can we learn from it?
-tags: [Cloud-Exit,AWS,EBS]
+tags: [Cloud-Exit, AWS, Cost, Translation]
 ---
 
 > Original: [How Ahrefs Saved US$400M in 3 Years by NOT Going to the Cloud](https://tech.ahrefs.com/how-ahrefs-saved-us-400m-in-3-years-by-not-going-to-the-cloud-8939dd930af8)

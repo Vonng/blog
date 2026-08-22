@@ -3,7 +3,6 @@ title: "OrioleDB is Coming! 4x Performance, Eliminates Pain Points, Storage-Comp
 linkTitle: "OrioleDB: Cloud-Native Bloat-Free PG"
 date: 2025-04-06
 summary: A PG kernel fork acquired by Supabase, claiming to solve PG's XID wraparound problem, eliminate table bloat issues, improve performance by 4x, and support cloud-native storage. Now part of the Pigsty family.
-showAuthor: true
 tags: [PostgreSQL]
 ---
 

@@ -2,10 +2,10 @@
 title: "上游没有的 Bug，为什么会出现在官方包里？"
 linkTitle: "Valkey 打包祖传 Bug"
 date: 2026-08-09
-author: 冯若航
+authors: [vonng]
 summary: >
   祖传 BUG 奇闻：一行打包补丁从 Debian Redis 传到 Debian Valkey，又被 Valkey 官方发布流水线整体搬了回来。上游源码本身没有这个 Bug，用户下载的官方 DEB 却有。
-tags: [Valkey, Debian, 打包, 开源]
+tags: [Redis, Linux, 软件仓库, 开源]
 ---
 
 老冯最近在 Pigsty 里面更新了 Redis 模块，把 Valkey 也打包进来作为一个可选引擎，结果在打包的过程中发现了一个上游的 BUG。

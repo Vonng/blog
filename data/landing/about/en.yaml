@@ -1,0 +1,145 @@
+sections:
+  - hero
+  - metrics
+  - type: markdown
+    key: bio
+  - type: cards
+    key: works
+  - type: cards
+    key: columns
+  - cta
+
+hero:
+  eyebrow: About · 冯若航
+  title_lines:
+    - words:
+        - { text: Ruohang Feng }
+    - words:
+        - { text: '@Vonng' }
+  lead: >-
+    Founder of [Pigsty](https://pigsty.io), [active](https://committers.top/china)
+    [open source contributor](https://gitstar-ranking.com/Vonng).<br>
+    Architect, DBA and full-stack engineer @ Alibaba, TanTan and Apple.<br>
+    Database KOL, cloud-exit evangelist, seasoned hiker, lifelong gamer.
+  note: Everything here is published under CC BY 4.0
+  note_icon: fa-brands fa-creative-commons
+  image:
+    light: img/about/vonng.jpg
+    dark: img/about/vonng.jpg
+    alt: Ruohang Feng
+  media:
+    ratio: '1fr 340px'
+    max_width: 340px
+    hide_below: md
+  actions:
+    - { label: GitHub, url: 'https://github.com/Vonng', icon: fa-brands fa-github, external: true, style: primary }
+    - { label: Send an email, url: 'mailto:rh@vonng.com', icon: fa-solid fa-envelope, style: ghost }
+  detail: { label: Every article is collected on the author page, url: authors/vonng/ }
+
+metrics:
+  eyebrow: A few numbers
+  columns: 3
+  items:
+    - value: 2018
+      label: Pigsty started
+      desc: From a PostgreSQL automation kit to an open source distribution
+    - value: 585
+      label: GitStar Ranking
+      desc: Worldwide open source contributor rank
+      source: { label: gitstar-ranking.com, url: 'https://gitstar-ranking.com/Vonng' }
+    - value: Top 20
+      label: Active in China
+      desc: GitHub activity ranking for contributors in China
+      source: { label: committers.top/china, url: 'https://committers.top/china' }
+
+bio:
+  eyebrow: Introduction
+  title: Who I am, and what I work on
+  body: |
+    I am **Ruohang Feng**, generally known online as **Vonng**. I build databases,
+    I run databases, and I write about databases.
+
+    In 2018 I started [**Pigsty**](https://pigsty.io) — a battery-included open
+    source PostgreSQL distribution. It packages high availability, point-in-time
+    recovery, connection pooling, a full monitoring stack and four hundred-odd
+    extensions into an RDS you can run yourself, so that anyone can have
+    cloud-database capability on their own servers without paying the cloud premium.
+
+    Before that I worked as an architect, DBA and full-stack engineer at
+    **Alibaba**, **TanTan** and **Apple**, where I ran hundreds of PostgreSQL
+    clusters and made most of the mistakes worth making.
+
+    Outside of work I translated [**DDIA**](https://ddia.vonng.com) (*Designing
+    Data-Intensive Applications*) and [**PostgreSQL
+    Internals**](https://pgint.vonng.com) into Chinese, maintain
+    [**pg_exporter**](https://pigsty.io/docs/pg_exporter) and a handful of other
+    open source tools, and keep writing here.
+
+    I also hike, travel and play games. Those show up in
+    [Travel Notes](trip/) and [Miscellaneous](misc/).
+
+works:
+  class: td-work-cards
+  eyebrow: Portfolio
+  title: Code
+  text: Open source projects, tools and translations.
+  columns: 3
+  link_label: Visit
+  items:
+    - title: Pigsty
+      meta: FOSS PostgreSQL RDS
+      image: img/about/pigsty.jpg
+      desc: A battery-included PostgreSQL distribution — the local-first, free and open source RDS.
+      url: 'https://pigsty.io'
+      external: true
+    - title: pig
+      meta: PG package manager
+      image: img/about/pig.jpg
+      desc: Install 400+ PostgreSQL extensions on Linux with a single command.
+      url: 'https://pgext.cloud'
+      external: true
+    - title: pg_exporter
+      meta: Monitoring
+      image: img/about/pg_exporter.jpg
+      desc: The Prometheus metrics exporter for PostgreSQL and Pgbouncer.
+      url: 'https://pigsty.io/docs/pg_exporter'
+      external: true
+    - title: DDIA
+      meta: Chinese translation
+      image: img/about/ddia.jpg
+      desc: Designing Data-Intensive Applications, translated into Chinese.
+      url: 'https://ddia.vonng.com'
+      external: true
+    - title: PostgreSQL Internals
+      meta: Chinese translation
+      image: img/about/pg-internal.jpg
+      desc: PostgreSQL Internals, translated into Chinese.
+      url: 'https://pgint.vonng.com'
+      external: true
+    - title: Capslock Enhancement
+      meta: Keyboard tooling
+      image: img/about/capslock.jpg
+      desc: Turn the mostly useless CapsLock key into a fifth modifier.
+      url: 'https://capslock.vonng.com'
+      external: true
+
+columns:
+  eyebrow: Columns
+  title: And prose
+  text: Articles here are grouped into columns, each with its own RSS feed.
+  columns: 4
+  link_label: Open
+  items:
+    - { title: Database Guru, icon: fa-solid fa-database, desc: 'News, reports and best practices from the database industry.', url: db/ }
+    - { title: Cloud-Exiter, icon: fa-solid fa-cloud-bolt, desc: 'Cloud economics, cloud-exit and self-hosting.', url: cloud/ }
+    - { title: PostgreSQL Mage, icon: fa-solid fa-hat-wizard, desc: 'PostgreSQL development, operations, internals and ecosystem.', url: pg/ }
+    - { title: AI Explorer, icon: fa-solid fa-robot, desc: 'Agents, LLMs, and where the database fits in.', url: ai/ }
+
+cta:
+  title: Questions, or just want to talk?
+  text: Leave a comment under any article, or reach me directly.
+  actions:
+    - { label: Email, url: 'mailto:rh@vonng.com', icon: fa-solid fa-envelope, style: primary }
+    - { label: GitHub, url: 'https://github.com/Vonng', icon: fa-brands fa-github, external: true, style: ghost }
+    - { label: X / Twitter, url: 'https://x.com/RonVonng', icon: fa-brands fa-x-twitter, external: true, style: ghost }
+    - { label: LinkedIn, url: 'https://www.linkedin.com/in/vonng/', icon: fa-brands fa-linkedin, external: true, style: ghost }

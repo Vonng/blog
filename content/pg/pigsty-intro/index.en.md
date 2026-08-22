@@ -1,11 +1,10 @@
 ---
 title: "Ready-to-Use PostgreSQL Distribution: Pigsty"
 date: 2021-05-24
-author: |
-  [Vonng](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [WeChat](https://mp.weixin.qq.com/s/yumrKS4bjwU-zeMTwJThxw)。
+authors: [vonng]
 summary: >
   Yesterday I gave a live presentation in the PostgreSQL Chinese community, introducing the open-source PostgreSQL full-stack solution — Pigsty 
-tags: [PostgreSQL,Pigsty,RDS]
+tags: [PostgreSQL, Pigsty, RDS]
 ---
 
 

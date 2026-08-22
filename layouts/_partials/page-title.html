@@ -1,0 +1,35 @@
+{{- /* Site override of the theme partial.
+
+     A blog column's index opens the way the old site's section hero did: a
+     round portrait, the column name, a byline line and one line of
+     description, all centred above the card grid. A page declares it with
+
+       profile:
+         avatar: img/hero-db.jpg   # optional; the section's own image otherwise
+         headline: 冯若航 @Vonng / Pigsty
+
+     and the page `description` supplies the second line. Every other page
+     falls through to the theme's own heading markup, reproduced verbatim. */ -}}
+{{- $profile := .Params.profile -}}
+{{- if and $profile (reflect.IsMap $profile) -}}
+  {{- $avatar := "" -}}
+  {{- with $profile.avatar -}}
+    {{- $avatar = or ($.Resources.GetMatch .) (resources.Get .) -}}
+  {{- else -}}
+    {{- $avatar = (partialCached "featured-image-resolve.html" . .RelPermalink).resource -}}
+  {{- end -}}
+<div class="td-page-heading td-column-profile">
+  {{- with $avatar }}
+  {{- $square := . }}
+  {{- if reflect.IsImageResourceProcessable . }}{{ $square = .Fill "320x320 Center" }}{{ end }}
+  <img class="td-column-profile__avatar" src="{{ $square.RelPermalink }}" alt="" width="160" height="160" decoding="async">
+  {{- end }}
+  <h1>{{ .Title }}</h1>
+  {{- with $profile.headline }}<p class="td-column-profile__headline">{{ . | markdownify }}</p>{{ end }}
+  {{- with $.Params.description }}<p class="td-column-profile__description">{{ . | markdownify }}</p>{{ end }}
+</div>
+{{- else -}}
+<div class="td-page-heading">
+  <h1>{{ if eq .Type "book" }}{{ with .Params.book_number }}<span class="td-book-number">{{ . }}</span> {{ end }}{{ end }}{{ .Title }}</h1>
+</div>
+{{- end -}}

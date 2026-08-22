@@ -1,11 +1,11 @@
 ---
 title: "MySQL 9.7：还是那碗冷饭"
 date: 2026-04-21
-author: 冯若航
+authors: [vonng]
 summary: >
   MySQL 9.7 作为 9.x 系列第一个 LTS 版本，向量能力依旧是花架子，迟到多年的优化器默认关闭，三年 Innovation Release 攒出来的答卷仍然乏善可陈。
 series: ["MySQL走好"]
-tags: [数据库, MySQL, PostgreSQL, 技术评论]
+tags: [MySQL, PostgreSQL, 数据库, 技术评论]
 ---
 
 两年前我写了一篇 [《MySQL 安魂九霄，PostgreSQL 驶向云外》](/db/mysql-is-dead/)，那时候 MySQL 9.0 刚发布，Oracle 敲锣打鼓搞了个 `VECTOR` 数据类型出来，吹成“AI 时代的 MySQL”。我当时一看：**这玩意就是一个 `BLOB` 换皮**。没有距离函数，没有向量索引，除了能往列里存一堆浮点数之外，什么也干不了。

@@ -2,11 +2,10 @@
 title: How Powerful is PostgreSQL Really?
 linkTitle: How Powerful is PostgreSQL Really?
 date: 2022-08-22
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: |
   Let performance data speak: Why PostgreSQL is the world's most advanced open-source relational database, aka the world's most successful database. MySQL vs PostgreSQL performance showdown and distributed database reality check.
-tags: [PostgreSQL,PG-Ecosystem,Performance]
+tags: [PostgreSQL, PG Ecosystem, Performance]
 ---
 
 Previously, we analyzed StackOverflow survey data to explain "[Why PostgreSQL is the Most Successful Database](/pg/pg-is-no1/)".

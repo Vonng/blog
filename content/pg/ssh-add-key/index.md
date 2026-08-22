@@ -1,7 +1,7 @@
 ---
 title: "批量配置SSH免密登录"
 date: 2018-01-07
-author: 冯若航
+authors: [vonng]
 summary: >
   快速配置所有机器的免密登陆。
 tags: [PostgreSQL, PG管理]

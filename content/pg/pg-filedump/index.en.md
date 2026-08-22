@@ -1,11 +1,10 @@
 ---
 title: "How to Use pg_filedump for Data Recovery?"
 date: 2023-09-27
-author: |
-  [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [Original WeChat Article](https://mp.weixin.qq.com/s/jmlzhktasg06MiA7b4huew)
+authors: [vonng]
 summary: >
   Backups are a DBA's lifeline — but what if your PostgreSQL database has already exploded and you have no backups? Maybe pg_filedump can help you!
-tags: [PostgreSQL,PG-Admin,Data-Corruption,Incident-Report]
+tags: [PostgreSQL, PG Admin, Incident]
 ---
 
 ![](featured.jpg)

@@ -3,7 +3,7 @@ title: "Five Days Wandering Around Montreal"
 date: 2026-05-18
 summary: |
   Five days wandering around Montreal: ease, prices, French, AI, immigration, housing—and a city where ordinary middle-class people can still live with dignity.
-tags: ["Canada", "Montreal"]
+tags: [Travel]
 ---
 
 I've just spent five days wandering around Montreal. Next up is Vancouver for a few more.

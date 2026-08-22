@@ -2,11 +2,10 @@
 title: "Happy 30th Birthday, PostgreSQL"
 linkTitle: "PG Turns 30"
 date: 2026-07-08
-author: |
-  [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   On July 8, 1996, the PostgreSQL community picked up the flame from Postgres95. Thirty years later, it has grown from a Berkeley research project into a default foundation of the global database ecosystem.
-tags: [PostgreSQL,PG-Ecosystem]
+tags: [PostgreSQL, PG Ecosystem, Open Source]
 ---
 
 Today, July 8, 2026, is PostgreSQL's 30th birthday.

@@ -2,8 +2,7 @@
 title: "Pigsty v1.1: Homepage, Jupyter, Pev2, PgBadger"
 linkTitle: "Pigsty v1.1 Release"
 date: 2021-10-12
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v1.1.0))
+authors: [vonng]
 summary: >
   Pigsty v1.1.0 ships with a redesigned homepage, plus JupyterLab, PGWeb, Pev2 & PgBadger integrations.
 series: [Pigsty]

@@ -1,15 +1,13 @@
 ---
 title: "Statistics Fundamentals: Descriptive Statistics"
 date: 2017-04-18
-author: vonng
+authors: [vonng]
 summary: |
   Statistical analysis is divided into two fields: descriptive statistics and inferential statistics. Descriptive Statistics is the technology for describing or characterizing existing data and is the most fundamental part of statistics.
-math: true
 ai: true
 aliases: ["/misc/descriptive-stats/"]
+tags: [AI]
 ---
-
-{{< katex >}}
 
 > Statistical analysis is divided into two fields: descriptive statistics and inferential statistics. Descriptive Statistics is the technology for describing or characterizing existing data and is the most fundamental part of statistics.
 

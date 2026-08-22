@@ -1,10 +1,10 @@
 ---
 title: "Digoal, the Face of PostgreSQL at Alibaba Cloud, Has Left"
 date: 2026-04-02
-author: Ruohang Feng
+authors: [vonng]
 summary: >
   Alibaba Cloud's leading PostgreSQL advocate has walked away, exposing a deeper struggle over the direction of China's cloud database market.
-tags: [Alibaba Cloud, PostgreSQL, Cloud Databases]
+tags: [PostgreSQL, Cloud, Alibaba Cloud]
 ---
 
 

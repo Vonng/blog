@@ -2,8 +2,7 @@
 title: "Pigsty v2.1：向量+PG全系支持！"
 linkTitle: "Pigsty v2.1 发布注记"
 date: 2023-06-09
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v2.1.0)）
+authors: [vonng]
 summary: >
   Pigsty v2.1 提供了对 PostgreSQL 12 ~ 16 的支持
 series: [Pigsty]

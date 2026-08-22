@@ -1,10 +1,10 @@
 ---
 title: "Incident-Report: PostgreSQL Transaction ID Wraparound"
 date: 2018-07-20
-author: "vonng"
+authors: [vonng]
 summary: >
   XID WrapAround is perhaps a unique type of failure specific to PostgreSQL
-tags: [PostgreSQL, PG-Admin, Incident-Report]
+tags: [PostgreSQL, PG Admin, Incident]
 ---
 
 Encountered a transaction wraparound failure caused by disk bad blocks:

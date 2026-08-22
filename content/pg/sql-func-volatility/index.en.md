@@ -1,10 +1,10 @@
 ---
 title: "Function Volatility Classification Levels"
 date: 2018-04-06
-author: "vonng"
+authors: [vonng]
 summary: >
   PostgreSQL functions have three volatility levels by default. Proper use can significantly improve performance.
-tags: [PostgreSQL, PG-Development, Functions]
+tags: [PostgreSQL, PG Development]
 ---
 
 PostgreSQL functions have three volatility levels by default. Proper use can significantly improve performance.

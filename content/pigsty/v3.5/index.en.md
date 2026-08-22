@@ -2,8 +2,7 @@
 title: "Pigsty v3.5: 4K Stars, PG18 Beta, 421 Extensions"
 linkTitle: "Pigsty v3.5 Release"
 date: 2025-06-22
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v3.5.0))
+authors: [vonng]
 summary: >
   Pigsty crosses 4K GitHub stars, adds PG18 beta support, pushes extensions to 421, ships new doc site, and completes OrioleDB/OpenHalo full-platform support.
 series: [Pigsty]

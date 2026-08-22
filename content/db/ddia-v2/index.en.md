@@ -1,10 +1,10 @@
 ---
 title: DDIA 2nd Edition, Chinese Translation
 date: 2025-08-10
-author: vonng
+authors: [vonng]
 summary: |
   The second edition of Designing Data-Intensive Applications has released ten chapters. I translated them into Chinese and rebuilt a clean Hugo/Hextra web version for the community.
-tags: [DDIA]
+tags: [Distributed Systems, Database, Translation]
 ---
 
 The new DDIA—Designing Data-Intensive Applications, 2nd Edition—has published its first ten chapters. With Claude Code Max 20× on my side, it took two days to translate the released chapters into Chinese and re-render them via Hugo + Hextra for a tidy Markdown/Web reading experience.

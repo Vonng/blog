@@ -2,10 +2,10 @@
 title: "Relation Bloat Monitoring and Management"
 linkTitle: "Relation Bloat Monitoring and Management"
 date: 2018-10-06
-author: vonng
+authors: [vonng]
 summary: >
   PostgreSQL uses MVCC as its primary concurrency control technology. While it has many benefits, it also brings other effects, such as relation bloat.
-tags: [PostgreSQL,PG-Admin]
+tags: [PostgreSQL, PG Admin]
 ---
 
 > Author: [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))

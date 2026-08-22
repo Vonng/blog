@@ -1,9 +1,10 @@
 ---
 title: "City Upon a Hill: California Road Trip"
 date: 2019-03-31
-author: vonng
+authors: [vonng]
 summary: |
   One week road trip: Cupertino, Los Angeles, San Francisco, Yosemite
+tags: [Travel]
 ---
 
 Went on a business trip to America, worked one week and played one week. Road trip along Highway 1, Bay Area, Los Angeles, San Francisco, Yosemite.

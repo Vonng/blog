@@ -2,11 +2,10 @@
 title: How One AWS DNS Failure Cascaded Across Half the Internet
 linkTitle: How One AWS DNS Failure Cascaded Across Half the Internet
 date: 2025-10-21
-author: |
-  [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat](https://mp.weixin.qq.com/s/sCAOwNva__0L_iMP1QHngQ)
+authors: [vonng]
 summary: >
   us-east-1’s DNS control plane faceplanted for 15 hours and dragged 142 AWS services—and a good chunk of the public internet—down with it. Here’s the forensic tour.
-tags: [Cloud-Outage, AWS]
+tags: [Cloud-Exit, AWS, Incident]
 ---
 
 On Oct 20, 2025, AWS’s crown jewel region us-east-1 spent fifteen hours flailing. More than a thousand companies went dark worldwide. The root cause? An internal DNS entry that stopped resolving.

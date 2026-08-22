@@ -2,8 +2,7 @@
 title: "Pigsty v3.1：Supabase一键自建，PG17上位，ARM与Ubuntu24支持，MinIO改进"
 linkTitle: "Pigsty v3.1 发布注记"
 date: 2024-11-24
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v3.1.0)）
+authors: [vonng]
 summary: >
   一键自建Supabase，MinIO自建改进，PG17作为默认大版本，提供ARM64与Ubuntu24支持，简化配置管理。
 series: [Pigsty]

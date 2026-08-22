@@ -1,7 +1,7 @@
 ---
 title: "Codex/Claude 脚踏车要蹬冒烟了"
 date: 2026-07-10
-author: 冯若航
+authors: [vonng]
 summary: >
   Claude Fable 与 GPT-5.6 接连发布，额度又连番重置。如何把短暂的 Coding Plan 红利变成真实产出？这篇文章聊模型分工、对抗性 Review、规格驱动设计、验证闭环、上下文管理，以及一个人带着一群 AI 干活的实践。
 tags: [AI, Agent, Codex, Claude]

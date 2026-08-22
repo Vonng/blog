@@ -2,8 +2,7 @@
 title: "Pigsty v3.2：命令行工具pig，完备ARM支持，Supabase & Grafana 加强"
 linkTitle: "Pigsty v3.2 发布注记"
 date: 2024-12-29
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v3.2.0)）
+authors: [vonng]
 summary: >
   PG包管理器与Pigsty命令行工具 pig 登场，ARM64 扩展仓库，Supabase & Grafana 加强。
 series: [Pigsty]

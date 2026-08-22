@@ -1,11 +1,10 @@
 ---
 title: "The Coding Plan Window Is Closing—Use It While It Lasts"
 date: 2026-06-30
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   Coding Plans remain one of the best opportunities in the AI era: a subscription can unlock compute worth many times its price, but that window is already narrowing.
-tags: [AI, Codex, Claude, GLM, Agent]
+tags: [AI, Codex, Claude, LLM]
 ai: true
 ---
 

@@ -2,8 +2,7 @@
 title: "Pigsty v3.3: 404 Extensions, Turnkey Apps, New Website"
 linkTitle: "Pigsty v3.3 Release"
 date: 2025-02-20
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v3.3.0))
+authors: [vonng]
 summary: >
   Pigsty v3.3 pushes available extensions to 404, adds turnkey app deployment with app.yml, delivers Certbot integration for automated HTTPS, and launches a redesigned website.
 series: [Pigsty]

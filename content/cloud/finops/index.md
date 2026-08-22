@@ -1,10 +1,10 @@
 ---
 title: "FinOps终点是下云"
 date: 2023-07-06
-author: 冯若航
+authors: [vonng]
 summary: >
   在SACC 2023 FinOps专场上的发言整理稿，介绍了终极FinOps——下云的理念与实践路径。公有云是个杀猪盘，自建能力决定议价权。
-tags: [下云, FinOps]
+tags: [下云, 云计算, 成本]
 ---
 
 在 SACC 2023 FinOps专场上，我狠狠喷了一把云厂商。这是现场发言的文字整理稿，介绍了终极 FinOps —— **下云** 的理念与实践路径。

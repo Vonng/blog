@@ -1,8 +1,9 @@
 ---
 title: "Baiji 1509 Training Reflections"
 date: 2015-09-25
-author: vonng
+authors: [vonng]
 summary: I once thought all day but learned nothing, which is not as good as what I learned in a moment. I came to Hangzhou to attend Alibaba's Baiji training to learn from seniors and improve my knowledge level!
+tags: [Essay]
 ---
 
 On September 23rd, I came to Hangzhou to attend Baiji training. Unlike Bai'a, I didn't have special expectations for Baiji beforehand. After all, for a one-day training, it might just be going through the motions, and I was skeptical about how much I could learn. However, after attending a full day of classes today, I think Baiji was indeed worthwhile. Striking while the iron is hot to submit my homework, I'm writing this reflection.

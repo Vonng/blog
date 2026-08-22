@@ -2,8 +2,7 @@
 title: "Pigsty v0.4: PG13 and Better Docs"
 linkTitle: "Pigsty v0.4 Release Notes"
 date: 2020-12-14
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [Release Notes](https://github.com/pgsty/pigsty/releases/tag/v0.4.0)）
+authors: [vonng]
 summary: >
   Pigsty v0.4 ships PG13 support, a Grafana 7.3 refresh, and a cleaned-up docs site for the second public beta.
 series: [Pigsty]

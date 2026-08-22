@@ -2,11 +2,10 @@
 title: What Can We Learn from Alibaba-Cloud's Global Outage?
 linkTitle: Unofficial Post-mortem of Alibaba-Cloud's Epic Failure
 date: 2023-11-13
-author: |
-  [Vonng](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [WeChat](https://mp.weixin.qq.com/s/OIlR0rolEQff9YfCpj3wIQ)
+authors: [vonng]
 summary: >
   Alibaba-Cloud's epic global outage after Double 11 set an industry record. How should we evaluate this incident, and what lessons can we learn from it?
-tags: [Cloud-Exit, Alibaba-Cloud, Cloud-Outage]
+tags: [Cloud-Exit, Alibaba Cloud, Incident]
 ---
 
 A year after the last major incident, Alibaba-Cloud suffered another massive outage, creating an unprecedented record in the cloud computing industry — **simultaneous failures across all global regions and all services**. Since Alibaba-Cloud refuses to publish a post-mortem report, I'll do it for them — how should we view this epic failure case, and what lessons can we learn from it?

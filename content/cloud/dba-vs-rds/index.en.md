@@ -1,11 +1,10 @@
 ---
 title: Will DBAs Be Eliminated by Cloud?
 date: 2024-02-02
-author: |
-  [Feng Ruohang](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [WeChat](https://mp.weixin.qq.com/s/W1hwbl3qmjC4Dcmadc8uSg)
+authors: [vonng]
 summary: >
   Two days ago, the ninth episode of Open-Source Talks had the theme "Will DBAs Be Eliminated by Cloud?" As the host, I restrained myself from jumping into the debate throughout, so I'm writing this article to discuss this question: Will DBAs be eliminated by cloud?  
-tags: [Cloud-Exit,DBA,RDS]
+tags: [Cloud-Exit, PG Admin, RDS]
 ---
 
 Two days ago, the ninth episode of Open-Source Talks had the theme "[Will DBAs Be Eliminated by Cloud?](https://mp.weixin.qq.com/s/T4waTPvcSRdCv8pCl4MdOw)" As the host, I restrained myself from jumping into the debate throughout, so I'm writing this article to discuss this question: Will DBAs be eliminated by cloud?

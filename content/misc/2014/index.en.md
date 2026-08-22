@@ -1,8 +1,9 @@
 ---
 title: "2014 Year-End Summary"
 date: 2015-01-01
-author: vonng
+authors: [vonng]
 summary: Unable to sleep in the dead of night, spending the last hour of 2014 reviewing this year and looking ahead to next year seems quite appropriate.
+tags: [Essay]
 ---
 
 Unable to sleep in the dead of night, spending the last hour of 2014 reviewing this year and looking ahead to next year seems quite appropriate.

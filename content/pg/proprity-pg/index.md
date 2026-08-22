@@ -1,7 +1,7 @@
 ---
 title: "PostgreSQL主宰数据库世界，而谁来吞噬PG？"
 date: 2025-08-05
-author: 冯若航
+authors: [vonng]
 summary: >
   那些曾经让 MongoDB，MySQL 走向封闭的力量，如今也同样在 PostgreSQL 的生态中发挥作用，PG世界需要一个代表"软件自由"价值观的发行版。
 tags: [PostgreSQL, PG生态]

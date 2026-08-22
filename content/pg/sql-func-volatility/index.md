@@ -1,10 +1,10 @@
 ---
 title: "函数易变性等级分类"
 date: 2018-04-06
-author: 冯若航
+authors: [vonng]
 summary: >
   PgSQL中的函数默认有三种易变性等级，合理使用可以显著改善性能。
-tags: [PostgreSQL, PG开发, 函数]
+tags: [PostgreSQL, PG开发]
 ---
 
 

@@ -3,9 +3,7 @@ title: "90后，辞职创业，说要卷死云数据库"
 date: 2022-07-07
 summary: |
   最近接受了 OSC 开源中国的专访，聊一聊全职出来做Pigsty创业的初心：让天下没有难用的 PostgreSQL，以及：卷死云数据库!
-menu:
-  sidebar:
-    parent: life
+tags: [随笔]
 ---
 
 

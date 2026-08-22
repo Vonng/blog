@@ -5,7 +5,7 @@ authors: [martin-kleppmann]
 origin: "https://www.youtube.com/watch?v=UHdPnubbzBI"
 summary: >
   《设计数据密集型应用》（DDIA）第二版终于出了。原作者 Martin Kleppmann 的播客访谈聊到了这本书，翻译了一下。
-tags: [DDIA, 数据库, 翻译]
+tags: [数据库, 翻译]
 ---
 
 《设计数据密集型应用》（DDIA）第二版终于出了。

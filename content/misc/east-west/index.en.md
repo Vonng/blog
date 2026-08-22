@@ -1,8 +1,9 @@
 ---
 title: "Thinking Characteristics of Eastern and Western People"
 date: 2013-05-22
-author: vonng
+authors: [vonng]
 summary: Eastern people emphasize macro-to-micro thinking, while Western people emphasize micro-to-macro thinking. In my view, this is the philosophical root of East-West thinking differences and many macro distinctions.
+tags: [Essay]
 ---
 
 > Eastern people emphasize macro-to-micro thinking, while Western people emphasize micro-to-macro thinking. In my view, this is the root of East-West thinking differences.

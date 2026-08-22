@@ -1,10 +1,10 @@
 ---
 title: "Alibaba Cloud's 1 QPS DNS Limit Sent Me to Cloudflare"
 date: 2026-07-01
-author: Ruohang Feng
+authors: [vonng]
 summary: >
   Alibaba Cloud's free DNS tier allows 100,000 queries per day—just 1.15 QPS averaged out. One throttling notice was all it took for me to move my domains to Cloudflare.
-tags: [Alibaba Cloud, DNS, Cloudflare]
+tags: [Alibaba Cloud, Cloudflare]
 ---
 
 I had used Alibaba Cloud for domain registration and DNS for more than a decade. Then one morning, I received an email unlike any it had sent me before.

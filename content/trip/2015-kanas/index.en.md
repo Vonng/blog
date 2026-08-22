@@ -1,9 +1,10 @@
 ---
 title: "Switzerland of Northern Xinjiang: Kanas Trekking"
 date: 2016-10-01
-author: vonng
+authors: [vonng]
 summary: |
   I never expected my first outdoor trekking experience would be in Kanas.
+tags: [Travel]
 ---
 
 I never expected my first outdoor trekking experience would be in Kanas.

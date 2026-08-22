@@ -1,7 +1,7 @@
 ---
 title: 一天烧几亿 Token，然后呢？
 date: 2026-04-13
-author: 冯若航
+authors: [vonng]
 summary: >
   Token 消耗一旦从工具使用痕迹变成 KPI 和排行榜，就会迅速异化成一场表演。别晒油耗，晒你到哪了。
 tags: [AI, Agent]

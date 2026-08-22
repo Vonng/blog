@@ -2,8 +2,7 @@
 title: "Pigsty v1.1：主页，Jupyter，Pev2，Pgbadger"
 linkTitle: "Pigsty v1.1 发布注记"
 date: 2021-10-12
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v1.1.0)）
+authors: [vonng]
 summary: >
   Pigsty v1.1.0 更新了主页设计, JupyterLab, PGWEB, Pev2 & pgbadger 支持
 series: [Pigsty]

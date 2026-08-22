@@ -2,7 +2,7 @@
 title: "StackOverflow 2024调研：PostgreSQL已经杀疯了"
 linkTitle: "SO 2024：PostgreSQL已经杀疯了"
 date: 2024-07-25
-author: 冯若航
+authors: [vonng]
 summary: >
   2024年的SO全球开发者调研结果新鲜出炉，PostgreSQL连续第二年成为全球最流行、最受喜爱、需求量最高的数据库。
 tags: [PostgreSQL, PG生态]

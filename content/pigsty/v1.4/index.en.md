@@ -2,8 +2,7 @@
 title: "Pigsty v1.4: Modular Architecture, MatrixDB Data Warehouse Support"
 linkTitle: "Pigsty v1.4 Release"
 date: 2022-03-31
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v1.4.0))
+authors: [vonng]
 summary: >
   Pigsty v1.4 introduces a modular architecture with four independent modules, adds MatrixDB time-series data warehouse support, and delivers global CDN acceleration.
 series: [Pigsty]

@@ -1,11 +1,10 @@
 ---
 title: "专栏：数据库老司机"
 date: 2025-08-08
-author: 冯若航
+authors: [vonng]
 summary: >
   数据库领域充满着太多胡言乱语与不实营销，数据库老司机带您拨云见日，穿透迷糊，直击行业核心与本质。
-tags: [数据库, 技术评论, 专栏]
-featured: true
+tags: [数据库, 技术评论]
 ---
 
 > [微信公众号](https://mp.weixin.qq.com/s/Q0OtrpEhF24XN7gwMjbSRA)

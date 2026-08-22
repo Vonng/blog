@@ -2,8 +2,7 @@
 title: "Pigsty v0.5: Declarative DB Templates"
 linkTitle: "Pigsty v0.5 Release Notes"
 date: 2020-12-26
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [Release Notes](https://github.com/pgsty/pigsty/releases/tag/v0.5.0)）
+authors: [vonng]
 summary: >
   Pigsty v0.5 introduces declarative database templates so roles, schemas, extensions, and ACLs can be described entirely in YAML.
 series: [Pigsty]

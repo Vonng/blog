@@ -1,8 +1,9 @@
 ---
 title: "2023 Year-End Summary: Thirty and Established"
 date: 2023-12-30
-author: vonng
+authors: [vonng]
 summary: In 2023, I turned thirty. As Confucius said, "At thirty, one establishes oneself." I've managed to accomplish something - started a family, built a career, gained some technical reputation. A year-end review to commemorate 2023.
+tags: [Essay]
 ---
 
 # Thirty and Established

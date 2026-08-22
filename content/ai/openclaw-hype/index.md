@@ -1,10 +1,10 @@
 ---
 title: "OpenClaw小龙虾炒作：生产力革命上的浮沫"
 date: 2026-03-09
-author: 冯若航
+authors: [vonng]
 summary: >
   OpenClaw 源自 Claude Code 套壳，配上一个聊天软件入口。那些“养龙虾改变人生”的故事，改变他们的是背后的 Claude Code，而不是龙虾这个中介平台。
-tags: [AI, Agent, 安全, 成本, Claude Code, Codex]
+tags: [AI, Agent, Codex, 安全]
 ai: true
 aliases: ["/db/openclaw-hype/"]
 ---

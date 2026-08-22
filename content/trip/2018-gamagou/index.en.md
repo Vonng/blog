@@ -1,8 +1,9 @@
 ---
 title: "Everest East Face: Gamma Gou Trekking"
 date: 2018-09-21
-author: vonng
+authors: [vonng]
 summary: 13-day journey with 8 days of trekking, completing the legendary hardcore route - Gamma Gou. Finally witnessed the most beautiful sunrise on Everest's east face.
+tags: [Travel]
 ---
 
 This year's National Day holiday was perfect - taking six days off could connect Mid-Autumn Festival with National Day for a 16-day consecutive break. I've visited most of China's provinces, but Tibet remained unexplored. Seeing a Gamma Gou/Everest East Face trekking activity on 8264.com, I thought "this looks good" and signed up.

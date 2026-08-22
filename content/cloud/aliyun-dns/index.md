@@ -1,10 +1,10 @@
 ---
 title: "阿里云 DNS 解析用1 QPS限速让我搬去了 Cloudflare"
 date: 2026-07-01
-author: 冯若航
+authors: [vonng]
 summary: >
   阿里云 DNS 免费版每天 10 万次解析，摊下来只有 1.15 QPS。一封限流通知，让我把域名解析从阿里云迁到了 Cloudflare。
-tags: [阿里云, DNS, Cloudflare]
+tags: [阿里云, Cloudflare]
 ---
 
 老冯用了十多年阿里云域名和 DNS 服务了，早上收到一封邮件，以前从来没见过的品种。

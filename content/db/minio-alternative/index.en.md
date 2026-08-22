@@ -1,11 +1,10 @@
 ---
 title: MinIO Is Dead. Who Picks Up the Pieces?
 date: 2025-12-08
-author: |
-  [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/)) | [WeChat](https://mp.weixin.qq.com/s/A7bAFSAk3dte7QfXu5qHQw)
+authors: [vonng]
 summary: >
   MinIO just entered maintenance mode. What replaces it? Can RustFS step in? I tested the contenders so you don’t have to.
-tags: [Database, MinIO]
+tags: [Object Storage, Database, Open Source]
 ---
 
 MinIO announced maintenance mode two days ago. I ranted in “[MinIO Is Dead](/en/db/minio-is-dead)” and immediately got flooded with “so what now?”

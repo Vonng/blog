@@ -1,11 +1,10 @@
 ---
 title: "OpenAI Global Outage Postmortem: K8S Circular Dependencies"
 date: 2024-12-14
-author: |
-  [Original](https://status.openai.com/incidents/ctrsv3lwd797) Translated by: [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   Even trillion-dollar unicorns can be a house of cards when operating outside their core expertise.
-tags: [Cloud-Outage]
+tags: [Codex, Incident]
 ai: true
 aliases: ["/ai/openai-failure/"]
 ---

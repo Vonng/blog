@@ -2,8 +2,7 @@
 title: "Pigsty v3.0：海量扩展，插拔内核，RDS服务"
 linkTitle: "Pigsty v3.0 发布注记"
 date: 2024-08-25
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/) | [发行注记](https://github.com/Vonng/pigsty/releases/tag/v3.0.0)）
+authors: [vonng]
 summary: >
   Pigsty v3.0 提供了史无前例的 340 个可用扩展插件，并实现了Deb/EL生态插件大对齐，支持可插拔内核，提供 MSSQL，Oracle，PolarDB 兼容性模式，并提供本地优先的 SOTA RDS
 series: [Pigsty]

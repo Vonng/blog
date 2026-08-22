@@ -2,10 +2,10 @@
 title: "The Versatile file_fdw — Reading System Information from Your Database"
 linkTitle: "FileFDW Use Case: Reading OS Info"
 date: 2017-12-01
-author: vonng
+authors: [vonng]
 summary: >
   With file_fdw, you can easily view operating system information, fetch network data, and feed various data sources into your database for unified viewing and management.
-tags: [PostgreSQL, PG-Admin, Extension]
+tags: [PostgreSQL, PG Admin, Extension]
 ---
 
 > Author: [Vonng](https://vonng.com/en/)

@@ -5,7 +5,7 @@ authors: [jonathan-katz]
 origin: "https://jkatz05.com/post/postgres/vectors-json-postgresql/"
 summary: >
   以向量为代表的功能将成为构建应用时的关键要素，正如历史上的JSON一样。而PostgreSQL再一次站在时代风口浪尖引领数据库潮流，在向量扩展的加持下稳拿AI时代的高速增长。
-tags: [PostgreSQL, 向量数据库, 扩展, 翻译]
+tags: [PostgreSQL, 向量, 扩展, 翻译]
 ai: true
 aliases: ["/ai/vector-json-pg/"]
 ---

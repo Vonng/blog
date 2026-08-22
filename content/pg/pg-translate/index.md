@@ -1,7 +1,7 @@
 ---
 title: "一天翻译完 PG 生态三大件文档"
 date: 2026-03-02
-author: 冯若航
+authors: [vonng]
 summary: >
   花了一天时间，把 PgBouncer、pgBackRest、Patroni 这三个 PostgreSQL 生态核心组件的文档几乎完整翻译成了中文。
 tags: [PostgreSQL, 文档, 翻译]

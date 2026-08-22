@@ -1,8 +1,9 @@
 ---
 title: "Paradise Found: Wusun Ancient Trail"
 date: 2020-10-11
-author: vonng
+authors: [vonng]
 summary: This National Day I trekked the Wusun Ancient Trail, crossing over the Tianshan Mountains to reach that Ili. Though over a week has passed, the memories linger - writing to commemorate this journey.
+tags: [Travel]
 ---
 
 This National Day I trekked the Wusun Ancient Trail, crossing over the Tianshan Mountains to reach that Ili. Though over a week has passed, the memories linger - writing to commemorate this journey.

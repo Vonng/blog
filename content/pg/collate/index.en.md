@@ -1,11 +1,10 @@
 ---
 title: "Localization and Collation Rules in PostgreSQL"
 date: 2021-03-05
-author: |
-  [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   What? Don't know what COLLATION is? Remember one thing: using C COLLATE is always the right choice!
-tags: [PostgreSQL,PG-Admin]
+tags: [PostgreSQL, PG Admin]
 ---
 
 

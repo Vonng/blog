@@ -1,0 +1,29 @@
+brand:
+  name: VONNG
+  tagline: '**Vonng** · 数据库老司机，云计算泥石流'
+  slogan: 关于 PostgreSQL、数据库、下云与 AI
+columns:
+  - title: 专栏
+    links:
+      - { label: 数据库老司机, url: db/ }
+      - { label: 云计算泥石流, url: cloud/ }
+      - { label: PostgreSQL 大法师, url: pg/ }
+      - { label: AI 探路者, url: ai/ }
+  - title: 更多
+    links:
+      - { label: Pigsty 发行版, url: pigsty/ }
+      - { label: 人生旅途, url: misc/ }
+      - { label: 行万里路, url: trip/ }
+      - { label: 关于作者, url: about/ }
+  - title: 索引
+    links:
+      - { label: 标签, url: tags/ }
+      - { label: 分类, url: categories/ }
+      - { label: 作者, url: authors/ }
+      - { label: 系列, url: series/ }
+  - title: 作品
+    links:
+      - { label: Pigsty, url: 'https://pigsty.cc', external: true }
+      - { label: PGEXT CLOUD, url: 'https://pgext.cloud/zh/', external: true }
+      - { label: DDIA 中文版, url: 'https://ddia.vonng.com', external: true }
+      - { label: GitHub, url: 'https://github.com/Vonng', external: true }

@@ -3,9 +3,7 @@ title: "互联网之冬"
 date: 2018-12-09
 summary: |
   这是最好的时代，也是最坏的时代。人们正踏上天堂之路，人们正走向地狱之门。
-menu:
-  sidebar:
-    parent: misc
+tags: [随笔]
 ---
 
 

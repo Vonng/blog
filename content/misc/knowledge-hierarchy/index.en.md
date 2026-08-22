@@ -1,8 +1,9 @@
 ---
 title: "On the Hierarchy of Knowledge"
 date: 2013-05-23
-author: "vonng"
+authors: [vonng]
 summary: "Through observation and reflection, we can divide the mental process of deepening understanding from accepting knowledge to the highest level of 'enlightenment' into four stages: knowledge, understanding, consciousness, and enlightenment."
+tags: [Essay]
 ---
 
 Through observation and reflection, we can divide the mental process of deepening understanding from accepting knowledge to the highest level of "enlightenment" into four stages: knowledge, understanding, consciousness, and enlightenment. The overall cognitive function is continuous and monotonically increasing, but there exists a quantum leap stage between accumulation and consciousness. Following axiomatic thinking, the definitions of these four terms must first be clarified.

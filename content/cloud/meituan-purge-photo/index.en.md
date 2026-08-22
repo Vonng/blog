@@ -1,11 +1,10 @@
 ---
 title: "Meituan Deleted Users' Photos: Overbroad Permissions Are Worse Than a Privacy Leak"
 date: 2026-03-24
-author: |
-  [Ruohang Feng](https://vonng.com)
+authors: [vonng]
 summary: >
   Many Android users reported that Meituan deleted files from their photo libraries. The bigger issue is not just this bug, but the still-common pattern of overbroad storage permissions in the Chinese Android ecosystem.
-tags: [Android, Permissions, Security]
+tags: [Hardware, PG Admin, Security]
 ---
 
 Starting on March 18, 2026, a large number of Android users discovered that Meituan had wiped files from their galleries.

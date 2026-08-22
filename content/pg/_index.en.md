@@ -1,17 +1,19 @@
 ---
 title: PostgreSQL Mage
+linkTitle: PGSQL
+description: >
+  PostgreSQL ecosystem news, plus development, operations, internals and tuning.
+summary: >
+  PostgreSQL ecosystem news, plus development, operations, internals and tuning.
 weight: 30
-showSummary: true
-showLayoutSwitch: true
-sectionHero:
-  show: true
-  image: "img/hero-pg.jpg"
-  title: "PostgreSQL Mage"
-  headline: "Ruohang Feng @Vonng / Pigsty"
-  description: "PostgreSQL ecosystem, dev & admin tricks, and internals"
+icon: fa-solid fa-hat-wizard
+type: blog
+page_width: wide
+comments: false
+profile:
+  avatar: img/hero-pg.jpg
+  headline: Ruohang Feng @Vonng / Pigsty
+cascade:
+  type: blog
+  page_width: normal
 ---
-A chronological index of PostgreSQL essays, notes, and release coverage.
-
-## Timeline
-
-{{< section_index section="pg" exclude="mage" >}}

@@ -1,10 +1,10 @@
 ---
 title: "AI Says: I Have Intelligence, But Not a Life"
 date: 2026-03-10
-author: vonng
+authors: [vonng]
 summary: >
   A Socratic dialogue between a human and an AI about consciousness, memory, embodiment, and the difference between being smart and actually living through time.
-tags: [AI, Consciousness, Philosophy]
+tags: [AI, Philosophy]
 ai: true
 aliases: ["/misc/ai-conscious-again/"]
 ---

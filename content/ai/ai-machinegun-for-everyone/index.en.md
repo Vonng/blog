@@ -1,13 +1,12 @@
 ---
 title: "AGI Machine Guns Are Now Standard Issue"
 date: 2026-08-20
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   In one month, my friend Jiang cobbled together four databases, an operating system, a programming language, a compiler, and a CPU—a microcosm of today's AI frenzy.
 tags: [AI, Agent, Software Engineering, Open Source]
 ai: true
-featureimage: apes.webp
+images: [apes.webp]
 ---
 
 > In one month, my friend Jiang cobbled together four databases, an operating system, a programming language, a compiler, and a CPU—a microcosm of today's AI frenzy.

@@ -2,9 +2,9 @@
 title: PostgreSQL Ecosystem Frontier Developments
 linkTitle: "PostgreSQL Ecosystem Frontier Developments"
 date: 2025-01-24
-author: vonng 
+authors: [vonng]
 summary: Sharing some interesting recent developments in the PG ecosystem.
-tags: [PostgreSQL,PG-Ecosystem]
+tags: [PostgreSQL, PG Ecosystem]
 ---
 
 Dear readers, I'm starting my vacation today. I might stop posting for two weeks, so Happy New Year in advance.

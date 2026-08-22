@@ -1,11 +1,10 @@
 ---
 title: "SLA: Placebo or Insurance?"
 date: 2023-06-12
-author: |
-  [Ruohang Feng](https://vonng.com/en/) ([@Vonng](https://vonng.com/en/)) | [WeChat](https://mp.weixin.qq.com/s/LC5jAhuVObRcrTLxI1FUQA)
+authors: [vonng]
 summary: >
   SLA is a marketing tool rather than insurance. In the worst-case scenario, it's an unavoidable loss; at best, it provides emotional comfort.
-tags: [Cloud, Cloud-Exit, SLA]
+tags: [Cloud-Exit, Cloud]
 ---
 
 In the world of cloud computing, Service Level Agreements (SLAs) are seen as a cloud provider's commitment to the quality of its services. However, a closer examination of these SLAs reveals that they might not offer the safety net one might expect: you might think you've insured your database for peace of mind, but in reality, you've bought a placebo that provides emotional comfort rather than actual coverage.

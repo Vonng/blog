@@ -3,7 +3,7 @@ title: "After the Debate, Let's Talk Seriously About 'Ontology'"
 date: 2026-03-15
 summary: >
   Palantir's Ontology is, technically, data modeling. The more interesting question is how a philosophy term got repurposed to market system integration and data modeling, and why that story is so likely to turn into another round of concept inflation in China's tech ecosystem.
-tags: [Ontology, Palantir, Data Modeling, Industry Analysis]
+tags: [OLAP, Data Sovereignty, Philosophy, Commentary]
 ---
 
 Last month I wrote a post called ["The Palantir Ontology Scam"](https://vonng.com/db/ontology-bullshit/).

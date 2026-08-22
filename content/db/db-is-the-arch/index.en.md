@@ -1,11 +1,10 @@
 ---
 title: Database as Business Architecture
 date: 2025-01-22
-author: |
-  [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   Databases are the core of business architecture, but what happens if we go further and let databases become the business architecture itself?
-tags: [PostgreSQL]
+tags: [PostgreSQL, Database, Architecture, PG Ecosystem]
 ---
 
 

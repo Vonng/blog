@@ -3,7 +3,7 @@ title: Comparing Oracle and PostgreSQL Transaction Systems
 summary: "The PG community has started punching up: Cybertec's Laurenz Albe breaks down how Oracle's transaction system stacks against PostgreSQL."
 date: 2025-02-27
 authors: ["laurenz-albe"]
-tags: [Database, PostgreSQL, Oracle]
+tags: [PostgreSQL, Oracle, Database, Transactions]
 ---
 
 > Original by [Laurenz Albe](https://www.cybertec-postgresql.com/en/comparison-of-the-transaction-systems-of-oracle-and-postgresql/). Translation and commentary by Feng Ruohang.

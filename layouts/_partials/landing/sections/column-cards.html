@@ -1,0 +1,56 @@
+{{- /* A landing section listing this site's blog columns as whole-card links.
+
+     Registered through a section entry's `partial` key:
+
+       - type: cards
+         key: columns
+         partial: landing/sections/column-cards.html
+
+     Each item names a column by content path and the partial reads the rest
+     from that page, so a card can never disagree with the column it opens:
+     the round logo is the column's own `profile.avatar` (or its featured
+     image), the link is its permalink, and the count is its live post total.
+
+     Item keys: page (required), title, desc.
+     Section keys: eyebrow / title / text, columns, unit. */ -}}
+{{- $page := .page -}}
+{{- $data := .data -}}
+{{- $id := .id -}}
+{{- $unit := $data.unit | default "" -}}
+<section id="{{ $id }}" class="td-landing-section td-column-cards{{ with $data.class }} {{ . }}{{ end }}"{{ with $data.title }} aria-labelledby="{{ $id }}-title"{{ end }}>
+  <div class="td-site-container">
+    {{- partial "landing/heading.html" (dict "page" $page "data" $data "id" $id "compact" true) }}
+    {{- with $data.items }}
+    <div class="td-column-card-grid" style="--td-columns: {{ $data.columns | default 2 }}">
+      {{- range . }}
+      {{- $target := $page.Site.GetPage (printf "%v" .page) -}}
+      {{- if not $target }}{{ warnf "column-cards: no page at %q; skipping the card" .page }}{{ else }}
+      {{- /* One resolver for the logo, the same one the column's own opening
+           uses, so the two images are always the same crop of the same file. */ -}}
+      {{- $avatar := "" -}}
+      {{- with $target.Params.profile -}}
+        {{- with .avatar }}{{ $avatar = or ($target.Resources.GetMatch .) (resources.Get .) }}{{ end -}}
+      {{- end -}}
+      {{- if not $avatar }}{{ $avatar = (partialCached "featured-image-resolve.html" $target $target.RelPermalink).resource }}{{ end -}}
+      <a class="td-column-card" href="{{ $target.RelPermalink }}">
+        {{- with $avatar }}
+        {{- $logo := cond (reflect.IsImageResourceProcessable .) (.Fill "224x224 Center") . }}
+        <span class="td-column-card__logo"><img src="{{ $logo.RelPermalink }}" alt="" width="112" height="112" loading="lazy" decoding="async"></span>
+        {{- end }}
+        <span class="td-column-card__body">
+          <span class="td-column-card__head">
+            <span class="td-column-card__title">{{ .title | default $target.LinkTitle }}</span>
+            {{- with $unit }}
+            <span class="td-column-card__count">{{ len $target.RegularPagesRecursive }}<small>{{ . }}</small></span>
+            {{- end }}
+          </span>
+          <span class="td-column-card__desc">{{ (.desc | default $target.Description) | plainify }}</span>
+        </span>
+        <i class="td-column-card__arrow fa-solid fa-arrow-right" aria-hidden="true"></i>
+      </a>
+      {{- end }}
+      {{- end }}
+    </div>
+    {{- end }}
+  </div>
+</section>

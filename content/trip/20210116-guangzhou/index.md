@@ -3,9 +3,7 @@ title: "尘世闲游：广州见闻"
 date: 2021-01-17
 summary: |
   借着参加2020PostgreSQL中国大会的机会，顺便在广州逛了一天。还是很有趣的地方。
-menu:
-  sidebar:
-    parent: trip
+tags: [旅行]
 ---
 
 借着参加2020PostgreSQL中国大会的机会，顺便在广州逛了一天。还是很有趣的地方。

@@ -2,9 +2,9 @@
 title: "KubeSphere: Trust Crisis Behind Open-Source Supply Cut"
 linkTitle: "KubeSphere: Trust Crisis Behind Open-Source Supply Cut"
 date: 2025-08-02
-author: vonng
+authors: [vonng]
 summary: "Deleting images and running away - this isn't about commercial closed-source issues, but supply cut problems that directly destroy years of accumulated community trust."
-tags: [Open-Source, Kubernetes]
+tags: [Containers, Open Source]
 ---
 
 > KubeSphere Sudden Supply Cut: When Open-Source Trust Gets "Unplugged"

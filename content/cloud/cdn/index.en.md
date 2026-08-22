@@ -1,11 +1,10 @@
 ---
 title: "Garbage QCloud CDN: From Getting Started to Giving Up?"
 date: 2023-03-08
-author: |
-  [Vonng](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [WeChat](https://mp.weixin.qq.com/s/ANFnbDXwuhKI99fgYRZ9ug)
+authors: [vonng]
 summary: >
   I originally believed that at least in IaaS fundamentals — storage, compute, and networking — public cloud vendors could still make significant contributions. However, my personal experience with Tencent Cloud CDN shook that belief: domestic cloud vendors' products and services are truly unbearable.
-tags: [Cloud, Tencent-Cloud, CDN]
+tags: [Cloud, Cloudflare]
 ---
 
 While Swedish Ma and I disagree sharply on [cloud databases](/cloud/rds) VS [**DBA**](https://mp.weixin.qq.com/s/Gk9bG_EOIv0IAkim41XRHg) issues, we can reach consensus on one point: **domestic public cloud vendors really make garbage**. In Ma's words: "**Alibaba-Cloud is a legitimate cloud with poor engineering quality, but Tencent Cloud is a bunch of amateur salespeople plus business coders playing games**."

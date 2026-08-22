@@ -2,8 +2,7 @@
 title: "Pigsty v4.5: 575 Extensions, Silo, Valkey, Kafka, and MySQL"
 linkTitle: "Pigsty v4.5 Released"
 date: 2026-08-15
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/) | [Release](https://github.com/pgsty/pigsty/releases/tag/v4.5.0))
+authors: [vonng]
 summary: >
   Pigsty v4.5 is out, bringing the PostgreSQL extension count to 575, replacing MinIO with Silo for object storage, adding Valkey to the Redis module, and introducing pilot Kafka and MySQL modules, along with broad improvements to orchestration safety and observability.
 series: [Pigsty]

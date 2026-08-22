@@ -1,13 +1,10 @@
 ---
 title: "微信读相册这点事"
 date: 2021-10-09
-author: |
-  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+authors: [vonng]
 summary: >
   看到一个新闻说微信在后台读用户相册，国产软件干这种龌龊事情并不让我惊奇，但本着求真务实的精神，早上起来我也准备看看，微信是不是真干坏事了
-menu:
-  sidebar:
-    parent: misc
+tags: [随笔]
 ---
 
 > [微信公众号原文](https://mp.weixin.qq.com/s/x0zHL7e2nTpf_UTUHxqLJg)

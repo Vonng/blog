@@ -1,11 +1,10 @@
 ---
 title: Building an ItemCF Recommender in Pure SQL
 date: 2017-04-05
-author: |
-  [Feng Ruohang](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   Five minutes, PostgreSQL, and the MovieLens dataset—that’s all you need to implement a classic item-based collaborative filtering recommender.
-tags: [PostgreSQL, PG-Development, Recommendation System]
+tags: [PostgreSQL, PG Development, Machine Learning]
 ---
 
 Everyone knows “item-based collaborative filtering” (ItemCF): Amazon recommendations, YouTube watch-next, etc. Here’s how to implement it in PostgreSQL using the [MovieLens](https://grouplens.org/datasets/movielens/) dataset. No Python, just SQL.

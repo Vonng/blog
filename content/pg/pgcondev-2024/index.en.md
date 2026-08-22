@@ -1,11 +1,10 @@
 ---
 title: PGCon.Dev 2024, The conf that shutdown PG for a week
 date: 2024-06-17
-author: |
-  [Ruohang Feng](https://vonng.com)([@Vonng](https://vonng.com/en/)) | [Wechat Column](https://mp.weixin.qq.com/s/dW3byoQkEIR0_EzWxobrWg)
+authors: [vonng]
 summary: >
   Experience & Feeling on the PGCon.Dev 2024   
-tags: [PostgreSQL,PG-Ecosystem]
+tags: [PostgreSQL, PG Ecosystem]
 ---
 
 

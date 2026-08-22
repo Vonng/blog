@@ -1,7 +1,7 @@
 ---
 title: "I Translated the Docs for Three Core PG Components in a Day"
 date: 2026-03-02
-author: vonng
+authors: [vonng]
 draft: true
 summary: >
   I spent a day translating the complete documentation for PgBouncer, pgBackRest, and Patroni into Chinese — what used to require a whole volunteer team now fits into one person's token budget.

@@ -1,11 +1,10 @@
 ---
 title: "Cloud Database: Michelin Prices for Cafeteria Pre-made Meals"
 date: 2024-10-06
-author: |
-  [Feng Ruohang](https://vonng.com)（[@Vonng](https://vonng.com/en/)）
+authors: [vonng]
 summary: >
   The paradigm shift brought by RDS, whether cloud databases are overpriced cafeteria meals. Quality, security, efficiency, and cost analysis, cloud exit database self-building: how to implement in practice!
-tags: [Cloud-Exit,RDS]
+tags: [Cloud-Exit, RDS]
 ---
 
 Are cloud databases overpriced cafeteria meals

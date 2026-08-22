@@ -1,12 +1,10 @@
 ---
 title: PostgreSQL's Impressive Scalability
 date: 2024-01-13
-showAuthor: false
-author: |
-  [Ruohang Feng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
+authors: [vonng]
 summary: >
   This article describes how Cloudflare scaled to support 55 million requests per second using 15 PostgreSQL clusters, and PostgreSQL's scalability performance.
-tags: [PostgreSQL,Performance]
+tags: [PostgreSQL, Performance, Translation]
 ---
 
 > Source: [How Cloudflare Supports 55M QPS with 15 PostgreSQL Clusters](https://newsletter.systemdesign.one/p/postgresql-scalability)
