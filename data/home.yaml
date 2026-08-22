@@ -233,16 +233,16 @@ en:
     items:
       - page: /db
         title: Database Guru
-        desc: News, reports, surveys and best practices from the database industry.
+        desc: News, insights, and best practices from the database industry.
       - page: /cloud
         title: Cloud-Exiter
-        desc: Cloud economics, cloud-exit and self-hosting — deep dives and cost analyses.
+        desc: Cloud-exit and self-hosting — deep dives and cost analyses.
       - page: /ai
         title: AI Agent Explorer
         desc: Agents, LLMs, and everything between AI and databases.
       - page: /pg
         title: Postgres Mage
-        desc: PostgreSQL ecosystem news, plus development, operations and tuning.
+        desc: Blogs about PG ecosystem, admin, development and operations.
       - page: /trip
         title: Travel Notes
         desc: Trips, hikes and the things seen along the way.
@@ -345,32 +345,32 @@ en:
         desc: An aggregate operations library for PostgreSQL and the components around it.
         url: 'https://pgsql.cc'
         external: true
-      - title: "Paper: D-Bot Diagnosis with LLMs"
+      - title: "Paper: D-Bot DB Diagnosis with LLMs"
         meta: VLDB paper
         image: img/works/dbot.jpg
         desc: Database Diagnosis System using Large Language Models, VLDB 2024.
         url: 'https://www.vldb.org/pvldb/vol17/p2514-li.pdf'
         external: true
-      - title: "Paper : Unified Access Layer"
+      - title: "Paper : Unified DB Access Layer"
         meta: NPC 2017 paper - hbase_fdw
         image: img/works/hbase_fdw.webp
         desc: A unified access layer over heterogeneous databases through PostgreSQL FDW.
         url: 'https://dl.acm.org/doi/10.1007/978-3-319-68210-5_14'
         external: true
       - title: Cyber Dharma
-        meta: 赛博经藏
+        meta: 赛博经藏 - ancient religions wisdom
         image: img/works/dharma.vonng.com.webp
         desc: Seven traditions orbiting one machine — notes on technology and belief.
         url: 'https://dharma.vonng.com'
         external: true
       - title: Empire of AI
-        meta: Chinese translation
+        meta: Chinese book translation
         image: img/works/aiempire.vonng.com.webp
         desc: Dreams and nightmares inside OpenAI, translated into Chinese.
         url: 'https://aiempire.vonng.com'
         external: true
       - title: The Product-Minded Engineer
-        meta: Chinese translation
+        meta: Chinese book translation
         image: img/works/tpme.vonng.com.webp
         desc: A book on engineering with a product mind, translated into Chinese.
         url: 'https://tpme.vonng.com'
